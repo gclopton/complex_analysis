@@ -1,0 +1,1 @@
+The second root of a negative number $r$ is the negative of the principal root. It is the root with the negative imaginary part.

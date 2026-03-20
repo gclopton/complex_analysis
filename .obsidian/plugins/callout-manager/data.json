@@ -29,7 +29,8 @@
       "fb",
       "ms",
       "pr",
-      "code"
+      "code",
+      "review"
     ],
     "settings": {
       "expansion": [
@@ -340,6 +341,14 @@
           "changes": {
             "icon": "codeBlock",
             "color": "0, 255, 4"
+          }
+        }
+      ],
+      "review": [
+        {
+          "changes": {
+            "icon": "lucide-book",
+            "color": "255, 0, 174"
           }
         }
       ]

@@ -1,0 +1,1 @@
+Two complex numbers are equal if they have the same real and imaginary parts. That is, $z_{1} = z_{2}$ if and only if $\operatorname{Re} z_{1} = \operatorname{Re} z_{2}$ and $\operatorname{Im} z_{1} = \operatorname{Im} z_{2}$.

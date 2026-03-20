@@ -1,0 +1,1 @@
+A complex number that has no imaginary part.
