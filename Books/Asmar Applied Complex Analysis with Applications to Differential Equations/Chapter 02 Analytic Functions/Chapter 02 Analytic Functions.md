@@ -6,9 +6,7 @@ In this chapter we will present the fundamental definition of a derivative of a 
 
 Complex analysis is about the study of analytic functions. These are functions that have a derivative in an open set. This fundamental notion of analyticity is presented in Section 2.3. Sections 2.1 and 2.2 pave the way for Section 2.3. So you may want to go over them relatively quickly. Section 2.4 contains the Cauchy-Riemann equations, which are fundamental both in theory and applications. Section 2.5 presents some interesting applications of complex analysis to the solution of boundary value problems, more precisely, Dirichlet problems. It is a mixture of theoretical results about analytic and harmonic functions and their applications to the solution of Dirichlet problems. Section 2.5 sets the stage for the applications that will follow in the book and justifies the need for the development of complex analysis. You should at least read through it and try some applications. Section 2.6 contains a proof related to the Cauchy-Riemann equations. It can be skipped without affecting the continuity of the course.
 
-## 2
-
-## ANALYTIC FUNCTIONS
+## 2 ANALYTIC FUNCTIONS
 
 I get up at 4 o'clock each morning and I am busy from then on ... Today I drew the plans for forges that I am to have built in granite. I am also constructing two lighthouses, one on each of the two piers that are located at the entrance of the harbor. I do not get tired of working; on the contrary, it invigorates me and I am in perfect health...
 -Augustin Louis Cauchy
@@ -16,13 +14,13 @@ In the previous chapter, we introduced complex numbers and complex functions. In
 
 So who was Cauchy? Augustin Louis Cauchy was born on August 21, 1789 in Paris. He received his early education from his father, Louis-François Cauchy, a master of classical studies. Cauchy entered the Ecole Polytechnique in Paris in 1805 and continued his education as a civil engineer at the Ecole des Ponts et Chaussées. He began his career as a military engineer, working in Napoleon's administration from 1810 to 1813 . His mathematical talents were soon discovered by leading mathematicians, among them was Joseph Louis Lagrange, who persuaded Cauchy to leave his career as an engineer and devote himself to mathematics. Cauchy's mathematical output was phenomenal. He is considered to be one of the greatest mathematicians. His contributions cover many areas of pure and applied mathematics, including the theory of heat, the theory of light, the mathematical theory of elasticity, and fluid dynamics. Cauchy's contributions to modern calculus are so fundamental that he "has come to be regarded as the creator of calculus in the modern sense," from The History of Mathematics, An Introduction, 3rd edition, by David M. Burton (McGraw-Hill, 1997).
 
-### 2.1 Regions of the Complex Plane
+# 2.1 Regions of the Complex Plane
 
 In the previous chapter, we defined some elementary functions of a complex variable. An important part of a function is its domain of definition. In calculus, functions were usually defined over intervals. In dealing with functions of a complex variable, intervals will be replaced by subsets of the complex plane. The picture is no longer as simple as the one on the real line. For this reason, it is necessary to understand basic properties of subsets of the complex plane, which will assist us in our analytical study of functions of a complex variable.
 
 ## DEFINITION 1 NEIGHBORHOOD
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-02_486_557_1188_109.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-02_486_557_1188_109.jpg)
 Figure 1 An $r$-neighborhood $B_{r}\left(z_{0}\right)$ does not include the points on the circle
 
 $\left|z-z_{0}\right|=r$.
@@ -53,7 +51,7 @@ Let $S$ be a subset of the complex numbers. A point $z_{0}$ in $S$ is called an 
 
 From the definitions, every point in $S$ is either an interior point or a boundary point. If a point is an interior point of $S$, then it cannot be a boundary point of $S$. Also, while an interior point of $S$ is necessarily a point in $S$, a boundary point of $S$ need not be in $S$.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-03_461_506_637_125.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-03_461_506_637_125.jpg)
 Figure 2 The point $z$ is an interior point of $B_{r}\left(z_{0}\right)$, while $z_{1}$ is a boundary point.
 
 ## DEFINITION 3 OPEN SETS
@@ -90,11 +88,11 @@ Thus $S$ is open if around each point $z$ in $S$ you can find a neighborhood $B_
 - The set of all complex numbers $\mathbb{C}$ is open.
 - Any $r$-neighborhood, $B_{r}\left(z_{0}\right)$, is open. We just verified in Example 1(a) that every point in $B_{r}\left(z_{0}\right)$ is an interior point.
 - The set of all $z$ such that $\left|z-z_{0}\right|>r$ is open. This set is called a neighborhood of $\infty$. To justify this terminology, see Exercise 23.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-04_520_523_270_86.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-04_520_523_270_86.jpg)
 
 Figure 3 A closed disk includes its boundary, the circle $\left|z-z_{0}\right|=r$.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-04_529_529_1006_89.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-04_529_529_1006_89.jpg)
 Figure 4 A set that is neither open nor closed.
 
 An $r$-neighborhood, $B_{r}\left(z_{0}\right)$, is more commonly called an open disk of radius $r$, centered at $z_{0}$.
@@ -149,7 +147,7 @@ DEFINITION 5 REGIONS
 
 PROPOSITION 1 CHARACTERIZATION OF REGIONS
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-05_455_500_1415_104.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-05_455_500_1415_104.jpg)
 Figure 5 An open annulus $A_{r_{1}, r_{2}}\left(z_{0}\right)$ is a region. Note how two arbitrary points $A$ and $B$ in $A_{r_{1}, r_{2}}\left(z_{0}\right)$ can be joined by a polygonal line contained in the annulus.
 
 whose domain of definition is $(0,1) \cup(2,3)$. We have $f^{\prime}(x)=0$ for all $x$ in $(0,1) \cup(2,3)$, but clearly $f$ is not constant. This example shows you how crucial connectedness is in calculus. For subsets of the plane, one way to define connectedness is as follows.
@@ -192,7 +190,7 @@ The limit in (2) involves the values of $u$ at the point ( $x+ h, y)$. You shoul
 
 ## THEOREM 1
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-06_508_562_1818_97.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-06_508_562_1818_97.jpg)
 Figure 6 Joining two points in a connected region by a polygonal line.
 
 $$
@@ -222,7 +220,7 @@ $$
 
 It is now easy to prove Theorem 1. Fix a point $\left(x_{0}, y_{0}\right)$ in $\Omega$. Given a point $(x, y)$ in $\Omega$, connect $\left(x_{0}, y_{0}\right)$ to $(x, y)$ by a finite number of line segments joined end to end and wholly contained in $\Omega$. (Here we have used the fact that $\Omega$ is a region.) Let $\left(x_{j}, y_{j}\right), j=0,1, \ldots, n$ denote the endpoints of the consecutive line segments, starting with $\left(x_{0}, y_{0}\right)$ and ending with $\left(x_{n}, y_{n}\right)=(x, y)$ (see Figure 6). Apply (4) to each line segment and use the fact that the partial derivatives are zero to conclude that $u\left(x_{j-1}, y_{j-1}\right)=u\left(x_{j}, y_{j}\right)$, and hence that $u\left(x_{0}, y_{0}\right)=u(x, y)$. $\square$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-07_469_509_1748_88.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-07_469_509_1748_88.jpg)
 Figure 7 For Exercise 22.
 
 ## Exercises 2.1
@@ -280,9 +278,9 @@ $$
 u(x, y)= \begin{cases}0 & \text { if } x>0, \\ \operatorname{sgn} y & \text { if } x \leq 0,\end{cases}
 $$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-08_296_545_830_103.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-08_296_545_830_103.jpg)
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-08_292_541_1164_105.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-08_292_541_1164_105.jpg)
 Figure 8 Stereographic projection and the Riemann sphere. For $|z|>1$, the point $z^{*}$ is in the northern hemisphere. For $|z|<1$, the point $z^{*}$ is in the southern hemisphere. For $|z|=1$, the points $z$ and $z^{*}$ are coincident.
 
 where the signum function is defined by $\operatorname{sgn} y=-1,0,1$, according as $y<0$, $y=0$, or $y>0$. Show that $u_{y}(x, y)=0$ for all $(x, y)$ in $\Omega$ but that $u$ is not a function of $x$ alone.
@@ -319,7 +317,7 @@ $$
 x=\frac{x_{1}}{1-x_{3}}, \quad y=\frac{x_{2}}{1-x_{3}}
 $$
 
-### 2.2 Limits and Continuity
+# 2.2 Limits and Continuity
 
 When we define the derivative of a complex-valued function in Section 2.3, we will model our definition after the familiar derivative of a real-valued function from calculus. As you recall, such a derivative was defined by taking limits. Therefore, before we study differentiation, we must define limits of complex functions. We will also define continuous functions by appealing to limits.
 
@@ -340,7 +338,7 @@ $$
 $$
 
 If the limit of a function exists at a point, then it is unique (Exercise 27). This is referred to as the uniqueness property of limits.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-09_461_1109_1442_746.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-09_461_1109_1442_746.jpg)
 
 Geometrically, interpreting the absolute value $|f(z)-L|$ as the distance between $f(z)$ and $L$, we see from (1) that the function $f(z)$ has limit $L$ as $z \rightarrow z_{0}$ if and only if the distance from $f(z)$ to $L$ tends to zero as $z$ tends to $z_{0}$. Thus, $\lim _{z \rightarrow z_{0}} f(z)=L$ if and only if
 
@@ -593,7 +591,7 @@ $$
 where $p$ and $q$ are polynomials. Show that a rational function is continuous at all points where $q(z) \neq 0$.
 Solution (a) Since the function $f(z)=z$ is continuous, we repeatedly use the fact that the product of two continuous functions is continuous to conclude that $z^{2}, z^{3}, \ldots, z^{n}$ are continuous. Then, by repeated applications of the fact that a linear combination of continuous functions is continuous, we conclude that the
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-15_463_496_1517_102.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-15_463_496_1517_102.jpg)
 Figure 2 If $L \neq L^{\prime}$, then the limit at $z_{0}$ cannot exist.
 
 function $a_{n} z^{n}+a_{n-1} z^{n-1}+\cdots+a_{0}$ is continuous.
@@ -746,7 +744,7 @@ In Exercises 33-40, determine the set of points where the given function is cont
 42. Continuity and boundedness. Show that if $f$ is continuous at $z_{0}$, then
 43. Show that a discontinuity at $z=z_{0}$ of a function $f(z)=u(z)+i v(z)$ is it is bounded in a neighborhood of $z_{0}$. removable if and only if $z_{0}$ is a removable discontinuity of both $u$ and $v$.
 
-### 2.3 Analytic Functions
+# 2.3 Analytic Functions
 
 For a real-valued function $f(x)$ defined on an open interval containing the point $x_{0}$, we defined the derivative at $x_{0}$ to be $f^{\prime}\left(x_{0}\right)=\lim _{x \rightarrow x_{0}} \frac{f(x)-f\left(x_{0}\right)}{x-x_{0}}$, when the limit exists. Our definition for the derivative of a complex function $f(z)$ is a natural extension of the real case.
 
@@ -926,7 +924,7 @@ $$
 
 Typically, any function that algebraically manipulates $z$ will be differentiable; however, not every complex-valued function is analytic. Functions like $\operatorname{Re} z, \operatorname{Im} z, \bar{z}$, and $|z|$ will have at best limited differentiability.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-23_463_509_480_116.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-23_463_509_480_116.jpg)
 Figure 1 On $C, \Delta z=\Delta x$. On $C^{\prime}, \Delta z=i \Delta y$.
 
 ## EXAMPLE 4 Functions that are nowhere analytic
@@ -990,7 +988,7 @@ So far we have been successful at differentiating polynomials and rational funct
 ## THEOREM 4 ANALYTICITY OF COMPOSED FUNCTIONS
 
 Figure 2 Unlike the chain rule, where we suppose that $f$ and $g$ are analytic and conclude that $h=g \circ f$ is analytic, in Theorem 4, we suppose that $g$ is continuous, and $f$ and the composed function $h$ are analytic, and then we conclude that $g$ is analytic.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-24_506_536_1985_96.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-24_506_536_1985_96.jpg)
 
 Figure 3 Branch cut of $\log z$.
 
@@ -1003,7 +1001,7 @@ $$
 As in the case of the chain rule, the proof of this theorem will be greatly simplified by using the formalisms presented in the appendix. We postpone the proof and give instead an application.
 
 Figure 2 Unlike the chain rule, where we suppose that $f$ and $g$ are analytic and conclude that $h=g \circ f$ is analytic, in Theorem 4, we suppose that $g$ is continuous, and $f$ and the composed function $h$ are analytic, and then we conclude that $g$ is analytic.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-24_544_1431_1357_676.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-24_544_1431_1357_676.jpg)
 
 ## EXAMPLE 5 Analyticity of $n$th roots
 
@@ -1200,7 +1198,7 @@ $$
 (a) $\lim _{z \rightarrow i} \frac{\left(z^{2}+1\right)^{7}}{z^{6}+1}$.
 (b) $\lim _{z \rightarrow i} \frac{z^{3}+(1-3 i) z^{2}+(i-3) z+2+i}{z-i}$.
 
-### 2.4 The Cauchy-Riemann Equations
+# 2.4 The Cauchy-Riemann Equations
 
 The fact that the derivative of $\bar{z}$ does not exist (Example 4, Section 2.3) should tell you that there is something special about complex-valued functions with derivatives. As you will see, the existence of the derivative implies special relationships between the real and imaginary parts of the functions. These relationships are known as the Cauchy-Riemann equations, which we now derive.
 
@@ -1212,7 +1210,7 @@ $$
 
 To derive the Cauchy-Riemann equations, we will simply compute this limit
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-28_512_557_1699_86.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-28_512_557_1699_86.jpg)
 Figure 1 For $z$ approaching $z_{0}$ in the direction of the $x$ axis, $\Delta z=\Delta x$.
 
 Suppose that $z$ approaches $z_{0}$ along the direction of the $x$-axis, as in Figure 1 . Then $z=z_{0}+\Delta x=\left(x_{0}+\Delta x, y_{0}\right), \Delta z=z-z_{0}=\Delta x$, and (1) becomes
@@ -1227,7 +1225,7 @@ $$
 
 where the last step is justified by Theorem 3, Section 2.2, which asserts that the limit of a complex-valued function exists if and only if the limits
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-29_492_505_394_101.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-29_492_505_394_101.jpg)
 Figure 2 For $z$ approaching $z_{0}$ in the direction of the $y$ axis, $\Delta z=i \Delta y$.
 
 ## THE CAUCHY-RIEMANN EQUATIONS
@@ -1394,7 +1392,7 @@ We started this section with the example of $\bar{z}$ and how it fails to be ana
 
 ## THEOREM 2
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-33_492_505_1222_112.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-33_492_505_1222_112.jpg)
 Figure 3 A nonconstant function with zero derivative. Its domain of definition is the nonconnected shaded area.
 
 ## COROLLARY 1
@@ -1554,7 +1552,7 @@ $$
 
 Suppose that $f=u+i v$ is analytic. Show that the Jacobian equals $\left|f^{\prime}(z)\right|^{2}$. You may recall from calculus of several variables that a mapping is locally invertible at every point where the Jacobian is nonzero. This exercise suggests that a similar result holds for $f$. Indeed, there is an inverse function theorem that states that if $f^{\prime}\left(z_{0}\right) \neq 0$, then in some neighborhood of $z_{0}, f$ is one-to-one and has an inverse function that is itself analytic in a neighborhood of $f\left(z_{0}\right)$ (see Section 5.7).
 
-### 2.5 Harmonic Functions and Laplace's Equation
+# 2.5 Harmonic Functions and Laplace's Equation
 
 There are many important applications of complex analysis that highlight its pivotal place in the solution of real-world problems. The ones that we present in this section deal with a fundamental equation of applied mathematics, known as Laplace's equation. This equation models important phenomena in engineering and physics, such as steady-state temperature distributions, electrostatic potentials, and fluid flow, to name just a few. For clarity's sake, we will base our presentation around steady-state temperature problems. The solutions that we present use almost all the material that we have covered thus far, and more important, they stress the need for further development of the theory.
 
@@ -1562,7 +1560,7 @@ There are many important applications of complex analysis that highlight its piv
 
 Consider a two-dimensional plate of homogeneous material, with instlated lateral surfaces. We represent this plate by a region $\Omega$ in the complex plane (see Figure 1). Suppose that the temperature of the points on the boundary of the plate is given by a function of position $b(x, y)$ that does not change with time. It is a fact from thermodynamics that the temperature inside the plate will eventually reach and remain at an equilibrium
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-37_459_508_201_110.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-37_459_508_201_110.jpg)
 Figure 1 The steady-state temperature distribution satisfies Laplace's equation.
 
 The Laplacian is named after the great French mathematician and physicist PierreSimon de Laplace (17491827). The Laplacian appeared for the first time in a memoir of Laplace in 1784, in which he completely determined the attraction of a spheroid on the points outside it. The Laplacian of a function measures the difference between the value of the function at a point and the average value of the function in a neighborhood of that point. Thus a function that does not vary abruptly has a very small Laplacian. Harmonic functions have a zero Laplacian; they vary in a very regular way. Examples of such functions include the temperature distribution in a plate, the potential of the attractive force due to a sphere, the function that gives the brightness of colors in an image.
@@ -1654,7 +1652,7 @@ $$
 
 ## PROPOSITION 3
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-40_480_528_1485_142.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-40_480_528_1485_142.jpg)
 Figure 2 The curves $C_{1}$ and $C_{2}$ are orthogonal at $A$ if the tangent lines $L_{1}$ and $L_{2}$ (at $A$ ) are orthogonal.
 
 where $c(x)$ is a function of $x$ alone. Plugging this into the second equation in (2), we get
@@ -1725,16 +1723,16 @@ Figure 3 (a) Level curves of $u(x, y)=x^{2}-y^{2}+x$.
 (b) Level curves of $v(x, y)=2 x y+y$.
 (c) The level curves of $u$ and $v$ are orthogonal.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-42_485_542_1401_100.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-42_485_542_1401_100.jpg)
 Figure 4 Dirichlet problem in Example 3.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-42_421_423_278_686.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-42_421_423_278_686.jpg)
 (a)
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-42_419_417_278_1164.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-42_419_417_278_1164.jpg)
 (b)
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-42_415_406_278_1639.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-42_415_406_278_1639.jpg)
 (c)
 
 ## Solving and Interpreting Dirichlet Problems
@@ -1774,11 +1772,11 @@ $$
 u(0, y)=50 \Rightarrow a \operatorname{Arg}(i y)+b=50 \Rightarrow a \frac{\pi}{2}+100=50 \Rightarrow a=-\frac{100}{\pi}
 $$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-43_452_470_196_132.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-43_452_470_196_132.jpg)
 Figure 5
 A three-dimensional picture representing the temperature distribution of the plate. Note the boundary values on the graph.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-43_469_503_1047_101.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-43_469_503_1047_101.jpg)
 Figure 6 Dirichlet problem in Example 4.
 
 because $\operatorname{Arg}(i y)=\frac{\pi}{2}$ for $y>0$, and $b=100$. Thus the steady-state temperature inside the plate is $u(x, y)=-\frac{100}{\pi} \operatorname{Arg}(z)+100$. Now for $z=x+i y$ with $x>0$, we have $\operatorname{Arg} z=\tan ^{-1}\left(\frac{y}{x}\right)$, and so another way of expressing the solution is
@@ -1810,7 +1808,7 @@ In Example 4 we used a harmonic function that was independent of $x$. Similarly,
 ## Harmonic Conjugates, Isotherms, and Heat Flow
 
 In Example 3, the temperature of the boundary is kept at two constant values, $100^{\circ}$ and $50^{\circ}$. Our physical intuition tells us that, because the plate is insulated, the temperature of the points inside the plate will vary between these two values and will equal those values only at the boundary. It is natural to ask for those points inside the plate with the same temperature $u(x, y)=T$, where $50<T<100$. These points lie on curves inside the plate, called curves of constant temperature or isotherms. Isotherms have many practical applications. Computing them will lead us to interesting properties of harmonic functions.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-44_487_543_244_106.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-44_487_543_244_106.jpg)
 
 Figure 7 Isotherms in Example 5.
 
@@ -1844,7 +1842,7 @@ Related to the topic of isotherms is the topic of curves of heat flow. These are
 
 So to find the curves of heat flow in a plate, it is enough to find a harmonic conjugate $v(x, y)$ of the steady-state temperature distribution $u(x, y)$, since by Theorem 2 the level curves of $v$ are orthogonal to the level curves of $u$ We illustrate this process with an example.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-45_477_510_300_76.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-45_477_510_300_76.jpg)
 Figure 8 Curves of heat flow in Example 6, along with the isotherms.
 
 ## EXAMPLE 6 Curves of heat flow <br> Find the curves of heat flow in Example 3.
@@ -1876,7 +1874,7 @@ Suppose that $f$ is an analytic mapping of $\Omega$ into $\Omega^{\prime}$ and $
 Proof Let $z_{0}$ be a point in $\Omega$ and $w_{0}=f\left(z_{0}\right)$. We will show in Section 3.8 that $U$ has a harmonic conjugate $V$ in a disk around $w_{0}$. Then $U+i V$ is analytic in this disk, and by the composition of analytic functions, $(U+i V) \circ f$ is analytic at $z_{0}$. Hence by Theorem 1, $\operatorname{Re}[(U+i V) \circ f]=\operatorname{Re}[U \circ f+i(V \circ f)]=U \circ f$ is harmonic at $z_{0}$. Since $z_{0}$ was arbitrary, $U \circ f$ is harmonic in $\Omega$. An alternate proof may be given by direct application of the chain rule and Cauchy-Riemann equations.
 
 Now suppose that you want to use a conformal mapping $w=f(z)$ to solve the Dirichlet problem $\Delta u=0$ in $\Omega$ and $u(z)=b(z)$ on the boundary $\Gamma$ of $\Omega$. Suppose also that $f$ is one-to-one on $\Omega$ and its boundary $\Gamma$. Here is how the method works (see Figure 9 as you read through the steps).
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-46_519_1162_1082_766.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-46_519_1162_1082_766.jpg)
 
 Step 1: Describe clearly the region $\Omega^{\prime}=f[\Omega]$ and its boundary $\Gamma^{\prime}=f[\Gamma]$ in the $w$-plane.
 Step 2: Since $f$ is one-to-one, we have an inverse function $f^{-1}$ defined on $\Omega^{\prime}$ and $\Gamma^{\prime}$. For $w$ on $\Gamma^{\prime}, f^{-1}(w)$ is on $\Gamma$ and so we can define the function $b \circ f^{-1}(w)$ for all $w$ on $\Gamma^{\prime}$. This determines the boundary values on $\Gamma^{\prime}$.
@@ -1885,7 +1883,7 @@ Step 4 Let $u(z)=U \circ f(z)$ for all $z$ in $\Omega$. Then $u(z)$ is a solutio
 
 In most examples, Steps 2 and 3 can be done without actually computives $f^{-1}$, as we illustrate in our next example.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-47_468_498_188_96.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-47_468_498_188_96.jpg)
 Figure 10 Dirichlet problem in Example 7.
 
 Figure 11 Mapping the semiinfinite vertical strip onto the upper half-plane. Note the boundary correspondence.
@@ -1907,14 +1905,14 @@ $$
 \end{aligned}
 $$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-47_424_1237_1573_689.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-47_424_1237_1573_689.jpg)
 
 Since the transformed boundary data is constant along rays, we can solve the problem in the $w$-plane as we did in Example 3 by trying for a solution the harmonic function $U(w)=a \operatorname{Arg} w+b$, where $a$ and $b$ are real constants. Using the boundary conditions, we see that $100=a \pi$ or $a=\frac{100}{\pi}$, and $0=b$. Hence $U(w)=\frac{100}{\pi} \operatorname{Arg} w$. Step 4: The solution of the original Dirichlet problem in the $z$-plane is $u(z)= U(f(z))=\frac{100}{\pi} \operatorname{Arg}(\sin z)$. If we want to express our answer in terms of $x$ and $y$, we use the real and imaginary parts of $\sin z((16)$, Section 1.6): $\sin z=\sin x \cosh y+$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-48_307_553_372_104.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-48_307_553_372_104.jpg)
 Figure 12 The inverse cotangent takes its values in $(0, \pi)$.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-48_609_553_1350_112.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-48_609_553_1350_112.jpg)
 
 Figure 13 Isotherms and curves of heat flow in Example 7. Note the orthogonality of the curves.
 $i \cos x \sinh y$. It is not convenient to use the inverse tangent formula (14), Section 1.3, to express $\operatorname{Arg}(\sin z)$, because the real part of $\sin z$ takes on positive and negative values. It is more convenient in this case to use the inverse cotangent. We have
@@ -1974,7 +1972,7 @@ In Exercises 13-16, find a harmonic conjugate $v(x, y)$ of the given harmonic fu
 (b) $u(\alpha x, \alpha y)$, where $\alpha \neq 0$ is a real number.
 24. (a) Suppose that $u(x, y)$ is harmonic. Show that $u(x,-y)$ is also harmonic.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-50_493_558_342_84.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-50_493_558_342_84.jpg)
 Figure 14 Dirichlet problem in Exercise 25.
 
 (b) Suppose that $u(x, y)$ is harmonic. Show that $u\left(\frac{x}{x^{2}+y^{2}}, \frac{y}{x^{2}+y^{2}}\right)$ is harmonic.
@@ -1987,10 +1985,10 @@ Figure 14 Dirichlet problem in Exercise 25.
 27. Harmonic functions independent of $r$. (a) Solve the Dirichlet problem in Figure 16. Because the boundary values do not depend on $r$, you should try for a solution a harmonic function whose values do not depend on $r$.
 (b) Determine and plot the isotherms and curves of heat flow.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-50_495_535_1109_852.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-50_495_535_1109_852.jpg)
 Figure 16 Dirichlet problem in Exercise 27.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-50_498_503_1097_1592.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-50_498_503_1097_1592.jpg)
 Figure 17 Dirichlet problem in Exercise 28.
 
 28. A Dirichlet problem in a wedge. (a) Solve the Dirichlet problem in Figure 17.
@@ -2005,15 +2003,15 @@ $$
 known as an Euler equation. This is perhaps the simplest second order linear differential equation with nonconstant coefficients. To find its general solution, we
 (b) Multiply the Euler equation by the integrating factor $r$ and notice that the need two linearly independent solutions. left side is now exact. Integrate to conclude $r u_{r}=c_{1}$, where $c_{1}$ is the constant of
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-51_461_492_971_97.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-51_461_492_971_97.jpg)
 Figure 18 Dirichlet problem in Exercise 30.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-51_470_496_1775_89.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-51_470_496_1775_89.jpg)
 Figure 21 Dirichlet problem for Exercise 35.
 
 integration. Integrate again and find the general solution
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-51_457_500_979_802.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-51_457_500_979_802.jpg)
 Figure 19 Dirichlet problem in Exercise 31.
 
 $$
@@ -2022,7 +2020,7 @@ $$
 
 30. Dirichlet problems in annular regions. The annular region $A_{R_{1}, R_{2}}$ in Figure 18 is centered at the origin with inner radius $R_{1}$ and outer radius $R_{2}$. Consider the Dirichlet problem in $A_{R_{1}, R_{2}}$ with constant boundary conditions $u\left(R_{1}, \theta\right)= T_{1}$ and $u\left(R_{2}, \theta\right)=T_{2}$ for all $\theta$. Show that the solution of the problem is
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-51_461_508_981_1511.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-51_461_508_981_1511.jpg)
 Figure 20 Dirichlet problem in Exercise 32.
 
 $$
@@ -2035,7 +2033,7 @@ $$
 (b) Argue that, since $\phi(z)$ is harmonic in $\mathbb{C} \backslash\{0\}, \phi(z)$ is continuous on $(-\infty, 0)$. Obtain a contradiction using (a) and the fact that the discontinuities of $\operatorname{Arg} z$ are not removable on the negative $x$-axis (Example 7, Section 2.2).
 34. (a) Suppose that $f$ is analytic on $\Omega, U$ is harmonic on $f[\Omega]$, and $u=U \circ f$. Then $u$ is harmonic in $\Omega$ by Theorem 3. Suppose that $V$ is a harmonic conjugate of $U$. Show that $V \circ f$ is a harmonic conjugate of $u$.
 (b) Derive the isotherms and curves of heat flow in Example 7.
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-52_489_547_289_83.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-52_489_547_289_83.jpg)
 
 Figure 22 The harmonic measure of an interval is the difference of two translated arguments:
 
@@ -2046,10 +2044,10 @@ $$
 \end{aligned}
 $$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-52_497_553_1152_91.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-52_497_553_1152_91.jpg)
 Figure 23 Dirichlet problem for Exercise 36.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-52_514_544_1860_102.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-52_514_544_1860_102.jpg)
 Figure 24 Dirichlet problem for Exercise 38.
 
 35. Harmonic measure of an interval. A very important Dirichlet problem is described in the upper half-plane with boundary data on the $x$-axis given by
@@ -2103,7 +2101,7 @@ then the solution of the Dirichlet problem in the upper half-plane with boundary
 39. (a) Solve the Dirichlet problem in Figure 25.
 (b) Plot the isotherms.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-53_474_503_734_104.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-53_474_503_734_104.jpg)
 Figure 25 Dirichlet problem for Exercise 39.
 
 40. Project Problem: Harmonic measures of several disjoint intervals. Generalize the result of Exercise 38 as follows. Suppose that $I_{1}, I_{2}, \ldots, I_{n}$ are disjoint open intervals on the $x$-axis, and $T_{1}, T_{2}, \ldots, T_{n}$ are real numbers. Consider the Dirichlet problem in the upper half-plane with boundary condition
@@ -2183,16 +2181,16 @@ What we have done in Exercise 42 is not exactly a proof of the Poisson integral 
 Project Problems: Conformal mapping method. Exercises 43-46 are Dirichlet problems described by the corresponding figures. In each case, (a) solve the problem by following the four steps, as we did in Example 7.
 (b) Determine and plot the isotherms.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-55_491_517_1272_690.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-55_491_517_1272_690.jpg)
 Figure 26 Dirichlet problem in Exercise 43.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-55_508_520_1892_680.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-55_508_520_1892_680.jpg)
 Figure 28 Dirichlet problem in Exercise 45.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-55_495_516_1272_1280.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-55_495_516_1272_1280.jpg)
 Figure 27 Dirichlet problem in Exercise 44.
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-55_508_516_1890_1278.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-55_508_516_1890_1278.jpg)
 Figure 29 Dirichlet problem in Exercise 46.
 
 47. Project Problem: Laplacian in polar coordinates. In this exercise, you are asked to derive the polar form of the Laplacian
@@ -2250,7 +2248,7 @@ $$
 (b) Use (12) to give a direct proof that $\log |z|$ is harmonic for all $z \neq 0$.
 49. Show that if $u$ is harmonic and independent of $r$, then $u_{\theta \theta}=0$. Conclude that $u=a \theta+b$; equivalently, $u=a \arg _{\alpha} z+b$, where $\arg _{\alpha} z$ is a branch of the argument.
 
-### 2.6 Differentiation of Functions of Several Variables
+# 2.6 Differentiation of Functions of Several Variables
 
 Our goal in this section is to fulfill our promise of completing the proof of the Cauchy-Riemann theorem, which we stated in Section 2.4. The material that is required for the proof is interesting in its own right. It deals with the concept of differentiation for functions of several variables. We will also apply it to give simple proofs of the chain rule and the mean value theorem in two dimensions.
 
@@ -2266,7 +2264,7 @@ $$
 \phi(x)=\phi\left(x_{0}\right)+\phi^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+r(x)\left(x-x_{0}\right) .
 $$
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-57_461_497_1149_109.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-57_461_497_1149_109.jpg)
 Figure 1 Approximation of a differentiable function by the tangent line.
 
 ## DEFINITION 1 DIFFERENTIABILITY OF REAL-VALUED FUNCTIONS OF TWO VARIABLES
@@ -2293,7 +2291,7 @@ In proofs, we will need to know limits such as
 
 ## THEOREM 1
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-58_426_543_1783_113.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-58_426_543_1783_113.jpg)
 Figure 2 A discontinuous function with partial derivatives at $(0,0)$. The function is not differentiable at $(0,0)$.
 
 These are all of the form $\epsilon(z)$ times a bounded function, and hence by the squeeze theorem they tend to zero as $z \rightarrow z_{0}$, because $\epsilon(z)$ tends to zero. For example,
@@ -2333,7 +2331,7 @@ It is a good exercise to check that $u_{x}(0,0)=0$ and $u_{y}(0,0)=0$, but $u$ i
 
 THEOREM 2 SUFFICIENT CONDITIONS FOR DIFFERENTIABILITY
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-59_465_484_1527_122.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-59_465_484_1527_122.jpg)
 Figure 3 In the expression
 
 $u(x, y)-u\left(x, y_{0}\right)$, think of $x$ as fixed, and apply the mean value theorem in the second variable.
@@ -2488,7 +2486,7 @@ $$
 
 Proof Parametrize the line segment $\left[z_{1}, z_{2}\right]$ by $x(t)=x_{1}+t\left(x_{2}-x_{1}\right), y(t)= y_{1}+t\left(y_{2}-y_{1}\right), 0 \leq t \leq 1$. We have $\frac{d x}{d t}=x_{2}-x_{1}$ and $\frac{d y}{d t}=y_{2}-y_{1}$. Form the
 
-![](af4f9593-dec7-4bc0-8d78-d25500419ec9-62_500_557_272_99.jpg)
+![](./images/af4f9593-dec7-4bc0-8d78-d25500419ec9-62_500_557_272_99.jpg)
 Figure 4 Mean value theorem in two dimensions.
 
 function $U(t)=u(x(t), y(t))$ for $0 \leq t \leq 1$. We have $U(0)=u\left(z_{1}\right), U(1)=u\left(z_{2}\right)$, and by Theorem 4,
@@ -2524,4 +2522,3 @@ and verify directly that $\epsilon \rightarrow 0$ as $x \rightarrow 1$.
 6. Show that if $u(x, y), v(x, y)$ are differentiable and $c_{1}, c_{2}$ are constants, then $c_{1} u(x, y)+c_{2} v(x, y)$ and $u(x, y) v(x, y)$ are also differentiable.
 7. Recast the function $u(x, y)$ in (4) in polar coordinates by setting $x=r \cos \theta$, $y=r \sin \theta$. Show that $u(x, y)=\frac{1}{2} \sin (2 \theta)$, and use this formulation to describe the behavior of the function.
 8. By reversing the steps of Theorem 3, show that if $f=u+i v$ is analytic on an open set $S$, then $u$ and $v$ are differentiable on $S$.
-

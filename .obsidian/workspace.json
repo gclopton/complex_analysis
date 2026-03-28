@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "15ebd694c1a405c0",
+        "id": "5cd8dbd7f8dccdbd",
         "type": "split",
+        "dimension": 46.994535519125684,
         "children": [
           {
             "id": "7ceceeabec34773b",
             "type": "tabs",
-            "dimension": 78.21350762527233,
             "children": [
               {
                 "id": "e92271cc259b31fe",
@@ -18,30 +18,29 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Chapter 01 Complex Numbers and Functions.md",
+                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.3 Polar Form.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Chapter 01 Complex Numbers and Functions"
+                  "title": "1.3 Polar Form"
                 }
               }
             ]
           },
           {
-            "id": "7113f7dcc787f566",
+            "id": "d3d0544002913ed0",
             "type": "tabs",
-            "dimension": 21.78649237472767,
             "children": [
               {
-                "id": "32cf0a04118d968a",
+                "id": "be272ee9172e2b48",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
                   "type": "terminal:terminal",
                   "state": {
                     "terminal:terminal": {
-                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Problems/Palka",
+                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions",
                       "focus": false,
                       "profile": {
                         "args": [],
@@ -62,21 +61,42 @@
                         "useWin32Conhost": true
                       },
                       "serial": {
-                        "columns": 95,
-                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m check-ignore -v\r\nfatal: no path specified\r\n\u001b[38;5;196m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mls\r\n\u001b[36;1mConcepts\u001b[0m    \u001b[36;1mExercises\u001b[0m   \u001b[36;1mImages\u001b[0m      \u001b[36;1mProblems\r\nDefinitions\u001b[0m \u001b[36;1mFacts\u001b[0m       \u001b[36;1mOutlines\u001b[0m    \u001b[36;1mProperties\r\n\u001b[38;5;76;22m❯\u001b[0m \u001b[32mpwd\r\n\u001b[0m/Users/gradyclopton/ObsidianVaults/complex_analysis\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m push -u origin master\r\nkex_exchange_identification: read: Operation timed out\r\nbanner exchange: Connection to 140.82.112.4 port 22: Operation timed out\r\nfatal: Could not read from remote repository.\r\n\r\nPlease make sure you have the correct access rights\r\nand the repository exists.\r\n\u001b[38;5;196m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master ⇡1 +159 !1 \u001b[33;49m\u001b[38;5;244m────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 01:02:33 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[80C\u001b[38;5;244;24m─╯\u001b[82D\u001b[0m",
-                        "rows": 6
+                        "columns": 52,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !6 ?13 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[0m                \u001b[21C\u001b[38;5;244m─╯\u001b[39D\u001b[0m",
+                        "rows": 20
                       }
                     }
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: gradyclopton@Gradys-MacBook-Pro-M3-5:~/ObsidianVaults/complex_analysis"
+                  "title": "Terminal: gradyclopton@vpnduopool-10-251-138-57:~/ObsidianVaults/complex_analysis"
                 }
               }
             ]
           }
         ],
         "direction": "horizontal"
+      },
+      {
+        "id": "f30554b3d270641a",
+        "type": "tabs",
+        "dimension": 53.00546448087432,
+        "children": [
+          {
+            "id": "3a7f60969c1e2112",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.3 Polar Form.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1.3 Polar Form"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -133,8 +153,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 369.5
   },
   "right": {
     "id": "3f7e6a001500c907",
@@ -150,6 +169,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2 The Complex Plane.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +179,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 1.2 The Complex Plane"
             }
           },
           {
@@ -196,12 +216,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2 The Complex Plane.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 1.2 The Complex Plane"
             }
           },
           {
@@ -253,8 +274,21 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "32cf0a04118d968a",
+  "active": "be272ee9172e2b48",
   "lastOpenFiles": [
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.3 Polar Form.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2 The Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.1 Complex Numbers.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.4 Complex Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.7 Logarithms and Powers.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.6 Differentiation of Functions of Several Variables.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.5 Harmonic Functions and Laplace's Equation.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.4 The Cauchy-Riemann Equations.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.3 Analytic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.2 Limits and Continuity.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.1 Regions of the Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.6 Trigonometric and Hyperbolic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.5 The Complex Exponential.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Chapter 01 Complex Numbers and Functions.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/Chapter 1 Complex Numbers and Functions.pdf",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/Chapter 02 Analytic Functions.md",
@@ -287,18 +321,6 @@
     "Outlines/1 Complex Numbers and Functions.md",
     "Concepts/Complex lane.md",
     "Concepts/applying the principal root convention to the quadratic equation.md",
-    "Properties/mutliplicativity of conjugation.md",
-    "Properties/fixed-point (reality) criterion.md",
-    "Properties/anti-fixed-point (purely imaginary) criterion.md",
-    "Concepts/Complex Numbers.md",
-    "Concepts/Algebraic Properties of Complex Numbers.md",
-    "Concepts/exponent rules.md",
-    "Definitions/product rule of exponents.md",
-    "Exercises/basic operations with complex numbers.md",
-    "Properties/distributive over addition for complex numbers.md",
-    "Properties/associativity of complex multiplication.md",
-    "Properties/associativity of complex addition.md",
-    "Properties/commutativity of complex multiplication.md",
-    "Properties/commutativity of complex addition.md"
+    "Properties/mutliplicativity of conjugation.md"
   ]
 }

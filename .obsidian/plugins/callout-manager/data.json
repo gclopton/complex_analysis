@@ -30,7 +30,8 @@
       "ms",
       "pr",
       "code",
-      "review"
+      "review",
+      "property"
     ],
     "settings": {
       "expansion": [
@@ -349,6 +350,14 @@
           "changes": {
             "icon": "lucide-book",
             "color": "255, 0, 174"
+          }
+        }
+      ],
+      "property": [
+        {
+          "changes": {
+            "icon": "lucide-divide",
+            "color": "251, 255, 0"
           }
         }
       ]

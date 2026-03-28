@@ -11,7 +11,7 @@ $$
 
 makes complex analysis a powerful tool for studying Fourier series, solving differential equations, and important problems in other areas of applied mathematics. Mapping properties of complex functions are presented in Section, 1.4 and discussed with each function as it is introduced. These properties will be needed in solving boundary value problems, starting in Section 2.5.
 
-# 1 COMPLEX NUMBERS AND FUNCTIONS
+## 1 COMPLEX NUMBERS AND FUNCTIONS
 
 Dismissing mental tortures, and multiplying $5+\sqrt{-15}$ by $5-\sqrt{-15}$, we obtain $25-(-15)$. Therefore the product is $40 \ldots$ and thus far does arithmetical subtlety go, of which this, the extreme, is, as I have said, so subtle that it is useless.
 -Girolamo Cardan
@@ -452,12 +452,12 @@ where $u$ is the first cube root and $v$ is the second.
 (b) Bombelli had the incredible insight that $u$ and $v$ have to be conjugate for $u+v$ to be real. Set $u=a+i b$ and $v=a-i b$, where $a$ and $b$ are to be determined. Cube both sides of the equations and note that $a=2, b=1$ will work for both equations.
 (c) What is the real solution, $x$, of Bombelli's equation? What are the other two solutions?
 
-### 1.2 The Complex Plane
+# 1.2 The Complex Plane
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-11_505_470_749_136.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-11_505_470_749_136.jpg)
 Figure 1 The complex plane.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-11_475_512_1707_129.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-11_475_512_1707_129.jpg)
 Figure 2 Complex numbers as points and vectors.
 
 A useful way of visualizing complex numbers is to plot them as points in a plane. To do this, we associate to each complex number $z=x+i y$ the ordered pair $(x, y)$, then plot the ordered pair $(x, y)$ as a point $P=(x, y)$ in the Cartesian $x y$-plane. Since $x$ and $y$ uniquely determine $z$, we thus obtain a one-to-one correspondence between complex numbers $z=x+i y$ and points $(x, y)$ in the Cartesian plane. The horizontal axis will be called the real axis, since the abscissa of a complex number is its real part; and complex numbers lying on the horizontal axis are purely real. The vertical axis will be called the imaginary axis, since the ordinate of a complex number is its imaginary part; and complex numbers lying on the vertical axis are purely imaginary. The Cartesian plane will be referred to as the complex plane, also commonly called the $z$-plane. It is not unusual to denote a point ( $x, y$ ) in the complex plane by the corresponding complex number $x+i y$ (see Figure 1). We can also think of a complex number $z=x+i y$ as a two-dimensional vector in the complex plane, with its tail at the origin and its head at $P=(x, y)$.
@@ -474,13 +474,13 @@ Solution The points and the vectors are depicted in Figure 2. The complex number
 
 The vector representation allows us to add complex numbers by adding their vectors in the plane, with the usual head-to-tail or parallelogram methods (see Figure 3).
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_388_427_650_96.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_388_427_650_96.jpg)
 Figure 3 Vector addition of complex numbers: the head-to-tail method. Slide $z_{2}$ over so its tail lies atop $z_{1}$ 's head. The resultant vector is then $z_{1}+z_{2}$.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_508_520_540_788.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_508_520_540_788.jpg)
 Figure 4 Subtraction: We will find $z_{1}-z_{2}$. We could take $-z_{2}$, then add it to $z_{1}$. Or we could take the vector with its tail at $z_{2}$ 's head, and its head at $z_{1}$ 's head.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_478_422_572_1459.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-12_478_422_572_1459.jpg)
 Figure 5 Complex conjugation reflects a point about the horizontal axis.
 
 Multiplying a complex number by -1 has the effect of reflecting it about the origin. If $z=x+i y=(x, y)$, then $-z=-x-i y=(-x,-y)$. This will allow us to subtract complex numbers. The complex subtraction $z_{1}-z_{2}$ can be performed by first multiplying the $z_{2}$ vector by -1 , then adding the resultant to $z_{1}$. Alternatively, we can draw both vectors with their tails at the origin, and the difference will be the vector that points from the head of $z_{2}$ to the head of $z_{1}$ (see Figure 4).
@@ -493,14 +493,14 @@ Solution First draw the points in the plane and their associated vectors (see Fi
 
 Take $z_{2}$ and reflect it about the origin to get $-z_{2}$. Now add $-z_{2}$ to $z_{1}$ as vectors to get $z_{1}-z_{2}$. The result is $z_{1}-z_{2}=-1+4 i$ (see Figure 4).
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_462_510_238_134.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_462_510_238_134.jpg)
 Figure 6 The distance from $z$ to the origin is $|z|$.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_410_458_955_132.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_410_458_955_132.jpg)
 
 Figure 7 The distance from $z_{1}$ to $z_{2}$ is $\left|z_{1}-z_{2}\right|$.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_359_372_1643_131.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-13_359_372_1643_131.jpg)
 Figure 8
 
 ## The Absolute Value
@@ -549,11 +549,11 @@ $$
 This distance is also the length of the vector $z_{1}-z_{2}$, as shown in Figure 8.
 Note that in Example 3(a) we compared the sizes of $z_{1}$ and $z_{2}$ and not the numbers themselves. In general, it does not make sense to write an inequality such as $z_{1} \leq z_{2}$ or $z_{2} \leq z_{1}$, unless $z_{1}$ and $z_{2}$ are real. This is
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-14_390_484_994_92.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-14_390_484_994_92.jpg)
 Figure 9
 The circle in Example 4(a).
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-14_411_458_1675_92.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-14_411_458_1675_92.jpg)
 Figure 10
 
 The ellipse in Example 4(c).
@@ -720,11 +720,11 @@ In addition to the identities that we just proved, the absolute value satisfies 
 
 INEQUALITIES INVOLVING THE ABSOLUTE VALUE
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-17_407_422_896_125.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-17_407_422_896_125.jpg)
 Figure 11
 For inequalities (14) and (15).
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-17_358_362_1677_123.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-17_358_362_1677_123.jpg)
 Figure 12
 For inequality (18).
 
@@ -933,13 +933,13 @@ $$
 
 where $t$ is real. (Compare with Exercise 23(c).)
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_383_366_749_108.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_383_366_749_108.jpg)
 Figure 13 Triangle inequality, Exercise 28.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_495_502_1294_106.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_495_502_1294_106.jpg)
 Figure 14 For Exercise 29.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_373_475_2019_106.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-21_373_475_2019_106.jpg)
 Figure 15 Parallelogram identity, Exercise 32.
 
 25. Parabolas. Recall from geometry that a parabola is the set of points in the plane that are equidistant from a fixed line (called the directrix) and a fixed point not on the line (called the focus).
@@ -1034,13 +1034,13 @@ $$
 $$
 
 (b) Prove (22) in the case $\sum_{j=1}^{n}\left|v_{j}\right|^{2}=1$ and $\sum_{j=1}^{n}\left|w_{j}\right|^{2}=1$. [Hint: Start with the inequality $0 \leq \sum_{j=1}^{n}\left(\left|v_{j}\right|-\left|w_{j}\right|\right)^{2}$. Expand and simplify.]
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-23_241_1412_175_638.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-23_241_1412_175_638.jpg)
 
-### 1.3 Polar Form
+# 1.3 Polar Form
 
 In the previous section, we represented complex numbers as points in the plane and used Cartesian coordinates. In this section, we will use polar coordinates and obtain the so-called polar representation or polar form of
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-23_440_506_707_131.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-23_440_506_707_131.jpg)
 Figure 1 Polar coordinates.
 
 ## POLAR FORM OF COMPLEX NUMBERS
@@ -1126,7 +1126,7 @@ Table 1 contains some special values that will be useful in the examples and exe
 
 Table 1. Special trigonometric values.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-25_465_487_238_121.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-25_465_487_238_121.jpg)
 Figure 2 The points in Example 1.
 
 Note that $r$ is always $\geq 0$ in the polar representation.
@@ -1182,7 +1182,7 @@ $$
 1-i=\sqrt{2}\left(\cos \left(-\frac{\pi}{4}\right)+i \sin \left(-\frac{\pi}{4}\right)\right)
 $$
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-26_359_546_759_117.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-26_359_546_759_117.jpg)
 Figure 3 The inverse tangent takes its values in $\left(\frac{-\pi}{2}, \frac{\pi}{2}\right)$.
 
 For $z=x+i y$ :
@@ -1190,7 +1190,7 @@ $x>0 \Leftrightarrow \quad z$ is in the first or fourth quadrants;
 $x<0$ and $y>0 \Leftrightarrow z$ is in the second quadrant;
 $x<0$ and $y<0 \Leftrightarrow z$ is in the third quadrant.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-26_417_554_1995_130.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-26_417_554_1995_130.jpg)
 Figure 4 Computing $\operatorname{Arg} z$ using (14).
 
 (f) Note that $z_{6}$ is the reflection of $z_{4}=1+i$ about the origin (equivalently, $z_{6}=-z_{4}$ ). Hence $z_{6}$ and $z_{4}$ have the same moduli and their arguments are related by the identity $\arg z_{6}=\arg z_{4}+\pi$. So, $r=\sqrt{2}$, $\arg z_{6}=\frac{\pi}{4}+\pi=\frac{5 \pi}{4}$, $\operatorname{Arg} z_{6}=-\frac{3 \pi}{4}$, and the polar representation is
@@ -1234,7 +1234,7 @@ $$
 \operatorname{Arg} z=\operatorname{Arg}(i y)= \begin{cases}\frac{\pi}{2} & \text { if } y>0 \\ -\frac{\pi}{2} & \text { if } y<0\end{cases}
 $$
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-27_497_509_1193_106.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-27_497_509_1193_106.jpg)
 Figure 5 To multiply in polar form, add the arguments and multiply the moduli.
 
 ## Multiplication, Inverses, and Division in Polar Form
@@ -1298,7 +1298,7 @@ $$
 z^{-1}=\frac{1}{r}(\cos (-\theta)+i \sin (-\theta))=\frac{1}{r}(\cos \theta-i \sin \theta) .
 $$
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-28_490_559_239_101.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-28_490_559_239_101.jpg)
 Figure 6 Division in polar form.
 
 Consider now arbitrary $z_{1}$ and $z_{2} \neq 0$. Since $\frac{z_{1}}{z_{2}}=z_{1} z_{2}^{-1}$, then by (16) and (19), we obtain the polar form of a quotient
@@ -1457,10 +1457,10 @@ $$
 $k=0,1, \ldots, n-1$.
 The unique number $z$ such that $z^{n}=w$ and $\operatorname{Arg} z=\frac{\operatorname{Arg} w}{n}$ is called the principal $n$th root of $w$. The principal root is obtained from (23) by taking $\phi=\operatorname{Arg} w$ and $k=0$.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-31_466_508_454_118.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-31_466_508_454_118.jpg)
 Figure 7 Sixth roots of unity.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-31_474_505_1433_108.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-31_474_505_1433_108.jpg)
 Figure 8 Solutions in Example 6.
 
 ## EXAMPLE 5 Sixth roots of unity
@@ -1810,7 +1810,7 @@ $$
 \int_{-1}^{1}\left[T_{n}(x)\right]^{2} \frac{d x}{\sqrt{1-x^{2}}}= \begin{cases}\pi & \text { if } n=0 \\ \frac{\pi}{2} & \text { if } n \geq 1\end{cases}
 $$
 
-### 1.4 Complex Functions
+# 1.4 Complex Functions
 
 So far we have introduced complex numbers, both in Cartesian and polar forms, and we have studied their algebraic and geometric properties. We now move to the topic of functions of a complex variable.
 
@@ -1822,7 +1822,7 @@ Figure 1 To visualize a mapping by a complex-valued function $w=f(z)$, we use tw
 
 Figure 2 A translation is a mapping of the form $f(z)= z+b$, where $b$ is a complex number. In Example 1, $b= 2+i$.
 picture is not practical, instead we will use two planes, the $z$-plane and the $w$-plane, and visualize the function as a mapping from a subset of one plane to the other (see Figure 1). As usual, we will write $z=x+i y$, and also write $w=u+i v$. Thus as a convention, the $z$-plane axes will be labeled by $x$ and $y$ and those of the $w$-plane by $u$ and $v$. The image $f[S]$ of a set S under a mapping $f$ is the set of all points $w$ such that $w=f(z)$ for some $z$ in $S$. We illustrate the mapping process with basic examples including some familiar geometric transformations.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-38_507_1299_643_762.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-38_507_1299_643_762.jpg)
 
 ## EXAMPLE 1 Translation
 
@@ -1834,7 +1834,7 @@ $$
 
 Find the image of $S$ under the mapping $f(z)=z+2+i$.
 Solution For any $z$ in $S$, the number $f(z)$ is found by adding $z$ to $2+i$ as vectors. Hence the function translates the point $z$ two units to the right and one unit up. The image of $S$, then, is the set $S$ translated two units to the right and one unit up (see Figure 2).
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-38_424_1093_1727_797.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-38_424_1093_1727_797.jpg)
 
 Consequently, the image of the disk is a disk of the same radius, centered at $2+i$ (the image of the original center). Hence,
 
@@ -1867,9 +1867,9 @@ Let $S$ be the points lying inside and on the square of side length 2 centered a
 (b) What is the image of $S$ under the mapping $g(z)=2 i z$ ?
 
 Solution (a) For any $z$ in $S, f(z)=3 z$ has the effect of tripling the modulus and leaving the argument unchanged. Hence $f(z)$ lies on the ray extending from the origin to $z$, at three times the distance from the origin to $z$. In particular, the image of the square is a square whose corners are the images of the four original corners. It is easy to see from Figure 3 that the image of $S$ is a square of side length 6 , centered at the point 6 on the real axis.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-39_388_1047_1265_763.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-39_388_1047_1265_763.jpg)
 (b) In polar form, we have $i=\cos \frac{\pi}{2}+i \sin \frac{\pi}{2}$, and so $g(z)=2\left(\cos \frac{\pi}{2}+i \sin \frac{\pi}{2}\right) z$. Hence for any $z$ in $S, g(z)$ has the effect of doubling the modulus and adding $\frac{\pi}{2}$ to the argument. To determine $f[S]$, take the set $S$, dilate it by a factor of 2 , then rotate it counterclockwise by $\pi / 2$ (Figure 4).
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-39_394_931_1943_753.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-39_394_931_1943_753.jpg)
 
 Figure 5 The inversion
 
@@ -1906,7 +1906,7 @@ $$
 f[S]=\{w: 1<|w|,-\pi / 2 \leq \arg z \leq 0\} .
 $$
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-40_380_981_1841_810.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-40_380_981_1841_810.jpg)
 (b) As the modulus of $z$ increases from 2 up to infinity, the modulus of $1 / z$ decreases from $1 / 2$ down to zero (but never equals zero). As the argument of $z$ goes from 0 up to $\pi$, the argument of $1 / z$ goes from 0 down to $-\pi$. Hence $f[S]$ is the set of points in the lower half-plane, including the real axis, with $0<|w|<1 / 2$ (see Figure 6): $f[S]=\{w: 0<|w|<1 / 2,-\pi \leq \arg z \leq 0\}$.
 
 Figure 6 Under the inversion
@@ -1916,7 +1916,7 @@ f(z)=\frac{1}{z},
 $$
 
 points outside the circle of radius $2,|z| \geq 2$, get mapped to points inside the circle of radius $\frac{1}{2},|w| \leq \frac{1}{2}$.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-41_414_1017_208_782.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-41_414_1017_208_782.jpg)
 
 The function $f(z)=\frac{1}{z}$ in Example 3 is a special case of a general type of mapping of the form
 
@@ -1971,7 +1971,7 @@ u=x_{0}^{2}-\frac{v^{2}}{4 x_{0}^{2}}
 $$
 
 As we vary $x_{0}$ from 1 to 2 , these parabolas sweep out a parabolic region, which determines $f[S]$.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-42_502_1006_1082_789.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-42_502_1006_1082_789.jpg)
 
 ## Mappings in Polar Coordinates
 
@@ -2014,7 +2014,7 @@ $$
 f[S]=\left\{w:|w| \leq \frac{27}{8}, 0 \leq \arg w \leq \frac{3 \pi}{4}\right\} .
 $$
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-43_383_857_567_771.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-43_383_857_567_771.jpg)
 
 All the mappings considered in the examples have been one-to-one, in that distinct points $z_{1}$ and $z_{2}$ always map to distinct points $f\left(z_{1}\right)$ and $f\left(z_{2}\right)$. It is possible that more than one point on the $z$-plane will map to the same point on the $w$-plane. Such mappings are not one-to-one, and we are already familiar with some of them. For example, the function $f(z)=z^{2}$ with domain of definition $\mathbb{C}$ will map $z$ and $-z$ to the same point in the $w$-plane.
 
@@ -2088,7 +2088,7 @@ Consider the mapping $f(z)=z^{2}$ and the image $f[L]$.
 (b) Show that if $w$ is in $f[L], w$ is also in $L$.
 (c) Show that if $w$ is in $f[L], f(w)$ is in $f[L]$.
 
-### 1.5 The Complex Exponential
+# 1.5 The Complex Exponential
 
 In this section, we introduce the complex exponential function $e^{z}$. Unlike in calculus, where $e^{x}$ was introduced separately from the trigonometric functions, here we will use the exponential function $e^{z}$ to define the trigonometric functions of a complex variable $z$. This makes $e^{z}$ one of the most important functions in this book.
 
@@ -2157,7 +2157,7 @@ $$
 
 THE COMPLEX EXPONENTIAL
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-47_461_508_1496_112.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-47_461_508_1496_112.jpg)
 Figure 1 For $z=x+i y$, $e^{z}$ has modulus $e^{x}$ and argument $y$ :
 $$
 \begin{aligned}
@@ -2223,7 +2223,7 @@ Looking back at (4), and recalling the well-known fact from calculus that $e^{x}
 where $k$ is an integer (see Figure 1). We have the following results.
 
 Figure 2 To plot a point in exponential notation $z=r e^{i \theta}$, move a distance $r$ along the ray extending from the origin to $e^{i \theta}$.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-48_525_557_1570_108.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-48_525_557_1570_108.jpg)
 
 MODULUS AND ARGUMENT OF THE COMPLEX EXPONENTIAL
 
@@ -2310,7 +2310,7 @@ $$
 
 The proofs of (11) and (12) are immediate from (2) and (10). We leave the details to the exercises.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-49_463_502_1461_107.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-49_463_502_1461_107.jpg)
 Figure 3 To multiply two unimodular numbers we add their arguments, and to divide them we subtract their arguments.
 
 Multiplication and division of unimodular numbers are particularly easy to describe using the complex exponential. Indeed, if $z_{1}=e^{i \theta_{1}}$ and $z_{2}=e^{i \theta_{2}}$, then from (11) and (12) we get
@@ -2447,7 +2447,7 @@ The point $w=e^{x_{0}} e^{i y}$ has modulus $e^{x_{0}}$ and argument $y$. In par
 upper semicircle. Thus the image of $E F$ by $f$ is the upper semicircle with center at 0 and radius $e^{x_{0}}$.
 
 Figure 4 As usual, we denote the image of a point $P$ in the $x y$-plane by the point $P^{\prime}$ in the $u v$-plane. The mapping $w=e^{z}$ takes the vertical line segment $E F$ to a semicircle in the $u v$-plane with $u$-intercepts at $E^{\prime}$ and $F^{\prime}$.
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-52_501_1327_275_743.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-52_501_1327_275_743.jpg)
 
 Now, as we vary $x_{0}$ from -1 to $1, e^{x_{0}}$ varies from $e^{-1}$ to $e$. As a consequence, the corresponding semicircles increase in radius and fill the semiannular area between the semicircle of radius $e^{-1}$ with center at 0 and the semicircle of radius $e$ with center at 0 . (See Figure 4.)
 
@@ -2548,32 +2548,32 @@ In Exercises 19-24, write the given complex number in the form $a+i b$, where $a
 In Exercises 27-32, show that the shaded area $S$ in the $z$-plane is mapped to the shaded area in the $w$-plane by the given mapping $f(z)$.
 27.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_482_868_653_227.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_482_868_653_227.jpg)
 Figure 5
 
 29. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_501_906_1193_227.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_501_906_1193_227.jpg)
 Figure 7
 
 31. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_503_912_1746_231.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_503_912_1746_231.jpg)
 Figure 9
 
 28. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_490_860_643_1217.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_490_860_643_1217.jpg)
 Figure 6
 
 30. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_494_872_1189_1219.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_494_872_1189_1219.jpg)
 Figure 8
 
 32. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_508_888_1739_1221.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-54_508_888_1739_1221.jpg)
 Figure 10
 
 In Exercises 33-36, (a) linearize the integrand; (b) evaluate the given integral.
@@ -2619,7 +2619,7 @@ $$
 
 This finite sum of cosines is a constant multiple of the Dirichlet kernel (see Section 7.6). It plays an important role in the theory of Fourier series. The sum of sines in (c) is known as the conjugate Dirichlet kernel of order $n$ and is also useful in the theory of Fourier series.
 
-### 1.6 Trigonometric and Hyperbolic Functions
+# 1.6 Trigonometric and Hyperbolic Functions
 
 In the previous section, we defined the complex exponential function $e^{z}$ as an extension of the real exponential function $e^{x}$. The function $e^{x}$ is one of the so-called elementary functions from calculus. Elementary functions comprise
 among other functions the trigonometric functions, the hyperbolic functions, the logarithmic functions, and raising numbers to powers. Our goal in this and the following section is to extend some of the elementary functions to complex numbers and study their basic properties. These new functions will provide us with ample examples to test the theory of derivatives and integrals that will be presented in the following chapters.
@@ -2875,7 +2875,7 @@ $v \geq 0$.
 
 OTHER TRIGONOMETRIC FUNCTIONS
 the upper half $w$-plane $v \geq 0$, including the $u$-axis (Figure 1). You should verify (Exercise 23) that the boundary of $S$ gets mapped to the boundary of $f[S]$, namely, the $u$-axis. $\square$
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-61_411_1220_326_701.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-61_411_1220_326_701.jpg)
 
 The other trigonometric functions are defined for complex variables in terms of the cosine and sine in accordance with the real definitions.
 
@@ -2986,32 +2986,32 @@ In Exercises 9-14, express the given function $f(z)$ in the form $f(z)=u(x, y)+ 
 In Exercises 15-20, show that the shaded area $S$ in the $z$-plane is mapped to the shaded area in the $w$-plane by the given mapping $f(z)$.
 15.
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_419_850_564_195.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_419_850_564_195.jpg)
 Figure 2
 
 17. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_390_850_1056_195.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_390_850_1056_195.jpg)
 Figure 4
 
 19. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_386_842_1517_201.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_386_842_1517_201.jpg)
 Figure 6
 
 16. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_413_841_566_1140.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_413_841_566_1140.jpg)
 Figure 3
 
 18. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_386_843_1054_1138.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_386_843_1054_1138.jpg)
 Figure 5
 
 20. 
 
-![](13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_392_845_1509_1134.jpg)
+![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-63_392_845_1509_1134.jpg)
 Figure 7
 
 21. Establish (16) and (18).
@@ -3064,7 +3064,7 @@ In Exercises 25-52, establish the given identity. In establishing an identity wi
 52. $|\sinh z|=\sqrt{\sinh ^{2} x+\sin ^{2} y}$.
 53. Show that either $\tan z=i$ or $\tan z=-i$ has no solution. [Hint: Use (15) and (16).]
 
-### 1.7 Logarithms and Powers
+# 1.7 Logarithms and Powers
 
 In this section we define the complex logarithms and define what it means to raise a complex number to a complex power. Thus we will be able to compute expressions like $\log i$ and $i^{i}$.
 
@@ -3444,4 +3444,3 @@ $$
 (b) Define $E_{n}=e^{\beta 2 n \pi} e^{\alpha 2 n \pi i}$ for all integers $n$. Argue that if $\beta \neq 0$, then $\left|E_{n}\right|$ are all distinct, and hence all values of $E_{n}$ are distinct. Thus $z^{a}$ has an infinite number of values.
 (c) Otherwise, if $\beta=0$ and $\alpha$ is irrational, we have $E_{n}=e^{\alpha 2 n \pi i}$. Suppose $E_{j}=E_{l}$ for some $j<l$. Use (14), Section 1.5, to conclude that $\alpha(l-j)=k$ for some integer $k$. However, this is impossible because $\alpha$ is irrational. Hence all $E_{n}$ are distinct and $z^{a}$ has an infinite number of values.
 40. Show that the formula for the inverse tangent (13) holds for real $z$, by using the geometric interpretation of the tangent function and Figure 2.
-
