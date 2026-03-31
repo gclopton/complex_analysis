@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "c6d25b09b98014c3",
+        "id": "40d1756752d6a58f",
         "type": "split",
         "dimension": 63.65019011406844,
         "children": [
@@ -29,11 +29,11 @@
             ]
           },
           {
-            "id": "c5221389be82b532",
+            "id": "34281b96cc7aa5e7",
             "type": "tabs",
             "children": [
               {
-                "id": "30af34bd71110859",
+                "id": "40b410787405a264",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -62,7 +62,7 @@
                       },
                       "serial": {
                         "columns": 88,
-                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master ⇡1 +36 !6 ?5 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[73C\u001b[38;5;244;24m─╯\u001b[75D\u001b[0m",
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !2 ?1 \u001b[33;49m\u001b[38;5;244m──────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 00:59:01 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[57C\u001b[38;5;244m─╯\u001b[77D\u001b[0m",
                         "rows": 25
                       }
                     }
@@ -283,9 +283,11 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "active": "30af34bd71110859",
+  "active": "40b410787405a264",
   "lastOpenFiles": [
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2 The Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.1 Complex Numbers.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-3-modulus-distance-rings.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-3-modulus-distance.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-3-modulus.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-2-conjugation.png",
@@ -309,9 +311,7 @@
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.6 Trigonometric and Hyperbolic Functions.md",
     "Pasted image 20260330073558.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-1-6-polar-figure.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.1 Complex Numbers.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.5 The Complex Exponential.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise3-mapping.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Chapter 01 Complex Numbers and Functions.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.7 Logarithms and Powers.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.6 Differentiation of Functions of Several Variables.md",
