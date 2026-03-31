@@ -31,7 +31,9 @@
       "pr",
       "code",
       "review",
-      "property"
+      "property",
+      "theorem",
+      "identity"
     ],
     "settings": {
       "expansion": [
@@ -358,6 +360,20 @@
           "changes": {
             "icon": "lucide-divide",
             "color": "251, 255, 0"
+          }
+        }
+      ],
+      "theorem": [
+        {
+          "changes": {
+            "color": "0, 255, 17"
+          }
+        }
+      ],
+      "identity": [
+        {
+          "changes": {
+            "color": "55, 255, 0"
           }
         }
       ]
