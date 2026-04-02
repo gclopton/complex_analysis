@@ -151,3 +151,125 @@ After changing plugin code in `.obsidian/plugins/image-tools/main.js`, Obsidian 
 
 - run `Reload app`, or
 - disable and re-enable the plugin.
+
+## Generic Callout Removal Command
+
+This vault now includes a small custom plugin that adds a command-palette action for removing the wrapper from the callout at the current cursor position without deleting the callout contents.
+
+The command is generic. It does not depend on the callout being a `figure` callout. It works with any Obsidian callout whose header uses the normal syntax
+
+```md
+> [!type] Optional title
+> content
+```
+
+including custom callout types created by Callout Manager or other plugins.
+
+### Files added
+
+- `.obsidian/plugins/callout-tools/manifest.json`
+- `.obsidian/plugins/callout-tools/main.js`
+- `.obsidian/community-plugins.json`
+
+The shared vault template under `~/utils/ObsidianConfig/` was also updated with the same plugin files and plugin-list entry so this can be carried into future vault creation.
+
+### Command added
+
+The plugin registers these editor commands:
+
+- `Remove current callout wrapper`
+- `Move first callout line to title`
+
+The intended workflow is simple: place the cursor anywhere inside a callout and run the desired command from the command palette.
+
+### What the command does
+
+The plugin scans upward from the cursor to find the nearest enclosing callout header line matching the standard Obsidian form `[!type]`. It then finds the full extent of that callout block by following quoted lines at the same or deeper quote level.
+
+Once found, it unwraps exactly one callout layer:
+
+1. The callout header line is removed.
+2. If the callout had a title, the title is preserved as plain text.
+3. Each content line has one quote level removed.
+4. Nested callouts remain intact, because only one quote layer is stripped.
+
+For example, this
+
+```md
+> [!figure] Figure 2
+>
+> ![](image.png)
+> Caption text
+```
+
+becomes
+
+```md
+Figure 2
+
+![](image.png)
+Caption text
+```
+
+and a nested callout inside another callout is only unwrapped one level at a time.
+
+### Title-promotion command
+
+The second command, `Move first callout line to title`, is designed for callouts written like this:
+
+```md
+> [!exercise]
+> Exercise 1: A complex-valued piecewise continuous function
+> Evaluate ...
+```
+
+It rewrites them into this form:
+
+```md
+> [!exercise] Exercise 1: A complex-valued piecewise continuous function
+>
+> Evaluate ...
+```
+
+The command is intentionally conservative. It only acts when:
+
+1. the current callout header has no title already, and
+2. the first non-empty content line is ordinary text.
+
+It refuses to promote the line when the first non-empty content line is structurally sensitive, such as:
+
+- another quoted block,
+- a fenced code block marker, or
+- a bare `$$` math-fence line.
+
+This is meant to avoid accidentally turning non-title structure into a callout heading.
+
+### Why this was implemented as a plugin
+
+This was intentionally implemented as a small local plugin rather than patching Obsidian core or modifying the Callout Manager plugin. That keeps the feature isolated, easy to port into new vaults, and easy to remove if needed.
+
+The context menu shown when clicking a rendered callout appears to come from Obsidian’s existing callout UI, not from a simple user-editable config file. Adding a command-palette action was therefore the lowest-risk path.
+
+### How to port this into `ocreate`
+
+To make new vaults include this feature automatically, the generator should ensure that the shared config directory contains:
+
+- `ObsidianConfig/plugins/callout-tools/manifest.json`
+- `ObsidianConfig/plugins/callout-tools/main.js`
+
+and that `callout-tools` is present in:
+
+- `ObsidianConfig/community-plugins.json`
+
+Because `ocreate` already copies the shared `.obsidian` config into each new vault, this is enough to propagate the feature to newly created vaults.
+
+### Current rollout decision
+
+Even though the shared config directory was updated during implementation, the current intent is to treat this as a vault-local experiment first. The `complex_analysis` vault is the testbed. Only after extended use confirms there are no bugs or undesirable side effects should this be promoted as a default feature for all new vaults created by `ocreate`.
+
+### Reload requirement
+
+After adding or changing `.obsidian/plugins/callout-tools/main.js`, Obsidian must reload before the command appears. In practice:
+
+- run `Reload app`, or
+- disable and re-enable the plugin.

@@ -6,12 +6,12 @@
       {
         "id": "d21a6e4167796151",
         "type": "split",
-        "dimension": 47.752043596730246,
+        "dimension": 52.638270820089,
         "children": [
           {
             "id": "7ceceeabec34773b",
             "type": "tabs",
-            "dimension": 67.77777777777779,
+            "dimension": 67.4074074074074,
             "children": [
               {
                 "id": "0f285c06c06aa504",
@@ -19,12 +19,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.6 Cauchy's Integral Formula.md",
+                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "3.6 Cauchy's Integral Formula"
+                  "title": "3.2 Complex Integration"
                 }
               }
             ]
@@ -32,7 +32,7 @@
           {
             "id": "16156353b5b687c8",
             "type": "tabs",
-            "dimension": 32.22222222222222,
+            "dimension": 32.592592592592595,
             "children": [
               {
                 "id": "b5856e1a381e02c2",
@@ -63,9 +63,9 @@
                         "useWin32Conhost": true
                       },
                       "serial": {
-                        "columns": 79,
-                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"3.5 Proof of Cauchy's Theorem.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.5 Proof of Cauchy's Theorem.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.5 Proof of Cauchy's Theorem.backup-20260402-072246.md\r\nFormatted 5 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"3.5 Proof of Cauchy's Theorem.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.5 Proof of Cauchy's Theorem.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.5 Proof of Cauchy's Theorem.backup-20260402-072309.md\r\nConverted 9 figures: Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6, Figure 7, Figure 8, Figure 9\r\nItalicized 9 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 9 figure callouts, 0 bare image lines, 9 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"3.5 Proof of Cauchy's Theorem.md\"\r\n\u001b[0mNo standalone figure blocks or unitalicized figure mentions found in /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.5 Proof of Cauchy's Theorem.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"3.6 Cauchy's Integral Formula.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.6 Cauchy's Integral Formula.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-072804.md\r\nConverted 9 figures: Figure 1, Figure 2, Figure 3, Figure 4, Figure 6, Figure 7, Figure 8, Figure 9, Figure 10\r\nItalicized 8 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 9 figure callouts, 1 bare image lines, 8 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"3.6 Cauchy's Integral Formula.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.6 Cauchy's Integral Formula.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-073418.md\r\nConverted 0 figures: \r\nItalicized 2 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 8 figure callouts, 1 bare image lines, 10 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !3 ?3 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[48C\u001b[38;5;244m─╯\u001b[68D\u001b[0m",
-                        "rows": 13
+                        "columns": 63,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mls\r\n\u001b[0m3.1 Contours and Paths in the Complex Plane.md 3.8 Applications to Harmonic Functions.md\r\n3.2 Complex Integration.md                     3.9 Goursat's Theorem.md\r\n3.3 Independence of Path.md                    Chapter 03 Complex Integration.md\r\n3.4 Cauchy's Integral Theorem.md               \u001b[36;1mbackups\r\n\u001b[0m3.5 Proof of Cauchy's Theorem.md               \u001b[36;1mimages\r\n\u001b[0m3.6 Cauchy's Integral Formula.md               \u001b[36;1moriginal copy\r\n\u001b[0m3.7 Bounds for Moduli of Analytic Functions.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"3.2 Complex Integration.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.2 Complex Integration.backup-20260402-093159.md\r\nFormatted 6 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !9 ?12 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[32C\u001b[38;5;244m─╯\u001b[52D\u001b[0m",
+                        "rows": 11
                       }
                     }
                   },
@@ -82,7 +82,7 @@
       {
         "id": "3177f3a0954701da",
         "type": "tabs",
-        "dimension": 52.247956403269754,
+        "dimension": 47.361729179911,
         "children": [
           {
             "id": "6ec8a9fb12317366",
@@ -288,6 +288,24 @@
   },
   "active": "b5856e1a381e02c2",
   "lastOpenFiles": [
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.2 Complex Integration.backup-20260402-093159.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.1 Contours and Paths in the Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.9 Goursat's Theorem.backup-20260402-081748.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.9 Goursat's Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.9 Goursat's Theorem.backup-20260402-081431.md",
+    "Screenshot 2026-04-02 at 8.10.27 AM.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.8 Applications to Harmonic Functions.backup-20260402-080606.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.8 Applications to Harmonic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.7 Bounds for Moduli of Analytic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.7 Bounds for Moduli of Analytic Functions.backup-20260402-075745.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.8 Applications to Harmonic Functions.backup-20260402-075659.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.7 Bounds for Moduli of Analytic Functions.backup-20260402-075455.md",
+    "Screenshot 2026-04-02 at 7.52.53 AM.png",
+    "Screenshot 2026-04-02 at 7.52.26 AM.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-075035.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.6 Cauchy's Integral Formula.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-072804.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-073418.md",
@@ -301,36 +319,18 @@
     "Pasted image 20260401051005.png",
     "Trash",
     "Trash/3.4 Cauchy's Integral Theorem.backup-20260402-064631.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md",
     "Trash/3.4 Cauchy's Integral Theorem.backup.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 03 Complex Integration.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/images/Screenshot 2026-04-02 at 5.59.48 AM.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md",
     "Screenshot 2026-04-02 at 4.59.04 AM.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.1 Contours and Paths in the Complex Plane.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.4 Complex Functions.md",
     "Screenshot 2026-04-01 at 5.42.59 AM.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.4 The Heat Equation and Gauss's Kernel.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.4 Iteration Methods for Laplace's Equation.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.2 The Finite Difference Method for the Wave Equation.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.1 The Finite Difference Method for the Heat Equation.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-16_184_304_629_100.jpg",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-10_341_457_268_74.jpg",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-17_183_307_729_707.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-20_403_1048_202_677.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-21_210_80_670_185.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-16_185_309_297_1065.jpg",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/Chapter 18 Finite Difference Numerical Methods.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.4 The Fourier and Discrete Fourier Transforms.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.3 The Discrete and Fast Fourier Transforms.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.2 Partial Differential Equations and the Sampling Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.1 The Sampling Theorem.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.pdf",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/images"
