@@ -36,7 +36,8 @@
       "identity",
       "proposition",
       "corollary",
-      "aside"
+      "aside",
+      "lemma"
     ],
     "settings": {
       "expansion": [
@@ -398,6 +399,13 @@
         {
           "changes": {
             "color": "194, 194, 194"
+          }
+        }
+      ],
+      "lemma": [
+        {
+          "changes": {
+            "color": "43, 255, 0"
           }
         }
       ]

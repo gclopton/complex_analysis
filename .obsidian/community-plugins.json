@@ -1,6 +1,7 @@
 [
   "highlightr-plugin",
   "callout-tools",
+  "callout-outline",
   "callout-manager",
   "colorful-note-borders",
   "execute-code",
