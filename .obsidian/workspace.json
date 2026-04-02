@@ -4,114 +4,86 @@
     "type": "split",
     "children": [
       {
-        "id": "7ceceeabec34773b",
-        "type": "tabs",
-        "dimension": 48.57673267326732,
+        "id": "2ed9871b6b90506c",
+        "type": "split",
+        "dimension": 47.752043596730246,
         "children": [
           {
-            "id": "0f285c06c06aa504",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.2 Limits and Continuity.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2.2 Limits and Continuity"
-            }
+            "id": "7ceceeabec34773b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0f285c06c06aa504",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "3.4 Cauchy's Integral Theorem"
+                }
+              }
+            ]
           },
           {
-            "id": "40b410787405a264",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "/bin/zsh",
-                    "name": "",
-                    "platforms": {
-                      "darwin": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": true,
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {},
-                    "type": "integrated",
-                    "useWin32Conhost": true
+            "id": "cd1c2b2ea04da56d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "cd75812eddf67077",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration",
+                      "focus": false,
+                      "profile": {
+                        "args": [],
+                        "executable": "/bin/zsh",
+                        "name": "",
+                        "platforms": {
+                          "darwin": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": true,
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {},
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": {
+                        "columns": 80,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master +143 !8 ?24 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[65C\u001b[38;5;244m─╯\u001b[69D\u001b[0m",
+                        "rows": 25
+                      }
+                    }
                   },
-                  "serial": {
-                    "columns": 82,
-                    "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mgit\u001b[0m commit -m \u001b[33m\"edited chapter 1.2\"\r\n\u001b[0m[master 1f3b74c] edited chapter 1.2\r\n Committer: Grady Clopton <gradyclopton@wirelessprv-10-192-137-92.near.illinois.edu>\r\nYour name and email address were configured automatically based\r\non your username and hostname. Please check that they are accurate.\r\nYou can suppress this message by setting them explicitly. Run the\r\nfollowing command and follow the instructions in your editor to edit\r\nyour configuration file:\r\n\r\n    git config --global --edit\r\n\r\nAfter doing this, you may fix the identity used for this commit with:\r\n\r\n    git commit --amend --reset-author\r\n\r\n 3 files changed, 26 insertions(+), 16 deletions(-)\r\n create mode 100644 Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-3-modulus-distance-rings.png\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mgit\u001b[0m push -u origin master\r\nEnumerating objects: 17, done.\r\nCounting objects: 100% (17/17), done.\r\nDelta compression using up to 10 threads\r\nCompressing objects: 100% (9/9), done.\r\nWriting objects: 100% (9/9), 1.64 KiB | 1.64 MiB/s, done.\r\nTotal 9 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)\r\nremote: Resolving deltas: 100% (8/8), completed with 8 local objects.\r\nTo github.com:gclopton/complex_analysis.git\r\n   f5ce4bb..1f3b74c  master -> master\r\nbranch 'master' set up to track 'origin/master'.\r\n\r\n\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !1 \u001b[33;49m\u001b[38;5;244m───\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 00:59:20 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[0m                \u001b[51C\u001b[38;5;244m─╯\u001b[69D\u001b[0m",
-                    "rows": 56
-                  }
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "Terminal: gradyclopton@wirelessprv-10-192-137-92:~/ObsidianVaults/complex_analysis"
                 }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "Terminal: gradyclopton@wirelessprv-10-192-137-92:~/ObsidianVaults/complex_analysis"
-            }
-          },
-          {
-            "id": "60968c259319232b",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "/bin/zsh",
-                    "name": "",
-                    "platforms": {
-                      "darwin": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": true,
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {},
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": {
-                    "columns": 82,
-                    "data": "\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m/\u001b[38;5;250mB\u001b[38;5;254m/\u001b[38;5;250mA\u001b[38;5;254m/\u001b[38;5;255;1mChapter 02 Analytic Functions\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !6 ?7 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[76C\u001b[38;5;244m─╯\u001b[78D\u001b[0m",
-                    "rows": 56
-                  }
-                }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "Terminal: gradyclopton@wirelessprv-10-192-137-92:~/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions"
-            }
+              }
+            ]
           }
         ],
-        "currentTab": 1
+        "direction": "horizontal"
       },
       {
-        "id": "490237ace72a31ac",
+        "id": "3177f3a0954701da",
         "type": "tabs",
-        "dimension": 51.42326732673267,
+        "dimension": 52.247956403269754,
         "children": [
           {
-            "id": "da3b3ee093af01d4",
+            "id": "6ec8a9fb12317366",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -123,18 +95,19 @@
             }
           },
           {
-            "id": "49fe1b326b3a0685",
+            "id": "d01f56d28fb4670b",
             "type": "leaf",
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/Chapter 1 Complex Numbers and Functions.pdf"
+                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Chapter 1 Complex Numbers and Functions"
+              "title": "Chapter 3 Complex Integration"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -191,7 +164,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5
+    "width": 277.5
   },
   "right": {
     "id": "3f7e6a001500c907",
@@ -311,134 +284,52 @@
       "markdown-table-editor:Open Markdown Table Editor": false
     }
   },
-  "floating": {
-    "id": "41a5f0fa85f50209",
-    "type": "floating",
-    "children": [
-      {
-        "id": "272667d405c22907",
-        "type": "window",
-        "children": [
-          {
-            "id": "7602af7114e7f330",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "67650b6af7e8075e",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.3 Polar Form.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "1.3 Polar Form"
-                }
-              },
-              {
-                "id": "1925d357604c8aa3",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.4 Complex Functions.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "1.4 Complex Functions"
-                }
-              },
-              {
-                "id": "45bc3a45dd19a3b5",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.5 The Complex Exponential.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "1.5 The Complex Exponential"
-                }
-              },
-              {
-                "id": "d0944e4b792399ac",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.6 Trigonometric and Hyperbolic Functions.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "1.6 Trigonometric and Hyperbolic Functions"
-                }
-              }
-            ],
-            "currentTab": 3
-          }
-        ],
-        "direction": "vertical",
-        "x": 244,
-        "y": 38,
-        "width": 1024,
-        "height": 800,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "40b410787405a264",
+  "active": "cd75812eddf67077",
   "lastOpenFiles": [
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.2 Limits and Continuity.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/original copy/Chapter 2 Analytic Functions.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.1 Regions of the Complex Plane.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.7 Logarithms and Powers.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.6 Trigonometric and Hyperbolic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2 The Complex Plane.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.5 The Complex Exponential.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/images/Screenshot 2026-04-02 at 5.59.48 AM.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md",
+    "Screenshot 2026-04-02 at 4.59.04 AM.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.1 Contours and Paths in the Complex Plane.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.4 Complex Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.3 Polar Form.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-6-bounds-sum-difference-v2.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-6-triangle-inequality.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-6-bounds-sum-difference.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-6-right-triangle.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-4c-ellipse.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-4b-disk.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-4a-circle.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.1 Complex Numbers.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-3-modulus-distance-rings.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/exercise-3-modulus-distance.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/review-3-modulus.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/1.2 The Complex Plane 1 1.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/Chapter 1 Complex Numbers and Functions.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/Chapter 01 Complex Numbers and Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/1.2 The Complex Plane 1.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.5 Harmonic Functions and Laplace's Equation.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.4 The Cauchy-Riemann Equations.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.3 Analytic Functions.md",
-    "vault_changes.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Chapter 01 Complex Numbers and Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.6 Differentiation of Functions of Several Variables.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/Chapter 02 Analytic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Chapter 1 Complex Numbers and Functions 1.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/original copy/Chapter 02 Analytic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/original copy",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1 COMPLEX NUMBERS AND FUNCTIONS.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/1 COMPLEX NUMBERS AND FUNCTIONS/images",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/1 COMPLEX NUMBERS AND FUNCTIONS/1 COMPLEX NUMBERS AND FUNCTIONS.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/1 COMPLEX NUMBERS AND FUNCTIONS",
-    "Problems/Palka/1 Rudiments of Topology.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/images",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2 ANALYTIC FUNCTIONS.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/2 ANALYTIC FUNCTIONS/2 ANALYTIC FUNCTIONS.md"
+    "Screenshot 2026-04-01 at 5.42.59 AM.png",
+    "Pasted image 20260401051005.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.4 The Heat Equation and Gauss's Kernel.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.4 Iteration Methods for Laplace's Equation.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.2 The Finite Difference Method for the Wave Equation.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.1 The Finite Difference Method for the Heat Equation.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-16_184_304_629_100.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-10_341_457_268_74.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-17_183_307_729_707.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-20_403_1048_202_677.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-21_210_80_670_185.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-16_185_309_297_1065.jpg",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/Chapter 18 Finite Difference Numerical Methods.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.4 The Fourier and Discrete Fourier Transforms.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.3 The Discrete and Fast Fourier Transforms.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.2 Partial Differential Equations and the Sampling Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.1 The Sampling Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/images",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/original copy/Chapter 16 Green's Functions and Conformal Mappings.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/original copy/Chapter 16 Green's Functions and Conformal Mappings.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/Chapter 16 Green's Functions and Conformal Mappings.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.8 Neumann Functions and the Solution of Neumann Problems.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.7 Green's Functions and Conformal Mappings.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.6 Solving Dirichlet Problems with Conformal Mappings.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.5 Analytic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.4 Green's Functions for the Disk and the Upper Half-Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.3 Green's Functions.md"
   ]
 }

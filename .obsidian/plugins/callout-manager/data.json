@@ -33,7 +33,10 @@
       "review",
       "property",
       "theorem",
-      "identity"
+      "identity",
+      "proposition",
+      "corollary",
+      "aside"
     ],
     "settings": {
       "expansion": [
@@ -374,6 +377,27 @@
         {
           "changes": {
             "color": "55, 255, 0"
+          }
+        }
+      ],
+      "proposition": [
+        {
+          "changes": {
+            "color": "30, 255, 0"
+          }
+        }
+      ],
+      "corollary": [
+        {
+          "changes": {
+            "color": "55, 255, 0"
+          }
+        }
+      ],
+      "aside": [
+        {
+          "changes": {
+            "color": "194, 194, 194"
           }
         }
       ]

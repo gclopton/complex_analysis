@@ -1,0 +1,116 @@
+{
+  "chapters": {
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 11 The Fourier Transform and Its Applications.pdf": {
+      "completed_at": "2026-04-01T04:28:27",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications",
+      "final_number": 8,
+      "pdf_id": "c06ad946-a4be-44c4-a6a2-68af8ed4d18f",
+      "title": "The Fourier Transform and Its Applications"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 12 The Laplace and Hankel Transforms with Applications.pdf": {
+      "completed_at": "2026-04-01T04:23:54",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications",
+      "final_number": 9,
+      "pdf_id": "68332ba3-9551-434a-a491-ce53af60160e",
+      "title": "The Laplace and Hankel Transforms with Applications"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 3 Complex Integration.pdf": {
+      "completed_at": "2026-04-01T04:20:50",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration",
+      "final_number": 3,
+      "pdf_id": "858d24a8-ffa3-45ac-9ebe-5fc1408bbf28",
+      "title": "Complex Integration"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 4 Complex Series.pdf": {
+      "completed_at": "2026-04-01T04:21:30",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series",
+      "final_number": 4,
+      "pdf_id": "5443c314-b89d-4dd1-b950-bb21550520a5",
+      "title": "Complex Series"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 5 Residue Theory.pdf": {
+      "completed_at": "2026-04-01T04:22:05",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory",
+      "final_number": 5,
+      "pdf_id": "b1ad9866-c636-4d3b-85cb-e1f2bdb2e560",
+      "title": "Residue Theory"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 6 Conformal Mappings.pdf": {
+      "completed_at": "2026-04-01T04:22:39",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings",
+      "final_number": 6,
+      "pdf_id": "1e48851a-8747-45b3-89c9-e5bcc05fcde8",
+      "title": "Conformal Mappings"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Complex Analysis with Partial Differntial Equations/Chapter 7 Fourier Series.pdf": {
+      "completed_at": "2026-04-01T04:23:03",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series",
+      "final_number": 7,
+      "pdf_id": "3daa498e-ff33-460f-afa4-7af2cd933f9d",
+      "title": "Fourier Series"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Appendix A Ordinary Differential Equations Review of Concepts and Methods.pdf": {
+      "completed_at": "2026-04-01T04:24:11",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods",
+      "final_number": 10,
+      "pdf_id": "ecab6dba-4966-4870-8bb0-6c1f9a8f866d",
+      "title": "Ordinary Differential Equations Review of Concepts and Methods"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 10 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.pdf": {
+      "completed_at": "2026-04-01T04:26:24",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations",
+      "final_number": 17,
+      "pdf_id": "e0b9cf26-d77c-487a-ae6f-e9bad0026586",
+      "title": "Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 11 An Introduction to Quantum Mechanics.pdf": {
+      "completed_at": "2026-04-01T04:25:48",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics",
+      "final_number": 15,
+      "pdf_id": "68a1ca9d-3a11-44bb-a7dd-ac2482ab3577",
+      "title": "An Introduction to Quantum Mechanics"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 12 Green's Functions and Conformal Mappings.pdf": {
+      "completed_at": "2026-04-01T04:26:14",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings",
+      "final_number": 16,
+      "pdf_id": "7ce1063d-f13d-4631-8956-8a97e0eaf48a",
+      "title": "Green's Functions and Conformal Mappings"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 3 Partial Differential Equations in Rectangular Coordinates.pdf": {
+      "completed_at": "2026-04-01T04:24:37",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates",
+      "final_number": 11,
+      "pdf_id": "e7203df9-f76c-453b-be1e-147d5ba42d96",
+      "title": "Partial Differential Equations in Rectangular Coordinates"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 4 Partial Differential Equations in Polar and Cylindrical Coordinates.pdf": {
+      "completed_at": "2026-04-01T04:24:57",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates",
+      "final_number": 12,
+      "pdf_id": "1c611338-958a-44f7-9d79-2dde87e6ac2a",
+      "title": "Partial Differential Equations in Polar and Cylindrical Coordinates"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 5 Partial Differential Equations in Spherical Coordinates.pdf": {
+      "completed_at": "2026-04-01T04:25:20",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates",
+      "final_number": 13,
+      "pdf_id": "122e2a0e-ba5b-4934-9af1-dcd4ea360903",
+      "title": "Partial Differential Equations in Spherical Coordinates"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 6 Sturm-Liouville Theory with Engineering Applications.pdf": {
+      "completed_at": "2026-04-01T04:25:36",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications",
+      "final_number": 14,
+      "pdf_id": "28f4ed6f-dce0-442f-8bed-abc918ef4e83",
+      "title": "Sturm-Liouville Theory with Engineering Applications"
+    },
+    "/Users/gradyclopton/Downloads/Asmar Complex Analysis/Asmar Partial Differential Equations/split chapters/Chapter 9 Finite Difference Numerical Methods.pdf": {
+      "completed_at": "2026-04-01T04:26:38",
+      "final_folder": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods",
+      "final_number": 18,
+      "pdf_id": "b031e613-3d8f-4430-8aca-4034f4fb7b9a",
+      "title": "Finite Difference Numerical Methods"
+    }
+  }
+}
