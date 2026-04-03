@@ -6,43 +6,105 @@
       {
         "id": "d21a6e4167796151",
         "type": "split",
-        "dimension": 55.09222133119487,
         "children": [
           {
-            "id": "7ceceeabec34773b",
-            "type": "tabs",
-            "dimension": 67.4074074074074,
+            "id": "3f292f9dab14374a",
+            "type": "split",
+            "dimension": 78.21350762527233,
             "children": [
               {
-                "id": "0f285c06c06aa504",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
-                    "mode": "source",
-                    "source": false
+                "id": "30b8aa339d18ae53",
+                "type": "tabs",
+                "dimension": 49.72752043596731,
+                "children": [
+                  {
+                    "id": "0f285c06c06aa504",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md",
+                        "mode": "source",
+                        "source": false
+                      },
+                      "icon": "lucide-file",
+                      "title": "5.1 Cauchy's Residue Theorem"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "d2ff09b243c3fc09",
+                "type": "tabs",
+                "dimension": 50.2724795640327,
+                "children": [
+                  {
+                    "id": "099ba23951f774ca",
+                    "type": "leaf",
+                    "state": {
+                      "type": "pdf",
+                      "state": {
+                        "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/original copy/Chapter 5 Residue Theory - bookmarked.pdf",
+                        "page": 7,
+                        "left": -20,
+                        "top": 550,
+                        "zoom": 0.92
+                      },
+                      "icon": "lucide-file-text",
+                      "title": "Chapter 5 Residue Theory - bookmarked"
+                    }
                   },
-                  "icon": "lucide-file",
-                  "title": "3.4 Cauchy's Integral Theorem"
-                }
+                  {
+                    "id": "5e74a7c8a046f330",
+                    "type": "leaf",
+                    "state": {
+                      "type": "pdf",
+                      "state": {
+                        "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/original copy/Chapter 4 Complex Series - bookmarked.pdf",
+                        "page": 79,
+                        "left": -4,
+                        "top": 669,
+                        "zoom": 0.8
+                      },
+                      "icon": "lucide-file-text",
+                      "title": "Chapter 4 Complex Series - bookmarked"
+                    }
+                  },
+                  {
+                    "id": "ed433820909d2253",
+                    "type": "leaf",
+                    "state": {
+                      "type": "pdf",
+                      "state": {
+                        "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
+                        "page": 104,
+                        "left": -11,
+                        "top": 724,
+                        "zoom": 1.066831683168317
+                      },
+                      "icon": "lucide-file-text",
+                      "title": "Chapter 3 Complex Integration"
+                    }
+                  }
+                ]
               }
-            ]
+            ],
+            "direction": "vertical"
           },
           {
             "id": "16156353b5b687c8",
             "type": "tabs",
-            "dimension": 32.592592592592595,
+            "dimension": 21.78649237472767,
             "children": [
               {
-                "id": "b5856e1a381e02c2",
+                "id": "2996137c9862f964",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
                   "type": "terminal:terminal",
                   "state": {
                     "terminal:terminal": {
-                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration",
+                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series",
                       "focus": false,
                       "profile": {
                         "args": [],
@@ -63,9 +125,9 @@
                         "useWin32Conhost": true
                       },
                       "serial": {
-                        "columns": 62,
-                        "data": "\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m/\u001b[38;5;250mB\u001b[38;5;254m/\u001b[38;5;250mA\u001b[38;5;254m/\u001b[38;5;255;1mChapter 03 Complex Integration\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !\u001b[0m\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"3.3 Independence of Path.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.3 Independence of Path.backup-20260402-114417.md\r\nFormatted 1 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"3.3 Independence of Path.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.3 Independence of Path.backup-20260402-114624.md\r\nFormatted 1 hints\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !7 ?4 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[31C\u001b[38;5;244m─╯\u001b[51D\u001b[0m",
-                        "rows": 11
+                        "columns": 175,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.1 Sequences and Series of Complex Numbers.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.1 Sequences and Series of Complex Numbers.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.1 Sequences and Series of Complex Numbers.backup-20260402-211650.md\r\nConverted 6 figures: Figure 2, Figure 3, Figure 4, Figure 5, Figure 6, Figure 7\r\nItalicized 10 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 7 figure callouts, 0 bare image lines, 10 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.1 Sequences and Series of Complex Numbers.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.1 Sequences and Series of Complex Numbers.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.1 Sequences and Series of Complex Numbers.backup-20260402-211721.md\r\nFormatted 1 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m/\u001b[38;5;250mB\u001b[38;5;254m/\u001b[38;5;250mA\u001b[38;5;254m/\u001b[38;5;255;1mChapter 04 Complex Series\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !11 ?20 \u001b[33;49m\u001b[38;5;244m────────\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.2 Sequences and Series of Functions.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.2 Sequences and Series of Functions.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.2 Sequences and Series of Functions.backup-20260402-230417.md\r\nConverted 4 figures: Figure 1, Figure 2, Figure 3, Figure 4\r\nItalicized 4 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 4 figure callouts, 0 bare image lines, 4 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.2 Sequences and Series of Functions.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.2 Sequences and Series of Functions.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.2 Sequences and Series of Functions.backup-20260402-230439.md\r\nFormatted 5 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mls\r\n\u001b[0m4.1 Sequences and Series of Complex Numbers.md 4.7 Harmonic Functions and Fourier Series.md\r\n4.2 Sequences and Series of Functions.md       Chapter 04 Complex Series.md\r\n4.3 Power Series.md                            \u001b[36;1mbackups\r\n\u001b[0m4.4 Taylor Series.md                           \u001b[36;1mimages\r\n\u001b[0m4.5 Laurent Series.md                          \u001b[36;1moriginal copy\r\n\u001b[0m4.6 Zeros and Singularities.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.3 Power Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.3 Power Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.3 Power Series.backup-20260402-234948.md\r\nConverted 2 figures: Figure 1, Figure 2\r\nItalicized 2 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 2 figure callouts, 0 bare image lines, 2 italicized figure mentions\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.3 Power Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.3 Power Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.3 Power Series.backup-20260403-002243.md\r\nFormatted 5 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.4 Taylor Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.4 Taylor Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.4 Taylor Series.backup-20260403-003326.md\r\nConverted 5 figures: Figure 1, Figure 2, Figure 3, Figure 4, Figure 5\r\nItalicized 4 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 5 figure callouts, 0 bare image lines, 4 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.4 Taylor Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.4 Taylor Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.4 Taylor Series.backup-20260403-003338.md\r\nFormatted 8 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.5 Laurent Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.5 Laurent Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.5 Laurent Series.backup-20260403-011623.md\r\nConverted 7 figures: Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6, Figure 7\r\nItalicized 7 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 7 figure callouts, 0 bare image lines, 7 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.5 Laurent Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.5 Laurent Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.5 Laurent Series.backup-20260403-011842.md\r\nFormatted 2 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.6 Zeros and Singularities.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.6 Zeros and Singularities.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.6 Zeros and Singularities.backup-20260403-015513.md\r\nConverted 1 figures: Figure 1\r\nItalicized 3 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 1 figure callouts, 0 bare image lines, 3 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.5 Laurent Series.md\"\r\n\u001b[0mNo bracketed hints found in /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.5 Laurent Series.md\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.6 Zeros and Singularities.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.6 Zeros and Singularities.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.6 Zeros and Singularities.backup-20260403-015540.md\r\nFormatted 8 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"4.7 Harmonic Functions and Fourier Series.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.7 Harmonic Functions and Fourier Series.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.7 Harmonic Functions and Fourier Series.backup-20260403-025444.md\r\nConverted 5 figures: Figure 1, Figure 2, Figure 3, Figure 5, Figure 4\r\nItalicized 5 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 5 figure callouts, 0 bare image lines, 5 italicized figure mentions\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"4.6 Zeros and Singularities.md\"\r\n\u001b[0mNo bracketed hints found in /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.6 Zeros and Singularities.md\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;244m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m/\u001b[38;5;250mB\u001b[38;5;254m/\u001b[38;5;250mA\u001b[38;5;254m/\u001b[38;5;255;1mChapter 04 Complex Series\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !17 ?21 \u001b[33;49m\u001b[38;5;244m────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 02:59\u001b[0m\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../Chapter\\ 05\\ Residue\\ Theory\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mls\r\n\u001b[0m5.1 Cauchy's Residue Theorem.md                                               5.6 Summing Series by Residues.md\r\n5.2 Definite Integrals of Trigonometric Functions.md                          5.7 The Counting Theorem and Rouché's Theorem.md\r\n5.3 Improper Integrals Involving Rational and Exponential Functions.md        Chapter 05 Residue Theory.md\r\n5.4 Improper Integrals of Products of Rational and Trigonometric Functions.md \u001b[36;1mimages\r\n\u001b[0m5.5 Advanced Integrals by Residues.md                                         \u001b[36;1moriginal copy\r\n\u001b[38;5;76;22m❯\u001b[0m \u001b[32moo\u001b[0m format figures \u001b[33m\"5.1 Cauchy's Residue Theorem.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.1 Cauchy's Residue Theorem.backup-20260403-040129.md\r\nConverted 5 figures: Figure 1, Figure 2, Figure 3, Figure 4, Figure 5\r\nItalicized 5 figure mentions\r\nValidation passed: normalized non-formatting text is unchanged\r\nFinal counts: 5 figure callouts, 0 bare image lines, 5 italicized figure mentions\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"5.1 Cauchy's Residue Theorem.md\"\r\n\u001b[0mUpdated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md\r\nBackup:  /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.1 Cauchy's Residue Theorem.backup-20260403-040412.md\r\nFormatted 3 hints\r\nValidation passed: normalized non-formatting text is unchanged\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m format hints \u001b[33m\"5.1 Cauchy's Residue Theorem.md\"\r\n\u001b[0mNo bracketed hints found in /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/ObsidianVaults/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !18 ?22 \u001b[33;49m\u001b[38;5;244m──────────────────────────────────────────────────────────────────────────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 06:52:17 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add\u001b[90m .\u001b[0m                \u001b[144C\u001b[38;5;244m─╯\u001b[164D\u001b[0m",
+                        "rows": 7
                       }
                     }
                   },
@@ -78,38 +140,6 @@
           }
         ],
         "direction": "horizontal"
-      },
-      {
-        "id": "3177f3a0954701da",
-        "type": "tabs",
-        "dimension": 44.90777866880513,
-        "children": [
-          {
-            "id": "6ec8a9fb12317366",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/original copy/Chapter 2 Analytic Functions.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Chapter 2 Analytic Functions"
-            }
-          },
-          {
-            "id": "d01f56d28fb4670b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Chapter 3 Complex Integration"
-            }
-          }
-        ],
-        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,7 +196,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 302.5,
+    "width": 420.5,
     "collapsed": true
   },
   "right": {
@@ -279,11 +309,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 368.5
+    "width": 252.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -304,56 +334,58 @@
       "cloze:Toggle all clozes": false,
       "dbfolder:Create a new database table": false,
       "modalforms:Edit forms": false,
-      "markdown-table-editor:Open Markdown Table Editor": false
+      "markdown-table-editor:Open Markdown Table Editor": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "b5856e1a381e02c2",
+  "active": "2996137c9862f964",
   "lastOpenFiles": [
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.3 Independence of Path.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.3 Independence of Path.backup-20260402-114624.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.3 Independence of Path.backup-20260402-114417.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.2 Complex Integration.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/original copy/Chapter 5 Residue Theory - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.1 Cauchy's Residue Theorem.backup-20260403-040412.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.1 Cauchy's Residue Theorem.backup-20260403-040129.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.7 Harmonic Functions and Fourier Series.md",
     "vault_changes/callout-outline-plugin.md",
-    "vault_changes/README.md",
-    "vault_changes",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.2 Complex Integration.backup-20260402-093159.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.1 Contours and Paths in the Complex Plane.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.9 Goursat's Theorem.backup-20260402-081748.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/original copy/Chapter 4 Complex Series - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.7 Harmonic Functions and Fourier Series.backup-20260403-025444.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.6 Zeros and Singularities.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.6 Zeros and Singularities.backup-20260403-015540.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.6 Zeros and Singularities.backup-20260403-015513.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.5 Laurent Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.5 Laurent Series.backup-20260403-011842.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.5 Laurent Series.backup-20260403-011623.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.4 Taylor Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.4 Taylor Series.backup-20260403-003338.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.4 Taylor Series.backup-20260403-003326.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.3 Power Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.3 Power Series.backup-20260403-002243.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.3 Power Series.backup-20260402-234948.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.2 Sequences and Series of Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.2 Sequences and Series of Functions.backup-20260402-230439.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.2 Sequences and Series of Functions.backup-20260402-230417.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/images/Screenshot 2026-04-02 at 11.01.50 PM.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.1 Sequences and Series of Complex Numbers.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.1 Sequences and Series of Complex Numbers.backup-20260402-211721.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.1 Sequences and Series of Complex Numbers.backup-20260402-211650.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.9 Goursat's Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.9 Goursat's Theorem.backup-20260402-081431.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/original copy/Chapter 16 Green's Functions and Conformal Mappings - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/original copy/Chapter 15 An Introduction to Quantum Mechanics - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/original copy/Chapter 14 Sturm-Liouville Theory with Engineering Applications - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/original copy/Chapter 13 Partial Differential Equations in Spherical Coordinates - bookmarked.pdf",
     "Screenshot 2026-04-02 at 8.10.27 AM.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.8 Applications to Harmonic Functions.backup-20260402-080606.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.8 Applications to Harmonic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.7 Bounds for Moduli of Analytic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.7 Bounds for Moduli of Analytic Functions.backup-20260402-075745.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.8 Applications to Harmonic Functions.backup-20260402-075659.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.7 Bounds for Moduli of Analytic Functions.backup-20260402-075455.md",
     "Screenshot 2026-04-02 at 7.52.53 AM.png",
     "Screenshot 2026-04-02 at 7.52.26 AM.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-075035.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.6 Cauchy's Integral Formula.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-072804.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.6 Cauchy's Integral Formula.backup-20260402-073418.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.5 Proof of Cauchy's Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.5 Proof of Cauchy's Theorem.backup-20260402-072309.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.5 Proof of Cauchy's Theorem.backup-20260402-072246.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups/3.4 Cauchy's Integral Theorem.backup-20260402-071422.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/backups",
     "Pasted image 20260401051005.png",
-    "Trash",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/images/Screenshot 2026-04-02 at 5.59.48 AM.png",
     "Screenshot 2026-04-02 at 4.59.04 AM.png",
     "Screenshot 2026-04-01 at 5.42.59 AM.png",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-16_184_304_629_100.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-10_341_457_268_74.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-17_183_307_729_707.jpg",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy/Chapter 18 Finite Difference Numerical Methods.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/original copy",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/original copy"
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/b031e613-3d8f-4430-8aca-4034f4fb7b9a-10_341_457_268_74.jpg"
   ]
 }
