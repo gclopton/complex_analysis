@@ -1,0 +1,9 @@
+{
+  "body_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/images/ocr_regions/page_061_body.png",
+  "body_text": "Section 6.6 Poisson's Equation and Neumann Problems\n445\n11. By composing $\\phi_{\\alpha}(z)=\\frac{z-\\alpha}{1-\\bar{\\alpha} z}$ with $\\psi(z)=\\frac{1-z}{1+z}$, you should be able to construct your own map $\\Phi(z, \\zeta)$ from the upper half-plane to the disk, satisfying $\\Phi(z, z)=0$.\n(a) Find the value of $\\alpha$ (it will depend on $z$ ).\n(b) Check that your final map $\\Phi(z, \\zeta)$ is the same as given in this section, $\\frac{z-\\zeta}{z-\\zeta}$, times the unimodular constant $\\frac{\\mathrm{Z}-\\mathrm{i}}{\\mathrm{z}+\\mathrm{i}}$.\nEquation and Neumann Problems\nIn this section we use Green's functions to solve the Poisson boundary value problem on a region $\\Omega$, then apply similar techniques to solve another important type of problem known as a Neumann problem. We start with the Poisson problem, which consists of the inhomogeneous Laplace's equation known as Pois",
+  "left_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/images/ocr_regions/page_061_left.png",
+  "left_text": "6.6 Poisson's",
+  "page": 61,
+  "right_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/images/ocr_regions/page_061_right.png",
+  "right_text": ""
+}

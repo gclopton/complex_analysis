@@ -1,0 +1,75 @@
+.case-find-bar {
+  align-items: center;
+  backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--background-primary) 88%, var(--background-secondary) 12%);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-s);
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.5rem 0.75rem;
+  padding: 0.45rem 0.55rem;
+  position: sticky;
+  top: 0.35rem;
+  z-index: 40;
+}
+
+.case-find-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.case-find-input input {
+  width: 100%;
+}
+
+.case-find-input.mod-no-match input {
+  border-color: var(--color-red);
+}
+
+.case-find-count {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+.case-find-button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 600;
+  height: 2rem;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0 0.55rem;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.case-find-button:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.case-find-button.is-active {
+  background: color-mix(in srgb, var(--interactive-accent) 18%, var(--background-secondary) 82%);
+  border-color: color-mix(in srgb, var(--interactive-accent) 45%, var(--background-modifier-border) 55%);
+  color: var(--text-normal);
+}
+
+.case-find-button.mod-icon {
+  font-size: 1rem;
+  min-width: 2rem;
+  padding: 0;
+}
+
+.case-find-active .cm-selectionBackground,
+.case-find-active .cm-editor .cm-selectionLayer .cm-selectionBackground {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--text-highlight-bg) 70%, var(--background-modifier-border) 30%) inset;
+  border-radius: var(--radius-s);
+}

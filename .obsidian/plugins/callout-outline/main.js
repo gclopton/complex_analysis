@@ -17,10 +17,12 @@ const ICON_NAME = "callout-outline";
 const HEADER_RE = /^(\s*)((?:>\s*)+)\[!([^\]\s]+)\]([+-])?(?:\s+(.*?))?\s*$/;
 const QUOTE_RE = /^(\s*)((?:>\s*)+)(.*)$/;
 const FENCE_RE = /^(```+|~~~+)/;
+const OVERRIDE_RE = /^%%\s*callout-outline\s*:\s*(.*?)\s*%%$/i;
 
 const DEFAULT_SETTINGS = {
   inheritCalloutManagerColors: true,
   colorOverrides: {},
+  decorateRenderedCallouts: true,
 };
 
 addIcon(
@@ -237,6 +239,53 @@ function getQuoteInfo(line) {
   };
 }
 
+function parseCalloutOutlineOverride(text) {
+  const match = String(text || "").trim().match(OVERRIDE_RE);
+  if (!match) {
+    return null;
+  }
+
+  const directive = match[1].trim();
+  if (/^manual$/i.test(directive)) {
+    return { mode: "manual" };
+  }
+
+  const startMatch = directive.match(/^start\s*=\s*(\d+)$/i);
+  if (startMatch) {
+    return {
+      mode: "start",
+      start: Number(startMatch[1]),
+    };
+  }
+
+  return {
+    mode: "unknown",
+    raw: directive,
+  };
+}
+
+function findCalloutOverride(lines, startIndex, headerDepth) {
+  for (let index = startIndex + 1; index < lines.length; index += 1) {
+    const quoteInfo = getQuoteInfo(lines[index]);
+    if (!quoteInfo || quoteInfo.depth < headerDepth) {
+      break;
+    }
+
+    if (quoteInfo.depth !== headerDepth) {
+      continue;
+    }
+
+    const body = quoteInfo.body.replace(/^\s+/, "");
+    if (!body.trim()) {
+      continue;
+    }
+
+    return parseCalloutOutlineOverride(body);
+  }
+
+  return null;
+}
+
 function parseCallouts(text) {
   const lines = String(text || "").split(/\r?\n/);
   const callouts = [];
@@ -285,17 +334,35 @@ function parseCallouts(text) {
 
     const type = normalizeType(headerMatch[3]);
     const title = collapseWhitespace(headerMatch[5] || "");
-    const number = (countsByType[type] || 0) + 1;
-    countsByType[type] = number;
+    const override = findCalloutOverride(lines, lineNumber, depth);
+    const isManual = override?.mode === "manual";
+    if (override?.mode === "start" && Number.isFinite(override.start) && override.start >= 1) {
+      countsByType[type] = override.start - 1;
+    }
+
+    const number = isManual ? null : (countsByType[type] || 0) + 1;
+    if (!isManual) {
+      countsByType[type] = number;
+    }
 
     const displayType = toDisplayType(type);
-    const titlePrefixInfo = getTitlePrefixInfo(title, displayType);
-    const titleSuffix = titlePrefixInfo ? titlePrefixInfo.suffix : stripTitlePrefix(title, displayType);
-    const generatedPrefix = `${displayType} ${number}`;
+    const titlePrefixInfo = isManual ? null : getTitlePrefixInfo(title, displayType);
+    const titleSuffix = isManual
+      ? ""
+      : titlePrefixInfo
+        ? titlePrefixInfo.suffix
+        : stripTitlePrefix(title, displayType);
+    const generatedPrefix = number === null ? "" : `${displayType} ${number}`;
     const titleMismatch = Boolean(
-      titlePrefixInfo && collapseWhitespace(titlePrefixInfo.rawPrefix).toLowerCase() !== generatedPrefix.toLowerCase()
+      !isManual
+      && titlePrefixInfo
+      && collapseWhitespace(titlePrefixInfo.rawPrefix).toLowerCase() !== generatedPrefix.toLowerCase()
     );
-    const label = titleSuffix ? `${displayType} ${number}: ${titleSuffix}` : `${displayType} ${number}`;
+    const label = isManual
+      ? (title || `${displayType} (manual)`)
+      : titleSuffix
+        ? `${displayType} ${number}: ${titleSuffix}`
+        : `${displayType} ${number}`;
 
     callouts.push({
       type,
@@ -310,6 +377,8 @@ function parseCallouts(text) {
       label,
       titleMismatch,
       rawTitle: title,
+      override,
+      isManual,
     });
 
     stack.push({ depth, line: lineNumber });
@@ -330,7 +399,7 @@ function renderInlineMath(container, text, onMathError) {
 
   while ((match = pattern.exec(value)) !== null) {
     if (match.index > lastIndex) {
-      container.appendText(value.slice(lastIndex, match.index));
+      container.append(document.createTextNode(value.slice(lastIndex, match.index)));
     }
 
     try {
@@ -338,7 +407,7 @@ function renderInlineMath(container, text, onMathError) {
       container.appendChild(rendered);
       finishRenderMath();
     } catch (_error) {
-      container.appendText(match[0]);
+      container.append(document.createTextNode(match[0]));
       if (typeof onMathError === "function") {
         onMathError();
       }
@@ -348,8 +417,84 @@ function renderInlineMath(container, text, onMathError) {
   }
 
   if (lastIndex < value.length) {
-    container.appendText(value.slice(lastIndex));
+    container.append(document.createTextNode(value.slice(lastIndex)));
   }
+}
+
+function restoreDecoratedCallouts(root) {
+  if (!root) {
+    return;
+  }
+
+  const titleEls = root.querySelectorAll(".callout .callout-title-inner[data-callout-outline-original-html]");
+  for (const titleEl of titleEls) {
+    const originalHtml = titleEl.dataset.calloutOutlineOriginalHtml;
+    if (typeof originalHtml === "string") {
+      titleEl.innerHTML = originalHtml;
+    }
+    delete titleEl.dataset.calloutOutlineOriginalHtml;
+    titleEl.removeAttribute("title");
+  }
+}
+
+function getRenderedCalloutTitleEls(root) {
+  if (!root) {
+    return [];
+  }
+
+  return Array.from(root.querySelectorAll(".callout .callout-title-inner"));
+}
+
+function findCalloutForRenderedLine(callouts, line) {
+  if (!Array.isArray(callouts) || typeof line !== "number") {
+    return null;
+  }
+
+  let matched = null;
+  for (const callout of callouts) {
+    if (callout.line > line) {
+      break;
+    }
+    matched = callout;
+  }
+
+  return matched;
+}
+
+function getRenderedCalloutEntries(view) {
+  const root = view?.contentEl;
+  const editorView = view?.editor?.cm;
+  if (!root || !editorView || typeof editorView.posAtDOM !== "function") {
+    return [];
+  }
+
+  const titleEls = getRenderedCalloutTitleEls(root);
+  const entries = [];
+
+  for (const titleEl of titleEls) {
+    if (!titleEl.closest(".cm-editor")) {
+      continue;
+    }
+
+    const anchor = titleEl.closest(".cm-callout, .cm-embed-block, .callout") || titleEl;
+    let position = null;
+    let line = null;
+
+    try {
+      position = editorView.posAtDOM(anchor, 0);
+      line = editorView.state.doc.lineAt(position).number - 1;
+    } catch (_error) {
+      continue;
+    }
+
+    if (typeof line !== "number" || line < 0) {
+      continue;
+    }
+
+    entries.push({ titleEl, line });
+  }
+
+  return entries;
 }
 
 class CalloutOutlineView extends ItemView {
@@ -522,6 +667,18 @@ class CalloutOutlineSettingTab extends PluginSettingTab {
       });
 
     new Setting(containerEl)
+      .setName("Decorate rendered callouts")
+      .setDesc("Show the generated per-type numbering directly in rendered callout titles without changing the Markdown source.")
+      .addToggle((toggle) => {
+        toggle.setValue(this.plugin.settings.decorateRenderedCallouts);
+        toggle.onChange(async (value) => {
+          this.plugin.settings.decorateRenderedCallouts = value;
+          await this.plugin.saveSettings();
+          this.plugin.refreshView();
+        });
+      });
+
+    new Setting(containerEl)
       .setName("Reload callout colors")
       .setDesc("Refresh the cached colors from Callout Manager and the current note.")
       .addButton((button) => {
@@ -594,6 +751,9 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
     this.calloutManagerColors = {};
     this.lastMarkdownView = null;
     this.mathReloadScheduled = false;
+    this.currentObservedView = null;
+    this.calloutMutationObserver = null;
+    this.isDecoratingRenderedCallouts = false;
 
     await this.reloadCalloutManagerColors();
 
@@ -618,6 +778,7 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
       this.app.workspace.on("active-leaf-change", (leaf) => {
         if (leaf?.view instanceof MarkdownView && leaf.view.file) {
           this.lastMarkdownView = leaf.view;
+          this.observeMarkdownView(leaf.view);
         }
         this.refreshView();
       })
@@ -628,6 +789,7 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
         const activeMarkdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
         if (activeMarkdownView?.file) {
           this.lastMarkdownView = activeMarkdownView;
+          this.observeMarkdownView(activeMarkdownView);
         }
         this.refreshView();
       })
@@ -659,11 +821,18 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
     );
 
     this.app.workspace.onLayoutReady(() => {
+      const activeMarkdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
+      if (activeMarkdownView?.file) {
+        this.lastMarkdownView = activeMarkdownView;
+        this.observeMarkdownView(activeMarkdownView);
+      }
       this.refreshView();
     });
   }
 
   async onunload() {
+    this.stopObservingMarkdownView();
+    this.restoreAllRenderedCallouts();
     await this.app.workspace.detachLeavesOfType(VIEW_TYPE);
   }
 
@@ -676,6 +845,43 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
 
   async saveSettings() {
     await this.saveData(this.settings);
+  }
+
+  restoreAllRenderedCallouts() {
+    for (const leaf of this.app.workspace.getLeavesOfType("markdown")) {
+      restoreDecoratedCallouts(leaf.view?.contentEl);
+    }
+  }
+
+  stopObservingMarkdownView() {
+    if (this.calloutMutationObserver) {
+      this.calloutMutationObserver.disconnect();
+      this.calloutMutationObserver = null;
+    }
+    this.currentObservedView = null;
+  }
+
+  observeMarkdownView(view) {
+    if (!view?.contentEl) {
+      return;
+    }
+
+    if (this.currentObservedView === view && this.calloutMutationObserver) {
+      return;
+    }
+
+    this.stopObservingMarkdownView();
+    this.currentObservedView = view;
+    this.calloutMutationObserver = new MutationObserver(() => {
+      if (this.isDecoratingRenderedCallouts) {
+        return;
+      }
+      this.decorateRenderedCallouts();
+    });
+    this.calloutMutationObserver.observe(view.contentEl, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   getActiveMarkdownView() {
@@ -715,6 +921,7 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
         leaf.view.render();
       }
     }
+    this.decorateRenderedCallouts();
   }
 
   async activateView() {
@@ -789,6 +996,58 @@ module.exports = class CalloutOutlinePlugin extends Plugin {
         this.mathReloadScheduled = false;
         this.refreshView();
       });
+  }
+
+  decorateRenderedCallouts() {
+    window.requestAnimationFrame(() => {
+      if (this.isDecoratingRenderedCallouts) {
+        return;
+      }
+
+      this.isDecoratingRenderedCallouts = true;
+      try {
+      const view = this.getActiveMarkdownView();
+      const root = view?.contentEl;
+      if (!root) {
+        return;
+      }
+
+      restoreDecoratedCallouts(root);
+
+      if (!this.settings.decorateRenderedCallouts) {
+        return;
+      }
+
+      const entries = getRenderedCalloutEntries(view);
+      if (entries.length === 0 || this.currentState.callouts.length === 0) {
+        return;
+      }
+
+      for (const entry of entries) {
+        const titleEl = entry.titleEl;
+        const callout = findCalloutForRenderedLine(this.currentState.callouts, entry.line);
+      if (!titleEl || !callout) {
+        continue;
+      }
+
+      if (callout.isManual) {
+        continue;
+      }
+
+      titleEl.dataset.calloutOutlineOriginalHtml = titleEl.innerHTML;
+      titleEl.replaceChildren();
+        renderInlineMath(titleEl, callout.label, () => this.scheduleMathReload());
+
+        if (callout.titleMismatch && callout.rawTitle) {
+          titleEl.setAttribute("title", callout.rawTitle);
+        } else {
+          titleEl.removeAttribute("title");
+        }
+      }
+      } finally {
+        this.isDecoratingRenderedCallouts = false;
+      }
+    });
   }
 
   jumpToCallout(callout) {

@@ -123,6 +123,7 @@ The plugin currently provides:
 The settings tab includes:
 
 - a toggle for inheriting Callout Manager colors,
+- a toggle for decorating rendered callout titles with generated numbering,
 - a reload action for re-reading callout colors,
 - and per-type color pickers for optional overrides.
 
@@ -141,6 +142,47 @@ That was intentional. The plugin should be used in this vault long enough to cat
 The outline numbers callouts by their actual position within the current note, grouped by type. This means the generated numbering remains correct even when a callout title was manually numbered incorrectly.
 
 At the same time, the raw title is preserved when there is a conflict so mismatches can be seen and corrected manually.
+
+The same numbering logic is also used for optional in-note rendered callout-title decoration. When that setting is enabled, the displayed callout title in the note uses the generated numbering at render time, but the Markdown source is not rewritten.
+
+That feature is currently treated as experimental, because Obsidian may only render part of a long note at once. The current approach therefore tries to map rendered callout widgets back to source lines through CodeMirror rather than matching visible callouts by DOM order. That is much safer than the original DOM-order experiment, but it still needs real vault use before it should be considered fully reliable.
+
+### Manual numbering overrides
+
+The plugin also supports two callout-local override directives for rare numbering edge cases. These are written as hidden Obsidian comments on the first non-empty content line inside the callout.
+
+#### Manual override
+
+Use this when a callout should keep its handwritten title and should not be auto-numbered by the plugin:
+
+```md
+> [!figure] Figure 2(a)
+> %% callout-outline: manual %%
+> ...
+```
+
+When this override is present:
+
+- the outline shows the handwritten title as-is,
+- the plugin does not auto-number that callout,
+- and in-note rendered-title decoration leaves that callout alone.
+
+#### Numbering restart
+
+Use this when automatic numbering needs to resume at a specific number:
+
+```md
+> [!figure]
+> %% callout-outline: start=3 %%
+> ...
+```
+
+When this override is present, that callout becomes `Figure 3`, and later callouts of the same type continue counting from there.
+
+This is meant for cases such as:
+
+- separate `Figure 2(a)` and `Figure 2(b)` callouts handled manually, followed by a normal `Figure 3`,
+- or rare out-of-order figure placements where handwritten numbering temporarily breaks the automatic sequence.
 
 ### Math rendering
 

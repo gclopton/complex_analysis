@@ -20,11 +20,11 @@ In Section 6.6, we tackle other famous boundary value problems, involving Laplac
 ### 6.1 Basic Properties
 
 Our goal in this section is to present properties of mappings by analytic
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-02_515_532_332_99.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-02_515_532_332_99.jpg)
 
 Figure 1 The direction of the tangent line at $z(t)$ is given by $\arg z^{\prime}(t)$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-02_492_502_1244_134.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-02_492_502_1244_134.jpg)
 Figure 2 The curves $\gamma_{1}$ and $\gamma_{2}$ intersect at angle $\alpha$.
 
 Figure 3 A linear mapping $f(z)=a z+b(a \neq 0)$ rotates by an angle $\arg \alpha$, dilates by a factor $|a|$, and translates by b. In particular, it preserves angles between curves. functions. These basic properties are interesting in their own right and will be very useful to us when solving partial differential equations involving the Laplacian. We start with a review from calculus of the notion of tangent lines to curves in parametric form. We will state these results using the convenient complex notation.
@@ -34,7 +34,7 @@ Suppose that $\gamma$ is a smooth path parametrized by $z(t)=x(t)+i y(t)$, $a \l
 Let $z_{0}$ be a point in the $z$-plane, let $\gamma_{1}$ and $\gamma_{2}$ be two smooth paths that intersect at $z_{0}$, and let $L_{1}$ and $L_{2}$ denote the tangent lines to $\gamma_{1}$ and $\gamma_{2}$ at $z_{0}$. We will say that $\gamma_{1}$ and $\gamma_{2}$ intersect at angle $\alpha$ at $z_{0}$ if the tangent lines $L_{1}$ and $L_{2}$ intersect at angle $\alpha$ at $z_{0}$ (Figure 2).
 
 To explain the geometric meaning of the mapping properties discussed in this section, let us consider the simple example of a linear mapping $f(z)= a z+b$, where $a \neq 0$ and $b$ are complex numbers. As usual, we consider a mapping as taking points in the $z$-plane to points in the $w$-plane. Using our geometric interpretation of addition and multiplication of complex numbers, we see that the effect of the linear mapping $f(z)=a z+b$ is to rotate by a fixed angle equal to $\arg a$, dilate by a factor equal to $|a|$, and then translate by $b$. (Note that the rotation and dilation commute, so it does not matter which one you apply first. But you cannot change the order of the translation; it comes last.) In particular, if $\gamma_{1}$ and $\gamma_{2}$ are two smooth paths that intersect at angle $\alpha$ at $z_{0}$, then their images by $f$ are two paths in the $w$-plane that intersect at $w_{0}=f\left(z_{0}\right)$; since $f(z)$ has rotated each curve by the same angle $\arg a$, the angle of their intersection in the $w$-plane is still $\alpha$. Furthermore, $\gamma_{1}$ 's orientation as being either clockwise or counterclockwise of $\gamma_{2}$, is preserved (Figure 3).
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-02_513_1088_1989_791.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-02_513_1088_1989_791.jpg)
 
 ## THEOREM 1 CONFORMAL PROPERTY
 
@@ -69,7 +69,7 @@ $f[\Omega]=\left\{w=r e^{i \theta}: \frac{1}{4}<r<1,-2 \pi<\theta<2 \pi\right\}=
 ## THEOREM 2 BOUNDARY BEHAVIOR
 
 Figure 4 The function $f(z)= z^{2}$ is conformal in $\Omega$. It takes the interval $\left(-1,-\frac{1}{2}\right)$ on the boundary of $\Omega$ to the interval $\left(\frac{1}{4}, 1\right)$ in the interior of $f[\Omega]$. Thus $f$ does not map boundary points to boundary points.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-04_519_1089_205_728.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-04_519_1089_205_728.jpg)
 
 It is also easy to see that the boundary points $z=x,-1 \leq x \leq-\frac{1}{2}$ are mapped to the interior points $w=u, \frac{1}{4} \leq u \leq 1$ (see Figure 4). Thus $f$ does not map the boundary of $\Omega$ to the boundary of $f[\Omega]$.
 
@@ -101,7 +101,7 @@ The fact that the boundary is mapped to the boundary helps us determine the imag
 ## EXAMPLE 2 Mapping of regions
 
 Let $f(z)=\sin z$ and $\Omega=\left\{z=x+i y:-\frac{\pi}{2}<x<\frac{\pi}{2}, y>0\right\}$. Thus $\Omega$ is the semi-infinite vertical strip shown in Figure 5. Since $\sin z_{1}=\sin z_{2}$ if and only if $z_{1}=z_{2}+2 k \pi$ ( $k$ an integer), we see that $f$ is one-to-one on $\Omega$. Also, $f$ is continuous on the boundary of $\Omega$.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-05_411_1228_1169_630.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-05_411_1226_1169_630.jpg)
 
 We start by determining the image of the boundary. For $z=x$ real, we have $f(z)=\sin x$, and so $f$ maps the interval $-\frac{\pi}{2} \leq x \leq \frac{\pi}{2}$ onto the interval $[-1,1]$. For $z=\frac{\pi}{2}+i y$, we have $f(z)=\sin \left(\frac{\pi}{2}+i y\right)=\cosh y$, a real number (see (16), Section 1.6). So $f$ maps the vertical semi-infinite line $z=\frac{\pi}{2}+i y(y \geq 0)$ onto the semiinfinite interval $[1, \infty)$. For $z=-\frac{\pi}{2}+i y$, we have $f(z)=\sin \left(-\frac{\pi}{2}+i y\right)=-\cosh y$ (see (16), Section1.6). So $f$ maps the vertical semi-infinite line $z=-\frac{\pi}{2}+i y(y \geq 0)$ onto the semi-infinite interval $(-\infty,-1]$. Thus, $f$ maps the boundary of $\Omega$ to the real axis. According to Theorem 2, the image of the vertical strip has boundary the $u$-axis, so it is either the upper or the lower half-plane. Checking the value of $f$ at one point in $\Omega$, say $z=i$, we find $f(i)=\sin (i)=i \sinh (1)$, which is a point in the upper half. Thus the image of $\Omega$ is the upper half-plane.
 
@@ -118,7 +118,7 @@ EXAMPLE 3 The Joukowski mapping
 (b) Show that the Joukowski function maps the set $\Omega=\left\{z:|z| \geq 1,0 \leq \operatorname{Arg}_{z \leq}\right. \pi\}$ onto the upper half-plane $\{w=u+i v: v \geq 0\}$ (see Figure 6). A more precise description of the Joukowski mapping is outlined in Exercise 17.
 
 Figure 6 The Joukowski function maps the region $\Omega$ one-to-one onto the upper half-plane. It also maps the upper semi-circle of radius $R>1, x^{2}+y^{2}=R^{2}, y \geq 0$, to the upper semi-ellipse $\frac{(\operatorname{Re} w)^{2}}{\left[\frac{1}{2}\left(R+\frac{1}{k}\right)\right]^{2}}+\frac{(\operatorname{lm} w)^{2}}{\left[\frac{1}{2}\left(R-\frac{1}{k}\right)\right]^{2}}=1$, $\operatorname{Im} w \geq 0$. (See Exercise 17.)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-06_475_1345_597_700.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-06_475_1345_597_700.jpg)
 
 Solution (a) For $z=e^{i \theta}, 0 \leq \theta \leq \pi$, we have
 
@@ -153,7 +153,7 @@ The proof of the Riemann mapping theorem is above the level of this book. We ref
 Combined with the Poisson integral formula, which solves the Dirichlet problem with arbitrary boundary data on the disk, the Riemann mapping theorem implies that we can at least theoretically solve the Dirichlet problem on any simply connected region $\Omega$. As illustrated in Figure 7, it suffices to conformally map $\Omega$ in a one-to-one way onto the unit disk. This gives rise to a new boundary value problem on the disk, which can be solved using the Poisson formula. The solution of the original problem is then obtained by composing the solution on the disk with the conformal mapping. As simple and elegant as it is, this approach has its limitations. Even though we have several powerful tools, such as Fourier series and techniques for evaluating integrals using residues, our experience with the Poisson formula tells us that this formula is not easy to compute in general. Even more difficult is the actual construction of the conformal mapping from $\Omega$ onto the unit disk. While the Riemann mapping guarantees its existence, it gives no clue as to how to construct it.
 
 Figure 7 A one-to-one conformal mapping $f$ of $\Omega$ onto the unit disk $D=f[\Omega]$ takes boundary to boundary and preserves Laplace's equation. It transforms a Dirichlet problem on $\Omega$ into a Dirichlet problem on $D$, which can be solved using the Poisson formula. The solution in $\Omega$ is then $u(z)=U(f(z))$.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-07_517_1143_1623_681.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-07_517_1143_1623_681.jpg)
 
 In the following sections, we will take up the construction of important conformal mappings that will lead us to very challenging problems. We will also give several applications to the solution of Laplace's equation.
 
@@ -235,7 +235,7 @@ mappings have a very useful property that is easy to verify: They map a line to 
 Figure 1 The inversion $f(z)=\frac{1}{z}$ preserves the collection of lines and circles. To verify the images of the given lines and circles, use the fact that $f$ is conformal (preserves angles) and the values $f(0)=\infty ; f(\infty)=0$; $f( \pm 1)= \pm 1 ; f( \pm i)=\mp i$; $f\left(\frac{3}{4}\right)=\frac{4}{3}$.
 
 PROPOSITION 2 IMAGES OF LINES AND CIRCLES
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-10_538_1120_471_762.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-10_538_1120_471_762.jpg)
 
 This property of the inversion is not as simple to verify but it is straightforward and is sketched in Exercises 35-40. Since a linear fractional transformation is a composition of linear mappings and an inversion, it inherits this property too. Thus we obtain the following very useful result.
 Let $\phi(z)$ be a linear fractional transformation as in (1). Then $\phi$ maps lines and circles in the $z$-plane to lines and circles in the $w$-plane.
@@ -268,7 +268,7 @@ Figure 2 The image of the unit circle is determined by the images of three point
 ## PROPOSITION 3 COMPOSITION OF MAPPINGS
 
 Thus $\phi(1), \phi(i)$, and $\phi(-i)$ lie on the $u$-axis (the real axis in the $w$-plane), and so the image of $C_{1}(0)$ is the $u$-axis. Because $\phi$ is one-to-one, it maps the boundary $C_{1}(0)$ onto the boundary of the image of the unit disk. Thus the image of the unit disk is either the upper half-plane or the lower half-plane. Checking $\phi(0)=i$ (a point in the upper half-plane), we conclude that $\phi$ maps the unit disk one-to-one onto the upper half-plane (see Figure 2).
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-11_503_1064_531_675.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-11_503_1064_531_675.jpg)
 (b) We can do this part in two ways. One way is to use Proposition 1(ii) and notice that $\psi$ is the inverse of $\phi$. Another way is to check the image by $\psi$ of the boundary and one interior point. We leave it as an exercise to verify that $\psi(0)=1, \psi(1)=i$, and $\psi(-1)=-i$. Since the images of the three points are not collinear, we conclude that the real axis is mapped onto the circle that goes through the points $1, i$, and $-i$, which is clearly the unit circle. (Here again, we are using the fact that three points determine a circle.) Also, $\psi(i)=0$; hence $\psi$ maps the upper half-plane onto the unit disk. $\square$
 
 Another way to realize that the image of the unit circle is a line in Example $1(a)$ is to consider the point -1 on $C_{1}(0)$ and note that $\lim _{z \rightarrow-1} \phi(z)= \infty$. So the image of $C_{1}(0)$ is not bounded and since it is either a line or a circle, it has to be a line (which tends to infinity). Sometimes it is convenient to express the fact that the limit at the point $z_{0}=-\frac{d}{c}$ is infinity by writing $\phi\left(z_{0}\right)=\infty$. Likewise, it will be convenient to express $\lim _{z \rightarrow \infty} \frac{a z+b}{c z+d}=\frac{a}{c}$ by simply writing $\phi(\infty)=\frac{a}{c}$.
@@ -300,7 +300,7 @@ $$
 f(z)=-i \phi \circ \tau(z)=(-i) i \frac{1-\frac{1}{2}(z+1)}{1+\frac{1}{2}(z+1)}=\frac{1-z}{3+z}
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-12_500_1979_1176_89.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-12_500_1979_1176_89.jpg)
 
 Figure 3 To map a disk to a half-plane, it is always advantageous to map the given disk to the unit disk and then use the transformation $\phi$ in Example 1.
 
@@ -340,10 +340,10 @@ $$
 
 There is also a corresponding identity for a linear fractional transformation mapping $\infty$ to a point, obtained by reversing the roles of $z$ and $w$ in (5) (see Exercise 11). Our next example uses the conformal property of linear fractional transformations.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-14_493_525_183_115.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-14_493_525_183_115.jpg)
 Figure 4 A lens-shaped region.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-14_485_547_1717_113.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-14_485_547_1717_113.jpg)
 Figure 5 Two nonconcentric circles $C_{1}$ and $C_{2}$.
 
 ## EXAMPLE 3 Mapping of a lens-shaped region
@@ -385,7 +385,7 @@ of the unit disk, it follows that $\phi\left[C_{1}\right]$ is bounded and hence 
 (iii) the map $\phi_{\alpha}$ is conformal.
 
 Figure 6 For all $|\alpha|<1$, $o_{a}(z)$ maps the unit circle $C_{2}$ onto itself. But for one special value of $\alpha$, with $|\alpha|<1$, $\oint_{a}$ will also map the circle $C_{1}$ onto a circle centered at the origin, thus centering the images of $C_{1}$ and $C_{2}$.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-15_401_878_679_715.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-15_401_878_679_715.jpg)
 
 So if we want $\phi_{\alpha}\left[C_{1}\right]$ to be a circle centered at the origin, it is enough to require that $\phi_{\alpha}(1 / 7)=-\phi_{\alpha}(1 / 2)$. This implies that
 
@@ -422,7 +422,7 @@ $$
 
 which maps the lens to the first quadrant. The first quadrant is then mapped onto the upper half-plane by the function $w_{2}=w_{1}^{2}$. (Note that our mapping is no longer a linear fractional transformation.) Finally, the linear fractional transformation $w=\psi\left(w_{2}\right)$ in Example 1(ii) will take the upper half-plane onto the unit disk. Each of these mappings is analytic and one-to-one on the region of interest. So the resulting function is analytic and one-to-one. The mapping is illustrated in Figure 7.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-16_515_1929_1105_109.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-16_515_1929_1105_109.jpg)
 Figure 7 Mapping a lens onto the unit disk. Note the conformal property in the first mapping at the point -2 , which preserved the right angle. Note the failure of the conformal property in the second mapping at the point 0 , where the angle is doubled.
 
 The explicit formula in terms of $z$ of the conformal mapping of the lens onto the unit disk is
@@ -446,7 +446,7 @@ $$
 ## EXAMPLE 6 Mapping a half-disk onto a disk
 
 The sequence of one-to-one analytic mappings in Figure 8 takes the upper half of
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-17_452_1815_282_57.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-17_452_1815_282_57.jpg)
 
 Figure 8 Mapping the upper half of the unit disk onto the unit disk.
 The first mapping is the linear fractional transformation $w_{1}=\phi(z)=i \frac{1-z}{1+z}$ from Example 1. It takes the unit disk onto the upper half-plane. It also takes the upper half-disk onto the first quadrant, as can be verified by using the conformality at $z=1$ and checking the image of one interior point, say $\phi\left(\frac{i}{2}\right)=\frac{4}{5}+i \frac{3}{5}$, which is in the first quadrant. The action of the second mapping is clear. The third mapping is the mapping $\psi$ from Example 1(ii). The explicit formula of the final mapping $w=f(z)$ is
@@ -461,7 +461,7 @@ The intermediary mapping $w_{2}=w_{1}^{2}=-\left(\frac{1-z}{1+z}\right)^{2}$ is 
 
 The crescent-shaped region in Figure 9 is bounded by two circles that intersect at angle 0 at the origin. We will describe a sequence of one-to-one analytic mappings that takes this region onto the upper half-plane.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-17_441_1817_1599_37.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-17_441_1817_1599_37.jpg)
 Figure 9 Mapping a crescent onto the upper half-plane.
 
 The first mapping $w_{1}=-\frac{1}{z}$, being conformal at $z=i$ and $z=2 i$, will preserve the right angles at these points. Since it maps the imaginary axis onto the imaginary
@@ -470,7 +470,7 @@ Figure 10 The principal branch of the logarithm, $\log z$, maps the right half-p
 axis, and 0 to $\infty$, consequently it will map the two circles onto two lines that intersect the imaginary axis at right angle. Thus the images of the circles are parallel horizontal lines as shown in the figure. As we move counterclockwise around the circles in the $z$-plane, we move right ward on the lines in the $w_{1}$-plane. The mapping $w_{2}=2 \pi\left(w_{1}-\frac{i}{2}\right)$ translates then scales the horizontal strip appropriately to set us up for an exponential mapping to the upper half-plane.
 
 EXAMPLE 8 Mapping the unit disk onto an infinite horizontal strip We will describe a sequence of analytic and one-to-one mappings that takes the unit circle onto an infinite horizontal strip. The first linear fractional transformation, $w_{1}=-i \phi(z)$, is obtained by multiplying by $-i$ the linear fractional transformation $\phi(z)$ in Example 1(i). Since $\phi(z)$ maps the unit disk onto the upper half-plane, and multiplication by $-i$ rotates by the angle $-\frac{\pi}{2}$, the effect of $-i \phi(z)$ is to map the unit disk onto the right half-plane.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-18_482_1259_908_775.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-18_482_1259_908_775.jpg)
 
 In Figure 10, $\log w_{1}=\ln \left|w_{1}\right|+i \operatorname{Arg} w_{1}$ is the principal branch of the logarithm. As $w_{1}$ varies in the right half-plane, $\operatorname{Arg} w_{1}$ varies between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$, which explains the location of the horizontal boundary of the infinite strip. The desired mapping is
 
@@ -487,7 +487,7 @@ In Exercises 1-4, you are given a linear fractional transformation $\phi(z)$ and
 3. $\phi(z)=\frac{1+i-2 z}{i-i z}, z_{1}=i, z_{2}=1, z_{3}=-i$.
 4. $\phi(z)=\frac{1+2 z}{i-(1+i) z}, z_{1}=1+i, z_{2}=1, z_{3}=1-i$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-19_473_491_533_53.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-19_473_491_533_53.jpg)
 Figure 11 For Exercise 8.
 
 5. Find the inverse $\psi$ of the linear fractional transformation in Exercise 1, and verify that $\psi$ maps $w_{1}, w_{2}$, and $w_{3}$ to $z_{1}, z_{2}$, and $z_{3}$.
@@ -506,46 +506,46 @@ $$
 
 In Exercises 12-24, (a) supply the formulas of the analytic mappings in each sequence of mappings shown in the accompanying figure (Figures 12-24). (b) Verify that the boundary and the interior of the shaded regions are mapped to the boundary and interior of the shaded regions. (c) Derive the given formula for the final composite mapping $w=f(z)$. As usual, we start in the $z$-plane and end in the $w$-plane, going through the $w_{j}$-planes.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-19_497_1972_1836_31.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-19_497_1972_1836_31.jpg)
 Figure 12 for Exercise 12.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-20_508_1987_335_90.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-20_511_1993_335_90.jpg)
 Figure 13 for Exercise 13.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-20_509_1989_1051_94.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-20_509_1991_1051_94.jpg)
 Figure 14 for Exercise 14.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-20_521_1988_1757_102.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-20_521_1988_1757_102.jpg)
 Figure 15 for Exercise 15.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-21_468_1339_129_235.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-21_468_1339_129_235.jpg)
 Figure 16 for Exercise 16.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-21_453_1329_808_233.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-21_453_1329_808_233.jpg)
 Figure 17 for Exercise 17.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-21_459_1812_1489_14.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-21_459_1812_1489_14.jpg)
 Figure 18 for Exercise 18.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-22_533_1448_345_349.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-22_533_1448_345_349.jpg)
 Figure 19 for Exercise 19.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-22_510_1415_1082_380.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-22_510_1415_1082_380.jpg)
 Figure 20 for Exercise 20.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-22_500_1394_1790_401.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-22_500_1394_1790_401.jpg)
 Figure 21 for Exercise 21.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-23_502_1402_373_323.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-23_502_1402_373_323.jpg)
 Figure 22 for Exercise 22.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-23_463_1386_1084_339.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-23_463_1386_1084_339.jpg)
 Figure 23 for Exercise 23.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-23_495_1901_1748_50.jpg)
-Figure 24 for Exercise 24.
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-23_495_1901_1748_50.jpg)
+Pigure 24 for Exercise 24.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-24_506_496_391_104.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-24_506_496_391_104.jpg)
 Figure 25 for Exercise 25.
 
 Figure 26 for Exercise 26. Take $a=-\frac{1}{4}$ and $b=\frac{7}{8}$.
@@ -566,18 +566,18 @@ $$
 (d) Conclude that $\phi(z)=\frac{z-\alpha}{1-\alpha z}$ with $\alpha=\frac{1+a b}{a+b}-\sqrt{\left(\frac{1+a b}{a+b}\right)^{2}-1}$ will map $C_{2}$ onto
 $C_{2}, C_{1}$ onto a circle centered at the origin with radius $r=\phi(b)$, and the region between $C_{2}$ and $C_{1}$ onto the annular region bounded by $\phi\left[C_{1}\right]$ and the unit circle.
 In Exercises 26-29, derive the linear fractional transformation that maps the shaded region between the two given circles (or circle and line in Exercise 29) onto an annular region centered at the origin (see the accompanying Figures 26-29). Refer to Exercise 25 for instructions. In Exercises 28-29, you need to reduce to the situation described in Exercise 25.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-24_480_1073_2010_876.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-24_480_1073_2010_876.jpg)
 
 Figure 27 for Exercise 27. Take $a=0$ and $b=\frac{8}{17}$.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-25_504_1131_196_740.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-25_504_1131_196_740.jpg)
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-25_492_1961_722_64.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-25_492_1961_722_64.jpg)
 Figure 28 for Exercise 28. (The figures are not to scale.)
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-25_488_1957_1263_56.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-25_488_1959_1263_56.jpg)
 Figure 29 for Exercise 29. [Hint: In the last step, start by rotating the inner circle to center it on the real axis, then scale the outer radius to 1 .]
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-25_433_407_1924_56.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-25_433_407_1924_56.jpg)
 Figure 30 for Exercise 30.
 
 30. A geometric problem. The following is an interesting illustration of the use of linear fractional transformations to prove geometric facts. Consider a circle $C$ and a point $z_{0}$ inside $C$ (Figure 30). We will show that all the circles $C^{\prime}$ through $z_{0}$ that intersect $C$ at right angle, also intersect at a common point $z_{1}$ as in Figure 30. The point $z_{1}$ is called the reflection of $z_{0}$ in $C$. We also say that $z_{0}$ and $z_{1}$ are symmetric with respect to $C$.
@@ -614,13 +614,13 @@ $$
 A\left(x^{2}+y^{2}\right)+B x+C y+D=0, \text { where } B^{2}+C^{2}-4 A D>0 .
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-27_418_417_317_98.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-27_418_417_317_98.jpg)
 Figure 31 For Exercise 38. Note that $S$ and $f[S]$ are plotted in the same plane.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-27_478_484_994_64.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-27_478_484_994_64.jpg)
 Figure 32 For Exercise 39. Note that $S$ and $f[S]$ are plotted in the same plane.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-27_489_477_1662_57.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-27_489_477_1662_57.jpg)
 Figure 33 For Exercise 40. Note that $S$ and $f[S]$ are plotted in the same plane.
 
 (b) Show that any line in the plane can be written in the form (9).
@@ -655,8 +655,8 @@ Figures 1 (a) and (b) Transforming the Dirichlet problem in Figure 1(a) into an 
 
 Figures 2(a) and (b) Using a linear fractional transformation to transform a Dirich${ }^{\text {let }}$ problem in a lens (Figure 2(a)) into a Dirichlet problem in the first quadrant (Figure 2(b)). While the problem in the lens is difficult to solve, the problem in the first quadrant has a very simple solution $U_{(w)}=\frac{200}{\pi} \operatorname{Arg} w$.
 into a Dirichlet problem in the upper half-plane with boundary values shown in Figure 1(b).
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-29_442_487_254_645.jpg)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-29_448_494_248_1330.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-29_442_487_254_645.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-29_448_494_248_1330.jpg)
 
 According to our preceding discussion, the solution in the upper half of the $w$ plane is $U(w)=\frac{100}{\pi}(\pi-\operatorname{Arg} w)$. By composing the solution in the $w$-plane with the conformal map, we get a solution of our original problem, $u(z)=U(\phi(z))$. Hence the solution of the Dirichlet problem in the unit disk is
 
@@ -672,8 +672,8 @@ We next solve a Dirichlet problem in a lens-shaped region.
 
 Find a harmonic function $u$ in the lens-shaped region $\Omega$ in Figure 2(a), with boundary values $u=100$ on the upper circular arc and $u=0$ on the lower circular arc.
 Solution The region $\Omega$ was discussed in Example 3, Section 6.2, from which we recall the linear fractional transformation $\phi(z)=\frac{2+i}{2-i} \frac{2+z}{2-z}$. It is straightforward to check that $\phi$ maps the lower boundary of $\Omega$ onto the positive real axis, and the upper boundary of $\Omega$ onto the positive imaginary axis. By checking the image of one point in $\Omega$, say $z=0$, we find $\phi(0)=\frac{2+i}{2-i}=\frac{1}{5}(3+4 i)$, which is a point in the first quadrant. Thus $\phi$ maps the region $\Omega$ onto the first quadrant and transforms the given problem into a Dirichlet problem in the first quadrant of the $w$-plane, with boundary conditions as shown in Figure 2(b).
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-29_450_493_1790_617.jpg)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-29_452_495_1788_1311.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-29_450_493_1790_617.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-29_452_495_1788_1311.jpg)
 
 It is clear that the solution in the $w$-plane is $U(w)=\frac{200}{\pi} \operatorname{Arg} w$. Thus the solution of the Dirichlet problem on $\Omega$ is
 
@@ -683,7 +683,7 @@ $$
 
 For our next application, we recall the solution of the Dirichlet problem
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-30_511_528_517_90.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-30_511_528_517_90.jpg)
 Figure 3 Dirichlet problem in an annulus.
 
 Figures 4(a) and (b) A Dirichlet problem in a nonregular annulus (Figure 4(a)) is greatly simplified by first transforming the region into a regular annulus (Figure 4(b)), using a linear fractional transformation. in an annular region (Figure 3), with constant boundary values:
@@ -705,8 +705,8 @@ $$
 w=\phi(z)=\frac{3 z-1}{3-z}
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-30_498_515_1653_789.jpg)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-30_498_541_1645_1499.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-30_498_515_1653_789.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-30_498_541_1645_1499.jpg)
 
 As shown in Example 4, Section 6.2, $\phi$ maps the unit circle $C_{2}$ onto the unit circle, the inner circle $C_{1}$ onto a circle centered at the origin with radius $\frac{1}{5}$, and the region between the unit circle and $C_{2}$ onto the annular region $\frac{1}{5}<|w|<1$. The boundary values in the transformed problem are shown in Figure 4(b), and so according to (2) the solution of the Dirichlet problem in the $w$-plane is
 
@@ -747,7 +747,7 @@ This features the solution of the Dirichlet problem in the upper half-plane as a
 Figure 5 How the boundary values in a Dirichlet problem are transformed, after using a linear fractional transformation that takes boundary to boundary.
 
 Proof We will prove the first equality in (3); the second one follows by making the change of variables $s^{\prime}=x-s$. Transform the given problem into a Dirichlet problem in the unit disk using the linear fractional transformation $w=\psi(z)=\frac{i-z}{i+z}$ (Example 1(ii), Section 6.2). This mapping takes the real line onto the unit circle, and the upper half-plane onto the unit disk. Denote the image of a point $s$ on the real line by $e^{i \phi}$ on the unit circle, so $e^{i \phi}=\psi(s)$.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-32_525_1116_443_744.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-32_525_1116_443_744.jpg)
 
 As illustrated in Figure 5, the boundary data that we get for the problem on the unit disk is given by $U\left(e^{i \phi}\right)=f\left(\psi^{-1}\left(e^{i \phi}\right)\right)$, for all $e^{i \phi}$ on the unit circle. The solution of the Dirichlet problem in the unit disk $(|w|<1)$ with this boundary data is obtained from the Poisson integral formula, which we recall from (10), Section 3.8:
 
@@ -784,7 +784,7 @@ $$
 
 This part is straightforward and is left to Exercise 21.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-33_480_472_545_55.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-33_480_472_545_55.jpg)
 Figure 6 For a given interval $(a, b)$, the angle at $x+i y$ subtended by $(a, b)$ is a harmonic function $\alpha(x+i y)$ called the harmonic measure of $(a, b)$.
 
 ## EXAMPLE 4 Applying Poisson's integral formula
@@ -821,10 +821,10 @@ Suppose that $\Omega$ is a region, $f_{1}$ and $f_{2}$ are two functions defined
 Let ( $a_{1}, b_{1}$ ) and ( $a_{2}, b_{2}$ ) be two disjoint intervals on the real line, and let $T_{1}$ and $T_{2}$ be two complex numbers. Solve the Dirichlet problem in the upper half-plane with boundary data on the real line given by $f(x)=T_{1}$ if $x$ is in $\left(a_{1}, b_{1}\right), T_{2}$ if $x$ is in ( $a_{2}, b_{2}$ ) and 0 otherwise.
 Solution For $j=1,2$, let $f_{j}(x)=T_{j}$ if $x$ is in $\left(a_{j}, b_{j}\right), 0$ otherwise. Clearly, $f(x)=f_{1}(x)+f-2(x)$. From Example 4, the solution of the Dirichlet problem
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-34_498_492_544_110.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-34_498_492_544_110.jpg)
 Figure 7 for Example 6.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-34_498_509_1604_126.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-34_498_509_1604_126.jpg)
 Figure 8 for Example 7.
 
 in the upper half-plane with boundary values on the real line given by $f_{j}(x)$ is $u_{j}(z)=\frac{T_{j}}{\pi}\left[\tan ^{-1}\left(\frac{b_{j}-x}{y}\right)-\tan ^{-1}\left(\frac{a_{j}-x}{y}\right)\right]$. Thus the solution to our original problem is $u(z)=u_{1}(z)+u_{2}(z)$.
@@ -864,7 +864,7 @@ $$
 u(x+i y)=\frac{y}{\pi} \int_{-\infty}^{\infty} \frac{P_{a}(s)}{(x-s)^{2}+y^{2}} d s=\frac{a y}{\pi} \sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty} \frac{d s}{\left(s^{2}+a^{2}\right)\left((x-s)^{2}+y^{2}\right)}
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-35_361_454_205_78.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-35_361_456_205_76.jpg)
 
 Figure 9 The Poisson kernel $P_{y}(x)$ for various values of $y>$ 0 . Properties to note on the graphs of $P_{y}(x)$ as a function of $x$ :
 $P_{y}(x)>0$ for all $x$;
@@ -872,7 +872,7 @@ $P_{y}(x)$ is even;
 $P_{y}(x)$ is a bell-shaped curve; $\lim _{y \downarrow 0} P_{y}(0)=\infty$.
 1.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-35_475_481_1771_48.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-35_475_481_1771_48.jpg)
 Figure 10
 
 We evaluate the last integral using the residue method of Section 5.3, by completing the contour with a semicircle in the upper half-plane. The function $h(z)= \frac{1}{\left(z^{2}+a^{2}\right)\left((x-z)^{2}+y^{2}\right)}$ has two simple poles in the upper half-plane, at $z=i a$ and at $z=x+i y$. We compute the residues at these points using Proposition 1, Section 5.1(iii). We have
@@ -885,7 +885,7 @@ and
 $\operatorname{Res}(h(z), x+i y)=\frac{1}{(x+i y)^{2}+a^{2}} \operatorname{Res}\left(\frac{1}{(x-z)^{2}+y^{2}}, x+i y\right)=\frac{1}{(x+i y)^{2}+a^{2}} \frac{1}{2 i y}$.
 2.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-35_469_524_1769_677.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-35_469_524_1769_677.jpg)
 Figure 11
 
 Applying Proposition 2, Section 5.3, we obtain
@@ -901,7 +901,7 @@ $$
 
 3. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-35_477_537_1767_1347.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-35_477_537_1767_1347.jpg)
 Figure 12
 
 where the last equality follows by elementary algebraic manipulations. This solves the problem. But note that the last expression is precisely $P_{a+y}(x)$. Thus $u(x+ i y)=P_{a+y}(x)$, which shows that the solution of the Dirichlet problem with a Poisson boundary data $P_{a}(x)$ is another Poisson distribution $P_{a+y}(x)$. This amazing fact about temperature problems with Poisson boundary data has a direct interpretation in terms of convolutions and Fourier transforms, which will be discussed in later chapters.
@@ -912,62 +912,62 @@ In Exercises 1-15, (a) solve the Dirichlet problem described by the accompanying
 (b) Evaluate your answer at various points inside the region and comment on your data, as we did in Example 3.
 4.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_498_521_229_81.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_498_521_229_81.jpg)
 Figure 13
 
 7. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_490_518_822_98.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_490_518_822_98.jpg)
 Figure 16
 
 10. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_490_531_1407_98.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_490_531_1407_98.jpg)
 Figure 19
 
 13. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_494_555_1988_94.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_494_555_1988_94.jpg)
 Figure 22
 
 5. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_500_514_223_757.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_500_514_223_757.jpg)
 Figure 14
 
 8. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_490_502_822_769.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_490_502_822_769.jpg)
 Figure 17
 
 11. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_474_496_1407_783.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_474_496_1407_783.jpg)
 Figure 20
 
 14. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_464_486_1980_804.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_464_486_1980_804.jpg)
 Figure 23
 
 6. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_501_531_218_1424.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_501_531_218_1424.jpg)
 Figure 15
 
 9. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_494_536_818_1419.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_494_536_818_1419.jpg)
 Figure 18
 
 12. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_482_524_1399_1426.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_482_524_1399_1426.jpg)
 Figure 21
 
 15. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-36_478_519_1980_1436.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-36_478_519_1980_1436.jpg)
 Figure 24
 
 Figures 25(a) and (b) for Exercise 17.
@@ -991,8 +991,8 @@ u(z)=\frac{1}{\pi} \sum_{j=1}^{n} T_{j}\left(\operatorname{Arg}\left(z-b_{j}\rig
 $$
 
 17. (a) Solve the Dirichlet Problem in Figure 25(a) by using the Poisson integral formula.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-37_442_483_1171_548.jpg)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-37_450_498_1165_1205.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-37_442_483_1171_548.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-37_450_498_1165_1205.jpg)
 (b) Solve the Dirichlet problem in Figure 25(b) by using the conformal map $w= \sin z$ and the result in part (a).
 18. Show that the solution in Example 1 is
 
@@ -1018,42 +1018,42 @@ In Exercises 24-29, solve the Dirichlet problem in the upper half-plane with the
 Solve the Dirichlet problem depicted in the figure (Figures 26-31) by transforming it into a Dirichlet problem in the upper half-plane. To solve in the upper halfplane, use the Arg function in Exercises 30-32, and the Poisson integral formula in Exercises 33-35. Leave your answer in Exercise 35 in the form of an integral involving the Chebyshev polynomials. Compute the integral when $n=2$.
 30.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_490_536_1374_88.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_490_536_1374_88.jpg)
 Figure 26
 
 33. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_511_550_1964_84.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_511_550_1964_84.jpg)
 Figure 29
 
 31. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_493_513_1372_762.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_493_513_1372_762.jpg)
 Figure 27
 
 34. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_485_507_1964_775.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_485_507_1964_775.jpg)
 Figure 30
 
 32. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_496_550_1364_1415.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_496_550_1364_1415.jpg)
 Figure 28
 
 35. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-38_495_546_1962_1423.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-38_495_546_1962_1423.jpg)
 Figure 31
 
 ### 6.4 The Schwarz-Christoffel Transformation
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-39_461_470_220_51.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-39_461_470_220_51.jpg)
 Figure 1 Positively oriented polygonal boundary with corner angles measured from the outside.
 
 ## THEOREM 1 SCHWARZCHRISTOFFEL TRANSFORMATION
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-39_446_451_1420_51.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-39_446_451_1420_51.jpg)
 Figure 2 Unbounded polygonal region with $n$ sides ( $n=4$ ) and $n-1$ vertices.
 
 In this section we describe a method for constructing one-to-one analytic mappings of the upper half-plane onto polygonal regions. We start by setting the notation.
@@ -1075,13 +1075,13 @@ The mapping $f(z)$ is called a Schwarz-Christoffel transformation, after the Ger
 The constants $A$ and $B$ depend on the size and location of the polygonal path $P$. The full proof of Theorem 1 is quite complicated. We only sketch a part that illustrates the ideas behind the construction of the transformation.
 Sketch of Proof of Theorem 1. Consider a mapping $f(z)$ whose derivative is given by (1) and let $w_{j}$ denote the image of $x_{j}$, where $x_{1}<x_{2}<\cdots<x_{n-1}$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-40_510_545_233_73.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-40_510_545_233_73.jpg)
 Figure 3 Arguments of the line segments of the polygon $P$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-40_485_501_933_83.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-40_485_501_933_83.jpg)
 Figure 4 As $x$ crosses $x_{j}$ from left to right, $\arg f^{\prime}(x)$ changes abruptly by $\theta_{j}$ then remains constant until it crosses $x_{j+1}$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-40_514_519_1821_85.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-40_514_519_1821_85.jpg)
 Figure 5 for Example 1.
 
 are real. To understand the effect of the mapping $f$ on the real axis, recall from Section 6.1 that a conformal mapping $f(z)$ at a point $z_{0}$ acts like a rotation by an angle $\arg f^{\prime}\left(z_{0}\right)$. Thus the mapping whose derivative is given by (1) acts like a rotation by an angle
@@ -1114,7 +1114,7 @@ $$
 f(z)=A \int z^{-\frac{\pi-\alpha}{\pi}} d z+B=A \int z^{-1+\alpha / \pi} d z+B=A \frac{\pi}{\alpha} z^{\frac{\alpha}{\pi}}+B
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-41_470_474_1028_47.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-41_470_474_1028_47.jpg)
 Figure 6 A semi-infinite vertical strip with positively oriented boundary.
 
 where all branches are principal. In order to have $f(0)=0$, we take $B=0$. Obviously any positive value of $A$ will work, so we can take $f(z)=z^{\frac{a}{\pi}}$.
@@ -1163,7 +1163,7 @@ $$
 
 Solving for $A$ and $B$, we find $A=i$ and $B=0$. Hence $f(z)=\sin ^{-1} z$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-42_501_498_658_120.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-42_501_498_658_120.jpg)
 Figure 7 Positively oriented isosceles triangle.
 
 Like many constructions involving Schwarz-Christoffel transformations, the next example gives rise to elliptic integrals (see Section 5.5). Although these integrals are very difficult to evaluate, they are extensively tabulated and can be conveniently evaluated numerically using standard functions in most computer systems.
@@ -1211,12 +1211,12 @@ The next two examples illustrate a limiting technique in computing Schwarz-Chris
 
 An $L$-shaped region with positively oriented boundary. As we follow the boundary according to this orientation, the region is to our left.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-43_485_495_586_692.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-43_485_495_586_692.jpg)
 Figure 8
 
 ## EXAMPLE 4 An $L$-shaped region
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-43_483_537_588_1397.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-43_483_537_588_1397.jpg)
 Figure 9
 
 Find a Schwarz-Christoffel transformation that maps the upper half-plane onto the $L$-shaped region in Figure 8.
@@ -1252,10 +1252,10 @@ $$
 f(z)=\frac{1}{\pi}\left(\sin ^{-1} z+i \sin ^{-1} \frac{1}{z}\right)+\frac{1+i}{2} .
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-44_502_514_182_75.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-44_502_514_182_75.jpg)
 Figure 10 A doubly slit plane with a positively oriented boundary consisting of four sides.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-44_474_520_921_87.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-44_474_520_921_87.jpg)
 Figure 11
 
 PROPOSITION 1 IMAGE OF LEVEL CURVES
@@ -1294,10 +1294,10 @@ With the preceding notation, the image under $w=f(z)$ of the level curve $u(z)=C
 
 Proof Since $\gamma(t)$ is a level curve of $u, u(\gamma(t))=C$. Since $U(w)=u\left(f^{-1}(w)\right)$, we conclude that $U(f(\gamma(t)))=u(\gamma(t))=C$, and hence $f(\gamma(t))$ is a level curve of $U$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-45_447_460_199_64.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-45_447_460_199_64.jpg)
 Figure 12 for Example 6.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-45_445_456_705_61.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-45_445_456_705_61.jpg)
 
 Figure 13 Isotherms in Example 6 .
 
@@ -1340,10 +1340,10 @@ $$
 \psi(x, y)=C_{2},
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-46_498_535_686_80.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-46_498_535_686_80.jpg)
 Figure 14 Streamlines in a uniform rightward flow in the upper half-plane.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-46_516_543_1829_96.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-46_516_543_1829_96.jpg)
 Figure 15 Streamlines in a sector.
 
 for some function $\psi$, then, from Section 2.5, we know that we can take $\psi$ to be the harmonic conjugate of $\phi$ in $\Omega$. The function $\psi$ is called the stream function. The fluid will flow on the level curves of $\psi$. If we let
@@ -1365,7 +1365,7 @@ In the following examples, we take the simple stream function $\psi(z)=y$ for th
 Find and plot the streamlines for the sector in Figure 15, where fluid flows in along the line $\operatorname{Arg} w=\frac{\pi}{4}$ and flows out along $\operatorname{Arg} w=0$.
 Solution From Example 1, the Schwarz-Christoffel transformation $f(z)=z^{\frac{1}{4}}$ maps the upper half-plane to the given sector. We will use the simple stream function in the upper half-plane, $\psi(z)=y$, to generate a solution. Streamlines in the $z$-plane are parametrized as $\gamma(x)=x+i y_{0}$ for fixed $y_{0}$. Streamlines in the $w$ plane are images of these under $f$; we have $f(\gamma(x))=\left(x+i y_{0}\right)^{\frac{1}{4}}$. As the parameter $x$ increases, the streamlines are traced in the manner shown in Figure 15. Fluid comes in along $\operatorname{Arg} w=\frac{\pi}{4}$ and out along $\operatorname{Arg} w=0$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-47_489_485_330_67.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-47_489_485_330_67.jpg)
 Figure 16 Streamlines in a doubly slit plane.
 
 EXAMPLE 8 Fluid flow in the doubly slit plane
@@ -1387,26 +1387,26 @@ In Exercises 1-6, find the Schwarz-Christoffel transformation of the upper half-
 2. See Figure 18. [Hint: $\frac{z+1}{(z-1)^{\frac{1}{2}}}=\frac{z-1+2}{(z-1)^{\frac{1}{2}}}=(z-1)^{\frac{1}{2}}+\frac{2}{(z-1)^{\frac{1}{2}}}$.]
 3. See Figure 19. [Hint: $\frac{(z+1)^{\frac{1}{2}}}{(z-1)^{\frac{1}{2}}}=\frac{z+1}{i\left(1-z^{2}\right)^{\frac{1}{2}}}=\frac{z}{i\left(1-z^{2}\right)^{\frac{1}{2}}}+\frac{1}{i\left(1-z^{2}\right)^{\frac{1}{2}}}$.]
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-47_473_469_1445_67.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-47_473_469_1445_67.jpg)
 Figure 17
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-47_469_514_1449_693.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-47_469_514_1449_693.jpg)
 Figure 18
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-47_477_524_1445_1366.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-47_477_524_1445_1366.jpg)
 Figure 19
 
 4. See Figure 20. [Hint: $\frac{(z-1)^{\frac{1}{2}}}{(z+1)^{\frac{1}{2}}}=\frac{z-1}{i\left(1-z^{2}\right)^{\frac{1}{2}}}=\frac{z}{i\left(1-z^{2}\right)^{\frac{1}{2}}}-\frac{1}{i\left(1-z^{2}\right)^{\frac{1}{2}}}$.]
 5. See Figure 21. [Hint: Let $z=\sin \zeta$, where $-\frac{\pi}{2} \leq \operatorname{Re} \zeta \leq \frac{\pi}{2}$ and $\operatorname{Im} \zeta \geq 0$. Then $\left(1-z^{2}\right)^{\frac{1}{2}}=\cos \zeta$. Use $\cos ^{2} \zeta=\frac{1+\cos 2 \zeta}{2}$, integrate, then use $\sin 2 \zeta=2 \sin \zeta \cos \zeta$.]
 6. See Figure 22. [Hints: $\frac{(z-1)^{\frac{1}{2}}}{z+1}=\frac{1}{(z-1)^{\frac{1}{2}}} \frac{z-1}{z+1}=\frac{1}{(z-1)^{\frac{1}{2}}}-\frac{2}{(z-1)^{\frac{1}{2}}} \frac{1}{z+1}$. In the second term, use $\frac{1}{z+1}=\frac{i}{2 \sqrt{2}}\left(\frac{1}{\sqrt{z-1}+i \sqrt{2}}-\frac{1}{\sqrt{z-1}-i \sqrt{2}}\right)$, and change variables $u= \sqrt{z-1}-i \sqrt{2}$ and $v=\sqrt{z-1}-i \sqrt{2}$. You cannot find $A$ and $B$ just from $f(1)=0$. Instead, first argue that $\operatorname{Arg} A=-\frac{\pi}{2}$ (look at the angle of the final line segment;
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-48_498_517_417_108.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-48_498_517_417_108.jpg)
 Figure 20
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-48_502_508_407_775.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-48_502_508_407_775.jpg)
 Figure 21
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-48_498_539_401_1428.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-48_498_539_401_1428.jpg)
 Figure 22
 
 see the proof of Theorem 1) and thus $A=-i|A|$. Now get $B=i \pi \sqrt{2}|A|$ from $f(1)=0$. To get $|A|$, either use $\operatorname{Im} f(x)=1$ for $x<1$, or use the channel width formula (16) $1=|s|=\pi|A|\left|x_{2}-x_{1}\right|^{-\frac{\theta_{2}}{\pi}}$.]
@@ -1433,7 +1433,7 @@ $$
 \left|f\left(R e^{i \theta}\right)-f(R)\right|=\left|\int_{R}^{R e^{i \theta}} \frac{d z}{\left(z-x_{1}\right)^{\beta_{1}}\left(z-x_{2}\right)^{\beta_{2}} \cdots\left(z-x_{n-1}\right)^{\beta_{n-1}}}\right| \leq R \pi M(R)
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-49_481_481_1599_51.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-49_481_481_1599_51.jpg)
 Figure 23 The channel separation $s$.
 
 where $M(R)$ is the maximum of the absolute value of the integrand on the upper semicircle of radius $R$. Now $\lim _{R \rightarrow \infty}\left(M(R) R^{\beta_{1}+\cdots+\beta_{n-1}}\right)=1$, so $R M(R)= R^{1-\beta_{1}-\cdots-\beta_{n-1}}\left(M(R) R^{\beta_{1}+\cdots+\beta_{n-1}}\right) \rightarrow 0$, and so $\left|f\left(R e^{i \theta}\right)-f(R)\right| \rightarrow 0$ uniformly in $\theta$ as $R \rightarrow \infty$. Since $f(R) \rightarrow w_{n}$, we conclude that $f(z) \rightarrow w_{n}$ as $z \rightarrow \infty$.
@@ -1483,7 +1483,7 @@ where again $\left|x_{j_{0}}-x_{j_{0}}\right|$ is skipped.
 
 What is a Green's function and what can it do for us? To answer these questions, let us review a few facts about the solution of a Dirichlet problem. Suppose that $\Omega$ is a simply connected region bounded by a simple path $\Gamma$. Let $f$ be a piecewise continuous function on $\Gamma$ and consider the Dirichlet problem (Figure 1)
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-50_460_542_1377_93.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-50_460_542_1377_93.jpg)
 Figure 1 A Dirichlet problem in a simply connected region.
 
 $$
@@ -1507,12 +1507,12 @@ $$
 where each expression is computed at a given point on $\Gamma^{\prime}$ (Figure 2).
 
 Figure 2 The mapping $\phi$ is analytic and one-to-one on $\Omega$. It maps boundary to boundary and preserves angles.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-51_488_489_1764_55.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-51_488_489_1764_55.jpg)
 
 Figure 3 For a circle centered at the origin, the normal derivative is the radial derivative.
 
 Figure 2 The mapping $\phi$ is analytic and one-to-one on $\Omega$. It maps boundary to boundary and preserves angles.
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-51_484_1117_1244_709.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-51_484_1117_1244_709.jpg)
 
 Although normal derivatives are tedious to compute in general, they are easy to express in some important special cases. For example, if $\Gamma^{\prime}$ is any circle centered at the origin, then $\frac{\partial F}{\partial n_{\Gamma^{\prime}}}$ is just the radial derivative of $F$ (Figure 3):
 
@@ -1547,7 +1547,7 @@ $$
 
 where $d s=|d \zeta|$ is the element of arc length on $\Gamma$. Hence if $\Gamma$ is parametrized by $\gamma(t), a \leq t \leq b$, then $d s=\left|\gamma^{\prime}(t)\right| d t$.
 Proof We will apply (3), but first we note one useful result. (Refer to Figure 4 for help with the notation.)
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-52_524_1097_1892_786.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-52_524_1097_1892_786.jpg)
 
 The function $\phi^{-1}$ is analytic from the closed unit disk (in the $w$-plane) onto $\Omega$ and its boundary (in the $z$-plane). So the function $u\left(\phi^{-1}(w)\right)$ is harmonic on the open
 unit disk, being the composition of a harmonic function $u$ with an analytic function $\phi^{-1}$ (Theorem 3, Section 2.5). Moreover, $u\left(\phi^{-1}(w)\right)$ is piecewise continuous on $C$. Thus, by the mean value property of harmonic functions (Corollary 7, Section 3.8), we have
@@ -1596,7 +1596,7 @@ Figure 5 We think of $\Phi(z, \zeta)$ as a function of one variable $\zeta$ in $
 
 ## THEOREM 1 GREEN'S FUNCTIONS
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-54_554_1119_333_736.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-54_554_1119_333_736.jpg)
 
 Using $\Phi(z, \zeta)$ in place of $\phi(\zeta)$ in (4), we are able to reproduce the value of $u$ at any point $z$ in $\Omega$.
 Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$, and $\phi$ is a one-to-one analytic function on $\Omega$ and its boundary onto the unit disk and its boundary. Let $u(z)$ be a function harmonic on $\Omega$ and piecewise continuous on $\Gamma$. For $z$ and $\zeta$ in $\Omega$, let $\Phi(z, \zeta)$ be as in (8). Then, for any $z$ in $\Omega$, we have
@@ -1619,7 +1619,7 @@ Like the Poisson formulas on the disk and in the upper half-plane, formula (9) c
 
 We will often write the Green's function $G(z, \zeta)$ in terms of the real and
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-55_360_455_243_50.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-55_360_455_243_50.jpg)
 Figure 6 Green's function $G\left(\frac{2}{5}, \zeta\right)$ for the unit disk anchored at $z=\frac{2}{5}$. Note that $G\left(\frac{2}{5}, \zeta\right)=0$ for all $\zeta$ on the boundary and $G\left(\frac{2}{5}, \zeta\right)$ has a singularity at $\zeta=\frac{2}{5}$.
 
 imaginary parts of $z=x+i y$ and $\zeta=s+i t$. We will also write the Green's function using polar coordinates of $z$ and $\zeta$, where $z=r e^{i \theta}$ and $\zeta=\rho e^{i \eta}$
@@ -1663,10 +1663,10 @@ $$
 \tau(\zeta)=\frac{z-\zeta}{\bar{z}-\zeta}
 $$
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-56_319_529_797_106.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-56_319_529_797_106.jpg)
 Figure 7 Green's function $G(1+i, \zeta)$ for the upper halfplane anchored at $z=1+i$. Note that $G(1+i, \zeta)=0$ for all $\zeta$ on the boundary and $G(1+i, \zeta)$ has a singularity at $\zeta=1+i$.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-56_508_543_1954_108.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-56_508_543_1954_108.jpg)
 Figure 8 for Example 3.
 
 where $z$ is in the upper half-plane. If $\zeta$ is real so that $\bar{\zeta}=\zeta$, then
@@ -1720,14 +1720,14 @@ We can map the strip $\Omega$ in Figure 8 conformally onto the upper half-plane 
 analytic mapping of $\Omega$ onto the unit disk, taking $z$ in $\Omega$ onto the origin. Thus the Green's function for $\Omega$ is
 
 $$
-G(z, \zeta)=\ln \left|\frac{\sin z-\sin \zeta}{\sin z-\sin \zeta}\right|
+G(z, \zeta)=\ln \left|\frac{\sin z-\sin \zeta}{\overline{\sin z}-\sin \zeta}\right|
 $$ $\square$
 
 We prove next some interesting properties of Green's functions.
 
 ## THEOREM 2 PROPERTIES OF GREEN'S FUNCTIONS
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-57_427_1842_1086_41.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-57_427_1842_1086_41.jpg)
 Figure 9 A Green's function $G\left(z_{0}, \zeta\right)$ anchored at $z_{0}=1+i$ is the sum of a logarithm, $\ln \left|z_{0}-\zeta\right|$, and a harmonic function, $u_{1}(\zeta)$, such that $u_{1}(\zeta)=-\ln \left|z_{0}-\zeta\right|$ on the boundary. As a result, $G\left(z_{0}, \zeta\right)$ vanishes on the boundary and has a singularity at $z_{0}$ like $\ln \left|z_{0}-\zeta\right|$.
 
 Proof Fix $z$ in $\Omega$. From the definition of $\phi$ and $\Phi$ (see (7) and (8)), we have that $\Phi(z, \zeta)$ is in the open unit disk $D$ (that is, $|\Phi(z, \zeta)|<1$ ) for all $\zeta$ in $\Omega$ and $\Phi(z, \zeta)$ is on the unit circle $C$ (that is, $|\Phi(z, \zeta)|=1$ ) for all $\zeta$ on $\Gamma$. This clearly proves (i) and (ii), because $\ln |x|<0$ if $|x|<1$ and $\ln |x|=0$ if $|x|=1$. For (iii), we have
@@ -1766,7 +1766,7 @@ Because the function $\zeta \mapsto u_{1}(z, \zeta)$ is the solution of a Dirich
 
 ## Appendix: Proof of the change of variables formula (3)
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-58_500_529_1600_108.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-58_500_529_1600_108.jpg)
 Figure 10
 
 Suppose that $\gamma(t)=x(t)+i y(t)$ is a parametrization of a smooth path with $\gamma^{\prime}(t)= x^{\prime}(t)+i y(t) \neq 0$. If we assume our path has a positive orientation, then an outward unit normal may be obtained by rotating the tangent $\gamma^{\prime}(t)$ clockwise by $\pi / 2$ and dividing by its absolute value (Figure 10). Hence $n(t)=\frac{\gamma^{\prime}(t)}{i\left|\gamma^{\prime}(t)\right|}$ or
@@ -1831,45 +1831,45 @@ Comparing (17) and (18) and using the Cauchy-Riemann equations, $u_{x}=v_{y}, u_
 In Exercises 1-8, derive the Green's function for the region depicted in the accompanying figure (Figures 11-18).
 1.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-59_487_467_1934_48.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-59_487_467_1934_48.jpg)
 Figure 11
 
 2. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-59_491_526_1932_674.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-59_491_526_1932_674.jpg)
 Figure 12
 
 3. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-59_491_538_1934_1361.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-59_491_538_1934_1361.jpg)
 Figure 13
 
 4. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_512_526_235_94.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_512_526_235_94.jpg)
 Figure 14
 
 7. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_482_533_851_102.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_482_533_851_102.jpg)
 Figure 17
 
 5. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_514_528_227_771.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_514_528_227_771.jpg)
 Figure 15
 
 8. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_492_513_838_785.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_492_513_838_785.jpg)
 Figure 18
 
 6. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_515_547_218_1444.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_515_547_218_1444.jpg)
 Figure 16
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-60_495_549_828_1440.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-60_495_549_828_1440.jpg)
 Figure 19 for Exercise 9.
 
 9. Project Problem: Poisson's formula in the first quadrant. (a) Derive the following Poisson formula in the first quadrant for the Dirichlet problem in Figure 19, using Green's function:
@@ -1969,7 +1969,7 @@ Green's formulas do not hold in general on unbounded regions. Since we will use 
 
 Proof of Theorem 2 Fix $z$ in $\Omega$ and let $S_{\epsilon}(z)$ denote the closed disk of radius
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-63_446_454_1727_48.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-63_446_454_1727_48.jpg)
 Figure 3
 
 $$
@@ -2016,7 +2016,7 @@ $$
 which completes the proof of (10). The proof of (9) is similar (see Exercise 9).
 In practice, (3) is difficult to compute in its present form. In later sections, we will relate it to generalized Fourier series and offer alternative ways for computing the solution of Poisson's equation. We now turn our attention to a different problem, which can be solved using an approach similar to the one we took with Green's functions.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-65_448_446_460_61.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-65_448_446_460_61.jpg)
 Figure 4 A Neumann problem in a region $\Omega$.
 
 ## PROPOSITION 1 NORMAL DERIVATIVE OF HARMONIC FUNCTIONS
@@ -2090,7 +2090,7 @@ Proof The proof is based on the following interesting property of the logarithm.
 
 ## THEOREM 5 SOLUTION OF NEUMANN PROBLEMS
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-67_517_495_1823_53.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-67_517_495_1823_53.jpg)
 
 Figure 5 A Neumann function for the upper half-plane, anchored at $z=1+i$.
 
@@ -2143,7 +2143,7 @@ for $z=x+i y$ and $\zeta=s+i t, y, t>0$ (Figure 5).
 
 ## PROPOSITION 3 NEUMANN FUNCTION FOR UNBOUNDED REGIONS
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-68_688_546_1679_85.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-68_688_546_1679_85.jpg)
 
 Figure 6 A Neumann function for the first quadrant, anchored at $z=1+i$. Note the singularity at $\zeta=1+i$.
 
@@ -2196,12 +2196,12 @@ This problem is also solvable with the Neumann function, and for reference, we p
 THEOREM 6 SOLUTION OF POISSON-NEUMANN PROBLEM
 2.
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-69_502_533_1955_687.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-69_502_533_1955_687.jpg)
 Figure 8
 
 3. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-69_506_541_1949_1375.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-69_506_541_1949_1375.jpg)
 Figure 9
 
 Suppose that $\Omega$ is a region with boundary $\Gamma$, let $N(z, \zeta)$ denote a Neumann function for this region, where $z$ and $\zeta$ are in $\Omega$. If $u(z)$ is a solution to Poisson's equation (1) subject to a Neumann boundary condition (13) and satisfying (23), then up to an additive constant
@@ -2214,17 +2214,17 @@ $$
 
 In Exercises 1-6, derive the Neumann function for the region depicted in the accompanying figure (Figures 7-12).
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-70_562_543_171_59.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-70_562_543_171_59.jpg)
 Figure 10
 
 5. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-70_509_517_216_742.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-70_509_517_216_742.jpg)
 Figure 11
 
 6. 
 
-![](./images/1e48851a-8747-45b3-89c9-e5bcc05fcde8-70_509_537_214_1407.jpg)
+![](./images/7efaf102-2f40-4f0a-b342-71e0a729dc8e-70_509_537_214_1407.jpg)
 Figure 12
 
 7. Uniqueness of the solution in a Poisson problem. Show that the solution of the Poisson problem in a bounded region $\Omega$ is unique. [Hint: The difference between any two solutions is harmonic and has zero boundary values.]

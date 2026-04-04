@@ -1,5 +1,6 @@
 [
   "highlightr-plugin",
+  "case-sensitive-find",
   "callout-tools",
   "callout-outline",
   "callout-manager",
@@ -48,5 +49,6 @@
   "markdown-table-editor",
   "horizontal-blocks",
   "image-tools",
-  "pdf-plus"
+  "pdf-plus",
+  "colored-horizontal-rules"
 ]
