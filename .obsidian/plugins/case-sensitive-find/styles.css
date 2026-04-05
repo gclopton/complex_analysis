@@ -1,17 +1,28 @@
 .case-find-bar {
-  align-items: center;
+  align-items: stretch;
   backdrop-filter: blur(8px);
   background: color-mix(in srgb, var(--background-primary) 88%, var(--background-secondary) 12%);
   border: 1px solid var(--background-modifier-border);
   border-radius: 12px;
   box-shadow: var(--shadow-s);
   display: flex;
+  flex-direction: column;
   gap: 0.4rem;
   margin: 0.5rem 0.75rem;
   padding: 0.45rem 0.55rem;
   position: sticky;
   top: 0.35rem;
   z-index: 40;
+}
+
+.case-find-row {
+  align-items: center;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.case-find-row.is-hidden {
+  display: none;
 }
 
 .case-find-input {
@@ -68,8 +79,35 @@
   padding: 0;
 }
 
+.case-find-bar.mod-replace .case-find-row-replace {
+  padding-top: 0.1rem;
+}
+
+/* ---- Active match: ViewPlugin decoration (bright yellow) ---- */
+.case-find-active-match {
+  background-color: rgba(255, 208, 0, 0.55);
+  border-radius: var(--radius-s);
+  box-shadow: 0 0 0 1px rgba(214, 160, 0, 0.9) inset;
+}
+
+/* ---- Inactive matches: ViewPlugin decoration (cyan) ---- */
+.case-find-secondary-match {
+  background-color: rgba(0, 210, 220, 0.35);
+  border-radius: var(--radius-s);
+  box-shadow: 0 0 0 1px rgba(0, 190, 200, 0.6) inset;
+}
+
+/* ---- Fallback: selection highlight while bar is open ---- */
 .case-find-active .cm-selectionBackground,
 .case-find-active .cm-editor .cm-selectionLayer .cm-selectionBackground {
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--text-highlight-bg) 70%, var(--background-modifier-border) 30%) inset;
+  background: rgba(255, 208, 0, 0.55) !important;
+  box-shadow: 0 0 0 1px rgba(214, 160, 0, 0.9) inset;
   border-radius: var(--radius-s);
+}
+
+/* Hide any native search panel that leaks through */
+.case-find-active .cm-panels .cm-search,
+.case-find-active .cm-panels-top .cm-search,
+.case-find-active .cm-panel.cm-search {
+  display: none !important;
 }

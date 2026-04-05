@@ -185,8 +185,29 @@ The plugin registers these editor commands:
 
 - `Remove current callout wrapper`
 - `Move first callout line to title`
+- `Number figure callouts`
 
 The intended workflow is simple: place the cursor anywhere inside a callout and run the desired command from the command palette.
+
+### Figure numbering command
+
+The `Number figure callouts` command works on the active Markdown note and rewrites actual figure callout header titles in source order. This is different from the render-only numbering used by the Callout Outline plugin. The goal is to make figure numbering stable in the note text itself so in-text figure references can stay manually consistent.
+
+It only touches real `[!figure]` callout headers and skips fake callout syntax inside fenced code blocks.
+
+The command handles these cases:
+
+- a figure callout with no title becomes `Figure N`
+- a figure callout with an unnumbered title such as `Contour around poles` becomes `Figure N: Contour around poles`
+- a figure callout already titled `Figure 12` becomes `Figure N`
+- a figure callout already titled `Figure 12: Contour around poles` becomes `Figure N: Contour around poles`
+- a figure callout titled `Figure 2(a)` becomes `Figure N(a)`
+- a figure callout titled `Figure 2a` becomes `Figure N(a)`
+- a figure callout titled `Figure 2.a` becomes `Figure N(a)`
+- a figure callout titled `Figure 2(a): Contour around poles` becomes `Figure N(a): Contour around poles`
+- a figure callout titled `Figure 2a: Contour around poles` or `Figure 2.a: Contour around poles` becomes `Figure N(a): Contour around poles`
+
+Because this command edits the note source directly, the numbering can be undone with normal Obsidian undo if needed.
 
 ### What the command does
 

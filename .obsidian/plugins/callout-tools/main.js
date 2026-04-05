@@ -3,9 +3,18 @@ const { Plugin, Notice, MarkdownView } = require("obsidian");
 const HEADER_RE = /^(\s*)((?:>\s*)+)\[!([^\]\s]+)\]([+-])?(?:\s+(.*))?$/;
 const QUOTE_PREFIX_RE = /^(\s*)((?:>\s*)+)(.*)$/;
 const FENCE_RE = /^(?:```+|~~~+)/;
+const FIGURE_PREFIX_RE = /^Figure\s+(\d+)(?:(?:\(([A-Za-z])\))|(?:\.([A-Za-z]))|(?:([A-Za-z])))?(?:\s*[:.-]\s*(.*)|\s+(.*)|$)/i;
 
 function quoteDepth(prefix) {
   return (prefix.match(/>/g) || []).length;
+}
+
+function normalizeType(type) {
+  return String(type || "").trim().toLowerCase();
+}
+
+function collapseWhitespace(text) {
+  return String(text || "").replace(/\s+/g, " ").trim();
 }
 
 function buildQuotePrefix(indent, depth) {
@@ -132,6 +141,86 @@ function rewriteHeaderWithTitle(headerMatch, title) {
   return `${indent}${prefix}[!${type}]${fold} ${title}`;
 }
 
+function parseFigureTitle(title) {
+  const cleanTitle = collapseWhitespace(title);
+  if (!cleanTitle) {
+    return { numberedSuffix: "", suffixText: "" };
+  }
+
+  const match = cleanTitle.match(FIGURE_PREFIX_RE);
+  if (!match) {
+    return { numberedSuffix: "", suffixText: cleanTitle };
+  }
+
+  const letter = match[2] || match[3] || match[4] || "";
+  return {
+    numberedSuffix: letter ? `(${letter})` : "",
+    suffixText: collapseWhitespace(match[5] || match[6] || ""),
+  };
+}
+
+function buildFigureHeader(headerMatch, number) {
+  const figureInfo = parseFigureTitle(headerMatch[5] || "");
+  const label = `Figure ${number}${figureInfo.numberedSuffix}`;
+  const title = figureInfo.suffixText ? `${label}: ${figureInfo.suffixText}` : label;
+  return rewriteHeaderWithTitle(headerMatch, title);
+}
+
+function renumberFigureCalloutHeaders(lines) {
+  const out = [...lines];
+  const fenceDepths = [];
+  let figureCount = 0;
+  let changedCount = 0;
+
+  for (let lineNumber = 0; lineNumber < out.length; lineNumber += 1) {
+    const line = out[lineNumber];
+    const quoteMatch = line.match(QUOTE_PREFIX_RE);
+    const depth = quoteMatch ? quoteDepth(quoteMatch[2]) : 0;
+
+    while (fenceDepths.length && fenceDepths[fenceDepths.length - 1] > depth) {
+      fenceDepths.pop();
+    }
+
+    if (!quoteMatch) {
+      continue;
+    }
+
+    const body = quoteMatch[3].replace(/^\s+/, "");
+    const inFence = fenceDepths.length > 0 && depth >= fenceDepths[fenceDepths.length - 1];
+    const isFenceMarker = FENCE_RE.test(body);
+
+    if (inFence) {
+      if (isFenceMarker && depth === fenceDepths[fenceDepths.length - 1]) {
+        fenceDepths.pop();
+      }
+      continue;
+    }
+
+    if (isFenceMarker) {
+      fenceDepths.push(depth);
+      continue;
+    }
+
+    const headerMatch = line.match(HEADER_RE);
+    if (!headerMatch || normalizeType(headerMatch[3]) !== "figure") {
+      continue;
+    }
+
+    figureCount += 1;
+    const rewritten = buildFigureHeader(headerMatch, figureCount);
+    if (rewritten !== line) {
+      out[lineNumber] = rewritten;
+      changedCount += 1;
+    }
+  }
+
+  return {
+    lines: out,
+    figureCount,
+    changedCount,
+  };
+}
+
 function promoteFirstLineToTitle(lines) {
   if (lines.length === 0) {
     return { ok: false, reason: "Empty callout." };
@@ -197,6 +286,12 @@ module.exports = class CalloutToolsPlugin extends Plugin {
       id: "promote-callout-first-line-to-title",
       name: "Move first callout line to title",
       editorCallback: (editor, view) => this.promoteCalloutFirstLineToTitle(editor, view),
+    });
+
+    this.addCommand({
+      id: "number-figure-callouts",
+      name: "Number figure callouts",
+      editorCallback: (editor, view) => this.numberFigureCallouts(editor, view),
     });
   }
 
@@ -300,5 +395,30 @@ module.exports = class CalloutToolsPlugin extends Plugin {
 
     this.replaceCallout(editor, callout, result.lines);
     new Notice("Callout title updated.");
+  }
+
+  numberFigureCallouts(editor, view) {
+    if (!(view instanceof MarkdownView)) {
+      new Notice("Open a Markdown note to use this command.");
+      return;
+    }
+
+    const originalText = editor.getValue();
+    const lineEnding = originalText.includes("\r\n") ? "\r\n" : "\n";
+    const lines = originalText.split(/\r?\n/);
+    const result = renumberFigureCalloutHeaders(lines);
+
+    if (result.figureCount === 0) {
+      new Notice("No figure callouts found in this note.");
+      return;
+    }
+
+    if (result.changedCount === 0) {
+      new Notice(`Figure callouts already numbered (found ${result.figureCount}).`);
+      return;
+    }
+
+    editor.setValue(result.lines.join(lineEnding));
+    new Notice(`Renumbered ${result.figureCount} figure callouts.`);
   }
 };

@@ -1,0 +1,9 @@
+{
+  "body_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/ocr_regions/page_012_body.png",
+  "body_text": "ice Numerical Methods\n\nDiscretizing the Wave Equation\nAs in the previous section, we let $h$ denote our stepsize in $x$ and $k$ our st in $t$. We will approximate the displacement $u$ at a discrete set of grid in the $x t$-plane (see Figure 1). Let\n$$\nh=\\frac{L}{n},\n$$\nwhere $n$ denotes the number of equal subintervals into which we cho subdivide the interval $(0, L)$, and let\n$$\nu_{i j}=u(i h, j k), \\quad 0 \\leq i \\leq n, \\quad j \\geq 0 .\n$$\n\nThus $u_{i j}$ represents the value of $u$ at the gridpoint $(i h, j k)$.\n\nTo discretize (1), we appeal to the centered second difference ap mation ((10), Section 9.1):\n$$\nu_{x x}(i h, j k) \\approx \\frac{1}{h^{2}}\\left(u_{i+1, j}-2 u_{i j}+u_{i-1, j}\\right),\n$$\nand\n(6)\n$$\nu_{t t}(i h, j k) \\approx \\frac{1}{k^{2}}\\left(u_{i, j+1}-2 u_{i j}+u_{i, j-1}\\right) .\n$$\n\nPlugging into (1) and simplifying, we get",
+  "left_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/ocr_regions/page_012_left.png",
+  "left_text": "526\nChapter 9\nFinite Differer\n\nFigure 1 Gridpoints in the $x t$-plane.",
+  "page": 12,
+  "right_image": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/ocr_regions/page_012_right.png",
+  "right_text": "epsize points\nose to\n\nproxi-"
+}

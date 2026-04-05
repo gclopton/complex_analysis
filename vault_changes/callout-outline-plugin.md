@@ -147,6 +147,8 @@ The same numbering logic is also used for optional in-note rendered callout-titl
 
 That feature is currently treated as experimental, because Obsidian may only render part of a long note at once. The current approach therefore tries to map rendered callout widgets back to source lines through CodeMirror rather than matching visible callouts by DOM order. That is much safer than the original DOM-order experiment, but it still needs real vault use before it should be considered fully reliable.
 
+Figures are now an explicit exception. The plugin treats `figure` callouts as manual by default, even when rendered-title decoration is enabled. The reason is that figure references in the prose need to stay aligned with the actual handwritten figure numbering, and render-only renumbering of figures can drift away from those prose references. Other callout types such as exercises, theorems, definitions, and reviews still use generated numbering.
+
 ### Manual numbering overrides
 
 The plugin also supports two callout-local override directives for rare numbering edge cases. These are written as hidden Obsidian comments on the first non-empty content line inside the callout.
@@ -166,6 +168,8 @@ When this override is present:
 - the outline shows the handwritten title as-is,
 - the plugin does not auto-number that callout,
 - and in-note rendered-title decoration leaves that callout alone.
+
+In the current design, `figure` callouts behave this way automatically even without the override.
 
 #### Numbering restart
 

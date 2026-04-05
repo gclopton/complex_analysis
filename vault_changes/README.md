@@ -10,6 +10,7 @@ still exists at the vault root and contains earlier session notes. Going forward
 
 ## Current Notes
 
+- `callout-tools-plugin.md` — source-editing commands for callouts, including figure renumbering
 - `callout-outline-plugin.md` — how the Callout Outline plugin was designed and where its code lives
 - `case-sensitive-find-plugin.md` — how the vault-local Ctrl+F replacement with match-case support was implemented
 - `colored-horizontal-rules-plugin.md` — how plugin-owned `+++` / `++++` colored separators were implemented and stabilized for editor use
