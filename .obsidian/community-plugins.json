@@ -1,10 +1,8 @@
 [
   "highlightr-plugin",
   "case-sensitive-find",
-  "callout-tools",
   "callout-manager",
   "colorful-note-borders",
-  "execute-code",
   "obsidian-file-color",
   "obsidian-footnotes",
   "obsidian-local-rest-api",
@@ -42,12 +40,13 @@
   "obsidian-regex-replace",
   "canvas-presentation",
   "canvas-card-bg-remover",
-  "quick-explorer",
   "oin-gotoheading",
   "enhanced-tables",
   "markdown-table-editor",
   "horizontal-blocks",
-  "image-tools",
   "pdf-plus",
-  "colored-horizontal-rules"
+  "colored-horizontal-rules",
+  "callout-tools",
+  "image-tools",
+  "callout-outline"
 ]

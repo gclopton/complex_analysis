@@ -10,5 +10,6 @@
   },
   "newFileLocation": "root",
   "attachmentFolderPath": "./images",
-  "promptDelete": false
+  "promptDelete": false,
+  "useMarkdownLinks": true
 }

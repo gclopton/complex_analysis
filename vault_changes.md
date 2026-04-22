@@ -20,6 +20,17 @@ The vault now supports Markdown image alignment flags of the form
 ![|left](./images/example.png)
 ![|center](./images/example.png)
 ![|right](./images/example.png)
+
+![|left|450](./images/example.png)
+![|center|450](./images/example.png)
+![|right|450](./images/example.png)
+```
+
+Both alignment-token orders are now supported:
+
+```md
+![450|center](./images/example.png)
+![|center|450](./images/example.png)
 ```
 
 Plain images without an alignment flag still use the normal Obsidian or theme default:
@@ -38,13 +49,62 @@ The following files were added or updated:
 
 ### What was added
 
-A CSS snippet was added to target image alt text ending in `|left`, `|center`, or `|right`. The snippet intentionally does not affect plain images.
+A CSS snippet was added to target image alt text containing the alignment tokens `|left|`, `|center|`, or `|right|`, as well as the alignment-last forms ending in `|left`, `|center`, or `|right`. The snippet intentionally does not affect plain images.
+
+The snippet also targets the surrounding `.image-embed` wrapper, not just the `<img>` element itself. This is necessary because the `image-tools` plugin wraps images in a width-constrained container, and centering the image node alone does not reliably center the rendered figure block.
 
 The enabled snippet list in `.obsidian/appearance.json` was also updated to include:
 
 ```json
 "codex-image-align-flags"
 ```
+
+### How it was implemented
+
+There are three moving pieces, and all three matter if this is rolled out to other vaults.
+
+First, the vault-level syntax support is implemented by the CSS snippet
+
+- `.obsidian/snippets/codex-image-align-flags.css`
+
+This is the part that makes rendered Markdown respond to alignment flags in the image alt text. The snippet does two jobs:
+
+1. It matches image alt text that either ends with `|left`, `|center`, `|right` or contains the middle-token forms `|left|`, `|center|`, `|right|`.
+2. It styles both the `<img>` element and the surrounding `.image-embed` wrapper.
+
+The wrapper targeting is important because `image-tools` sets `.image-embed { width: fit-content; }`, so centering only the image is not enough to center the whole rendered figure block.
+
+Second, the snippet has to be enabled in
+
+- `.obsidian/appearance.json`
+
+by adding
+
+```json
+"codex-image-align-flags"
+```
+
+to `enabledCssSnippets`. Without that, the CSS file can exist on disk and still do nothing.
+
+Third, the vault’s installed `image-tools` plugin affects Live Preview behavior:
+
+- `.obsidian/plugins/image-tools/main.js`
+- `.obsidian/plugins/image-tools/styles.css`
+
+The plugin already parses alignment tokens for URL-style images from the alt text, including both orders such as
+
+```md
+![400|center](...)
+![|center|400](...)
+```
+
+But the plugin originally left stale `images-tools-text-align-*` classes on the wrapper when the alignment changed. The fix was applied in the plugin’s alignment update path so that on every editor update it:
+
+1. re-parses the current alignment token,
+2. removes any old `images-tools-text-align-*` classes from the embed wrapper,
+3. adds the correct current class back.
+
+That refresh fix is what makes alignment changes update immediately in Live Preview instead of requiring the note to be reopened.
 
 ### Snippet contents
 
@@ -56,30 +116,74 @@ Supports Markdown image flags such as:
 ![450|center](...)
 ![450|right](...)
 ![|left](...)
+![|center|450](...)
+![|right|450](...)
 
 Plain images like ![](...) or ![450](...) keep the theme default.
 */
 
 .markdown-rendered img[alt$="|left"],
+.markdown-rendered img[alt*="|left|"],
 .markdown-preview-view img[alt$="|left"],
-.markdown-source-view.mod-cm6.is-live-preview img[alt$="|left"] {
+.markdown-preview-view img[alt*="|left|"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt$="|left"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt*="|left|"] {
   display: block;
   margin-left: 0 !important;
   margin-right: auto !important;
 }
 
+.markdown-rendered .image-embed:has(img[alt$="|left"]),
+.markdown-rendered .image-embed:has(img[alt*="|left|"]),
+.markdown-preview-view .image-embed:has(img[alt$="|left"]),
+.markdown-preview-view .image-embed:has(img[alt*="|left|"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt$="|left"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt*="|left|"]) {
+  display: table !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 .markdown-rendered img[alt$="|center"],
+.markdown-rendered img[alt*="|center|"],
 .markdown-preview-view img[alt$="|center"],
-.markdown-source-view.mod-cm6.is-live-preview img[alt$="|center"] {
+.markdown-preview-view img[alt*="|center|"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt$="|center"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt*="|center|"] {
   display: block;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
+.markdown-rendered .image-embed:has(img[alt$="|center"]),
+.markdown-rendered .image-embed:has(img[alt*="|center|"]),
+.markdown-preview-view .image-embed:has(img[alt$="|center"]),
+.markdown-preview-view .image-embed:has(img[alt*="|center|"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt$="|center"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt*="|center|"]) {
+  display: table !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 .markdown-rendered img[alt$="|right"],
+.markdown-rendered img[alt*="|right|"],
 .markdown-preview-view img[alt$="|right"],
-.markdown-source-view.mod-cm6.is-live-preview img[alt$="|right"] {
+.markdown-preview-view img[alt*="|right|"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt$="|right"],
+.markdown-source-view.mod-cm6.is-live-preview img[alt*="|right|"] {
   display: block;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.markdown-rendered .image-embed:has(img[alt$="|right"]),
+.markdown-rendered .image-embed:has(img[alt*="|right|"]),
+.markdown-preview-view .image-embed:has(img[alt$="|right"]),
+.markdown-preview-view .image-embed:has(img[alt*="|right|"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt$="|right"]),
+.markdown-source-view.mod-cm6.is-live-preview .image-embed:has(img[alt*="|right|"]) {
+  display: table !important;
   margin-left: auto !important;
   margin-right: 0 !important;
 }
@@ -102,6 +206,26 @@ The plugin’s update logic was changed so that on every editor update it:
 1. Reads the current alignment from the Markdown image syntax.
 2. Removes any existing `images-tools-text-align-*` class from the embed.
 3. Applies the correct current alignment class.
+
+This matters because `image-tools` already understands alignment tokens in either order for URL-style image embeds, for example both
+
+```md
+![400|center](./images/example.png)
+![|center|400](./images/example.png)
+```
+
+but without the refresh fix, stale alignment classes could make the behavior appear inconsistent.
+
+### Implementation note for future vault rollout
+
+To reproduce this feature reliably in another vault, do not treat it as “just a CSS snippet.” The reusable implementation checklist is:
+
+1. Copy `codex-image-align-flags.css` into `.obsidian/snippets/`.
+2. Enable it in `.obsidian/appearance.json`.
+3. If the vault uses `image-tools`, patch `.obsidian/plugins/image-tools/main.js` with the alignment-refresh fix.
+4. If the vault uses `image-tools` or any other wrapper-producing image plugin, make sure the CSS targets the wrapper (`.image-embed`), not only the raw `<img>` tag.
+
+If step 3 or 4 is skipped, the feature can appear to work in one vault and fail or behave inconsistently in another.
 
 ### Effect
 
@@ -183,11 +307,29 @@ The shared vault template under `~/utils/ObsidianConfig/` was also updated with 
 
 The plugin registers these editor commands:
 
+- `Insert exercise callout`
 - `Remove current callout wrapper`
 - `Move first callout line to title`
 - `Number figure callouts`
 
 The intended workflow is simple: place the cursor anywhere inside a callout and run the desired command from the command palette.
+
+### Exercise callout shortcut
+
+The plugin now also provides a direct insertion command for exercise callouts. The command inserts
+
+```md
+> [!exercise]
+> 
+```
+
+when nothing is selected, and wraps the current selection in an `exercise` callout when text is selected.
+
+The vault hotkeys file binds this command to `Cmd+Shift+2`:
+
+- `.obsidian/hotkeys.json`
+
+This intentionally mirrors the existing built-in generic callout shortcut on `Cmd+Shift+1`, so generic callouts and exercise callouts now have adjacent shortcuts.
 
 ### Figure numbering command
 
@@ -239,6 +381,42 @@ Caption text
 ```
 
 and a nested callout inside another callout is only unwrapped one level at a time.
+
+## Colored Horizontal Rules Fix
+
+The custom `colored-horizontal-rules` plugin was causing certain notes to fail to open when they contained ordinary Markdown horizontal rules written as
+
+```md
+---
+```
+
+The bug was that the plugin matched `---` as a custom colored rule, even though normal three-dash rules should remain native Obsidian behavior.
+
+### Files changed
+
+- `complex_analysis/.obsidian/plugins/colored-horizontal-rules/main.js`
+- `complex_analysis/.obsidian/plugins/colored-horizontal-rules/styles.css`
+- `real_analysis/.obsidian/plugins/colored-horizontal-rules/main.js`
+- `real_analysis/.obsidian/plugins/colored-horizontal-rules/styles.css`
+
+### Fix applied
+
+The plugin matcher was narrowed so it now customizes only:
+
+- `+++`
+- `----` and longer dash separators
+
+while leaving ordinary `---` untouched.
+
+The rendered CSS was also corrected so plugin-managed horizontal rules are actually drawn with a visible `border-top` instead of being reduced to zero-height hidden elements.
+
+### Effect
+
+This preserves normal Markdown horizontal rules and prevents the plugin from hijacking standard `---` separators in notes. Custom colored separators still work for `+++` and for four-or-more dashes.
+
+### Reload requirement
+
+After editing either plugin copy in `.obsidian/plugins/colored-horizontal-rules/`, Obsidian needs a reload, or the plugin needs to be disabled and re-enabled, before the fix takes effect.
 
 ### Title-promotion command
 

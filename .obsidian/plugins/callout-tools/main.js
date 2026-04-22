@@ -274,8 +274,32 @@ function promoteFirstLineToTitle(lines) {
   return { ok: true, lines: out };
 }
 
+function getLineIndent(editor, lineNumber) {
+  const line = editor.getLine(lineNumber) || "";
+  const match = line.match(/^\s*/);
+  return match ? match[0] : "";
+}
+
+function buildCalloutLines(type, text, indent = "") {
+  const header = `${indent}> [!${type}]`;
+  const normalizedText = String(text || "").replace(/\r\n/g, "\n");
+
+  if (!normalizedText) {
+    return [header, `${indent}> `];
+  }
+
+  const bodyLines = normalizedText.split("\n").map((line) => `${indent}> ${line}`);
+  return [header, ...bodyLines];
+}
+
 module.exports = class CalloutToolsPlugin extends Plugin {
   onload() {
+    this.addCommand({
+      id: "insert-exercise-callout",
+      name: "Insert exercise callout",
+      editorCallback: (editor, view) => this.insertExerciseCallout(editor, view),
+    });
+
     this.addCommand({
       id: "unwrap-current-callout",
       name: "Remove current callout wrapper",
@@ -374,6 +398,32 @@ module.exports = class CalloutToolsPlugin extends Plugin {
       { line: callout.headerLine, ch: 0 },
       { line: callout.endLine, ch: editor.getLine(callout.endLine).length }
     );
+  }
+
+  insertExerciseCallout(editor, view) {
+    if (!(view instanceof MarkdownView)) {
+      new Notice("Open a Markdown note to use this command.");
+      return;
+    }
+
+    const from = editor.getCursor("from");
+    const to = editor.getCursor("to");
+    const indent = getLineIndent(editor, from.line);
+    const selectedText = editor.getSelection();
+    const lineEnding = editor.getValue().includes("\r\n") ? "\r\n" : "\n";
+
+    if (selectedText) {
+      const replacement = buildCalloutLines("exercise", selectedText, indent).join(lineEnding);
+      editor.replaceSelection(replacement);
+      new Notice("Exercise callout inserted.");
+      return;
+    }
+
+    const replacementLines = buildCalloutLines("exercise", "", indent);
+    const replacement = replacementLines.join(lineEnding);
+    editor.replaceRange(replacement, from, to);
+    editor.setCursor({ line: from.line + 1, ch: indent.length + 2 });
+    new Notice("Exercise callout inserted.");
   }
 
   promoteCalloutFirstLineToTitle(editor, view) {

@@ -3,7 +3,10 @@ const { Decoration, EditorView, ViewPlugin, WidgetType } = require("@codemirror/
 const { RangeSetBuilder } = require("@codemirror/state");
 
 const SUPPORTED_COUNTS = [3, 4, 5, 6, 7, 8];
-const RULE_RE = /^\s*((?:-{3,})|(?:\+{3,}))\s*$/;
+// Keep native Markdown --- rules untouched. This plugin only customizes:
+// - +++ and longer plus separators
+// - ---- and longer dash separators
+const RULE_RE = /^\s*((?:-{4,})|(?:\+{3,}))\s*$/;
 const DEFAULT_SETTINGS = {
   colors: {
     "3": "#f4f7fb",

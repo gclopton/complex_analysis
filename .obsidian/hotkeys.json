@@ -8,6 +8,15 @@
       "key": "1"
     }
   ],
+  "callout-tools:insert-exercise-callout": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "2"
+    }
+  ],
   "workspace:edit-file-title": [
     {
       "modifiers": [],

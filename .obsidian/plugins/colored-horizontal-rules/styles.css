@@ -1,7 +1,39 @@
 .markdown-rendered hr.colored-horizontal-rule,
 .markdown-preview-view hr.colored-horizontal-rule {
   border: 0;
+  border-top: 2px solid var(--background-modifier-border);
   height: 0;
+  box-shadow: none;
+}
+
+.markdown-rendered hr.colored-horizontal-rule.colored-horizontal-rule-4,
+.markdown-preview-view hr.colored-horizontal-rule.colored-horizontal-rule-4 {
+  border-top-color: var(--colored-horizontal-rule-4, #ffd60a);
+  box-shadow: 0 0 0.45rem var(--colored-horizontal-rule-4, #ffd60a);
+}
+
+.markdown-rendered hr.colored-horizontal-rule.colored-horizontal-rule-5,
+.markdown-preview-view hr.colored-horizontal-rule.colored-horizontal-rule-5 {
+  border-top-color: var(--colored-horizontal-rule-5, #ff9f0a);
+  box-shadow: 0 0 0.45rem var(--colored-horizontal-rule-5, #ff9f0a);
+}
+
+.markdown-rendered hr.colored-horizontal-rule.colored-horizontal-rule-6,
+.markdown-preview-view hr.colored-horizontal-rule.colored-horizontal-rule-6 {
+  border-top-color: var(--colored-horizontal-rule-6, #ff453a);
+  box-shadow: 0 0 0.45rem var(--colored-horizontal-rule-6, #ff453a);
+}
+
+.markdown-rendered hr.colored-horizontal-rule.colored-horizontal-rule-7,
+.markdown-preview-view hr.colored-horizontal-rule.colored-horizontal-rule-7 {
+  border-top-color: var(--colored-horizontal-rule-7, #32d74b);
+  box-shadow: 0 0 0.45rem var(--colored-horizontal-rule-7, #32d74b);
+}
+
+.markdown-rendered hr.colored-horizontal-rule.colored-horizontal-rule-8,
+.markdown-preview-view hr.colored-horizontal-rule.colored-horizontal-rule-8 {
+  border-top-color: var(--colored-horizontal-rule-8, #64d2ff);
+  box-shadow: 0 0 0.45rem var(--colored-horizontal-rule-8, #64d2ff);
 }
 
 .markdown-rendered .colored-horizontal-rule-block,
