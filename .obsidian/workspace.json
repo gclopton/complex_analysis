@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "e7aaf84888405dd0",
+        "id": "eab3b225dff8e494",
         "type": "split",
         "children": [
           {
             "id": "e173e68fcef078d9",
             "type": "tabs",
-            "dimension": 63.984962406015036,
+            "dimension": 78.83597883597884,
             "children": [
               {
                 "id": "93e772a1904fd7fe",
@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.7 The Counting Theorem and Rouché's Theorem.md",
+                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.4 The Cauchy-Riemann Equations.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "5.7 The Counting Theorem and Rouché's Theorem"
+                  "title": "2.4 The Cauchy-Riemann Equations"
                 }
               },
               {
@@ -32,30 +32,43 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "how to write review questions.md",
+                    "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "how to write review questions"
+                  "title": "3.4 Cauchy's Integral Theorem"
+                }
+              },
+              {
+                "id": "5145d9cb80e2e3d1",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "How to Write a Proof Sketch.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "How to Write a Proof Sketch"
                 }
               }
             ]
           },
           {
-            "id": "ada4ea814ec97c2a",
+            "id": "1f95aa1159423ad2",
             "type": "tabs",
-            "dimension": 36.015037593984964,
+            "dimension": 21.164021164021165,
             "children": [
               {
-                "id": "5dff123de684a997",
+                "id": "a5eb3c8897707f96",
                 "type": "leaf",
-                "pinned": true,
                 "state": {
                   "type": "terminal:terminal",
                   "state": {
                     "terminal:terminal": {
-                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory",
+                      "cwd": "/Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions",
                       "focus": false,
                       "profile": {
                         "args": [],
@@ -76,13 +89,12 @@
                         "useWin32Conhost": true
                       },
                       "serial": {
-                        "columns": 117,
-                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/ObsidianVaults/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !42 ?92 \u001b[33;49m\u001b[38;5;244m────────────────────\u001b[30m\u001b[32;40m ✔ \u001b[34m\u001b[30;44m base  \u001b[36m\u001b[30;46m !6/6  \u001b[37m\u001b[30;47m at 19:43:53 \u001b[38;5;244;49m─╮\r\n╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[4m.\u001b[0m                \u001b[86C\u001b[38;5;244m─╯\u001b[104D\u001b[0m",
-                        "rows": 21
+                        "columns": 79,
+                        "data": "\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-213454\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-213724\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-214353\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-220205\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-220428\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-220650\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-222151\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-222706\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-223054\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-223421\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-223548\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-224625\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-225132\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-225328\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-225624\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-225755\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-230225\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-230737\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-231024\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-231544\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-231949\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-232254\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-232838\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-233435\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-233912\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-234146\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-234810\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260423-235344\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-002032\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-002454\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-002741\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-003242\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-003458\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-003738\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-003927\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-004421\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-004532\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-004746\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-005052\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-005254\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-005550\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-010034\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-010248\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-010600\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-010821\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-011029\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-011343\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-011520\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-012316\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-012632\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-013111\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-013159\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-013759\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-013915\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-014643\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-015027\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-015355\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m date tag\r\nCODEX-INSERT-20260424-015553\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\r\n\u001b[0mUsage:\r\n  oo <vault>\r\n  oo open <vault>\r\n  oo format figures <file.md>\r\n  oo format hints <file.md>\r\n  oo number figures <file.md>\r\n  oo strip code <file.md>\r\n  oo date tag\r\n\u001b[38;5;196m❯\u001b[0m \u001b[32moo\u001b[0m strip code \u001b[33m\"1.2.A Analytic Geometry.md\"\r\n\u001b[0mCreated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.2.A Analytic Geometry.md\r\nFenced code blocks removed: 58\r\nRelative markdown links rewritten for the No Code copy\r\n\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32moo\u001b[0m strip code \u001b[33m\"1.2.A Analytic Geometry.md\"\r\n\u001b[0mCreated: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.2.A Analytic Geometry.md\r\nFenced code blocks removed: 58\r\nRelative markdown links rewritten for the No Code copy\r\n\u001b[38;5;76m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../../\r\n\u001b[38;5;76;24m❯\u001b[0m \u001b[32mcd\u001b[0m \u001b[4m../\r\n\r\n\u001b[38;5;244;24m╭─\u001b[38;5;254;44m \u001b[38;5;255;1m~\u001b[38;5;254;22m/\u001b[38;5;250mO\u001b[38;5;254m/\u001b[38;5;255;1mcomplex_analysis\u001b[38;5;254;22m \u001b[34;43m\u001b[30m on master !12 ?92 \u001b[33;49m\r\n\u001b[38;5;244m╰─\u001b[0m \u001b[32mgit\u001b[0m add \u001b[90m.\u001b[0m                \u001b[48C\u001b[38;5;244m─╯\u001b[67D\u001b[0m",
+                        "rows": 6
                       }
                     }
                   },
-                  "pinned": true,
                   "icon": "terminal",
                   "title": "Terminal: gradyclopton@wirelessprv-10-192-137-92:~/ObsidianVaults/complex_analysis"
                 }
@@ -91,28 +103,6 @@
           }
         ],
         "direction": "horizontal"
-      },
-      {
-        "id": "209f055c3c6dd1e2",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5ceb646a095d4b93",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/original copy/Chapter 5 Residue Theory - bookmarked.pdf",
-                "page": 61,
-                "left": -39,
-                "top": 191,
-                "zoom": 1.18
-              },
-              "icon": "lucide-file-text",
-              "title": "Chapter 5 Residue Theory - bookmarked"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -169,7 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.5
+    "width": 476.5
   },
   "right": {
     "id": "3f7e6a001500c907",
@@ -270,14 +260,33 @@
               "icon": "callout-outline",
               "title": "Callout Outline"
             }
+          },
+          {
+            "id": "94c9b899e7a7cce9",
+            "type": "leaf",
+            "state": {
+              "type": "callout-outline-view",
+              "state": {},
+              "icon": "callout-outline",
+              "title": "Callout Outline"
+            }
+          },
+          {
+            "id": "7e8f645a789aa80f",
+            "type": "leaf",
+            "state": {
+              "type": "callout-outline-view",
+              "state": {},
+              "icon": "callout-outline",
+              "title": "Callout Outline"
+            }
           }
         ],
         "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 359.5,
-    "collapsed": true
+    "width": 237.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -304,52 +313,52 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "5dff123de684a997",
+  "active": "a5eb3c8897707f96",
   "lastOpenFiles": [
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.7 The Counting Theorem and Rouché's Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421193822.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.7 The Counting Theorem and Rouché's Theorem.backup-20260421-193739.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421193319.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421192624.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421192549.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421192511.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421192441.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421192351.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421191043.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.6 Summing Series by Residues.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421190328.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.5 Advanced Integrals by Residues.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/Pasted image 20260421185715.png",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/backups/5.5 Advanced Integrals by Residues.backup-20260421-184949.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.4 Improper Integrals of Products of Rational and Trigonometric Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/6.5 Green's Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.4 The Cauchy-Riemann Equations.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.3 Analytic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.2.A Analytic Geometry.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.2.A Analytic Geometry.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240001-x2-equals-8y.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.2 The Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.2.A Analytic Geometry (No Code).md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240206-rotated-38.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240206-rotated-37.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240206-rotated-36.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240145-parabola-28.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240145-parabola-27.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240145-parabola-26.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240145-parabola-25.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240132-hyperbola-18.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/images/Pasted image 202604240132-hyperbola-17.png",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.4 Cauchy's Integral Theorem.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.1 Contours and Paths in the Complex Plane.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.2 Limits and Continuity.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code/1.4 Complex Function.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.5 Harmonic Functions and Laplace's Equation.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.6 Differentiation of Functions of Several Variables.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/2.1 Regions of the Complex Plane.md",
+    "How to Write a Proof Sketch.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/No Code/2.1 Regions of the Complex Plane.md",
+    "how to write review questions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.4 Complex Function.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/1.5 The Complex Exponential.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 02 Analytic Functions/No Code",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/7.5 Complex Form of Fourier Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/backups/7.5 Complex Form of Fourier Series.backup-20260422-022259.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/7.4 Half-Range Expansions- The Cosine and Sine Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/original copy/Chapter 7 Fourier Series - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/7.3 Fourier Series of Functions with Arbitrary Periods.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/7.2 Fourier Series.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/7.1 Periodic Functions.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/backups/7.1 Periodic Functions.backup-20260421-234204.md",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 07 Fourier Series/original copy/images",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/original copy/Chapter 6 Conformal Mappings - bookmarked.pdf",
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/original copy/images",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/original copy/Chapter 5 Residue Theory - bookmarked.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/6.4 The Schwarz-Christoffel Transformation.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/6.3 Solving Dirichlet Problems with Conformal Mappings.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/6.2 Linear Fractional Transformations.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/6.1 Basic Properties.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.3 Improper Integrals Involving Rational and Exponential Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.2 Definite Integrals of Trigonometric Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/5.1 Cauchy's Residue Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.7 Harmonic Functions and Fourier Series.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.6 Zeros and Singularities.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.5 Laurent Series.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.4 Taylor Series.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.3 Power Series.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.2 Sequences and Series of Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/4.1 Sequences and Series of Complex Numbers.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 04 Complex Series/backups/4.1 Sequences and Series of Complex Numbers.backup-20260402-211650.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.9 Goursat's Theorem.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.8 Applications to Harmonic Functions.md",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/3.7 Bounds for Moduli of Analytic Functions.md",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 03 Complex Integration/original copy/Chapter 3 Complex Integration.pdf",
     "Untitled",
     "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/No Code",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Untitled.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/original copy/Chapter 1 Complex Numbers and Functions.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/unedited",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/original copy/Chapter 6 Conformal Mappings.pdf",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 05 Residue Theory/images/ocr_regions",
-    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 06 Conformal Mappings/backups"
+    "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 01 Complex Numbers and Functions/Untitled.pdf"
   ]
 }

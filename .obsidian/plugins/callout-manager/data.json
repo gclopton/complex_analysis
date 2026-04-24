@@ -37,7 +37,9 @@
       "proposition",
       "corollary",
       "aside",
-      "lemma"
+      "lemma",
+      "verbalization",
+      "sketch"
     ],
     "settings": {
       "expansion": [
@@ -406,6 +408,20 @@
         {
           "changes": {
             "color": "43, 255, 0"
+          }
+        }
+      ],
+      "verbalization": [
+        {
+          "changes": {
+            "color": "128, 128, 128"
+          }
+        }
+      ],
+      "sketch": [
+        {
+          "changes": {
+            "color": "165, 8, 221"
           }
         }
       ]
