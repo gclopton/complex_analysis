@@ -6,7 +6,8 @@
     "S - Images Adjustments",
     "pub-Image Flags",
     "S - Callouts",
-    "codex-image-align-flags"
+    "codex-image-align-flags",
+    "fix-callout-color-rgb-1-13"
   ],
   "theme": "obsidian"
 }

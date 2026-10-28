@@ -33,6 +33,11 @@ When an argument proceeds by a standard technique — induction, contradiction, 
 Let me know if you want anything trimmed or reorganized before you save it.
 
 
+# Output format
+
+Inside the vault, sketches live in an Obsidian `> [!sketch]` callout — that is the file-native format and the example below uses it. When delivering a sketch in chat rather than as a file edit, drop the callout wrapper and any triple-backtick fences and render it as plain markdown: bold stage headers, numbered steps, and KaTeX math (`$...$` inline, `$$...$$` display). The chat copy is OCR'd through Mathpix back into the vault, and callout or fence syntax has to be stripped by hand. So: callouts inside files, plain text in chat.
+
+
 # Example
 
 
