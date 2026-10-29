@@ -39,7 +39,10 @@
       "aside",
       "lemma",
       "verbalization",
-      "sketch"
+      "sketch",
+      "Output",
+      "caption",
+      "table"
     ],
     "settings": {
       "expansion": [
@@ -442,9 +445,9 @@
     }
   },
   "calloutDetection": {
-    "obsidianFallbackForced": false,
     "obsidian": true,
     "theme": true,
-    "snippet": true
+    "snippet": true,
+    "obsidianFallbackForced": false
   }
 }

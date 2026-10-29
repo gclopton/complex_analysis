@@ -4,6 +4,33 @@
 
 Review questions should test whether the reader understands the material beyond surface-level regurgitation. They are "forest for the trees" questions — they probe the *why* behind definitions, the *role* of hypotheses, and the *motivation* for results, not just whether someone can repeat what they read.
 
+## Deliverable structure
+
+A review-block deliverable consists of up to three sections, each introduced by its own top-level `#` heading:
+
+1. `# <descriptor>` for the review questions themselves. The descriptor is a short topic phrase (e.g. *Matrix form of a system of linear equations*), **not** a positional label like "Review 1" or "Block 1" — those don't survive paste-in-vault. **Do not start the heading with the word "Review".** Obsidian's `[!review]` callout auto-renders a "Review" prefix on the title, and including the word in the heading produces a "Review: Review: ..." duplication — the same failure mode as labeled-exercise titles where the word "Exercise" must be omitted.
+2. `# In-text exercises` for any exercise prompts lifted from in-text examples — both labeled and buried in motivation prose — that fall within the block.
+3. `# Labeled Exercises` for any exercise prompts being supplied for existing `[!exercise]` or `[!example]` callouts inside the block whose body has no question stated.
+
+Omit a heading entirely if its category has no entries — do not include an empty section.
+
+### Always include the exercise sections
+
+When writing review questions for a block, also scan the same block for (a) in-text examples and (b) marked `[!exercise]` / `[!example]` callouts whose body has no formulated question, and lift each into an exercise. The user should not have to remind me; the deliverable is reviews *and* exercises together, every time. See `how to write exercise questions` for the source-scanning rules and per-exercise sub-headers.
+
+The render rules in the next section apply *within* each of these top-level `#` sections.
+
+## Output format
+
+Review questions and exercise prompts are delivered to be pasted directly into the Obsidian vault, where they pass through Mathpix OCR. Within each `#` section of the deliverable, the contents must be a clean copy-paste target for that pipeline. Any extra wrapping or formatting becomes manual cleanup work after the paste. The rules:
+
+- **Plain numbered list, no callout wrapper.** Output the questions as `1. ...`, `2. ...`, flush-left in normal text. Do *not* wrap them in a `> [!review] Review` callout — the callout is added by hand in the vault, and the OCR otherwise pulls in the literal `[!review]` text and the leading `>` characters as content that has to be erased.
+- **No triple-backtick fences.** Do not place the questions inside a fenced code block. Mathpix OCR does not round-trip fenced content correctly.
+- **KaTeX math delimiters.** Use `$...$` for inline math and `$$...$$` for display math, with standard LaTeX commands inside (`\gamma`, `\leq`, `e^{i\alpha}`, etc.). This is what Mathpix expects and produces clean output.
+- **Framing commentary goes outside the list.** Placement notes, reasoning about question choices, what is being routed to exercises instead — all of that is welcome, but write it as separate prose *before or after* the numbered list, never interleaved with the numbered items. The list itself must remain a clean paste target.
+
+The end goal: the chat output should contain a block of numbered questions that can be selected, copied, and pasted into the vault with no editing required.
+
 ## Principles
 
 ### Don't give away the answer in the prompt
@@ -13,6 +40,25 @@ A question like "Why is an interval $(a,b) \subset \mathbb{R}$ not a region, eve
 ### For theorems, lemmas, and corollaries, ask the question the result answers
 
 Every theorem exists because someone asked a question. The review should pose that question so the student has to reconstruct the theorem's answer. For example, if a theorem states that a function with zero partial derivatives on a region is constant, the review question is: "Does the one-dimensional result — that a function with zero derivative is constant — still hold for functions of two variables, and if so, under what conditions?" This forces the student to understand why the theorem exists, not just what it says.
+
+### Ask for the proof when (and only when) the text proves it
+
+If a theorem, lemma, proposition, or corollary in the content block has a proof given in the text, the review question for that result must ask the student to prove it. Pose the conceptual question the result answers, then add "Prove your answer." A conceptual prompt alone is not enough — the proof is part of the material being reviewed, and a review that omits it leaves the proof unrehearsed.
+
+What counts as "the text gives a proof":
+
+- A full worked-out proof.
+- A terse justification like "This follows immediately from Theorem X and Proposition Y." The student is being asked to reproduce that citation chain, not invent a new proof.
+- A `**Proof**` heading (or a phrase like "the proof is left to the reader") where the author has signaled that a proof exists and is expected of the reader, but has *not* deferred it to a specific exercise. In that case the student is meant to construct the proof, so the review must ask for it.
+
+What does *not* count:
+
+- A result stated as a fact with no proof in the text and no indication that one is expected.
+- A proof explicitly deferred to a specific exercise — the proof belongs in that exercise, not in the review.
+
+If the content under review is a definition or a piece of motivating discussion with no proof attached, no proof prompt is needed; the question just probes understanding.
+
+When a theorem has multiple numbered parts each with its own proof, each part deserves its own proof prompt — do not collapse them into one umbrella question.
 
 ### Probe the role of hypotheses
 
@@ -35,6 +81,8 @@ Concretely, this means:
 - Do not reference "the definition above," "the theorem on this page," "the inequality (15)," etc.
 - Do not ask "why does the proof use X" — instead, ask the conceptual question that X was introduced to answer.
 - Do not ask the student to locate or identify features of the presentation (where a quantifier appears, which inequality gets used, which line of the proof does what).
+- Do not write "the text says X," "the text characterizes X as Y," "the text proposes...," "the section introduces...". State the proposition directly — *"X is Y"*, *"Y means..."* — so it reads as part of the question's grammar, not something attributed to a source. The question must read identically whether the student has the document in front of them or is answering months later from memory.
+- Do not wrap terminology lifted from the source in scare-quotes. Words like "row operations," "echelon form," or "most convenient form" should appear unquoted in the question, as ordinary vocabulary the student is being tested on rather than as a phrase being attributed to anything.
 - Ask the student to reproduce, motivate, or justify the mathematical content itself, as if no text were available.
 
 #### Example: bad vs. good
@@ -50,6 +98,20 @@ This question only makes sense if the reader can look at "the three definitions"
 > What does it mean for a complex-valued function to have limit $\infty$ at a point, to have a finite limit as its input goes to $\infty$, or to have limit $\infty$ as its input goes to $\infty$? Give a precise definition of each.
 
 This version forces the student to produce the definitions themselves from memory and understanding, with no dependence on the surrounding text.
+
+#### Another example: scare-quotes and references to "the text"
+
+**Bad (quotes a phrase from the source and attributes the claim to the text):**
+
+> The text characterizes matrix notation as "using position to impart information." What does that mean for the entries of $A$, and why is position-based notation what allows manipulation of the matrix to stand in for symbolic manipulation of the equations?
+
+The opening clause attributes the phrase to "the text" and wraps it in quotes — both signal that the question is about something in the source rather than a standalone claim, and both create cleanup friction when the question is OCR-pasted into the vault.
+
+**Good (states the claim as part of the question itself):**
+
+> Matrix notation uses position to impart information. Explain what that means for the entries of $A$, and why position-based notation is what allows manipulation of the matrix to stand in for symbolic manipulation of the equations.
+
+The claim is now in the question's grammar rather than attributed to anything outside it. The question reads the same whether the student is looking at the source or answering from memory.
 
 ## Question patterns that work well
 

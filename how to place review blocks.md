@@ -72,6 +72,56 @@ Review 3 goes at the line that begins *"Cauchy's formula has many important appl
 
 Merging Reviews 1 and 2 would wrongly combine "what the basic formula is" with "why we can differentiate under the integral sign arbitrarily often" — two genuinely separate motivations. Merging Reviews 2 and 3 would wrongly combine computational applications with purely theoretical consequences. The three-way split follows the fault lines the text itself draws.
 
+## Output format
+
+Once placements are decided, deliver them to the user as a list of compact blocks, one per review, in the order they appear in the file. The format is designed around the user's primary action: copying the search phrase into Obsidian's search bar to navigate to the placement spot. Anything that gets in the way of selecting and pasting that phrase is friction.
+
+Each block has three pieces of information, in this order:
+
+1. **Header line.** `**Review N**`, an em-dash, then the placement description — line number plus an unambiguous landmark for what the review sits above (e.g., *top of file*, *immediately above the heading `# 2.1.1 Row operations`*, *just above the paragraph beginning "Two observations concerning..."*).
+2. **Search phrase.** On its own line, as bare plain text — no italics, no quotes, no backticks, no surrounding markup. A bare line lets the user triple-click to select and copy in one motion.
+3. **Covers line.** `Covers:` followed by a brief, semicolon-separated list of the theorems, definitions, examples, and discussion topics inside the block. One line; this is a quick scan reference, not a full description.
+
+Separate adjacent blocks with a horizontal rule (`---`) so each is visually self-contained.
+
+A single block looks like this (the indented example below shows the rendered shape; in the actual delivery the lines are flush-left, not indented):
+
+> **Review 2** — line 134, immediately above the heading `# 2.1.1 Row operations`
+>
+> \# 2.1.1 Row operations
+>
+> Covers: Definition 2.1.1 (the three row operations); Theorem 2.1.2 (solutions unchanged by row operations) with proof; Example 2.1.3.
+
+A whole-section placement output is one such block per review, in file order, with `---` rules between them. Do not wrap the output in a fenced code block, do not wrap the search phrase in quotes or italics, and do not pile the placement, the phrase, and the coverage onto a single line — each piece needs its own line so the search phrase stays trivially selectable.
+
+### Anchor choice for the search phrase
+
+Prefer the actual opening words of the paragraph or heading as the search phrase. For placements that sit just above a heading, the heading line itself (e.g., `# 2.1.1 Row operations`) is the cleanest search target because it is unique and short. For placements above a transitional paragraph, use the first several words of that paragraph verbatim. Avoid anchors like *just before Theorem 2* — theorem numbers shift, and the phrasing is less precise about whether the review goes above the statement, above its motivation, or above its proof.
+
+## Tracking blocks across the workflow
+
+Once placements are decided, the work of writing reviews and exercise prompts spans multiple blocks per section, often across multiple turns. Set up a working tracker that keeps block boundaries, content inventory, and progress status visible without re-scanning the section file every time a new block is picked up.
+
+### Where to put it
+
+The tracker is a working scratchpad, **not** a vault doc. Put it in the session workspace (the outputs scratchpad directory), not in the user's Obsidian vault — vault clutter is a real cost and these tracker files are throwaway artifacts. The scratchpad is cleared between sessions, which is fine: the tracker can be regenerated cheaply from the section file and the placement output if a later session needs it. Always confirm with the user before placing any working file in the vault itself.
+
+### Why content anchors, not line numbers
+
+Line numbers in a section file shift as review blocks and exercise prompts are inserted into the file. Key every entry in the tracker to content anchors — the same opening phrases used in the placement output — so the tracker remains valid throughout the workflow no matter how the file evolves.
+
+### What the tracker should contain
+
+Three pieces, in this order:
+
+1. **Block boundary table.** Each block's start anchor and end anchor, where the end anchor is the next block's start anchor. This is just the placement output reorganized for fast lookup; it tells me, given any block, exactly which content falls inside it.
+2. **Per-block content inventory.** A short list of what lives inside each block — every callout (theorem, definition, exercise, aside, footnote, etc.) and every in-text example sitting in motivation prose. This inventory is the basis for both the review questions (which probe the conceptual content) and the exercise prompts (which cover worked examples and marked `[!exercise]` callouts whose body has no question stated).
+3. **Status flags per block.** For each block, whether the review questions have been written, whether any in-text examples need lifting into exercises, and whether any marked `[!exercise]` callouts inside the block still lack a question prompt. Update these flags as each piece of work is completed.
+
+### Example structure
+
+The tracker opens with a single boundary table covering all blocks, then has one short inventory section per block in order. Each inventory section bullets the callouts and in-text examples in that block, then ends with status lines for review-question and exercise-prompt progress. The whole file should fit on one screen — it is for navigation and status only, not for drafting questions. If an inventory entry needs more than a phrase of detail, that detail belongs in the actual response to the user, not in the tracker.
+
 ## Common mistakes to avoid
 
 Placing a review block in the middle of a content block rather than at its start. Reviews are previews, not summaries.

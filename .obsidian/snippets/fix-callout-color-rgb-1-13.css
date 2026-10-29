@@ -1,0 +1,60 @@
+/* Fix callout backgrounds under Blue Topaz on Obsidian 1.13+.
+   Obsidian 1.13 changed built-in callout colors (--callout-color) from
+   "R, G, B" triplets to hex colors, but Blue Topaz paints callout
+   backgrounds with rgba(var(--callout-color), 0.1), which is only valid
+   with a triplet. Custom callouts from Callout Manager still emit triplets
+   (which is why they kept working). This snippet redefines the built-in
+   types as triplets, with values matching the current 1.13 palette.
+   Types customized in Callout Manager (important, question, example, ...)
+   are unaffected: its style tag loads after snippets and wins ties. */
+
+.callout {
+  --callout-color: 2, 122, 255;
+}
+
+.callout[data-callout="note"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"] {
+  --callout-color: 2, 122, 255; /* #027aff */
+}
+
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"],
+.callout[data-callout="tip"],
+.callout[data-callout="hint"] {
+  --callout-color: 83, 223, 221; /* #53dfdd */
+}
+
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] {
+  --callout-color: 68, 207, 110; /* #44cf6e */
+}
+
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"],
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] {
+  --callout-color: 233, 151, 63; /* #e9973f */
+}
+
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"] {
+  --callout-color: 251, 70, 76; /* #fb464c */
+}
+
+.callout[data-callout="example"] {
+  --callout-color: 120, 82, 238; /* #7852ee */
+}
+
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] {
+  --callout-color: 158, 158, 158; /* #9e9e9e */
+}
