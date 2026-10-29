@@ -447,6 +447,7 @@
   "calloutDetection": {
     "obsidian": true,
     "theme": true,
-    "snippet": true
+    "snippet": true,
+    "obsidianFallbackForced": false
   }
 }
