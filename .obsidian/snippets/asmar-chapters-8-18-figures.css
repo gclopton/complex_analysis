@@ -429,3 +429,28 @@
 .ss-scientific[data-scientific-id="2161bc94-141c-4c63-a536-c5c79cbced88"] .ss-figure-panel:nth-child(1) .ss-figure-image { max-width: min(100%, 545px); margin-inline: auto; }
 .ss-scientific[data-scientific-id="f2023a5e-2ea5-423a-82de-f8d5cf3fb82a"] .ss-figure-panel:nth-child(1) .ss-figure-image { max-width: min(100%, 514px); margin-inline: auto; }
 .ss-scientific[data-scientific-id="e833ffdc-5d14-4ecd-895f-8e6ea3b86a36"] .ss-figure-panel:nth-child(1) .ss-figure-image { max-width: min(100%, 549px); margin-inline: auto; }
+
+/* Keep panel letters below the image so source axes remain visible. */
+.ss-scientific[data-scientific-id="80f33fcb-16a3-4b5b-9bd8-16f31098f1f5"] .ss-panel-label,
+.ss-scientific[data-scientific-id="7bc9d8df-9430-4db1-b4ae-e3920da2cb36"] .ss-panel-label,
+.ss-scientific[data-scientific-id="e6b97797-fd54-4847-8010-5257ca375193"] .ss-panel-label,
+.ss-scientific[data-scientific-id="7b20fddf-b62e-4959-a1bb-a14be882a011"] .ss-panel-label,
+.ss-scientific[data-scientific-id="7a1ea87a-5a3c-4f28-b9d2-a11be4e91621"] .ss-panel-label,
+.ss-scientific[data-scientific-id="b4684dae-74c6-4285-ba56-839cc54d10bf"] .ss-panel-label,
+.ss-scientific[data-scientific-id="830abbe3-7a9f-4cb8-8c27-e0c83b3d9c82"] .ss-panel-label,
+.ss-scientific[data-scientific-id="beae595b-e1d7-406c-aa9c-a7996f356de6"] .ss-panel-label,
+.ss-scientific[data-scientific-id="e9dcf018-61ad-42cc-a2a8-976e28658b8d"] .ss-panel-label,
+.ss-scientific[data-scientific-id="218583cf-bda0-460c-86f2-249e5b81fa7b"] .ss-panel-label,
+.ss-scientific[data-scientific-id="2c9f31d7-6e08-40c8-aba9-feb3f6a2320a"] .ss-panel-label,
+.ss-scientific[data-scientific-id="8d2a9c29-0f80-44dd-9140-86e5f51474a1"] .ss-panel-label,
+.ss-scientific[data-scientific-id="e4f47e99-6036-4c73-b11f-1ed2f35bc13c"] .ss-panel-label,
+.ss-scientific[data-scientific-id="136191a1-125e-4bfb-a77c-5fc60062323b"] .ss-panel-label,
+.ss-scientific[data-scientific-id="33a2ae0e-07f7-4f6f-8eda-8875ca0037b0"] .ss-panel-label,
+.ss-scientific[data-scientific-id="9c3825d8-3ccf-44ed-89c6-4196bf7a44f2"] .ss-panel-label,
+.ss-scientific[data-scientific-id="d7251d72-ade1-434d-90e0-6f5ea5820754"] .ss-panel-label,
+.ss-scientific[data-scientific-id="dece2d5b-1635-4596-8a55-f96a4780d8da"] .ss-panel-label,
+.ss-scientific[data-scientific-id="bf512650-cba5-4758-8a9c-bd7bf4e9370e"] .ss-panel-label,
+.ss-scientific[data-scientific-id="a6c15382-d042-4a5a-b70d-f1314b427640"] .ss-panel-label,
+.ss-scientific[data-scientific-id="17cd8436-1790-43a2-baa0-759c8819ac27"] .ss-panel-label,
+.ss-scientific[data-scientific-id="5e2b7624-6f1b-416f-8eae-30221f8e5ae3"] .ss-panel-label,
+.ss-scientific[data-scientific-id="13d32639-a39d-4e3c-abc0-148e0419a514"] .ss-panel-label { position: static; display: table; margin: 4px auto 0; }
