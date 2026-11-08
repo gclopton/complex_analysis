@@ -1,3 +1,4 @@
+
 # Chapter 08 The Fourier Transform and Its Applications
 
 ## Topics to Review
