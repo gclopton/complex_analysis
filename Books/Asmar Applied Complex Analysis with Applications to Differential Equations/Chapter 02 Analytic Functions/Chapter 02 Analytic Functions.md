@@ -620,7 +620,9 @@ For $z \neq i$, we cancel the factor $z-i$ and get
 
 $$
 \lim _{z \rightarrow i} \frac{z-i}{z^{2}+1}=\lim _{z \rightarrow i} \frac{1}{z+i}=\frac{1}{2 i}=\frac{-i}{2} .
-$$ $\square$
+$$
+
+$\square$
 
 In Example 6(b), because $\lim _{z \rightarrow i} f(z)$ exists at the point of discontinuity $z=i$, we can remove the discontinuity of $f(z)$ and make it continuous at $z=i$ by redefining $f(i)=-i / 2$. Such a point of discontinuity is called a removable discontinuity. If the discontinuity at a point cannot be removed, then it is called a nonremovable discontinuity.
 
@@ -868,7 +870,9 @@ $$
 & =\lim _{z \rightarrow z_{0}} g(z) \frac{f(z)-f\left(z_{0}\right)}{z-z_{0}}+\lim _{z \rightarrow z_{0}} f\left(z_{0}\right) \frac{g(z)-g\left(z_{0}\right)}{z-z_{0}} \\
 & =g\left(z_{0}\right) f^{\prime}\left(z_{0}\right)+f\left(z_{0}\right) g^{\prime}\left(z_{0}\right)
 \end{aligned}
-$$ $\square$
+$$
+
+$\square$
 
 ## EXAMPLE 2 Analyticity of $z^{n}$ for $n=1,2, \ldots$
 

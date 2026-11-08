@@ -1004,3 +1004,70 @@ This exact comparison preserves the full change evidence, including formatting, 
  c_{n}=\sum_{j=0}^{n} \frac{z_{1}^{j}}{j!} \frac{z_{2}^{n-j}}{(n-j)!}=\frac{1}{n!} \overbrace{\sum_{j=0}^{n} \frac{n!}{j!(n-j)!} z_{1}^{j} z_{2}^{n-j}}^{\left(z_{1}+z_{2}\right)^{n}}=\frac{\left(z_{1}+z_{2}\right)^{n}}{n!}
 
 `````
+
+## Additional source comparison
+
+## 1. Correct OCR in chapter-opening margin text against the first page of the preserved chapter PDF.
+
+### Before
+
+````text
+Sections 4.14 .4
+````
+### After
+
+````text
+Sections 4.1–4.4
+````
+
+## 2. Correct OCR in chapter-opening margin text against the first page of the preserved chapter PDF.
+
+### Before
+
+````text
+derelopment
+````
+### After
+
+````text
+development
+````
+
+## 3. Correct OCR in chapter-opening margin text against the first page of the preserved chapter PDF.
+
+### Before
+
+````text
+calculis
+````
+### After
+
+````text
+calculus
+````
+
+## 4. Correct OCR in chapter-opening margin text against the first page of the preserved chapter PDF.
+
+### Before
+
+````text
+Canchy's theorem
+````
+### After
+
+````text
+Cauchy's theorem
+````
+
+## 5. Correct OCR in chapter-opening margin text against the first page of the preserved chapter PDF.
+
+### Before
+
+````text
+Taylot series
+````
+### After
+
+````text
+Taylor series
+````

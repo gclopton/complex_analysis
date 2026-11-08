@@ -1,10 +1,10 @@
 
 Topics to Review
-Sections 4.14 .4 parallel the derelopment of series from calculis. A review of the basic definitions of convergence and the tests of convergence and divergence ( $n$th term test, root test, ratio test, comparison test) would help. Unlike calculus, where series were studied almost independently from integrals, here the path integral and, in particular, Canchy's theorem, will play a major role in proving facts about series.
+Sections 4.1–4.4 parallel the development of series from calculus. A review of the basic definitions of convergence and the tests of convergence and divergence ( $n$th term test, root test, ratio test, comparison test) would help. Unlike calculus, where series were studied almost independently from integrals, here the path integral and, in particular, Cauchy's theorem, will play a major role in proving facts about series.
 
 ## Looking Ahead
 
-The most important results of this chapter are Theorems 4, Section 4.3 and Theorem 1, Section 4.4. Together they assert that a function is analytic in a disk if and only if it has a Taylot series representation in that disk. For the proof, we introduce the notion of uniform convergence and derive many of its pleasant consequences in integration and differentiation of analytic functions. Section 4.5 extends the main results to analytic functions that have an isolated problem point (singularity) by using Laurent series. The definition, properties, and classification of singular points in Section 4.6 will be needed in later sections and are very important. The proofs in Sections 4.1-4.6 can be covered briefly, in favor of the applications. Section 4.7 is optional. It continues the study of harmonic functions and shows a connection with Fourier series. Fourier series turn out to be at the heart of the solution of Dirichlet problems on the disk. Their treatment in Chapter 7 is independent of Section 4.7.
+The most important results of this chapter are Theorems 4, Section 4.3 and Theorem 1, Section 4.4. Together they assert that a function is analytic in a disk if and only if it has a Taylor series representation in that disk. For the proof, we introduce the notion of uniform convergence and derive many of its pleasant consequences in integration and differentiation of analytic functions. Section 4.5 extends the main results to analytic functions that have an isolated problem point (singularity) by using Laurent series. The definition, properties, and classification of singular points in Section 4.6 will be needed in later sections and are very important. The proofs in Sections 4.1-4.6 can be covered briefly, in favor of the applications. Section 4.7 is optional. It continues the study of harmonic functions and shows a connection with Fourier series. Fourier series turn out to be at the heart of the solution of Dirichlet problems on the disk. Their treatment in Chapter 7 is independent of Section 4.7.
 
 ## 4
 
@@ -1024,7 +1024,9 @@ Using independence of path again (Theorem 1, Section 3.3) and the fact that $\fr
 
 $$
 \log (1+z)=\sum_{n=0}^{\infty}(-1)^{n} \frac{z^{n+1}}{n+1} \quad|z|<1
-$$ $\square$
+$$
+
+$\square$
 
 The following straightforward application of Theorem 2 above and Corollary 2, Section 4.2, is perhaps the most important property of power series.
 
@@ -1390,7 +1392,9 @@ $$
 \sin z & =-\frac{d}{d z} \cos z=-\frac{d}{d z}\left(1-\frac{z^{2}}{2!}+\frac{z^{4}}{4!}+\cdots\right) \\
 & =\frac{2 z}{2!}-\frac{4 z^{3}}{4!}+\cdots=\frac{z}{1!}-\frac{z^{3}}{3!}+\cdots=\sum_{n=0}^{\infty}(-1)^{n} \frac{z^{2 n+1}}{(2 n+1)!}
 \end{aligned}
-$$ $\square$
+$$
+
+$\square$
 
 Example 1 shows the advantage that complex Taylor series enjoy over their real counterparts. A real Taylor series converges if and only if a certain remainder goes to zero. In the complex case, the remainder is irrelevant; the Taylor series will converge in the largest disk that you can fit inside the domain of definition of the analytic function.
 
@@ -2075,7 +2079,9 @@ $$
 \frac{1}{1+z^{2}} & =\frac{1}{2 i} \frac{1}{z-i} \frac{1}{1-\left(-\frac{z-i}{2 i}\right)}=\frac{1}{2 i} \frac{1}{z-i} \sum_{n=0}^{\infty}(-1)^{n}\left(\frac{z-i}{2 i}\right)^{n} \\
 & =\frac{1}{2 i}\left[\frac{1}{z-i}-\frac{1}{2 i}-\frac{z-i}{2^{2}}+\frac{(z-i)^{2}}{2^{3} i}+\cdots\right]
 \end{aligned}
-$$ $\square$
+$$
+
+$\square$
 
 ## Differentiation and Integration of Laurent Series
 

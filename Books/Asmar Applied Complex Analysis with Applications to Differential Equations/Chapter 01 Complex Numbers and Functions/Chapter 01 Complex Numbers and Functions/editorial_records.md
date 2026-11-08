@@ -21,3 +21,20 @@ No recovery content changes were needed in this note. Existing genuine correctio
 ````text
 **Topics to Review**
 ````
+
+## Additional source comparison
+
+## 1. Repair Markdown display boundary: place closing display delimiter on its own line and end-of-proof square in following paragraph. No mathematical content or author wording changed.
+
+### Before
+
+````text
+$$ $\square$
+````
+### After
+
+````text
+$$
+
+$\square$
+````

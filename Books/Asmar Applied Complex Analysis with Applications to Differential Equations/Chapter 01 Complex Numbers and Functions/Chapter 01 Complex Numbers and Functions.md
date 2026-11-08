@@ -3137,7 +3137,9 @@ $$
 
 $$
 -2=2 e^{i \pi} \Rightarrow \log (-2)=\ln (2)+i \pi .
-$$ $\square$
+$$
+
+$\square$
 
 As you can imagine, we could have specified a different range of values of $\arg z$ in defining a logarithmic function out of (3). In fact, given any real number $\alpha$, we can specify that $\alpha<\arg z \leq \alpha+2 \pi$. This will assign a single value to $\arg z$, denoted by $\arg _{\alpha} z$. For $z \neq 0$, using $\arg _{\alpha} z$ in (3), we obtain the corresponding function, called a branch of the logarithm,
 
