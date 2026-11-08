@@ -327,3 +327,1494 @@ We can give some meaning to these identities: The Heaviside is constant so its s
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.2 Operational Properties.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.2 Operational Properties.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.2 Operational Properties.md
+@@ -1,25 +1,29 @@
+-### 8.2 Operational Properties
++
++# 8.2 Operational Properties
+ 
+ As we saw in the previous section, the Fourier transform takes a function $f$ and produces a new function $\widehat{f}$, and the inverse transform recovers the original function $f$ from $\widehat{f}$. This process makes of transform pairs a powerful tool in solving partial differential equations. The idea, which will be explored in the following sections, is to "Fourier transform" a given equation into one that may be easier to solve. After solving the transformed equation involving $\widehat{f}$, we recover the solution of the original problem with the inverse transform. To assist us in handling the transformed equations, we will develop the operational properties of the Fourier transform. We start with a result that describes the effect of the Fourier transform on derivatives.
+ 
+-THEOREM 1 FOURIER TRANSFORMS OF DERIVATIVES
+-(i) Suppose $f(x)$ and $f^{\prime}(x)$ are integrable and $f(x) \rightarrow 0$ as $|x| \rightarrow \infty$; then
+-
+-$$
+-\mathcal{F}\left(f^{\prime}\right)=i \omega \mathcal{F}(f) .
+-$$
+-
+-(ii) If, in addition, $f^{\prime \prime}(x)$ is integrable and $f^{\prime}(x) \rightarrow 0$ as $|x| \rightarrow \infty$, then
+-
+-$$
+-\mathcal{F}\left(f^{\prime \prime}\right)=i \omega \mathcal{F}\left(f^{\prime}\right)=-\omega^{2} \mathcal{F}(f) .
+-$$
+-
+-(iii) In general, if $f^{(k)}(x) \rightarrow 0(k=1,2, \ldots, n-1)$ as $|x| \rightarrow \infty$, and $f$ and its derivatives of order up to $n$ are integrable, then
+-
+-$$
+-\mathcal{F}\left(f^{(n)}\right)=(i \omega)^{n} \mathcal{F}(f) .
+-$$
++
++> [!theorem|919c9527-2e40-5f7d-ba42-5547a0c14265.local at=b3c9a3ae-fac1-52da-a9b6-b751b60879ca] Fourier transforms of derivatives
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. For each stated derivative order, assume the lower derivatives are locally absolutely continuous, so integration by parts applies. In the general formula also assume $f(x)\to0$ at both infinities.
++>
++> (i) Suppose $f(x)$ and $f^{\prime}(x)$ are integrable and $f(x) \rightarrow 0$ as $|x| \rightarrow \infty$; then
++>
++> $$
++> \mathcal{F}\left(f^{\prime}\right)=i \omega \mathcal{F}(f) .
++> $$
++>
++> (ii) If, in addition, $f^{\prime \prime}(x)$ is integrable and $f^{\prime}(x) \rightarrow 0$ as $|x| \rightarrow \infty$, then
++>
++> $$
++> \mathcal{F}\left(f^{\prime \prime}\right)=i \omega \mathcal{F}\left(f^{\prime}\right)=-\omega^{2} \mathcal{F}(f) .
++> $$
++>
++> (iii) In general, if $f^{(k)}(x) \rightarrow 0(k=1,2, \ldots, n-1)$ as $|x| \rightarrow \infty$, and $f$ and its derivatives of order up to $n$ are integrable, then
++>
++> $$
++> \mathcal{F}\left(f^{(n)}\right)=(i \omega)^{n} \mathcal{F}(f) .
++> $$
+ 
+ Proof Parts (ii) and (iii) are obtained by repeated applications of (i). To prove
+ (i), we use the definition of $\mathcal{F}\left(f^{\prime}\right)$ and integrate by parts:
+@@ -32,7 +36,10 @@
+ \end{aligned}
+ $$
+ 
+-## EXAMPLE 1 Fourier transform of a derivative
++> [!exercise|bddd52d0-86a3-5f8a-af6c-28c289ce352c.local at=5b2bad6b-7270-5bca-a3f1-2766ce194a41] EXAMPLE 1 Fourier transform of a derivative
++> Use the Fourier transform of a derivative to compute $\mathcal F(xe^{-x^2})(\omega)$.
++
++##### solution
+ 
+ Since $x e^{-x^{2}}=-\frac{1}{2} \frac{d}{d x} e^{-x^{2}}$, it follows from Theorem 1(i) that
+ 
+@@ -46,18 +53,21 @@
+ \mathcal{F}\left(x e^{-x^{2}}\right)(\omega)=-\frac{i \omega}{2 \sqrt{2}} e^{-\frac{\omega^{2}}{4}}
+ $$
+ 
+-THEOREM 2 DERIVATIVES OF FOURIER TRANSFORMS
+-(i) Suppose $f(x)$ and $x f(x)$ are integrable, then
+-
+-$$
+-\mathcal{F}(x f(x))(\omega)=i[\hat{f}]^{\prime}(\omega)=i \frac{d}{d \omega} \mathcal{F}(f)(\omega)
+-$$
+-
+-(ii) In general, if $f(x)$ and $x^{n} f(x)$ are integrable, then
+-
+-$$
+-\mathcal{F}\left(x^{n} f(x)\right)=i^{n}[\hat{f}]^{(n)}(\omega)
+-$$
++
++> [!theorem|4a7c260a-75bb-5fd4-a015-fab7b9a6dd83.local at=b1010265-7403-51b5-ae36-f6dc2845b989] Derivatives of Fourier transforms
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. Integrability means absolute integrability on $\mathbb R$; $n$ is a positive integer.
++>
++> (i) Suppose $f(x)$ and $x f(x)$ are integrable, then
++>
++> $$
++> \mathcal{F}(x f(x))(\omega)=i[\hat{f}]^{\prime}(\omega)=i \frac{d}{d \omega} \mathcal{F}(f)(\omega)
++> $$
++>
++> (ii) In general, if $f(x)$ and $x^{n} f(x)$ are integrable, then
++>
++> $$
++> \mathcal{F}\left(x^{n} f(x)\right)=i^{n}[\hat{f}]^{(n)}(\omega)
++> $$
+ 
+ Proof Part (ii) follows from (i). To motivate (i) we will assume that we can differentiate under the integral sign as follows
+ 
+@@ -70,7 +80,11 @@
+ 
+ and (i) follows upon multiplying both sides by $i$.
+ 
+-## EXAMPLE 2 Derivatives of Fourier transforms
++> [!exercise|fd5a8d81-29e0-5f07-8e50-a3a721433c3c.local at=27256aa6-ebf8-5c9e-a692-0fa2fca0fa0a] EXAMPLE 2 Derivatives of Fourier transforms
++> (a) Compute $\mathcal F(xe^{-x^2})(\omega)$ by differentiating a Fourier transform.
++> (b) For $a>0$, compute the transform of $g(x)=x$ for $|x|<a$ and $g(x)=0$ for $|x|>a$.
++
++##### solution
+ 
+ (a) We can derive the Fourier transform in Example 1 by appealing to Theorem 2(i), as follows:
+ 
+@@ -84,11 +98,23 @@
+ g(x)= \begin{cases}x & \text { if }|x|<a, \\ 0 & \text { if }|x|>a,\end{cases}
+ $$
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-16_326_518_139_75.jpg)
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-16_471_521_482_75.jpg)
+-
+-Figure 1 Graphs of $f(x)$ and $g(x)=x f(x)$ in Example 2. The effect of multiplying by $f(x)$ is to truncate the function $x$ for $|x|>a$.
+-we will use the fact that the Fourier transform of the function
++```scientific-figure
++id: e6b97797-fd54-4847-8010-5257ca375193
++numbered: false
++title: ""
++caption: Figure 1 Graphs of $f(x)$ and $g(x)=x f(x)$ in Example 2. The effect of multiplying by $f(x)$ is to truncate the function $x$ for $|x|>a$.
++captionVisible: true
++captionPosition: below
++columns: 2
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-16_326_518_139_75.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-16_471_521_482_75.jpg
++    caption: ""
++```
++
++
++We will use the fact that the Fourier transform of the function
+ 
+ $$
+ f(x)= \begin{cases}1 & \text { if }|x|<a, \\ 0 & \text { if }|x|>a,\end{cases}
+@@ -98,11 +124,15 @@
+ 
+ $$
+ \mathcal{F}(g)(\omega)=i \frac{d}{d \omega} \sqrt{\frac{2}{\pi}} \frac{\sin a \omega}{\omega}=i \sqrt{\frac{2}{\pi}} \frac{a \omega \cos (a \omega)-\sin a \omega}{\omega^{2}} .
+-$$ $\square$
+-
++$$
++
++$\square$
+ In Example 5 of the previous section, we used an improper integral that we computed with the help of residue theory to derive the Fourier transform of the Gaussian function. We can now give another interesting indirect derivation based on the operational properties.
+ 
+-## EXAMPLE 3 Fourier transform of the Gaussian
++> [!exercise|32a036b2-e807-5fd0-992b-df07942537a9.local at=e97ca848-3634-5cba-b59a-31d5141d4a86] EXAMPLE 3 Fourier transform of the Gaussian
++> Derive the Fourier transform of $f(x)=e^{-a x^2}$, $a>0$, by transforming a differential equation satisfied by $f$.
++
++##### solution
+ 
+ Let $f(x)=e^{-a x^{2}}$, where $a>0$. A simple verification shows that $f$ satisfies the first order linear differential equation
+ 
+@@ -134,43 +164,50 @@
+ 
+ $$
+ f_{\alpha}(x)=f(x-\alpha) \text { for all } x
++\tag{1}
+ $$
+ 
+ Translating a function by $\alpha$ corresponds to multiplying its Fourier transform by $e^{-i \alpha \omega}$. We have the following theorem, whose proof is left as an exercise.
+ 
+-THEOREM 3 SHIFTING AND FOURIER TRANSFORMS
+-
+-CONVOLUTION
+-
+-THEOREM 4 FOURIER TRANSFORMS OF CONVOLUTIONS
+-(i) Shifting on the $x$-axis: Let $\alpha$ be arbitrary, then
+-
+-$$
+-\mathcal{F}(f(x-\alpha))(\omega)=e^{-i \alpha \omega} \widehat{f}(\omega)
+-$$
+-
+-(ii) Shifting on the $\omega$-axis:
+-
+-$$
+-\mathcal{F}\left(e^{i \alpha x} f(x)\right)(\omega)=\widehat{f}(\omega-\alpha)
+-$$
++
++
++
++
++> [!theorem|85044e8d-43b2-51c9-aee8-d04f90d3bc7a.local at=bb222b73-e8e9-5a43-9877-468d1d7a46a1] Shifting and Fourier transforms
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. Assume $f\in L^1(\mathbb R)$ and $\alpha\in\mathbb R$.
++>
++> (i) Shifting on the $x$-axis: Let $\alpha$ be arbitrary, then
++>
++> $$
++> \mathcal{F}(f(x-\alpha))(\omega)=e^{-i \alpha \omega} \widehat{f}(\omega)
++> $$
++>
++> (ii) Shifting on the $\omega$-axis:
++>
++> $$
++> \mathcal{F}\left(e^{i \alpha x} f(x)\right)(\omega)=\widehat{f}(\omega-\alpha)
++> $$
+ 
+ ## Convolution of Functions
+ 
+-We expand our list of operational properties by introducing the convolution of two functions $f$ and $g$ by
+-(2)
+-
+-$$
+-f * g(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x-t) g(t) d t
+-$$
++> [!definition|ce251f7e-b24d-5894-8522-2dcb7d623bb8.local at=d28aeba4-2e47-537e-b4af-cb188e55c241] Normalized Convolution on the Real Line
++> The convolution of two integrable functions $f$ and $g$ is defined, almost everywhere, by
++> $$
++> f * g(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x-t) g(t) d t
++> $$
++
++*Printed equation label: (2).*
+ 
+ (The factor $\frac{1}{\sqrt{2 \pi}}$ is merely for convenience. If we drop it from the definition of the convolution, it will reappear in its Fourier transform.) It can be shown that $f * g$ is also integrable whenever $f$ and $g$ are (Exercise 23). Computing a convolution is often tedious. This task can be facilitated by using the following important property of the Fourier transform, as illustrated by Example 4 below.
+ 
+-Suppose that $f$ and $g$ are integrable, then
+-
+-$$
+-\mathcal{F}(f * g)=\mathcal{F}(f) \mathcal{F}(g)
+-$$
++> [!theorem|5ba4babe-0c07-5fea-9706-d4fe75d4b43d.local at=0f47916c-7204-54dd-a8df-0279e735f670] Fourier transforms of convolutions
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. The normalized convolution is $(f*g)(x)=(2\pi)^{-1/2}\int_{\mathbb R}f(x-t)g(t)\,dt$.
++>
++> Suppose that $f$ and $g$ are integrable, then
++>
++> $$
++> \mathcal{F}(f * g)=\mathcal{F}(f) \mathcal{F}(g)
++> $$
+ 
+ Theorem 4 is expressed by saying that the Fourier transform takes convolutions into products.
+ 
+@@ -184,19 +221,21 @@
+ \end{aligned}
+ $$
+ 
+-## EXAMPLE 4 Convolution of Gaussian functions
+-
+-Let $f(x)=e^{-\alpha x^{2}}$ and $g(x)=e^{-\beta x^{2}}$ where $\alpha$ and $\beta$ are positive constants.
+-(a) Compute $\mathcal{F}(f * g)(\omega)$.
+-(b) Compute $f * g(x)$.
+-
+-Solution (a) Using Theorem 4 and Example 3, we get
++> [!exercise|fd5f9376-d8e8-53de-bd90-d959976c9c16.local at=32d3c267-d1bf-52ba-b50e-cea60c68fc4c] EXAMPLE 4 Convolution of Gaussian functions
++> Let $f(x)=e^{-\alpha x^{2}}$ and $g(x)=e^{-\beta x^{2}}$ where $\alpha$ and $\beta$ are positive constants.
++> (a) Compute $\mathcal{F}(f * g)(\omega)$.
++> (b) Compute $f * g(x)$.
++
++##### solution
++
++(a) Using Theorem 4 and Example 3, we get
+ 
+ $$
+ \begin{aligned}
+ \mathcal{F}(f * g)(\omega) & =\mathcal{F}(f)(\omega) \mathcal{F}(g)(\omega)=\frac{1}{\sqrt{2 \alpha}} e^{-\frac{\omega^{2}}{4 \alpha}} \frac{1}{\sqrt{2 \beta}} e^{-\frac{\omega^{2}}{4 \beta}} \\
+ & =\frac{1}{2 \sqrt{\alpha \beta}} e^{-\frac{\alpha+\beta}{4 \alpha \beta} \omega^{2}}
+ \end{aligned}
++\tag{3}
+ $$
+ 
+ (b) To compute $f * g$, it suffices to find the inverse Fourier transform of (3). It is clear that we should be looking at another Gaussian function, because of the presence of the function $e^{-\omega^{2}}$. Indeed, if we let
+@@ -207,8 +246,19 @@
+ 
+ then from Example 3,
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-18_676_563_879_75.jpg)
+-Figure 2 Graphs of $f(x)= e^{-x^{2}}, f * f$ and $f * f * f * f$. The effect of the convolution is to smear out the values of the function.
++```scientific-figure
++id: e2423ff9-ca1b-4420-899c-1a5bb17f0971
++numbered: false
++title: ""
++caption: Figure 2 Graphs of $f(x)= e^{-x^{2}}, f * f$ and $f * f * f * f$. The effect of the convolution is to smear out the values of the function.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-18_676_563_879_75.jpg
++    caption: ""
++```
++
+ 
+ $$
+ \mathcal{F}\left(e^{-a x^{2}}\right)=\frac{1}{\sqrt{2 a}} e^{-\frac{\omega^{2}}{4 a}}=\frac{\sqrt{\alpha+\beta}}{\sqrt{2 \alpha \beta}} e^{-\frac{\alpha+\beta}{4 \alpha \beta} \omega^{2}}
+@@ -224,6 +274,7 @@
+ 
+ $$
+ e^{-\alpha x^{2}} * e^{-\beta x^{2}}=\frac{1}{\sqrt{2(\alpha+\beta)}} e^{-\frac{\alpha \beta}{\alpha+\beta} x^{2}}
++\tag{4}
+ $$
+ 
+ Thus the convolution of two Gaussian functions is another scaled Gaussian function. This fact is at the heart of the solution of the heat problem on the real line (see Section 8.4). In Figure 2, we show the graphs of $f(x)=e^{-x^{2}}, f * f(x)=\frac{1}{2} e^{-\frac{x^{2}}{2}}$, and $f * f * f * f(x)=\frac{1}{4 \sqrt{2}} e^{-\frac{x^{2}}{4}}$. Note how the convolution smears out the values of the function.
+@@ -238,28 +289,34 @@
+ 
+ $$
+ f * g=g * f
++\tag{5}
+ $$
+ 
+ which expresses the fact that convolution is a commutative operation. This simple technique of the Fourier transform to establish results about convolutions has far reaching applications. We illustrate with another property of
+ convolutions. To simplify the statements of results, in what follows, we will always suppose that the functions in questions have enough nice properties to be able to compute Fourier transforms and inverse Fourier transforms.
+ 
+-THEOREM 5 CONVOLUTIONS AND DERIVATIVES
+-
+-## THEOREM 6 PARSEVAL'S THEOREM
+-
+-THEOREM 7 PLANCHEREL'S THEOREM
+-
+-Let $n, \alpha$ and $\beta$ denote nonnegative integers, such that $n=\alpha+\beta$. Then
+-
+-$$
+-\frac{d^{n}}{d x^{n}}(f * g)=\frac{d^{\alpha} f}{d x^{\alpha}} * \frac{d^{\beta} g}{d x^{\beta}}
+-$$
+-
+-In particular, taking $\alpha=n$ and $\beta=0$, then $\alpha=0$ and $\beta=n$, we obtain
+-
+-$$
+-\frac{d^{n}}{d x^{n}}(f * g)=\frac{d^{n} f}{d x^{n}} * g=f * \frac{d^{n} g}{d x^{n}}
+-$$
++
++
++
++
++
++
++> [!theorem|e0b81521-076b-50b7-bd89-d9e140d49885.local at=0df90327-94ea-5e96-92d5-eaa81476caa3] Convolutions and derivatives
++> The normalized convolution is $(f*g)(x)=(2\pi)^{-1/2}\int_{\mathbb R}f(x-t)g(t)\,dt$. Assume the derivatives used below are absolutely integrable, the lower derivatives are locally absolutely continuous, and the boundary terms vanish at infinity.
++>
++> Let $n, \alpha$ and $\beta$ denote nonnegative integers, such that $n=\alpha+\beta$. Then
++>
++> $$
++> \frac{d^{n}}{d x^{n}}(f * g)=\frac{d^{\alpha} f}{d x^{\alpha}} * \frac{d^{\beta} g}{d x^{\beta}}
++> $$
++>
++> In particular, taking $\alpha=n$ and $\beta=0$, then $\alpha=0$ and $\beta=n$, we obtain
++>
++> $$
++> \frac{d^{n}}{d x^{n}}(f * g)=\frac{d^{n} f}{d x^{n}} * g=f * \frac{d^{n} g}{d x^{n}}
++> $$
++
++*Printed equation labels: (6) derivatives distributed between both factors; (7) all derivatives on either factor.*
+ 
+ Proof To prove (6), we compute the Fourier transforms of the functions on both sides of the equality, using Theorems 1 (iii) and 4 and the fact that $n=\alpha+\beta$ :
+ 
+@@ -276,18 +333,28 @@
+ 
+ Recall that a function $f$ defined on the real line is square integrable if $\int_{-\infty}^{\infty}|f(x)|^{2} d x<\infty$. The following two important results hold for square integrable functions.
+ 
+-Suppose that $f$ and $g$ are square integrable functions on the real line. Then
+-
+-$$
+-\int_{-\infty}^{\infty} f(x) \overline{g(x)} d x=\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\widehat{g}(\omega)} d \omega
+-$$
++> [!theorem|5db59350-e816-5761-afd3-ebfd705154a9.local at=c5f01410-f1d2-58c8-bacb-57ebd0e73de1] Parseval's theorem
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. For general $L^2(\mathbb R)$ functions, use the continuous $L^2$ extension of this transform.
++>
++> Suppose that $f$ and $g$ are square integrable functions on the real line. Then
++>
++> $$
++> \int_{-\infty}^{\infty} f(x) \overline{g(x)} d x=\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\widehat{g}(\omega)} d \omega
++> $$
++
++*Printed equation label: (8).*
+ 
+ By taking $f=g$ in Parseval's theorem, we obtain Plancherel's theorem.
+-Suppose that $f$ is a square integrable function on the real line. Then
+-
+-$$
+-\int_{-\infty}^{\infty}|f(x)|^{2} d x=\int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2} d \omega
+-$$
++> [!theorem|3f25af67-aeed-5cdf-bee7-fc7c23b552f2.local at=6b543933-5925-5d1e-a8c6-8bfc8fad1be2] Plancherel's theorem
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. For general $L^2(\mathbb R)$ functions, use the continuous $L^2$ extension of this transform.
++>
++> Suppose that $f$ is a square integrable function on the real line. Then
++>
++> $$
++> \int_{-\infty}^{\infty}|f(x)|^{2} d x=\int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2} d \omega
++> $$
++
++*Printed equation label: (9).*
+ 
+ Proof of Parseval's theorem Use the inverse Fourier transform to write $g(x)= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \omega x} \hat{g}(\omega) d \omega$, and recall that $\overline{e^{i \omega x}}=e^{-i \omega x}$. Now, assuming that we can
+ interchange the order of integration, we have
+@@ -295,19 +362,33 @@
+ $$
+ \begin{aligned}
+ \int_{-\infty}^{\infty} f(x) \overline{g(x)} d x & =\int_{-\infty}^{\infty} f(x) \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega x} \overline{\hat{g}(\omega)} d \omega d x \\
+-& =\int_{-\infty}^{\infty} \overline{\hat{g}(\omega)} \overbrace{\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega x} f(x) d x}^{\infty} d \omega \\
++& =\int_{-\infty}^{\infty} \overline{\hat{g}(\omega)} \underbrace{\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega x} f(x) d x}_{\widehat f(\omega)} d \omega \\
+ & =\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\hat{g}(\omega)} d \omega
+ \end{aligned}
+ $$
+ 
+-which proves the theorem. $\square$
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-20_744_539_828_81.jpg)
+-Figure 3 Graph of $\left(\frac{\sin \omega}{\omega}\right)^{2}$. The function is positive and the total area under the curve, above the $\omega$-axis is $\pi$.
+-
+-Just like Parseval's identity for Fourier series was useful in summing series, Plancherel' theorem is useful in evaluating certain nontrivial integrals.
+-
+-## EXAMPLE 5 An application of Plancherel's theorem
++This computation is justified first, for example, for Schwartz functions; density then extends the identity to $L^2(\mathbb R)$. $\square$
++
++```scientific-figure
++id: 0d1da022-ffec-4a09-bfd0-cff8fe3e23de
++numbered: false
++title: ""
++caption: Figure 3 Graph of $\left(\frac{\sin \omega}{\omega}\right)^{2}$. The function is positive and the total area under the curve, above the $\omega$-axis is $\pi$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-20_744_539_828_81.jpg
++    caption: ""
++```
++
++
++Just like Parseval's identity for Fourier series was useful in summing series, Plancherel's theorem is useful in evaluating certain nontrivial integrals.
++
++> [!exercise|0696a191-ba7f-5a81-bf81-3008413510ba.local at=7772928e-70fa-5933-a759-299540eef625] EXAMPLE 5 An application of Plancherel's theorem
++> For $a>0$, use Plancherel’s theorem to evaluate $\int_{-\infty}^{\infty}(\sin(a\omega)/\omega)^2\,d\omega$.
++
++##### solution
+ 
+ Consider the function $f(x)=1$ if $|x|<a$ and 0 otherwise, and its Fourier transform $\hat{f}(\omega)=\sqrt{\frac{2}{\pi}} \frac{\sin a \omega}{\omega}$ (see Example 1. Section 8.1). Applying Plancherel's theorem, we obtain
+ 
+@@ -325,14 +406,25 @@
+ 
+ ## Generalized Functions
+ 
+-The need to compute Fourier transforms or inverse Fourier transforms of functions that are not integrable on the real line is clear from our first computation of a Fourier transform in Example 1, Section 8.1, all the way to the last result that concerns square integrable functions. In fact, as soon as the function is not continuous, its Fourier transform is not going to be integrable (this is a consequence of the fact that the Fourier transform of an integrable function is continuous). So we need to go beyond integrable functions. The Fourier transform can be defined in a very general setting, which is suitable for solving partial differential equations. This is the setting of generalized functions or distributions. A rigorous treatment of these objects is beyond the level of this book. However, by touching a little bit on this subject, we get a lot out of it, as far as expanding our ability to compute transforms and convolutions, even for functions that are integrable.
++The need to compute Fourier transforms or inverse Fourier transforms of functions that are not integrable on the real line is clear from our first computation of a Fourier transform in Example 1, Section 8.1, all the way to the last result that concerns square integrable functions. In fact, if an integrable function has no continuous representative, its Fourier transform cannot also be integrable (this is a consequence of the fact that the Fourier transform of an integrable function is continuous). So we need to go beyond integrable functions. The Fourier transform can be defined in a very general setting, which is suitable for solving partial differential equations. This is the setting of generalized functions or distributions. A rigorous treatment of these objects is beyond the level of this book. However, by touching a little bit on this subject, we get a lot out of it, as far as expanding our ability to compute transforms and convolutions, even for functions that are integrable.
+ 
+ To motivate the topic of generalized functions, let's consider the following question: Is there an identity element for the binary operation of convolution? That is, is there a function $\phi$ such that $f * \phi=\phi * f=f$ for
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-21_377_449_1681_79.jpg)
+-Figure 4 Graphical representation of the Dirac delta function, with support at $x=0$.
+-
+-all $f$ ? If such a function exists, then taking Fourier transforms, we must have $\widehat{f \phi}=\widehat{f}$, which suggests that $\widehat{\phi}$ must be identically 1 . This cannot happen if $\phi$ were integrable, by the Riemann-Lebesgue Lemma (Lemma 2, Section 8.1). So if $\phi$ exists, it is not an integrable function. If we evaluate the identity $f * \phi(x)=\phi * f(x)=f(x)$ at $x=0$, using the definition of the convolution, we get
++```scientific-figure
++id: d0baac6f-1fcf-4adc-b717-a3ae6f804866
++numbered: false
++title: ""
++caption: Figure 4 Graphical representation of the Dirac delta function, with support at $x=0$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-21_377_449_1681_79.jpg
++    caption: ""
++```
++
++
++all $f$ ? If such a function exists, then taking Fourier transforms, we must have $\widehat f\,\widehat\phi=\widehat f$, which suggests that $\widehat{\phi}$ must be identically 1 . This cannot happen if $\phi$ were integrable, by the Riemann-Lebesgue Lemma (Lemma 2, Section 8.1). So if $\phi$ exists, it is not an integrable function. If we evaluate the identity $f * \phi(x)=\phi * f(x)=f(x)$ at $x=0$, using the definition of the convolution, we get
+ 
+ $$
+ \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(-y) \phi(y) d y=f(0)
+@@ -350,27 +442,32 @@
+ 
+ $$
+ \int_{-\infty}^{\infty} f(x) \delta_{0}(x) d x=f(0)
++\tag{10}
+ $$
+ 
+ for all continuous functions $f$. By taking $f$ to be continuous and zero outside an interval $[a, b]$, we obtain from (10)
+ 
+ $$
+ \int_{a}^{b} f(x) \delta_{0}(x) d x= \begin{cases}f(0) & \text { if } a \leq 0 \leq b \\ 0 & \text { if } 0<a \text { or } 0>b\end{cases}
++\tag{11}
+ $$
+ 
+ It is sometimes convenient to think of $\delta_{0}$ as a function of $x$, with values $\delta_{0}(x)=0$ for all $x \neq 0$, and $\delta_{0}(0)=\infty$, and depict the function by a graph as in Figure 4.
+ 
+ The delta function can be used to define a formal identity for convolution.
+ 
+-## EXAMPLE 6 A formal identity for convolution
+-
+-Show that for any continuous function $f$
+-
+-$$
+-\delta_{0} * f(x)=\frac{1}{\sqrt{2 \pi}} f(x) \text { equivalently }\left(\sqrt{2 \pi} \delta_{0}\right) * f(x)=f(x)
+-$$
+-
+-Solution Using (10), we have
++> [!exercise|2228d506-b050-5b34-a396-83e7567cde94.local at=4de0fc17-b0fd-53f4-b4f7-e6796731d87c] EXAMPLE 6 A formal identity for convolution
++> Show that for any continuous function $f$
++>
++> $$
++> \delta_{0} * f(x)=\frac{1}{\sqrt{2 \pi}} f(x) \text { equivalently }\left(\sqrt{2 \pi} \delta_{0}\right) * f(x)=f(x)
++> $$
++
++*Printed equation label: (12).*
++
++##### solution
++
++Using (10), we have
+ 
+ $$
+ \left(\sqrt{2 \pi} \delta_{0}\right) * f(x)=\int_{-\infty}^{\infty} f(x-y) \delta_{0}(y) d y=f(x)
+@@ -381,160 +478,241 @@
+ 
+ $$
+ \delta_{\alpha}[f]=\int_{-\infty}^{\infty} f(x) \delta_{\alpha}(x) d x=f(\alpha)
++\tag{13}
+ $$
+ 
+ Thus integrating a function $f$ against $\delta_{\alpha}$ picks up the value of $f$ at $\alpha$. Since we also have $f(\alpha)=\int_{-\infty}^{\infty} f(x+\alpha) \delta_{0}(x) d x$, thinking of $\delta_{0}$ as a function and making the change of variables $x+\alpha=X$, we find that
+ 
+ $$
+ \int_{-\infty}^{\infty} f(x) \delta_{\alpha}(x) d x=\int_{-\infty}^{\infty} f(X) \delta_{0}(X-\alpha) d X
++\tag{14}
+ $$
+ 
+ Thus, $\delta_{\alpha}(x)=\delta_{0}(x-\alpha)$. The graph of $\delta_{\alpha}(x)$ is shown in Figure 5; it is obtained by translating the graph of $\delta_{0}(x)$ by $\alpha$. So if we think of $\delta_{0}$ as being supported at the point $x=0$, then $\delta_{\alpha}$ is supported at $x=\alpha$.
+ 
++```scientific-figure
++id: 9f99ef0d-f14d-443f-bcdd-41fbfe7f592b
++numbered: false
++title: ""
++caption: Figure 5 Dirac delta at zero and its translate supported at $x=\alpha$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-2-figure-5-restored.png
++    caption: ""
++```
++
++
+ An antiderivative of $\delta_{0}$ is defined by
+ 
+ $$
+ \mathcal{U}_{0}(x)=\int_{-\infty}^{x} \delta_{0}(t) d t= \begin{cases}0 & \text { if } x<0 \\ 1 & \text { if } x \geq 0\end{cases}
++\tag{15}
+ $$
+ 
+ This is the Heaviside unit step function (Figure 6). Similarly, we introduce the translates of the Heaviside function by
+ 
+ $$
+ \mathcal{U}_{\alpha}(x)=\int_{-\infty}^{x} \delta_{\alpha}(t) d t= \begin{cases}0 & \text { if } x<\alpha \\ 1 & \text { if } x \geq \alpha\end{cases}
+-$$
++\tag{16}
++$$
++
++```scientific-figure
++id: 71347542-ad1f-4020-b9c6-84d6d06824ab
++numbered: false
++title: ""
++caption: Figure 6 Heaviside step function and its translate $\mathcal U_\alpha(x)=\mathcal U_0(x-\alpha)$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-2-figure-6-restored.png
++    caption: ""
++```
++
+ 
+ We have the formal derivative relations
+ 
+ $$
+ \mathcal{U}_{0}^{\prime}(x)=\delta_{0}(x) \quad \text { also } \quad \mathcal{U}_{\alpha}^{\prime}(x)=\delta_{\alpha}(x)
+-$$
+-
+-We can give some meaning to these identities: The Heaviside is constant so its slope (derivative) is 0 , except at $x=\alpha$, where the values of $\mathcal{U}_{\alpha}$ jump from 0 to 1 causing an infinite slope. This reasoning with slopes allows us to carry
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-23_1089_436_127_35.jpg)
+-Figure 7 for Example 7.
+-
+-## FOURIER
+-
+-TRANSFORMS OF GENERALIZED FUNCTIONS
+-the notion of derivatives to piecewise continuous functions as illustrated by the following example.
+-
+-## EXAMPLE 7 Derivatives of piecewise continuous functions
+-
+-The function $f(x)$ is shown in Figure 7. Compute $f^{\prime}(x)$ and $f^{\prime \prime}(x)$.
+-Solution Since the function is zero for $x<-1$ or $x>1$, we have $f^{\prime}(x)=f^{\prime \prime}(x)=0$ if $x<-1$ or $x>1$. For $-1<x<0$ we have $f^{\prime}(x)=2$ and for $0<x<1$ we have $f^{\prime}(x)=-2$, as shown in Figure 7. In terms of Heaviside functions, we have
++\tag{17}
++$$
++
++We can give some meaning to these identities: The Heaviside is constant so its slope (derivative) is 0, except at $x=\alpha$, where the values of $\mathcal{U}_{\alpha}$ jump from 0 to 1. In the sense of generalized functions, this jump contributes $\delta_\alpha$ to the derivative.
++
++```scientific-figure
++id: 1b2314b4-58fa-4e7d-ba0e-cca8d1a04f62
++numbered: false
++title: ""
++caption: Figure 7 for Example 7.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-23_1089_436_127_35.jpg
++    caption: ""
++```
++
++
++The following example illustrates this extension.
++
++> [!exercise|3d0a4806-3f35-52d1-9d15-24e609e1f0d1.local at=ed309901-116c-582c-894c-b43f6c149b49] EXAMPLE 7 Derivatives of piecewise continuous functions
++> The function $f(x)$ is shown in Figure 7. Compute $f^{\prime}(x)$ and $f^{\prime \prime}(x)$.
++
++##### solution
++
++Since the function is zero for $x<-1$ or $x>1$, we have $f^{\prime}(x)=f^{\prime \prime}(x)=0$ if $x<-1$ or $x>1$. For $-1<x<0$ we have $f^{\prime}(x)=2$ and for $0<x<1$ we have $f^{\prime}(x)=-2$, as shown in Figure 7. In terms of Heaviside functions, we have
+ 
+ $$
+ f^{\prime}(x)=2 \mathcal{U}_{-1}(x)-4 \mathcal{U}_{0}(x)+2 \mathcal{U}_{1}(x) .
++\tag{18}
+ $$
+ 
+ The second derivative is 0 everywhere except at the points $-1,0$, and 1 . In order to cause $f^{\prime}(x)$ to jump the way shown in Figure 7, we place weighted $\delta$ functions at these points corresponding to the jump on the graph of $f^{\prime}(x)$. If $f^{\prime}(x)$ increases at a jump, the weight of the $\delta$ function there is positive. If $f^{\prime}(x)$ decreases at a jump, the weight of the $\delta$ function there is negative. The result is a second derivative given by
+ 
+ $$
+ f^{\prime \prime}(x)=2 \delta_{-1}(x)-4 \delta_{0}(x)+2 \delta_{1}(x)
++\tag{19}
+ $$
+ 
+ (Figure 7). Note how this can be obtained by differentiating (18) and using (17). You may be wondering about the values of $f^{\prime}(x)$ at the points $-1,0$, and 1 . You can insert $\delta$ functions at these points, but the weights have to be 0 , because $f(x)$ is continuous at these points.
+ 
++## Fourier Transforms of Generalized Functions
++
+ We now introduce the Fourier transform of generalized functions, again by formal manipulations of identities that hold for integrable functions.
+-We have:
++> [!identity|839a2472-b06d-52a8-832f-b9177a0ffe32.local at=baa330f9-19e6-5f7f-b503-9d9ab9c2587b] Fourier Transforms of Dirac Deltas and Heaviside Steps
++> The following identities hold in the sense of tempered distributions, with the symmetric negative-exponent Fourier convention:
++>
++> $$
++> \begin{aligned}
++> \mathcal{F}\left(\delta_{0}(x)\right)(\omega) & =\frac{1}{\sqrt{2 \pi}} \\
++> \mathcal{F}\left(\delta_{\alpha}(x)\right)(\omega) & =\frac{1}{\sqrt{2 \pi}} e^{-i \alpha \omega} \\
++> \mathcal{F}\left(\mathcal{U}_{0}(x)\right)(\omega) & =\sqrt{\frac\pi2}\,\delta_0(\omega)-\frac{i}{\sqrt{2\pi}}\operatorname{pv}\frac1\omega \\
++> \mathcal{F}\left(\mathcal{U}_{\alpha}(x)\right)(\omega) & =\sqrt{\frac\pi2}\,\delta_0(\omega)-\frac{i}{\sqrt{2\pi}}e^{-i\alpha\omega}\operatorname{pv}\frac1\omega
++> \end{aligned}
++> $$
++
++*Printed equation labels: (20) Dirac mass at zero; (21) translated Dirac mass; (22) unshifted Heaviside step; (23) shifted Heaviside step.*
++
++Proof To prove (20), we use the definition of the Fourier transform and (10) and get
++
++$$
++\mathcal{F}\left(\delta_{0}\right)(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega x} \delta_{0}(x) d x=\frac{1}{\sqrt{2 \pi}} e^{-i \omega 0}=\frac{1}{\sqrt{2 \pi}}
++$$
++
++The remaining identities follow from (20) and the properties of the Fourier transform. For example, to prove (21) use Theorem 3. To prove (22) use Theorem 1: we have
++
++$$
++\mathcal{F}\left(\mathcal{U}_{0}^{\prime}\right)=i \omega \mathcal{F}\left(\mathcal{U}_{0}\right) ;
++$$
++
++but $\mathcal{U}_{0}^{\prime}=\delta_{0}$, so
++
++$$
++i \omega \mathcal{F}\left(\mathcal{U}_{0}\right)=\mathcal{F}\left(\delta_{0}\right)=\frac{1}{\sqrt{2 \pi}}
++$$
++
++Multiplication by $i\omega$ determines this transform only up to a multiple of $\delta_0$. Since $\mathcal U_0(x)+\mathcal U_0(-x)=1$ almost everywhere and $\mathcal F(1)=\sqrt{2\pi}\,\delta_0$, its even part is $\sqrt{\pi/2}\,\delta_0$. This supplies the missing term.  $\square$
++
++We can add more to these identities by applying the operational properties. For example, we can consider the $n$th derivative of $\delta_{0}$ and write
++
++$$
++\mathcal{F}\left(\delta_{\alpha}^{(n)}\right)(\omega)=\frac{(i \omega)^{n}}{\sqrt{2 \pi}} e^{-i \alpha \omega}
++\tag{24}
++$$
++
++where we have combined Theorem 1(iii) and (21). As extravagant as they may seem, these identities are very useful when used as operational properties in intermediary steps in computations. We illustrate with several examples, starting with a piecewise linear function that vanishes outside a finite interval. The function is integrable, but as is generally the case with piecewise continuous functions, computing its Fourier transform from the definition is tedious. We can use generalized functions to facilitate the task.
++
++> [!exercise|0e333fd9-a919-5601-a89f-af5e53d465eb.local at=e58dcb78-7544-56a9-ac01-277a96934c01] EXAMPLE 8 Fourier transform of a piecewise linear function
++> Find the Fourier transform of the function $f(x)$ in Example 7.
++
++##### solution
++
++From (18), we have
++
++$$
++f^{\prime}(x)=2 \mathcal{U}_{-1}(x)-4 \mathcal{U}_{0}(x)+2 \mathcal{U}_{1}(x)
++$$
++
++So with the help of (23), we get
++
++$$
++\mathcal{F}\left(f^{\prime}\right)=2 \mathcal{F}\left(U_{-1}\right)-4 \mathcal{F}\left(U_{0}\right)+2 \mathcal{F}\left(U_{1}\right)=-\frac{i}{\sqrt{2 \pi} \omega}\left(2 e^{i \omega}-4+2 e^{-i \omega}\right)
++$$
++
++Appealing to Theorem 1(i), we have
++
++$$
++\mathcal{F}\left(f^{\prime}\right)=i \omega \mathcal{F}(f) \quad \Rightarrow \quad \mathcal{F}(f)=\frac{-i}{\omega} \mathcal{F}\left(f^{\prime}\right)
++$$
++
++and so
++
++$$
++\mathcal{F}(f)=-\frac{2 e^{i \omega}-4+2 e^{-i \omega}}{\sqrt{2 \pi} \omega^{2}}
++$$
++
++Simplifying with the help of the identity $e^{i \omega}+e^{-i \omega}=2 \cos \omega$, we obtain
++
++$$
++\mathcal{F}(f)=\frac{4(1-\cos \omega)}{\sqrt{2 \pi} \omega^{2}}
++$$
++
++which is continuous at all $\omega$, including $\omega=0$, as one would expect from the Fourier transform of an integrable function. The value of the transform at $\omega=0$ is
++
++$$
++\mathcal{F}(f)(0)=\lim _{\omega \rightarrow 0} \mathcal{F}(f)(\omega)=\lim _{\omega \rightarrow 0} \frac{4(1-\cos \omega)}{\sqrt{2 \pi} \omega^{2}}=\frac{2}{\sqrt{2 \pi}}
++$$
++
++as you can check by applying l'Hospital's rule twice. $\square$
++```scientific-figure
++id: 7b20fddf-b62e-4959-a1bb-a14be882a011
++numbered: false
++title: ""
++caption: Figure 8 The function $f(x)$ and its derivatives in Example 9.
++captionVisible: true
++captionPosition: below
++columns: 3
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_270_364_238_23.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_398_368_507_19.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_438_378_900_19.jpg
++    caption: ""
++```
++
++```scientific-figure
++id: d1fa4c55-5140-4630-a4e0-0c48c0a4ccb1
++numbered: false
++title: ""
++caption: Figure 9 The normalized convolution of two Dirac deltas is another scaled Dirac delta, supported at the sum of their support points.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_359_400_1599_9.jpg
++    caption: ""
++```
++
++
++> [!exercise|e030e45f-fed9-5b76-9dcb-e2a29aec9e92.local at=9e37235c-af0f-5f28-91b4-aff1442a16de] EXAMPLE 9 Fourier transform of a piecewise smooth function
++> Find the Fourier transform of the function $f(x)$ in Figure 8.
++
++##### solution
++
++First we reduce the problem to finding Fourier transforms of generalized functions. Taking derivatives of $f$ (see Figure 8), we find that
++
++$$
++f^{\prime \prime}=2\left(\mathcal{U}_{-1}-\mathcal{U}_{1}\right)-2 \delta_{-1}-2 \delta_{1},
++$$
++
++where the delta functions are inserted to account for the jumps in $f^{\prime}$ at $\pm 1$. Computing the Fourier transform with the help of (21) and (23), we get
+ 
+ $$
+ \begin{aligned}
+-\mathcal{F}\left(\delta_{0}(x)\right)(\omega) & =\frac{1}{\sqrt{2 \pi}} \\
+-\mathcal{F}\left(\delta_{\alpha}(x)\right)(\omega) & =\frac{1}{\sqrt{2 \pi}} e^{-i \alpha \omega} \\
+-\mathcal{F}\left(\mathcal{U}_{0}(x)\right)(\omega) & =-\frac{i}{\sqrt{2 \pi} \omega} \\
+-\mathcal{F}\left(\mathcal{U}_{\alpha}(x)\right)(\omega) & =-\frac{i}{\sqrt{2 \pi} \omega} e^{-i \alpha \omega}
+-\end{aligned}
+-$$
+-
+-Proof To prove (20), we use the definition of the Fourier transform and (10) and get
+-
+-$$
+-\mathcal{F}\left(\delta_{0}\right)(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega x} \delta_{0}(x) d x=\frac{1}{\sqrt{2 \pi}} e^{-i \omega 0}=\frac{1}{\sqrt{2 \pi}}
+-$$
+-
+-The remaining identities follow from (20) and the properties of the Fourier transform. For example, to prove (21) use Theorem 3. To prove (22) use Theorem 1: we have
+-
+-$$
+-\mathcal{F}\left(\mathcal{U}_{0}^{\prime}\right)=i \omega \mathcal{F}\left(\mathcal{U}_{0}\right) ;
+-$$
+-
+-but $\mathcal{U}_{0}^{\prime}=\delta_{0}$, so
+-
+-$$
+-i \omega \mathcal{F}\left(\mathcal{U}_{0}\right)=\mathcal{F}\left(\delta_{0}\right)=\frac{1}{\sqrt{2 \pi}}
+-$$
+-
+-which implies (22). $\square$
+-
+-We can add more to these identities by applying the operational properties. For example, we can consider the $n$th derivative of $\delta_{0}$ and write
+-
+-$$
+-\mathcal{F}\left(\delta_{\alpha}^{(n)}\right)(\omega)=\frac{(i \omega)^{n}}{\sqrt{2 \pi}} e^{-i \alpha \omega}
+-$$
+-
+-where we have combined Theorem 1(iii) and (21). As extravagant as they may seem, these identities are very useful when used as operational properties in intermediary steps in computations. We illustrate with several examples, starting with a piecewise linear function that vanishes outside a finite interval. The function is integrable, but as is generally the case with piecewise continuous functions, computing its Fourier transform from the definition is tedious. We can use generalized functions to facilitate the task.
+-
+-EXAMPLE 8 Fourier transform of a piecewise linear function Find the Fourier transform of the function $f(x)$ in Example 7.
+-Solution From (18), we have
+-
+-$$
+-f^{\prime}(x)=2 \mathcal{U}_{-1}(x)-4 \mathcal{U}_{0}(x)+2 \mathcal{U}_{1}(x)
+-$$
+-
+-So with the help of (23), we get
+-
+-$$
+-\mathcal{F}\left(f^{\prime}\right)=2 \mathcal{F}\left(U_{-1}\right)-4 \mathcal{F}\left(U_{0}\right)+2 \mathcal{F}\left(U_{1}\right)=-\frac{i}{\sqrt{2 \pi} \omega}\left(2 e^{i \omega}-4+2 e^{-i \omega}\right)
+-$$
+-
+-Appealing to Theorem 1(i), we have
+-
+-$$
+-\mathcal{F}\left(f^{\prime}\right)=i \omega \mathcal{F}(f) \quad \Rightarrow \quad \mathcal{F}(f)=\frac{-i}{\omega} \mathcal{F}\left(f^{\prime}\right)
+-$$
+-
+-and so
+-
+-$$
+-\mathcal{F}(f)=-\frac{2 e^{i \omega}-4+2 e^{-i \omega}}{\sqrt{2 \pi} \omega^{2}}
+-$$
+-
+-Simplifying with the help of the identity $e^{i \omega}+e^{-i \omega}=2 \cos \omega$, we obtain
+-
+-$$
+-\mathcal{F}(f)=\frac{4(1-\cos \omega)}{\sqrt{2 \pi} \omega^{2}}
+-$$
+-
+-which is continuous at all $\omega$, including $\omega=0$, as one would expect from the Fourier transform of an integrable function. The value of the transform at $\omega=0$ is
+-
+-$$
+-\mathcal{F}(f)(0)=\lim _{\omega \rightarrow 0} \mathcal{F}(f)(\omega)=\lim _{\omega \rightarrow 0} \frac{4(1-\cos \omega)}{\sqrt{2 \pi} \omega^{2}}=\frac{2}{\sqrt{2 \pi}}
+-$$
+-
+-as you can check by applying l'Hospital's rule twice. $\square$
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_270_364_238_23.jpg)
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_398_368_507_19.jpg)
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_438_378_900_19.jpg)
+-
+-Figure 8 The function $f(x)$ and its derivatives in Example 9.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-25_359_400_1599_9.jpg)
+-figure 9 The convolution of ini) Dirac deltas is another kaled Dirac delta, supported "the sum of the supports.
+-
+-EXAMPLE 9 Fourier transform of a piecewise smooth function
+-Find the Fourier transform of the function $f(x)$ in Figure 8.
+-Solution First we reduce the problem to finding Fourier transforms of generalized functions. Taking derivatives of $f$ (see Figure 8), we find that
+-
+-$$
+-f^{\prime \prime}=2\left(\mathcal{U}_{-1}-\mathcal{U}_{1}\right)-2 \delta_{-1}-2 \delta_{1},
+-$$
+-
+-where the delta functions are inserted to account for the jumps in $f^{\prime}$ at $\pm 1$. Computing the Fourier transform with the help of (21) and (23), we get
+-
+-$$
+-\begin{aligned}
+-\mathcal{F}\left(f^{\prime \prime}\right) & =2 \mathcal{F}\left(\mathcal{U}_{-1}\right)-\mathcal{F}\left(\mathcal{U}_{1}\right)-2\left(\mathcal{F}\left(\delta_{-1}\right)+\mathcal{F}\left(\delta_{1}\right)\right) \\
++\mathcal{F}\left(f^{\prime \prime}\right) & =2 \mathcal{F}\left(\mathcal{U}_{-1}\right)-2\mathcal{F}\left(\mathcal{U}_{1}\right)-2\left(\mathcal{F}\left(\delta_{-1}\right)+\mathcal{F}\left(\delta_{1}\right)\right) \\
+ & =\frac{-2 i}{\sqrt{2 \pi}} \frac{e^{i \omega}-e^{-i \omega}}{\omega}-\frac{2}{\sqrt{2 \pi}}\left(e^{i \omega}+e^{-i \omega}\right) \\
+ & =\frac{4}{\sqrt{2 \pi}} \frac{\sin \omega}{\omega}-\frac{4}{\sqrt{2 \pi}} \cos \omega
+ \end{aligned}
+@@ -558,16 +736,19 @@
+ 
+ $$
+ \delta_{a} * \delta_{b}=\frac{1}{\sqrt{2 \pi}} \delta_{a+b}
++\tag{25}
+ $$
+ 
+ This interesting identity says that the convolution of two delta functions is another scaled delta function supported at the sum of the supports of the delta functions (Figure 9). To prove (25), take Fourier transforms on both sides and use (21) (Exercise 41).
+ 
+ Here is an interesting application of (25).
+ 
+-## EXAMPLE 10 Convolution of a step function
+-
+-Let $f(x)$ be the step function in Figure 10. Compute $f * f(x)$. (For the convolution of $f$ with itself $n$-times, see Exercise 46.)
+-Solution We have $f^{\prime}(x)=\delta_{-1}-\delta_{1}$. Also, from Theorem 5, and (25),
++> [!exercise|60436b2e-5598-5e0c-b280-e94e00e5bcda.local at=23b141d8-9619-5b5a-a284-d2114d14eee1] EXAMPLE 10 Convolution of a step function
++> Let $f(x)$ be the step function in Figure 10. Compute $f * f(x)$. (For the convolution of $f$ with itself $n$-times, see Exercise 46.)
++
++##### solution
++
++We have $f^{\prime}(x)=\delta_{-1}-\delta_{1}$. Also, from Theorem 5, and (25),
+ 
+ $$
+ \begin{aligned}
+@@ -576,16 +757,38 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-26_918_459_133_94.jpg)
+-Figure $10 f(x)$ and $f^{\prime}(x)$ in Example 10.
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-26_1476_505_1144_89.jpg)
+-Figure 11 Antidifferentiation in Example 10.
++```scientific-figure
++id: 31ea79eb-0a5a-4a82-9019-e6c758438fef
++numbered: false
++title: ""
++caption: Figure 10 $f(x)$ and $f^{\prime}(x)$ in Example 10.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-26_918_459_133_94.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: c4b1bfc4-1ed2-4099-9160-f461a1b8c76c
++numbered: false
++title: ""
++caption: Figure 11 Antidifferentiation in Example 10.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-26_1476_505_1144_89.jpg
++    caption: ""
++```
++
+ 
+ Taking the antiderivative once and using (17), we find
+ 
+ $$
+-(f * f)^{\prime}=\frac{1}{\sqrt{2 \pi}}\left(U_{-2}-U_{0}+U_{2}\right),
++(f * f)^{\prime}=\frac{1}{\sqrt{2 \pi}}\left(U_{-2}-2U_{0}+U_{2}\right),
+ $$
+ 
+ which is the step function depicted in Figure 11. To get $f * f$, we find the continuous antiderivative of $(f * f)^{\prime}$, which is 0 outside a large interval. (In fact, it can be shown that if $f$ vanishes outside a set $A$ and $g$ vanishes outside set $B$, then $f * g$ will vanish outside the set $A+B$, which consists of all real numbers of the form $x+y$, where $x$ is in $A$ and $y$ is in $B$. In our example, $f$ vanishes outside $[-1,1]$, so $f * f$ will vanish outside $[-1,1]+[-1,1]=[-2,2]$.) This is not difficult to do with the help of Figure 11, yielding the function $f * f$ in Figure 11. More explicitly, we have
+@@ -600,189 +803,371 @@
+ 
+ In the next section, we develop the Fourier transform method for solving partial differential equations on the real line. We will use this method to solve boundary value problems associated with the heat and wave equations, and a variety of other important problems on the real line and regions in the two dimensional space.
+ 
+-## Exercises 11.2
+-
+-In Exercises 1-16 use the operational properties and a known Fourier transform to compute the Fourier transform of the given function.
+-
+-1. $f(x)=x^{2} e^{-x^{2}}$.
+-2. $f(x)=x e^{-|x|}$.
+-3. $f(x)=\frac{x}{\left(1+x^{2}\right)^{2}}$.
+-4. $f(x)=\frac{x^{2}}{\left(1+x^{2}\right)^{2}}$.
+-5. $f(x)=(1+6 x) e^{-|x|}$.
+-6. $f(x)=e^{-x^{2}-2 x}$.
+-7. $f(x)=e^{-\frac{x^{2}}{2}+x-3}$.
+-8. $f(x)=e^{-2 x^{2}+3 i x}$.
+-9. 
+-10. 
+-
+-$f(x)= \begin{cases}x & \text { if } 0<x<1, \\ 0 & \text { otherwise } .\end{cases}$
+-
+-$$
+-f(x)= \begin{cases}0 & \text { if } x<0 \text { or } x>1, \\ x^{2} & \text { if } 0<x<1 .\end{cases}
+-$$
+-
+-11. $f(x)=\frac{2 x}{\left(a^{2}+x^{2}\right)^{2}}, \quad a \neq 0$.
+-12. $f(x)=\frac{a-i x}{a^{2}+x^{2}}, \quad a \neq 0$.
+-13. $f(x)=\left(1-x^{2}\right) e^{-x^{2}}$.
+-14. $f(x)=(1-x)^{2} e^{-|x|}$.
+-15. $f(x)=x e^{-\frac{1}{2}(x-1)^{2}}$.
+-16. $f(x)=(1-x) e^{-|x-1|}$.
+-
+-In Exercises 17-22, (a) find the Fourier transforms of $f$ and $g$. (b) Find the Fourier transform of $f * g$. (c) What is $f * g$ ? [Hint: Compute $f * g(x)$ using the method of Example 4. If needed, use the table of Fourier transforms (Appendix B.1) to assist you in inverting the Fourier transform of $f * g$.]
+-17. $f(x)=e^{-x^{2}}, g(x)=x e^{-x^{2}}$.
+-18. $f(x)=x e^{-x^{2}}, g(x)=x e^{-x^{2}}$.
+-19. $f(x)=e^{-(x-1)^{2}}, g(x)=e^{-(x+1)^{2}}$.
+-20. $f(x)=U_{-1}(x)-U_{1}(x), g(x)=\left(U_{-1}(x)-U_{1}(x)\right) x$.
+-21. $f(x)=\mathcal{U}_{-a}(x)-\mathcal{U}_{a}(x), g(x)=\mathcal{U}_{-b}(x)-\mathcal{U}_{b}(x)$, where $0<a \leq b$.
+-22. $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)+\mathcal{U}_{2}(x)-\mathcal{U}_{3}(x), g(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$.
+-23. Basic properties of convolutions. Establish the following properties of convolutions. For (a) and (b), use operational properties of the Fourier transform.
+-(a) $f *(g * h)=(f * g) * h \quad$ (associativity).
+-(b) Let $a$ be a real number and let $f_{a}$ denote the translate of $f$ by $a$, that is, $f_{a}(x)=f(x-a)$. Show that $\left(f_{a}\right) * g=f *\left(g_{a}\right)=(f * g)_{a}$. This important property says that convolutions commute with translations.
+-(c) Integrability of the convolution. Show that if $f$ and $g$ are integrable, then so is $f * g$. (It is also continuous.) [Hint: Use the definition of convolution, interchange orders of integration and use $\mid \int\left(f(x) d x\left|\leq \int\right| f(x) \mid d x\right.$.]
+-24. (a) Show that $x(f * g)=(x f) * g+f *(x g)$. [Hint: Fourier transform.]
+-(b) Verify the identity in (a) with $f(x)=g(x)=e^{-x^{2}}$.
+-25. Convolution with a complex exponential.
+-(a) Show that $e^{i \alpha x} * f(x)=\widehat{f}(\alpha) e^{i \alpha x}$.
+-(b) Compute $\cos x * e^{-|x|}$. [Hint: $\cos x=\frac{e^{i x}+e^{-i x}}{2}$.]
+-26. Shifting on the $\omega$-axis. Using Theorem 3, prove the following identities:
+-
+-$$
+-\begin{aligned}
+-\mathcal{F}(\cos (a x) f(x))(\omega) & =\frac{\widehat{f}(\omega-a)+\widehat{f}(\omega+a)}{2} \\
+-\mathcal{F}(\sin (a x) f(x))(\omega) & =\frac{\widehat{f}(\omega-a)-\widehat{f}(\omega+a)}{2 i} \\
+-\mathcal{F}^{-1}(\cos (a \omega) \widehat{f}(\omega))(x) & =\frac{f(x-a)+f(x+a)}{2} \\
+-\mathcal{F}^{-1}(\sin (a \omega) \widehat{f}(\omega))(x) & =\frac{f(x+a)-f(x-a)}{2 i}
+-\end{aligned}
+-$$
+-
+-In Exercises 27-32, use Exercise 26 and known transforms to compute the Fourier transform of the given function.
+-27. $f(x)=\frac{\cos x}{e^{x^{2}}}$.
+-$28 f(x)=\frac{\sin 2 x}{e^{|x|}}$.
+-29. $f(x)=\frac{\cos x+\cos 2 x}{1+x^{2}}$.
+-30. $f(x)=\frac{\sin x+\cos 2 x}{4+x^{2}}$.
+-32.
+-
+-31
+-
+-$$
+-f(x)= \begin{cases}\cos x & \text { if }|x|<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-$$
+-f(x)= \begin{cases}\sin x & \text { if }|x|<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-In Exercises 33-38, follow the method of Examples 8 and 9 to compute the Fourier transform of the given function. To illustrate your answer, graph the function and its derivatives, including the parts with generalized functions.
+-33. $\mathcal{U}_{2}(x)-\mathcal{U}_{4}(x)$.
+-34. $\left(\mathcal{U}_{-1}-\mathcal{U}_{1}(x)\right)|x|$.
+-35. $\sum_{j=0}^{5}(-1)^{j}\left(\mathcal{U}_{j}(x)-\mathcal{U}_{j+1}(x)\right)$.
+-36. $\sum_{j=0}^{5}(-1)^{j}\left(\mathcal{U}_{j}(x)-\mathcal{U}_{j+1}(x)\right)(x-j)$.
+-37. $\left(\mathcal{U}_{0}(x)-\mathcal{U}_{1}(x)\right) x+\left(\mathcal{U}_{1}(x)-\mathcal{U}_{2}(x)\right)(2-x)$.
+-38. $\left(\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)\right) x^{2}$.
+-
+-In Exercises 39-40, follow the method of Example 10 to compute the given convolution.
+-39. $f * f * f(x)$ where $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$.
+-40. $f * g(x)$ where $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$ and $g(x)=\left(\mathcal{U}_{-1}-\mathcal{U}_{1}(x)\right) x$.
+-41. Prove (25), using the Fourier transform.
+-42. Fourier transforms and dilations. (a) Show that
+-
+-$$
+-\mathcal{F}(f(a x))(\omega)=\frac{1}{|a|} \mathcal{F}(f)\left(\frac{\omega}{a}\right), \quad a \neq 0
+-$$
+-
+-(b) Use (a) to derive the Fourier transform of $g(x)=e^{-2|x|}$ from the Fourier transform of $f(x)=e^{-|x|}$.
+-43. Use Plancherel's theorem to derive the value of $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{4} d x$ in Table 1 (see Exercise 47). [Hint: Find a function whose Fourier transform is $\left(\frac{\sin \omega}{\omega}\right)^{2}$.]
+-44. Project Problem: Fourier transform of Bessel functions of integer order. This exercise is based on Exercise 18 of the previous section. We will derive the formula
+-
+-$$
+-\mathcal{F}\left(J_{n}(x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{(-i)^{n}}{\sqrt{1-\omega^{2}}} T_{n}(\omega) & \text { if }|\omega|<1 \\ 0 & \text { if }|\omega|>1\end{cases}
+-$$
+-
+-where $T_{n}$ is the $n$th Chebyshev polynomial (see Exercise 57, Section 1.3, for definitions and properties of these polynomials).
+-(a) Using the operational properties of the Fourier transform and the identity $\frac{d}{d x} J_{0}=-J_{1}$, obtain the Fourier transform of $J_{1}(x)$ :
+-
+-$$
+-\mathcal{F}\left(J_{1}(x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{-i \omega}{\sqrt{1-\omega^{2}}} & \text { if }|\omega|<1 \\ 0 & \text { if }|\omega|>1\end{cases}
+-$$
+-
+-Now that you have the Fourier transforms of $J_{0}$ and $J_{1}$, explain how these follow from (26) with $n=0$ and 1 .
+-(b) Use the identity $J_{p-1}-J_{p+1}=2 J_{p}^{\prime}$ (see Section 9.7) to derive that $\mathcal{F}\left(J_{p-1}\right)- \mathcal{F}\left(J_{p+1}\right)=2 i \omega \mathcal{F}\left(J_{p}\right)$. Conclude from what you know about the Fourier transforms of $J_{0}$ and $J_{1}$ that $J_{n}(\omega)=0$ if $|\omega|>1$ and that for $|\omega|<1 J_{n}(\omega)=\sqrt{\frac{2}{\pi}} \frac{p_{n}(\omega)}{\sqrt{1-\omega^{2}}}$,
+-where $p_{n}(x)$ is a polynomial of degree $n$ in $x$ satisfying the recurrence relation $p_{n-1}(x)-p_{n+1}(x)=2 i x p_{n}(x)$.
+-(c) Verify that $p_{0}(x)=1=T_{0}(x), p_{1}(x)=-i x=-i T_{1}(x)$. More generally, show that the $p_{n}(x)=(-i)^{n} T_{n}(x)$. [Hint: Write $p_{n}(x)=(-i)^{n} q_{n}(x)$. We have $q_{0}=T_{0}$ and $q_{1}=T_{1}$. Use the recurrence relation for the $p_{n}$ 's to show that $q_{n-1}+ q_{n+1}=2 x q_{n}$. Since this is the recurrence relation for the Chebyshev polynomials (Exercise 58(e), Section 1.3), it follows that $q_{n}=T_{n}$.]
+-45. Project Problem: Fourier transforms involving Bessel functions of half-integer order and Legendre polynomials. We will derive the following Fourier transform for $n=0,1,2, \ldots$,
+-
+-$$
+-\mathcal{F}\left(\frac{J_{n+\frac{1}{2}}(x)}{\sqrt{x}}\right)(\omega)= \begin{cases}(-i)^{n} P_{n}(\omega) & \text { if }|\omega|<1, \\ 0 & \text { if }|\omega|>1,\end{cases}
+-$$
+-
+-where $P_{n}$ is the $n$th Legendre polynomial (see Section 10.5 for definitions and properties of these polynomials). To establish the identity, proceed as follows.
+-(a) Show that the functions $f_{n}(x)=\frac{J_{n+\frac{1}{2}}(x)}{\sqrt{x}}$ satisfy the recurrence relation
+-
+-$$
+-x f_{n-1}+x f_{n+1}=(2 n+1) f_{n}
+-$$
+-
+-[Hint: Use (6), Section 9.7.]
+-(b) Conclude that $i \frac{d}{d \omega} \widehat{f_{n-1}}+i \frac{d}{d \omega} \widehat{f_{n+1}}=(2 n+1) \widehat{f_{n}}$.
+-(c) Compute $\widehat{f_{n}}$ for $n=0$ and 1 directly and show that they fit the formula (27).
+-
+-Conclude from (b) that, for $n \geq 2, \widehat{f_{n}}(\omega)$ is 0 if $|\omega|>1$ and is a polynomial of degree $n$ for $|\omega|<1$.
+-(d) Complete the proof by showing that the functions $(-i)^{n} P_{n}(\omega)$ satisfy the recurrence relation in (b).
+-46. Project Problem: Convolutions of the indicator function. In this exercise we derive the following interesting formula. Let $f(x)=\mathcal{U}_{0}(x)-\mathcal{U}_{1}(x)$, and let $n \geq 2$ be an integer. Define the $n$th convolution of $f$ by itself by
+-
+-$$
+-f^{* n}(x)=\overbrace{f * f * \cdots * f}^{n \text { of these }}
+-$$
+-
+-Then $f^{* n}(x)=0$ if $x<0$ or $x>n$, and for $x$ in $[0, n]$, we have
+-
+-$$
+-f^{* n}(x)=\frac{1}{(2 \pi)^{\frac{n-1}{2}}(n-1)!} \sum_{k=0}^{[x]}(-1)^{k}\binom{n}{k}(x-k)^{n-1},
+-$$
+-
+-where $[x]$ denotes the greatest integer in $x$ and $\binom{n}{k}$ is the binomial coefficient. Follow the suggested proof and supply all the missing details by referring to appropriate operational properties of the Fourier transform and generalized functions. Suggested Proof We have
+-
+-$$
+-\left(\frac{d}{d x}\right)^{n} f^{* n}(x)=\left(f^{\prime}\right)^{* n}(x) \quad \text { and } \quad f^{\prime}(x)=\delta_{0}(x)-\delta_{1}(x) ;
+-$$
+-
+-so
+-
+-$$
+-\left(f^{\prime}\right)^{* n}(x)=\frac{1}{(2 \pi)^{n-1}} \sum_{k=0}^{n}(-1)^{k}\binom{n}{k} \delta_{k}(x)
+-$$
++## Exercises 8.2
++
++
++> [!prompt|5ca85405-7f1a-5d9b-999f-58278e34baf8.local at=f7a9fd73-a9e1-5ded-8285-ab0d982f94a5] Shared exercise instructions
++> In Exercises 1-16 use the operational properties and a known Fourier transform to compute the Fourier transform of the given function.
++
++
++
++> [!exercise|24cf2385-b9fc-53c6-997a-7d53b317776b.local at=54c2a98c-1542-57e4-a25b-a317471c48d1] Exercise 1
++> $f(x)=x^{2} e^{-x^{2}}$.
++
++
++> [!exercise|b4583c7e-5fd8-5241-a740-69ad6a75e104.local at=690b7f9d-8c5e-564b-a041-d0ff389fb0b3] Exercise 2
++> $f(x)=x e^{-|x|}$.
++
++
++> [!exercise|f5cabbc9-2569-5c1e-96ee-3f3bc9076675.local at=a66c832c-1fc9-5d35-a1a4-fc13054a237f] Exercise 3
++> $f(x)=\frac{x}{\left(1+x^{2}\right)^{2}}$.
++
++
++> [!exercise|a5d7cae4-a09d-5412-82fa-6ab48ac1d8ea.local at=92da69c5-ef5e-5a63-853c-62423a68ee32] Exercise 4
++> $f(x)=\frac{x^{2}}{\left(1+x^{2}\right)^{2}}$.
++
++
++> [!exercise|ffffefb2-6d05-5ac7-b5a4-3501cb1cbd34.local at=22f5b3d8-b22e-5ed2-a9ea-7a4b4d9a7820] Exercise 5
++> $f(x)=(1+6 x) e^{-|x|}$.
++
++
++> [!exercise|301c540d-8e4d-51e0-b1eb-780379ba6e5d.local at=568764d2-1676-5767-9ab7-3f63d6442ee1] Exercise 6
++> $f(x)=e^{-x^{2}-2 x}$.
++
++
++> [!exercise|bc8a88d5-9810-5fc1-bc2c-272b2be743fe.local at=ba321e50-a435-5a1f-9872-8d95617c0eb4] Exercise 7
++> $f(x)=e^{-\frac{x^{2}}{2}+x-3}$.
++
++
++> [!exercise|45e84507-a23f-5699-b73b-6f52c62f3139.local at=77d29694-ab4f-5c75-91c0-abe68142183c] Exercise 8
++> $f(x)=e^{-2 x^{2}+3 i x}$.
++
++
++> [!exercise|6d405528-8e6d-56a6-b8c4-72db951fe612.local at=01c4927e-931b-524b-855f-b67f59524470] Exercise 9
++> $f(x)= \begin{cases}x & \text { if } 0<x<1, \\ 0 & \text { otherwise } .\end{cases}$
++
++
++> [!exercise|3d3cdef9-c146-57fc-9767-9d10e935cb81.local at=9270b7c7-4347-524e-b072-12242a03fad4] Exercise 10
++> $$
++> f(x)= \begin{cases}0 & \text { if } x<0 \text { or } x>1, \\ x^{2} & \text { if } 0<x<1 .\end{cases}
++> $$
++
++
++> [!exercise|5c9e5059-81ae-5e3b-98ed-a742ff04fd87.local at=b8053f43-379c-599b-9136-fae7a0196f1f] Exercise 11
++> $f(x)=\frac{2 x}{\left(a^{2}+x^{2}\right)^{2}}, \quad a \neq 0$.
++
++
++> [!exercise|5504f302-a6c1-52df-aab8-29f4160bb238.local at=9632ebea-f30c-5d45-b2db-d7005449af94] Exercise 12
++> $f(x)=\frac{a-i x}{a^{2}+x^{2}}, \quad a \neq 0$.
++
++
++> [!exercise|a68bfa42-17d5-512f-b0f0-aa3c216a037f.local at=76c4f3e1-fe5e-5a38-a7cc-c70c18627c77] Exercise 13
++> $f(x)=\left(1-x^{2}\right) e^{-x^{2}}$.
++
++
++> [!exercise|5ea72190-0de7-5911-8ebf-0dc6dcbf581f.local at=0a5161cf-40af-5ade-9add-eed5315aed34] Exercise 14
++> $f(x)=(1-x)^{2} e^{-|x|}$.
++
++
++> [!exercise|ae9bad71-d335-5221-8655-1b4162919152.local at=1af591ce-6235-5249-be1a-2ea5effc10da] Exercise 15
++> $f(x)=x e^{-\frac{1}{2}(x-1)^{2}}$.
++
++
++> [!exercise|848d5950-a32e-5f2e-84f8-774370ca4fc2.local at=0e0ab6cf-fb7b-5731-9d18-6a0e41186078] Exercise 16
++> $f(x)=(1-x) e^{-|x-1|}$.
++
++
++> [!prompt|1477669c-099f-5c0c-a77c-8065d4b6459b.local at=9f8f8c89-ddf0-5f34-bf00-10789ad7d0d1] Shared exercise instructions
++> In Exercises 17-22, (a) find the Fourier transforms of $f$ and $g$. (b) Find the Fourier transform of $f * g$. (c) What is $f * g$ ? [Hint: Compute $f * g(x)$ using the method of Example 4. If needed, use the table of Fourier transforms (Appendix B.1) to assist you in inverting the Fourier transform of $f * g$.]
++
++
++
++> [!exercise|97624f14-e215-577a-87a1-3f92b0d1cab0.local at=589e5014-b8a8-550d-9d20-18db19d05d6c] Exercise 17
++> $f(x)=e^{-x^{2}}, g(x)=x e^{-x^{2}}$.
++
++
++> [!exercise|8f0a7ba0-706c-5877-b81d-ec7a7ec9c964.local at=2b746466-cd8a-571f-8b6a-4be322953dcc] Exercise 18
++> $f(x)=x e^{-x^{2}}, g(x)=x e^{-x^{2}}$.
++
++
++> [!exercise|64edaf31-cf8d-572d-8ead-85cd625f00b9.local at=b3abbbee-0c2b-5264-a329-838fdafd3419] Exercise 19
++> $f(x)=e^{-(x-1)^{2}}, g(x)=e^{-(x+1)^{2}}$.
++
++
++> [!exercise|97c4cb7b-b75e-505f-8982-63d39d0d2baa.local at=0cf095ad-d969-570b-b5a8-62201307a0fc] Exercise 20
++> $f(x)=U_{-1}(x)-U_{1}(x), g(x)=\left(U_{-1}(x)-U_{1}(x)\right) x$.
++
++
++> [!exercise|8f0ff78c-4c71-5424-91e0-875605f2b728.local at=4e6a7807-799d-5f07-8985-793d1d8cb624] Exercise 21
++> $f(x)=\mathcal{U}_{-a}(x)-\mathcal{U}_{a}(x), g(x)=\mathcal{U}_{-b}(x)-\mathcal{U}_{b}(x)$, where $0<a \leq b$.
++
++
++> [!exercise|7f3055cc-2edc-577c-b4f8-756d6fd3db41.local at=ae8553f1-cb23-5d27-8273-dd9004766425] Exercise 22
++> $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)+\mathcal{U}_{2}(x)-\mathcal{U}_{3}(x), g(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$.
++
++
++> [!exercise|eb5ebb2c-8198-579c-a5d4-783b827b8d27.local at=5d50432d-caff-52dd-a949-ca5e831506d2] Exercise 23
++> Basic properties of convolutions. Establish the following properties of convolutions. For (a) and (b), use operational properties of the Fourier transform.
++> (a) $f *(g * h)=(f * g) * h \quad$ (associativity).
++> (b) Let $a$ be a real number and let $f_{a}$ denote the translate of $f$ by $a$, that is, $f_{a}(x)=f(x-a)$. Show that $\left(f_{a}\right) * g=f *\left(g_{a}\right)=(f * g)_{a}$. This important property says that convolutions commute with translations.
++> (c) Integrability of the convolution. Show that if $f$ and $g$ are integrable, then so is $f * g$.  [Hint: Use the definition of convolution, interchange orders of integration and use $\left|\int f(x)\,dx\right|\leq\int|f(x)|\,dx$.]
++
++
++> [!exercise|154f62c4-1e3d-5860-99e0-d041dd611c0d.local at=33abf859-e610-5e1d-bf6d-41deb8948664] Exercise 24
++> (a) Show that $x(f * g)=(x f) * g+f *(x g)$. [Hint: Fourier transform.]
++> (b) Verify the identity in (a) with $f(x)=g(x)=e^{-x^{2}}$.
++
++
++> [!exercise|ca8aa910-c71a-5ecb-a0b1-679d9e419027.local at=47cffc2c-3bd4-550f-b810-a0e21099f91b] Exercise 25
++> Convolution with a complex exponential.
++> (a) Show that $e^{i \alpha x} * f(x)=\widehat{f}(\alpha) e^{i \alpha x}$.
++> (b) Compute $\cos x * e^{-|x|}$. [Hint: $\cos x=\frac{e^{i x}+e^{-i x}}{2}$.]
++
++
++> [!exercise|753d6119-a500-5756-bc33-5796fc45c1bc.local at=6342137a-17cf-5a6d-ab1f-7340b34dea92] Exercise 26
++> Shifting on the $\omega$-axis. Using Theorem 3, prove the following identities:
++>
++> $$
++> \begin{aligned}
++> \mathcal{F}(\cos (a x) f(x))(\omega) & =\frac{\widehat{f}(\omega-a)+\widehat{f}(\omega+a)}{2} \\
++> \mathcal{F}(\sin (a x) f(x))(\omega) & =\frac{\widehat{f}(\omega-a)-\widehat{f}(\omega+a)}{2 i} \\
++> \mathcal{F}^{-1}(\cos (a \omega) \widehat{f}(\omega))(x) & =\frac{f(x-a)+f(x+a)}{2} \\
++> \mathcal{F}^{-1}(\sin (a \omega) \widehat{f}(\omega))(x) & =\frac{f(x+a)-f(x-a)}{2 i}
++> \end{aligned}
++> $$
++
++
++> [!prompt|e7f28d68-3add-570d-a7df-cdbcb37531f8.local at=23236930-97b0-5438-89f7-f23a84ce153b] Shared exercise instructions
++> In Exercises 27-32, use Exercise 26 and known transforms to compute the Fourier transform of the given function.
++
++
++
++> [!exercise|15031abc-d28f-5d3a-b29a-0ce8f43d9c23.local at=ce356db7-f16a-50d2-abae-c0c41487799f] Exercise 27
++> $f(x)=\frac{\cos x}{e^{x^{2}}}$.
++
++
++> [!exercise|9c000bd6-b248-528c-aba5-988917391fa5.local at=ec86a390-e757-5495-b802-fcabf800124d] Exercise 28
++> $f(x)=\frac{\sin 2 x}{e^{|x|}}$.
++
++
++> [!exercise|f4cadcc1-c3d8-5c93-a63b-666dff9369ef.local at=7ea8b2f9-ce7a-5828-a185-80c22e47104b] Exercise 29
++> $f(x)=\frac{\cos x+\cos 2 x}{1+x^{2}}$.
++
++
++> [!exercise|329390b6-ea8e-5c5a-985a-bc7dcb25604a.local at=e15873e1-a5f8-5d70-84c2-298e12a24bef] Exercise 30
++> $f(x)=\frac{\sin x+\cos 2 x}{4+x^{2}}$.
++
++
++> [!exercise|5958088f-ec17-5d76-9783-2d886f609177.local at=ac20fc76-34ef-5325-b16e-f0ce918eb9ef] Exercise 31
++> $$
++> f(x)= \begin{cases}\cos x & \text { if }|x|<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|cdfa781d-3406-5f37-80bd-8098c0dfcd34.local at=e0e855cb-905e-5613-9605-cd6e6ae83ec5] Exercise 32
++> $$
++> f(x)= \begin{cases}\sin x & \text { if }|x|<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!prompt|a75fd708-abc1-51fa-9efc-9dc9565a1775.local at=6fdf51ab-2ef2-525b-913b-b46850570eeb] Shared exercise instructions
++> In Exercises 33-38, follow the method of Examples 8 and 9 to compute the Fourier transform of the given function. To illustrate your answer, graph the function and its derivatives, including the parts with generalized functions.
++
++
++
++> [!exercise|e714804b-8cdc-5033-aff1-296ba52f66e2.local at=331fb433-286a-5c9d-956f-ddc077b45253] Exercise 33
++> $\mathcal{U}_{2}(x)-\mathcal{U}_{4}(x)$.
++
++
++> [!exercise|93a595f1-e6bc-5185-984a-c5593aa62551.local at=f5a03d21-d348-548e-8fad-8cff5f257271] Exercise 34
++> $\left(\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)\right)|x|$.
++
++
++> [!exercise|81c843f9-de75-5079-a660-1c2aaa1c4f6c.local at=4f3475fc-db08-5db5-b4f6-777636cf14ab] Exercise 35
++> $\sum_{j=0}^{5}(-1)^{j}\left(\mathcal{U}_{j}(x)-\mathcal{U}_{j+1}(x)\right)$.
++
++
++> [!exercise|3c992f05-85ef-5822-8e43-38b048495ffa.local at=38f05c44-5f55-58a7-9dcb-f6f5023de04b] Exercise 36
++> $\sum_{j=0}^{5}(-1)^{j}\left(\mathcal{U}_{j}(x)-\mathcal{U}_{j+1}(x)\right)(x-j)$.
++
++
++> [!exercise|e7fc03cd-e2f8-5aef-b0db-f9357951f826.local at=6cfe2d2b-972c-577d-b22f-da0a74669c1f] Exercise 37
++> $\left(\mathcal{U}_{0}(x)-\mathcal{U}_{1}(x)\right) x+\left(\mathcal{U}_{1}(x)-\mathcal{U}_{2}(x)\right)(2-x)$.
++
++
++> [!exercise|48d461dd-184c-5722-98f2-233dbef2e1c3.local at=89f70f4e-6c5c-5d72-bd0b-092120c4ad81] Exercise 38
++> $\left(\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)\right) x^{2}$.
++
++
++> [!prompt|821c5916-3879-5484-bc06-ce2f77446dd3.local at=39313108-8975-5f58-aff6-ba892763eb8a] Shared exercise instructions
++> In Exercises 39-40, follow the method of Example 10 to compute the given convolution.
++
++
++
++> [!exercise|ee5eea04-b734-5f8d-a3c3-f6dc73060194.local at=dbe9bd56-f9bc-58da-8944-92c1b79bca45] Exercise 39
++> $f * f * f(x)$ where $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$.
++
++
++> [!exercise|65cb1e85-fc2a-52c0-9c54-e0061bde88fb.local at=9e78d135-0f79-51fe-8f64-166fee5de8eb] Exercise 40
++> $f * g(x)$ where $f(x)=\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)$ and $g(x)=\left(\mathcal{U}_{-1}(x)-\mathcal{U}_{1}(x)\right) x$.
++
++
++> [!exercise|2779d1de-da61-5d34-8fae-24fa6301e316.local at=48c5f672-e368-5d8d-9c08-a9f5d279b4fe] Exercise 41
++> Prove (25), using the Fourier transform.
++
++
++> [!exercise|bf29865d-51e0-5050-bd46-b5c25dc85409.local at=951b9797-2ff9-52b6-9b1a-9c8403d77382] Exercise 42
++> Fourier transforms and dilations. (a) Show that
++>
++> $$
++> \mathcal{F}(f(a x))(\omega)=\frac{1}{|a|} \mathcal{F}(f)\left(\frac{\omega}{a}\right), \quad a \neq 0
++> $$
++>
++> (b) Use (a) to derive the Fourier transform of $g(x)=e^{-2|x|}$ from the Fourier transform of $f(x)=e^{-|x|}$.
++
++
++> [!exercise|606ffc0a-1ac6-5e0e-9d46-5da4e0845e34.local at=9c0f3a7a-1165-53c2-9efe-8e794be0636f] Exercise 43
++> Use Plancherel's theorem to derive the value of $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{4} d x$ in Table 1 (see Exercise 47). [Hint: Find a function whose Fourier transform is $\left(\frac{\sin \omega}{\omega}\right)^{2}$.]
++
++
++> [!exercise|51ba50d8-b148-5f07-b633-e84bcd2ba152.local at=4335f281-84a3-5514-a49f-f00443b8589d] Exercise 44
++> Project Problem: Fourier transform of Bessel functions of integer order. This exercise is based on Exercise 18 of the previous section. We will derive the formula
++>
++> $$
++> \mathcal{F}\left(J_{n}(x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{(-i)^{n}}{\sqrt{1-\omega^{2}}} T_{n}(\omega) & \text { if }|\omega|<1 \\ 0 & \text { if }|\omega|>1\end{cases}
++> $$
++>
++> where $T_{n}$ is the $n$th Chebyshev polynomial (see Exercise 57, Section 1.3, for definitions and properties of these polynomials).
++> (a) Using the operational properties of the Fourier transform and the identity $\frac{d}{d x} J_{0}=-J_{1}$, obtain the Fourier transform of $J_{1}(x)$ :
++>
++> $$
++> \mathcal{F}\left(J_{1}(x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{-i \omega}{\sqrt{1-\omega^{2}}} & \text { if }|\omega|<1 \\ 0 & \text { if }|\omega|>1\end{cases}
++> $$
++>
++> Now that you have the Fourier transforms of $J_{0}$ and $J_{1}$, explain how these follow from (26) with $n=0$ and 1 .
++> (b) Use the identity $J_{p-1}-J_{p+1}=2 J_{p}^{\prime}$ (see Section 12.7) to derive that $\mathcal{F}\left(J_{p-1}\right)- \mathcal{F}\left(J_{p+1}\right)=2 i \omega \mathcal{F}\left(J_{p}\right)$. Conclude from what you know about the Fourier transforms of $J_{0}$ and $J_{1}$ that $\widehat{J_n}(\omega)=0$ if $|\omega|>1$ and that for $|\omega|<1$, $\widehat{J_n}(\omega)=\sqrt{\frac{2}{\pi}} \frac{p_{n}(\omega)}{\sqrt{1-\omega^{2}}}$,
++> where $p_{n}(x)$ is a polynomial of degree $n$ in $x$ satisfying the recurrence relation $p_{n-1}(x)-p_{n+1}(x)=2 i x p_{n}(x)$.
++> (c) Verify that $p_{0}(x)=1=T_{0}(x), p_{1}(x)=-i x=-i T_{1}(x)$. More generally, show that the $p_{n}(x)=(-i)^{n} T_{n}(x)$. [Hint: Write $p_{n}(x)=(-i)^{n} q_{n}(x)$. We have $q_{0}=T_{0}$ and $q_{1}=T_{1}$. Use the recurrence relation for the $p_{n}$ 's to show that $q_{n-1}+ q_{n+1}=2 x q_{n}$. Since this is the recurrence relation for the Chebyshev polynomials (Exercise 58(e), Section 1.3), it follows that $q_{n}=T_{n}$.]
++
++*Printed equation label: (26).*
++
++
++> [!exercise|d0932a45-8f01-5593-933f-5ffcf29d5af1.local at=f8ce781b-c669-55f7-bbdd-90353bc43a7c] Exercise 45
++> Project Problem: Fourier transforms involving Bessel functions of half-integer order and Legendre polynomials. We will derive the following Fourier transform for $n=0,1,2, \ldots$,
++>
++> $$
++> \mathcal{F}\left(\frac{J_{n+\frac{1}{2}}(x)}{\sqrt{x}}\right)(\omega)= \begin{cases}(-i)^{n} P_{n}(\omega) & \text { if }|\omega|<1, \\ 0 & \text { if }|\omega|>1,\end{cases}
++> $$
++>
++> where $P_{n}$ is the $n$th Legendre polynomial (see Section 13.5 for definitions and properties of these polynomials). To establish the identity, proceed as follows.
++> (a) Show that the functions $f_{n}(x)=\frac{J_{n+\frac{1}{2}}(x)}{\sqrt{x}}$ satisfy the recurrence relation
++>
++> $$
++> x f_{n-1}+x f_{n+1}=(2 n+1) f_{n}
++> $$
++>
++> [Hint: Use (6), Section 12.7.]
++> (b) Conclude that $i \frac{d}{d \omega} \widehat{f_{n-1}}+i \frac{d}{d \omega} \widehat{f_{n+1}}=(2 n+1) \widehat{f_{n}}$.
++> (c) Compute $\widehat{f_{n}}$ for $n=0$ and 1 directly and show that they fit the formula (27).
++>
++> Conclude from (b) that, for $n \geq 2, \widehat{f_{n}}(\omega)$ is 0 if $|\omega|>1$ and is a polynomial of degree $n$ for $|\omega|<1$.
++> (d) Complete the proof by showing that the functions $(-i)^{n} P_{n}(\omega)$ satisfy the recurrence relation in (b).
++
++*Printed equation label: (27).*
++
++
++> [!exercise|0fce7eb1-8d2f-5020-8470-e62dd413d313.local at=37575f65-b501-5889-b55b-f84707793526] Exercise 46
++> Project Problem: Convolutions of the indicator function. In this exercise we derive the following interesting formula. Let $f(x)=\mathcal{U}_{0}(x)-\mathcal{U}_{1}(x)$, and let $n \geq 2$ be an integer. Define the $n$th convolution of $f$ by itself by
++>
++> $$
++> f^{* n}(x)=\overbrace{f * f * \cdots * f}^{n \text { of these }}
++> $$
++>
++> Then $f^{* n}(x)=0$ if $x<0$ or $x>n$, and for $x$ in $[0, n]$, we have
++>
++> $$
++> f^{* n}(x)=\frac{1}{(2 \pi)^{\frac{n-1}{2}}(n-1)!} \sum_{k=0}^{[x]}(-1)^{k}\binom{n}{k}(x-k)^{n-1},
++> $$
++>
++> where $[x]$ denotes the greatest integer in $x$ and $\binom{n}{k}$ is the binomial coefficient. Follow the suggested proof and supply all the missing details by referring to appropriate operational properties of the Fourier transform and generalized functions. Suggested Proof We have
++>
++> $$
++> \left(\frac{d}{d x}\right)^{n} f^{* n}(x)=\left(f^{\prime}\right)^{* n}(x) \quad \text { and } \quad f^{\prime}(x)=\delta_{0}(x)-\delta_{1}(x) ;
++> $$
++>
++> so
++>
++> $$
++> \left(f^{\prime}\right)^{* n}(x)=\frac{1}{(2 \pi)^{(n-1)/2}} \sum_{k=0}^{n}(-1)^{k}\binom{n}{k} \delta_{k}(x)
++> $$
++
++*Printed equation labels: (28) iterated convolution definition; (29) explicit iterated-convolution formula.*
++
++
++
+ 
+ To obtain (29), integrate from $-\infty$ to $x, n$-times. (You may want to do the cases $n=2$ and 3 first.)
+-47. Project Problem. We will derive the following formula, for $n=2,3, \ldots$,
+-
+-$$
+-I_{n}=\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{n} d x=\frac{\pi}{(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}\right]}(-1)^{k}\binom{n}{k}\left(\frac{n}{2}-k\right)^{n-1}
+-$$
+-
+-We have already computed $I_{1}=\pi$ (with the help of residue theory) and $I_{2}=\pi$ (with the help of Plancherel's theorem). We now use the result of the previous exercise to derive the values of the integral for all other values of $n=2,3, \ldots$. It will be convenient to work with the indicator function of a symmetric interval. Let $g(x)=\mathcal{U}_{-\frac{1}{2}}(x)-\mathcal{U}_{\frac{1}{2}}(x)$. Note that $g(x)=f\left(x+\frac{1}{2}\right)$, where $f$ is as in Exercise 46. (a) Using the result of Exercise 46, show that for $x$ in $\left[-\frac{n}{2}, \frac{n}{2}\right]$,
+-
+-$$
+-g^{* n}=\frac{1}{(2 \pi)^{\frac{n-1}{2}}(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}+x\right]}(-1)^{k}\binom{n}{k}\left(x+\frac{n}{2}-k\right)^{n-1} .
+-$$
+-
+-[Hint: The formula is obtained by translating the formula for $f^{* n}$ by $\frac{n}{2}$. To justify this, verify that if $\phi_{a}$ and $\psi_{b}$ are translates of $\phi$ and $\psi$, then $\phi_{a} * \psi_{b}=(\phi * \psi)_{a+b}$.] (b) Show that
+-
+-$$
+-G_{n}(\omega)=\mathcal{F}\left(g^{* n}\right)=\left(\sqrt{\frac{2}{\pi}} \frac{\sin \frac{\omega}{2}}{\omega}\right)^{n}
+-$$
+-
+-(c) Use the reciprocity relations and the fact that $\mathcal{F}(\phi)(0)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \phi(x) d x$ to prove that $\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} G_{n}(x) d x=g^{* n}(0)$. Conclude that
+-
+-$$
+-\int_{-\infty}^{\infty}\left(\frac{\sin \frac{x}{2}}{x}\right)^{n} d x=\frac{\pi}{2^{n-1}(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}\right]}(-1)^{k}\binom{n}{k}\left(\frac{n}{2}-k\right)^{n-1}
+-$$
+-
+-(d) Make a change of variables in the integral in (c) to obtain (30). In Table 1 we used (30) to compute $I_{n}$ for $n=2,3, \ldots, 8$.
+-
+-| $n$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+-| $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{n} d x$ | $\pi$ | $\pi$ | $\frac{3 \pi}{4}$ | $\frac{2 \pi}{3}$ | $\frac{115 \pi}{192}$ | $\frac{11 \pi}{20}$ | $\frac{5887 \pi}{11520}$ | $\frac{151 \pi}{315}$ |
+-
+-Table 1
+-
+-48. Give an example of two functions $f$ and $g$ such that neither one vanishes identically on any interval but $f * g$ is identically 0 . [Hint: Think on the Fourier transform side. Let $\hat{f}$ be a tent function supported over the interval ( $-2,2$ ), as in Figure 6. Define $\hat{g}$ by translating $\hat{f}$ to the left (or right) by 4 units.]
++
++> [!exercise|2694262f-072a-5f53-b7bd-c3b23d4c2eed.local at=1a4008e9-6895-5460-80d1-4b02cc369532] Exercise 47
++> Project Problem. We will derive the following formula, for $n=2,3, \ldots$,
++>
++> $$
++> I_{n}=\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{n} d x=\frac{\pi}{(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}\right]}(-1)^{k}\binom{n}{k}\left(\frac{n}{2}-k\right)^{n-1}
++> $$
++>
++> We have already computed $I_{1}=\pi$ (with the help of residue theory) and $I_{2}=\pi$ (with the help of Plancherel's theorem). We now use the result of the previous exercise to derive the values of the integral for all other values of $n=2,3, \ldots$. It will be convenient to work with the indicator function of a symmetric interval. Let $g(x)=\mathcal{U}_{-\frac{1}{2}}(x)-\mathcal{U}_{\frac{1}{2}}(x)$. Note that $g(x)=f\left(x+\frac{1}{2}\right)$, where $f$ is as in Exercise 46. (a) Using the result of Exercise 46, show that for $x$ in $\left[-\frac{n}{2}, \frac{n}{2}\right]$,
++>
++> $$
++> g^{* n}=\frac{1}{(2 \pi)^{\frac{n-1}{2}}(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}+x\right]}(-1)^{k}\binom{n}{k}\left(x+\frac{n}{2}-k\right)^{n-1} .
++> $$
++>
++> [Hint: The formula is obtained by translating the formula for $f^{* n}$ by $\frac{n}{2}$. To justify this, verify that if $\phi_{a}$ and $\psi_{b}$ are translates of $\phi$ and $\psi$, then $\phi_{a} * \psi_{b}=(\phi * \psi)_{a+b}$.] (b) Show that
++>
++> $$
++> G_{n}(\omega)=\mathcal{F}\left(g^{* n}\right)=\left(\sqrt{\frac{2}{\pi}} \frac{\sin \frac{\omega}{2}}{\omega}\right)^{n}
++> $$
++>
++> (c) Use the reciprocity relations and the fact that $\mathcal{F}(\phi)(0)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \phi(x) d x$ to prove that $\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} G_{n}(x) d x=g^{* n}(0)$. Conclude that
++>
++> $$
++> \int_{-\infty}^{\infty}\left(\frac{\sin \frac{x}{2}}{x}\right)^{n} d x=\frac{\pi}{2^{n-1}(n-1)!} \sum_{k=0}^{\left[\frac{n}{2}\right]}(-1)^{k}\binom{n}{k}\left(\frac{n}{2}-k\right)^{n-1}
++> $$
++>
++> (d) Make a change of variables in the integral in (c) to obtain (30). In Table 1 we used (30) to compute $I_{n}$ for $n=2,3, \ldots, 8$.
++
++*Printed equation label: (30).*
++
++
++```scientific-table
++id: d5e4330d-c95b-4c7f-b3ac-ee2704cdc4f9
++numbered: false
++title: ""
++caption: Table 1. Integrals of integer powers of the sinc function.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $n$
++    - text: "1"
++    - text: "2"
++    - text: "3"
++    - text: "4"
++    - text: "5"
++    - text: "6"
++    - text: "7"
++    - text: "8"
++  - - text: $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{n} d x$
++    - text: $\pi$
++    - text: $\pi$
++    - text: $\frac{3 \pi}{4}$
++    - text: $\frac{2 \pi}{3}$
++    - text: $\frac{115 \pi}{192}$
++    - text: $\frac{11 \pi}{20}$
++    - text: $\frac{5887 \pi}{11520}$
++    - text: $\frac{151 \pi}{315}$
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
++> [!exercise|4efc84dd-f2a1-500d-a923-353919910e92.local at=52aa0221-05df-5706-a948-f039534a53b1] Exercise 48
++> Give an example of two functions $f$ and $g$ such that neither one vanishes identically on any interval but $f * g$ is identically 0 . [Hint: Think on the Fourier transform side. Let $\hat{f}$ be a tent function supported over the interval ( $-2,2$ ), as in the tent-function example. Define $\hat{g}$ by translating $\hat{f}$ to the left (or right) by 4 units.]
+
+`````

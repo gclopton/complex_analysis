@@ -177,3 +177,691 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Additional source comparison
+
+## 1. Restore source wording; retain only the actual correction.
+
+### Before
+
+````text
+> [!definition|e7c59d8b-44bd-5b15-99f3-dedc446a016f.local at=0ad9873a-c103-53c8-bcbb-90a90c293734] Neumann Functions
+> Let $\Omega\subset\mathbb R^2$ be a simply connected plane region with piecewise smooth boundary $\Gamma$ and outward unit normal $n$. For each pole $p\in\Omega$, a Neumann function in this convention satisfies:
+>
+> (i) $N(\cdot,p)$ is harmonic on $\Omega\setminus\{p\}$.
+> (ii) $\partial_{n_z}N(z,p)=C$ on smooth pieces of $\Gamma$, for a constant independent of the boundary point and pole.
+> (iii) $N(z,p)=\log|z-p|+H(z,p)$, where $H(\cdot,p)$ is harmonic throughout $\Omega$.
+````
+### After
+
+````text
+> [!definition|e7c59d8b-44bd-5b15-99f3-dedc446a016f.local at=0ad9873a-c103-53c8-bcbb-90a90c293734] Neumann Functions
+> Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$. A Neumann function $N(x,y,x_0,y_0)$, for $(x,y),(x_0,y_0)\in\Omega$, for the region $\Omega$ is a function with the following properties:
+> (i) for each $(x_0,y_0)$ in $\Omega$, $N\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y) \neq\left(x_{0}, y_{0}\right)$ in $\Omega$;
+> (ii) $\frac{\partial N}{\partial n}\left(x, y, x_{0}, y_{0}\right)=C$ for all $\left(x_{0}, y_{0}\right)$ in $\Omega$ and $(x, y)$ on $\Gamma$ :
+> (iii) for each $\left(x_{0}, y_{0}\right)$ in $\Omega$, there is a function $u_{1}$ such that $u_{1}\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y)$ in $\Omega$, and $N\left(x, y, x_{0}, y_{0}\right)=v\left(x, y, x_{0}, y_{0}\right)+ u_{1}\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+u_{1}\left(x, y, x_{0}, y_{0}\right)$ for all $(x,y)\ne(x_0,y_0)$ in $\Omega$. The normal is outward; $C$ is a constant. Boundary derivatives are taken on smooth boundary arcs.
+````
+
+## 2. Restore source wording; retain only the actual correction.
+
+### Before
+
+````text
+> [!proposition|70dd256e-9be0-5f33-a04f-bcb34c2af2a7.local at=0f329697-663d-5fc2-abf1-7cdad681ab09] Boundary Flux Constant of a Neumann Function on a Bounded Plane Region
+> Let $\Omega\subset\mathbb R^2$ be bounded, simply connected, and have piecewise smooth boundary $\Gamma$ of length $L>0$, with outward unit normal $n$. Write $z=x+iy$ and $p=x_0+iy_0\in\Omega$.
+>
+> If $N(z,p)=\log|z-p|+H(z,p)$ with $H$ harmonic in $\Omega$ and regular enough up to $\Gamma$ for Green’s identity, and $\partial_{n_z}N=C$ on $\Gamma$, then $CL=2\pi$ and therefore $C=2\pi/L$.
+````
+### After
+
+````text
+> [!proposition|70dd256e-9be0-5f33-a04f-bcb34c2af2a7.local at=0f329697-663d-5fc2-abf1-7cdad681ab09] Boundary Flux Constant of a Neumann Function on a Bounded Plane Region
+> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
+>
+> The constant $C$, which is equal to the boundary value of the normal derivative of the Neumann function, is given by $C=2\pi/L$, where $L=\int_\Gamma ds$ is the length of $\Gamma$.
+````
+
+## 3. Restore source wording; retain only the actual correction.
+
+### Before
+
+````text
+> [!theorem|d00d8502-4689-5ddc-a0cc-bd3046064426.local at=cfac0fd2-3132-553e-b16f-7565120e5820] Solution of Neumann Problems
+> Let $\Omega\subset\mathbb R^2$ be bounded, simply connected, and have piecewise smooth boundary $\Gamma$ of length $L>0$, with outward unit normal $n$. Write $z=x+iy$ and $p=x_0+iy_0\in\Omega$.
+>
+> A Neumann function in the positive-logarithmic convention has the form $N(z,p)=\log|z-p|+H(z,p)$, where $H(\cdot,p)$ is harmonic throughout $\Omega$, and satisfies $\partial_{n_z}N(z,p)=2\pi/L$ on the smooth boundary pieces.
+>
+> If a real $C^2$ function $u$ near $\overline\Omega$ is harmonic in $\Omega$ and satisfies $\partial_n u=f$ on $\Gamma$, then $\int_\Gamma f\,ds=0$ and
+>
+> $$
+> u(p)=A-\frac1{2\pi}\int_\Gamma N(z,p)f(z)\,ds_z,\qquad A=\frac1L\int_\Gamma u\,ds.
+> $$
+>
+> Thus the representation determines the solution up to an additive constant.
+````
+### After
+
+````text
+> [!theorem|d00d8502-4689-5ddc-a0cc-bd3046064426.local at=cfac0fd2-3132-553e-b16f-7565120e5820] Solution of Neumann Problems
+> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
+>
+> Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$, and let $N\left(z, z_{0}\right)$ denote a Neumann function, where $z=x+i y$ and $z_{0}=x_{0}+i y_{0}$ are in $\Omega$. Then, up to an additive constant, the solution $u$ of the Neumann problem $\nabla^2u=0$, $\partial_nu=f$ is given by
+>
+> $$
+> u(x_0,y_0)=-\frac{1}{2 \pi} \int_\Gamma N\left(z, z_{0}\right) f(z) d s
+> $$
+````
+
+## 4. Restore source wording; retain only the actual correction.
+
+### Before
+
+````text
+> [!theorem|52cbf0f8-4130-52e9-9a70-64404837c141.local at=2e3bcc5d-117a-58a4-816b-ef77d1fc988a] Solution of Poisson-Neumann Problem
+> Let $\Omega\subset\mathbb R^2$ be bounded, simply connected, and have piecewise smooth boundary $\Gamma$ of length $L>0$, with outward unit normal $n$. Write $z=x+iy$ and $p=x_0+iy_0\in\Omega$.
+>
+> A Neumann function in the positive-logarithmic convention has the form $N(z,p)=\log|z-p|+H(z,p)$, where $H(\cdot,p)$ is harmonic throughout $\Omega$, and satisfies $\partial_{n_z}N(z,p)=2\pi/L$ on the smooth boundary pieces.
+>
+> If $u\in C^2$ near $\overline\Omega$ satisfies $\Delta u=h$ in $\Omega$ and $\partial_n u=f$ on $\Gamma$, then $\iint_\Omega h\,dA=\int_\Gamma f\,ds$ and
+>
+> $$
+> u(p)=A+\frac1{2\pi}\iint_\Omega h(z)N(z,p)\,dA_z-\frac1{2\pi}\int_\Gamma N(z,p)f(z)\,ds_z,
+> \qquad A=\frac1L\int_\Gamma u\,ds.
+> $$
+>
+> In particular, the solution is determined up to an additive constant.
+````
+### After
+
+````text
+> [!theorem|52cbf0f8-4130-52e9-9a70-64404837c141.local at=2e3bcc5d-117a-58a4-816b-ef77d1fc988a] Solution of Poisson-Neumann Problem
+> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
+>
+> Suppose that $\Omega$ is a region with boundary $\Gamma$ and let $N(z,z_0)$ denote a Neumann function for $\Omega$, where $z=x+iy$ and $z_0=x_0+iy_0$ are in $\Omega$. If $u(x,y)$ is a solution to Poisson's equation $\nabla^2u=h$ subject to a Neumann boundary condition $\partial_nu=f$, then, up to an additive constant,
+> $$
+> u(x_0,y_0)=\frac1{2\pi}\iint_\Omega h(x,y)N(z,z_0)\,dx\,dy-\frac1{2\pi}\int_\Gamma N(z,z_0)f(z)\,ds.
+> $$
+> The compatibility condition is $\iint_\Omega h\,dA=\int_\Gamma f\,ds$.
+````
+
+## 5. Restore source wording; retain only the actual correction.
+
+### Before
+
+````text
+The proof mirrors the punctured-domain argument for the Poisson–Dirichlet representation in Section 16.3.
+````
+### After
+
+````text
+The proof mirrors the proof of Theorem 4, Section 16.3. It will be omitted.
+````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 16 Green's Functions and Conformal Mappings/16.8 Neumann Functions and the Solution of Neumann Problems.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 16 Green's Functions and Conformal Mappings/16.8 Neumann Functions and the Solution of Neumann Problems.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.8 Neumann Functions and the Solution of Neumann Problems.md
+@@ -1,3 +1,4 @@
++
+ ### 16.8 Neumann Functions and the Solution of Neumann Problems
+ 
+ We use the methods of the previous sections to solve the Neumann problem on a simply connected region $\Omega$, other than the entire plane:
+@@ -9,7 +10,9 @@
+ \end{aligned}
+ $$
+ 
+-We know from Example 5, Section 16.1. that the boundary function $f$ cannot be arbitrary; it has to satisfy the compatibility condition
++*Printed equation labels: (1) Laplace equation; (2) normal-derivative data.*
++
++For bounded $\Omega$ with piecewise smooth boundary, we know from Example 5, Section 16.1, that the boundary function $f$ cannot be arbitrary; it has to satisfy the compatibility condition
+ 
+ $$
+ \int_{\Gamma} f(x, y) d s=0
+@@ -23,32 +26,27 @@
+ 
+ Just as we expressed the solution of the Dirichlet problem as a line integral involving the boundary function and Green's function, our goal here is to express the solution of the Neumann problem as a line integral involving the boundary function and a fixed function, known as a Neumann function, that depends only on the region. Motivated by properties of Green's function (see Theorem 3, Section 16.3), we make the following definition.
+ 
+-## DEFINITION 1 NEUMANN FUNCTIONS
+-
+-Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$. A Neumann function $N\left(x, y, x_{0}, y_{0}\right)\left((x, y),\left(x_{0}, y_{0}\right)\right.$ in $\left.\Omega\right)$ for the region $\Omega$ is a function with the following properties:
+-(i) for each $(x, y)$ in $\Omega, N\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y) \neq\left(x_{0}, y_{0}\right)$ in Ω:
+-(ii) $\frac{\partial N}{\partial n}\left(x, y, x_{0}, y_{0}\right)=C$ for all $\left(x_{0}, y_{0}\right)$ in $\Omega$ and $(x, y)$ on $\Gamma$ :
+-(iii) for each $\left(x_{0}, y_{0}\right)$ in $\Omega$, there is a function $u_{1}$ such that $u_{1}\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y)$ in $\Omega$, and $N\left(x, y, x_{0}, y_{0}\right)=v\left(x, y, x_{0}, y_{0}\right)+ u_{1}\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+u_{1}\left(x, y, x_{0}, y_{0}\right)$ for all $(x, y)$ in $\Omega$.
+-
+-To simplify the notation, we will write $z=x+i y, z_{0}=x_{0}+i y_{0}$, and denote a function of $\left(x, y, x_{0}, y_{0}\right)$ by a function of $z$ and $z_{0}$; for example, $v\left(z, z_{0}\right)= \frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)=\ln \left|z-z_{0}\right|$, and $N\left(x, y, x_{0}, y_{0}\right)=N\left(z, z_{0}\right)$. With this notation, parts (i) and (iii) state that a Neumann function, like a Green's function, is harmonic on $\Omega$, except at $z_{0}$, due to the term $\ln \left|z-z_{0}\right|$. Part (ii) tells us that the boundary values of the normal derivative of the Neumann function are constant. This is the counterpart of the boundary condition for a Green's function, which states that a Green's function must
+-
+-## PROPOSITION 1
+-
+-## THEOREM 1 SOLUTION OF NEUMANN PROBLEMS
+-
+-vanish identically on the boundary. As we now show, the constant ( ${ }^{\gamma}$ depends on the length of $\Gamma$ and is not 0 in general.
+-
+-The constant $C$ in Definition 1(ii), which is cqual to the boundary value of the mormal derivative of the Nemmann function, is given by
+-
+-$$
+-C=\frac{2 \pi}{L} .
+-$$
+-
+-where $L=\int_{\Gamma} d s$ is the length of $\Gamma$. If $L$ is infinite, we take $C=0$.
++> [!definition|e7c59d8b-44bd-5b15-99f3-dedc446a016f.local at=0ad9873a-c103-53c8-bcbb-90a90c293734] Neumann Functions
++> Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$. A Neumann function $N(x,y,x_0,y_0)$, for $(x,y),(x_0,y_0)\in\Omega$, for the region $\Omega$ is a function with the following properties:
++> (i) for each $(x_0,y_0)$ in $\Omega$, $N\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y) \neq\left(x_{0}, y_{0}\right)$ in $\Omega$;
++> (ii) $\frac{\partial N}{\partial n}\left(x, y, x_{0}, y_{0}\right)=C$ for all $\left(x_{0}, y_{0}\right)$ in $\Omega$ and $(x, y)$ on $\Gamma$ :
++> (iii) for each $\left(x_{0}, y_{0}\right)$ in $\Omega$, there is a function $u_{1}$ such that $u_{1}\left(x, y, x_{0}, y_{0}\right)$ is harmonic for all $(x, y)$ in $\Omega$, and $N\left(x, y, x_{0}, y_{0}\right)=v\left(x, y, x_{0}, y_{0}\right)+ u_{1}\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+u_{1}\left(x, y, x_{0}, y_{0}\right)$ for all $(x,y)\ne(x_0,y_0)$ in $\Omega$. The normal is outward; $C$ is a constant. Boundary derivatives are taken on smooth boundary arcs.
++
++The unbounded examples below instead use a verified zero-normal-derivative kernel; infinite boundary length alone does not justify this choice or a representation formula at infinity.
++
++To simplify the notation, we will write $z=x+i y, z_{0}=x_{0}+i y_{0}$, and denote a function of $\left(x, y, x_{0}, y_{0}\right)$ by a function of $z$ and $z_{0}$; for example, $v\left(z, z_{0}\right)= \frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)=\ln \left|z-z_{0}\right|$, and $N\left(x, y, x_{0}, y_{0}\right)=N\left(z, z_{0}\right)$. With this notation, parts (i) and (iii) state that a Neumann function, like a Green's function, is harmonic on $\Omega$, except at $z_{0}$, due to the term $\ln \left|z-z_{0}\right|$. Part (ii) tells us that the boundary values of the normal derivative of the Neumann function are constant. This is the counterpart of the boundary condition for a Green's function, which states that a Green's function must vanish identically on the boundary. As we now show, the constant $C$ depends on the length of $\Gamma$ and is not 0 in general.
++
++> [!proposition|70dd256e-9be0-5f33-a04f-bcb34c2af2a7.local at=0f329697-663d-5fc2-abf1-7cdad681ab09] Boundary Flux Constant of a Neumann Function on a Bounded Plane Region
++> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
++>
++> The constant $C$, which is equal to the boundary value of the normal derivative of the Neumann function, is given by $C=2\pi/L$, where $L=\int_\Gamma ds$ is the length of $\Gamma$.
++
++*Printed equation label: (3).*
++
+ Proof For fixed $z_{0}$ in $\Omega$, since $\partial N / \partial n$ is constant on $\Gamma$, we have, on the one hand.
+ 
+ $$
+-\int_{\Gamma^{\prime}} \frac{\partial}{\partial n} N\left(z, z_{0}\right) d s=\int_{\Gamma} C d s=C L
++\int_{\Gamma} \frac{\partial}{\partial n} N\left(z, z_{0}\right) d s=\int_{\Gamma} C d s=C L
+ $$
+ 
+ where $L$ is the length of $\Gamma$. On the other hand, using $N=u_{1}\left(z, z_{0}\right)+\ln \left|z-z_{0}\right|$,
+@@ -59,15 +57,20 @@
+ 
+ because $\int_{\Gamma} \partial u_{1} / \partial n d s=0$ by the compatibility condition for harmonic functions (Example 5, Section 16.1). and $\int_{\Gamma} \frac{\partial}{\partial n} \ln \left|z-z_{0}\right| d s=2 \pi$, by Exercise 15, Section 16.3. Hence $C L=2 \pi$ and (3) follows.
+ 
+-We are now ready to express the solution of the Neumann problem in terms of the Neumann function. Let us note that from Theorem 5. Section 16.1, if a solution of a Neumann problem exists, then it is unique up to an additive constant, and thus the solution can be determined only up to an additive constant.
+-
+-Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$, and let $N\left(z, z_{0}\right)$ denote a Neumann function, where $z=x+i y$ and $z_{0}=x_{0}+i y_{0}$ are in $\Omega$. Then, up to an additive constant. the solution $u$ of the Nemmann problem (1) (2) is given by
+-
+-$$
+-\left.u\left(x_{0}\right) \cdot y_{0}\right)=-\frac{1}{2 \pi} \int_{1} N\left(z, z_{0}\right) f(z) d s
+-$$
+-
+-Proof Suppose that $u$ is a solution and let $A=\frac{C}{2 \pi} \int_{\Gamma} u d s$. We will show that ( $d$ ) determines $u$ up to the constant $A$. We go back to the representation formula for harmonic functions (Theorem 1. Section 16.3):
++We are now ready to express the solution of the Neumann problem in terms of the Neumann function. For a bounded connected region, Theorem 5, Section 16.1, shows that if a solution of a Neumann problem exists, then it is unique up to an additive constant, and thus the solution can be determined only up to an additive constant.
++
++> [!theorem|d00d8502-4689-5ddc-a0cc-bd3046064426.local at=cfac0fd2-3132-553e-b16f-7565120e5820] Solution of Neumann Problems
++> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
++>
++> Suppose that $\Omega$ is a simply connected region with boundary $\Gamma$, and let $N\left(z, z_{0}\right)$ denote a Neumann function, where $z=x+i y$ and $z_{0}=x_{0}+i y_{0}$ are in $\Omega$. Then, up to an additive constant, the solution $u$ of the Neumann problem $\nabla^2u=0$, $\partial_nu=f$ is given by
++>
++> $$
++> u(x_0,y_0)=-\frac{1}{2 \pi} \int_\Gamma N\left(z, z_{0}\right) f(z) d s
++> $$
++
++*Printed equation label: (4).*
++
++Proof Suppose that $u$ is a solution and let $A=\frac{C}{2 \pi} \int_{\Gamma} u d s$. We will show that the representation determines $u$ up to the constant $A$. We go back to the representation formula for harmonic functions (Theorem 1. Section 16.3):
+ 
+ $$
+ u\left(x_{0}, y_{0}\right)=\frac{1}{2 \pi} \int_{\Gamma}\left(u \frac{\partial v}{\partial n}-v \frac{\partial u}{\partial n}\right) d s
+@@ -87,19 +90,23 @@
+ 
+ where on the last line, we used $N=u_{1}+v$ and $f=\partial u / \partial n$ on $\Gamma$.
+ 
+-## EXAMPLE 1 Neumann function for the upper half-plane
+-
+-Verify that a Neumann function for the upper half-plane is
+-
+-$$
+-\begin{aligned}
+-N\left(x, z_{0}\right) & =\ln \left|z-z_{0}\right|+\ln \left|z-\overline{z_{0}}\right| \\
+-& =\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}\right)
+-\end{aligned}
+-$$
+-
+-for $z=x+i y$ and $z_{0}=x_{0}+i y_{0}, y, y_{0}>0$.
+-Solution We will simply verify that the given function is a Neumann function for the upper half-plane by showing that it has properties (i)-(iii) of Definition 1. Given $z_{0}$ in the upper half-plane, the function $u_{1}\left(z, z_{0}\right)=\ln \left|z-\overline{z_{0}}\right|$ is harmonic for all $z$ except $z=\overline{z_{0}}$. Since $z_{0}$ is in the upper half-plane, $\overline{z_{0}}$ is in the lower half-plane and it follows that $u_{1}\left(z, z_{0}\right)$ is harmonic on the upper half-plane. This establishes (i) and (iii). We now prove (ii). The normal derivative in this case is $-\frac{\partial}{\partial y}$. We have
++> [!exercise|79c5ee2f-afe4-54cd-8249-63c552474c2e.local at=d9a83a2d-c1cb-5e17-b616-bdd2315b76b0] EXAMPLE 1 Neumann function for the upper half-plane
++> Verify that a Neumann function for the upper half-plane is
++>
++> $$
++> \begin{aligned}
++> N(z,z_0) & =\ln \left|z-z_{0}\right|+\ln \left|z-\overline{z_{0}}\right| \\
++> & =\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}\right)
++> \end{aligned}
++> $$
++>
++> for $z=x+i y$ and $z_{0}=x_{0}+i y_{0}, y, y_{0}>0$.
++
++*Printed equation label: (5).*
++
++##### solution
++
++We will simply verify that the given function is a Neumann function for the upper half-plane by showing that it has properties (i)-(iii) of Definition 1. Given $z_{0}$ in the upper half-plane, the function $u_{1}\left(z, z_{0}\right)=\ln \left|z-\overline{z_{0}}\right|$ is harmonic for all $z$ except $z=\overline{z_{0}}$. Since $z_{0}$ is in the upper half-plane, $\overline{z_{0}}$ is in the lower half-plane and it follows that $u_{1}\left(z, z_{0}\right)$ is harmonic on the upper half-plane. This establishes (i) and (iii). We now prove (ii). The normal derivative in this case is $-\frac{\partial}{\partial y}$. We have
+ 
+ $$
+ \begin{aligned}
+@@ -111,61 +118,71 @@
+ Since $\operatorname{Im}\left(\overline{z_{0}}\right)=-\operatorname{Im}\left(z_{0}\right)$, we see from the preceding computation (with $z_{0}$ replaced by $\overline{z_{0}}$ ) that
+ 
+ $$
+--\left.\frac{\partial}{\partial y} \ln \left|z-\overline{z_{0}}\right|\right|_{y=0}=\frac{-y_{0}}{\left(x-x_{0}\right)^{2}+\left(-y_{0}\right)^{2}}==\frac{-y_{0}}{\left(x-x_{0}\right)^{2}+y_{0}^{2}} .
++-\left.\frac{\partial}{\partial y} \ln \left|z-\overline{z_{0}}\right|\right|_{y=0}=\frac{-y_{0}}{\left(x-x_{0}\right)^{2}+\left(-y_{0}\right)^{2}}=\frac{-y_{0}}{\left(x-x_{0}\right)^{2}+y_{0}^{2}} .
+ $$
+ 
+ Adding the two normal derivatives, we find that the normal derivative of $\ln \mid z- z_{0}|+\ln | z-\overline{z_{0}} \mid$ is zero on the real axis. This shows that (ii) of Definition 1 holds with $C=0$.
+ 
+ Let us now solve the Neumann problem in the upper half-plane.
+ 
+-## EXAMPLE 2 Solution of the Neumann problem in the upper half-plane
+-
+-Applying Theorem 1 and using the Noumann function that we computed in Example 1, we find that a solution of the Noumann problem in the upper half-plane,
++> [!exercise|35a6026a-6ed3-5b14-b31f-f3ab4b3b0ef6.local at=3eb1e283-b718-5737-a828-678baa9662b7] EXAMPLE 2 Solution of the Neumann problem in the upper half-plane
++> For $f\in C_c^1(\mathbb R)$, use the upper-half-plane Neumann kernel to obtain a solution of
++>
++> $$
++> \begin{aligned}
++> & \nabla^{2} u(x, y)=0,-\infty<x<\infty, y>0, \\
++> & -\frac{\partial u}{\partial y}(x, 0)=f(x),
++> \end{aligned}
++> $$
++
++##### solution
++
++The logarithmic potential is
++
++$$
++u\left(x_{0}, y_{0}\right)=\frac{-1}{2 \pi} \int_{-\infty}^{\infty} f(x) \ln \left(\left(x-x_{0}\right)^{2}+y_{0}^{2}\right) d x
++$$
++
++Direct differentiation gives the prescribed boundary derivative as a Poisson-kernel limit. This does not require zero total boundary flux: nonzero total flux produces logarithmic growth at infinity. Uniqueness on this unbounded domain requires a separate growth condition. This solution was derived by a different method in Exercise 17, Section 16.4.
++
++## Neumann Functions and Conformal Mappings
++
++We now investigate the action of a conformal mapping on a Neumann function. Our approach is motivated by the results of the previous section. We use the following notation: $\Omega$ and $\Omega^{\prime}$ are two simply connected regions with nonempty boundaries $\Gamma$ and $\Gamma^{\prime}$, and $\phi$ is a one-to-one conformal mapping of $\Omega$ onto $\Omega^{\prime}$, such that $\phi[\Gamma]$ is contained in $\Gamma^{\prime}$. Suppose that $N\left(w, w_{0}\right)$ is a Neumann function for $\Omega^{\prime}$ and form the composition of $N$ with $\phi: N_{\phi}\left(z, z_{0}\right)=N\left(\phi(z), \phi\left(z_{0}\right)\right)$, where $z$ and $z_{0}$ are in $\Omega$. We now ask the question: Is $N_{\phi}\left(z, z_{0}\right)$ a Neumann function for $\Omega$ ?
++
++As in the removable-singularity argument in Section 16.7, $N_\phi(z,p)=N(\phi(z),\phi(p))$ is harmonic away from $p$ and differs from $\log|z-p|$ by a harmonic function. Its boundary derivative, however, is not generally constant. Zero boundary normal derivative is preserved wherever the conformal map extends smoothly with nonzero derivative. Merely assuming that both regions are unbounded is not sufficient.
++
++To understand the boundary condition, we recall the following formula for a change of variables by a conformal mapping:
++
++$$
++\frac{\partial\left(N_{\phi}\right)}{\partial n_{\Gamma}}\left(z, z_{0}\right)=\left|\phi^{\prime}(z)\right| \frac{\partial N}{\partial n_{\Gamma^{\prime}}}\left(\phi(z), \phi\left(z_{0}\right)\right)
++\tag{6}
++$$
++
++where on the left side we are computing the normal derivative along the curve $\Gamma$ at the point $z$ on $\Gamma$, and on the right side we are computing the normal derivative along the curve $\Gamma^{\prime}$ at the point $\varphi(z)$ on $\Gamma^{\prime}$. (For a proof, see $[1]$, Section 6.5.) Thus the conformal mapping preserves the normal derivative but scales it by a factor $\left|\phi^{\prime}(z)\right|$. Thus a nonzero constant boundary derivative stays constant only when the boundary scale factor $|\phi'|$ is constant. A zero derivative stays zero independently of that scale factor. For the half-plane kernel this zero derivative was checked directly, rather than obtained by dividing by an infinite boundary length.
++
++> [!theorem|615861ea-6882-597e-8521-eb95d663fba0.local at=c0635cfb-c82f-5b89-a930-5a2e089b91b7] Neumann Function for Unbounded Regions
++> Let $\phi$ be a conformal bijection from an unbounded simply connected plane region $\Omega$ onto the upper half-plane. Assume it extends smoothly with nonzero derivative on the boundary arcs under consideration and takes them to the real axis. For distinct $z,p\in\Omega$,
++>
++> $$
++> N(z,p)=\log|\phi(z)-\phi(p)|+\log|\phi(z)-\overline{\phi(p)}|
++> $$
++>
++> is harmonic away from $p$, has singular part $\log|z-p|$, and satisfies $\partial_{n_z}N=0$ on those arcs. Behavior at boundary corners, exceptional points, and infinity must be checked for the intended boundary-value representation.
++
++*Printed equation label: (7).*
++
++As an application, we derive a Neumann function for the first quadrant.
++
++> [!exercise|417cbd16-65a6-583b-b0cf-edc38c54810e.local at=3713aab5-c12e-5a60-b04c-fc47d0d6aef3] EXAMPLE 3 Neumann function for the first quadrant
++> Derive a zero-normal-derivative Neumann kernel for the first quadrant using $\phi(z)=z^2$.
++
++##### solution
++
++Applying the half-plane mapping formula gives:
+ 
+ $$
+ \begin{aligned}
+-& \nabla^{2} u(x, y)=0,-\infty<x<\infty, y>0, \\
+-& -\frac{\partial u}{\partial y}(x, 0)=f(x),
+-\end{aligned}
+-$$
+-
+-is
+-
+-$$
+-u\left(x_{0}, y_{0}\right)=\frac{-1}{2 \pi} \int_{-\infty}^{\infty} f(x) \ln \left(\left(x-x_{0}\right)^{2}+y_{0}^{2}\right) d x
+-$$
+-
+-This solution was derived by a different method in Exercise 17, Section 16.4.
+-
+-## Neumann Functions and Conformal Mappings
+-
+-We now investigate the action of a conformal mapping on a Neumann function. Our approach is motivated by the results of the previous section. We use the following notation: $\Omega$ and $\Omega^{\prime}$ are two simply connected regions with nonempty boundaries $\Gamma$ and $\Gamma^{\prime}$, and $\phi$ is a one-to-one conformal mapping of $\Omega$ onto $\Omega^{\prime}$, such that $\phi[\Gamma]$ is contained in $\Gamma^{\prime}$. Suppose that $N\left(w, w_{0}\right)$ is a Neumann function for $\Omega^{\prime}$ and form the composition of $N$ with $\phi: N_{\phi}\left(z, z_{0}\right)=N\left(\phi(z), \phi\left(z_{0}\right)\right)$, where $z$ and $z_{0}$ are in $\Omega$. We now ask the question: Is $N_{\phi}\left(z, z_{0}\right)$ a Neumann function for $\Omega$ ?
+-
+-By following a proof similar to that of Theorem 1, Section 16.5, we can show that $N_{0}\left(z, z_{0}\right)$ is harmonic on $\Omega$, except at $z_{0}$, and that $N_{\phi}\left(z, z_{1}\right)$ :In $\left|z-z_{0}\right|$ plus a harmonic function on $\Omega$. Thus $N_{\phi}\left(z, z_{0}\right)$ has two of the defining properties of a Neumann function for $\Omega$. It remains to verify whether the normal derivative of $N_{\phi}\left(z, z_{0}\right)$ is constant on the boundary, as required by Proposition 1. As it turns out, this property is not satisfied in general. However, it is satisfied when both $\Omega$ and $\Omega^{\prime}$ are not bounded.
+-
+-To explain this peculiar difference between bounded and unbounded region, we recall the following formula for a change of variables by a conformal mapping:
+-
+-$$
+-\frac{\partial\left(N_{\phi}\right)}{\partial n_{\Gamma}}\left(z, z_{0}\right)=\left|\phi^{\prime}(z)\right| \frac{\partial N}{\partial n_{\Gamma^{\prime}}}\left(\phi(z), \phi\left(z_{0}\right)\right)
+-$$
+-
+-where on the left side we are computing the normal derivative along the curve $\Gamma$ at the point $z$ on $\Gamma$, and on the right side we are computing the normal derivative along the curve $\Gamma^{\prime}$ at the point $\varphi(z)$ on $\Gamma^{\prime}$. (For a proof, see $[1]$, Section 6.5.) Thus the conformal mapping preserves the normal derivative but scales it by a factor $\left|\phi^{\prime}(z)\right|$. Hence after composing a Neumann function with a conformal mapping, the resulting function may not have a constant normal derivative as expressed by Proposition 1, unless $\left|\phi^{\prime}(z)\right|=1$ or the constant values of the normal derivatives on the boundary are 0 . We know
+-
+-THEOREM 2 NEUMANN FUNCTION FOR UNBOUNDED REGIONS
+-by Proposition 1 that the latter condition is satisfied when both $\Gamma$ and $\Gamma^{\prime}$ have infinite length. We thus have the following useful result.
+-
+-Suppose that $\Omega$ is an unbounded region with boundary $\Gamma$, and $\phi$ is a one-toone analytic mapping of $\Omega$ onto the upper half-plane, taking $\Gamma$ onto the real axis. Then a Nemmann function for $\Omega$ is
+-(7) $\quad N\left(z, z_{0}\right)=\ln \left|\phi(z)-\phi\left(z_{0}\right)\right|+\ln \left|\phi(z)-\overline{\phi\left(z_{0}\right)}\right| \quad\left(z, z_{0}\right.$ in $\left.\Omega\right)$.
+-
+-As an application, we derive a Neumann function for the first quadrant.
+-
+-## EXAMPLE 3 Neumann function for the first quadrant
+-
+-Applying Theorem 2 with $\phi(z)=z^{2}$, we obtain a. Neumann function for the first quadrant:
+-
+-$$
+-\begin{aligned}
+-N\left(\therefore a_{0}\right)= & \ln \left|z^{2}-z_{0}^{2}\right|+\ln \left|z^{2}-\overline{z_{0}^{2}}\right| \\
++N(z,z_0)= & \ln \left|z^{2}-z_{0}^{2}\right|+\ln \left|z^{2}-\overline{z_{0}^{2}}\right| \\
+ = & \ln \left|z-z_{0}\right|+\ln \left|z+z_{0}\right|+\ln \left|z-\overline{z_{0}}\right|+\ln \left|z+\overline{z_{0}}\right| \\
+ = & \frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)+\frac{1}{2} \ln \left(\left(x+x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}\right) \\
+ & +\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}\right)+\frac{1}{2} \ln \left(\left(x+x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right) .
+@@ -185,7 +202,9 @@
+ \end{array}
+ $$
+ 
+-Bocause of the Neumann type condition on the boundary, the functions $h$ and $f$ are related by Green's first identity, as follows:
++*Printed equation labels: (8) Poisson equation; (9) normal-derivative data.*
++
++For a bounded region (or with justified vanishing flux at infinity), the functions $h$ and $f$ are related by Green's first identity, as follows:
+ 
+ $$
+ \iint_{\Omega} \nabla^{2} u d x d y=\int_{\Gamma} \frac{\partial u}{\partial n} d s
+@@ -194,102 +213,201 @@
+ hence by (8) and (9),
+ 
+ $$
+-\iint_{\Omega} \nabla^{2} h(x, y) d x d y=\int_{\Gamma} f d s
++\iint_\Omega h(x,y) d x d y=\int_{\Gamma} f d s
+ $$
+ 
+ Thus the double integral of $h$ over $\Omega$ must equal the line integral of $f$ over $\Gamma$. Suppose that $h$ and $f$ satisfy this compatibility condition. Then we have the following solution of the Poisson problem with a Neumann condition.
+ 
+-THEOREM 3 SOLUTION OF POISSON-NEUMANN PROBLEM
+-
+-Suppose that $\Omega$ is a region with boundary $\Gamma$ and let $N\left(z, z_{0}\right)$ denote a Neumann function for $\Omega$, where $z=x+i y$ and $z_{0}=x_{0}+i y_{0}$ are in $\Omega$. If $u(x, y)$ is a solution to Poisson's equation (8) subject to a Neumann boundary con-
+-2.
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_295_458_846_648.jpg)
+-Figure 2
+-
+-5. 
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_292_458_1237_648.jpg)
+-Figure 5
+-
+-$$
+-u(x, y)=\frac{1}{2 \pi} \iint_{\Omega} h(x, y) N\left(z, z_{0}\right) d x d y-\frac{1}{2 \pi} \int_{\Gamma} N\left(z, z_{0}\right) f(z) d s
+-$$
++> [!theorem|52cbf0f8-4130-52e9-9a70-64404837c141.local at=2e3bcc5d-117a-58a4-816b-ef77d1fc988a] Solution of Poisson-Neumann Problem
++> Let $\Omega$ be bounded and simply connected with piecewise smooth boundary $\Gamma$ of length $L>0$. Normal derivatives use the outward normal. Let $N(z,z_0)=\log|z-z_0|+u_1(z,z_0)$, where $u_1$ is harmonic in $\Omega$ and $\partial_nN=2\pi/L$ on $\Gamma$.
++>
++> Suppose that $\Omega$ is a region with boundary $\Gamma$ and let $N(z,z_0)$ denote a Neumann function for $\Omega$, where $z=x+iy$ and $z_0=x_0+iy_0$ are in $\Omega$. If $u(x,y)$ is a solution to Poisson's equation $\nabla^2u=h$ subject to a Neumann boundary condition $\partial_nu=f$, then, up to an additive constant,
++> $$
++> u(x_0,y_0)=\frac1{2\pi}\iint_\Omega h(x,y)N(z,z_0)\,dx\,dy-\frac1{2\pi}\int_\Gamma N(z,z_0)f(z)\,ds.
++> $$
++> The compatibility condition is $\iint_\Omega h\,dA=\int_\Gamma f\,ds$.
++
++*Printed equation label: (10).*
+ 
+ The proof mirrors the proof of Theorem 4, Section 16.3. It will be omitted.
+ 
+-## Exercises 12.8
+-
+-In Erercises 1-6. derive the Neumann function for the region depicted in the ac-
+-3.
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_292_462_846_1251.jpg)
+-Figure 3
+-
+-6. 
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_287_465_1241_1248.jpg)
+-Figure 6
+-
+-7. Solution of the Neumann problem in the first quadrant. Show that the solution of the Nemmann problem
+-
+-$$
+-\begin{aligned}
+-& \nabla^{2} u(x, y)=0, x, y>0 \\
+-& \frac{\partial u}{\partial y}(x, 0)=f(x), \quad \frac{\partial u}{\partial x}(0, y)=g(y)
+-\end{aligned}
+-$$
+-
+-is
+-
+-$$
+-\begin{aligned}
+-u\left(x_{0} . y_{0}\right)= & \frac{1}{2 \pi} \int_{0}^{\infty} f(x)\left[\ln \left(\left(x-x_{0}\right)^{2}+y_{0}^{2}\right)+\ln \left(\left(x+x_{0}\right)^{2}+y_{0}^{2}\right)\right] d x \\
+-& +\frac{1}{2 \pi} \int_{0}^{\infty} g(y)\left[\ln \left(x_{0}^{2}+\left(y-y_{0}\right)^{2}\right)+\ln \left(x_{0}^{2}+\left(y+y_{0}\right)^{2}\right)\right] d y
+-\end{aligned}
+-$$
+-
+-8. Verify the following integral formula, which arises from solutions of Neumann
+-problems such as the one in the previous exercise: For $a, b \neq 0$,
+-
+-$$
+-\begin{aligned}
+-& \int \ln \left[(x-a)^{2}+b^{2}\right] d x \\
+-& \quad=2(x-a)+2 b \tan ^{-1}\left(\frac{x-a}{b}\right)+(x-a) \ln \left[(x-a)^{2}+b^{2}\right]+C
+-\end{aligned}
+-$$
+-
+-9. (a) Solve the problem in Exercise 7, given that $g(y)=0$ for all $y>0$, and $f(x)=1$ if $0<x<1$ and 0 otherwise.
+-(b) Verify your answer by direct computation.
+-10. A Neumann function for the unit disk. This function is defined for : and $z_{0}$ in the unit disk by
+-
+-$$
+-N\left(z, z_{0}\right)= \begin{cases}\ln \left|z-z_{0}\right|+\ln \left|\frac{1}{\bar{z}_{0}}-z\right|+\ln \left|z_{0}\right| & \text { if } z_{0} \neq 0 \\ \ln |z| & \text { if } z_{0}=0\end{cases}
+-$$
+-
+-Derive this formula by following the outlined steps.
+-(a) Write $z_{0}=r e^{i \theta}$ and $z=\rho e^{i \eta}$. Fix $z_{0} \neq 0$ and show that
+-
+-$$
+-\begin{aligned}
+-\left.\frac{\partial}{\partial n} \ln \left|z-z_{0}\right|\right|_{\rho=1} & =\left.\frac{\partial}{\partial \rho} \frac{1}{2} \ln \left|z-z_{0}\right|^{2}\right|_{\rho=1} \\
+-& =\left.\frac{1}{2} \frac{\partial}{\partial \rho} \ln \left(r^{2}+\rho^{2}+2 r \rho \cos (\theta-\eta)\right)\right|_{\rho=1} \\
+-& =\frac{1+r \cos (\theta \cdots \eta)}{1+r^{2}+2 r \cos (\theta-\eta)}
+-\end{aligned}
+-$$
+-
+-(b) Write $\frac{1}{\bar{z}_{0}}=\frac{1}{r} e^{i \theta}$, use (a), and conclude that
+-
+-$$
+-\left.\frac{\partial}{\partial n} \ln \left|\frac{1}{\overline{z_{0}}}-z\right|\right|_{\rho=1}=\frac{1+\frac{1}{r} \cos (\theta-\eta)}{\left(\frac{1}{r}\right)^{2}+1+\frac{2}{r} \cos (\theta-\eta)}=\frac{r^{2}+r \cos (\theta-\eta)}{1+r^{2}+2 r \cos (\theta-\eta)}
+-$$
+-
+-(c) Use (a) and (b) to show that for $z_{0} \neq 0,\left.\frac{\partial}{\partial n} N\left(z, z_{0}\right)\right|_{|z|=1}=1$.
+-(d) Verify the remaining properties of the Neumann function for the given $N\left(z, z_{0}\right)$.
+-11. Solution of the Neumann problem on the disk. Use the result of the previous exercise to show that the solution of $\nabla^{2} u(r, \theta)=0$ for $0 \leq r<1$ and all $\theta$, given the Neumann condition $\frac{\partial u}{\partial r}(1, \theta)=f(\theta)$, for all $\theta$, is
+-
+-$$
+-u(r, \theta)=-\frac{1}{2 \pi} \int_{0}^{2 \pi} f(\eta) \ln \left[1+r^{2}+2 r \cos (\theta-\eta)\right] d \eta
+-$$
+-
+-Here $f$ satisfies the compatibility condition $\int_{0}^{2 \pi} f(\theta) d \theta=0$.
++## Exercises 16.8
++
++
++> [!prompt|deb3fd9a-1227-54c4-81bf-fa3f4dfb58df.local at=3b2f8583-7e35-5b08-b82d-92528d10f23d] Shared exercise instructions
++> In Exercises 1–6, derive a zero-normal-derivative Neumann kernel for the region in the accompanying figure.
++
++
++```scientific-figure
++id: 66526815-b402-49d3-84ee-ab6721d98d1a
++numbered: false
++title: ""
++caption: Figure 1 Region for Exercise 1.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/asmar16-8-figure1-restored.png
++    caption: ""
++```
++> [!exercise|fdd2b8ee-d58e-57f2-b1d4-96d1e3e4106b.local at=08741a95-8ec3-52c3-9128-5c227c50b479] Exercise 1
++> Derive the Neumann kernel for the region in Figure 1.
++
++
++```scientific-figure
++id: b6085a60-7d88-43d0-894b-83e6f7a7eb98
++numbered: false
++title: ""
++caption: Figure 2 Region for Exercise 2.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_295_458_846_648.jpg
++    caption: ""
++```
++> [!exercise|2e8543d8-0714-5e82-84f1-3eff6be2c482.local at=2a7f0a61-e27c-5286-aad8-aeba3b8829ff] Exercise 2
++> Derive the Neumann kernel for the region in Figure 2.
++
++
++```scientific-figure
++id: 7276c4ec-c73b-4a85-8271-84c293c37550
++numbered: false
++title: ""
++caption: Figure 3 Region for Exercise 3.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_292_462_846_1251.jpg
++    caption: ""
++```
++> [!exercise|e4fc6189-d201-54b8-b6cd-ad35c498e341.local at=2a93c373-dc43-5863-ab23-c5bd74d337a5] Exercise 3
++> Derive the Neumann kernel for the region in Figure 3.
++
++
++```scientific-figure
++id: 62bb3899-f32a-4d6d-ae98-d17672b97e4e
++numbered: false
++title: ""
++caption: Figure 4 Region for Exercise 4.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/asmar16-8-figure4-restored.png
++    caption: ""
++```
++> [!exercise|2b379839-5167-5f2d-b5e0-5d643dbc1c49.local at=a3540473-3cee-52db-9b90-e907863df92c] Exercise 4
++> Derive the Neumann kernel for the region in Figure 4.
++
++
++```scientific-figure
++id: cbd56508-0523-485a-b9a2-f118e889ebcf
++numbered: false
++title: ""
++caption: Figure 5 Region for Exercise 5.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_292_458_1237_648.jpg
++    caption: ""
++```
++> [!exercise|78f03399-92b7-5606-8a0c-23395d34fdad.local at=55187c6f-4e90-58fb-85d3-569178b5b2fd] Exercise 5
++> Derive the Neumann kernel for the region in Figure 5.
++
++
++```scientific-figure
++id: c21f1743-f30a-46d1-86bc-1c2c90bc3b0e
++numbered: false
++title: ""
++caption: Figure 6 Region for Exercise 6.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-79_287_465_1241_1248.jpg
++    caption: ""
++```
++> [!exercise|b16fa442-c837-52ae-ae19-f1bedbcf6d0e.local at=2370f03b-c535-5f8d-93ad-804a165a78fe] Exercise 6
++> Derive the Neumann kernel for the region in Figure 6.
++
++
++> [!exercise|0aad326e-e500-55fc-9693-a656325bb9fb.local at=87b4a0d9-c262-59e6-9ac7-1975327cf12e] Exercise 7
++> Solution of the Neumann problem in the first quadrant. Assume $f,g$ are piecewise continuously differentiable with compact support on their respective boundary half-lines. Show that a solution of the Neumann problem
++>
++> $$
++> \begin{aligned}
++> & \nabla^{2} u(x, y)=0, x, y>0 \\
++> & \frac{\partial u}{\partial y}(x, 0)=f(x), \quad \frac{\partial u}{\partial x}(0, y)=g(y)
++> \end{aligned}
++> $$
++>
++> is
++>
++> $$
++> \begin{aligned}
++> u\left(x_0,y_0\right)= & \frac{1}{2 \pi} \int_{0}^{\infty} f(x)\left[\ln \left(\left(x-x_{0}\right)^{2}+y_{0}^{2}\right)+\ln \left(\left(x+x_{0}\right)^{2}+y_{0}^{2}\right)\right] d x \\
++> & +\frac{1}{2 \pi} \int_{0}^{\infty} g(y)\left[\ln \left(x_{0}^{2}+\left(y-y_{0}\right)^{2}\right)+\ln \left(x_{0}^{2}+\left(y+y_{0}\right)^{2}\right)\right] d y
++> \end{aligned}
++> $$
++
++
++
++
++> [!exercise|556cd147-c5d8-5282-8186-72c06a01d487.local at=293b2eff-691e-5430-ac55-a9d2bb4a7ba7] Exercise 8
++> Verify the following integral formula, which arises from solutions of Neumann
++> problems such as the one in the previous exercise: For $a, b \neq 0$,
++>
++> $$
++> \begin{aligned}
++> & \int \ln \left[(x-a)^{2}+b^{2}\right] d x \\
++> & \quad=-2(x-a)+2 b \tan ^{-1}\left(\frac{x-a}{b}\right)+(x-a) \ln \left[(x-a)^{2}+b^{2}\right]+C
++> \end{aligned}
++> $$
++
++
++> [!exercise|6ce5ff4f-d980-59e1-975c-b5e5ddf1f19a.local at=3444ff24-61b0-5f0f-b0c2-0823d54bd733] Exercise 9
++> (a) Solve the problem in Exercise 7, given that $g(y)=0$ for all $y>0$, and $f(x)=1$ if $0<x<1$ and 0 otherwise.
++> (b) Verify your answer by direct computation.
++
++
++
++
++> [!exercise|95ccb9a4-e500-5a79-964b-4137e4ef8ece.local at=10dd8531-b484-5e46-ae38-61be8d895157] Exercise 10
++> A Neumann function for the unit disk. This function is defined for $z$ and $z_{0}$ in the unit disk by
++>
++> $$
++> N\left(z, z_{0}\right)= \begin{cases}\ln \left|z-z_{0}\right|+\ln \left|\frac{1}{\bar{z}_{0}}-z\right|+\ln \left|z_{0}\right| & \text { if } z_{0} \neq 0 \\ \ln |z| & \text { if } z_{0}=0\end{cases}
++> $$
++>
++> Derive this formula by following the outlined steps.
++> (a) Write $z_{0}=r e^{i \theta}$ and $z=\rho e^{i \eta}$. Fix $z_{0} \neq 0$ and show that
++>
++> $$
++> \begin{aligned}
++> \left.\frac{\partial}{\partial n} \ln \left|z-z_{0}\right|\right|_{\rho=1} & =\left.\frac{\partial}{\partial \rho} \frac{1}{2} \ln \left|z-z_{0}\right|^{2}\right|_{\rho=1} \\
++> & =\left.\frac{1}{2} \frac{\partial}{\partial \rho} \ln \left(r^{2}+\rho^{2}-2r\rho\cos (\theta-\eta)\right)\right|_{\rho=1} \\
++> & =\frac{1-r\cos (\theta-\eta)}{1+r^2-2r\cos (\theta-\eta)}
++> \end{aligned}
++> $$
++>
++> (b) Write $\frac{1}{\bar{z}_{0}}=\frac{1}{r} e^{i \theta}$, use (a), and conclude that
++>
++> $$
++> \left.\frac{\partial}{\partial n} \ln \left|\frac{1}{\overline{z_{0}}}-z\right|\right|_{\rho=1}=\frac{1-\frac1r\cos (\theta-\eta)}{\left(\frac{1}{r}\right)^{2}+1-\frac2r\cos (\theta-\eta)}=\frac{r^2-r\cos (\theta-\eta)}{1+r^2-2r\cos (\theta-\eta)}
++> $$
++>
++> (c) Use (a) and (b) to show that for $z_{0} \neq 0,\left.\frac{\partial}{\partial n} N\left(z, z_{0}\right)\right|_{|z|=1}=1$.
++> (d) Verify the remaining properties of the Neumann function for the given $N\left(z, z_{0}\right)$.
++
++
++> [!exercise|74adcd7c-6b6f-517b-baa3-e112f9638384.local at=0954559b-a19c-58b5-850e-505c9bd3980a] Exercise 11
++> Solution of the Neumann problem on the disk. Use the result of the previous exercise to show that the solution of $\nabla^{2} u(r, \theta)=0$ for $0 \leq r<1$ and all $\theta$, given the Neumann condition $\frac{\partial u}{\partial r}(1, \theta)=f(\theta)$, for all $\theta$, is
++>
++> $$
++> u(r, \theta)=-\frac{1}{2 \pi} \int_{0}^{2 \pi} f(\eta) \ln \left[1+r^2-2r\cos (\theta-\eta)\right] d \eta
++> $$
++>
++> Here $f$ satisfies the compatibility condition $\int_{0}^{2 \pi} f(\theta) d \theta=0$.
+
+`````

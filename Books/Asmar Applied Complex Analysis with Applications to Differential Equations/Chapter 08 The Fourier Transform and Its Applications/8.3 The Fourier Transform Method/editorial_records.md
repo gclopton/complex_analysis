@@ -56,3 +56,877 @@ Within the spatially integrable solution class, continuity of the transform fixe
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.3 The Fourier Transform Method.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.3 The Fourier Transform Method.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.3 The Fourier Transform Method.md
+@@ -1,32 +1,41 @@
+-### 8.3 The Fourier Transform Method
++
++# 8.3 The Fourier Transform Method
+ 
+ In this section we describe a method for solving boundary value problems, where one of the variables, $x, y, z$ or $t$ belongs to the real line. These include, for example, the wave and heat equations on the real line, and Laplace's equation in upper half-plane and others.
+ 
+ We will be computing Fourier transforms of functions of the form $u(x, t)$, where $x$ and $t$ are the variables, and at least one of them varies in the interval $(-\infty, \infty)$, say $-\infty<x<\infty$. Because of the presence of two variables, care is needed in identifying the variable with respect to which the Fourier transform is computed. For example, for fixed $t$, the function $u(x, t)$ becomes a function of the spatial variable $x$, and as such, we can take its Fourier transform with respect to the $x$ variable. We denote this transform by $\widehat{u}(\omega, t)$. Thus
+ 
+-## FOURIER TRANSFORM IN THE $\boldsymbol{x}$ VARIABLE
+-
+-## FOURIER TRANSFORM AND PARTIAL DERIVATIVES
++
++
++> [!definition|1653a0ab-d562-511f-85b3-ba5f9382150a.local at=22643d4d-413e-5f9d-bd0e-4af8b4507a18] Partial Fourier Transform in a Spatial Variable
++> For fixed $t$, assume $u(\cdot,t)\in L^1(\mathbb R)$. The symmetric Fourier transform in $x$ is
++>
++> $$
++> \mathcal{F}(u(x, t))(\omega)=\widehat{u}(\omega, t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} u(x, t) e^{-i \omega x} d x
++> $$
++
++*Printed equation label: (1).*
++
++To illustrate the use of this notation we compute some very useful transforms. We will assume that the function $u(x, t)$, as a function of $x$, has sufficient properties that enable us to use freely the operational properties of the Fourier transform from Section 8.2.
++
++> [!property|97b9dc34-4b51-57c7-b9e3-84b06b5f6678.local at=a8f0c715-691f-5f43-a76f-48c118d60861] Partial Fourier Transform of Spatial and Temporal Derivatives
++> Use $\widehat u(\omega,t)=(2\pi)^{-1/2}\int_{\mathbb R}u(x,t)e^{-i\omega x}\,dx$. Assume spatial derivatives used below are integrable, lower spatial derivatives are locally absolutely continuous and vanish at infinity, and temporal differentiation under the integral is justified by an integrable dominating function on compact time intervals.
++>
++> Given $u(x, t)$ with $-\infty<x<\infty$ and $t>0$, we have
++>
++> $$
++> \begin{gathered}
++> \mathcal{F}\left(\frac{\partial}{\partial t} u(x, t)\right)(\omega)=\frac{d}{d t} \widehat{u}(\omega, t) \\
++> \mathcal{F}\left(\frac{\partial^{n}}{\partial t^{n}} u(x, t)\right)(\omega)=\frac{d^{n}}{d t^{n}} \widehat{u}(\omega, t), \quad n=1,2, \ldots \\
++> \mathcal{F}\left(\frac{\partial}{\partial x} u(x, t)\right)(\omega)=i \omega \widehat{u}(\omega, t) \\
++> \mathcal{F}\left(\frac{\partial^{n}}{\partial x^{n}} u(x, t)\right)(\omega)=(i \omega)^{n} \widehat{u}(\omega, t), \quad n=1,2, \ldots
++> \end{gathered}
++> $$
++
++*Printed equation labels: (2) first time derivative; (3) higher time derivatives; (4) first spatial derivative; (5) higher spatial derivatives.*
+ 
+ Note that on the right sides of (2) and (3) we have used ordinary derivatives in $t$ instead of partial derivatives. The reason is to emphasize the crucial fact that, in applying the Fourier transform method, we will transform a partial differential equation in $u(x, t)$ into an ordinary differential equation in $\widehat{u}(\omega, t)$, where $t$ is the variable. This will become more apparent in the examples.
+ 
+-$$
+-\mathcal{F}(u(x, t))(\omega)=\widehat{u}(\omega, t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} u(x, t) e^{-i \omega x} d x
+-$$
+-
+-To illustrate the use of this notation we compute some very useful transforms. We will assume that the function $u(x, t)$, as a function of $x$, has sufficient properties that enable us to use freely the operational properties of the Fourier transform from Section 8.2.
+-
+-Given $u(x, t)$ with $-\infty<x<\infty$ and $t>0$, we have
+-
+-$$
+-\begin{gathered}
+-\mathcal{F}\left(\frac{\partial}{\partial t} u(x, t)\right)(\omega)=\frac{d}{d t} \widehat{u}(\omega, t) \\
+-\mathcal{F}\left(\frac{\partial^{n}}{\partial t^{n}} u(x, t)\right)(\omega)=\frac{d^{n}}{d t^{n}} \widehat{u}(\omega, t), \quad n=1,2, \ldots \\
+-\mathcal{F}\left(\frac{\partial}{\partial x} u(x, t)\right)(\omega)=i \omega \widehat{u}(\omega, t) \\
+-\mathcal{F}\left(\frac{\partial^{n}}{\partial x^{n}} u(x, t)\right)(\omega)=(i \omega)^{n} \widehat{u}(\omega, t), \quad n=1,2, \ldots
+-\end{gathered}
+-$$
+-
+ The last two identities are consequences of (1) and Theorem 1 of Section 8.2. To prove (2) we start with the right side and differentiate under the integral sign with respect to $t$ :
+ 
+ $$
+@@ -39,20 +48,22 @@
+ 
+ The use of the Fourier transform to solve partial differential equations is best described by examples. We start with the wave equation.
+ 
+-## EXAMPLE 1 The wave equation for an infinite string
+-
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t^{2}} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}} & & (-\infty<x<\infty, t>0), \\
+-u(x, 0) & =f(x) & & (\text { initial displacement), } \\
+-\frac{\partial}{\partial t} u(x, 0) & =g(x) & & (\text { initial velocity }) .
+-\end{aligned}
+-$$
+-
+-Give the answer as an inverse Fourier transform.
+-Solution We fix $t$ and take the Fourier transform of both sides of the differential equation and the initial conditions. Using (3) and (5) with $n=2$, we get
++> [!exercise|e432fff8-1411-59b9-b940-618b87a9a355.local at=2bba647f-fc65-5fc3-89f9-fb21fc7b3c28] EXAMPLE 1 The wave equation for an infinite string
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t^{2}} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}} & & (-\infty<x<\infty, t>0), \\
++> u(x, 0) & =f(x) & & (\text { initial displacement), } \\
++> \frac{\partial}{\partial t} u(x, 0) & =g(x) & & (\text { initial velocity }) .
++> \end{aligned}
++> $$
++>
++> Give the answer as an inverse Fourier transform.
++
++##### solution
++
++We fix $t$ and take the Fourier transform of both sides of the differential equation and the initial conditions. Using (3) and (5) with $n=2$, we get
+ 
+ $$
+ \begin{aligned}
+@@ -62,21 +73,23 @@
+ \end{aligned}
+ $$
+ 
++*Printed equation labels: (6) transformed differential equation; (7) transformed initial displacement; (8) transformed initial velocity.*
++
+ It is clear that (6) is an ordinary differential equation in $\widehat{u}(\omega, t)$, where $t$ is the variable. Let us write (6) in the standard form
+ 
+ $$
+ \frac{d^{2}}{d t^{2}} \widehat{u}(\omega, t)+c^{2} \omega^{2} \widehat{u}(\omega, t)=0
+ $$
+ 
+-The general solution of this equation is
+-
+-See Appendix A. 2 for the solution of second order linear differential equations (Case III).
++For $\omega\ne0$, the general solution of this equation is
++
++See Section 10.2 for the solution of second order linear differential equations (Case III).
+ 
+ $$
+ \widehat{u}(\omega, t)=A(\omega) \cos c \omega t+B(\omega) \sin c \omega t
+ $$
+ 
+-where $A(\omega)$ and $B(\omega)$ are constant in $t$. (You should note that while $A$ and $B$ are constant in they can depend on $\omega$, which explains writing $A(\omega)$ and $B(\omega)$.) We determine $A(\omega)$ and $B(\omega)$ from the initial conditions (7) and (8) as follows:
++where $A(\omega)$ and $B(\omega)$ are constant in $t$. (You should note that while $A$ and $B$ are constant in $t$, they can depend on $\omega$, which explains writing $A(\omega)$ and $B(\omega)$.) We determine $A(\omega)$ and $B(\omega)$ from the initial conditions (7) and (8) as follows:
+ 
+ $$
+ \begin{aligned}
+@@ -91,34 +104,40 @@
+ \widehat{u}(\omega, t)=\widehat{f}(\omega) \cos c \omega t+\frac{1}{c \omega} \widehat{g}(\omega) \sin c \omega t
+ $$
+ 
+-To get the solution we use the inverse Fourier transform and get
++At $\omega=0$, interpret $\sin(c\omega t)/(c\omega)$ by its limit $t$; then $\widehat u(0,t)=\widehat f(0)+t\widehat g(0)$. To get the solution we use the inverse Fourier transform and get
+ 
+ $$
+ u(x, t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty}\left[\hat{f}(\omega) \cos c \omega t+\frac{1}{c \omega} \hat{g}(\omega) \sin c \omega t\right] e^{i \omega x} d \omega
++\tag{9}
+ $$
+ 
+ Formula (9) gives you the solution of the wave boundary value problem in the form of an integral involving the Fourier transform of the initial displacement and velocity. In specific cases, these transforms and the integral
+ can be computed explicitly. Even in its general form, (9) can be computed explicitly in terms of $f$ and $g$ to yield d'Alembert's form of the solution. (See Exercise 21.)
+ 
+-We summarize the Fourier transform method as follows.
+-Step 1: Fourier transform the given boundary value problem in $u(x, t)$ and get an ordinary differential equation in $\widehat{u}(\omega, t)$ in the variable $t$.
+-Step 2: Solve the ordinary differential equation and find $\widehat{u}(\omega, t)$.
+-Step 3: Inverse Fourier transform $\widehat{u}(\omega, t)$ to get $u(x, t)$.
++> [!procedure|e85f4f15-0f7b-5cae-8ae7-18e0e5ae8450.local at=86a54b81-3664-5e4c-8ded-fa7d75eeea51] Fourier Transform Method for Linear PDEs on the Real Line
++> When a PDE has an unbounded spatial variable and its data and derivatives admit Fourier transforms (classically or in a suitable generalized sense), proceed as follows. Retain the transformed initial or boundary conditions and any explicitly required growth or boundedness conditions.
++>
++> Step 1: Fourier transform the given boundary value problem in $u(x, t)$ and get an ordinary differential equation in $\widehat{u}(\omega, t)$ in the variable $t$.
++> Step 2: Solve the ordinary differential equation and find $\widehat{u}(\omega, t)$.
++> Step 3: Inverse Fourier transform $\widehat{u}(\omega, t)$ to get $u(x, t)$.
++
+ This simple method is successful in treating a variety of partial differential equations. In our next example we use it to solve the heat equation on the real line. The example models the transfer of heat in a very long rod extending in both directions on the $x$-axis.
+ 
+-## EXAMPLE 2 The heat equation for an infinite rod
+-
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}} & & (-\infty<x<\infty, t>0), \\
+-u(x, 0) & =f(x) & & \text { (initial temperature distribution). }
+-\end{aligned}
+-$$
+-
+-Give your answer in the form of an inverse Fourier transform.
+-Solution Fourier transforming the boundary value problem, we get
++> [!exercise|6970dd07-41f8-5c21-a7f5-9d4ad12a3bb9.local at=0e322493-0c07-5089-bcc9-136b88be97d3] EXAMPLE 2 The heat equation for an infinite rod
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}} & & (-\infty<x<\infty, t>0), \\
++> u(x, 0) & =f(x) & & \text { (initial temperature distribution). }
++> \end{aligned}
++> $$
++>
++> Give your answer in the form of an inverse Fourier transform.
++
++##### solution
++
++Fourier transforming the boundary value problem, we get
+ 
+ $$
+ \begin{aligned}
+@@ -151,6 +170,7 @@
+ 
+ $$
+ u(x, t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \widehat{f}(\omega) e^{-c^{2} \omega^{2} t} e^{i \omega x} d \omega
++\tag{10}
+ $$
+ 
+ Formula (10) gives you the solution of the heat boundary value problem in the form of an integral involving the Fourier transform of the initial heat distribution. In the next section, we will compute this integral and give
+@@ -158,23 +178,38 @@
+ 
+ Our next two examples illustrate the use of the Fourier transform method in solving problems with mixed and higher order derivatives.
+ 
+-## EXAMPLE 3 The Fourier transform method with mixed derivatives
+-
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t \partial x} & =\frac{\partial^{2} u}{\partial x^{2}}(-\infty<x<\infty, t>0) \\
+-u(x, 0) & =\sqrt{\frac{\pi}{2}} e^{-|x|}
+-\end{aligned}
+-$$
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-34_428_520_859_98.jpg)
+-
+-Figure 1 Graph of $\sqrt{\frac{\pi}{2}} e^{-|x|}$.
+-
+-The function $f(x)=\sqrt{\frac{\pi}{2}} e^{-|x|}$ is shown in Figure 1.
+-Solution Using (2) and (4), we obtain
++> [!exercise|63db32e4-b4fd-5318-bba0-5b4776b450d9.local at=59b851ad-5d49-5823-9143-7fb40e99af82] EXAMPLE 3 The Fourier transform method with mixed derivatives
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t \partial x} & =\frac{\partial^{2} u}{\partial x^{2}}(-\infty<x<\infty, t>0) \\
++> u(x, 0) & =\sqrt{\frac{\pi}{2}} e^{-|x|}
++> \end{aligned}
++> $$
++>
++>
++>
++> The function $f(x)=\sqrt{\frac{\pi}{2}} e^{-|x|}$ is shown in Figure 1.
++
++
++
++```scientific-figure
++id: 208fad2b-8b59-4d7f-a40d-8239850c54e1
++numbered: false
++title: ""
++caption: Figure 1 Graph of $\sqrt{\frac{\pi}{2}} e^{-|x|}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-34_428_520_859_98.jpg
++    caption: ""
++```
++
++##### solution
++
++Using (2) and (4), we obtain
+ 
+ $$
+ \mathcal{F}\left(\frac{\partial^{2} u}{\partial t \partial x}\right)=\mathcal{F}\left(\frac{\partial}{\partial t} \frac{\partial u}{\partial x}\right)=\frac{d}{d t} \mathcal{F}\left(\frac{\partial u}{\partial x}\right)=i \omega \frac{d \widehat{u}}{d t}(\omega, t)
+@@ -186,7 +221,7 @@
+ i \omega \frac{d \widehat{u}}{d t}(\omega, t)=-\omega^{2} \widehat{u}(\omega, t) .
+ $$
+ 
+-Solving this first order ordinary differential equation, we find
++For $\omega\ne0$, solving this first order ordinary differential equation gives
+ 
+ $$
+ \widehat{u}(\omega, t)=A(\omega) e^{i \omega t}
+@@ -211,23 +246,37 @@
+ $$
+ 
+ The solution is illustrated in Figure 2.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-35_456_1142_210_501.jpg)
++```scientific-figure
++id: 29c88582-8761-4af3-9790-5af1020de153
++numbered: false
++title: ""
++caption: Figure 2 The translating solution $u(x,t)=\sqrt{\pi/2}e^{-|x+t|}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-35_456_1142_210_501.jpg
++    caption: ""
++```
++
+ 
+ Our next example features an important use of implicit conditions that are not usually given as part of the statement of the problem.
+ 
+-## EXAMPLE 4 Use of implicit boundedness assumptions
+-
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t^{2}} & =\frac{\partial^{4} u}{\partial x^{4}} \quad(-\infty<x<\infty, t>0) \\
+-u(x, 0) & =f(x)
+-\end{aligned}
+-$$
+-
+-Give your answer in the form of an inverse Fourier transform.
+-Solution Fourier transforming the problem gives
++> [!exercise|5317633e-7acf-53ab-8648-04e23d2a966a.local at=b9ae24bc-8f69-528b-88cd-a334dad3a11a] EXAMPLE 4 Use of implicit boundedness assumptions
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t^{2}} & =\frac{\partial^{4} u}{\partial x^{4}} \quad(-\infty<x<\infty, t>0) \\
++> u(x, 0) & =f(x)
++> \end{aligned}
++> $$
++>
++> Require $\widehat u(\omega,t)$ to remain bounded as $t\to\infty$ for each frequency, and give the answer as an inverse Fourier transform. 
++
++##### solution
++
++Fourier transforming the problem gives
+ 
+ $$
+ \begin{aligned}
+@@ -242,13 +291,13 @@
+ \widehat{u}(\omega, t)=A(\omega) e^{-\omega^{2} t}+B(\omega) e^{\omega^{2} t}
+ $$
+ 
+-At this point, we impose certain boundedness conditions on $\widehat{u}(\omega, t)$. These conditions follow from the fact that the solution (in most reasonable cases) should have a bounded Fourier transform $\widehat{u}$ for all $t>0$ and $\omega$. Consequently, this assumption forces $B(\omega)=0$ for all $\omega$; otherwise, by letting $t \rightarrow \infty$, we get an unbounded Fourier transform. Hence,
++At this point, we impose certain boundedness conditions on $\widehat{u}(\omega, t)$. These conditions follow from the fact that the solution (in most reasonable cases) should have a bounded Fourier transform $\widehat{u}$ for all $t>0$ and $\omega$. Consequently, this assumption forces $B(\omega)=0$ for $\omega\ne0$; otherwise, by letting $t \rightarrow \infty$, we get an unbounded Fourier transform. Hence,
+ 
+ $$
+ \widehat{u}(\omega, t)=A(\omega) e^{-\omega^{2} t}
+ $$
+ 
+-Now, using the transformed initial condition, we get
++At $\omega=0$, the transformed equation is $\widehat u_{tt}=0$; boundedness eliminates its term linear in $t$. Now, using the transformed initial condition, we get
+ 
+ $$
+ \widehat{u}(\omega, t)=\widehat{f}(\omega) e^{-\omega^{2} t} .
+@@ -262,16 +311,18 @@
+ 
+ So far we have used the Fourier transform method to solve partial differential equations with constant coefficients. As our next example illustrates, the method is also useful in solving problems with nonconstant coefficients.
+ 
+-## EXAMPLE 5 An equation with nonconstant coefficients
+-
+-Solve
+-
+-$$
+-t \frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0 \quad u(x, 0)=f(x)
+-$$
+-
+-where $-\infty<x<\infty, t>0$. Simplify your answer as much as possible.
+-Solution The new feature in this example is the presence of the term $t \frac{\partial u}{\partial x}$ in the equation. Since we will use the Fourier transform with respect to $x$, the variable $t$ will be treated as a constant. Thus
++> [!exercise|7da95213-c56e-598b-90c3-8fb91e9008be.local at=e3e4bd5d-d904-56b9-b296-8b6b4b8ce3b6] EXAMPLE 5 An equation with nonconstant coefficients
++> Solve
++>
++> $$
++> t \frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0 \quad u(x, 0)=f(x)
++> $$
++>
++> where $-\infty<x<\infty, t>0$. Simplify your answer as much as possible.
++
++##### solution
++
++The new feature in this example is the presence of the term $t \frac{\partial u}{\partial x}$ in the equation. Since we will use the Fourier transform with respect to $x$, the variable $t$ will be treated as a constant. Thus
+ 
+ $$
+ \mathcal{F}\left(t \frac{\partial u}{\partial x}\right)=t \mathcal{F}\left(\frac{\partial u}{\partial x}\right)=i \omega t \hat{u}(\omega, t)
+@@ -306,233 +357,274 @@
+ 
+ It is instructive to check our answer at this point. We have $u_{x}(x, t)=f^{\prime}\left(x-\frac{t^{2}}{2}\right)$; and, by the chain rule, $u_{t}(x, t)=-t f^{\prime}\left(x-\frac{t^{2}}{2}\right)$. Thus $t u_{x}+u_{t}=0$, verifying the equation. At $t=0$, we get $u(x, 0)=f(x)$, as desired. $\square$
+ 
+-## Exercises 11.3
+-
+-In Exercises 1-6, determine the solution of the given wave or heat problem. Give your answer in the form of an inverse Fourier transform. Take the variables in the ranges $-\infty<x<\infty, t>0$.
+-1.
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)=\frac{1}{1+x^{2}}, \quad \frac{\partial u}{\partial t}(x, 0)=0
+-\end{aligned}
+-$$
+-
+-2. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)= \begin{cases}\cos x & \text { if }-\frac{\pi}{2} \leq x \leq \frac{\pi}{2} \\
+-0 & \text { otherwise }\end{cases} \\
+-& \frac{\partial u}{\partial t}(x, 0)=0
+-\end{aligned}
+-$$
+-
+-3. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{1}{4} \frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)=e^{-x^{2}}
+-\end{aligned}
+-$$
+-
+-5. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)=\sqrt{\frac{2}{\pi}} \frac{\sin x}{x}, \quad \frac{\partial u}{\partial t}(x, 0)=0
+-\end{aligned}
+-$$
+-
+-4. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{1}{100} \frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)= \begin{cases}100 & \text { if }-1<x<1 \\
+-0 & \text { otherwise }\end{cases}
+-\end{aligned}
+-$$
+-
+-6. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)= \begin{cases}1-\frac{|x|}{2} & \text { if }-2<x<2 \\
+-0 & \text { otherwise }\end{cases}
+-\end{aligned}
+-$$
+-
+-In Exercises 7-20, solve the given problem. Take $-\infty<x<\infty$, and $t>0$.
+-7.
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial x}+3 \frac{\partial u}{\partial t}=0 \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-9. 
+-
+-$$
+-\begin{aligned}
+-& t^{2} \frac{\partial u}{\partial x}-\frac{\partial u}{\partial t}=0 \\
+-& u(x, 0)=3 \cos x
+-\end{aligned}
+-$$
+-
+-8. 
+-
+-$$
+-\begin{aligned}
+-& a \frac{\partial u}{\partial x}+b \frac{\partial u}{\partial t}=0 \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-10. 
+-
+-$$
+-\begin{aligned}
+-& a(t) \frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0 \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-11. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial x}=\frac{\partial u}{\partial t} \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-13. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=t \frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-15. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}+2 \frac{\partial u}{\partial t}=-u \\
+-& u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
+-\end{aligned}
+-$$
+-
+-12. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}+\sin t \frac{\partial u}{\partial x}=0 \\
+-& u(x, 0)=\sin x
+-\end{aligned}
+-$$
+-
+-14. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=a(t) \frac{\partial^{2} u}{\partial x^{2}} \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-where $a(t)>0$.
+-17.
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{4} u}{\partial x^{4}} \\
+-& u(x, 0)= \begin{cases}100 & \text { if }|x|<2 \\
+-0 & \text { otherwise }\end{cases}
+-\end{aligned}
+-$$
+-
+-18. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=t \frac{\partial^{4} u}{\partial x^{4}} \\
+-& u(x, 0)=f(x)
+-\end{aligned}
+-$$
+-
+-19. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{3} u}{\partial t \partial x^{2}} \\
+-& u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
+-\end{aligned}
+-$$
+-
+-20. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}-4 \frac{\partial^{3} u}{\partial t \partial x^{2}}+3 \frac{\partial^{4} u}{\partial x^{4}}=0 \\
+-& u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
+-\end{aligned}
+-$$
+-
+-21. D'Alembert's solution of the wave equation
+-(a) Verify that
+-
+-$$
+-u(x, t)=\frac{1}{2}[f(x-c t)+f(x+c t)]+\frac{1}{2 c} \int_{x-c t}^{x+c t} g(s) d s
+-$$
+-
+-is a solution of the boundary value problem of Example 1.
+-(b) Derive d'Alembert's solution from (9) of this section and Theorem 3 and Exercise 26 of Section 8.2.
+-22. (a) Use D'Alembert's solution to describe the vibration of a very long string with $c=1, f(x)=\cos x$ for $|x| \leq \frac{\pi}{2}$ and 0 otherwise, and $g(x)=0$.
+-(b) Draw the shape of the string at $t=0, \pi / 4, \pi / 2, \pi$.
+-
+-Project Problem. Do Exercises 23 and 24 to solve a heat problem with convection.
+-23. Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}+k \frac{\partial u}{\partial x}, \quad-\infty<x<\infty, \quad t>0 \\
+-u(x, 0) & =f(x)
+-\end{aligned}
+-$$
+-
+-This problem models heat transfer in a long heated bar that is exchanging heat with the surrounding medium. This phenomenon is called convection, and $k$ is a positive constant called the coefficient of convection. (See Exercise 10, Section 8.4, for the convolution form of the solution.)
+-24. Specialize Exercise 23 to the case $c=1, k=.5, f(x)=e^{-x^{2}}$.
+-
+-Project Problem. In Exercises 25 and 26, you are asked to study the vibrations of a very long elastic beam.
+-25. The vibrations of a very long beam extending in both directions on the $x$-axis are modeled by the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t^{2}} & =c^{2} \frac{\partial^{4} u}{\partial x^{4}}, & -\infty<x<\infty, t>0 \\
+-u(x, 0) & =f(x), & \frac{\partial u}{\partial t}(x, 0)=g(x) .
+-\end{aligned}
+-$$
+-
+-Solve this problem by the Fourier transform method.
+-26. Specialize Exercise 25 to the case $c=1, f(x)=\delta_{0}(x), g(x)=0$, where $\delta_{0}(x)$ is the Dirac delta function.
+-Project Problem. Do Exercises 27 and 28.
+-27. Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{3} u}{\partial x^{3}}, \quad-\infty<x<\infty, t>0 \\
+-u(x, 0) & =f(x)
+-\end{aligned}
+-$$
+-
+-This equation is known as the linearized Korteweg-de Vries equation.
+-28. Specialize Exercise 27 to the case $c=1, f(x)=e^{-x^{2} / 2}$.
++## Exercises 8.3
++
++
++> [!prompt|79810ee8-cb87-5991-9189-21ca98a54eb1.local at=3afb17bc-8106-5976-9b33-c0b7406409a2] Shared exercise instructions
++> In Exercises 1-6, determine the solution of the given wave or heat problem. Give your answer in the form of an inverse Fourier transform. Take the variables in the ranges $-\infty<x<\infty, t>0$.
++
++
++
++> [!exercise|571ca533-9837-5b27-a5ba-3a043922198d.local at=ea545a4d-c94a-5b17-8d46-c2fe9c66a84d] Exercise 1
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)=\frac{1}{1+x^{2}}, \quad \frac{\partial u}{\partial t}(x, 0)=0
++> \end{aligned}
++> $$
++
++
++> [!exercise|647fcb2e-7679-5731-8c6b-e7fbe49fcf00.local at=fd68d391-dc62-57b9-8234-3ea4410a5d44] Exercise 2
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)= \begin{cases}\cos x & \text { if }-\frac{\pi}{2} \leq x \leq \frac{\pi}{2} \\
++> 0 & \text { otherwise }\end{cases} \\
++> & \frac{\partial u}{\partial t}(x, 0)=0
++> \end{aligned}
++> $$
++
++
++> [!exercise|44d708d0-1dfe-5d43-b52b-a6ffe8540f49.local at=f471c157-aeca-5b84-a1dc-8f6cdee797be] Exercise 3
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{1}{4} \frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)=e^{-x^{2}}
++> \end{aligned}
++> $$
++
++
++> [!exercise|0dda141b-80bf-5815-84c2-c53bbd377dfa.local at=1ebcf28a-54c3-5334-933a-35b109524348] Exercise 4
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{1}{100} \frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)= \begin{cases}100 & \text { if }-1<x<1 \\
++> 0 & \text { otherwise }\end{cases}
++> \end{aligned}
++> $$
++
++
++> [!exercise|8c14c659-debf-5962-b9c1-215b1f91b4fc.local at=e7cb8c83-e7bf-56da-aeb3-0cb55a30c426] Exercise 5
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)=\sqrt{\frac{2}{\pi}} \frac{\sin x}{x}, \quad \frac{\partial u}{\partial t}(x, 0)=0
++> \end{aligned}
++> $$
++
++
++> [!exercise|b651f31e-ff7e-5847-b742-e96418ac5386.local at=99473918-3f65-5a0b-9db1-83b0e7c4037c] Exercise 6
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)= \begin{cases}1-\frac{|x|}{2} & \text { if }-2<x<2 \\
++> 0 & \text { otherwise }\end{cases}
++> \end{aligned}
++> $$
++
++
++> [!prompt|92d6dce0-04fc-54f3-aaf1-52793d1bdc7f.local at=e13da09a-ef15-523c-ac4b-86e25705fa21] Shared exercise instructions
++> In Exercises 7-20, solve the given problem. Take $-\infty<x<\infty$, and $t>0$.
++
++
++
++> [!exercise|8a7e8823-dc5b-57f3-99db-8c84d83948c1.local at=c0fdd849-5ab7-5a25-afb0-a2a55fcd3156] Exercise 7
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial x}+3 \frac{\partial u}{\partial t}=0 \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|734cb38d-68d7-546f-ad79-8160279edcd3.local at=5b5edffa-4b8a-521b-89d9-7b1f8a4769e6] Exercise 8
++> $$
++> \begin{aligned}
++> & a \frac{\partial u}{\partial x}+b \frac{\partial u}{\partial t}=0 \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|34c5dcdc-6f68-573e-850a-996ae27c21a2.local at=38e7e7ed-e109-5357-8dd7-21ccbc2fa5ff] Exercise 9
++> $$
++> \begin{aligned}
++> & t^{2} \frac{\partial u}{\partial x}-\frac{\partial u}{\partial t}=0 \\
++> & u(x, 0)=3 \cos x
++> \end{aligned}
++> $$
++
++
++> [!exercise|fd8f7224-3359-5f25-b99a-6b9645b868e9.local at=fa3f491f-fab0-5c0e-a585-5bba3a9e45ee] Exercise 10
++> $$
++> \begin{aligned}
++> & a(t) \frac{\partial u}{\partial x}+\frac{\partial u}{\partial t}=0 \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|caacb3f2-ba59-5c7b-b456-6178e6f2b674.local at=5177647b-7d30-5adf-9072-03d27956d881] Exercise 11
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial x}=\frac{\partial u}{\partial t} \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|b2525c17-1a85-5717-bb16-b0ffc8788dde.local at=584d8ccd-4429-5805-b3ef-3c2e0e86cd12] Exercise 12
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}+\sin t \frac{\partial u}{\partial x}=0 \\
++> & u(x, 0)=\sin x
++> \end{aligned}
++> $$
++
++
++> [!exercise|9a527670-d635-532d-8cd0-88708755ffb2.local at=a95fd50a-cc9a-5308-ba7b-b90920288d2b] Exercise 13
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=t \frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|8fee8192-458c-58bc-83ce-b7ee9723db60.local at=6371ed06-414f-52c3-a098-b44706ddf3bf] Exercise 14
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=a(t) \frac{\partial^{2} u}{\partial x^{2}} \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++>
++> where $a(t)>0$.
++
++
++> [!exercise|db62d4e0-b801-531d-8c1f-17d889b754c4.local at=504e4237-8b83-5515-b04a-64f10aeb19f9] Exercise 15
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}+2 \frac{\partial u}{\partial t}=-u \\
++> & u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|274bdb9e-737a-5e9f-8dce-adf3c82da628.local at=08c878f9-9af3-519d-b937-c04c8f6b69be] Exercise 16
++> $$
++> \begin{aligned}
++> u_t&=e^{-t}u_{xx},\\
++> u(x,0)&=100.
++> \end{aligned}
++> $$
++
++
++> [!exercise|6e769a65-d026-55db-a9b6-35ced9c8792e.local at=779e4d5a-5a8f-5b77-bbdd-ef2dbf2ff695] Exercise 17
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{4} u}{\partial x^{4}} \\
++> & u(x, 0)= \begin{cases}100 & \text { if }|x|<2 \\
++> 0 & \text { otherwise }\end{cases}
++> \end{aligned}
++> $$
++
++
++> [!exercise|e576d36a-2600-55c8-b14f-e958d736044c.local at=360fe4b4-d3a7-56ce-b979-2cf7914ad388] Exercise 18
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=t \frac{\partial^{4} u}{\partial x^{4}} \\
++> & u(x, 0)=f(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|e241ddfa-b02d-594c-a9ea-050b59211683.local at=b216d91d-ab10-589d-91ca-a01da18bf3e4] Exercise 19
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{3} u}{\partial t \partial x^{2}} \\
++> & u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|f1fa8e68-b616-57cf-8f3a-27fe9efc3c0b.local at=e134703e-119f-5216-9810-122a5c0850e3] Exercise 20
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}-4 \frac{\partial^{3} u}{\partial t \partial x^{2}}+3 \frac{\partial^{4} u}{\partial x^{4}}=0 \\
++> & u(x, 0)=f(x), \quad u_{t}(x, 0)=g(x)
++> \end{aligned}
++> $$
++
++
++> [!exercise|2c95308f-9d4b-5359-8610-79b92c177d5a.local at=df6a3ed9-e503-5bbb-a252-8111c3fea743] Exercise 21
++> D'Alembert's solution of the wave equation
++> (a) Verify that
++>
++> $$
++> u(x, t)=\frac{1}{2}[f(x-c t)+f(x+c t)]+\frac{1}{2 c} \int_{x-c t}^{x+c t} g(s) d s
++> $$
++>
++> is a solution of the boundary value problem of Example 1.
++> (b) Derive d'Alembert's solution from (9) of this section and Theorem 3 and Exercise 26 of Section 8.2.
++
++
++> [!exercise|583b3b17-529a-5851-a41c-d3bee528ac0e.local at=8ea65a4e-238e-51b8-977e-9098b6085f75] Exercise 22
++> (a) Use D'Alembert's solution to describe the vibration of a very long string with $c=1, f(x)=\cos x$ for $|x| \leq \frac{\pi}{2}$ and 0 otherwise, and $g(x)=0$.
++> (b) Draw the shape of the string at $t=0, \pi / 4, \pi / 2, \pi$.
++>
++> Project Problem. Do Exercises 23 and 24 to solve a heat problem with convection.
++
++
++> [!exercise|2f958077-2cf7-559e-a953-96bfbea4b032.local at=f754f69d-25d5-50da-95b9-889c05bdb05e] Exercise 23
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}+k \frac{\partial u}{\partial x}, \quad-\infty<x<\infty, \quad t>0 \\
++> u(x, 0) & =f(x)
++> \end{aligned}
++> $$
++>
++> This equation models diffusion with drift velocity $-k$.  Here $k>0$ is a constant. (See Exercise 10, Section 8.4, for the convolution form of the solution.)
++
++
++> [!exercise|3e46b8eb-a471-5b74-ac8c-746cac5120f4.local at=e918ab48-f552-5e9b-991d-d9723ed78642] Exercise 24
++> Specialize Exercise 23 to the case $c=1, k=.5, f(x)=e^{-x^{2}}$.
++>
++> Project Problem. In Exercises 25 and 26, you are asked to study the vibrations of a very long elastic beam.
++
++
++> [!exercise|1ed9bfcb-efee-58f5-b022-0f035a7954ff.local at=ed9520c2-2d7e-5f3e-8857-04021ac22d27] Exercise 25
++> The vibrations of a very long beam extending in both directions on the $x$-axis are modeled by the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t^{2}} & =-c^{2} \frac{\partial^{4} u}{\partial x^{4}}, & -\infty<x<\infty, t>0 \\
++> u(x, 0) & =f(x), & \frac{\partial u}{\partial t}(x, 0)=g(x) .
++> \end{aligned}
++> $$
++>
++> Solve this problem by the Fourier transform method. 
++
++
++> [!exercise|d3d311c8-4bc2-5183-b367-db4cd01e0931.local at=b1013ef0-ef38-58f7-bf21-4da13a5f3dc2] Exercise 26
++> Specialize Exercise 25 to the case $c=1, f(x)=\delta_{0}(x), g(x)=0$, where $\delta_{0}(x)$ is the Dirac delta function.
++> Project Problem. Do Exercises 27 and 28.
++
++
++> [!exercise|a59cf80b-5dff-501f-86a2-5dac0d6a222e.local at=160830ec-b778-56da-973c-0d5ef34b932e] Exercise 27
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{3} u}{\partial x^{3}}, \quad-\infty<x<\infty, t>0 \\
++> u(x, 0) & =f(x)
++> \end{aligned}
++> $$
++>
++> This equation is known as the linearized Korteweg-de Vries equation.
++
++
++> [!exercise|9f10303d-1144-5a64-92a5-ad8c2730fdae.local at=66561019-74da-5581-b13a-246a160a2b42] Exercise 28
++> Specialize Exercise 27 to the case $c=1, f(x)=e^{-x^{2} / 2}$.
+
+`````

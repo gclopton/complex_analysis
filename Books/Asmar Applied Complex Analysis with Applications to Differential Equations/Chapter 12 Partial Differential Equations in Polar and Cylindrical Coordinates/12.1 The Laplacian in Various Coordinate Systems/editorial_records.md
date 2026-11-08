@@ -17,3 +17,314 @@ For $r>0$, the angle is determined modulo $2\pi$. A principal choice is $\theta=
 ````text
 (Since the inverse tangent takes its values in the interval ( $-\pi / 2, \pi / 2$ ), we have $\theta=\tan ^{-1}\left(\frac{y}{x}\right) +k\pi$, where $k=0,1$, or -1 , depending on whether $x>0, x<0$ and $y \geq 0$, or $x<0$ and $y<0$. Also, if $x=0$, then $\theta=\pi / 2$ if $y>0$ and $-\pi / 2$ if $y<0$. See Figure 1.)
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.1 The Laplacian in Various Coordinate Systems.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.1 The Laplacian in Various Coordinate Systems.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.1 The Laplacian in Various Coordinate Systems.md
+@@ -1,10 +1,11 @@
++
+ ## Topics to Review
+ 
+-Fourier scrics (Sections 2.1-2.4) and the separation of variables method (Section 3.3) are crucial in this chapter. Section 12.1 is self-contained. It presents the Laplacian in polar, cylindrical, and spherical coordinates. Sections 12.2 and 12.3 deal with the vibrating circular membrane. These require knowledge of Bessel functions (Sections 4.7, 4.8) and Fourier series. Section 12.4 requires Fourier series. For Section 12.5, further properties of Bessel functions from Sections 12.7 and 12.8 are needed. Section 12.6 develops the eigenfunction expansions method on the disk. For this section, it is recommended to review the material of Section 3.9.
++Fourier series (Sections 7.1–7.4) and the separation of variables method (Section 11.3) are crucial in this chapter. Section 12.1 is self-contained. It presents the Laplacian in polar, cylindrical, and spherical coordinates. Sections 12.2 and 12.3 deal with the vibrating circular membrane. These require knowledge of Bessel functions (Sections 12.7, 12.8) and Fourier series. Section 12.4 requires Fourier series. For Section 12.5, further properties of Bessel functions from Sections 12.7 and 12.8 are needed. Section 12.6 develops the eigenfunction expansions method on the disk. For this section, it is recommended to review the material of Section 11.9.
+ 
+ ## Looking Ahead...
+ 
+-You recall from Section 3.6 how by varying the boundary conditions we were led to new types of series expansions. In this chapter we will solve boundary value problems over circular and cylindrical domains. It should not surprise you that the solutions will entail new series expansions; for example, Bessel series. These series look quite complicated at first, but with the help of a computer system, you will be able to plot them and see that they behave very much like Fourier series. The ideas of this chapter will be developed further in Chapter 5, where we will consider problems in spherical coordinates, giving rise to new families of special functions.
++You recall from Section 11.6 how by varying the boundary conditions we were led to new types of series expansions. In this chapter we will solve boundary value problems over circular and cylindrical domains. It should not surprise you that the solutions will entail new series expansions; for example, Bessel series. These series look quite complicated at first, but with the help of a computer system, you will be able to plot them and see that they behave very much like Fourier series. The ideas of this chapter will be developed further in Chapter 13, where we will consider problems in spherical coordinates, giving rise to new families of special functions.
+ 
+ ## 12
+ 
+@@ -32,14 +33,27 @@
+ \end{array}
+ $$
+ 
+-(Since the inverse tangent takes its values in the interval ( $-\pi / 2, \pi / 2$ ), we have $\theta=\tan ^{-1}\left(\frac{y}{x}\right) \pm k \pi$, where $k=0,1$, or -1 , depending on whether $x>0, x<0$ and $y \geq 0$, or $x<0$ and $y<0$. Also, if $x=0$, then $\theta=\pi / 2$ if $y>0$ and $-\pi / 2$ if $y<0$. See Figure 1.) Differentiating $r^{2}=x^{2}+y^{2}$ with respect to $x$, we obtain
++(Since the inverse tangent takes its values in the interval ( $-\pi / 2, \pi / 2$ ), we have $\theta=\tan ^{-1}\left(\frac{y}{x}\right) +k\pi$, where $k=0,1$, or -1 , depending on whether $x>0, x<0$ and $y \geq 0$, or $x<0$ and $y<0$. Also, if $x=0$, then $\theta=\pi / 2$ if $y>0$ and $-\pi / 2$ if $y<0$. See Figure 1.)
++
++Differentiating $r^{2}=x^{2}+y^{2}$ with respect to $x$, we obtain
+ 
+ $$
+ 2 r \frac{\partial r}{\partial x}=2 x \quad \text { or } \quad \frac{\partial r}{\partial x}=\frac{x}{r} .
+ $$
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-02_359_370_1357_63.jpg)
+-Figure 1 Polar coordinates.
++```scientific-figure
++id: a728195c-3ab7-49e7-879f-934c0851d4aa
++numbered: false
++title: ""
++caption: Figure 1 Polar coordinates.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-02_359_370_1357_63.jpg
++    caption: ""
++```
++
+ 
+ Differentiating a second time with respect to $x$ and simplifying, we obtain
+ 
+@@ -69,12 +83,14 @@
+ 
+ $$
+ \frac{\partial^{2} \theta}{\partial x^{2}}+\frac{\partial^{2} \theta}{\partial y^{2}}=0
++\tag{1}
+ $$
+ 
+ and
+ 
+ $$
+ \frac{\partial \theta}{\partial x} \frac{\partial r}{\partial x}+\frac{\partial \theta}{\partial y} \frac{\partial r}{\partial y}=0
++\tag{2}
+ $$
+ 
+ We are now ready to change to polar coordinates in the Laplacian. Using the chain rule in two dimensions, we have
+@@ -113,10 +129,19 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-04_410_392_913_63.jpg)
+-Figure 2 Cylindrical coordinates.
+-
+-We should note that there is no unanimity about which spherical coordinates to call $\theta$ and which to call $\phi$. Calculus texts tend to use $\theta$ for longitude and $\phi$ for colatitude. Our notation is more common in physics texts and hence more convenient for the physical applications of Chapter 5.
++```scientific-figure
++id: 0bc254ad-610a-4b23-aa67-377ea38ddaf1
++numbered: false
++title: ""
++caption: Figure 2 Cylindrical coordinates.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-04_410_392_913_63.jpg
++    caption: ""
++```
++
+ 
+ Replacing the partial derivatives with respect to $x$ and $y$ by their expressions in terms of $r$ and $\theta$, we arrive at
+ 
+@@ -126,9 +151,15 @@
+ 
+ Simplifying with the help of the identity $x^{2}+y^{2}=r^{2}$, we get the polar form of the Laplacian
+ 
+-$$
+-\Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}}
+-$$
++> [!equation|8450766e-50ec-5f20-b45c-783e65c84f3d.local at=61614e69-06f9-58c2-9391-d0833053a16d] Laplacian in plane polar coordinates
++> For a $C^2$ scalar field expressed with $x=r\cos\theta$, $y=r\sin\theta$ and $r>0$,
++> $$
++> \Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}}
++> $$
++
++*Printed equation label: (3).*
++
++
+ 
+ ## The Laplacian in Cylindrical Coordinates
+ 
+@@ -146,11 +177,20 @@
+ 
+ where we now use $\rho$ and $\phi$ to denote polar coordinates in the $x y$-plane as illustrated in Figure 2. The cylindrical form of the Laplacian is now evident from (3):
+ 
+-$$
+-\Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial \rho^{2}}+\frac{1}{\rho} \frac{\partial u}{\partial \rho}+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \phi^{2}}+\frac{\partial^{2} u}{\partial z^{2}}
+-$$
++> [!equation|0ce2f75f-7132-54f9-ba34-ff5147e94ea3.local at=7108db11-fdb5-55ed-a364-9b0fe766a26b] Laplacian in cylindrical coordinates
++> For a $C^2$ scalar field with $x=\rho\cos\phi$, $y=\rho\sin\phi$, $z=z$ and $\rho>0$,
++> $$
++> \Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial \rho^{2}}+\frac{1}{\rho} \frac{\partial u}{\partial \rho}+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \phi^{2}}+\frac{\partial^{2} u}{\partial z^{2}}
++> $$
++
++*Printed equation label: (4).*
++
++
+ 
+ ## The Laplacian in Spherical Coordinates
++
++We should note that there is no unanimity about which spherical coordinates to call $\theta$ and which to call $\phi$. Calculus texts tend to use $\theta$ for longitude and $\phi$ for colatitude. Our notation is more common in physics texts and hence more convenient for the physical applications of Chapter 13.
++
+ 
+ We will use $(r, \theta, \phi)$ to denote the spherical coordinates of the point $(x, y, z)$. We have
+ 
+@@ -167,13 +207,25 @@
+ \rho=r \sin \theta, \quad x=\rho \cos \phi, \quad y=\rho \sin \phi, \quad \rho^{2}=x^{2}+y^{2} .
+ $$
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-05_409_436_306_42.jpg)
+-Figure 3 Spherical coordinates.
++```scientific-figure
++id: 3a0fc2ac-0733-43c0-b12e-d7a4877aacc8
++numbered: false
++title: ""
++caption: Figure 3 Spherical coordinates.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-05_409_436_306_42.jpg
++    caption: ""
++```
++
+ 
+ Our goal is to express $\nabla^{2} u$ in terms of $r, \theta$, and $\phi$. From the polar form of the Laplacian (3), we have
+ 
+ $$
+ \frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=\frac{\partial^{2} u}{\partial \rho^{2}}+\frac{1}{\rho} \frac{\partial u}{\partial \rho}+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \phi^{2}} .
++\tag{5}
+ $$
+ 
+ Observe that the relations
+@@ -186,15 +238,17 @@
+ 
+ $$
+ \frac{\partial^{2} u}{\partial z^{2}}+\frac{\partial^{2} u}{\partial \rho^{2}}=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}} .
++\tag{6}
+ $$
+ 
+ Adding $\frac{\partial^{2} u}{\partial z^{2}}$ to (5) and using (6) gives
+ 
+ $$
+ \frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}+\frac{\partial^{2} u}{\partial z^{2}}=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}} \frac{\partial^{2} u}{\partial \theta^{2}}+\frac{1}{\rho} \frac{\partial u}{\partial \rho}+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \phi^{2}} .
+-$$
+-
+-It remains to express $\partial u / \partial \rho$ in spherical coordinates. From the relation $\theta=\tan ^{-1}(\rho / z)$, we get
++\tag{7}
++$$
++
++It remains to express $\partial u / \partial \rho$ in spherical coordinates. On a local branch, $\theta=\arctan(\rho/z)$ up to a constant multiple of $\pi$; hence, for $z\ne0$, we get
+ 
+ $$
+ \frac{\partial \theta}{\partial \rho}=\frac{1}{1+(\rho / z)^{2}} \frac{1}{z}=\frac{z}{z^{2}+\rho^{2}}=\frac{z}{r^{2}}=\frac{\cos \theta}{r} .
+@@ -212,22 +266,34 @@
+ \frac{\partial r}{\partial \rho}=\frac{1-\cos ^{2} \theta}{\sin \theta}=\sin \theta .
+ $$
+ 
+-Now note that $\phi$ and $\rho$ are polar coordinates in the $x y$-plane, hence $\partial \phi / \partial \rho=$ 0 . Using the chain rule, we get
++Now note that $\phi$ and $\rho$ are polar coordinates in the $x y$-plane, hence $\partial \phi/\partial\rho=0$ . Using the chain rule, we get
+ 
+ $$
+ \frac{\partial u}{\partial \rho}=\frac{\partial u}{\partial r} \frac{\partial r}{\partial \rho}+\frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial \rho}+\frac{\partial u}{\partial \phi} \frac{\partial \phi}{\partial \rho}=\frac{\partial u}{\partial r} \frac{\rho}{r}+\frac{\partial u}{\partial \theta} \frac{\cos \theta}{r} .
+ $$
+ 
+ Substituting this in (7) and simplifying, we get the spherical form of the Laplacian:
+-(8) $\Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} u}{\partial \phi^{2}}\right)$.
+-
+-EXAMPLE 1 Use spherical coordinates to compute the Laplacian of
+-
+-$$
+-f(x, y, z)=\ln \left(x^{2}+y^{2}+z^{2}\right), \quad(x, y, z) \neq(0,0,0)
+-$$
+-
+-Solution In spherical coordinates, we have
++> [!equation|8d333aa3-8fdf-559b-b0f5-a285d5c75c35.local at=6ded986c-f19e-5eeb-91dd-f91f8e602c07] Laplacian in spherical coordinates with polar angle measured from the positive z-axis
++> For a $C^2$ scalar field, use $x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$, $z=r\cos\theta$. Here $r>0$, $0<\theta<\pi$ is colatitude and $\phi$ is azimuth. Then
++> $$
++> \Delta u=\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} u}{\partial \phi^{2}}\right)
++> $$
++> The coordinate expression is singular on the axis and at the origin; for a smooth Cartesian field, values there are obtained by appropriate limits.
++
++*Printed equation label: (8).*
++
++
++
++> [!exercise|83991a77-aa0c-57ff-8db7-fb339d2be854.local at=3eb97884-6865-5519-a400-b899308dfade] EXAMPLE 1 Laplacian of a radial logarithm
++> Use spherical coordinates to compute the Laplacian of
++>
++> $$
++> f(x, y, z)=\ln \left(x^{2}+y^{2}+z^{2}\right), \quad(x, y, z) \neq(0,0,0)
++> $$
++
++##### solution
++
++In spherical coordinates, we have
+ 
+ $$
+ f(r, \theta, \phi)=\ln r^{2}=2 \ln r
+@@ -239,23 +305,57 @@
+ \nabla^{2} f=\frac{\partial^{2} f}{\partial r^{2}}+\frac{2}{r} \frac{\partial f}{\partial r}=-\frac{2}{r^{2}}+\frac{4}{r^{2}}=\frac{2}{r^{2}}
+ $$
+ 
+-## Exercises 4.1
+-
+-In Exercises 1-8, compute the Laplacian in an appropriate coordinate system and decide if the given function satisfies Laplace's equation $\nabla^{2} u=0$. The appropriate dimension is indicated by the number of variables.
+-
+-1. $u(x, y)=\frac{x}{x^{2}+y^{2}}$.
+-2. $u(x, y)=\tan ^{-1}\left(\frac{y}{x}\right)$.
+-3. $u(x, y)=\frac{1}{\sqrt{x^{2}+y^{2}}}$.
+-4. $u(x, y, z)=\frac{z}{\sqrt{x^{2}+y^{2}}}$.
+-5. $u(x, y, z)=\left(x^{2}+y^{2}+z^{2}\right)^{3 / 2}$.
+-6. $u(x, y)=\ln \left(x^{2}+y^{2}\right)$.
+-7. $u(x, y, z)=\left(x^{2}+y^{2}+z^{2}\right)^{-1 / 2}$.
+-8. $u(x, y)=\tan ^{-1}\left(\frac{y}{x}\right) \frac{y}{x^{2}+y^{2}}$.
+-9. (a) Show that if $u(r, \theta, \phi)$ depends only on $r$, then the Laplacian takes the form $\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}$.
+-(b) What is the form of the Laplacian if the function $u$ depends only on $r$ and $\theta$ ?
+-10. Supply all the details to derive (8) from (7).
+-11. Project Problem: Harmonic functions. Recall from Section 3.1 that $u(x, y)$ is called a harmonic function if it satisfies Laplace's equation.
+-(a) Show that if $u$ and $v$ are harmonic and $\alpha$ and $\beta$ are numbers, then $\alpha u+\beta v$ is harmonic.
+-(b) Give an example of two harmonic functions $u$ and $v$ such that $u v$ is not harmonic.
+-(c) Show that if $u$ and $u^{2}$ are both harmonic, then $u$ must be constant. [Hint: Write down what it means for $u$ and $u^{2}$ to be harmonic in terms of their partial derivatives.]
+-(d) Show that if $u, v$ and $u^{2}+v^{2}$ are harmonic, then $u$ and $v$ must be constant.
++## Exercises 12.1
++
++
++> [!prompt|45db7969-e172-57cb-bfc2-2a21cb441e61.local at=39e0ef43-55d4-58fd-9262-7b724e41c5b7] Shared exercise instructions
++> In Exercises 1-8, compute the Laplacian in an appropriate coordinate system and decide if the given function satisfies Laplace's equation $\nabla^{2} u=0$. The appropriate dimension is indicated by the number of variables. Work on open regions where the displayed function is defined and smooth; do not include its singularities or angular branch cuts.
++
++
++> [!exercise|e7591011-2caf-5042-993e-92caa58094cc.local at=a1d0c4e9-dbb6-5720-8b28-1326fd023d58] Exercise 1
++> $u(x, y)=\frac{x}{x^{2}+y^{2}}$.
++
++
++> [!exercise|9455a01e-e72e-555e-98e1-5b44ea999007.local at=b0465c6d-61bf-5af6-8df2-2a71f962ceee] Exercise 2
++> $u(x, y)=\tan ^{-1}\left(\frac{y}{x}\right)$.
++
++
++> [!exercise|41efe6c1-b661-5930-a6b1-7e90397cf667.local at=5c5b4356-dfac-588a-879c-f2b39ba25032] Exercise 3
++> $u(x, y)=\frac{1}{\sqrt{x^{2}+y^{2}}}$.
++
++
++> [!exercise|498418e4-1cfb-502e-8edd-beb19ad9ee4f.local at=fba0ecf0-b762-5439-8469-981b7c1326e3] Exercise 4
++> $u(x, y, z)=\frac{z}{\sqrt{x^{2}+y^{2}}}$.
++
++
++> [!exercise|a04f4a4e-b902-5915-a67c-5773f9f429b2.local at=a76fc100-e996-593e-aab6-32d2ce573129] Exercise 5
++> $u(x, y, z)=\left(x^{2}+y^{2}+z^{2}\right)^{3 / 2}$.
++
++
++> [!exercise|72de6742-e022-5dc7-9951-7926a0501e61.local at=c6eb3ee9-0127-5ae6-8437-dec15a84bac2] Exercise 6
++> $u(x, y)=\ln \left(x^{2}+y^{2}\right)$.
++
++
++> [!exercise|ad2d0f99-3aa2-5f2c-af28-ed4d1ae47255.local at=41f3797e-8617-5c57-b0e1-463d34822ce8] Exercise 7
++> $u(x, y, z)=\left(x^{2}+y^{2}+z^{2}\right)^{-1 / 2}$.
++
++
++> [!exercise|117b0e4f-e76b-5a35-8363-f9f82c1a8cbe.local at=8b13ea47-52d9-543b-a4d3-b8e5aad74837] Exercise 8
++> $u(x, y)=\tan ^{-1}\left(\frac{y}{x}\right) \frac{y}{x^{2}+y^{2}}$.
++
++
++> [!exercise|a02d03c9-4e97-55a0-8f5b-c5cba27926d3.local at=e112b618-f998-5675-ab8d-211e0fffc74b] Exercise 9
++> (a) Show that if $u(r, \theta, \phi)$ depends only on $r$, then the Laplacian takes the form $\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}$.
++> (b) What is the form of the Laplacian if the function $u$ depends only on $r$ and $\theta$ ?
++
++
++> [!exercise|ac7e88a4-fb70-557c-9d50-3a40b8463dcf.local at=fd15d113-eddb-56cf-ba87-292c84db1e04] Exercise 10
++> Supply all the details to derive (8) from (7).
++
++
++> [!exercise|ec42922e-d264-5d59-964d-7ad43daf8a4f.local at=d688cdad-e00f-56da-bb35-6244684331d1] Exercise 11
++> Project Problem: Harmonic functions. Take real-valued $C^2$ functions on a connected open region. Recall from Section 11.1 that $u(x, y)$ is called a harmonic function if it satisfies Laplace's equation.
++> (a) Show that if $u$ and $v$ are harmonic and $\alpha$ and $\beta$ are numbers, then $\alpha u+\beta v$ is harmonic.
++> (b) Give an example of two harmonic functions $u$ and $v$ such that $u v$ is not harmonic.
++> (c) Show that if $u$ and $u^{2}$ are both harmonic, then $u$ must be constant. [Hint: Write down what it means for $u$ and $u^{2}$ to be harmonic in terms of their partial derivatives.]
++> (d) Show that if $u, v$ and $u^{2}+v^{2}$ are harmonic, then $u$ and $v$ must be constant.
+
+`````

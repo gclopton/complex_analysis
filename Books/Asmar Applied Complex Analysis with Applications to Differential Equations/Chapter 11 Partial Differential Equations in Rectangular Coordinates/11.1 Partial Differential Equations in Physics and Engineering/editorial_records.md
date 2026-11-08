@@ -65,3 +65,374 @@ This construction is local: writing $\xi=x(0)$, the characteristic map $x=\xi+tA
 ````text
 The construction applies locally before characteristics intersect.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.1 Partial Differential Equations in Physics and Engineering.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.1 Partial Differential Equations in Physics and Engineering.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.1 Partial Differential Equations in Physics and Engineering.md
+@@ -1,6 +1,7 @@
++
+ ## Topics to Review
+ 
+-Sections 11.1 and 11.2 present introductory material. The main section of this chapter is 3.3 because it contains the general method of separation of variables. Sections 3.3, 3.5, and 3.8 use the basic theory of Fourier series as presented in Sections 2.1-2.4. Section 11.6 treats heat problems that lead to generalized Fourier series which occur for the first time in the book. Section 11.7 is an extension of Sections 11.3 and 11.5 to two dimensions. Sections 11.9-11.10 use double Fourier series (Section 11.7) and Laplace's equation (Section 11.8). Section 11.11 contains theoretical properties of the heat and Laplace's equations. This section is self-contained and builds on basic results from calculus of several variables.
++Sections 11.1 and 11.2 present introductory material. The main section of this chapter is 11.3 because it contains the general method of separation of variables. Sections 11.3, 11.5, and 11.8 use the basic theory of Fourier series as presented in Sections 7.1–7.4. Section 11.6 treats heat problems that lead to generalized Fourier series which occur for the first time in the book. Section 11.7 is an extension of Sections 11.3 and 11.5 to two dimensions. Sections 11.9-11.10 use double Fourier series (Section 11.7) and Laplace's equation (Section 11.8). Section 11.11 contains theoretical properties of the heat and Laplace's equations. This section is self-contained and builds on basic results from calculus of several variables.
+ 
+ ## Looking Ahead...
+ 
+@@ -18,9 +19,12 @@
+ 
+ ### 11.1 Partial Differential Equations in Physics and Engineering
+ 
+-As you may recall, ordinary differential equations arise naturally when modeling physical phenomena, such as mechanical and electrical oscillations. If a phenomenon involves functions of more than one variable, then the modeling will typically involve several partial derivatives and lead to a partial differential equation. As we saw in Section 1.2, partial differential equations arise in the study of vibrating strings. Indeed, as will be seen in the remainder of the book, they are fundamental to the description of the mechanics of membranes, rods, and plates, heat flow in a homogeneous body, potential theory, electromagnetism, and elasticity, to name just a few. The theory of these equations is extensive and covers many areas of applied mathematics. In this chapter we study some of the most important partial differential equations and their classical applications. To solve these equations, in Section 11.3 we will introduce the so-called method of separation of variables. This method leads naturally to solutions in terms of Fourier expansions, which will play a crucial role in the implementation of the method. We start with a sampling of equations that will be encountered in this text.
+-
+-## EXAMPLE 1 Classical partial differential equations
++As you may recall, ordinary differential equations arise naturally when modeling physical phenomena, such as mechanical and electrical oscillations. If a phenomenon involves functions of more than one variable, then the modeling will typically involve several partial derivatives and lead to a partial differential equation. As the vibrating-string model illustrates, partial differential equations arise in the study of vibrating strings. Indeed, as will be seen in the remainder of the book, they are fundamental to the description of the mechanics of membranes, rods, and plates, heat flow in a homogeneous body, potential theory, electromagnetism, and elasticity, to name just a few. The theory of these equations is extensive and covers many areas of applied mathematics. In this chapter we study some of the most important partial differential equations and their classical applications. To solve these equations, in Section 11.3 we will introduce the so-called method of separation of variables. This method leads naturally to solutions in terms of Fourier expansions, which will play a crucial role in the implementation of the method. We start with a sampling of equations that will be encountered in this text.
++
++> [!exercise] EXAMPLE 1 Classical partial differential equations
++> Write the standard PDEs for one- and two-dimensional waves and heat conduction, two-dimensional Laplace and Poisson problems, the telegraph equation, and the one-dimensional Schrödinger equation.
++
++##### solution
+ 
+ Let $u$ denote a function of two or more variables $t$ (time), $x$ and $y$ (spatial coordinates). The following are examples of partial differential equations that you will study in this book.
+ (a) $\frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}$ (one dimensional wave equation)
+@@ -32,10 +36,13 @@
+ (g) $\frac{\partial^{2} u}{\partial t^{2}}-c^{2} \frac{\partial^{2} u}{\partial x^{2}}+2 B \frac{\partial u}{\partial t}+A u=0$ (telegraph equation)
+ (h) $i \hbar \frac{\partial \psi}{\partial t}=-\frac{\hbar^{2}}{2 m} \frac{\partial^{2} \psi}{\partial x^{2}}+V(x) \psi \quad$ (one dimensional Schrödinger equation)
+ 
+-The expression $\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}$ shows up in most of the equations above. It and its higher dimensional analogs are known as the Laplacian of $u$ and are denoted by $\Delta u$ or $\nabla^{2} u$.
+-
+-The order of the partial differential equation is the highest order of derivative that appears. The equation is called linear if the unknown
+-function and the partial derivatives are of the first degree and at most one of these appears in any given term, otherwise, the equation is called nonlinear. The differential equations of Example 1 are all linear of the second order. But the second order equation
++> [!definition] Laplacian in Euclidean coordinates
++> The expression $\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}$ and its higher dimensional analogs are known as the Laplacian of $u$ and are denoted by $\Delta u$ or $\nabla^{2} u$.
++
++> [!definition] Order and linearity of a partial differential equation
++> The order of the partial differential equation is the highest order of derivative that appears. The equation is called linear if the unknown function and the partial derivatives are of the first degree and at most one of these appears in any given term, otherwise, the equation is called nonlinear.
++
++The differential equations of Example 1 are all linear of the second order. But the second order equation
+ 
+ $$
+ \frac{\partial^{2} u}{\partial t \partial x}+u \frac{\partial u}{\partial x}=e^{x}
+@@ -46,19 +53,22 @@
+ 
+ $$
+ A u_{x x}+2 B u_{x y}+C u_{y y}+D u_{x}+E u_{y}+F u=G
++\tag{1}
+ $$
+ 
+ where $A, B, C, D, E, F, G$ are functions of $x$ and $y$. The equation is called homogeneous if $G=0$. We shall always assume that $u$ is a nice enough function that its mixed partial derivatives are equal (for example, $u_{x y}=u_{y x}, u_{x x y}=u_{x y x}=u_{y x x}$, etc.) for partial derivatives of order less than or equal to the order of the equation in which $u$ appears. Thus we need not write an explicit term in $u_{y x}$ in (1). In general, a linear partial differential equation in which each nonzero term contains either the unknown function or one of its partial derivatives is called homogeneous; otherwise, the linear equation is called nonhomogeneous. Except for the Poisson equation, all the differential equations of Example 1 are homogeneous.
+ 
+-The modeling of a physical problem is often done with a differential equation and a set of other equations that describe the behavior of the solution on the boundary of the region under consideration. These equations are called boundary conditions. Other equations may enter into the description of a physical phenomenon such as the initial values of the solution at time $t=0$ or initial conditions. The partial differential equation along with the boundary and initial conditions is called an initial boundary value problem, or simply a boundary value problem. (We have already seen these notions illustrated in the example of the vibrating string in Section 1.2.) The concepts of linearity and homogeneity extend also to the initial and boundary conditions. For example, the initial condition $u(x, 0)+u_{x}(x, 0)=0$ is a linear homogeneous condition, while the condition $u(x, 0)+u_{x}(x, 0)=1$ is linear but not homogeneous.
+-
+-As in the case of ordinary differential equations, we have the following useful result whose verification is left as an exercise. (Compare with Theorem 4, Appendix A.1.)
+-
+-THEOREM 1 SUPERP OSITION PRINCIPLE
+-
+-If $u_{1}$ and $u_{2}$ are solutions of a linear homogeneous partial differential equation, then any linear combination $u=c_{1} u_{1}+c_{2} u_{2}$, where $c_{1}$ and $c_{2}$ are constants, is also a solution. If in addition $u_{1}$ and $u_{2}$ satisfy a linear homogeneous boundary condition, then so will $u=c_{1} u_{1}+c_{2} u_{2}$.
+-
+-## EXAMPLE 2 Superposition of solutions
++The modeling of a physical problem is often done with a differential equation and a set of other equations that describe the behavior of the solution on the boundary of the region under consideration. These equations are called boundary conditions. Other equations may enter into the description of a physical phenomenon such as the initial values of the solution at time $t=0$ or initial conditions. The partial differential equation along with the boundary and initial conditions is called an initial boundary value problem, or simply a boundary value problem. (The vibrating string in Section 11.2 illustrates these notions.) The concepts of linearity and homogeneity extend also to the initial and boundary conditions. For example, the initial condition $u(x, 0)+u_{x}(x, 0)=0$ is a linear homogeneous condition, while the condition $u(x, 0)+u_{x}(x, 0)=1$ is linear but not homogeneous.
++
++As in the case of ordinary differential equations, we have the following useful result whose verification is left as an exercise. (Compare with the ODE superposition principle in Section 10.1.)
++
++> [!theorem] Superposition Principle
++> If $u_{1}$ and $u_{2}$ are solutions of a linear homogeneous partial differential equation, then any linear combination $u=c_{1} u_{1}+c_{2} u_{2}$, where $c_{1}$ and $c_{2}$ are constants, is also a solution. If in addition $u_{1}$ and $u_{2}$ satisfy a linear homogeneous boundary condition, then so will $u=c_{1} u_{1}+c_{2} u_{2}$.
++
++> [!exercise] EXAMPLE 2 Superposition of solutions
++> Verify that $x+y$, $x^2-y^2$, $x/(x^2+y^2)$, $y/(x^2+y^2)$, $\ln(x^2+y^2)$, and $e^x\sin y$ solve the two-dimensional Laplace equation on their domains. Explain how superposition gives further solutions.
++
++##### solution
+ 
+ Consider the two dimensional Laplace equation
+ 
+@@ -72,25 +82,29 @@
+ u=x+y, u=x^{2}-y^{2}, u=\frac{x}{x^{2}+y^{2}}, u=\frac{y}{x^{2}+y^{2}}, u=\ln \left(x^{2}+y^{2}\right), u=e^{x} \sin y
+ $$
+ 
+-are all solutions. In fact, there are many more functions that satisfy Laplace's equation, some of them being given in the exercises. These are called harmonic functions. Thus, unlike the case of a linear ordinary differential equation of the second order, where its general solution can be expressed as a linear combination of two functions, a linear partial differential equation may have an infinite set of unrelated (linearly independent) solutions. The superposition principle will be particularly useful for generating further solutions. For example, we can get a solution of Laplace's equation by taking any linear combination from the above list of solutions. A specific illustration would be the function $(x+2 y) /\left(x^{2}+y^{2}\right)$.
++are all solutions on their domains; the rational and logarithmic functions require $(x,y)\ne(0,0)$. In fact, there are many more functions that satisfy Laplace's equation, some of them being given in the exercises. These are called harmonic functions. Thus, unlike the case of a linear ordinary differential equation of the second order, where its general solution can be expressed as a linear combination of two functions, a linear partial differential equation may have an infinite set of unrelated (linearly independent) solutions. The superposition principle will be particularly useful for generating further solutions. For example, we can get a solution of Laplace's equation by taking any linear combination from the above list of solutions. A specific illustration would be the function $(x+2 y) /\left(x^{2}+y^{2}\right)$.
+ 
+ Before superposing solutions, you should always check that the equation is linear and homogeneous. As our next example shows, the superposition principle fails badly if the equation is not linear.
+ 
+-## EXAMPLE 3 Failure of the superposition principle
++> [!exercise] EXAMPLE 3 Failure of the superposition principle
++> Check that $u(x,t)=x/(t+1)$ solves $u_t+uu_x=0$ for $t\ne-1$. Determine which constant multiples of this solution also solve the equation.
++
++##### solution
+ 
+ The first order equation
+ 
+ $$
+ u_{t}+u u_{x}=0
+-$$
+-
+-is nonlinear because of the term $u u_{x}$. It can be solved using the method of characteristic curves, as we did in Section 1.1 (see the part on nonlinear equations in the exercises, below). You can check by plugging into (2) that
++\tag{2}
++$$
++
++is nonlinear because of the term $u u_{x}$. It can be solved using the method of characteristic curves, as outlined in the exercises below (see the part on nonlinear equations in the exercises, below). You can check by plugging into (2) that
+ 
+ $$
+ u(x, t)=\frac{x}{t+1}
+ $$
+ 
+-is a solution. However, you can see immediately that a scalar multiple of this solution, say
++is a solution for $t\ne-1$. However, you can see immediately that a scalar multiple of this solution, say
+ 
+ $$
+ \frac{c x}{t+1}
+@@ -100,87 +114,133 @@
+ 
+ In the next section we will introduce modeling techniques and show how some of the equations that we encountered in this section arise in applications. Our focus will be on the wave equation.
+ 
+-## Exercises 3.1
+-
+-In Exercises 1-6 decide whether the given partial differential equation and boundary or initial conditions are linear or nonlinear, and, if linear, whether they are homogeneous or nonhomogeneous. Determine the order of the partial differential equation.
+-
+-1. $u_{x x}+u_{x y}=2 u, \quad u_{x}(0, y)=0$.
+-2. $u_{x x}+x u_{x y}=2, u(x, 0)=0, u(x, 1)=0$.
+-3. $u_{x x}-u_{t}=f(x, t), \quad u_{t}(x, 0)=2$.
+-4. $u_{x x}=u_{t}, \quad u(x, 0)=1, \quad u(x, 1)=0$.
+-5. $u_{t} u_{x}+u_{x t}=2 u, \quad u(0, t)+u_{x}(0, t)=0$.
+-6. $u_{x x}+e^{t} u_{t t}=u \cos x, \quad u(x, 0)+u(x, 1)=0$.
+-7. Verify that the given functions are solutions of the two dimensional Laplace equation.
+-(a) $\quad u=x+y$.
+-(b) $\quad u=x^{2}-y^{2}$.
+-(c) $\quad u=\frac{x}{x^{2}+y^{2}}$.
+-(d) $\quad u=\frac{y}{x^{2}+y^{2}}$.
+-(e) $\quad u=\ln \left(x^{2}+y^{2}\right)$.
+-(f) $\quad u=e^{y} \cos x$.
+-(g) $\quad u=\ln \left(x^{2}+y^{2}\right)+e^{y} \cos x$.
+-(h) $\quad u=e^{y} \cos x+x+y$.
+-8. Verify that the function
+-
+-$$
+-u=\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}
+-$$
+-
+-is a solution of the three dimensional Laplace equation
+-
+-$$
+-u_{x x}+u_{y y}+u_{z z}=0
+-$$
+-
+-9. Consider the general homogeneous linear second order partial differential equation
+-
+-$$
+-A u_{x x}+2 B u_{x y}+C u_{y y}+D u_{x}+E u_{y}+F u=0 .
+-$$
+-
+-(a) Show that the function $u(x, y)=e^{a x} e^{b y}$ is a solution if and only if $a$ and $b$ satisfy the equation
+-
+-$$
+-A a^{2}+2 B a b+C b^{2}+D a+E b+F=0
+-$$
+-
+-(b) Find at least four solutions of the equation
+-
+-$$
+-u_{x x}+2 u_{x y}+u_{y y}+2 u_{x}+2 u_{y}+u=0
+-$$
+-
+-10. The telegraph equation
+-
+-$$
+-u_{t t}+2 B u_{t}-c^{2} u_{x x}+A u=0
+-$$
+-
+-governs the flow of electricity along a cable. Use Exercise 9 to find two solutions assuming $c>0$ and $A>0$.
+-11. Classification of second-order linear equations. A second order linear partial differential equation in two variables, written in the form (1), is called elliptic if $A C-B^{2}>0$; hyperbolic if $A C-B^{2}<0$; parabolic if $A C-B^{2}=0$. Classify
+-equations (a), (c), (e), (f), and (g) of Example 1 according to these definitions (if the equation involves $t$, treat $t$ as $y$ in equation (1)).
+-
+-Project Problem: Nonlinear equations of the first order. These equations are of great importance in modeling of traffic flow, shock waves, waves breaking the sound barrier and many other branches of applied mathematics. In Exercises 12-14 you will study the nonlinear equation
+-
+-$$
+-u_{t}+A(u) u_{x}=0, \text { with initial condition } u(x, 0)=\phi(x),
+-$$
+-
+-where $A(u)$ is a function of $u$. When $A(u)=u$, (3) reduces to the equation of Example 3.
+-12. Rewrite the following outlined solution of (3) by providing as many details as possible. The solution is based on the notion of characteristic curves from Section 1.1.
+-Step 1: Interpret (3) as a directional derivative and conclude that $u(x(t), t)$ is constant on the curve $x=x(t)$, with direction field given by
+-
+-$$
+-\frac{d x}{d t}=A(u(x(t), t))
+-$$
+-
+-These are the characteristic curves of (3).
+-Step 2: Let $x(t)$ denote a characteristic curve (a solution of (4)). Since $u$ is constant along $(x(t), t)$, it follows that $u(x(t), t)=u(x(0), 0)=\phi(x(0))$, by (3). Hence $A(u(x(t), t))$ is constant and equals $A(\phi(x(0)))$. We conclude from (4) that the characteristic curves are straight lines with slopes $A(\phi(x(0)))$. We write these lines in the form
+-
+-$$
+-x=t A(\phi(x(0)))+x(0)
+-$$
+-
+-Step 3: We complete the solution of (3) by solving for $x(0)$ in the preceding equation to get an implicit relation for the characteristic lines, of the form $L(x, t)=x(0)$. The final solution of (3) will be of the form $u(x, t)=f(L(x, t))$, where $f$ is a function chosen so as to satisfy the initial condition in (3). That is, $f(L(x, 0))=\phi(x)$.
++## Exercises 11.1
++
++
++> [!prompt] Shared exercise instructions
++> In Exercises 1-6 decide whether the given partial differential equation and boundary or initial conditions are linear or nonlinear, and, if linear, whether they are homogeneous or nonhomogeneous. Determine the order of the partial differential equation.
++
++
++> [!exercise] Exercise 1
++> $u_{x x}+u_{x y}=2 u, \quad u_{x}(0, y)=0$.
++
++
++> [!exercise] Exercise 2
++> $u_{x x}+x u_{x y}=2, u(x, 0)=0, u(x, 1)=0$.
++
++
++> [!exercise] Exercise 3
++> $u_{x x}-u_{t}=f(x, t), \quad u_{t}(x, 0)=2$.
++
++
++> [!exercise] Exercise 4
++> $u_{x x}=u_{t}, \quad u(x, 0)=1, \quad u(x, 1)=0$.
++
++
++> [!exercise] Exercise 5
++> $u_{t} u_{x}+u_{x t}=2 u, \quad u(0, t)+u_{x}(0, t)=0$.
++
++
++> [!exercise] Exercise 6
++> $u_{x x}+e^{t} u_{t t}=u \cos x, \quad u(x, 0)+u(x, 1)=0$.
++
++
++> [!exercise] Exercise 7
++> Verify that the given functions are solutions of the two dimensional Laplace equation on their domains (exclude the origin for the rational and logarithmic functions).
++> (a) $\quad u=x+y$.
++> (b) $\quad u=x^{2}-y^{2}$.
++> (c) $\quad u=\frac{x}{x^{2}+y^{2}}$.
++> (d) $\quad u=\frac{y}{x^{2}+y^{2}}$.
++> (e) $\quad u=\ln \left(x^{2}+y^{2}\right)$.
++> (f) $\quad u=e^{y} \cos x$.
++> (g) $\quad u=\ln \left(x^{2}+y^{2}\right)+e^{y} \cos x$.
++> (h) $\quad u=e^{y} \cos x+x+y$.
++
++
++> [!exercise] Exercise 8
++> Verify that the function
++>
++> $$
++> u=\frac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}
++> $$
++>
++> is a solution away from the origin of the three dimensional Laplace equation
++>
++> $$
++> u_{x x}+u_{y y}+u_{z z}=0
++> $$
++
++
++> [!exercise] Exercise 9
++> Consider the general homogeneous linear second order partial differential equation
++>
++> $$
++> A u_{x x}+2 B u_{x y}+C u_{y y}+D u_{x}+E u_{y}+F u=0 .
++> $$
++>
++> (a) Show that the function $u(x, y)=e^{a x} e^{b y}$ is a solution if and only if $a$ and $b$ satisfy the equation
++>
++> $$
++> A a^{2}+2 B a b+C b^{2}+D a+E b+F=0
++> $$
++>
++> (b) Find at least four solutions of the equation
++>
++> $$
++> u_{x x}+2 u_{x y}+u_{y y}+2 u_{x}+2 u_{y}+u=0
++> $$
++
++
++> [!exercise] Exercise 10
++> The telegraph equation
++>
++> $$
++> u_{t t}+2 B u_{t}-c^{2} u_{x x}+A u=0
++> $$
++>
++> governs the flow of electricity along a cable. Use Exercise 9 to find two solutions assuming $c>0$ and $A>0$.
++
++
++> [!exercise] Exercise 11
++> Classification of second-order linear equations. A second order linear partial differential equation in two variables, written in the form (1), is called elliptic if $A C-B^{2}>0$; hyperbolic if $A C-B^{2}<0$; parabolic if $A C-B^{2}=0$. Classify
++> equations (a), (c), (e), (f), and (g) of Example 1 according to these definitions (if the equation involves $t$, treat $t$ as $y$ in equation (1)).
++
++
++> [!prompt] Shared exercise instructions
++> Project Problem: Nonlinear equations of the first order. These equations are of great importance in modeling of traffic flow, shock waves, waves breaking the sound barrier and many other branches of applied mathematics. In Exercises 12–17 you will study the nonlinear equation
++>
++> $$
++> u_{t}+A(u) u_{x}=0, \text { with initial condition } u(x, 0)=\phi(x),
++> $$
++>
++> where $A(u)$ is a function of $u$. When $A(u)=u$, (3) reduces to the equation of Example 3.
++
++*Printed equation label: (3).*
++
++
++> [!exercise] Exercise 12
++> Rewrite the following outlined solution of (3) by providing as many details as possible. The solution is based on the notion of characteristic curves.
++> Step 1: Interpret (3) as a directional derivative and conclude that $u(x(t), t)$ is constant on the curve $x=x(t)$, with direction field given by
++>
++> $$
++> \frac{d x}{d t}=A(u(x(t), t))
++> $$
++>
++> These are the characteristic curves of (3).
++> Step 2: Let $x(t)$ denote a characteristic curve (a solution of (4)). Since $u$ is constant along $(x(t), t)$, it follows that $u(x(t), t)=u(x(0), 0)=\phi(x(0))$, by (3). Hence $A(u(x(t), t))$ is constant and equals $A(\phi(x(0)))$. We conclude from (4) that the characteristic curves are straight lines with slopes $A(\phi(x(0)))$. We write these lines in the form
++>
++> $$
++> x=t A(\phi(x(0)))+x(0)
++> $$
++>
++> Step 3: We complete the solution of (3) by solving for $x(0)$ in the preceding equation to get an implicit relation for the characteristic lines, of the form $L(x, t)=x(0)$. The final solution of (3) will be of the form $u(x, t)=f(L(x, t))$, where $f$ is a function chosen so as to satisfy the initial condition in (3). That is, $f(L(x, 0))=\phi(x)$.
++>
++> The construction applies locally before characteristics intersect.
++
++*Printed equation label: (4).*
++
++
++##### solution
+ 
+ As an illustration of this method, let us solve (2) with the initial condition $u(x, 0)=x$. Here $A(u)=u$, and $\phi(x)=x$. From Step 2, the characteristic lines are of the form $x=t x(0)+x(0)$. Solving for $x(0)$, we get $x(0)=\frac{x}{t+1}$, which yields the implicit relation $L(x, t)=\frac{x}{t+1}$. Thus the solution is
+ 
+@@ -190,9 +250,26 @@
+ 
+ Setting $t=0$ and using the initial condition, we obtain $f(x)=x$, which yields the solution $u(x, t)=\frac{x}{t+1}$. You can check the validity of this solution by plugging it back into the equation.
+ 
+-In Exercises 13-16, solve the given nonlinear problem, following the method of Exercise 12.
+-13. $u_{t}+\ln (u) u_{x}=0, \quad u(x, 0)=e^{x}$.
+-14. $u_{t}+(u+1) u_{x}=0, \quad u(x, 0)=x^{2}$.
+-[Hint: In determining $L(x, t)$ in Step 2, you will have two possible choices for a solution. Take the one that satisfies $\lim _{t \rightarrow 0} u(x, t)=u(x, 0)=x^{2}$.]
+-15. $u_{t}+(2+u) u_{x}=0, \quad u(x, 0)=x^{2}$. [Hint: See the hint for Exercise 14.]
+-16. $u_{t}+u^{2} u_{x}=0, \quad u(x, 0)=x . \quad$ 17. $u_{t}+u^{2} u_{x}=0, \quad u(x, 0)=\sqrt{x}, x>0$.
++> [!prompt] Shared exercise instructions
++> In Exercises 13–17, solve the given nonlinear problem, following the method of Exercise 12.
++
++
++> [!exercise] Exercise 13
++> $u_{t}+\ln (u) u_{x}=0, \quad u(x, 0)=e^{x}$.
++
++
++> [!exercise] Exercise 14
++> $u_{t}+(u+1) u_{x}=0, \quad u(x, 0)=x^{2}$.
++> [Hint: In determining $L(x, t)$ in Step 2, you will have two possible choices for a solution. Take the one that satisfies $\lim _{t \rightarrow 0} u(x, t)=u(x, 0)=x^{2}$.]
++
++
++> [!exercise] Exercise 15
++> $u_{t}+(2+u) u_{x}=0, \quad u(x, 0)=x^{2}$. [Hint: See the hint for Exercise 14.]
++
++
++> [!exercise] Exercise 16
++> $u_{t}+u^{2} u_{x}=0, \quad u(x, 0)=x$.
++
++
++> [!exercise] Exercise 17
++> $u_{t}+u^{2} u_{x}=0, \quad u(x, 0)=\sqrt{x}, x>0$.
+
+`````

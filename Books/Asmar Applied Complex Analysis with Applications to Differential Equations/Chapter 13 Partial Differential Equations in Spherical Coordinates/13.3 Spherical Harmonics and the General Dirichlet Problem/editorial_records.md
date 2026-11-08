@@ -174,3 +174,750 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 >
 > Here $Y_{n,m}(\theta,\phi)=\sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}}P_n^m(\cos\theta)e^{im\phi}$, where $\theta$ is colatitude, $\phi$ is azimuth, and $P_n^m$ is the associated Legendre function.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.3 Spherical Harmonics and the General Dirichlet Problem.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.3 Spherical Harmonics and the General Dirichlet Problem.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.3 Spherical Harmonics and the General Dirichlet Problem.md
+@@ -1,17 +1,20 @@
++
+ ### 13.3 Spherical Harmonics and the General Dirichlet Problem
+ 
+-Recall from Section 4.4 that the solution of the Dirichlet problem in a disk was expressed in terms of the Fourier series of the boundary function, which was defined on the circle. The solution of the Dirichlet problem inside a ball shares a similar property: It will be expressed in terms of a "Fourier series" of the boundary function, which is defined on the sphere. Thus solving the Dirichlet problem on the sphere will require developing an analog of Fourier series expansions for functions defined on the sphere, the so-called spherical harmonics expansions. Like Fourier series, these are very useful tools, especially when dealing with boundary value problems in spherical regions, such as heat, wave, Dirichlet and Poisson problems. We will develop the theory of spherical harmonics as it arises from our solution of the Dirichlet problem.
++Recall from Section 12.4 that the solution of the Dirichlet problem in a disk was expressed in terms of the Fourier series of the boundary function, which was defined on the circle. The solution of the Dirichlet problem inside a ball shares a similar property: It will be expressed in terms of a "Fourier series" of the boundary function, which is defined on the sphere. Thus solving the Dirichlet problem on the sphere will require developing an analog of Fourier series expansions for functions defined on the sphere, the so-called spherical harmonics expansions. Like Fourier series, these are very useful tools, especially when dealing with boundary value problems in spherical regions, such as heat, wave, Dirichlet and Poisson problems. We will develop the theory of spherical harmonics as it arises from our solution of the Dirichlet problem.
+ 
+ Let us start by recalling a few facts from Section 13.1. We considered Laplace's equation in spherical coordinates
+ 
+ $$
+ \frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} u}{\partial \phi^{2}}\right)=0
++\tag{1}
+ $$
+ 
+ where $0<r<a, 0<\theta<\pi$, and $0<\phi<2 \pi$, with boundary condition
+ 
+ $$
+ u(a, \theta, \phi)=f(\theta, \phi), \quad 0<\theta<\pi, 0<\phi<2 \pi
++\tag{2}
+ $$
+ 
+ When we applied the method of separation of variables in Section 13.1, we set $u(r, \theta, \phi)=R(r) \Theta(\theta) \Phi(\phi)$, plugged into (1), proceeded in the usual way, and arrived at the three equations
+@@ -29,15 +32,13 @@
+ \Theta^{\prime \prime}+\cot \theta \Theta^{\prime}+\left(n(n+1)-m^{2} \csc ^{2} \theta\right) \Theta=0
+ $$
+ 
+-After making the change of variables $s=\cos \theta ; \frac{d s}{d \theta}=-\sin \theta$ in the last equation and simplifying, we arrived at the associated Legendre differential
+-
+-## equation
++After making the change of variables $s=\cos \theta ; \frac{d s}{d \theta}=-\sin \theta$ in the last equation and simplifying, we arrived at the associated Legendre differential equation
+ 
+ $$
+ \left(1-s^{2}\right) \frac{d^{2} \Theta}{d s^{2}}-2 s \frac{d \Theta}{d s}+\left(n(n+1)-\frac{m^{2}}{1-s^{2}}\right) \Theta=0, \quad-1<s<1 .
+ $$
+ 
+-The equation in $R$ is an Euler equation with bounded solutions $R(r)= r^{n}, 0<r<a$. The solutions of the equation in $\Phi$ are the $2 \pi$-periodic $\cos m \phi$ and $\sin m \phi$, which we combined in complex form as $\Phi(\phi)=e^{i m \phi}$. The associated Legendre differential equation is treated in detail in Section 13.7. Its solutions are the associated Legendre functions $P_{n}^{m}(s)$. We thus have the following product solutions of (1):
++The equation in $R$ is an Euler equation with bounded solutions $R(r)= r^{n}, 0<r<a$. The solutions of the equation in $\Phi$ are the $2 \pi$-periodic $\cos m \phi$ and $\sin m \phi$, which we combined in complex form as $\Phi(\phi)=e^{i m \phi}$. The associated Legendre differential equation is treated in detail in Section 13.7. Its solutions regular at both poles are scalar multiples of $P_n^m(s)$, with integer degree $n\ge0$ and $|m|\le n$. We thus have the following product solutions of (1):
+ 
+ $$
+ u(r, \theta, \phi)=r^{n} e^{i m \phi} P_{n}^{m}(\cos \theta)
+@@ -51,6 +52,7 @@
+ 
+ $$
+ P_{n}^{m}(x)=(-1)^{m}\left(1-x^{2}\right)^{m / 2} \frac{d^{m} P_{n}(x)}{d x^{m}}
++\tag{3}
+ $$
+ 
+ (see (1), Section 13.7). Since $P_{n}$ is a polynomial of degree $n$, for $P_{n}^{m}$ to be nonzero, we must take $0 \leq m \leq n$. For negative $m$ 's, we defined in (2), Section 13.7,
+@@ -59,31 +61,48 @@
+ P_{n}^{m}(x)=(-1)^{m} \frac{(n+m)!}{(n-m)!} P_{n}^{-m}(x) .
+ $$
+ 
+-This extends the definition of the associated Legendre functions for $n= 0,1,2, \ldots$, and $m=-n,-(n-1), \ldots, n-1, n$. We now define the spherical harmonics $Y_{n, m}(\theta, \phi)$ by
+-
+-$$
+-Y_{n, m}(\theta, \phi)=\sqrt{\frac{2 n+1}{4 \pi} \frac{(n-m)!}{(n+m)!}} P_{n}^{m}(\cos \theta) e^{i m \phi},
+-$$
+-
+-where $n=0,1,2, \ldots$, and $m=-n,-n+1, \ldots, n-1, n$. The coefficient in (4) is chosen so that the spherical harmonics become an orthonormal set of
+-
+-## THEOREM 1 ORTHOGONALITY RELATIONS FOR SPHERICAL HARMONICS
+-
+-functions on the surface of the sphere when using the element of surface area $\sin \theta d \theta d \phi$. More precisely, we have the following orthogonality relations.
+-
+-Let $n=0,1,2, \ldots$, and $m=-n,-n+1, \ldots, n-1, n$, and let $Y_{n, m}$ be as in (4). Then
+-(5) $\int_{0}^{2 \pi} \int_{0}^{\pi} Y_{n, m}(\theta, \phi) \bar{Y}_{n^{\prime}, m^{\prime}}(\theta, \phi) \sin \theta d \theta d \phi=0 \quad$ if $n \neq n^{\prime}$ or $m \neq m^{\prime}$, where $\bar{Y}_{n^{\prime}, m^{\prime}}$ is the complex conjugate of $Y_{n^{\prime}, m^{\prime}}$, and
+-
+-$$
+-\int_{0}^{2 \pi} \int_{0}^{\pi}\left|Y_{n, m}(\theta, \phi)\right|^{2} \sin \theta d \theta d \phi=1
+-$$
+-
+-The proofs are based on the orthogonality of the associated Legendre functions (Theorem 1, Section 13.7) and the orthogonality of the complex exponentials ((11), Section 2.6). Simply use (4) to rewrite the integrals in terms of $P_{n}^{m}(\cos \theta) e^{i m \phi}$, and then use the change of variables $s=\cos \theta$, $d s=-\sin \theta d \theta$. The details are straightforward and are left to Exercise 3.
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-15_1007_1665_1146_116.jpg)
+-Figure 1 Graphs of $r=\left|Y_{n, m}(\theta, \phi)\right|$ in spherical coordinates. Because $r$ is independent of $\phi$, the graphs are symmetric with respect to the $z$-axis.
+-
+-THEOREM 2 SPHERICAL HARMONICS SERIES EXPANSIONS
++This extends the definition of the associated Legendre functions for $n= 0,1,2, \ldots$, and $m=-n,-(n-1), \ldots, n-1, n$.
++
++> [!definition|70c0c06d-0abd-5637-a985-60980824a550.local at=867a9f45-675e-5433-9650-fbbd0289b7a8] Orthonormal complex spherical harmonics with the Condon–Shortley phase
++> We now define the spherical harmonics $Y_{n, m}(\theta, \phi)$ by
++>
++> $$
++> Y_{n, m}(\theta, \phi)=\sqrt{\frac{2 n+1}{4 \pi} \frac{(n-m)!}{(n+m)!}} P_{n}^{m}(\cos \theta) e^{i m \phi},
++> $$
++>
++> where $n=0,1,2, \ldots$, and $m=-n,-n+1, \ldots, n-1, n$.
++>
++> Here $P_n^m(x)=(-1)^m(1-x^2)^{m/2}d^mP_n(x)/dx^m$ for $0\le m\le n$, and $P_n^{-m}=(-1)^m(n-m)!P_n^m/(n+m)!$ for $1\le m\le n$. Here $P_n$ is the Legendre polynomial normalized by $P_n(1)=1$.
++
++*Printed equation label: (4).*
++
++> [!theorem|10694bbd-a986-5f2c-876f-69b68411a74e.local at=080ce504-87c9-5e15-8fd6-aaa180d59f5d] Orthogonality Relations for Spherical Harmonics
++> Let $n=0,1,2, \ldots$, and $m=-n,-n+1, \ldots, n-1, n$, and let $Y_{n, m}$ be the normalized spherical harmonics. Then
++> $\int_{0}^{2 \pi} \int_{0}^{\pi} Y_{n, m}(\theta, \phi) \bar{Y}_{n^{\prime}, m^{\prime}}(\theta, \phi) \sin \theta d \theta d \phi=0 \quad$ if $n \neq n^{\prime}$ or $m \neq m^{\prime}$, where $\bar{Y}_{n^{\prime}, m^{\prime}}$ is the complex conjugate of $Y_{n^{\prime}, m^{\prime}}$, and
++>
++> $$
++> \int_{0}^{2 \pi} \int_{0}^{\pi}\left|Y_{n, m}(\theta, \phi)\right|^{2} \sin \theta d \theta d \phi=1
++> $$
++>
++> Here $Y_{n,m}(\theta,\phi)=\sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}}P_n^m(\cos\theta)e^{im\phi}$, where $\theta$ is colatitude, $\phi$ is azimuth, and $P_n^m$ is the associated Legendre function.
++
++*Printed equation labels: (5) orthogonality of distinct harmonics; (6) unit squared norm.*
++
++The proofs are based on the orthogonality of the associated Legendre functions (Theorem 1, Section 13.7) and the orthogonality of the complex exponentials ((11), Section 7.6). Simply use (4) to rewrite the integrals in terms of $P_{n}^{m}(\cos \theta) e^{i m \phi}$, and then use the change of variables $s=\cos \theta$, $d s=-\sin \theta d \theta$. The details are straightforward and are left to Exercise 3.
++
++```scientific-figure
++id: 21acdc90-520a-4728-ace9-abfc5edac208
++numbered: false
++title: ""
++caption: Figure 1 Graphs of $r=\left|Y_{n, m}(\theta, \phi)\right|$ in spherical coordinates. Because $r$ is independent of $\phi$, the graphs are symmetric with respect to the $z$-axis.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-15_1007_1665_1146_116.jpg
++    caption: ""
++```
++
+ 
+ In Figure 1 we used spherical coordinates to plot the surfaces
+ 
+@@ -94,31 +113,59 @@
+ These surfaces represent the points $\left(\left|Y_{n, m}(\theta, \phi)\right|, \theta, \phi\right)$ and hence they show the magnitude of the spherical harmonics over a sphere centered at the origin, in the following sense. Pick a point on the sphere (centered at the origin, with radius $a>0$ ), and denote its spherical coordinates by ( $a, \theta_{0}, \phi_{0}$ ). The ray through $(0,0,0)$ and $\left(a, \theta_{0}, \phi_{0}\right)$ intersects the surface $r=\left|Y_{n, m}(\theta, \phi)\right|$ at the point $\left(\left|Y_{n, m}\left(\theta_{0}, \phi_{0}\right)\right|, \theta_{0}, \phi_{0}\right)$. The distance from the origin to that point of intersection is clearly $\left|Y_{n, m}\left(\theta_{0}, \phi_{0}\right)\right|$, which is the magnitude of the spherical harmonics at the point ( $a, \theta_{0}, \phi_{0}$ ). From (4) and the fact that $\left|e^{i m \phi}\right|=1$, it follows that $\left|Y_{n, m}(\theta, \phi)\right|$ is independent of $\phi$. This explains why the surface $r=\left|Y_{n, m}(\theta, \phi)\right|$ is symmetric with respect to the $z$-axis.
+ 
+ Our next theorem states that the spherical harmonics can be used to expand functions defined on the sphere, much as we used Fourier series and other orthogonal series expansions.
+-Let $f(\theta, \phi)$ be a function defined for all $0<\phi<2 \pi, 0<\theta<\pi$, and suppose that $f$ is $2 \pi$-periodic in $\phi$. Then we have the spherical harmonics series expansion
+-
+-$$
+-f(\theta, \phi)=\sum_{n=0}^{\infty} \sum_{m=-n}^{n} A_{n m} Y_{n, m}(\theta, \phi)
+-$$
+-
+-where the spherical harmonics coefficients are given by
+-
+-$$
+-A_{n m}=\int_{0}^{2 \pi} \int_{0}^{\pi} f(\theta, \phi) \bar{Y}_{n, m}(\theta, \phi) \sin \theta d \theta d \phi
+-$$
++> [!theorem|97f3a242-dfd4-5495-a5fb-a4e2850d691f.local at=c2fd17f9-8f57-5537-837f-b30dad59cd4c] Spherical Harmonics Series Expansions
++> Let $f(\theta, \phi)$ be a square-integrable function defined for all $0<\phi<2 \pi, 0<\theta<\pi$, and suppose that $f$ is $2 \pi$-periodic in $\phi$. Then we have the spherical harmonics series expansion
++>
++> $$
++> f(\theta, \phi)=\sum_{n=0}^{\infty} \sum_{m=-n}^{n} A_{n m} Y_{n, m}(\theta, \phi)
++> $$
++>
++> where the spherical harmonics coefficients are given by
++>
++> $$
++> A_{n m}=\int_{0}^{2 \pi} \int_{0}^{\pi} f(\theta, \phi) \bar{Y}_{n, m}(\theta, \phi) \sin \theta d \theta d \phi
++> $$
++>
++> Here $Y_{n,m}(\theta,\phi)=\sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}}P_n^m(\cos\theta)e^{im\phi}$, where $\theta$ is colatitude, $\phi$ is azimuth, and $P_n^m$ is the associated Legendre function. The series converges in mean square.
++
++*Printed equation labels: (7) spherical harmonic expansion; (8) coefficients $A_{nm}$.*
+ 
+ We can justify (8) as we have done before with other orthogonal series expansions, by using the orthogonality relations (5) and (6). The function $f$ in Theorem 2 is square integrable; that is, $\int_{0}^{2 \pi} \int_{0}^{\pi}|f(\theta, \phi)|^{2} \sin \theta d \theta d \phi<\infty$. Sufficient conditions for the pointwise convergence of the series are typically quite complicated to state. (See Orthogonal Functions, by G. Sansone, Interscience Publishers, 1959.)
+ 
+-Let us compare Theorems 1 and 2 to the complex form of Fourier series. When we defined the spherical harmonics coefficient in (8), we used the complex conjugate of the spherical harmonics, and we integrated over the sphere with respect to $\sin \theta d \theta d \phi$, the element of surface area. In Theorem 1, Section 2.6, you can think of a $2 \pi$-periodic function, $f(\theta)$, as being defined on the unit circle, by parameterizing the points of the circle by $\theta$, where $0 \leq \theta<2 \pi$. The Fourier coefficients of $f(\theta)$ are then obtained by integrating over the circle with respect to $d \theta$, the element of arc length. Thus, spherical
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_291_384_469_75.jpg)
+-Figure 2 View from above of the surface $r=f(\theta, \phi)$. As $\phi$ increases from 0 to $2 \pi, r$ increases from 0 to 1 .
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_313_440_1264_35.jpg)
+-Figure 3 Approximation of the surface in Figure 1 by the graph of a partial sum of the Dirichlet series in Example 1, with $0 \leq n \leq 10$ and $-n \leq m \leq n$.
+-
+-harmonics series expansions are the natural analogues of Fourier series for functions defined on the surface of the unit sphere.
+-
+-## EXAMPLE 1 A spherical harmonics series expansion
++Let us compare Theorems 1 and 2 to the complex form of Fourier series. When we defined the spherical harmonics coefficient in (8), we used the complex conjugate of the spherical harmonics, and we integrated over the sphere with respect to $\sin \theta d \theta d \phi$, the element of surface area. In Theorem 1, Section 7.6, you can think of a $2 \pi$-periodic function, $f(\theta)$, as being defined on the unit circle, by parameterizing the points of the circle by $\theta$, where $0 \leq \theta<2 \pi$. The Fourier coefficients of $f(\theta)$ are then obtained by integrating over the circle with respect to $d \theta$, the element of arc length. Thus, spherical harmonics series expansions are the natural analogues of Fourier series for functions defined on the surface of the unit sphere.
++
++```scientific-figure
++id: 7fa5ed85-f43d-4394-b0c7-cea6ddd4fc71
++numbered: false
++title: ""
++caption: Figure 2 View from above of the surface $r=f(\theta, \phi)$. As $\phi$ increases from 0 to $2 \pi, r$ increases from 0 to 1 .
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_291_384_469_75.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: a2a3e455-28ab-4f56-8a63-797a916a4eca
++numbered: false
++title: ""
++caption: Figure 3 Approximation of the surface in Figure 2 by the graph of a partial sum of the Dirichlet series in Example 1, with $0 \leq n \leq 10$ and $-n \leq m \leq n$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_313_440_1264_35.jpg
++    caption: ""
++```
++
++
++> [!exercise|cd9e8d09-c1fd-5f14-8fc3-bb8591218537.local at=0763e635-3d77-541b-ae00-c1f3988ce3b2] EXAMPLE 1 A spherical harmonics series expansion
++> Expand the $2\pi$-periodic function $f(\theta,\phi)=\phi/(2\pi)$, $0<\theta<\pi$, $0<\phi<2\pi$, in spherical harmonics. Compute the coefficients for degrees $n=0,1,2$, write the resulting partial sum, and illustrate how larger partial sums approximate the surface.
++
++##### solution
+ 
+ Consider the function $f(\theta, \phi)=\frac{1}{2 \pi} \phi$ for $0<\theta<\pi, 0<\phi<2 \pi$, where $f$ is $2 \pi$ periodic in $\phi$. The surface $r=f(\theta, \phi)$ is shown in Figure 2. As $\phi$ increases from 0 to $2 \pi, f$ increases from 0 to 1 . Note the discontinuity of the graph at $\phi=0$ or $\phi=2 \pi$. To expand $f$ in a spherical harmonics series, we appeal to Theorem 2. Using (8) and (4), we find
+ 
+@@ -127,9 +174,10 @@
+ A_{n m} & =\int_{0}^{2 \pi} \int_{0}^{\pi} f(\theta, \phi) \bar{Y}_{n, m}(\theta, \phi) \sin \theta d \theta d \phi \\
+ & =\frac{1}{2 \pi} \sqrt{\frac{2 n+1}{4 \pi} \frac{(n-m)!}{(n+m)!}} \int_{0}^{2 \pi} \phi e^{-i m \phi} d \phi \int_{0}^{\pi} P_{n}^{m}(\cos \theta) \sin \theta d \theta
+ \end{aligned}
+-$$
+-
+-The inner integral is straightforward to evaluate using integration by parts (see Exercise 5). The change of variables $\cos \theta=s$ transforms the second integral into
++\tag{9}
++$$
++
++The integral in $\phi$ is straightforward to evaluate using integration by parts (see Exercise 5). The change of variables $\cos \theta=s$ transforms the second integral into
+ 
+ $$
+ \int_{-1}^{1} P_{n}^{m}(s) d s
+@@ -137,13 +185,43 @@
+ 
+ Particular values of this integral can be evaluated by appealing to properties of the associated Legendre functions (see Exercise 6). For example, from Section 13.7, we know that $P_{n}^{m}(s)$ is odd if $n+m$ is odd, and hence its integral as $s$ varies from -1 to 1 is zero. Hence when $n+m$ is odd, we have $A_{n m}=0$. Table 1 shows the coefficients corresponding to $n=0,1,2$ and $m=-n, \ldots, n$.
+ 
+-| $n \backslash m$ | -2 | -1 | 0 | 1 | 2 |
+-| :---: | :---: | :---: | :---: | :---: | :---: |
+-| 0 |  |  | $\sqrt{\pi}$ |  |  |
+-| 1 |  | $\frac{-i}{4} \sqrt{\frac{3 \pi}{2}}$ | 0 | $\frac{-i}{4} \sqrt{\frac{3 \pi}{2}}$ |  |
+-| 2 | $\frac{-i}{2} \sqrt{\frac{5}{6 \pi}}$ | 0 | 0 | 0 | $\frac{i}{2} \sqrt{\frac{5}{6 \pi}}$ |
+-
+-Table 1 Spherical harmonics coefficients $A_{n m}$.
++```scientific-table
++id: 59887f62-b97a-480d-98c7-eb9a4fc00241
++numbered: false
++title: ""
++caption: Table 1 Spherical harmonics coefficients $A_{n m}$.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $n \backslash m$
++    - text: "-2"
++    - text: "-1"
++    - text: "0"
++    - text: "1"
++    - text: "2"
++  - - text: "0"
++    - text: ""
++    - text: ""
++    - text: $\sqrt{\pi}$
++    - text: ""
++    - text: ""
++  - - text: "1"
++    - text: ""
++    - text: $\frac{-i}{4} \sqrt{\frac{3 \pi}{2}}$
++    - text: "0"
++    - text: $\frac{-i}{4} \sqrt{\frac{3 \pi}{2}}$
++    - text: ""
++  - - text: "2"
++    - text: $\frac{-i}{2} \sqrt{\frac{5}{6 \pi}}$
++    - text: "0"
++    - text: "0"
++    - text: "0"
++    - text: $\frac{i}{2} \sqrt{\frac{5}{6 \pi}}$
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
+ 
+ Partial sums of the spherical harmonics series (7) can now be formed using the coefficients from Table 1. After using the explicit form of the $Y_{n, m}$ from Exercise 1 and simplifying, we obtain
+ 
+@@ -151,19 +229,38 @@
+ f(\theta, \phi) \approx \sum_{n=0}^{2} \sum_{m=-n}^{n} A_{n m} Y_{n, m}(\theta, \phi)=\frac{1}{2}-\frac{3}{8} \sin \phi \sin \theta-\frac{5}{8 \pi} \sin 2 \phi \sin ^{2} \theta .
+ $$
+ 
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_295_1223_1911_523.jpg)
+-Figure 4
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-18_501_466_566_63.jpg)
+-Figure 5 A Dirichlet problem in a ball.
+-Figure 5 A Dirichlet problem a ball.
+-
+-## THEOREM 3 DIRICHLET PROBLEM IN A BALL
++```scientific-figure
++id: 9d768bf2-944d-4806-9557-382cae3ececd
++numbered: false
++title: ""
++caption: Figure 4 Partial sums of the spherical-harmonics expansion for fixed colatitudes.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-17_295_1223_1911_523.jpg
++    caption: ""
++```
++
+ 
+ We used a computer to calculate the spherical harmonics coefficients with $n$ varying from 0 to 10 and $-n \leq m \leq n$. Using these coefficients, we formed a partial sum of the spherical harmonics expansion, and then plotted the corresponding surface in Figure 3. Note the resemblance to the surface in Figure 2. In Figure 4, we plotted the partial sum for fixed values of $\theta$. Both Figures 3 and 4 show that the partial sum of the spherical harmonics series expansion approximates $f$, as $\theta$ varies in $(0, \pi)$ and $\phi$ varies in ( $0,2 \pi$ ). $\square$
+ 
+ ## Solution of the Dirichlet Problem in a Ball
+ 
++```scientific-figure
++id: 43336a27-7552-4f47-97e3-228071e2d51c
++numbered: false
++title: ""
++caption: Figure 5 A Dirichlet problem in a ball.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-18_501_466_566_63.jpg
++    caption: ""
++```
++
++
+ We are now in a position to derive the entire solution of the Dirichlet problem (1)-(2), illustrated in Figure 5. Let us recall the product solutions of (1),
+ 
+ $$
+@@ -174,12 +271,14 @@
+ 
+ $$
+ \left(\frac{r}{a}\right)^{n} Y_{n, m}(\theta, \phi) .
++\tag{10}
+ $$
+ 
+ Superposing scalar multiples of these solutions, we get
+ 
+ $$
+ u(r, \theta, \phi)=\sum_{n=0}^{\infty} \sum_{m=-n}^{n} A_{n m}\left(\frac{r}{a}\right)^{n} Y_{n, m}(\theta, \phi),
++\tag{11}
+ $$
+ 
+ where the coefficient $A_{n m}$ will be determined from the boundary condition (2). Setting $r=a$ in (11) and using (2), we get
+@@ -190,11 +289,23 @@
+ 
+ which is the spherical harmonics expansion of $f$. Hence $A_{n m}$ is given by (8). We summarize our findings as follows.
+ 
+-The solution of (1) subject to the boundary condition (2) is given by (11), where $A_{n m}$ is the spherical harmonics coefficient of the boundary function $f$ and is given by (8).
+-
+-You should compare (11), the solution of the Dirichlet problem in a ball, to (4), Section 4.4, the solution of the Dirichlet problem in a disk. In both cases, the solution has a nice expression in terms of the "Fourier coefficients" of the boundary function.
+-
+-## EXAMPLE 2 A Dirichlet problem inside the unit ball
++> [!theorem|dc75bd76-a3d7-5017-99e8-77e5238bed47.local at=b3ff9dc1-5b54-565e-a598-bd6d0a291469] Dirichlet Problem in a Ball
++> The solution of $\nabla^2u=0$ in the ball $r<a$, subject to the boundary condition $u(a,\theta,\phi)=f(\theta,\phi)$ for continuous $f$, is given by
++> $$
++> u(r,\theta,\phi)=\sum_{n=0}^{\infty}\sum_{m=-n}^{n}A_{nm}\left(\frac ra\right)^nY_{n,m}(\theta,\phi),\qquad 0\le r<a,
++> $$
++> where $A_{nm}$ is the spherical harmonics coefficient of the boundary function $f$ and is given by
++> $$
++> A_{nm}=\int_0^{2\pi}\int_0^\pi f(\theta,\phi)\overline{Y_{n,m}(\theta,\phi)}\sin\theta\,d\theta\,d\phi.
++> $$
++> Here $Y_{n,m}(\theta,\phi)=\sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}}P_n^m(\cos\theta)e^{im\phi}$, where $\theta$ is colatitude, $\phi$ is azimuth, and $P_n^m$ is the associated Legendre function.
++
++You should compare (11), the solution of the Dirichlet problem in a ball, to (4), Section 12.4, the solution of the Dirichlet problem in a disk. In both cases, the solution has a nice expression in terms of the "Fourier coefficients" of the boundary function.
++
++> [!exercise|2be1cfe2-b33c-5e74-a238-2da8fbf48521.local at=2aedad3c-202e-57d7-b673-8064e3df344f] EXAMPLE 2 A Dirichlet problem inside the unit ball
++> Solve the Dirichlet problem in the unit ball with boundary data $f(\theta,\phi)=\phi/(2\pi)$, periodically extended in azimuth. Use the coefficients from Example 1 to obtain the partial sum through degree two.
++
++##### solution
+ 
+ If we want to solve the Dirichlet problem inside the unit ball with boundary values given by the function $f$ in Example 1, appealing to Theorem 3, we find the solution
+ 
+@@ -225,140 +336,241 @@
+ 
+ $$
+ \frac{\partial^{2} Y}{\partial \theta^{2}}+\cot \theta \frac{\partial Y}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} Y}{\partial \phi^{2}}+\mu Y=0
++\tag{12}
+ $$
+ 
+ where $\mu$ is a separation constant. Again, from our knowledge of the solution of Laplace's equation (1), we conclude that (12) has nontrivial solutions when $\mu=\mu_{n}=n(n+1), \quad n=0,1,2,3, \ldots$. To each $\mu=n(n+1)$ correspond $2 n+1$ spherical harmonics solutions $Y(\theta, \phi)=Y_{n, m}(\theta, \phi),|m| \leq n$. We summarize these results as follows.
+ 
+-THEOREM 4 DIFFERENTIAL EQUATION FOR THE SPHERICAL HARMONICS
+-
+-The equation
+-
+-$$
+-\frac{\partial^{2} Y}{\partial \theta^{2}}+\cot \theta \frac{\partial Y}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} Y}{\partial \phi^{2}}+\mu Y=0
+-$$
+-
+-where $0<\theta<\pi, 0<\phi<2 \pi$, admits nontrivial bounded solutions that are $2 \pi$-periodic in $\phi$ when
+-
+-$$
+-\mu=n(n+1), \quad n=0,1,2,3, \ldots .
+-$$
+-
+-To each acceptable value of $\mu$ (or eigenvalue) we have $2 n+1$ nontrivial solutions (or eigenfunctions) given by the spherical harmonics
+-
+-$$
+-Y(\theta, \phi)=Y_{n, m}(\theta, \phi), \quad|m| \leq n .
+-$$
+-
+-The eigenfunctions are given explicitly by (4) and satisfy the orthogonality relations of Theorem 1.
+-
+-## Exercises 5.3
+-
+-1. Spherical harmonics Use (4) and the list of associated Legendre functions from Example 1, Section 13.7, to derive the following list of spherical harmonics for $n=0,1,2,3$, and $m=-n, \ldots, n$.
+-
+-$$
+-\begin{aligned}
+-& \text { (a) }(n=0) \quad Y_{0,0}(\theta, \phi)=\frac{1}{2 \sqrt{\pi}} . \\
+-& \begin{array}{l}
+-\text { (b) }(n=1) \quad Y_{1,-1}(\theta, \phi)=\frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{-i \phi} ; Y_{1,0}(\theta, \phi)=\frac{1}{2} \sqrt{\frac{3}{\pi}} \cos \theta ; \\
+-Y_{1,1}(\theta, \phi)=-\frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{i \phi} .
+-\end{array} \\
+-& \text { (c) }(n=2) \quad Y_{2,-2}(\theta, \phi)=\frac{3}{4} \sqrt{\frac{5}{6 \pi}} \sin ^{2} \theta e^{-2 i \phi} ; Y_{2,-1}(\theta, \phi)=\frac{3}{2} \sqrt{\frac{5}{6 \pi}} \cos \theta \sin \theta e^{-i \phi} ; \\
+-& Y_{2,0}(\theta, \phi)=\frac{1}{4} \sqrt{\frac{5}{\pi}}\left(-1+3 \cos ^{2} \theta\right) ; \\
+-& Y_{2,1}(\theta, \phi)=-\frac{3}{2} \sqrt{\frac{5}{6 \pi}} \cos \theta \sin \theta e^{i \phi} ; Y_{2,2}(\theta, \phi)=\frac{3}{4} \sqrt{\frac{5}{6 \pi}} \sin ^{2} \theta e^{2 i \phi} . \\
+-& \text { (d) }(n=3) Y_{3,-3}(\theta, \phi)=\frac{1}{8} \sqrt{\frac{35}{\pi}} \sin ^{3} \theta e^{-3 i \phi} ; Y_{3,-2}(\theta, \phi)=\frac{15}{4} \sqrt{\frac{7}{30 \pi}} \cos \theta \sin ^{2} \theta e^{-2 i \phi} ; \\
+-& Y_{3,-1}(\theta, \phi)=\frac{1}{8} \sqrt{\frac{21}{\pi}}\left(-1+5 \cos ^{2} \theta\right) \sin \theta e^{-i \phi} ; Y_{3,0}(\theta, \phi)=\frac{1}{4} \sqrt{\frac{7}{\pi}}\left(-3 \cos \theta+5 \cos ^{3} \theta\right) ; \\
+-& Y_{3,1}(\theta, \phi)=\frac{1}{8} \sqrt{\frac{21}{\pi}}\left(1-5 \cos ^{2} \theta\right) \sin \theta e^{i \phi} ; Y_{3,2}(\theta, \phi)=\frac{15}{4} \sqrt{\frac{7}{30 \pi}} \cos \theta \sin ^{2} \theta e^{2 i \phi} ; \\
+-& Y_{3,3}(\theta, \phi)=-\frac{1}{8} \sqrt{\frac{35}{\pi}} \sin ^{3} \theta e^{3 i \phi} .
+-\end{aligned}
+-$$
+-
+-2. Check the orthogonality relations (5) and (6) for $n=0,1$, and $m=-n, \ldots, n$, using the explicit formulas from Exercise 1.
+-3. Prove the orthogonality relations (5) and (6), using the orthogonality of the associated Legendre functions from Section 13.7.
+-4. (a) Prove that $\bar{Y}_{n, m}(\theta, \phi)=(-1)^{m} Y_{n,-m}(\theta, \phi)$.
+-(b) Show that $Y_{n, m}$ is $2 \pi$-periodic in $\phi$.
+-5. More on Example 1.
+-(a) Compute the integral $\int_{0}^{2 \pi} \phi e^{-i m \phi} d \phi$ that appears in (9).
+-(b) Compute by hand the entries in the first two rows of Table 1.
+-(c) Using properties of the Legendre polynomials, explain why $A_{n 0}=0$ for all $n=1,2, \ldots$.
+-(d) Compute $A_{n m}$ for $n=3,4$, and $m$ between $-n$ and $n$. Form a partial sum of the spherical harmonics series of $f$ with $n=0,1, \ldots, 4$ and $m$ between $-n$ and $n$. Use graphics to illustrate the convergence of the series to $f$.
+-6. Project Problem: In evaluating the coefficients (9), we encountered the integral
+-
+-$$
+-I_{n m}=\int_{-1}^{1} P_{n}^{m}(s) d s
+-$$
+-
+-As it turns out, this integral is quite difficult to evaluate in closed form. Prove the following properties.
+-(a) $I_{n m}$ is 0 if $n+m$ is odd.
+-(b) $I_{00}=2$ and $I_{n 0}=0$ for $n=1,2,3, \ldots$.
+-(c) Professor Stephen Montgomery-Smith offered the following formula for $I_{n m}$ :
+-
+-$$
+-I_{n m}=c_{n m} \frac{4 m\left[\Gamma\left(1+\frac{n}{2}\right)\right]^{2}(-1+m+n)!}{n(1+n)!\Gamma\left(1+\frac{-m+n}{2}\right) \Gamma\left(\frac{m+n}{2}\right)}
+-$$
+-
+-where
+-
+-$$
+-c_{n m}=\left\{\frac{-1+(-1)^{n}}{2}+\frac{1+(-1)^{m}}{2} \operatorname{sgn} m\right\} \frac{1+(-1)^{n+m}}{2},
+-$$
+-
+-and $\operatorname{sgn} m=-1,0$, or 1 according as $m$ is negative, 0 , or positive. Test this formula for $n=1,2, \ldots, 10$ and $m$ varying from $-n$ to $n$ in steps of 2 . When $m=-n$, there is a problem with the formula as it is written. In this case, you should compute $\lim _{s \rightarrow-n} I_{n s}$. You can check that
+-
+-$$
+-\lim _{s \rightarrow-n} \frac{(-1+s+n)!}{\Gamma\left(\frac{s+n}{2}\right)}=\frac{1}{2}
+-$$
+-
+-and $c_{n,-n}=-1$, and so you can set
+-
+-$$
+-I_{n,-n}=\frac{2}{(1+n)!n!}\left[\Gamma\left(1+\frac{n}{2}\right)\right]^{2}
+-$$
+-
+-This is a much faster way to compute the integral $I_{n m}$ when $m=-n$.
+-(d) As a challenging part of this project, you can try to prove the result of (c).
+-7. A steady-state problem inside a sphere. Follow the outlined steps to find the steady-state temperature in the sphere with radius one given that the surface of the wedge between the lines of longitude $\phi=-\frac{\pi}{4}$ and $\phi=\frac{\pi}{4}$ is kept at $100^{\circ}$ and the rest of the surface of the sphere is kept at $0^{\circ}$.
+-(a) Let $u(r, \theta, \phi)$ denote the steady-state temperature inside the sphere. Conclude that $u$ is given by (11), where
+-
+-$$
+-A_{n m}=100 \int_{-\pi / 4}^{\pi / 4} \int_{0}^{\pi} \bar{Y}_{n, m}(\theta, \phi) \sin \theta d \theta d \phi
+-$$
+-
+-(b) Using the explicit formulas for the spherical harmonics from Exercise 1, obtain the following table of coefficients corresponding to $n=0,1,2$, and $m=-n, \ldots, n$.
+-
+-| $n \backslash m$ | -2 | -1 | 0 | 1 | 2 |
+-| :---: | :---: | :---: | :---: | :---: | :---: |
+-| 0 |  |  | $50 \sqrt{\pi}$ |  |  |
+-| 1 |  | $25 \sqrt{3 \pi}$ | 0 | $-25 \sqrt{3 \pi}$ |  |
+-| 2 | $100 \sqrt{\frac{5}{6 \pi}}$ | 0 | 0 | 0 | $100 \sqrt{\frac{5}{6 \pi}}$ |
+-
+-Spherical harmonics coefficients $A_{n m}$.
+-
+-(c) Using the coefficients in (b) and the list of spherical harmonics from Exercise 1 , obtain the partial sum approximation of the solution
+-
+-$$
+-u(r, \theta, \phi) \approx 25+75 \frac{\sqrt{2}}{2} r \sin \theta \cos \phi+125 r^{2} \frac{1}{\pi} \sin ^{2} \theta \cos 2 \phi
+-$$
+-
+-(d) Evaluate this partial sum at various points inside the sphere of radius 1 to get an idea about the temperature distribution. Do these values agree with your intuition? Use graphics as we did in Example 1 to illustrate the convergence of the series solution to the boundary function as $r \rightarrow 1$.
+-8. Repeat Example 1 with $f(\theta, \phi)=\frac{1}{\pi^{2}} \phi(2 \pi-\phi)$. Use a computer to evaluate the spherical harmonics coefficients. You should get nicer pictures when you are illustrating the convergence of the spherical harmonics series. Can you justify this fact?
+-
+-In Exercises 9-12, solve Laplace's equation inside the unit sphere for the given boundary function. Follow the steps that are outlined in Exercise 7.
+-9. $f(\theta, \phi)=Y_{0,0}(\theta, \phi)$.
+-10. $f(\theta, \phi)=Y_{1,0}(\theta, \phi)+3 Y_{1,1}(\theta, \phi)$.
+-11. $f(\theta, \phi)= \begin{cases}50 & \text { if } \frac{-\pi}{3}<\phi<\frac{\pi}{3}, \\ 0 & \text { otherwise. }\end{cases}$
+-12. $f(\theta, \phi)= \begin{cases}100 & \text { if } 0<\phi<\frac{\pi}{2}, \\ 0 & \text { otherwise } .\end{cases}$
+-
+-## 13. A symmetric case with no dependence on $\phi$.
+-
+-(a) What does Theorem 2 reduce to if $f$ is independent of $\phi$ ?
+-(b) Obtain Theorem 1 of Section 13.2 from Theorem 3 of this section.
+-14. Temperature of the center as an average. Since the solution of the Dirichlet problem, (11), represents a steady-state temperature distribution, the temperature of the center of the ball ( $r=0$ ) should be equal to the average of the temperature of the boundary. Find the temperature of the center by plugging $r=0$
+-into (11), and then explain how your answer can be interpreted as an average of the temperature of the boundary.
+-15. Project Problem: A Dirichlet problem between two concentric spheres. (a) Show that the Dirichlet problem given by (1) and (2) in the region $a<r, 0<\theta<\pi, 0<\phi<2 \pi$ is given by
+-
+-$$
+-u(r, \theta, \phi)=\sum_{n=0}^{\infty} \sum_{m=-n}^{n} A_{n m}\left(\frac{r}{a}\right)^{-(n+1)} Y_{n, m}(\theta, \phi),
+-$$
+-
+-where $A_{n m}$ are determined by (8). [Hint: Going back to (16), Section 13.1, choose the solutions that are bounded for $r>a$.]
+-(b) Solve Laplace's equation (1) for $r_{1}<r<r_{2}, 0<\theta<\pi, 0<\phi<2 \pi$, given the boundary conditions $u\left(r_{1}, \theta, \phi\right)=f_{1}(\theta, \phi), u\left(r_{2}, \theta, \phi\right)=f_{2}(\theta, \phi)$. [Hint: See Exercise 14, Section 13.2.]
++> [!theorem|44585a75-2600-5aa5-b0a5-51337f490e14.local at=ef29e080-d5f4-5424-8a53-a0dc8ede9de5] Differential Equation for the Spherical Harmonics
++> The equation
++>
++> $$
++> \frac{\partial^{2} Y}{\partial \theta^{2}}+\cot \theta \frac{\partial Y}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} Y}{\partial \phi^{2}}+\mu Y=0
++> $$
++>
++> where $0<\theta<\pi, 0<\phi<2 \pi$, admits nontrivial bounded solutions that are $2 \pi$-periodic in $\phi$ when
++>
++> $$
++> \mu=n(n+1), \quad n=0,1,2,3, \ldots .
++> $$
++>
++> To each acceptable value of $\mu$ (or eigenvalue) we have $2 n+1$ nontrivial solutions (or eigenfunctions) given by the spherical harmonics
++>
++> $$
++> Y(\theta, \phi)=Y_{n, m}(\theta, \phi), \quad|m| \leq n .
++> $$
++>
++> Here $Y_{n,m}(\theta,\phi)=\sqrt{\frac{2n+1}{4\pi}\frac{(n-m)!}{(n+m)!}}P_n^m(\cos\theta)e^{im\phi}$, where $\theta$ is colatitude, $\phi$ is azimuth, and $P_n^m$ is the associated Legendre function.
++
++## Exercises 13.3
++
++
++> [!exercise|9db9032f-77a6-50c4-9606-4041b56e5c18.local at=9663e6d3-55c2-5fa1-98cf-df09b9c1d515] Exercise 1
++> Spherical harmonics Use (4) and the list of associated Legendre functions from Example 1, Section 13.7, to derive the following list of spherical harmonics for $n=0,1,2,3$, and $m=-n, \ldots, n$.
++>
++> (a) $n=0$.
++>
++> $$
++> \begin{aligned}
++> Y_{0,0}(\theta, \phi)&=\frac{1}{2 \sqrt{\pi}}
++> \end{aligned}
++> $$
++>
++> (b) $n=1$.
++>
++> $$
++> \begin{aligned}
++> Y_{1,-1}(\theta, \phi)&=\frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{-i \phi} \\
++> Y_{1,0}(\theta, \phi)&=\frac{1}{2} \sqrt{\frac{3}{\pi}} \cos \theta \\
++> Y_{1,1}(\theta, \phi)&=-\frac{1}{2} \sqrt{\frac{3}{2 \pi}} \sin \theta e^{i \phi}
++> \end{aligned}
++> $$
++>
++> (c) $n=2$.
++>
++> $$
++> \begin{aligned}
++> Y_{2,-2}(\theta, \phi)&=\frac{3}{4} \sqrt{\frac{5}{6 \pi}} \sin ^{2} \theta e^{-2 i \phi} \\
++> Y_{2,-1}(\theta, \phi)&=\frac{3}{2} \sqrt{\frac{5}{6 \pi}} \cos \theta \sin \theta e^{-i \phi} \\
++> Y_{2,0}(\theta, \phi)&=\frac{1}{4} \sqrt{\frac{5}{\pi}}\left(-1+3 \cos ^{2} \theta\right) \\
++> Y_{2,1}(\theta, \phi)&=-\frac{3}{2} \sqrt{\frac{5}{6 \pi}} \cos \theta \sin \theta e^{i \phi} \\
++> Y_{2,2}(\theta, \phi)&=\frac{3}{4} \sqrt{\frac{5}{6 \pi}} \sin ^{2} \theta e^{2 i \phi}
++> \end{aligned}
++> $$
++>
++> (d) $n=3$.
++>
++> $$
++> \begin{aligned}
++> Y_{3,-3}(\theta, \phi)&=\frac{1}{8} \sqrt{\frac{35}{\pi}} \sin ^{3} \theta e^{-3 i \phi} \\
++> Y_{3,-2}(\theta, \phi)&=\frac{15}{4} \sqrt{\frac{7}{30 \pi}} \cos \theta \sin ^{2} \theta e^{-2 i \phi} \\
++> Y_{3,-1}(\theta, \phi)&=\frac{1}{8} \sqrt{\frac{21}{\pi}}\left(-1+5 \cos ^{2} \theta\right) \sin \theta e^{-i \phi} \\
++> Y_{3,0}(\theta, \phi)&=\frac{1}{4} \sqrt{\frac{7}{\pi}}\left(-3 \cos \theta+5 \cos ^{3} \theta\right) \\
++> Y_{3,1}(\theta, \phi)&=\frac{1}{8} \sqrt{\frac{21}{\pi}}\left(1-5 \cos ^{2} \theta\right) \sin \theta e^{i \phi} \\
++> Y_{3,2}(\theta, \phi)&=\frac{15}{4} \sqrt{\frac{7}{30 \pi}} \cos \theta \sin ^{2} \theta e^{2 i \phi} \\
++> Y_{3,3}(\theta, \phi)&=-\frac{1}{8} \sqrt{\frac{35}{\pi}} \sin ^{3} \theta e^{3 i \phi}
++> \end{aligned}
++> $$
++
++> [!exercise|55a1294a-59f7-566f-9b56-70a1f6e0e24c.local at=18f17f1c-6da8-5e57-a2d2-3d38992f605a] Exercise 2
++> Check the orthogonality relations (5) and (6) for $n=0,1$, and $m=-n, \ldots, n$, using the explicit formulas from Exercise 1.
++
++
++> [!exercise|d53b8901-9586-5925-968e-08ec8ef1ec52.local at=24bd9f15-97d8-54e7-b0b2-23fbb5d49fd4] Exercise 3
++> Prove the orthogonality relations (5) and (6), using the orthogonality of the associated Legendre functions from Section 13.7.
++
++
++> [!exercise|c3c1c385-29df-586e-a08d-a7a973246a8a.local at=205f7446-a304-5186-b42a-35b8603faf12] Exercise 4
++> (a) Prove that $\bar{Y}_{n, m}(\theta, \phi)=(-1)^{m} Y_{n,-m}(\theta, \phi)$.
++> (b) Show that $Y_{n, m}$ is $2 \pi$-periodic in $\phi$.
++
++
++> [!exercise|f7612bec-4959-5bee-8ef8-a13d142d67f4.local at=38fe0173-43af-5690-99ca-182de1bb23bb] Exercise 5
++> More on Example 1.
++> (a) Compute the integral $\int_{0}^{2 \pi} \phi e^{-i m \phi} d \phi$ that appears in (9).
++> (b) Compute by hand the entries in the first two rows of Table 1.
++> (c) Using properties of the Legendre polynomials, explain why $A_{n 0}=0$ for all $n=1,2, \ldots$.
++> (d) Compute $A_{n m}$ for $n=3,4$, and $m$ between $-n$ and $n$. Form a partial sum of the spherical harmonics series of $f$ with $n=0,1, \ldots, 4$ and $m$ between $-n$ and $n$. Use graphics to illustrate the convergence of the series to $f$.
++
++
++> [!exercise|a0d1f8a7-5b3f-5113-a97e-a6bb744d7089.local at=636689c6-467e-5dad-8e0a-c9107ba32187] Exercise 6
++> Project Problem: In evaluating the coefficients (9), we encountered the integral
++>
++> $$
++> I_{n m}=\int_{-1}^{1} P_{n}^{m}(s) d s
++> $$
++>
++> As it turns out, this integral is quite difficult to evaluate in closed form. Prove the following properties.
++> (a) $I_{n m}$ is 0 if $n+m$ is odd.
++> (b) $I_{00}=2$ and $I_{n 0}=0$ for $n=1,2,3, \ldots$.
++> (c) Professor Stephen Montgomery-Smith offered the following formula for $I_{n m}$ :
++>
++> $$
++> I_{n m}=c_{n m} \frac{4 m\left[\Gamma\left(1+\frac{n}{2}\right)\right]^{2}(-1+m+n)!}{n(1+n)!\Gamma\left(1+\frac{-m+n}{2}\right) \Gamma\left(\frac{m+n}{2}\right)}
++> $$
++>
++> where
++>
++> $$
++> c_{n m}=\left\{\frac{-1+(-1)^{n}}{2}+\frac{1+(-1)^{m}}{2} \operatorname{sgn} m\right\} \frac{1+(-1)^{n+m}}{2},
++> $$
++>
++> and $\operatorname{sgn} m=-1,0$, or 1 according as $m$ is negative, 0 , or positive. Test this formula for $n=1,2, \ldots, 10$ and $m$ varying from $-n$ to $n$ in steps of 2 . When $m=-n$, there is a problem with the formula as it is written. In this case, you should compute $\lim _{s \rightarrow-n} I_{n s}$. You can check that
++>
++> $$
++> \lim _{s \rightarrow-n} \frac{(-1+s+n)!}{\Gamma\left(\frac{s+n}{2}\right)}=\frac{1}{2}
++> $$
++>
++> and $c_{n,-n}=-1$, and so you can set
++>
++> $$
++> I_{n,-n}=\frac{2}{(1+n)!n!}\left[\Gamma\left(1+\frac{n}{2}\right)\right]^{2}
++> $$
++>
++> This is a much faster way to compute the integral $I_{n m}$ when $m=-n$.
++> (d) As a challenging part of this project, you can try to prove the result of (c).
++
++
++> [!exercise|483a5d01-9644-528c-a6fa-f75a02ccaf57.local at=4d9132e8-1ba3-5843-ac11-38c682ed93f2] Exercise 7
++> A steady-state problem inside a sphere. Follow the outlined steps to find the steady-state temperature in the sphere with radius one given that the surface of the wedge between the lines of longitude $\phi=-\frac{\pi}{4}$ and $\phi=\frac{\pi}{4}$ is kept at $100^{\circ}$ and the rest of the surface of the sphere is kept at $0^{\circ}$.
++> (a) Let $u(r, \theta, \phi)$ denote the steady-state temperature inside the sphere. Conclude that $u$ is given by (11), where
++>
++> $$
++> A_{n m}=100 \int_{-\pi / 4}^{\pi / 4} \int_{0}^{\pi} \bar{Y}_{n, m}(\theta, \phi) \sin \theta d \theta d \phi
++> $$
++>
++> (b) Using the explicit formulas for the spherical harmonics from Exercise 1, obtain the following table of coefficients corresponding to $n=0,1,2$, and $m=-n, \ldots, n$.
++>
++> (c) Using the coefficients in (b) and the list of spherical harmonics from Exercise 1 , obtain the partial sum approximation of the solution
++>
++> $$
++> u(r, \theta, \phi) \approx 25+75 \frac{\sqrt{2}}{2} r \sin \theta \cos \phi+125 r^{2} \frac{1}{\pi} \sin ^{2} \theta \cos 2 \phi
++> $$
++>
++> (d) Evaluate this partial sum at various points inside the sphere of radius 1 to get an idea about the temperature distribution. Do these values agree with your intuition? Use graphics as we did in Example 1 to illustrate the convergence of the series solution to the boundary function as $r \rightarrow 1$.
++
++
++```scientific-table
++id: 838bc747-8fed-43ac-9bb9-d817ad503fac
++numbered: false
++title: ""
++caption: Spherical harmonics coefficients $A_{n m}$.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $n \backslash m$
++    - text: "-2"
++    - text: "-1"
++    - text: "0"
++    - text: "1"
++    - text: "2"
++  - - text: "0"
++    - text: ""
++    - text: ""
++    - text: $50 \sqrt{\pi}$
++    - text: ""
++    - text: ""
++  - - text: "1"
++    - text: ""
++    - text: $25 \sqrt{3 \pi}$
++    - text: "0"
++    - text: $-25 \sqrt{3 \pi}$
++    - text: ""
++  - - text: "2"
++    - text: $100 \sqrt{\frac{5}{6 \pi}}$
++    - text: "0"
++    - text: "0"
++    - text: "0"
++    - text: $100 \sqrt{\frac{5}{6 \pi}}$
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
++
++
++> [!exercise|3a7211d5-b190-5bf7-8bcc-0adc465309cc.local at=e382b121-9b3d-5c7e-9658-000d57632caf] Exercise 8
++> Repeat Example 1 with $f(\theta, \phi)=\frac{1}{\pi^{2}} \phi(2 \pi-\phi)$. Use a computer to evaluate the spherical harmonics coefficients. You should get nicer pictures when you are illustrating the convergence of the spherical harmonics series. Can you justify this fact?
++
++
++> [!prompt|e8f29dc8-1e9c-5990-902b-f1bfb6c52216.local at=767d6b9f-b60f-5496-9c14-97644ca78d7d] Shared exercise instructions
++> In Exercises 9-12, solve Laplace's equation inside the unit sphere for the given boundary function. Follow the steps that are outlined in Exercise 7.
++
++
++> [!exercise|68bfede5-efd0-5e6b-a4dd-cd849b896040.local at=9d05f8cc-81d4-5887-bea5-6f405847ba31] Exercise 9
++> $f(\theta, \phi)=Y_{0,0}(\theta, \phi)$.
++
++
++> [!exercise|b514b81a-72cb-594d-b7f0-eca9427925c1.local at=9a4b9dee-3c85-5656-b5d1-de8b8a040b4f] Exercise 10
++> $f(\theta, \phi)=Y_{1,0}(\theta, \phi)+3 Y_{1,1}(\theta, \phi)$.
++
++
++> [!exercise|b4832948-5dd3-5d42-baff-d9d9958595e7.local at=efeb4993-27e1-5787-85de-daab2ad3246f] Exercise 11
++> $f(\theta, \phi)= \begin{cases}50 & \text { if } \frac{-\pi}{3}<\phi<\frac{\pi}{3}, \\ 0 & \text { otherwise. }\end{cases}$
++
++
++> [!exercise|b689cba4-8688-5d52-a7da-8625e839646c.local at=f4d587ba-3d6b-540a-9a59-45a9fe1bbfae] Exercise 12
++> $f(\theta, \phi)= \begin{cases}100 & \text { if } 0<\phi<\frac{\pi}{2}, \\ 0 & \text { otherwise } .\end{cases}$
++
++
++> [!exercise|9ff77b9e-c5b9-513f-ac22-a4bb82cd95e6.local at=c53f8b58-bdc2-57ca-aad1-f016deddbfa0] Exercise 13
++> A symmetric case with no dependence on $\phi$.
++>
++> (a) What does Theorem 2 reduce to if $f$ is independent of $\phi$ ?
++> (b) Obtain Theorem 1 of Section 13.2 from Theorem 3 of this section.
++
++
++> [!exercise|51fd920d-5bc4-5786-ac86-609f2b9c7f83.local at=e7c075c7-54bc-5ff1-b497-1e4d070a7b7a] Exercise 14
++> Temperature of the center as an average. Since the solution of the Dirichlet problem, (11), represents a steady-state temperature distribution, the temperature of the center of the ball ( $r=0$ ) should be equal to the average of the temperature of the boundary. Find the temperature of the center by plugging $r=0$
++> into (11), and then explain how your answer can be interpreted as an average of the temperature of the boundary.
++
++
++> [!exercise|de485206-cec4-574f-ba09-8d35c2131004.local at=69ee406f-3a0d-562b-add4-f80bf8eabcdf] Exercise 15
++> Project Problem: Exterior and concentric-shell Dirichlet problems. (a) Show that the Dirichlet problem given by (1) and (2) in the exterior region $a<r$, with the additional condition $u\to0$ as $r\to\infty$, has solution
++>
++> $$
++> u(r, \theta, \phi)=\sum_{n=0}^{\infty} \sum_{m=-n}^{n} A_{n m}\left(\frac{r}{a}\right)^{-(n+1)} Y_{n, m}(\theta, \phi),
++> $$
++>
++> where $A_{n m}$ are determined by (8). [Hint: Going back to (16), Section 13.1, choose the radial solutions that tend to zero as $r\to\infty$.]
++> (b) Solve Laplace's equation (1) for $r_{1}<r<r_{2}, 0<\theta<\pi, 0<\phi<2 \pi$, given the boundary conditions $u\left(r_{1}, \theta, \phi\right)=f_{1}(\theta, \phi), u\left(r_{2}, \theta, \phi\right)=f_{2}(\theta, \phi)$. [Hint: See Exercise 14, Section 13.2.]
+
+`````

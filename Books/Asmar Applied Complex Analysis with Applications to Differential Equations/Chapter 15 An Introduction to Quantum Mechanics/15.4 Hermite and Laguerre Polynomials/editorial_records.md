@@ -302,3 +302,1120 @@ No antiderivative of a strictly positive integrand can vanish at both endpoints.
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 15 An Introduction to Quantum Mechanics/15.4 Hermite and Laguerre Polynomials.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 15 An Introduction to Quantum Mechanics/15.4 Hermite and Laguerre Polynomials.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.4 Hermite and Laguerre Polynomials.md
+@@ -1,6 +1,7 @@
++
+ ### 15.4 Hermite and Laguerre Polynomials
+ 
+-In this section we use Sturm Liouville theory to study two important families of polynomials: Hermite and Laguerre polynomials. These special functions, like so many others that we have encountered previously, arise as solutions of ordinary differential equations and have many interesting orthogonality properties and expansion theorems.
++In this section we use Sturm–Liouville theory to study two important families of polynomials: Hermite and Laguerre polynomials. These special functions, like so many others that we have encountered previously, arise as solutions of ordinary differential equations and have many interesting orthogonality properties and expansion theorems.
+ 
+ ## Hermite's Equation and Hermite Polynomials
+ 
+@@ -8,38 +9,59 @@
+ 
+ $$
+ y^{\prime \prime}-2 x y^{\prime}+2 n y=0, \quad-\infty<x<\infty .
+-$$
+-
+-This second order linear differential equation with noncoustant coefficients can be solved by the method of power series (Appendix A.5). We assume that the solution is of the form $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. After plugging into (1) and simplifying, we arrive at the following two-step recurrence relation for the coefficients:
+-
+-$$
+-a_{m+2}=\frac{2 m-2 n}{(m+2)(m+1)} a_{m,} \quad m=0,1,2, \ldots
+-$$
+-
+-Thus $a_{0}$ determines $a_{2}, a_{4}, \ldots$, and $a_{1}$ determines $a_{3}, a_{5}, \ldots$. From (2) we have that $a_{n: 2}=0$, and so $a_{n+4}=a_{n+6}=\ldots=0$. Thus one solution is a polynomial of degree $n$. If we normalize the polynomial solution by setting
++\tag{1}
++$$
++
++This second order linear differential equation with nonconstant coefficients can be solved by the method of power series (Section 10.5). We assume that the solution is of the form $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. After plugging into (1) and simplifying, we arrive at the following two-step recurrence relation for the coefficients:
++
++$$
++a_{m+2}=\frac{2 m-2 n}{(m+2)(m+1)} a_m, \quad m=0,1,2, \ldots
++\tag{2}
++$$
++
++Thus $a_{0}$ determines $a_{2}, a_{4}, \ldots$, and $a_{1}$ determines $a_{3}, a_{5}, \ldots$. From (2) we have that $a_{n+2}=0$, and so $a_{n+4}=a_{n+6}=\ldots=0$. Thus one solution is a polynomial of degree $n$. If we normalize the polynomial solution by setting
+ 
+ $$
+ a_{n}=2^{n},
++\tag{3}
+ $$
+ 
+ we obtain the Hermite polynomial, denoted by $H_{n}(x)$. Using (2) and (3), we can show that
+ 
+-$$
+-H_{n}(x)=n!\sum_{j=0}^{M} \frac{(-1)^{j}(2 x)^{n-2 j}}{j!(n-2 j)!},
+-$$
+-
+-where $M=\frac{n}{2}$ if $n$ is even or $M=\frac{n-1}{2}$ if $n$ is odd. This explicit formula can be derived as we did for the Legendre polynomials in (9), Section 5.5. Using (4), we obtain
++> [!definition|19ed3268-923a-5175-b0b7-34d2c9d04b09.local at=fb11acdf-ab67-52df-9d3c-2ac218191a5b] Physicists’ Hermite Polynomials
++> The physicists' Hermite polynomial $H_n$ is the polynomial solution of $H_n''-2xH_n'+2nH_n=0$ with leading coefficient $2^n$, for $n=0,1,2,\ldots$.
++>
++> $$
++> H_{n}(x)=n!\sum_{j=0}^{M} \frac{(-1)^{j}(2 x)^{n-2 j}}{j!(n-2 j)!},
++> $$
++>
++> where $M=\frac{n}{2}$ if $n$ is even or $M=\frac{n-1}{2}$ if $n$ is odd.
++
++*Printed equation label: (4).*
++
++The explicit formula follows by the same power-series method used for Legendre polynomials in Section 13.5. Using (4), we obtain
+ 
+ $$
+ H_{0}(x)=1, H_{1}(x)=2 x, H_{2}(x)=4 x^{2}-2, H_{3}(x)=8 x^{3}-12 x, \ldots .
+ $$
+ 
+-Figure 1 Hermite polynomials.
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-26_542_803_430_740.jpg)
++```scientific-figure
++id: ba6a09ff-11c4-4275-9faa-c72d9849a0a1
++numbered: false
++title: ""
++caption: Figure 1 Hermite polynomials.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-26_542_803_430_740.jpg
++    caption: ""
++```
++
+ 
+ ## Sturm-Liouville Theory and Orthogonality
+ 
+-It is clear that (1) cannot be put in the Sturm-Liouville form that is given by (1), Section 6.2. However, by multiplying (1) through by $e^{-r^{2}}$, we obtain the (equivalent) equation
++The equation is not yet in self-adjoint Sturm–Liouville form. Multiplying it through by $e^{-x^2}$, we obtain the (equivalent) equation
+ 
+ $$
+ e^{-x^{2}} y^{\prime \prime}-2 x e^{-x^{2}} y^{\prime}+2 n e^{-x^{2}} y=0,
+@@ -51,84 +73,113 @@
+ \left(e^{-x^{2}} y^{\prime}\right)^{\prime}+2 n e^{-x^{2}} y=0 .
+ $$
+ 
+-Following the notation of (1), Section 6.2, we let $p(x)=e^{-x^{2}}, r(x)=e^{-x^{2}}$. Applying Theorem 2, Section 6.2, it follows that the Hermite polynomials are orthogonal on the interval $(-\infty, \infty)$ with respect to the weight function $e^{-x^{2}}$. More precisely, we have the following important result.
+-(i) For nonnegative integers $m$ and $n$ with $m \neq n$. . we have
+-
+-$$
+-\int_{-\infty}^{\infty} H_{m}(x) H_{n}(x) e^{-x^{2}} d x=0 .
+-$$
+-
+-(ii) For all $n=0,1,2, \ldots$, we have
+-
+-$$
+-\int_{-\infty}^{\infty} H_{n}^{2}(x) e^{-x^{2}} d x=2^{n} n!\sqrt{\pi} .
+-$$
+-
+-THEOREM 1 ORTHOGONALITY OF HERMITE POLYNOMIALS
+-
+-THEOREM 2
+-HERMITE SERIES EXPANSIONS
+-
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-27_411_469_1474_29.jpg)
+-Figure 2 Partial sums of the Hermite series with $k$ up to $n$.
+-
+-The first assertion is a consequence of Sturm-Liouville theory, as we just indicated. A proof of (ii) is outlined in Exercise 10. These orthogonality relations can be used to expand functions in terms of Hermite polynomials (sec Theorem 3, Section 6.2).
+-
+-If $f$ is piecewise smooth on $(-\infty, \infty)$, and
+-
+-$$
+-\int_{-\infty}^{\infty}|f(x)|^{2} e^{-x^{2}} d x<\infty
+-$$
+-
+-then we have the Hermite series expansion
+-
+-$$
+-f(x)=\sum_{j=0}^{\infty} A_{j} H_{j}(x)
+-$$
+-
+-where the Hermite coefficients $A_{j}$ are given by
+-
+-$$
+-A_{j}=\frac{1}{2^{j} j!\sqrt{\pi}} \int_{-\infty}^{\infty} f(x) H_{j}(x) e^{-x^{2}} d x
+-$$
+-
+-For any $x$, the Hermite series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
++Following the notation of (1), Section 14.2, we let $p(x)=e^{-x^{2}}, r(x)=e^{-x^{2}}$. Applying Theorem 2, Section 14.2, it follows that the Hermite polynomials are orthogonal on the interval $(-\infty, \infty)$ with respect to the weight function $e^{-x^{2}}$. More precisely, we have the following important result.
++> [!theorem|6e32b0f4-a134-52da-92b5-4ff791421141.local at=ae4809c8-09c9-592d-b0d6-b8498aa02cc1] Orthogonality of Hermite Polynomials
++> (i) For nonnegative integers $m$ and $n$ with $m \neq n$,  we have
++>
++> $$
++> \int_{-\infty}^{\infty} H_{m}(x) H_{n}(x) e^{-x^{2}} d x=0 .
++> $$
++>
++> (ii) For all $n=0,1,2, \ldots$, we have
++>
++> $$
++> \int_{-\infty}^{\infty} H_{n}^{2}(x) e^{-x^{2}} d x=2^{n} n!\sqrt{\pi} .
++> $$
++>
++> Here $H_n$ is the Hermite polynomial of degree $n$ with leading coefficient $2^n$.
++
++
++The first assertion is a consequence of Sturm-Liouville theory, as we just indicated. A proof of (ii) is outlined in Exercise 10. These orthogonality relations can be used to expand functions in terms of Hermite polynomials (sec Theorem 3, Section 14.2).
++
++> [!theorem|51b8cc9b-4f9a-524f-93ba-008d2df464c2.local at=6e3b54e0-9c0e-5578-be0f-a15e118f660f] Hermite Series Expansions
++> If $f$ is piecewise smooth on $(-\infty, \infty)$, and
++>
++> $$
++> \int_{-\infty}^{\infty}|f(x)|^{2} e^{-x^{2}} d x<\infty
++> $$
++>
++> then we have the Hermite series expansion
++>
++> $$
++> f(x)=\sum_{j=0}^{\infty} A_{j} H_{j}(x)
++> $$
++>
++> where the Hermite coefficients $A_{j}$ are given by
++>
++> $$
++> A_{j}=\frac{1}{2^{j} j!\sqrt{\pi}} \int_{-\infty}^{\infty} f(x) H_{j}(x) e^{-x^{2}} d x
++> $$
++>
++> For any $x$, the Hermite series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
++>
++> Here $H_n$ is the Hermite polynomial of degree $n$ with leading coefficient $2^n$.
++
++*Printed equation label: (5).*
+ 
+ The integrability condition that we impose on $f$ is expressed by saying that $f$ is square integrable with respect to the weight function $e^{-x^{2}}$. This condition guarantees the existence of the integral in (5) defining the coefficients. Examples of functions that are square integrable with respect to $e^{-x^{2}}$ are bounded functions; polynomial functions; exponential functions like $e^{a x+b}$. As we have done previously with other orthogonal series expansions, we can give a formal derivation of the Hermite coefficients (5) based on the orthogonality properties in Theorem 1 (see Exercise 11).
+ 
+-## EXAMPLE 1 A Hermite series expansion
++```scientific-figure
++id: 51921891-1892-4ea5-a3c5-59b985da3f33
++numbered: false
++title: ""
++caption: Figure 2 Partial sums of the Hermite series with $k$ up to $n$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-27_411_469_1474_29.jpg
++    caption: ""
++```
++
++
++> [!exercise|e9248582-0a0c-59f5-bcf8-a92c46984c87.local at=31a6e7f4-f410-5ed4-bbdd-444572a48c3d] EXAMPLE 1 A Hermite series expansion
++> Write the Hermite series of $\sin x$ and describe its convergence using the indicated partial sums.
++
++##### solution
+ 
+ The Hermite series
+ 
+ $$
+ \sin x=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{e^{1 / 4} 2^{2 k+1}(2 k+1)!} H_{2 k+1}(x), \quad-\infty<x<\infty
++\tag{6}
+ $$
+ 
+ is derived in Exercise 14. The graphs in Figure 2 illustrate the convergence of this series, which is a fact guaranteed by Theorem 2 .
+ 
+-Laguerre's Equation and Laguerre Polynomials For $n=0,1, \ldots$, Laguerre's differential equation of order $n$ is
++## Laguerre's Equation and Laguerre Polynomials
++
++For $n=0,1, \ldots$, Laguerre's differential equation of order $n$ is
+ 
+ $$
+ x y^{\prime \prime}+(1-x) y^{\prime}+n y=0, \quad 0<x<\infty .
+-$$
+-
+-We solve this second order linear differential equation using the Frobenius method (Appendix A.6). The point $x=0$ is a regular singular point. The indicial equation is $r(r-1)+r=0$ with one double indicial root $r=0$. As suggested by the Frobenius method (Case 2), we try $y=\sum_{m=0}^{\infty} a_{m} x^{m \prime}$ for a solution. After plugging into (7) and simplifying, we arrive at the following two-step recurrence relation for the coefficients:
++\tag{7}
++$$
++
++We solve this second order linear differential equation using the Frobenius method (Section 10.6). The point $x=0$ is a regular singular point. The indicial equation is $r(r-1)+r=0$ with one double indicial root $r=0$. As suggested by the Frobenius method (Case 2), we try $y=\sum_{m=0}^{\infty} a_{m} x^m$ for a solution. After plugging into (7) and simplifying, we arrive at the following recurrence relation for successive coefficients:
+ 
+ $$
+ a_{m}=\frac{m-1-n}{m^{2}} a_{m-1}, \quad m=1,2, \ldots
++\tag{8}
+ $$
+ 
+ We have $a_{n+1}=a_{n+2}=\ldots=0$. Thus one solution is a polynomial of degree $n$. We normalize the polynomial solution by setting
+ 
+ $$
+ a_{n}=\frac{(-1)^{n}}{n!}
++\tag{9}
+ $$
+ 
+ and obtain the Laguerre polynomial of degree $n$ :
+ 
+-$$
+-L_{n}(x)=n!\sum_{j=0}^{n} \frac{(-1)^{j}}{(j!)^{2}(n-j)!} x^{j} .
+-$$
++> [!definition|a8eee23b-bc7f-58a2-9654-ab9573067743.local at=2392cb69-ba1a-59ad-966e-88a08887f6ea] Laguerre Polynomials
++> The Laguerre polynomial $L_n$ solves $xL_n''+(1-x)L_n'+nL_n=0$ and has leading coefficient $(-1)^n/n!$, for $n=0,1,2,\ldots$.
++>
++> $$
++> L_{n}(x)=n!\sum_{j=0}^{n} \frac{(-1)^{j}}{(j!)^{2}(n-j)!} x^{j} .
++> $$
++
++*Printed equation label: (10).*
+ 
+ From this formula, we can derive the first few Laguerre polynomials (Figure 3):
+ 
+@@ -136,10 +187,19 @@
+ L_{0}(x)=1, \quad L_{1}(x)=1-x, \quad L_{2}(x)=\left(2-4 x+x^{2}\right) / 2, \ldots
+ $$
+ 
+-Figure 3 Laguerre polynomials.
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-28_498_765_1666_754.jpg)
+-
+-THEOREM 3 ORTHOGONALITY OF LAGUERRE POLYNOMIALS
++```scientific-figure
++id: 88cb80c7-0ee1-4b08-b94b-5b76cf186628
++numbered: false
++title: ""
++caption: Figure 3 Laguerre polynomials.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-28_498_765_1666_754.jpg
++    caption: ""
++```
++
+ 
+ ## Sturm-Liouville Theory and Orthogonality
+ 
+@@ -155,49 +215,70 @@
+ \left(x e^{-x} y^{\prime}\right)^{\prime}+n e^{-x} y=0
+ $$
+ 
+-Thus the Laguerre polynomials are the eigenfunctions of a singular SturmLiouville problem on the interval $(0, \infty)$. We thus have orthogonality relation and series expansion results, with respect to the weight $p(x)=e^{-x}$. The precise statement of these important results follows.
+-(i) For nonnegative integers $m$ and $n$ such that $m \neq n$, we have
+-
+-$$
+-\int_{0}^{\infty} L_{m}(x) L_{n}(x) c^{-x} d x=0
+-$$
+-
+-(ii) For all $n=0,1,2, \ldots$ we have
+-
+-$$
+-\int_{0}^{\infty} L_{n}^{2}(x) e^{-x} d x=1
+-$$
+-
+-Part (i) of Theorem 3 is an immediate consequence of the Sturm-Liouville theory (Theorem 2, Section 6.2). In Exercise 23, you are asked to give a direct proof of (i) and (ii) of Theorem 3 by using properties of the Laguerre polynomials; more specifically, by applying the result of Exercise 22.
+-
+-THEOREM 4 LAGUERRE SERIES EXPANSIONS
+-
+-Suppose that $f$ is piecewise smooth on $[0, \infty)$, and that $\int_{0}^{\infty}|f(x)|^{2} e^{-x} d x< \infty$. Then we have the Laguerre series expansion
+-
+-$$
+-f(x)=\sum_{j=0}^{\infty} A_{j} L_{j}(x)
+-$$
+-
+-where the Laguerre coefficients $A_{j}$ are given by
+-
+-$$
+-A_{j}=\int_{0}^{\infty} f(x) L_{j}(x) e^{-x} d x
+-$$
+-
+-For any $0<x<\infty$, the Laguerre series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
+-
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-30_368_445_193_72.jpg)
+-Figure 4 Partial sums of the Laguere series with ki up to 1, 2, 3.
+-
+-## EXAMPLE 2 A Laguerre series expansion
++Thus the Laguerre polynomials are the eigenfunctions of a singular Sturm–Liouville problem on the interval $(0, \infty)$. We thus have orthogonality relation and series expansion results, with respect to the weight $r(x)=e^{-x}$. The precise statement of these important results follows.
++> [!theorem|67be6b7a-d430-5516-a261-a7c3b3d0d1ee.local at=9a8d7693-19cf-5127-9bf4-bf77f65b0960] Orthogonality of Laguerre Polynomials
++> (i) For nonnegative integers $m$ and $n$ such that $m \neq n$, we have
++>
++> $$
++> \int_{0}^{\infty} L_{m}(x) L_{n}(x) e^{-x} d x=0
++> $$
++>
++> (ii) For all $n=0,1,2, \ldots$ we have
++>
++> $$
++> \int_{0}^{\infty} L_{n}^{2}(x) e^{-x} d x=1
++> $$
++>
++> Here $L_n$ is the Laguerre polynomial of degree $n$ with leading coefficient $(-1)^n/n!$.
++
++Part (i) of Theorem 3 is an immediate consequence of the Sturm-Liouville theory (Theorem 2, Section 14.2). In Exercise 23, you are asked to give a direct proof of (i) and (ii) of Theorem 3 by using properties of the Laguerre polynomials; more specifically, by applying the result of Exercise 22.
++
++> [!theorem|a4e31473-2fcb-525c-958f-476f80490a1a.local at=0ce9b992-9e38-556e-b4d2-89da4eebc5e9] Laguerre Series Expansions
++> Suppose that $f$ is piecewise smooth on $[0, \infty)$, and that $\int_{0}^{\infty}|f(x)|^{2} e^{-x} d x< \infty$. Then we have the Laguerre series expansion
++>
++> $$
++> f(x)=\sum_{j=0}^{\infty} A_{j} L_{j}(x)
++> $$
++>
++> where the Laguerre coefficients $A_{j}$ are given by
++>
++> $$
++> A_{j}=\int_{0}^{\infty} f(x) L_{j}(x) e^{-x} d x
++> $$
++>
++> For any $0<x<\infty$, the Laguerre series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
++>
++> Here $L_n$ is the Laguerre polynomial of degree $n$ with leading coefficient $(-1)^n/n!$.
++
++*Printed equation label: (11).*
++
++```scientific-figure
++id: 0b4e3144-3724-4ab4-a160-90d138ff2288
++numbered: false
++title: ""
++caption: Figure 4 Partial sums of the Laguerre series with k up to 1, 2, 3.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-30_368_445_193_72.jpg
++    caption: ""
++```
++
++
++> [!exercise|cacc6083-c4dc-5e7a-88aa-3625078c56c2.local at=58889db0-6136-5c3b-af64-c418fe086fc3] EXAMPLE 2 A Laguerre series expansion
++> Write the Laguerre series of $e^{-x}$ on $(0,\infty)$ and describe its convergence using the indicated partial sums.
++
++##### solution
+ 
+ The Laguerre series
+ 
+ $$
+ e^{-x}=\sum_{k=0}^{\infty} \frac{1}{2^{k+1}} L_{k}(x), \quad 0<x<\infty
+-$$
+-
+-is clerived in Exercise 24. The graphs in Figure 4 illustrate the convergence of the Laguerre series. which is a fact guaranteed by Theorem 4.
++\tag{12}
++$$
++
++is derived in Exercise 24. The graphs in Figure 4 illustrate the convergence of the Laguerre series. which is a fact guaranteed by Theorem 4.
+ 
+ The Hermite and Laguerre polynomials enjoy many properties such as recurrence relations and Rodrigues-type formulas. These and other interesting properties are explored in the exercises.
+ 
+@@ -207,15 +288,23 @@
+ 
+ $$
+ x y^{\prime \prime}+(\alpha+1-x) y^{\prime}+n y=0, \quad 0<x<\infty
++\tag{13}
+ $$
+ 
+ where $n=0,1,2,3, \ldots$ and $\alpha$ is a real number, $\alpha>-1$. Clearly, (13) reduces to (7) when $\alpha=0$. Using the Frobenius method, it can be shown that (13) has a polynomial solution that, when appropriately normalized, is called the generalized Laguerre polynomial of degree $n$ and order $\alpha$, and is given by
+ 
+-$$
+-L_{n}^{\alpha}(x)=\Gamma(\alpha+n+1) \sum_{j=0}^{n} \frac{(-1)^{j}}{j!(n-j)!\Gamma(\alpha+j+1)} x^{j}
+-$$
+-
+-where $\Gamma$ denotes the gamma function (see Section 4.7). It is easy to check that the leading coefficient in (14) is $(-1)^{n} / n!$ for all $\alpha$ and that (14) reduces to (10) when $\alpha=0$. We thus have
++> [!definition|50e2ccf1-9203-5933-852e-3bb14c6eb7f5.local at=45f48f09-f412-5152-b6a3-e437fb9ad12c] Generalized Laguerre Polynomials
++> For $\alpha>-1$ and integers $n\ge0$, let $L_n^\alpha$ denote the generalized Laguerre polynomial solving $xy''+(\alpha+1-x)y'+ny=0$ with leading coefficient $(-1)^n/n!$.
++>
++> $$
++> L_{n}^{\alpha}(x)=\Gamma(\alpha+n+1) \sum_{j=0}^{n} \frac{(-1)^{j}}{j!(n-j)!\Gamma(\alpha+j+1)} x^{j}
++> $$
++>
++> Here $\Gamma$ is the gamma function.
++
++*Printed equation label: (14).*
++
++where $\Gamma$ denotes the gamma function (see Section 12.7). It is easy to check that the leading coefficient in (14) is $(-1)^{n} / n!$ for all $\alpha$ and that (14) reduces to (10) when $\alpha=0$. We thus have
+ 
+ $$
+ L_{n}^{0}(x)=L_{n}(x)
+@@ -223,51 +312,66 @@
+ 
+ The generalized Laguerre polynomials are given by a Rodrigues-type formula (see Theorem 7) and they satisfy orthogonality relations just like the Laguerre polynomials. You can check that all the remaining results of this section reduce to results about Laguerre polynomials when $\alpha=0$.
+ 
+-THEOREM 5 ORTHOGONALITY OF GENERALIZED LAGUERRE POLYNOMIALS
+-
+-THEOREM 6 GENERALIZED LAGUERRE SERIES EXPANSIONS
+-(i) If $m \neq n$ are nonnegative integers, then
+-
+-$$
+-\int_{0}^{\infty} L_{m}^{\alpha}(x) L_{n}^{\alpha}(x) e^{-x} x^{\alpha} d x=0
+-$$
+-
+-(ii) For all $n=0,1,2, \ldots$, we have
+-
+-$$
+-\int_{0}^{\infty}\left[L_{n}^{n}(x)\right]^{2} e^{-x} x^{\alpha} d x=\frac{\Gamma(n+n+1)}{n!}
+-$$
++> [!theorem|7f66db87-1a71-5e78-99e1-964dc08b0749.local at=b5fa0093-3e56-57e1-9f10-12b71ab4dfc1] Orthogonality of Generalized Laguerre Polynomials
++> (i) If $m \neq n$ are nonnegative integers, then
++>
++> $$
++> \int_{0}^{\infty} L_{m}^{\alpha}(x) L_{n}^{\alpha}(x) e^{-x} x^{\alpha} d x=0
++> $$
++>
++> (ii) For all $n=0,1,2, \ldots$, we have
++>
++> $$
++> \int_{0}^{\infty}\left[L_{n}^{\alpha}(x)\right]^{2} e^{-x} x^{\alpha} d x=\frac{\Gamma(n+\alpha+1)}{n!}
++> $$
++>
++> Here $\alpha>-1$ and $L_n^\alpha$ is the generalized Laguerre polynomial solving $xy^{\prime\prime}+(\alpha+1-x)y^{\prime}+ny=0$, with leading coefficient $(-1)^n/n!$.
+ 
+ The proof of this theorem follows from the interesting formula of Exercise 22. We leave the details to Exercise 23.
+ 
+-Suppose that $f$ is piecewise smooth on $[0 . \infty)$, and that $\int_{0}^{\infty}|f(x)|^{2} e^{-x} x^{\alpha}<$ ×. Then we have the generalized Laguerre series expansion
+-
+-$$
+-f(x)=\sum_{j=0}^{\infty} A_{j} L_{j}^{a}(x)
+-$$
+-
+-where the generalized Laguerre coefficients $A_{j}$ are given by
+-
+-$$
+-A_{j}=\frac{n!}{\Gamma(n+a+1)} \int_{0}^{\infty} f(x) L_{j}^{\alpha}(x) e^{-x} x^{\alpha} d x
+-$$
+-
+-For any $0<x<\infty$, the Laguerre series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
+-
+-The generalized Laguerre polynomials are also given by the Rodrigues-type formula
+-
+-$$
+-L_{n}^{\alpha}(x)=\frac{x^{-\alpha} c^{x}}{n!} \frac{d^{n}}{d x^{n}}\left[x^{n+\alpha} e^{-x}\right], \quad n=0,1,2, \ldots
+-$$
+-
+-We will give the proof momentarily. As an interesting application, we compute a generalized Laguerre serios.
+-
+-## EXAMPLE 3 A generalized Laguerre series expansion
++> [!theorem|af060bf3-e630-597f-9052-f92a4f18ff42.local at=ce33c97d-86a8-525e-8c2a-af2f045154fb] Generalized Laguerre Series Expansions
++> Suppose that $f$ is piecewise smooth on $[0, \infty)$, and that $\int_{0}^{\infty}|f(x)|^{2} e^{-x} x^{\alpha}\,dx<\infty$. Then we have the generalized Laguerre series expansion
++>
++> $$
++> f(x)=\sum_{j=0}^{\infty} A_{j} L_{j}^{\alpha}(x)
++> $$
++>
++> where the generalized Laguerre coefficients $A_{j}$ are given by
++>
++> $$
++> A_{j}=\frac{j!}{\Gamma(j+\alpha+1)} \int_{0}^{\infty} f(x) L_{j}^{\alpha}(x) e^{-x} x^{\alpha} d x
++> $$
++>
++> For any $0<x<\infty$, the Laguerre series converges to $f(x)$ if $f$ is continuous at $x$ and to $[f(x+)+f(x-)] / 2$ otherwise.
++>
++> Here $\alpha>-1$ and $L_n^\alpha$ is the generalized Laguerre polynomial solving $xy^{\prime\prime}+(\alpha+1-x)y^{\prime}+ny=0$, with leading coefficient $(-1)^n/n!$.
++
++*Printed equation label: (15).*
++
++> [!identity|2430145a-7223-50a5-b679-46a23ce39b8e.local at=a91d59ee-a8c3-5b47-bbf6-936ac6d4461c] Rodrigues Formula for Generalized Laguerre Polynomials
++> For $\alpha>-1$ and integers $n\ge0$, let $L_n^\alpha$ denote the generalized Laguerre polynomial solving $xy''+(\alpha+1-x)y'+ny=0$ with leading coefficient $(-1)^n/n!$.
++>
++> For $x>0$,
++>
++> $$
++> L_n^\alpha(x)=\frac{x^{-\alpha}e^x}{n!}\frac{d^n}{dx^n}\left(x^{n+\alpha}e^{-x}\right).
++> $$
++>
++> The right side extends to the polynomial at $x=0$.
++
++*Printed equation label: (16).*
++
++We will give the proof momentarily. As an interesting application, we compute a generalized Laguerre series.
++
++> [!exercise|b023f03d-6ffd-5f0f-87e6-8d7570095e23.local at=d74f79a1-89b9-521c-b208-6bda22740a24] EXAMPLE 3 A generalized Laguerre series expansion
++> For $\alpha>-1$ and $\mu>-(\alpha+1)/2$, find the generalized Laguerre series expansion of $f(x)=x^\mu$ by evaluating its coefficients with Rodrigues’ formula.
++
++##### solution
+ 
+ Let $\alpha>-1$ and $f(x)=x^{\mu}$ with $\mu>-\frac{1}{2}(\alpha+1)$. Then $f$ satisfies the condition in Theorem 6. Its generalized Laguerre series expansion of order $\alpha$ is of the form
+ 
+ $$
+-x^{\prime \prime}=\sum_{j=0}^{\infty} A_{j} L_{j}^{\alpha}(x) \quad(0<x<\infty),
++x^\mu=\sum_{j=0}^{\infty} A_{j} L_{j}^{\alpha}(x) \quad(0<x<\infty),
+ $$
+ 
+ where, by (15) and the Rodrigues formula, we have
+@@ -280,7 +384,7 @@
+ \end{aligned}
+ $$
+ 
+-We evaluate the last integral using integration by parts $j$ times. Each time we use the fact that an antiderivative of $x^{k+\alpha} e^{-x}$ ( $k$ positive integer) is equal to 0 at $x=0$ and tends to 0 as $x \rightarrow \infty$. As a result, we find that
++We integrate by parts $j$ times. The actual boundary products are derivatives of $x^\mu$ multiplied by derivatives of $x^{j+\alpha}e^{-x}$. At the origin they are $O(x^{\mu+\alpha+1})$, which tends to zero under the stated hypothesis, and at infinity exponential decay makes them vanish. As a result, we find that
+ 
+ $$
+ A_{j}=\frac{(-1)^{j}}{\Gamma(j+\alpha+1)} \mu(\mu-1) \cdots(\mu-j+1) \int_{0}^{\infty} x^{\mu+\alpha} e^{-x} d x
+@@ -295,32 +399,35 @@
+ and so, for $0<x<\infty$,
+ 
+ $$
+-x^{\mu}=\Gamma(\mu+\alpha+1) \sum_{j-0}^{\infty} \frac{(-1)^{j}}{\Gamma(j+\alpha+1)} \mu(\mu-1) \cdots(\mu-j+1) L_{j}^{\alpha}(x) .
++x^{\mu}=\Gamma(\mu+\alpha+1) \sum_{j=0}^{\infty} \frac{(-1)^{j}}{\Gamma(j+\alpha+1)} \mu(\mu-1) \cdots(\mu-j+1) L_{j}^{\alpha}(x) .
+ $$
+ 
+ The coefficients can be simplified further by using properties of the gamma function. See Exercise 25.
+ 
+ We next present some useful formulas and then prove (16).
+ 
+-THEOREM 7 FORMULAS FOR GENERALIZED LAGUERRE POLYNOMIALS
+-
+-## We have
+-
+-$$
+-\left[L_{n}^{n}(x)\right]^{\prime}=-L_{n-1}^{\alpha+1}(x) ;
+-$$
+-
+-$$
+-L_{n}^{\alpha}(x)=\frac{x}{n}\left[L_{n-1}^{\alpha}(x)\right]^{\prime}+\left(1+\frac{\alpha}{n}-\frac{x}{n}\right) L_{n-1}^{\alpha}(x) ;
+-$$
+-
+-$$
+-\left[L_{n}^{\alpha}(x)\right]^{\prime}=\left[L_{n-1}^{a}(x)\right]^{\prime}-L_{n-1}^{a}(x) ;
+-$$
+-
+-$$
+-(n+1) L_{n+1}^{\alpha}(x)-(2 n+\alpha+1-x) L_{n}^{\alpha}(x)+(n+\alpha) L_{n-1}^{\alpha}(x)=0
+-$$
++> [!theorem|3d2d887f-90dc-5099-a66f-293a73c26db4.local at=889768a9-4bc1-5575-b0e4-0b909f6c744c] Formulas for Generalized Laguerre Polynomials
++> For integers $n\ge1$, we have
++>
++> $$
++> \left[L_{n}^{\alpha}(x)\right]^{\prime}=-L_{n-1}^{\alpha+1}(x) ;
++> $$
++>
++> $$
++> L_{n}^{\alpha}(x)=\frac{x}{n}\left[L_{n-1}^{\alpha}(x)\right]^{\prime}+\left(1+\frac{\alpha}{n}-\frac{x}{n}\right) L_{n-1}^{\alpha}(x) ;
++> $$
++>
++> $$
++> \left[L_{n}^{\alpha}(x)\right]^{\prime}=\left[L_{n-1}^{\alpha}(x)\right]^{\prime}-L_{n-1}^{\alpha}(x) ;
++> $$
++>
++> $$
++> (n+1) L_{n+1}^{\alpha}(x)-(2 n+\alpha+1-x) L_{n}^{\alpha}(x)+(n+\alpha) L_{n-1}^{\alpha}(x)=0
++> $$
++>
++> Here $\alpha>-1$ and $L_n^\alpha$ is the generalized Laguerre polynomial solving $xy^{\prime\prime}+(\alpha+1-x)y^{\prime}+ny=0$, with leading coefficient $(-1)^n/n!$.
++
++*Printed equation labels: (17) parameter-shifting derivative identity; (18) order-raising identity; (19) successive-order derivative identity; (20) three-term recurrence.*
+ 
+ Proof of (16) and Theorem 7 Identity (17) follows easily from (14) and is left as an exercise. In proving the remaining identities, we will proceed as follows. We first
+ show that the functions defined by the right side of (16) are polynomials of degree $n$ and have leading coefficient $a_{n}=(-1)^{n} / n!$. (This part follows by induction and is left as an exercise.) We then show that these polynomials satisfy (18), (19), (20) and are solutions of (13). Since they also have the same leading coefficient as the generalized Laguerre polynomials, then they must be the generalized Laguerre polynomials. This will prove (16) and also complete the proof of Theorem 7.
+@@ -338,9 +445,10 @@
+ 
+ $$
+ \begin{aligned}
+-L_{n}^{\alpha}= & x^{-\alpha \cdot 1} \frac{c^{r}}{n!} D^{n}\left[x^{\alpha+n-1} e^{-x}\right] \\
++L_{n}^{\alpha}= & x^{-\alpha+1} \frac{e^x}{n!} D^{n}\left[x^{\alpha+n-1} e^{-x}\right] \\
+ & +\overbrace{\frac{e^{x}}{(n-1)!} x^{-\alpha} D^{n-1}\left[x^{\alpha+n-1} e^{-x}\right]}^{=L_{n-1}^{\alpha}}
+ \end{aligned}
++\tag{21}
+ $$
+ 
+ Starting from (16) with $n-1$, then differentiating both sides of
+@@ -390,6 +498,7 @@
+ 
+ $$
+ L_{n}^{\alpha}=\frac{x}{n}\left[L_{n}^{\alpha}\right]^{\prime}+\left(1+\frac{\alpha}{n}\right) L_{n-1}^{\alpha}
++\tag{22}
+ $$
+ 
+ Now (20) follows by changing $n$ to $n+1$ in (18), using (22) to get rid of $\left[L_{n}^{\alpha}\right]^{\prime}$, and then simplifying. In this final stage, we show that the functions satisfying (18) and (19) are solutions of (13). Differentiate (18) and then change $n$ to $n+1$ :
+@@ -400,210 +509,301 @@
+ 
+ Use (19) with $n+1$ in place of $n$ to eliminate $\left[L_{n+1}^{\alpha}\right]^{\prime}$, and then simplify to see that $L_{n}^{\alpha}$ satisfies (13).
+ 
+-## Exercises 11.4
++## Exercises 15.4
++
+ 
+ ## Hermite Polynomials
+ 
+-1. Derive the Hermite polynomials $H_{0}, H_{1}, H_{2}, H_{3}$ using (4).
+-2. Derive the recurrence relation (2) using the power series method (Appendix A.5).
+-3. Justify the application of Theorem 2, Section 6.2 in proving the orthogonality relation (i), Theorem 1. You must state and verify the conditions that cnable you to apply this theorem.
+-
+-Rodrigues formula. You will show in Exercise 8 that the $n$th Hermite polynomial is given by the following Rodrigues-type formula:
+-
+-$$
+-H_{n}(x)=(-1)^{n} e^{x^{2}} \frac{d^{n}}{d x^{n}} e^{-x^{2}}, \quad n=0,1,2, \ldots
+-$$
+-
+-where, as usual, the derivative of order 0 of a function is the function itself. This formula has many interesting consequences that we explore in the following exercises.
+-4. Verify (23) by deriving $H_{0}, H_{1}, H_{2}, H_{3}$.
+-5. (a) Starting from (23), show that
+-
+-$$
+-(-1)^{n} e^{-x^{2}} H_{n}(x)=\frac{d}{d x} \frac{d^{n-1}}{d x^{n-1}} e^{-x^{2}}
+-$$
+-
+-(b) Conclude that
+-
+-$$
+-\begin{aligned}
+-(-1)^{n} e^{-x^{2}} H_{n}(x) & =\frac{d}{d x}\left\{(-1)^{n-1} e^{-x^{2}} H_{n-1}(x)\right\} \\
+-& =(-1)^{n-1} e^{-x^{2}}\left(-2 x H_{n-1}(x)+H_{n-1}^{\prime}(x)\right)
+-\end{aligned}
+-$$
+-
+-(c) Simplify to get the following inductive formula:
+-
+-$$
+-H_{n}(x)=2 x H_{n-1}(x)-H_{n-1}^{\prime}(x), \quad n=1,2, \ldots
+-$$
+-
+-6. Project Problem: Recurrence relation for Hermite polynomials. The purpose of this exercise is to prove the following recurrence relation that relates Hermite polynomials of different degrees. For $n=1,2, \ldots$, we have
+-
+-$$
+-H_{n+1}(x)=2 x H_{n}(x)-2 n H_{n-1}(x) .
+-$$
+-
+-(a) To simplify notation, we will use $D^{n}$ for $\frac{d^{n}}{d x^{n}}$. Use (23) to prove that
+-
+-$$
+-e^{-x^{2}} H_{n+1}(x)=-2(-1)^{n+1} D^{n}\left(x e^{-x^{2}}\right)
+-$$
+-
+-(b) Use the Leibniz rule for differentiation (see the Appendix of Section 5.6) to obtain that
+-
+-$$
+-e^{-x^{2}} H_{n+1}(x)=2(-1)^{n}\left[x D^{n} e^{-x^{2}}+n D^{n-1} e^{-x^{2}}\right]
+-$$
+-
+-(c) Derive the recurrence relation (25).
+-7. (a) I se (25) to show that
+-
+-$$
+-H_{n}(-x)=(-1)^{n} H_{n}(x)
+-$$
+-
+-Hence. $H_{n}$ is even when $n$ is even, and odd when $n$ is odd. [Hint: Proof by induction.]
+-(b) Conclude from (a) that $H_{n}(0)=0$ when $n$ is odd.
+-(c) Use induction, the fact that $H_{0}(0)=1$, and (25) to show that
+-
+-$$
+-H_{2 m}(0)=(-1)^{m} \frac{(2 m)!}{m!}
+-$$
+-
+-8. In this exercise, we show that the functions given by (23) are indecd the Hermite polynomials. For that purpose, we will show that these functions are polynomials of degree $n$; the leading coefficient is $2^{n}$; and they satisfy the differential equation (1). The desired conclusion follows from the fact that the Hermite polynomials are the only polynomials with these properties. For clarity's sake, let us denote the functions in (23), (24) and (25) by $p_{n}(x)$, and reserve the notation $H_{n}(x)$ for the Hermite polynomials (4).
+-(a) Use the fact that $p_{0}(x)=1$ and (24) to prove that $p_{n}(x)$ is indeed a polynomial of degree $n$. [Hint: Proof by induction.]
+-(b) Use induction to show that the coefficient of $x^{n}$ in $p_{n}(x)$ is $2^{n}$.
+-(c) Replace $n$ by $n+1$ in (24) and subtract the result from (25) to obtain
+-
+-$$
+-p_{n}^{\prime}(x)=2 n p_{n-1}(x)
+-$$
+-
+-Differentiate (24), and then use (26) to obtain
+-
+-$$
+-2 n p_{n-1}(x)=2 x p_{n-1}^{\prime}(x)+2 p_{n-1}(x)-p_{n-1}^{\prime \prime}(x) .
+-$$
+-
+-After rearranging, show that $p_{n}$ is a solution of (1).
+-9. Integrating against Hermite polynomials. Show that
+-
+-$$
+-\int_{-\infty}^{\infty} f(x) H_{n}(x) e^{-x^{2}} d x=\int_{-\infty}^{\infty} f^{(n)}(x) e^{-x^{2}} d x, \quad n=0,1,2, \ldots
+-$$
+-
+-(For the integrals to converge, we require that $\lim _{x \rightarrow \pm \infty} f^{(k)}(x) x^{m} e^{-x^{2}}=0$ for all nonnegative integers $k$ and $m$.) [Hint: Use (23) and repeated integration by parts.]
+-10. Proof of Theorem 1.
+-(a) Use Exercise 9 to prove (i) of Theorem 1. [Hint: Without loss of generality, $m<n$. Now take $f=H_{m}$ in Exercise 9.]
+-(b) Use Exercise 9 to prove (ii) of Theorem 1. [Hint: You also need (3), and Exercise 35, Section 4.7.]
+-11. Hermite coefficients. Justify (5) using the orthogonality of Hermite polynomials.
+-12. Prove that
+-
+-$$
+-\int e^{-x^{2}} H_{n}(x) d x=-e^{-x^{2}} H_{n-1}(x)+C
+-$$
+-
+-[Hint: Use the Sturm-Liouville form of (1).]
+-13. (a) Let
+-
+-$$
+-\mathcal{U}_{0}(x)= \begin{cases}1 & \text { if } x>0 \\ 0 & \text { if } x<0\end{cases}
+-$$
+-
+-denote the Heaviside unit step function. Show that
+-
+-$$
+-\mathcal{U}(x)=\frac{1}{2}+\sum_{k=0}^{\infty} \frac{(-1)^{k}}{\sqrt{\pi} 2^{2 k+1}(2 k+1)!k!} H_{2 k+1}(x)
+-$$
+-
+-[Hint: Exercises 12 and 7(c).]
+-(b) Plot some partial sums and discuss the convergence of the series. Describe the behavior of the series at $x=0$.
+-14. Project Problem: In this exercise, you are asked to derive (6).
+-(a) Show that
+-
+-$$
+-\int_{-\infty}^{\infty} \sin x H_{2 k+1}(x) e^{-x^{2}} d x=2(-1)^{k} \int_{0}^{\infty} \cos x e^{-x^{2}} d x
+-$$
+-
+-[Hint: Exercise 9.]
+-(b) Derive (6) given that
+-
+-$$
+-2 \int_{0}^{\infty} \cos x e^{-x^{2}} d x=\frac{\sqrt{\pi}}{e^{1 / 4}}
+-$$
+-
+-(This integral is computed at the end of Section 7.2 with the help of the Fourier transform.)
+-(c) Plot some partial sums and discuss the convergence of the Hermite series of $\sin x$.
+-15. Project Problem: Generating function for the Hermite polynomials. We will show that, for any real numbers $x$ and $u$, we have
+-
+-$$
+-e^{2 x u-u^{2}}=\sum_{n=0}^{\infty} H_{n}(x) \frac{u^{n}}{n!}
+-$$
+-
+-(a) Prove that
+-
+-$$
+-\left.\frac{d^{n}}{d u^{n}} e^{-(x-n)^{2}}\right|_{u=0}=(-1)^{n} \frac{d^{n}}{d x^{n}} e^{-x^{2}}=e^{-x^{2}} H_{n}(x)
+-$$
+-
+-(b) Compute the Taylor series expansion of $e^{-(x-u)^{2}}$ about $u=0$. Then derive the formula for the generating function. [Hint: $e^{2 x u-u^{2}}=e^{x^{2}} e^{-(x-u)^{2}}$.]
+-16. (a) Derive the Hermite serios expansion
+-
+-$$
+-e^{x}=e^{1 / 4} \sum_{n=0}^{\infty} \frac{1}{2^{n} n!} H_{n}(x)
+-$$
+-
+-[Hint: Exercise 15.]
+-(b) Illustrate graphically the convergence of the Hermite series.
+-17. (a) Take $u=i / 2$ in Exercise 15 and derive the Hermite series expansion
+-
+-$$
+-\cos x=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{e^{1 / 4} 2^{2 k}(2 k)!} H_{2 k}(x)
+-$$
+-
+-(b) Plot several partial sums to illustrate the convergence of the series.
++> [!exercise|c14beecc-5bb6-5a4f-ab6e-3d3348c65170.local at=15c5cc30-6504-5f36-aa11-8ac2e0ea933c] Exercise 1
++> Derive the Hermite polynomials $H_{0}, H_{1}, H_{2}, H_{3}$ using (4).
++
++
++> [!exercise|6ad6e5aa-c89f-5f3d-bb4d-f246dd92ed88.local at=7eebaa2c-61e4-57e8-8d87-c738d8754813] Exercise 2
++> Derive the recurrence relation (2) using the power series method (Section 10.5).
++
++
++> [!exercise|9d1dd000-0e1b-5baf-9998-e9302eb34a2a.local at=3161ff0c-4c98-5a82-a047-7c4f20b6a299] Exercise 3
++> Justify the application of Theorem 2, Section 14.2 in proving the orthogonality relation (i), Theorem 1. You must state and verify the conditions that enable you to apply this theorem.
++
++
++> [!prompt|3bea2b83-11a3-5b12-8724-538d73761f0b.local at=5f670fdd-d271-5b44-9984-77f51507dcd6] Shared exercise instructions
++> Rodrigues formula. You will show in Exercise 8 that the $n$th Hermite polynomial is given by the following Rodrigues-type formula:
++>
++> $$
++> H_{n}(x)=(-1)^{n} e^{x^{2}} \frac{d^{n}}{d x^{n}} e^{-x^{2}}, \quad n=0,1,2, \ldots
++> $$
++>
++> where, as usual, the derivative of order 0 of a function is the function itself. This formula has many interesting consequences that we explore in the following exercises.
++
++*Printed equation label: (23).*
++
++
++> [!exercise|c3e7b434-b3f1-5310-9d85-b1dc2964e2f2.local at=f299e3b7-9f98-5cda-bf83-2f9b01606c43] Exercise 4
++> Verify (23) by deriving $H_{0}, H_{1}, H_{2}, H_{3}$.
++
++
++> [!exercise|f03fe814-b043-5012-9824-60fe395ea129.local at=2eda3a81-1c83-5799-9d5d-551f41aa9d63] Exercise 5
++> (a) Starting from (23), show that
++>
++> $$
++> (-1)^{n} e^{-x^{2}} H_{n}(x)=\frac{d}{d x} \frac{d^{n-1}}{d x^{n-1}} e^{-x^{2}}
++> $$
++>
++> (b) Conclude that
++>
++> $$
++> \begin{aligned}
++> (-1)^{n} e^{-x^{2}} H_{n}(x) & =\frac{d}{d x}\left\{(-1)^{n-1} e^{-x^{2}} H_{n-1}(x)\right\} \\
++> & =(-1)^{n-1} e^{-x^{2}}\left(-2 x H_{n-1}(x)+H_{n-1}^{\prime}(x)\right)
++> \end{aligned}
++> $$
++>
++> (c) Simplify to get the following inductive formula:
++>
++> $$
++> H_{n}(x)=2 x H_{n-1}(x)-H_{n-1}^{\prime}(x), \quad n=1,2, \ldots
++> $$
++
++*Printed equation label: (24).*
++
++
++> [!exercise|deae2882-7a7c-5c47-86b0-aa23c81dd3ae.local at=873ccded-e0f8-503b-b565-c624d5182882] Exercise 6
++> Project Problem: Recurrence relation for Hermite polynomials. The purpose of this exercise is to prove the following recurrence relation that relates Hermite polynomials of different degrees. For $n=1,2, \ldots$, we have
++>
++> $$
++> H_{n+1}(x)=2 x H_{n}(x)-2 n H_{n-1}(x) .
++> $$
++>
++> (a) To simplify notation, we will use $D^{n}$ for $\frac{d^{n}}{d x^{n}}$. Use (23) to prove that
++>
++> $$
++> e^{-x^{2}} H_{n+1}(x)=-2(-1)^{n+1} D^{n}\left(x e^{-x^{2}}\right)
++> $$
++>
++> (b) Use the Leibniz rule for differentiation (see the Appendix of Section 13.6) to obtain that
++>
++> $$
++> e^{-x^{2}} H_{n+1}(x)=2(-1)^{n}\left[x D^{n} e^{-x^{2}}+n D^{n-1} e^{-x^{2}}\right]
++> $$
++>
++> (c) Derive the recurrence relation (25).
++
++*Printed equation label: (25).*
++
++
++> [!exercise|e16ff201-7b03-5aa6-bf5d-85becb9f702b.local at=a8c306e2-838e-52fc-9a77-2140f3448b80] Exercise 7
++> (a) Use (25) to show that
++>
++> $$
++> H_{n}(-x)=(-1)^{n} H_{n}(x)
++> $$
++>
++> Hence. $H_{n}$ is even when $n$ is even, and odd when $n$ is odd. [Hint: Proof by induction.]
++> (b) Conclude from (a) that $H_{n}(0)=0$ when $n$ is odd.
++> (c) Use induction, the fact that $H_{0}(0)=1$, and (25) to show that
++>
++> $$
++> H_{2 m}(0)=(-1)^{m} \frac{(2 m)!}{m!}
++> $$
++
++
++> [!exercise|ab0c859c-3317-5da7-93fa-d27205bcdf53.local at=02e05d2b-3a73-57a9-81b9-b86cbe0a928b] Exercise 8
++> In this exercise, we show that the functions given by (23) are indeed the Hermite polynomials. For that purpose, we will show that these functions are polynomials of degree $n$; the leading coefficient is $2^{n}$; and they satisfy the differential equation (1). The desired conclusion follows from the fact that the Hermite polynomials are the only polynomials with these properties. For clarity's sake, let us denote the functions in (23), (24) and (25) by $p_{n}(x)$, and reserve the notation $H_{n}(x)$ for the Hermite polynomials (4).
++> (a) Use the fact that $p_{0}(x)=1$ and (24) to prove that $p_{n}(x)$ is indeed a polynomial of degree $n$. [Hint: Proof by induction.]
++> (b) Use induction to show that the coefficient of $x^{n}$ in $p_{n}(x)$ is $2^{n}$.
++> (c) Replace $n$ by $n+1$ in (24) and subtract the result from (25) to obtain
++>
++> $$
++> p_{n}^{\prime}(x)=2 n p_{n-1}(x)
++> $$
++>
++> Differentiate (24), and then use (26) to obtain
++>
++> $$
++> 2 n p_{n-1}(x)=2 x p_{n-1}^{\prime}(x)+2 p_{n-1}(x)-p_{n-1}^{\prime \prime}(x) .
++> $$
++>
++> After rearranging, show that $p_{n}$ is a solution of (1).
++
++*Printed equation label: (26).*
++
++
++> [!exercise|3bb07c43-f83f-5ecf-a7e8-93e738bfdcd8.local at=067a71ac-ccac-5955-b4ae-4ddb2f6f97c5] Exercise 9
++> Integrating against Hermite polynomials. Show that
++>
++> $$
++> \int_{-\infty}^{\infty} f(x) H_{n}(x) e^{-x^{2}} d x=\int_{-\infty}^{\infty} f^{(n)}(x) e^{-x^{2}} d x, \quad n=0,1,2, \ldots
++> $$
++>
++> (For the integrals to converge, we require that $\lim _{x \rightarrow \pm \infty} f^{(k)}(x) x^{m} e^{-x^{2}}=0$ for all nonnegative integers $k$ and $m$.) [Hint: Use (23) and repeated integration by parts.]
++
++
++> [!exercise|0dcf5ac7-b981-5010-b444-891180c6d1e9.local at=b44da26f-d54f-59b2-a0c7-9e9865a6de90] Exercise 10
++> Proof of Theorem 1.
++> (a) Use Exercise 9 to prove (i) of Theorem 1. [Hint: Without loss of generality, $m<n$. Now take $f=H_{m}$ in Exercise 9.]
++> (b) Use Exercise 9 to prove (ii) of Theorem 1. [Hint: You also need (3), and Exercise 35, Section 12.7.]
++
++
++> [!exercise|a8672695-66b0-5c78-9235-1131a753f939.local at=2439bac2-f85e-5113-b0f6-d7f1f71a23c7] Exercise 11
++> Hermite coefficients. Justify (5) using the orthogonality of Hermite polynomials.
++
++
++> [!exercise|ab030e57-b370-5c3e-ae05-541fda0ed2e1.local at=e550e1a2-0980-5c5d-b377-5e5910026517] Exercise 12
++> For integers $n\ge1$, prove that
++>
++> $$
++> \int e^{-x^{2}} H_{n}(x) d x=-e^{-x^{2}} H_{n-1}(x)+C
++> $$
++>
++> [Hint: Use the Sturm-Liouville form of (1).]
++
++
++
++
++> [!exercise|321213e9-25ad-5ae3-a618-7813ed94208e.local at=f800811e-baf0-5fcc-b4b1-6a4b845807b1] Exercise 13
++> (a) Let
++>
++> $$
++> \mathcal{U}_{0}(x)= \begin{cases}1 & \text { if } x>0 \\ 0 & \text { if } x<0\end{cases}
++> $$
++>
++> denote the Heaviside unit step function. Show that
++>
++> $$
++> \mathcal{U}_0(x)=\frac{1}{2}+\sum_{k=0}^{\infty} \frac{(-1)^{k}}{\sqrt{\pi}2^{2k+1}(2k+1)k!} H_{2 k+1}(x)
++> $$
++>
++> [Hint: Exercises 12 and 7(c).]
++> (b) Plot some partial sums and discuss the convergence of the series. Describe the behavior of the series at $x=0$.
++
++
++> [!exercise|e59532b3-97bd-5cd9-b743-5f1a6a8ab3ef.local at=02cf6296-b842-5e2d-9b0f-d83d83815dd3] Exercise 14
++> Project Problem: In this exercise, you are asked to derive (6).
++> (a) Show that
++>
++> $$
++> \int_{-\infty}^{\infty} \sin x H_{2 k+1}(x) e^{-x^{2}} d x=2(-1)^{k} \int_{0}^{\infty} \cos x e^{-x^{2}} d x
++> $$
++>
++> [Hint: Exercise 9.]
++> (b) Derive (6) given that
++>
++> $$
++> 2 \int_{0}^{\infty} \cos x e^{-x^{2}} d x=\frac{\sqrt{\pi}}{e^{1 / 4}}
++> $$
++>
++> (This integral is computed at the end of Section 8.2 with the help of the Fourier transform.)
++> (c) Plot some partial sums and discuss the convergence of the Hermite series of $\sin x$.
++
++
++> [!exercise|f3ba7d92-86de-547b-807b-2cf1679a9fef.local at=cf2d3d12-d4b8-543a-b035-4566a7df9766] Exercise 15
++> Project Problem: Generating function for the Hermite polynomials. We will show that, for any real numbers $x$ and $u$, we have
++>
++> $$
++> e^{2 x u-u^{2}}=\sum_{n=0}^{\infty} H_{n}(x) \frac{u^{n}}{n!}
++> $$
++>
++> (a) Prove that
++>
++> $$
++> \left.\frac{d^{n}}{d u^{n}} e^{-(x-u)^2}\right|_{u=0}=(-1)^{n} \frac{d^{n}}{d x^{n}} e^{-x^{2}}=e^{-x^{2}} H_{n}(x)
++> $$
++>
++> (b) Compute the Taylor series expansion of $e^{-(x-u)^{2}}$ about $u=0$. Then derive the formula for the generating function. [Hint: $e^{2 x u-u^{2}}=e^{x^{2}} e^{-(x-u)^{2}}$.]
++
++
++> [!exercise|f3796313-f633-5980-bd49-6138e3891759.local at=2bc46d45-f74b-5b58-9e58-e26b113e9eb3] Exercise 16
++> (a) Derive the Hermite series expansion
++>
++> $$
++> e^{x}=e^{1 / 4} \sum_{n=0}^{\infty} \frac{1}{2^{n} n!} H_{n}(x)
++> $$
++>
++> [Hint: Exercise 15.]
++> (b) Illustrate graphically the convergence of the Hermite series.
++
++
++> [!exercise|9fa559ea-2d6c-50b9-9519-11d5e31fbeef.local at=c1002460-cca4-5790-a4ab-bf78b0e7bbe3] Exercise 17
++> (a) Take $u=i / 2$ in Exercise 15 and derive the Hermite series expansion
++>
++> $$
++> \cos x=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{e^{1 / 4} 2^{2 k}(2 k)!} H_{2 k}(x)
++> $$
++>
++> (b) Plot several partial sums to illustrate the convergence of the series.
++
+ 
+ ## Laguerre Polynomials
+ 
+-18. Derive the Laguerre polynomials $L_{0}, L_{1}, L_{2}, L_{3}$ using (10).
+-19. Derive the recurrence relation (8) using the Frobenius method (Appendix A.6).
+-20. Justify using Theorem 2, Section 6.2, to prove the orthogonality relation in Theorem 3 above.
+-21. Prove (17) from (14).
+-22. Integrating against Laguerre polynomials. Establish the formula
+-
+-$$
+-\int_{0}^{\infty} f(x) L_{n}^{\alpha}(x) x^{\alpha} e^{-x} d x=\frac{(-1)^{n}}{n!} \int_{0}^{\infty} f^{(n)}(x) x^{\alpha+n} e^{-x} d x
+-$$
+-
+-for $n=0,1,2, \ldots$. Here $f$ is such that $\lim _{x \rightarrow \infty} f^{(k)}(x) x^{m} e^{-x}=0$ for all nonnegative integers $k$ and $m$. [Hint: Integrate by parts.]
+-23. Prove Theorem 5 (and hence Theorem 3), using Exercise 22. [Hint: You also need to use (14).]
+-24. Generating function for the generalized Laguerre polynomials. For any real number $x$ and all $-1<t<1$, we have
+-
+-$$
+-\frac{e^{-x t /(1-t)}}{(1-t)^{-(\alpha+1)}}=1+\sum_{n=1}^{\infty} L_{n}^{\alpha}(x) t^{n}
+-$$
+-
+-This formula can be derived in much the same way we derived the generating function for the Hermite and Legendre polynomials. As an application, take $\alpha=0$ and derive the Laguerre series expansion of $e^{-x}$.
+-25. Show that the Laguerre series expansion of Example 3 can be written as
+-
+-$$
+-x^{\mu}=\Gamma(\mu+\alpha+1) \Gamma(\mu+1) \sum_{j=0}^{\infty} \frac{(-1)^{J} L_{j}^{\alpha}(x)}{\Gamma(\alpha+j+1) \Gamma(\mu-j+1)}
+-$$
+-
+-(a) Explain why this series has only finitely many terms when $\mu$ is a nonnegative integer. [Hint: Review the definition of the gamma function for nonpositive integers.]
+-(b) Simplify the expansion as much as possible when $\mu=1 / 2$.
+-(c) Plot several partial sums to illustrate your answer in (b).
+-26. Consider the Laguerre series expansion
+-
+-$$
+-x^{-\alpha / 2} J_{\alpha}(2 \sqrt{x})=e^{-1} \sum_{k=0}^{\infty} \frac{1}{\Gamma(k+\alpha+1)} L_{k}^{\alpha}(x), \quad(0<x<\infty)
+-$$
+-
+-where $\alpha \geq 0$.
+-(a) Simplify the expansion as much as possible when $\alpha=0$.
+-(b) Plot several partial sums to illustrate your answer in (a).
+-27. Use (4) and (14) to derive the following identities that relate certain Hermite and Laguerre polynomials:
+-
+-$$
+-L_{n}^{-1 / 2}(x)=\frac{(-1)^{n}}{2^{2 n} n!} H_{2 n}(\sqrt{x}) ; \quad L_{n}^{1 / 2}(x)=\frac{(-1)^{n}}{2^{2 n+1} n!} \frac{H_{2 n+1}(\sqrt{x})}{\sqrt{x}}
+-$$
++> [!exercise|6ffdf912-bbea-5a2f-ad24-8aca3c9287de.local at=27acf12f-334c-5d35-a6e1-2247005d59f9] Exercise 18
++> Derive the Laguerre polynomials $L_{0}, L_{1}, L_{2}, L_{3}$ using (10).
++
++
++> [!exercise|b235875d-d3b8-52a2-9af7-f44265b46511.local at=2ef7bb04-a130-5c44-931e-4ab313bd74f2] Exercise 19
++> Derive the recurrence relation (8) using the Frobenius method (Section 10.6).
++
++
++> [!exercise|d8aef4a8-608e-5a77-86cd-4e0ab8ee8a3d.local at=16b77c1d-10df-5bcb-b5b3-56625ec71b19] Exercise 20
++> Justify using Theorem 2, Section 14.2, to prove the orthogonality relation in Theorem 3 above.
++
++
++> [!exercise|f118f8c4-bcdf-5a01-aac0-bfc606f64372.local at=d8ff4377-55fe-5d9a-99f2-0c4c27b1b097] Exercise 21
++> Prove (17) from (14).
++
++
++> [!exercise|4d13b4f5-f3a8-5e0b-b57b-a6bcfa055ab0.local at=ff06c181-f458-57d6-8447-6ffe3a0f3f10] Exercise 22
++> Integrating against Laguerre polynomials. Establish the formula
++>
++> $$
++> \int_{0}^{\infty} f(x) L_{n}^{\alpha}(x) x^{\alpha} e^{-x} d x=\frac{(-1)^{n}}{n!} \int_{0}^{\infty} f^{(n)}(x) x^{\alpha+n} e^{-x} d x
++> $$
++>
++> for $n=0,1,2,\ldots$ and $\alpha>-1$. Assume the displayed integrals converge, $f$ has the necessary derivatives, and all integration-by-parts boundary products vanish at both $0$ and $\infty$ (for example, take $f$ smooth at $0$ with suitable growth at infinity). In particular, at infinity require that $\lim _{x \rightarrow \infty} f^{(k)}(x) x^{m} e^{-x}=0$ for all nonnegative integers $k$ and $m$. [Hint: Integrate by parts.]
++
++
++> [!exercise|5d5cf83e-bb49-5bce-b3d5-4bbbfe398a37.local at=e4fbf42d-dcc0-56d1-a9ad-5f94995fce2f] Exercise 23
++> Prove Theorem 5 (and hence Theorem 3), using Exercise 22. [Hint: You also need to use (14).]
++
++
++
++
++> [!exercise|ddbef85b-acfc-5ed2-82b2-0e4d373eb12b.local at=67744472-f701-545e-9afc-42e5807023c8] Exercise 24
++> Generating function for the generalized Laguerre polynomials. For any real number $x$ and all $-1<t<1$, we have
++>
++> $$
++> \frac{e^{-xt/(1-t)}}{(1-t)^{\alpha+1}}=1+\sum_{n=1}^{\infty} L_{n}^{\alpha}(x) t^{n}
++> $$
++>
++> This formula can be derived in much the same way we derived the generating function for the Hermite and Legendre polynomials. As an application, take $\alpha=0$ and derive the Laguerre series expansion of $e^{-x}$.
++
++
++> [!exercise|f7a0e64d-9c5d-54b2-9bd6-268302cdf443.local at=01aa56ee-978f-5839-9b53-30f80c09a0be] Exercise 25
++> With the hypotheses of Example 3, show that the Laguerre series expansion of Example 3 can be written as
++>
++> $$
++> x^{\mu}=\Gamma(\mu+\alpha+1) \Gamma(\mu+1) \sum_{j=0}^{\infty} \frac{(-1)^j L_{j}^{\alpha}(x)}{\Gamma(\alpha+j+1) \Gamma(\mu-j+1)}
++> $$
++>
++> (a) Explain why this series has only finitely many terms when $\mu$ is a nonnegative integer. [Hint: $1/\Gamma(z)$ vanishes at nonpositive integers. Interpret gamma quotients at poles by their limits; equivalently, replace $(-1)^j\Gamma(\mu+1)/\Gamma(\mu-j+1)$ by the rising factorial $(-\mu)_j$.]
++> (b) Simplify the expansion as much as possible when $\mu=1 / 2$.
++> (c) Plot several partial sums to illustrate your answer in (b).
++
++
++> [!exercise|69f52233-f18f-5e62-8dac-25ec4bcafe3a.local at=12e7ae4d-e672-5b14-afcd-c8a131fcb6c0] Exercise 26
++> Consider the Laguerre series expansion
++>
++> $$
++> x^{-\alpha / 2} J_{\alpha}(2 \sqrt{x})=e^{-1} \sum_{k=0}^{\infty} \frac{1}{\Gamma(k+\alpha+1)} L_{k}^{\alpha}(x), \quad(0<x<\infty)
++> $$
++>
++> where $\alpha \geq 0$.
++> (a) Simplify the expansion as much as possible when $\alpha=0$.
++> (b) Plot several partial sums to illustrate your answer in (a).
++
++
++> [!exercise|75fc2d6a-2a6a-51e8-8549-c3084817a498.local at=7d396ed5-45a0-5973-ae7d-4257e8076ff9] Exercise 27
++> Use (4) and (14) to derive the following identities that relate certain Hermite and Laguerre polynomials:
++>
++> $$
++> L_{n}^{-1 / 2}(x)=\frac{(-1)^{n}}{2^{2 n} n!} H_{2 n}(\sqrt{x}) ; \quad L_{n}^{1 / 2}(x)=\frac{(-1)^{n}}{2^{2 n+1} n!} \frac{H_{2 n+1}(\sqrt{x})}{\sqrt{x}}
++> $$
+
+`````

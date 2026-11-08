@@ -17,3 +17,704 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 09 The Laplace and Hankel Transforms with Applications/9.3 The Laplace Transform Method.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 09 The Laplace and Hankel Transforms with Applications/9.3 The Laplace Transform Method.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/9.3 The Laplace Transform Method.md
+@@ -1,55 +1,69 @@
+-### 9.3 The Laplace Transform Method
+-
+-In this section we will use the Laplace transform to solve partial differential equations in the same way we used the Fourier transform. Before turning to examples, we set the notation for this section. The Laplace transform of $u(x, t)$ with respect to the variable $t$ is
+-
+-$$
+-\mathcal{L}(u(x, t))(s)=U(x, s)=\int_{0}^{\infty} u(x, t) e^{-s t} d t
+-$$
+-
+-Using Theorem 3, Section 9.1, we find that
+-
+-$$
+-\mathcal{L}\left(\frac{\partial u}{\partial t}\right)=s U(x, s)-u(x, 0)
+-$$
+-
+-and
+-(2)
+-
+-$$
+-\mathcal{L}\left(\frac{\partial^{2} u}{\partial t^{2}}\right)=s^{2} U(x, s)-s u(x, 0)-\frac{\partial u}{\partial t}(x, 0)
+-$$
+-
+-Keeping in mind that we are taking the Laplace transform with respect to $t$, we also have
+-
+-$$
+-\mathcal{L}\left(\frac{\partial u}{\partial x}\right)=\frac{d U}{d x}(x, s),
+-$$
+-
+-and
+-
+-$$
+-\mathcal{L}\left(\frac{\partial^{2} u}{\partial x^{2}}\right)=\frac{d^{2} U}{d x^{2}}(x, s)
+-$$
+-
+-These formulas are obtained by differentiating under the integral sign as we did in deriving the corresponding formulas with the Fourier transform in Section 11.2. Also, to emphasize the fact that $s$ will be treated as a parameter in the transformed differential equations, we have used the notation for ordinary derivatives in (3) and (4).
++
++# 9.3 The Laplace Transform Method
++
++In this section we will use the Laplace transform to solve partial differential equations in the same way we used the Fourier transform. Before turning to examples, we set the notation for this section.
++
++> [!definition|514faa66-dea5-5c0e-b4d9-b0a4b5a7ea32.local at=a5854b0d-e10b-54ca-8d7d-f28911c47c91] Partial Laplace Transform in Time
++> The Laplace transform of $u(x, t)$ with respect to the variable $t$ is
++>
++> $$
++> \mathcal{L}(u(x, t))(s)=U(x, s)=\int_{0}^{\infty} u(x, t) e^{-s t} d t
++> $$
++>
++>
++>
++> The integral is evaluated where it converges, with $x$ held fixed.
++
++> [!property|399e8cfd-e2cb-5f85-b518-583e2608850d.local at=788ab6be-77eb-5c0c-a1b1-9eaf7019bab3] Time and Spatial Derivatives under the Partial Laplace Transform
++> Let $U(x,s)=\int_0^\infty u(x,t)e^{-st}\,dt$. Assume the required time derivatives are piecewise continuous, $u$ and $u_t$ are continuous at the time endpoint, and the functions have exponential bounds below $s$. For spatial differentiation, assume the derivatives exist and have an integrable dominating function after multiplication by $e^{-st}$ locally in $x$. Then
++>
++> $$
++> \mathcal{L}\left(\frac{\partial u}{\partial t}\right)=s U(x, s)-u(x, 0)
++> $$
++>
++> and
++>
++> $$
++> \mathcal{L}\left(\frac{\partial^{2} u}{\partial t^{2}}\right)=s^{2} U(x, s)-s u(x, 0)-\frac{\partial u}{\partial t}(x, 0)
++> $$
++>
++> Keeping in mind that we are taking the Laplace transform with respect to $t$, we also have
++>
++> $$
++> \mathcal{L}\left(\frac{\partial u}{\partial x}\right)=\frac{d U}{d x}(x, s),
++> $$
++>
++> and
++>
++> $$
++> \mathcal{L}\left(\frac{\partial^{2} u}{\partial x^{2}}\right)=\frac{d^{2} U}{d x^{2}}(x, s)
++> $$
++
++*Printed equation labels: (1) first time derivative; (2) second time derivative; (3) first spatial derivative; (4) second spatial derivative.*
++
++These formulas are obtained by differentiating under the integral sign as we did in deriving the corresponding formulas with the Fourier transform in Section 8.2. Also, to emphasize the fact that $s$ will be treated as a parameter in the transformed differential equations, we have used the notation for ordinary derivatives in (3) and (4).
+ 
+ We are now ready for the applications. We treat typical examples dealing with the heat and wave equations. The first problem models heat
+-transfer in an infinite insulated rod whose initial temperature is $0^{\circ}$, given that heat from a reservoir is introduced through one end of the rod.
+-
+-## EXAMPLE 1 Heat equation for a semi-infinite rod
+-
+-Solve the heat problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad 0<x<\infty, t>0 \\
+-u(0, t) & =f(t), \quad t>0 \\
+-u(x, 0) & =0, \quad 0<x<\infty
+-\end{aligned}
+-$$
+-
+-The problem is illustrated in Figure 1.
+-Solution We transform (5) with the Laplace transform with respect to $t$. Using (1) and (4), we get
++transfer in a semi-infinite insulated rod whose initial temperature is $0^{\circ}$, given that heat from a reservoir is introduced through one end of the rod.
++
++> [!exercise|17469254-9bef-5886-bb21-89a78ad40533.local at=1b844859-9f39-54d3-ae36-9114bac593a0] EXAMPLE 1 Heat equation for a semi-infinite rod
++> Solve the heat problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad 0<x<\infty, t>0 \\
++> u(0, t) & =f(t), \quad t>0 \\
++> u(x, 0) & =0, \quad 0<x<\infty
++> \end{aligned}
++> $$
++>
++> Require the transformed solution to remain bounded as $x\to\infty$ for each fixed positive transform parameter. The problem is illustrated in Figure 1.
++
++*Printed equation labels: (5) heat equation; (6) endpoint data; (7) initial temperature.*
++
++##### solution
++
++We transform (5) with the Laplace transform with respect to $t$. Using (1) and (4), we get
+ 
+ $$
+ \begin{gathered}
+@@ -58,7 +72,19 @@
+ \end{gathered}
+ $$
+ 
+-Figure 1
++```scientific-figure
++id: 5f82c8c6-b697-4e6b-8f2a-90857d5a3f55
++numbered: false
++title: ""
++caption: Figure 1 Heat equation on a semi-infinite rod with time-dependent boundary temperature.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/asmar-9-3-figure-1-restored.png
++    caption: ""
++```
++
+ 
+ The general solution of this differential equation is
+ 
+@@ -66,7 +92,7 @@
+ U(x, s)=A(s) e^{\sqrt{s} x / c}+B(s) e^{-\sqrt{s} x / c}
+ $$
+ 
+-where $A(s)$ and $B(s)$ are constants that depend on $s$ (see Appendix A.2). Expecting the transform to be bounded as $s \rightarrow \infty$, we set $A(s)=0$. To determine $B(s)$, we transform (6) and obtain $U(0, s)=B(s)=F(s)$, where $F(s)$ denotes the Laplace transform of $f$. Hence, $B(s)=F(s)$, and so
++where $A(s)$ and $B(s)$ are constants that depend on $s$ (see Section 10.2). Require $U(x,s)$ to remain bounded as $x\to\infty$ for each fixed $s>0$. This gives $A(s)=0$.  To determine $B(s)$, we transform (6) and obtain $U(0, s)=B(s)=F(s)$, where $F(s)$ denotes the Laplace transform of $f$. Hence, $B(s)=F(s)$, and so
+ 
+ $$
+ U(x, s)=F(s) e^{-\sqrt{s} x / c}
+@@ -94,19 +120,33 @@
+ 
+ $$
+ u(x, t)=\frac{x}{2 c \sqrt{\pi}} \int_{0}^{t} \frac{f(\tau)}{(t-\tau)^{3 / 2}} e^{-\frac{x^{2}}{4 c^{2}(t-\tau)}} d \tau
+-$$
+-
+-![](./images/68332ba3-9551-434a-a491-ce53af60160e-24_386_474_674_86.jpg)
+-Figure 2 Expected temperature distribution.
++\tag{8}
++$$
++
++```scientific-figure
++id: bc28d576-d5a9-4483-9f71-1af42728d624
++numbered: false
++title: ""
++caption: Figure 2 Expected temperature distribution.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/68332ba3-9551-434a-a491-ce53af60160e-24_386_474_674_86.jpg
++    caption: ""
++```
++
+ 
+ Note that the solution depends on the value of $f(\tau)$ only for $0<\tau<t$. We would expect this, because the temperature $f(\tau)$ of the heat reservoir in the future ( $\tau>t$ ) cannot possibly affect the temperature of the rod now.
+ 
+ The convolution integral in (8) is hard to compute in general. In the following example we carry out the computations in the case of a constant heat source.
+ 
+-## EXAMPLE 2 Heat problem with a constant heat source
+-
+-Solve the problem of Example 1 in the special case when $f(t)=T_{0}$. Take $T_{0}= 100, c=1$, and illustrate the solution graphically by plotting $u(x, t)$ for various values of $t$.
+-Solution Before we embark on the solution, let us examine intuitively the consequences of the initial and boundary conditions. Given that the initial temperature is $0^{\circ}$, and given that we are introducing heat at the origin at the constant temperature $T_{0}$, we expect the temperature to propagate throughout the bar and reach the temperature $T_{0}$ at all points. However, at any given time $t$, if we go far enough from the source of heat, the temperature is expected to be near the initial temperature $0^{\circ}$. Thus at any time, the temperature distribution in the bar should look like the graph in Figure 2.
++> [!exercise|2d4f58a4-d2aa-5870-8ec8-1ad39d0f3f1a.local at=ade30327-761f-5223-a012-a3b20db4b496] EXAMPLE 2 Heat problem with a constant heat source
++> Solve the problem of Example 1 in the special case when $f(t)=T_{0}$. Take $T_{0}= 100, c=1$, and illustrate the solution graphically by plotting $u(x, t)$ for various values of $t$.
++
++##### solution
++
++Before we embark on the solution, let us examine intuitively the consequences of the initial and boundary conditions. Given that the initial temperature is $0^{\circ}$, and given that we are introducing heat at the origin at the constant temperature $T_{0}$, we expect the temperature to propagate throughout the bar and reach the temperature $T_{0}$ at all points. However, at any given time $t$, if we go far enough from the source of heat, the temperature is expected to be near the initial temperature $0^{\circ}$. Thus at any time, the temperature distribution in the bar should look like the graph in Figure 2.
+ 
+ Now let us see if all this can be derived analytically, using the result of Example 1. Substituting $f(t)=T_{0}$ in (8) and making the change of variables $z=x /(2 c \sqrt{t-\tau}), d z=\frac{x}{4 c(t-\tau)^{3 / 2}} d \tau$, we get
+ 
+@@ -114,80 +154,98 @@
+ u(x, t)=T_{0} \frac{2}{\sqrt{\pi}} \int_{x /(2 c \sqrt{t})}^{\infty} e^{-z^{2}} d z=T_{0} \operatorname{erfc}\left(\frac{x}{2 c \sqrt{t}}\right)
+ $$
+ 
+-where erfc is the complementary error function introduced in Section 11.4, Exercise 16. Figure 3 illustrates the solution when $T_{0}=100$, and $c=1$ and $u(x, t)= 100 \operatorname{erfc}\left(\frac{x}{2 \sqrt{t}}\right)$.
+-
+-Figure 3 Temperature distribution in Example 2.
+-![](./images/68332ba3-9551-434a-a491-ce53af60160e-24_691_1172_1760_785.jpg)
+-
+-Note that
+-$\mathcal{L}^{-1}\left(\frac{1}{s^{2}}\right)=t$
+-and
+-$\mathcal{L}^{-1}\left(\frac{e^{-\frac{\varepsilon}{c} x}}{s^{2}}\right)=\left(t-\frac{x}{c}\right) \mathcal{U}_{0}\left(t-\frac{x}{c}\right)$.
++where erfc is the complementary error function introduced in Section 8.4, Exercise 16. Figure 3 illustrates the solution when $T_{0}=100$, and $c=1$ and $u(x, t)= 100 \operatorname{erfc}\left(\frac{x}{2 \sqrt{t}}\right)$.
++
++```scientific-figure
++id: 59acd8e0-2e4c-4115-9542-90ea0d2bd68b
++numbered: false
++title: ""
++caption: Figure 3 Temperature distribution in Example 2.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/68332ba3-9551-434a-a491-ce53af60160e-24_691_1172_1760_785.jpg
++    caption: ""
++```
++
+ 
+ The next example illustrates the use of the Laplace transform in solving wave equations.
+ 
+-## EXAMPLE 3 Forced vibrations of a semi-infinite string
+-
+-A semi-infinite string is initially at rest on the $x$-axis with one end fastened at the origin. The string is set in motion by releasing it from rest in the presence of an external force. The motion of the string is modeled by the wave equation
+-
+-$$
+-\frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}+f(t), \quad x>0, t>0,
+-$$
+-
+-where $f(t)$ denotes the amount of force per unit length. Solve this differential equation subject to the boundary condition
+-
+-$$
+-u(0, t)=0, \quad t>0,
+-$$
+-
+-and the initial conditions
+-
+-$$
+-u(x, 0)=0, \quad \frac{\partial u}{\partial t}(x, 0)=0, \quad x>0
+-$$
+-
+-Solution Transforming both sides of the differential equation with respect to $t$ and taking into account the initial conditions, we get
++> [!exercise|06d155d4-d744-5cab-8fce-e555671da43b.local at=2f69c955-190e-5917-af06-9c739a81aa87] EXAMPLE 3 Forced vibrations of a semi-infinite string
++> A semi-infinite string is initially at rest on the $x$-axis with one end fastened at the origin. The string is set in motion by releasing it from rest in the presence of an external force. The motion of the string is modeled by the wave equation
++>
++> $$
++> \frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}+f(t), \quad x>0, t>0,
++> $$
++>
++> where $f(t)$ is the applied transverse force per unit mass (force per unit length divided by linear mass density). Solve this differential equation subject to the boundary condition
++>
++> $$
++> u(0, t)=0, \quad t>0,
++> $$
++>
++> and the initial conditions
++>
++> $$
++> u(x, 0)=0, \quad \frac{\partial u}{\partial t}(x, 0)=0, \quad x>0
++> $$
++
++##### solution
++
++Transforming both sides of the differential equation with respect to $t$ and taking into account the initial conditions, we get
+ 
+ $$
+ \begin{aligned}
+ s^{2} U(x, s)-s u(x, 0)-\frac{\partial u}{\partial t}(x, 0) & =c^{2} \frac{d^{2} U}{d x^{2}}(x, s)+F(s) \\
+ -c^{2} \frac{d^{2} U}{d x^{2}}(x, s)+s^{2} U(x, s) & =F(s)
+ \end{aligned}
+-$$
+-
+-This is a second order linear ordinary differential equation with constant coefficients in the variable $x$. Unlike the differential equation that we encountered in Example 1, this one is nonhomogeneous. Its general solution is the sum of the general solution of the associated homogeneous equation and any particular solution (see Appendix A.1, Theorem 5). The general solution of the associated homogeneous equation is
+-
+-$$
+-A(s) e^{-\frac{2}{c} x}+B(s) e^{\frac{2}{c} x}
++\tag{9}
++$$
++
++This is a second order linear ordinary differential equation with constant coefficients in the variable $x$. Unlike the differential equation that we encountered in Example 1, this one is nonhomogeneous. Its general solution is the sum of the general solution of the associated homogeneous equation and any particular solution (see Section 10.1, Theorem 5). The general solution of the associated homogeneous equation is
++
++$$
++A(s) e^{-\frac{s}{c} x}+B(s) e^{\frac{s}{c} x}
+ $$
+ 
+ Recalling that $F(s)$ is constant as a function of $x$, it is easy to see that a particular solution of (9) is $\frac{F(s)}{s^{2}}$. Thus the general solution of (9) is
+ 
+ $$
+-U(x, s)=A(s) e^{-\frac{a}{c} x}+B(s) e^{\frac{a}{c} x}+\frac{F(s)}{s^{2}}
+-$$
+-
+-Expecting the transform to be bounded for $s>0$ and $x>0$, we take $B(s)=0$. The boundary condition implies that $A(s)=-\frac{F(s)}{s^{2}}$. So
++U(x, s)=A(s) e^{-\frac{s}{c} x}+B(s) e^{\frac{s}{c} x}+\frac{F(s)}{s^{2}}
++$$
++
++Requiring the transform to stay bounded as $x\to\infty$ for each fixed $s>0$, we take $B(s)=0$. The boundary condition implies that $A(s)=-\frac{F(s)}{s^{2}}$. So
+ 
+ $$
+ U(x, s)=F(s) \frac{1-e^{-\frac{s}{c} x}}{s^{2}}
+ $$
+ 
++Note that
++$\mathcal{L}^{-1}\left(\frac{1}{s^{2}}\right)=t$
++and
++$\mathcal{L}^{-1}\left(\frac{e^{-\frac{s}{c} x}}{s^{2}}\right)=\left(t-\frac{x}{c}\right) \mathcal{U}_{0}\left(t-\frac{x}{c}\right)$.
++
++
+ To compute the inverse Laplace transform, we use Theorems 1 and 2 of the previous section, and we find
+ 
+ $$
+-u(x, t)=f(t) * \mathcal{L}^{-1}\left(\frac{1-e^{-\frac{e}{c} x}}{s^{2}}\right)=f(t) *\left[t-\left(t-\frac{x}{c}\right) \mathcal{U}_{0}\left(t-\frac{x}{c}\right)\right]
++u(x, t)=f(t) * \mathcal{L}^{-1}\left(\frac{1-e^{-\frac{s}{c} x}}{s^{2}}\right)=f(t) *\left[t-\left(t-\frac{x}{c}\right) \mathcal{U}_{0}\left(t-\frac{x}{c}\right)\right]
+ $$
+ 
+ where $\mathcal{U}_{0}$ is the Heaviside step function. We can write the solution more explicitly as
+ 
+ $$
+-u(x, t)=\int_{0}^{t} f(t-\tau)\left[\tau-\left(\tau-\frac{x}{c}\right) u_{0}\left(\tau-\frac{x}{c}\right)\right] d \tau
++u(x, t)=\int_{0}^{t} f(t-\tau)\left[\tau-\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right)\right] d \tau
++\tag{10}
+ $$
+ 
+ The next example is a particularly interesting case of Example 3.
+ 
+-## EXAMPLE 4 Vibrations of a string with gravitational acceleration
++> [!exercise|0930ca3c-f0aa-51a8-8889-6c48b6b70f04.local at=e6498c5f-1e74-5c99-a016-46ae015103ff] EXAMPLE 4 Vibrations of a string with gravitational acceleration
++> For a semi-infinite string initially at rest with its end fixed at $x=0$, specialize the forced wave solution to constant downward acceleration $-g$ and describe how the fixed end affects the falling string.
++
++##### solution
+ 
+ If the only external force in Example 3 is due to the gravitational acceleration $g$, then the differential equation becomes
+ 
+@@ -199,15 +257,26 @@
+ 
+ $$
+ \begin{aligned}
+-u(x, t) & =-g \int_{0}^{t}\left[\tau-\left(\tau-\frac{x}{c}\right) u_{0}\left(\tau-\frac{x}{c}\right)\right] d \tau \\
+-& =-g\left[\frac{1}{2} t^{2}-\int_{0}^{t}\left(\tau-\frac{x}{c}\right) u_{0}\left(\tau-\frac{x}{c}\right) d \tau\right]
++u(x, t) & =-g \int_{0}^{t}\left[\tau-\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right)\right] d \tau \\
++& =-g\left[\frac{1}{2} t^{2}-\int_{0}^{t}\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right) d \tau\right]
+ \end{aligned}
+ $$
+ 
+-Figure 4
+-![](./images/68332ba3-9551-434a-a491-ce53af60160e-26_419_547_1368_646.jpg)
+-
+-![](./images/68332ba3-9551-434a-a491-ce53af60160e-26_404_688_1362_1346.jpg)
++```scientific-figure
++id: 830abbe3-7a9f-4cb8-8c27-e0c83b3d9c82
++numbered: false
++title: ""
++caption: Figure 4 A delayed ramp and the triangular area under its graph.
++captionVisible: true
++captionPosition: below
++columns: 2
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/68332ba3-9551-434a-a491-ce53af60160e-26_419_547_1368_646.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/68332ba3-9551-434a-a491-ce53af60160e-26_404_688_1362_1346.jpg
++    caption: ""
++```
++
+ 
+ In evaluating the integral $\int_{0}^{t}\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right) d \tau$, we use some simple geometric considerations. For a fixed value of $x>0$, the graph of the function $\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right)$ (as a function of $\tau$ ) is the translate of the graph of $y=\tau$ by $\frac{x}{c}$ units to the right (see Figure 4). Thus, the integral of $\left(\tau-\frac{x}{c}\right) \mathcal{U}_{0}\left(\tau-\frac{x}{c}\right)$ from 0 to $t$ is 0 if $0<t<\frac{x}{c}$. If $t>\frac{x}{c}>0$, this integral is equal to the triangular area shown in Figure 4. You can check that this area is $\frac{1}{2}\left(t-\frac{x}{c}\right)^{2}$. We thus have
+ 
+@@ -215,148 +284,176 @@
+ u(x, t)= \begin{cases}-\frac{g}{2}\left(t^{2}-\left(t-\frac{x}{c}\right)^{2}\right) & \text { if } 0<x<c t, \\ -\frac{g t^{2}}{2} & \text { if } x>c t .\end{cases}
+ $$
+ 
+-Figure 5 illustrates the solution at various values of $t$. This example models a semiinfinite string falling from rest under the influence of gravity with one end held fixed. Recalling that the position of a body that falls from rest is given by $-g t^{2} / 2$, we see that for $x$ larger than $c t$ the string falls as if it were freely falling. Portions of the string at smaller values of $x$, however, fall less rapidly due to the restraining
+-
+-Figure 5 String falling under the influence of gravity.
+-effect of the fixed end. Note that this effect propagates outward from the fixed end exactly at velocity $c$.
+-![](./images/68332ba3-9551-434a-a491-ce53af60160e-27_670_1145_392_773.jpg)
+-
+-## Exercises 12.3
+-
+-In Exercises 1-10 use the Laplace transform to solve the given boundary value problem. Give your answer in the form of an integral and simplify as much as possible. Whenever possible, use the examples from this section without repeating the derivations.
+-1.
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0, \\
+-& u(0, t)=70, t>0, \\
+-& u(x, 0)=0,0<x<\infty .
+-\end{aligned}
+-$$
+-
+-2. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0 \\
+-& u(0, t)=100\left(1-u_{0}(t-1)\right), t>0 \\
+-& u(x, 0)=0,0<x<\infty
+-\end{aligned}
+-$$
+-
+-3. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0, \\
+-& \left.u(0, t)=100 \mathcal{U}_{0}(t-2)\right), t>0, \\
+-& u(x, 0)=0,0<x<\infty .
+-\end{aligned}
+-$$
+-
+-4. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0 \\
+-& u(0, t)=100\left(\mathcal{U}_{0}(t-1)-\mathcal{U}_{0}(t-3)\right) \\
+-& u(x, 0)=0,0<x<\infty
+-\end{aligned}
+-$$
+-
+-5. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+t, x>0, t>0 \\
+-& u(0, t)=0, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
+-\end{aligned}
+-$$
+-
+-7. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}-g, x>0, t>0 \\
+-& u(0, t)=0, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
+-\end{aligned}
+-$$
+-
+-6. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+e^{-t}, x>0, t>0 \\
+-& u(0, t)=0, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
+-\end{aligned}
+-$$
+-
+-8. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+t^{2}, x>0, t>0 \\
+-& u(0, t)=0, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
+-\end{aligned}
+-$$
+-
+-9. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}, x>0, t>0 \\
+-& u(0, t)=\sin t, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
+-\end{aligned}
+-$$
+-
+-10. 
+-
+-$$
+-\begin{aligned}
+-& \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}, x>0, t>0 \\
+-& u(0, t)=0, t>0 \\
+-& u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
+-\end{aligned}
+-$$
+-
+-11. Imagine a long (semi-infinite) insulated bar with initial temperature $0^{\circ}$. To determine the temperature of the points after a brief application of a welding torch to one end of the bar, solve the boundary value problem in Example 1 with $f(t)=\delta(t)$.
+-12. Refer to Example 2 with the given numerical data: $c=1, T_{0}=100$. Approximate how long it will take to raise the temperature of the point $x=5$ to 10 . How long does it take to raise the temperature to $20,40,80$ ? What do you conclude from your answers? How high can the temperature reach?
+-13. The initial temperature in a semi-infinite bar is $70^{\circ}$. At time $t=0$, one end of the bar is given the temperature $100^{\circ}$. To determine the temperature at any point in the bar, solve equation (1), with $c=1$, subject to the following conditions
+-
+-$$
+-u(0, t)=100, t>0, \quad u(x, 0)=70, x>0
+-$$
+-
+-What will eventually happen to the temperature throughout the bar? Illustrate your answer graphically. [Hint: Proceed as in Examples 1 and 2.]
+-14. Use the Laplace transform to solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t^{2}} & =\frac{\partial^{2} u}{\partial x^{2}}+\sin \pi x, \quad 0<x<1, t>0 \\
+-u(0, t) & =0, \quad u(1, t)=0, t>0 \\
+-u(x, 0) & =0, \quad \frac{\partial u}{\partial t}(x, 0)=0, x>0
+-\end{aligned}
+-$$
+-
+-15. Show that the solution of the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad x>0, t>0 \\
+-u(0, t) & =T_{0}, \quad t>0 \\
+-u(x, 0) & =T_{1}, \quad x>0
+-\end{aligned}
+-$$
+-
+-is given by
+-
+-$$
+-u(x, t)=\left(T_{0}-T_{1}\right) \operatorname{erfc}\left(\frac{x}{2 c \sqrt{t}}\right)+T_{1}=\left(T_{1}-T_{0}\right) \operatorname{erf}\left(\frac{x}{2 c \sqrt{t}}\right)+T_{0}
+-$$
+-
+-16. Illustrate graphically the solution in Exercise 15 when $c=1, T_{0}=100$, and $T_{1}=70$.
++Figure 5 illustrates the solution at various values of $t$. This example models a semiinfinite string falling from rest under the influence of gravity with one end held fixed. Recalling that the position of a body that falls from rest is given by $-g t^{2} / 2$, we see that for $x$ larger than $c t$ the string falls as if it were freely falling. Portions of the string at smaller values of $x$, however, fall less rapidly due to the restraining effect of the fixed end. Note that this effect propagates outward from the fixed end exactly at velocity $c$.
++```scientific-figure
++id: 8a9cb1d5-2d14-4c52-982e-48905ed6213b
++numbered: false
++title: ""
++caption: Figure 5 String falling under the influence of gravity.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/68332ba3-9551-434a-a491-ce53af60160e-27_670_1145_392_773.jpg
++    caption: ""
++```
++
++
++## Exercises 9.3
++
++
++> [!prompt|9a249dc6-6436-5c2f-8e28-cd8909f89523.local at=3a3a895e-766b-55bb-ba4b-ecdeafef04b5] Shared exercise instructions
++> In Exercises 1-10 use the Laplace transform to solve the given boundary value problem. Give your answer in the form of an integral and simplify as much as possible. Whenever possible, use the examples from this section without repeating the derivations.
++
++
++
++> [!exercise|ce924f8c-6487-5f90-9fe6-154aee44f224.local at=009046ab-013e-5def-93bb-f313d65de228] Exercise 1
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0, \\
++> & u(0, t)=70, t>0, \\
++> & u(x, 0)=0,0<x<\infty .
++> \end{aligned}
++> $$
++
++
++> [!exercise|892da82d-4fa9-52b2-b776-88105f0ee7be.local at=c558470a-c2fb-526f-bb91-7668dc3f2689] Exercise 2
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0 \\
++> & u(0, t)=100\left(1-\mathcal{U}_{0}(t-1)\right), t>0 \\
++> & u(x, 0)=0,0<x<\infty
++> \end{aligned}
++> $$
++
++
++> [!exercise|ba29e3a7-8d8e-54a7-be1a-c843f0218e0c.local at=cac77570-5f7f-5a30-8c04-a3edad7d595d] Exercise 3
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0, \\
++> & u(0, t)=100 \mathcal{U}_{0}(t-2), t>0, \\
++> & u(x, 0)=0,0<x<\infty .
++> \end{aligned}
++> $$
++
++
++> [!exercise|033d2abf-b658-5b6a-9130-8f7afa968d94.local at=97bb6bce-8b7d-55e7-92fa-5dea824e6bbd] Exercise 4
++> $$
++> \begin{aligned}
++> & \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}}, 0<x<\infty, t>0 \\
++> & u(0, t)=100\left(\mathcal{U}_{0}(t-1)-\mathcal{U}_{0}(t-3)\right) \\
++> & u(x, 0)=0,0<x<\infty
++> \end{aligned}
++> $$
++
++
++> [!exercise|87417c64-476a-5fd6-a6dc-426129f21f24.local at=3ea77790-73bd-520e-a74d-cf7c86419540] Exercise 5
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+t, x>0, t>0 \\
++> & u(0, t)=0, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|7e93c6c3-d58c-52a3-bc47-f946ca424f90.local at=ce3f0d6d-0e54-5404-a53e-2b29a291fbaa] Exercise 6
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+e^{-t}, x>0, t>0 \\
++> & u(0, t)=0, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|607f5a0d-b397-5068-aebf-1e6a73d83d65.local at=7b38fac5-d988-59a6-a24c-3a67203dd619] Exercise 7
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}-g, x>0, t>0 \\
++> & u(0, t)=0, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|24c88424-98d6-590c-89f9-1e256d2a89b8.local at=b5d350d1-bdd0-524a-9165-6512d07755d1] Exercise 8
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}+t^{2}, x>0, t>0 \\
++> & u(0, t)=0, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=0, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|eaab6b13-8c71-591c-9d21-a164683f3199.local at=315cc224-fce0-5b4c-a3dc-75b4248f6572] Exercise 9
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}, x>0, t>0 \\
++> & u(0, t)=\sin t, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|c373e009-b0fb-5487-af72-20a240bd46a0.local at=d9f16dcd-a605-570a-bb57-b21d26531d2d] Exercise 10
++> $$
++> \begin{aligned}
++> & \frac{\partial^{2} u}{\partial t^{2}}=\frac{\partial^{2} u}{\partial x^{2}}, x>0, t>0 \\
++> & u(0, t)=0, t>0 \\
++> & u(x, 0)=0, \frac{\partial u}{\partial t}(x, 0)=1, x>0
++> \end{aligned}
++> $$
++
++
++> [!exercise|ff7f7a8d-da3b-5a01-8aec-f478bf2de8c4.local at=c87f9a57-7a56-5ac5-a1b1-8396ff9b2c09] Exercise 11
++> Imagine a long (semi-infinite) insulated bar with initial temperature $0^{\circ}$. To determine the temperature of the points after a brief application of a welding torch to one end of the bar, solve the boundary value problem in Example 1 with $f(t)=\delta(t)$.
++
++
++> [!exercise|7ad2eea5-6f45-5526-9f7c-be1daef562d2.local at=4530148e-09d1-53d8-b8d5-05ef04bac893] Exercise 12
++> Refer to Example 2 with the given numerical data: $c=1, T_{0}=100$. Approximate how long it will take to raise the temperature of the point $x=5$ to 10 . How long does it take to raise the temperature to $20,40,80$ ? What do you conclude from your answers? How high can the temperature reach?
++
++
++> [!exercise|28c2c857-013e-5752-9dd6-6761383e6e31.local at=f3d044f8-39dc-5e8b-a4e3-d7f3db120be6] Exercise 13
++> The initial temperature in a semi-infinite bar is $70^{\circ}$. At time $t=0$, one end of the bar is given the temperature $100^{\circ}$. To determine the temperature at any point in the bar, solve equation (1), with $c=1$, subject to the following conditions
++>
++> $$
++> u(0, t)=100, t>0, \quad u(x, 0)=70, x>0
++> $$
++>
++> What will eventually happen to the temperature throughout the bar? Illustrate your answer graphically. [Hint: Proceed as in Examples 1 and 2.]
++
++
++> [!exercise|24f5932c-494d-5336-9c64-4a6f744acd2f.local at=a511db45-f177-513c-9eda-ffe3d9aee4f2] Exercise 14
++> Use the Laplace transform to solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t^{2}} & =\frac{\partial^{2} u}{\partial x^{2}}+\sin \pi x, \quad 0<x<1, t>0 \\
++> u(0, t) & =0, \quad u(1, t)=0, t>0 \\
++> u(x, 0) & =0, \quad \frac{\partial u}{\partial t}(x, 0)=0, 0<x<1
++> \end{aligned}
++> $$
++
++
++> [!exercise|12580a1a-4dcc-53d1-a49e-dfca81fd094d.local at=94b07ef1-9bea-5179-8462-c47657d385fe] Exercise 15
++> Show that the solution of the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad x>0, t>0 \\
++> u(0, t) & =T_{0}, \quad t>0 \\
++> u(x, 0) & =T_{1}, \quad x>0
++> \end{aligned}
++> $$
++>
++> is given by
++>
++> $$
++> u(x, t)=\left(T_{0}-T_{1}\right) \operatorname{erfc}\left(\frac{x}{2 c \sqrt{t}}\right)+T_{1}=\left(T_{1}-T_{0}\right) \operatorname{erf}\left(\frac{x}{2 c \sqrt{t}}\right)+T_{0}
++> $$
++
++
++> [!exercise|5450dff3-095c-5f1a-990d-6e75133f53d8.local at=312d1c4a-dbbf-5dea-a0f3-9b92582be235] Exercise 16
++> Illustrate graphically the solution in Exercise 15 when $c=1, T_{0}=100$, and $T_{1}=70$.
+
+`````

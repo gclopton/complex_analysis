@@ -6,3 +6,487 @@ Reading note: 8.7 Problems Involving Semi-Infinite Intervals.md
 Original OCR/PDF and before-recovery snapshot are preserved. This record documents the recovery edits; formatting does not authorize changes to author wording. No Index admission was performed.
 
 No recovery content changes were needed in this note. Existing genuine corrections and formatting were retained.
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.7 Problems Involving Semi-Infinite Intervals.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.7 Problems Involving Semi-Infinite Intervals.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.7 Problems Involving Semi-Infinite Intervals.md
+@@ -1,27 +1,45 @@
+-### 8.7 Problems Involving Semi-Infinite Intervals
++
++# 8.7 Problems Involving Semi-Infinite Intervals
+ 
+ We will solve boundary value problems on semi-infinite intervals, and on unbounded regions in the plane such as half-planes, quarter-planes, and strips, by using the Fourier sine and cosine transforms instead of the Fourier transform. The reason is that the functions with which we will be dealing are defined on a subset of the real line, and to use the Fourier transform requires that a function be defined on the entire real line. The method of this section is completely analogous to the Fourier transform method. We will illustrate it with examples.
+ 
+-EXAMPLE 1 Heat equation for a semi-infinite rod
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, & & 0<x<\infty, t>0, \\
+-u(x, 0) & =f(x), & & x>0, \\
+-u(0, t) & =0, & & t>0 .
+-\end{aligned}
+-$$
+-
+-This problem models heat diffusion in a semi-infinite rod, with initial temperature distribution $f(x)$, and with one end kept at $0^{\circ}$ temperature (see Figure 1).
+-Solution Note that since the initial conditions (2) involve the $x$ variable, the problem calls for a transform in the $x$ variable and not $t$. As you will see shortly, the Fourier sine transform is the right choice in this problem (see the remarks following the solution). We have
++> [!exercise|c6e56cc4-3cbd-5800-9d85-e36e7bbccc84.local at=feccb67b-d193-514a-be91-5ccc4966e8f8] EXAMPLE 1 Heat equation for a semi-infinite rod
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial u}{\partial t} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, & & 0<x<\infty, t>0, \\
++> u(x, 0) & =f(x), & & x>0, \\
++> u(0, t) & =0, & & t>0 .
++> \end{aligned}
++> $$
++>
++> This problem models heat diffusion in a semi-infinite rod, with initial temperature distribution $f(x)$, and with one end kept at $0^{\circ}$ temperature (see Figure 1).
++
++*Printed equation labels: (1) heat equation; (2) initial temperature; (3) endpoint temperature.*
++
++##### solution
++
++Note that since the initial conditions (2) involve the $x$ variable, the problem calls for a transform in the $x$ variable and not $t$. As you will see shortly, the Fourier sine transform is the right choice in this problem (see the remarks following the solution). We have
+ 
+ $$
+ \mathcal{F}_{s}\left(\frac{\partial u}{\partial t}\right)=\frac{d}{d t} \widehat{u}_{s}(\omega, t)
+ $$
+ 
+ and, from Theorem 2, Section 8.6,
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-60_334_512_1604_91.jpg)
++```scientific-figure
++id: 7d60186b-edc2-4201-9b7b-aec619c95867
++numbered: false
++title: ""
++caption: Figure 1 Initial temperature distribution.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-60_334_512_1604_91.jpg
++    caption: ""
++```
++
+ 
+ $$
+ \mathcal{F}_{s}\left(\frac{\partial^{2} u}{\partial x^{2}}\right)=-\omega^{2} \widehat{u}_{s}(\omega, t)+\sqrt{\frac{2}{\pi}} \omega u(0, t)=-\omega^{2} \widehat{u}_{s}(\omega, t) .
+@@ -36,7 +54,7 @@
+ \end{aligned}
+ $$
+ 
+-Figure 1 Initial temperature distribution.
++
+ 
+ The general solution of the first order ordinary differential equation in $t$ is
+ 
+@@ -56,35 +74,51 @@
+ \widehat{u}_{s}(\omega, t)=\widehat{f}_{s}(\omega) e^{-c^{2} \omega^{2} t}
+ $$
+ 
+-Recall from Section 8.4 that $e^{-t^{2} \omega^{2} t}$ is the Fourier transform of the heat kernel. Thus, the solution in this example also involves the heat kernel. See Exercise 7 for an alternative form of the solution.
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-61_445_420_1268_2.jpg)
+-Figure 2 A DirichletNeumann problem.
++Recall from Section 8.4 that $e^{-c^{2} \omega^{2} t}$ is the Fourier transform of the heat kernel. Thus, the solution in this example also involves the heat kernel. See Exercise 7 for an alternative form of the solution.
++
++```scientific-figure
++id: af6da321-cc02-40af-8f3e-419f798e70d5
++numbered: false
++title: ""
++caption: Figure 2 A Dirichlet–Neumann problem.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-61_445_420_1268_2.jpg
++    caption: ""
++```
++
+ 
+ Taking inverse Fourier sine transforms ((6), Section 8.6), we obtain the solution in the form
+ 
+ $$
+ u(x, t)=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \widehat{u}_{s}(\omega, t) \sin \omega x d \omega=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \widehat{f}_{s}(\omega) e^{-c^{2} \omega^{2} t} \sin \omega x d \omega
++\tag{4}
+ $$
+ 
+ You may ask why the Fourier sine transform was used in Example 1 and not the Fourier cosine transform. The choice was suggested by the boundary condition (3). To compute the cosine transform of the second derivative $\frac{\partial^{2} u}{\partial x^{2}}$, the operational property (11), Section 8.6, requires the value of $\frac{\partial u}{\partial x}(0, t)$, a quantity not given in the problem. In general, to successfully apply a transform we must be able to use the initial conditions to supply the values needed in the operational formulas.
+ 
+ The next example involves Dirichlet and Neumann type conditions.
+ 
+-## EXAMPLE 2 A Dirichlet-Neumann problem in a semi-infinite strip
+-
+-Solve the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\Delta u & =\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=0, \quad 0<x<a, y>0 \\
+-\frac{\partial u}{\partial y}(x, 0) & =0, \quad 0<x<a \\
+-u(0, y) & =0, \quad u(a, y)=f(y), \quad y>0
+-\end{aligned}
+-$$
+-
+-The problem models, for example, the steady-state temperature in a very large sheet of metal, where the boundaries are kept at a given temperature distribution and there is no heat flow across the boundary on the $x$-axis, as illustrated in Figure 2.
+-Solution Since the domain of the variable $y$ is semi-infinite (the domain of the variable $x$ is finite); we choose to transform the equations with respect to the variable $y$. Also since the boundary condition (6) involves the derivative at $y=0$ the cosine transform is the right choice in this case. Using this transform with the help of the operational properties of Section 8.6, we get
++> [!exercise|e51967ec-a18c-53f6-936b-fb118effc7b2.local at=b9897e52-84ca-5c1e-a36c-13e79c68ef91] EXAMPLE 2 A Dirichlet-Neumann problem in a semi-infinite strip
++> Solve the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \Delta u & =\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}=0, \quad 0<x<a, y>0 \\
++> \frac{\partial u}{\partial y}(x, 0) & =0, \quad 0<x<a \\
++> u(0, y) & =0, \quad u(a, y)=f(y), \quad y>0
++> \end{aligned}
++> $$
++>
++> The problem models, for example, the steady-state temperature in a very large sheet of metal, where the boundaries are kept at a given temperature distribution and there is no heat flow across the boundary on the $x$-axis, as illustrated in Figure 2.
++
++*Printed equation labels: (5) Laplace equation; (6) zero normal derivative at $y=0$; (7) values on the vertical sides.*
++
++##### solution
++
++Since the domain of the variable $y$ is semi-infinite (the domain of the variable $x$ is finite); we choose to transform the equations with respect to the variable $y$. Also since the boundary condition (6) involves the derivative at $y=0$ the cosine transform is the right choice in this case. Using this transform with the help of the operational properties of Section 8.6, we get
+ 
+ $$
+ \begin{array}{ll}
+@@ -94,10 +128,13 @@
+ \end{array}
+ $$
+ 
+-The general solution of the second order ordinary differential equation (8) is
++*Printed equation labels: (8) transformed differential equation; (9) transformed boundary data.*
++
++For $\omega>0$, the general solution of the second order ordinary differential equation (8) is
+ 
+ $$
+ \widehat{u}_{c}(x, \omega)=A(\omega) \cosh \omega x+B(\omega) \sinh \omega x,
++\tag{10}
+ $$
+ 
+ where $A(\omega)$ and $B(\omega)$ are constants that depend on $\omega$. Setting $x=0$ and then $x=a$ and using (9), we get
+@@ -106,101 +143,223 @@
+ A(\omega)=0, \quad B(\omega)=\frac{\widehat{f}_{c}(\omega)}{\sinh \omega a}
+ $$
+ 
+-Putting this into (10) and taking inverse Fourier cosine transform ((4), Section 8.6 ), we get the solution in the form
++At zero frequency, interpret $\sinh(\omega x)/\sinh(\omega a)$ by its limit $x/a$. Putting this into (10) and taking inverse Fourier cosine transform ((4), Section 8.6 ), we get the solution in the form
+ 
+ $$
+ u(x, y)=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \widehat{u}_{c}(x, \omega) \cos \omega y d \omega=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \frac{\hat{f}_{c}(\omega)}{\sinh \omega a} \sinh \omega x \cos \omega y d \omega
+-$$ $\square$
+-
++$$
++
++$\square$
+ The Fourier transform method is a powerful device for solving partial differential equations. Its importance stems from its ability to handle a large variety of problems. Several additional types of problems (on different types of regions) are investigated in the exercises. Choosing the appropriate transform is a crucial step in implementing the method. As we saw in the examples, the choice is suggested by the type of region and the boundary conditions.
+ 
+-## Exercises 11.7
+-
+-In Exercises 1-4 solve the heat equation (1) with $c=1, u(0, t)=0$, and the given initial temperature distribution. Take $0<x<\infty$ and $t>0$.
+-1.
+-
+-$$
+-f(x)= \begin{cases}T_{0} & \text { if } 0<x<b \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-2. 
+-
+-$$
+-f(x)= \begin{cases}\sin x & \text { if } 0<x<\pi \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-3. $f(x)=\frac{x}{1+x^{2}}$.
+-4. $f(x)=x e^{-x^{2} / 2}$.
+-5. $f(x)=x e^{-x^{2} / 2}$.
+-6. A Neumann type condition. Let $u(x, t)$ denote the solution of (1) and (2) with the Neumann type condition: $\frac{\partial u}{\partial x}(0, t)=0$. Use the Fourier cosine transform to derive the solution
+-
+-$$
+-u(x, t)=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \widehat{f}_{c}(\omega) e^{-c^{2} \omega^{2} t} \cos \omega x d \omega
+-$$
+-
+-6. Do Exercise 5 for the specific case when $c=1$ and $f(x)$ is as in Exercise 1.
+-7. Show that the solution (4) of Example 1 can be put in the form
+-
+-$$
+-u(x, t)=\frac{1}{2 c \sqrt{\pi t}} \int_{0}^{\infty} f(s)\left[\exp \left(-\frac{(x-s)^{2}}{4 c^{2} t}\right)-\exp \left(-\frac{(x+s)^{2}}{4 c^{2} t}\right)\right] d s
+-$$
+-
+-[Hint: In (4), write $\widehat{f}_{s}$ explicitly in terms of $f$.]
+-8. (a) Show that the solution of the heat problem of Example 1 with $f(x)=T_{0}$ if $0<x<a$ and 0 otherwise can be expressed in the form
+-
+-$$
+-u(x, t)=T_{0} \operatorname{erf}\left(\frac{x}{2 c \sqrt{t}}\right)-\frac{T_{0}}{2}\left\{\operatorname{erf}\left(\frac{x-a}{2 c \sqrt{t}}\right)+\operatorname{erf}\left(\frac{x+a}{2 c \sqrt{t}}\right)\right\}
+-$$
+-
+-[Hint: Use Exercise 7.]
+-9. Project Problem: A nonhomogeneous boundary condition. Consider the heat equation (1) with the following conditions $u(x, 0)=0$ for $x>0$ and $u(0, t)=T_{0}$ for $t>0$.
+-(a) Use the Fourier sine transform to show that
+-
+-$$
+-\frac{d}{d t} \widehat{u}_{s}(\omega, t)+c^{2} \omega^{2} \widehat{u}_{s}(\omega, t)=c^{2} \sqrt{\frac{2}{\pi}} \omega T_{0} ; \quad \widehat{u}_{s}(\omega, 0)=0
+-$$
+-
+-(b) Derive the solution by establishing that
+-
+-$$
+-\begin{gathered}
+-\widehat{u}(\omega, t)=\sqrt{\frac{2}{\pi}} \frac{T_{0}}{\omega}-\sqrt{\frac{2}{\pi}} \frac{T_{0}}{\omega} e^{-c^{2} \omega^{2} t} \\
+-u(x, t)=\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{\sin \omega x}{\omega} d \omega-\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{e^{-c^{2} \omega^{2} t}}{\omega} \sin \omega x d \omega \\
+-u(x, t)=T_{0}-\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{e^{-c^{2} \omega^{2} t}}{\omega} \sin \omega x d \omega
+-\end{gathered}
+-$$
+-
+-(c) Take $T_{0}=100$ and plot the solution at various values of $t$. What do you observe as $t \rightarrow \infty$ ?
+-10. Time-dependent boundary condition. Consider the boundary value problem
+-
+-$$
+-\begin{aligned}
+-\frac{\partial^{2} u}{\partial t^{2}} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, & x>0, t>0 \\
+-u(x, 0) & =f(x), & \frac{\partial u}{\partial t}(x, 0)=0 \\
+-u(0, t) & =s(t), &
+-\end{aligned}
+-$$
+-
+-where $s(t)$ is a given function of $t$.
+-(a) Give a possible physical interpretation of the problem.
+-(b) Let $f^{*}$ denote the odd extension of $f$ to the entire line. By direct verification, show that the solution is
+-
+-$$
+-u(x, t)= \begin{cases}\frac{1}{2}\left[f^{*}(x+c t)+f^{*}(x-c t)\right] & \text { if } x>c t \\ \frac{1}{2}\left[f^{*}(x+c t)+f^{*}(x-c t)\right]+s\left(t-\frac{x}{c}\right) & \text { if } x<c t\end{cases}
+-$$
+-
+-(c) Take $c=1, f(x)=0, s(t)=\sin t$, and plot the solution at $t=0, \frac{\pi}{4}, \frac{\pi}{2}, \pi, 2 \pi$, $4 \pi$.
+-
+-In Exercises 11-16, solve the boundary value problem described by the picture.
+-11.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_478_490_376_795.jpg)
+-13.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_456_475_973_812.jpg)
+-15.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_514_510_1512_810.jpg)
+-12.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_463_602_368_1483.jpg)
+-14.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_512_580_908_1505.jpg)
+-16.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_539_572_1493_1505.jpg)
++## Exercises 8.7
++
++
++> [!prompt|dac60566-0710-54cd-b227-b3df54fdad21.local at=450ccc25-10ac-59dd-bf5c-8cf5a713bd0c] Shared exercise instructions
++> In Exercises 1-4 solve the heat equation (1) with $c=1, u(0, t)=0$, and the given initial temperature distribution. Take $0<x<\infty$ and $t>0$.
++
++
++
++> [!exercise|8cb0ac5e-c7a4-5c94-8734-106bfe13a721.local at=5c047abd-4686-5431-9a66-83bf5ebdd9d8] Exercise 1
++> $$
++> f(x)= \begin{cases}T_{0} & \text { if } 0<x<b \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|aa62970b-8a65-5887-a48d-aaa792101649.local at=38bcaab6-5d84-5e69-8335-726d23aad421] Exercise 2
++> $$
++> f(x)= \begin{cases}\sin x & \text { if } 0<x<\pi \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|e7245f2b-e26e-5b72-a35a-778de8cb4856.local at=9eb5337e-dbb4-5397-939e-22c7bc351612] Exercise 3
++> $f(x)=\frac{x}{1+x^{2}}$.
++
++
++> [!exercise|187e73a0-1a02-5340-9d00-af8965ec5558.local at=6cb1f090-c48e-5efc-89eb-fe5c19b70855] Exercise 4
++> $f(x)=x e^{-x^{2} / 2}$.
++
++
++> [!exercise|0c4fa7d7-d22c-57d3-8242-f69818286aac.local at=cd6657e8-8669-53c7-aad0-f6fc283602f8] Exercise 5
++> A Neumann type condition. Let $u(x, t)$ denote the solution of (1) and (2) with the Neumann type condition: $\frac{\partial u}{\partial x}(0, t)=0$. Use the Fourier cosine transform to derive the solution
++>
++> $$
++> u(x, t)=\sqrt{\frac{2}{\pi}} \int_{0}^{\infty} \widehat{f}_{c}(\omega) e^{-c^{2} \omega^{2} t} \cos \omega x d \omega
++> $$
++
++
++> [!exercise|439399f5-b427-547c-a230-0ac5a49bce3b.local at=df9634a5-c1b1-54fd-a43b-715cce9d9a10] Exercise 6
++> Do Exercise 5 for the specific case when $c=1$ and $f(x)$ is as in Exercise 1.
++
++
++> [!exercise|ca03124b-0a2a-5790-b10e-cbbb66b90e91.local at=505308ea-619b-521c-be51-28e2a86fc5d0] Exercise 7
++> Show that the solution (4) of Example 1 can be put in the form
++>
++> $$
++> u(x, t)=\frac{1}{2 c \sqrt{\pi t}} \int_{0}^{\infty} f(s)\left[\exp \left(-\frac{(x-s)^{2}}{4 c^{2} t}\right)-\exp \left(-\frac{(x+s)^{2}}{4 c^{2} t}\right)\right] d s
++> $$
++>
++> [Hint: In (4), write $\widehat{f}_{s}$ explicitly in terms of $f$.]
++
++
++> [!exercise|db73a07b-9101-511d-b76d-18483fec8abf.local at=e69d835b-db65-5f29-b68a-af37d5adc412] Exercise 8
++> (a) Show that the solution of the heat problem of Example 1 with $f(x)=T_{0}$ if $0<x<a$ and 0 otherwise can be expressed in the form
++>
++> $$
++> u(x, t)=T_{0} \operatorname{erf}\left(\frac{x}{2 c \sqrt{t}}\right)-\frac{T_{0}}{2}\left\{\operatorname{erf}\left(\frac{x-a}{2 c \sqrt{t}}\right)+\operatorname{erf}\left(\frac{x+a}{2 c \sqrt{t}}\right)\right\}
++> $$
++>
++> [Hint: Use Exercise 7.]
++>
++> (b) Take $c=1$, $T_0=5$, and plot the solution curves at $t=.2,.5,1,2,3,4,5$. Repeat the graphs with $c=2,5$. What do you observe as the value of $c$ increases?
++
++
++> [!exercise|6875cf60-65cb-5358-92f2-8c0463d08c41.local at=9f289c7d-1cf2-57a8-b415-cef118e3922a] Exercise 9
++> Project Problem: A nonhomogeneous boundary condition. Consider the heat equation (1) with the following conditions $u(x, 0)=0$ for $x>0$ and $u(0, t)=T_{0}$ for $t>0$.
++> (a) Use the Fourier sine transform to show that
++>
++> $$
++> \frac{d}{d t} \widehat{u}_{s}(\omega, t)+c^{2} \omega^{2} \widehat{u}_{s}(\omega, t)=c^{2} \sqrt{\frac{2}{\pi}} \omega T_{0} ; \quad \widehat{u}_{s}(\omega, 0)=0
++> $$
++>
++> (b) Derive the solution by establishing that
++>
++> $$
++> \begin{gathered}
++> \widehat{u}_s(\omega, t)=\sqrt{\frac{2}{\pi}} \frac{T_{0}}{\omega}-\sqrt{\frac{2}{\pi}} \frac{T_{0}}{\omega} e^{-c^{2} \omega^{2} t} \\
++> u(x, t)=\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{\sin \omega x}{\omega} d \omega-\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{e^{-c^{2} \omega^{2} t}}{\omega} \sin \omega x d \omega \\
++> u(x, t)=T_{0}-\frac{2 T_{0}}{\pi} \int_{0}^{\infty} \frac{e^{-c^{2} \omega^{2} t}}{\omega} \sin \omega x d \omega
++> \end{gathered}
++> $$
++>
++> (c) Take $T_{0}=100$ and plot the solution at various values of $t$. What do you observe as $t \rightarrow \infty$ ?
++
++
++> [!exercise|36a6c39b-b720-5c36-8f8e-38eb661be926.local at=21ae283b-4ae7-5cc6-aaee-d5df48f1b403] Exercise 10
++> Time-dependent boundary condition. Consider the boundary value problem
++>
++> $$
++> \begin{aligned}
++> \frac{\partial^{2} u}{\partial t^{2}} & =c^{2} \frac{\partial^{2} u}{\partial x^{2}}, & x>0, t>0 \\
++> u(x, 0) & =f(x), & \frac{\partial u}{\partial t}(x, 0)=0 \\
++> u(0, t) & =s(t), &
++> \end{aligned}
++> $$
++>
++> where $s(t)$ is a given function of $t$.
++> (a) Give a possible physical interpretation of the problem.
++> (b) Let $f^{*}$ denote the odd extension of $f$ to the entire line. By direct verification, show that the solution is
++>
++> $$
++> u(x, t)= \begin{cases}\frac{1}{2}\left[f^{*}(x+c t)+f^{*}(x-c t)\right] & \text { if } x>c t \\ \frac{1}{2}\left[f^{*}(x+c t)+f^{*}(x-c t)\right]+s\left(t-\frac{x}{c}\right) & \text { if } x<c t\end{cases}
++> $$
++>
++> (c) Take $c=1, f(x)=0, s(t)=\sin t$, and plot the solution at $t=0, \frac{\pi}{4}, \frac{\pi}{2}, \pi, 2 \pi$, $4 \pi$.
++
++
++> [!prompt|1c7e0986-3ea6-5344-bb30-29f491d3a5d7.local at=c21675f3-4cb4-5ebd-b7e0-51b80219cc30] Shared exercise instructions
++> In Exercises 11-16, solve the boundary value problem described by the picture.
++
++
++
++> [!exercise|6339a0f7-2b69-589c-8505-0584ed07a0ef.local at=11234e99-d2fc-5521-923b-ca5aa630ccde] Exercise 11
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: a4f77b5e-2b0a-4d24-beec-0046481cf699
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 11.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_478_490_376_795.jpg
++    caption: ""
++```
++
++> [!exercise|b5796ea4-80a2-5e41-b2e3-28d3ea23da8c.local at=6969b85c-7d3f-5896-8a37-0ceabfeaf2af] Exercise 12
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: ff22c89e-e4ae-4316-b4c5-54595a4f4c96
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 12.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_463_602_368_1483.jpg
++    caption: ""
++```
++
++> [!exercise|1785af62-08ae-5ef8-b347-ad46020f07a6.local at=ddbceef1-603b-5709-bc64-d4da121ba9b8] Exercise 13
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: 7f0905bf-d0c9-45e4-8e11-3abe63932414
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 13.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_456_475_973_812.jpg
++    caption: ""
++```
++
++> [!exercise|04756d2c-16b7-5156-9e88-260af61596e6.local at=ea18faf7-9f13-59f1-a56f-af3515a215cb] Exercise 14
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: 5434d7a2-9dc9-4930-9c68-ea2f648c9735
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 14.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_512_580_908_1505.jpg
++    caption: ""
++```
++
++> [!exercise|29837cc3-dbbc-588a-9306-02108e88bd72.local at=230ab98d-4104-5faa-8544-2c130b01f5a4] Exercise 15
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: e9fd25b3-1e78-4aff-b200-c95e13e4e01a
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 15.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_514_510_1512_810.jpg
++    caption: ""
++```
++
++> [!exercise|00ca58d3-d6f3-5bb0-832b-1b5709cc9cf7.local at=d5e9a4c2-34a7-5e91-8516-69d9e4e1e694] Exercise 16
++> Use the accompanying figure and the shared instructions.
++
++
++```scientific-figure
++id: 4cd694ed-b8f1-4c3e-b2e6-0c818bba5827
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 16.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-64_539_572_1493_1505.jpg
++    caption: ""
++```
+
+`````

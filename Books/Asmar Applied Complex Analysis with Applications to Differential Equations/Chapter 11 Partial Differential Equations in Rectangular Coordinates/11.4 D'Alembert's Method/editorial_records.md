@@ -28,3 +28,660 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > u\left(P_{1}\right)+u\left(P_{2}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right) .
 > $$
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.4 D'Alembert's Method.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.4 D'Alembert's Method.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.4 D'Alembert's Method.md
+@@ -1,3 +1,4 @@
++
+ ### 11.4 D'Alembert's Method
+ 
+ As promised earlier, we will show in this section how the Fourier series solution of the boundary value problem associated with the vibrating string,
+@@ -10,15 +11,29 @@
+ \end{gathered}
+ $$
+ 
++*Printed equation labels: (1) wave equation; (2) endpoint conditions; (3) initial conditions.*
++
+ has a simpler expression in terms of the initial data $f$ and $g$. More precisely, we will show that the solution of (1)-(3) is given by
+ 
+-$$
+-u(x, t)=\frac{1}{2}\left[f^{*}(x-c t)+f^{*}(x+c t)\right]+\frac{1}{2 c} \int_{x-c t}^{x+c t} g^{*}(s) d s
+-$$
+-
+-where $f^{*}$ and $g^{*}$ denote the odd extensions of $f$ and $g$. This is called d'Alembert's solution of the vibrating string problem, and it has an interesting interpretation in terms of traveling waves. The derivation of (4) from the solution of the previous section ((8), Section 11.3) involves using trigonometric identities, as illustrated by the following example.
+-
+-## EXAMPLE 1 From Fourier series to d'Alembert's solution
++> [!equation|d8a7686f-1ae4-55fa-b8d7-b401ae3561a5.local at=c87e6df6-8372-5a11-b888-5cb0e2dda84e] D’Alembert formula for a finite string with fixed ends
++> Let $c,L>0$ and let $f^*,g^*$ be the odd, $2L$-periodic extensions of initial displacement $f$ and velocity $g$ on $(0,L)$. If $f^*\in C^2$ and $g^*\in C^1$, the solution of
++> $$
++> u_{tt}=c^2u_{xx},\quad 0<x<L,\quad t>0,\qquad u(0,t)=u(L,t)=0,
++> $$
++> with $u(x,0)=f(x)$ and $u_t(x,0)=g(x)$ is
++> $$
++> u(x,t)=\frac12\left[f^*(x-ct)+f^*(x+ct)\right]+\frac{1}{2c}\int_{x-ct}^{x+ct}g^*(s)\,ds.
++> $$
++> For piecewise smooth data, the formula is used piecewise or in the generalized sense at propagating corners.
++
++*Printed equation label: (4).*
++
++This is called d'Alembert's solution of the vibrating string problem, and it has an interesting interpretation in terms of traveling waves. The derivation of (4) from the solution of the previous section ((8), Section 11.3) involves using trigonometric identities, as illustrated by the following example.
++
++> [!exercise|65d50ef0-005b-5c61-bb30-a937a968aacd.local at=aea8e707-c307-51a9-9a00-a31c66b857bc] EXAMPLE 1 From Fourier series to d'Alembert's solution
++> For the fixed-end string on $0<x<L$, with $c>0$, initial displacement $f(x)=\sin(m\pi x/L)$, $m\ge1$, and initial velocity zero, verify that the Fourier-series and d’Alembert expressions for the solution agree.
++
++##### solution
+ 
+ When $f(x)=\sin \frac{m \pi}{L} x$ and $g(x)=0$, the Fourier series method of the previous section yields the following solution of (1)-(3):
+ 
+@@ -67,7 +82,7 @@
+ To check that (4) satisfies (2) and (3), we use the fact that $f^{*}$ and $g^{*}$ are odd and $2 L$-periodic. For example, to check the boundary condition (2) at $x=0$, we plug $x=0$ into (4) and get
+ 
+ $$
+-u(0, t)=\frac{1}{2}\left[f^{*}(-c t)+f^{*}(c t)\right]+\frac{1}{2} \int_{-c t}^{c t} g^{*}(s) d s=0
++u(0, t)=\frac{1}{2}\left[f^{*}(-c t)+f^{*}(c t)\right]+\frac{1}{2c} \int_{-c t}^{c t} g^{*}(s) d s=0
+ $$
+ 
+ because $f^{*}$ is odd, so $f^{*}(-c t)=-f^{*}(c t)$, and $g^{*}$ is odd, so its integral over a symmetric interval is 0 . We leave the verification of the second condition in (2) and (3) to Exercise 14.
+@@ -78,6 +93,7 @@
+ 
+ $$
+ u(x, t)=\frac{1}{2}\left[f^{*}(x-c t)+f^{*}(x+c t)\right] .
++\tag{5}
+ $$
+ 
+ This has an interesting geometric interpretation. For fixed $t$, the graph of $f^{*}(x-c t)$ (as a function of $x$ ) is obtained by translating the graph of $f^{*}(x)$
+@@ -95,7 +111,7 @@
+ G(x+2 L)-G(x)=\int_{x}^{x+2 L} g^{*}(z) d z=\int_{-L}^{L} g^{*}(z) d z=0
+ $$
+ 
+-where the second equality follows from Theorem 1, Section 2.1, and the last equality follows because $g^{*}$ is odd. Hence $G$ is $2 L$ periodic. (Antiderivatives of periodic functions were discussed in Exercises 15-16, Section 2.1.) The solution (4) may be rewritten in terms of $f^{*}$ and $G$ as follows:
++where the second equality follows from Theorem 1, Section 7.1, and the last equality follows because $g^{*}$ is odd. Hence $G$ is $2 L$ periodic. (Antiderivatives of periodic functions were discussed in Exercises 15-16, Section 7.1.) The solution (4) may be rewritten in terms of $f^{*}$ and $G$ as follows:
+ 
+ $$
+ u(x, t)=\frac{1}{2}\left[f^{*}(x-c t)+f^{*}(x+c t)\right]+\frac{1}{2 c}[G(x+c t)-G(x-c t)]
+@@ -105,23 +121,37 @@
+ =\frac{1}{2}\left[f^{*}(x-c t)-\frac{1}{c} G(x-c t)\right]+\frac{1}{2}\left[f^{*}(x+c t)+\frac{1}{c} G(x+c t)\right],
+ $$
+ 
++*Printed equation label: (6) the two equivalent solution formulas above.*
++
+ showing that, in general, the solution still consists of right- and left-moving waveforms. The main difference from the case represented by (5) is that here the two waveforms need no longer have the same shape. The functions $\frac{1}{2}\left[f^{*}(x)-\frac{1}{c} G(x)\right]$ and $\frac{1}{2}\left[f^{*}(x)+\frac{1}{c} G(x)\right]$ give the shapes of the right- and left-moving waves, respectively.
+ 
+-## EXAMPLE 2 D'Alembert's solution with zero initial velocity
+-
+-Consider the wave problem of Example 1, Section 11.3, where $L=1, c=\frac{1}{\pi}$,
+-
+-$$
+-f(x)= \begin{cases}\frac{3}{10} x & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{3(1-x)}{20} & \text { if } \frac{1}{3} \leq x \leq 1,\end{cases}
+-$$
+-
+-and $g(x)=0$. (a) Use d'Alembert's solution to determine the shape of the string at times $t=\frac{\pi}{3}$ and $\frac{2 \pi}{3}$.
+-(b) Determine the first time when the string returns to its initial shape.
+-
+-Solution (a) Since $g(x)=0$, we use (5) and get the shape of the string at time $t=\frac{\pi}{3}$ as the graph of $\frac{1}{2}\left[f^{*}(x-1 / 3)+f^{*}(x+1 / 3)\right]$. To plot this graph, we first plot $f^{*}(x)$, the 2 -periodic odd extension of $f$. By translating this graph to the left by $1 / 3$ unit, we obtain the graph of $f^{*}(x+1 / 3)$; translating it to the right by the same amount, we obtain the graph of $f^{*}(x-1 / 3)$. Now the shape of the string at time $t=\pi / 3$ is obtained by averaging (adding and dividing by two) the graphs of $f^{*}(x+1 / 3)$ and $f^{*}(x-1 / 3)$. Since we are only interested in the shape of the string, we restrict the graphs to the interval $0<x<1$. See Figure 1, where we have also plotted the graphs for $t=2 \pi / 3$.
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-27_703_1725_569_44.jpg)
+-Figure 1 (a) Initial shape of the string, $f(x), 0<x<1$, and its odd extension $f^{*}(x)$. (b) Snapshot of the string at time $t=\pi / 3$, obtained by averaging the translates $f^{*}(x+1 / 3)$ and $f^{*}(x-1 / 3): u(x, \pi / 3)=1 / 2\left(f^{*}(x+1 / 3)+\right. \left.f^{*}(x-1 / 3)\right)$. (c) Snapshot of the string at time $t=2 \pi / 3: u(x, 2 \pi / 3)=1 / 2\left(f^{*}(x+2 / 3)+f^{*}(x-2 / 3)\right)$.
++> [!exercise|a79583f2-be1b-562b-bb8a-6e8a66732463.local at=902678ed-8126-5ba6-b230-0a3fe43cc302] EXAMPLE 2 D'Alembert's solution with zero initial velocity
++> Consider the wave problem of Example 1, Section 11.3, where $L=1, c=\frac{1}{\pi}$,
++>
++> $$
++> f(x)= \begin{cases}\frac{3}{10} x & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{3(1-x)}{20} & \text { if } \frac{1}{3} \leq x \leq 1,\end{cases}
++> $$
++>
++> and $g(x)=0$. (a) Use d'Alembert's solution to determine the shape of the string at times $t=\frac{\pi}{3}$ and $\frac{2 \pi}{3}$.
++> (b) Determine the first time when the string returns to its initial shape.
++
++##### solution
++
++(a) Since $g(x)=0$, we use (5) and get the shape of the string at time $t=\frac{\pi}{3}$ as the graph of $\frac{1}{2}\left[f^{*}(x-1 / 3)+f^{*}(x+1 / 3)\right]$. To plot this graph, we first plot $f^{*}(x)$, the 2 -periodic odd extension of $f$. By translating this graph to the left by $1 / 3$ unit, we obtain the graph of $f^{*}(x+1 / 3)$; translating it to the right by the same amount, we obtain the graph of $f^{*}(x-1 / 3)$. Now the shape of the string at time $t=\pi / 3$ is obtained by averaging (adding and dividing by two) the graphs of $f^{*}(x+1 / 3)$ and $f^{*}(x-1 / 3)$. Since we are only interested in the shape of the string, we restrict the graphs to the interval $0<x<1$. See Figure 1, where we have also plotted the graphs for $t=2 \pi / 3$.
++
++```scientific-figure
++id: 13cab2d9-f0f0-41bc-9bd1-5c0cb166487b
++numbered: false
++title: ""
++caption: "Figure 1 (a) Initial shape of the string, $f(x), 0<x<1$, and its odd extension $f^{*}(x)$. (b) Snapshot of the string at time $t=\\pi / 3$, obtained by averaging the translates $f^{*}(x+1 / 3)$ and $f^{*}(x-1 / 3): u(x, \\pi / 3)=1 / 2\\left(f^{*}(x+1 / 3)+\\right. \\left.f^{*}(x-1 / 3)\\right)$. (c) Snapshot of the string at time $t=2 \\pi / 3: u(x, 2 \\pi / 3)=1 / 2\\left(f^{*}(x+2 / 3)+f^{*}(x-2 / 3)\\right)$."
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-27_703_1725_569_44.jpg
++    caption: ""
++```
++
+ 
+ (b) The string returns to its initial shape when
+ 
+@@ -131,13 +161,16 @@
+ 
+ Since $f^{*}$ is 2 -periodic, this happens when $t / \pi=2$, or $t=2 \pi$. $\square$
+ 
+-## EXAMPLE 3 D'Alembert's solution with nonzero initial velocity
+-
+-Use d'Alembert's method to solve the wave problem (1)-(3) with $c=1, L=1$, $f(x)=0$, and $g(x)=x$ for $0<x<1$.
+-Solution We use (4) with $f^{*}=0$. Hence
++> [!exercise|021de2a1-7ac1-5a2a-8e93-27a748e4e69c.local at=8d7776ab-79c7-561f-8839-5ade832b53ed] EXAMPLE 3 D'Alembert's solution with nonzero initial velocity
++> Use d'Alembert's method to solve the wave problem (1)-(3) with $c=1, L=1$, $f(x)=0$, and $g(x)=x$ for $0<x<1$.
++
++##### solution
++
++We use (4) with $f^{*}=0$. Hence
+ 
+ $$
+ u(x, t)=\frac{1}{2} \int_{x-t}^{x+t} g^{*}(s) d s=\frac{1}{2}(G(x+t)-G(x-t))
++\tag{7}
+ $$
+ 
+ where $g^{*}$ is the odd 2 -periodic extension of $g$ and $G$ is an antiderivative of $g^{*}$. Let us take
+@@ -155,19 +188,40 @@
+ for all $x$ in $(-1,1)$. Hence
+ 
+ $$
+-G(x)= \begin{cases}\frac{1}{2} x^{2}-\frac{1}{2} & \text { if }-1<x<1 \\ G(x+2) & \text { otherwise } .\end{cases}
+-$$
+-
+-Figure 2 (a) Graph of $g^{*}$, the 2-periodic odd extension of $g$. (b) Graph of $G$, an antiderivative of $g^{*}$. Note that $G$ is 2 periodic.
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-28_493_456_1495_49.jpg)
+-Figure 3
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-28_324_547_645_536.jpg)
++G(x)=\frac12(x-2k)^2-\frac12,\qquad 2k-1\le x\le2k+1,\quad k\in\mathbb Z.
++$$
++
++```scientific-figure
++id: 0fccb8f4-9f67-4003-ba71-216832af69c6
++numbered: false
++title: ""
++caption: Figure 2 (a) Graph of $g^*$, the odd 2-periodic extension of $g$. (b) Graph of its 2-periodic antiderivative $G$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-28_324_547_645_536.jpg
++    caption: ""
++```
++
+ 
+ The graph of $G$ is shown in Figure 2(b). According to (7), to get a snapshot of the string at a given time $t$, it suffices to take the difference of the left and right translates of the graph of $G$ by $t$ units and divide by 2 . In this case we have two half-length waves still, but one is inverted. We then just superpose them again. Note how this yields the zero initial position when $t=0$.
+ 
+ ## Characteristic Lines
++
++```scientific-figure
++id: fdf3222e-5636-4521-bd30-ecf2f5803fec
++numbered: false
++title: ""
++caption: Figure 3 Families of characteristic lines for the wave equation.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-28_493_456_1495_49.jpg
++    caption: ""
++```
++
+ 
+ Here we discuss some interesting properties of the wave equation and its solution. Up until now, in order to interpret $u(x, t)$ as the shape of the string at a given time $t$, we have been thinking of $u(x, t)$ as a function of $x$, for a fixed value of $t$. For the sake of our discussion, it would help to change the way we think of $u$ and consider $u(x, t)$ as a function of $(x, t)$, where $x$ and $t$ vary simultaneously in the $x t$-plane. Because the string has finite length $L$, we are particularly interested in the semi-infinite strip $S$, which consists of the points $(x, t)$ with $0 \leq x \leq L$ and $t \geq 0$.
+ 
+@@ -180,32 +234,56 @@
+ \end{gathered}
+ $$
+ 
++*Printed equation labels: (8) characteristic of positive slope; (9) characteristic of negative slope.*
++
+ The characteristic lines consists of two families of parallel lines that cover the $x t$-plane (Figure 3). Each point ( $x_{0}, t_{0}$ ) is the vertex of an isosceles triangle formed by two characteristic lines, which intersect the $x$-axis at the points $x_{0}-c t_{0}$ and $x_{0}+c t_{0}$ (Figure 4). The base of this triangle, $\left[x_{0}-c t_{0}, x_{0}+c t_{0}\right]$,
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-29_437_484_248_35.jpg)
+-Figure 4 Interval of dependence, centered at $x_{0}$, radius $c t_{0}$.
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-29_326_385_1341_100.jpg)
+-Figure 5 Characteristic parallelogram.
+-
+-## PROPOSITION 1 CHARACTERISTIC PARALLELOGRAM
+-
+-is called the interval of dependence of the point ( $x_{0}, t_{0}$ ) (Figure 4). To understand this terminology, from d'Alembert's solution (4), we see that $u\left(x_{0}, t_{0}\right)$ is determined by the values of $f^{*}$ at the endpoints of the interval of dependence and by integrating $g^{*}$ on that interval. The values of $f^{*}$ and $g^{*}$ outside the interval of dependence of $\left(x_{0}, t_{0}\right)$ do not affect in any way the value of $u\left(x_{0}, t_{0}\right)$; consequently, any perturbation outside this interval is not felt at the point $\left(x_{0}, t_{0}\right)$. From Figure 4 it is clear that the interval of dependence $\left[x_{0}-c t_{0}, x_{0}+c t_{0}\right]$ lies entirely inside the interval $[0, L]$ if and only if the point $\left(x_{0}, t_{0}\right)$ belongs to the triangular region $I$ bounded by the interval $[0, L]$ and the characteristic lines $x-c t=0$ (through the origin with slope $\frac{1}{c}$ ) and $x+c t=L$ (through the $(0, L)$ with slope $-\frac{1}{c}$ ). Thus, for ( $x, t$ ) inside the region $I, u(x, t)$ depends only on the values of $f$ and $g$ over the interval $[0, L]$; and so in order to compute $u(x, t)$ we do not need the periodic extensions of $f$ and $g$.
+-
+-## EXAMPLE 4 Using intervals of dependence
+-
+-Consider the wave problem
+-
+-$$
+-\begin{gathered}
+-u_{t t}=4 u_{x x}, 0<x<1, t>0 \\
+-u(0, t)=0, u(1, t)=0 \\
+-u(x, 0)=x(1-x), u_{t}(x, 0)=8 x
+-\end{gathered}
+-$$
+-
+-Find $u(x, t)$ for ( $x, t$ ) in region $I$ in Figure 4, with $L=1$ and $c=2$.
+-Solution Applying d'Alembert's solution and using the fact that the interval of dependence of a point in region $I$ lies entirely in $[0,1]$, we obtain
++is called the interval of dependence of the point ( $x_{0}, t_{0}$ ) (Figure 4). To understand this terminology, from d'Alembert's solution (4), we see that $u\left(x_{0}, t_{0}\right)$ is determined by the values of $f^{*}$ at the endpoints of the interval of dependence and by integrating $g^{*}$ on that interval. The values of $f^{*}$ and $g^{*}$ outside the interval of dependence of $\left(x_{0}, t_{0}\right)$ do not affect in any way the value of $u\left(x_{0}, t_{0}\right)$; consequently, any perturbation outside this interval is not felt at the point $\left(x_{0}, t_{0}\right)$. From Figure 4 it is clear that the interval of dependence $\left[x_{0}-c t_{0}, x_{0}+c t_{0}\right]$ lies entirely inside the interval $[0, L]$ if and only if the point $\left(x_{0}, t_{0}\right)$ belongs to the triangular region $I$ bounded by the interval $[0, L]$ and the characteristic lines $x-c t=0$ (through the origin with slope $\frac{1}{c}$ ) and $x+c t=L$ (through $(L,0)$ with slope $-\frac{1}{c}$ ). Thus, for ( $x, t$ ) inside the region $I, u(x, t)$ depends only on the values of $f$ and $g$ over the interval $[0, L]$; and so in order to compute $u(x, t)$ we do not need the periodic extensions of $f$ and $g$.
++
++```scientific-figure
++id: 31112a38-b52b-446c-b1c5-c2c121bfc526
++numbered: false
++title: ""
++caption: Figure 4 Interval of dependence, centered at $x_{0}$, radius $c t_{0}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-29_437_484_248_35.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: 317569ab-b673-4674-bb71-0d5842430d4c
++numbered: false
++title: ""
++caption: Figure 5 Characteristic parallelogram.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-29_326_385_1341_100.jpg
++    caption: ""
++```
++
++
++> [!exercise|452a2043-148d-5136-ae7b-ef56b6c6c540.local at=0265551b-a82a-5d97-be78-462b241fe671] EXAMPLE 4 Using intervals of dependence
++> Consider the wave problem
++>
++> $$
++> \begin{gathered}
++> u_{t t}=4 u_{x x}, 0<x<1, t>0 \\
++> u(0, t)=0, u(1, t)=0 \\
++> u(x, 0)=x(1-x), u_{t}(x, 0)=8 x
++> \end{gathered}
++> $$
++>
++> Find $u(x, t)$ for ( $x, t$ ) in region $I$ in Figure 4, with $L=1$ and $c=2$.
++
++##### solution
++
++Applying d'Alembert's solution and using the fact that the interval of dependence of a point in region $I$ lies entirely in $[0,1]$, we obtain
+ 
+ $$
+ \begin{aligned}
+@@ -214,27 +292,28 @@
+ & =-4 t^{2}+x-x^{2}+(x+2 t)^{2}-(x-2 t)^{2} \\
+ & =-4 t^{2}+x-x^{2}+8 t x .
+ \end{aligned}
+-$$ $\square$
+-
++$$
++
++$\square$
+ We next describe a method for finding the values of $u$ at points outside the region $I$. We need the following interesting identity. Let us call a characteristic parallelogram one whose sides lie on characteristic lines.
+ 
+-Let $P_{1}, P_{2}, Q_{1}, Q_{2}$ denote the vertices of a characteristic parallelogram, with $P_{1}$ diagonally opposite to $P_{2}$ (Figure 5). Then
+-
+-$$
+-u\left(P_{1}\right)+u\left(P_{2}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right) .
+-$$
++> [!proposition|72fef828-6f1d-553b-8c08-b58f0744bf69.local at=5adbd0d1-cd6e-594a-9822-33e4a96b1401] Characteristic Parallelogram
++> Let $c>0$ and let $u$ solve $u_{tt}=c^2u_{xx}$ classically.
++>
++> Let $P_{1}, P_{2}, Q_{1}, Q_{2}$ denote the vertices of a characteristic parallelogram, with $P_{1}$ diagonally opposite to $P_{2}$ (a parallelogram whose sides lie on the characteristic lines $x-ct=\mathrm{constant}$ and $x+ct=\mathrm{constant}$). Then
++>
++> $$
++> u\left(P_{1}\right)+u\left(P_{2}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right) .
++> $$
++
++*Printed equation label: (10).*
+ 
+ Proof Write
+ 
+ $$
+ A(x, t)=\frac{1}{2}\left[f^{*}(x-c t)-\frac{1}{c} G(x-c t)\right], B(x, t)=\frac{1}{2}\left[f^{*}(x+c t)+\frac{1}{c} G(x+c t)\right],
+-$$
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-30_545_486_342_59.jpg)
+-Figure 6 Dividing the strip by reflecting characteristic lines.
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-30_475_472_1419_56.jpg)
+-Figure 7
++\tag{11}
++$$
+ 
+ where $G$ is an antiderivative of $g^{*}$. Then for all ( $x, t$ ), we have from (6)
+ 
+@@ -246,14 +325,45 @@
+ 
+ $$
+ u\left(P_{1}\right)+u\left(P_{2}\right)=A\left(P_{1}\right)+B\left(P_{1}\right)+A\left(P_{2}\right)+B\left(P_{2}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right) .
+-$$ $\square$
++$$
++
++$\square$
++```scientific-figure
++id: cc3961ae-0731-4235-b373-227ba1f5e559
++numbered: false
++title: ""
++caption: Figure 6 Dividing the strip by reflecting characteristic lines.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-30_545_486_342_59.jpg
++    caption: ""
++```
++
+ 
+ With the help of (10) we can determine $u$ in the strip $S$ in Figure 6 by using geometric constructions to reduce to the region $I$. For this purpose, we divide $S$ into triangular and polygonal regions bounded by characteristic lines, as follows. Start with two characteristic lines that emanate from the $x$ axis at $x=0$ and $x=L$, and reflect on the boundary of $S$ along characteristic lines with opposite slopes. Label these regions by $I I, I I I, I V$, and so on, as shown in Figure 6.
+ 
+-## EXAMPLE 5 Using characteristic parallelograms
+-
+-Refer to Example 4. Determine the values of $u$ in the region $I I$.
+-Solution Let $P_{1}=\left(x_{0}, t_{0}\right)$ be an arbitrary point in the region $I I$. Form a characteristic parallelogram with vertices $P_{1}, P_{2}, Q_{1}, Q_{2}$, as shown in Figure 7. The vertices $P_{2}$ and $Q_{2}$ are on the characteristic line $x-2 t=0$, and the vertex $Q_{1}$ is on the boundary line $x=0$. From Proposition 1, we have $u\left(P_{1}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right)-u\left(P_{2}\right)$. We will find $u\left(P_{2}\right)$ and $u\left(Q_{2}\right)$ by using the formula $u(x, t)=-4 t^{2}+x-x^{2}+8 t x$ from Example 4, because $P_{2}$ and $Q_{2}$ are in the region $I$. Also, $u\left(Q_{1}\right)=0$, because of the boundary condition $u(0, t)=0$ for all $t>0$.
++```scientific-figure
++id: bd6a61d3-909f-478d-8c48-b230c7a19913
++numbered: false
++title: ""
++caption: Figure 7 Characteristic parallelogram used to determine the solution in region II.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-30_475_472_1419_56.jpg
++    caption: ""
++```
++
++
++> [!exercise|15449f21-227a-5bdb-9266-329cc31a15f0.local at=5fd17546-508b-5ccc-84d1-d71ff23f357e] EXAMPLE 5 Using characteristic parallelograms
++> Refer to Example 4. Determine the values of $u$ in the region $I I$.
++
++##### solution
++
++Let $P_{1}=\left(x_{0}, t_{0}\right)$ be an arbitrary point in the region $I I$. Form a characteristic parallelogram with vertices $P_{1}, P_{2}, Q_{1}, Q_{2}$, as shown in Figure 7. The vertices $P_{2}$ and $Q_{2}$ are on the characteristic line $x-2 t=0$, and the vertex $Q_{1}$ is on the boundary line $x=0$. From Proposition 1, we have $u\left(P_{1}\right)=u\left(Q_{1}\right)+u\left(Q_{2}\right)-u\left(P_{2}\right)$. We will find $u\left(P_{2}\right)$ and $u\left(Q_{2}\right)$ by using the formula $u(x, t)=-4 t^{2}+x-x^{2}+8 t x$ from Example 4, because $P_{2}$ and $Q_{2}$ are in the region $I$. Also, $u\left(Q_{1}\right)=0$, because of the boundary condition $u(0, t)=0$ for all $t>0$.
+ 
+ To determine the coordinates of $P_{2}$ and $Q_{2}$, we use simple geometric considerations using the equations of characteristic lines as labeled in Figure 7. For example, $Q_{2}$ is the intersection point of the characteristic lines $x+2 t=x_{0}+2 t_{0}$ and $x-2 t=0$. Adding the equations, we get $2 x=x_{0}+2 t_{0}$ or $x=\frac{x_{0}+2 t_{0}}{2}$. From $x=2 t$, we obtain $t=\frac{x_{0}+2 t_{0}}{4}$, and so $Q_{2}=\left(\frac{x_{0}+2 t_{0}}{2}, \frac{x_{0}+2 t_{0}}{4}\right)$. The coordinates of $Q_{1}$ and $P_{2}$ are computed similarly. We have $Q_{1}=\left(0,-\frac{x_{0}}{2}+t_{0}\right)$ and $P_{2}=\left(\frac{-x_{0}+2 t_{0}}{2}, \frac{-x_{0}+2 t_{0}}{4}\right)$. Let us simplify the notation and write $P_{1}=(x, t)$ instead of $\left(x_{0}, t_{0}\right)$. Then, for $P_{1}=(x, t)$ in the region II,
+ 
+@@ -271,102 +381,178 @@
+ 
+ In the exercises, you are asked to find the values of $u$ in the regions II, III, and IV, by using techniques similar to the ones of Examples 4 and 5.
+ 
+-## Exercises 3.4
+-
+-In Exercises 1-8, use d'Alembert's formula (4) to solve the boundary value problem (1) - (3) for a string of unit length, subject to the given conditions. In each case, describe completely $f^{*}$ and $G$ (an antiderivative of $g^{*}$ ) (see Examples 2 and 3 for hints).
+-
+-1. $f(x)=\sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
+-2. $f(x)=\sin \pi x \cos \pi x, g(x)=0, \quad c=\frac{1}{\pi}$.
+-3. $f(x)=\sin \pi x+3 \sin 2 \pi x, g(x)=\sin \pi x, c=1$.
+-4. $f(x)=0, g(x)=1, c=1$.
+-5. $f(x)$ as in Exercise 5, Section 11.3, $g(x)=x, c=1$.
+-6. $f(x)=0, g(x)=\cos \pi x, c=1$.
+-7. $f(x)=0, g(x)=-10, c=1$.
+-8. $f(x)=0, g(x)=\sin \pi x, c=1$.
+-9. Determine the first time the string returns to its initial shape in Exercises 1 and 5.
+-10. Plot the solution in Exercise 1 for $t=1 / 2$ and 1 .
+-11. Plot the solution in Exercise 4 for $t=1 / 2$ and 1.
+-12. Time period of motion. Prove the results of Exercise 11(b), Section 11.3, using d'Alembert's solution.
+-13. Suppose that both $f$ and $g$ are symmetric about $x=\frac{L}{2}$; that is, $f(L-x)=f(x)$ and $g(L-x)=g(x)$. Show that
+-
+-$$
+-u\left(x, t+\frac{L}{c}\right)=-u(x, t)
+-$$
+-
+-for all $0<x<L$ and $t>0$.
+-14. Check that d'Alembert's solution (4) satisfies (a) the boundary condition $u(L, t)=$ 0 for all $t>0$; and (b) the initial conditions (3). [Hint: For (a), use the oddness and the $2 L$-periodicity of $f$ and $g$.]
+-15. Consider the boundary value problem (1)-(3) with $c=1, L=1, g(x)=0$, and
+-
+-$$
+-f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4} \\ 4\left(\frac{1}{2}-x\right) & \text { if } \frac{1}{4}<x \leq \frac{1}{2} \\ 0 & \text { if } \frac{1}{2}<x \leq 1\end{cases}
+-$$
+-
+-(a) Use d'Alembert's method to plot the string at times $t=0, \frac{1}{4}, \frac{1}{2}$.
+-(b) For $t=\frac{1}{4}$, identify the points on the string that are still in rest position.
+-(c) Take a point $x$ on the string with zero initial displacement $\left(\frac{1}{2}<x<1\right)$. How long does it take before the point $x$ starts to vibrate?
+-(d) What is the answer in (c) for an arbitrary string constant $c>0$ ?
+-16. D'Alembert's solution for zero initial velocity. (a) Starting from (8), Section 11.3, show that, if the initial velocity $g(x)=0$, then
+-
+-$$
+-u(x, t)=\frac{1}{2} \sum_{n=1}^{\infty} b_{n}\left[\sin \frac{n \pi}{L}(x-c t)+\sin \frac{n \pi}{L}(x+c t)\right] .
+-$$
+-
+-(b) Derive d'Alembert's solution (4) using (a). [Hint: $f^{*}(s)=\sum_{n=1}^{\infty} b_{n} \sin \frac{n \pi}{L} s$.]
+-17. Project Problem: D'Alembert's solution (the general case). Let $g^{*}$ denote the odd $2 L$-periodic extension of $g$, and let
+-
+-$$
+-G(x)=\int_{0}^{x} g^{*}(s) d s
+-$$
+-
+-(a) Show that $G$ is even and $2 L$-periodic, and
+-
+-$$
+-G(x)=\sum_{n=1}^{\infty} B_{n}\left(\cos \frac{n \pi}{L} x-1\right),
+-$$
+-
+-where
+-
+-$$
+-B_{n}=\frac{-2}{n \pi} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x=-c b_{n}^{*} \quad(n=1,2, \ldots)
+-$$
+-
+-[Hint: Exercise 33, Section 2.3.]
+-(b) Use (a) to show that
+-
+-$$
+-G(x+c t)-G(x-c t)=\sum_{n=1}^{\infty} B_{n}\left[\cos \frac{n \pi}{L}(x+c t)-\cos \frac{n \pi}{L}(x-c t)\right] .
+-$$
+-
+-(c) Using (b), show that $\frac{1}{2 c} \int_{x-c t}^{x+c t} g^{*}(s) d s=\sum_{n=1}^{\infty} b_{n}^{*} \sin \frac{n \pi}{L} x \sin \lambda_{n} t$.
+-(d) Use (c), (8) of Section 11.3, and Exercise 16 to derive d'Alembert's solution (4).
+-18. Project Problem: Conservation of energy. The energy at time $t$ of a vibrating string is given by
+-
+-$$
+-E(t)=\frac{1}{2} \int_{0}^{L}\left(u_{t}^{2}+c^{2} u_{x}^{2}\right) d x
+-$$
+-
+-(a) By differentiating under the integral sign, show that
+-
+-$$
+-\frac{d E}{d t}=\int_{0}^{L}\left(u_{t} u_{t t}+c^{2} u_{x} u_{x t}\right) d x
+-$$
+-
+-(b) Use the wave equation (1) to replace $u_{t t}$ by $c^{2} u_{x x}$ and obtain
+-
+-$$
+-\frac{d E}{d t}=c^{2} \int_{0}^{L}\left(u_{x} u_{t}\right)_{x} d x
+-$$
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-33_495_484_220_21.jpg)
+-Figure 8
+-
+-(c) Using (2), show that $u_{t}(0, t)=u_{t}(L, t)=0$ for all $t>0$.
+-(d) Prove the principle of conservation of energy, which states that the energy during the free vibrations of a string is constant for all time. [Hint: Prove that $d E / d t=0$, using (b) and (c).]
+-19. Refer to Example 3.
+-(a) What are the characteristic lines?
+-(b) Find the intervals of dependence of the points (.5, .2) and (.3,2).
+-(c) Describe the region $I$ in this case. Which one of the points in (b) belongs to the region $I$ ?
+-(d) Find $u(x, t)$ for all points in the region $I$.
+-20. Refer to Example 3. Find $u(x, t)$ for all points in the region $I I$.
+-21. Refer to Example 4. Find $u(x, t)$ for all points in the region III (see Figure 8).
+-22. Refer to Example 4. Find $u(x, t)$ for all points in the region $I V$ (see Figure 8).
++## Exercises 11.4
++
++
++> [!prompt|138fe6aa-a367-5501-898a-870944277fd8.local at=9f7de47a-e911-56f2-94fa-fc9437ea609b] Shared exercise instructions
++> In Exercises 1-8, use d'Alembert's formula (4) to solve the boundary value problem (1) - (3) for a string of unit length, subject to the given conditions. In each case, describe completely $f^{*}$ and $G$ (an antiderivative of $g^{*}$ ) (see Examples 2 and 3 for hints).
++
++
++> [!exercise|9af79dc0-d139-5f45-8a71-27b2b52a640e.local at=6598de0d-0089-5803-851a-5f713e71ce0b] Exercise 1
++> $f(x)=\sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
++
++
++> [!exercise|3d278547-fb55-538b-be7b-fc9d6bd2d84c.local at=52da35ae-2fda-5b91-8335-6662fdc4738f] Exercise 2
++> $f(x)=\sin \pi x \cos \pi x, g(x)=0, \quad c=\frac{1}{\pi}$.
++
++
++> [!exercise|de56860a-3721-56f1-8729-7c5dd022b229.local at=ce97f7b5-de8d-5a7f-b950-a30b2acd01e6] Exercise 3
++> $f(x)=\sin \pi x+3 \sin 2 \pi x, g(x)=\sin \pi x, c=1$.
++
++
++> [!exercise|bda8a8a6-1ef6-5558-9776-be98b748896a.local at=47e70b7a-267f-5074-88c9-f93f70a81e17] Exercise 4
++> $f(x)=0, g(x)=1, c=1$.
++
++
++> [!exercise|2038ba45-f623-5452-968e-0462b1d40979.local at=57400b66-8a43-53e2-9fb1-b5dd71469e9b] Exercise 5
++> $f(x)$ as in Exercise 5, Section 11.3, $g(x)=x, c=1$.
++
++
++> [!exercise|004e06b8-d238-51b1-96ea-1d5e0c9d8c32.local at=f5d2df3e-b38e-5dd8-a76e-ee181c5ff677] Exercise 6
++> $f(x)=0, g(x)=\cos \pi x, c=1$.
++
++
++> [!exercise|1ca8c5a6-845e-51c9-9453-37fa04c5faf5.local at=6c11dcd8-6fa2-5e46-b68c-da04b4f3ee02] Exercise 7
++> $f(x)=0, g(x)=-10, c=1$.
++
++
++> [!exercise|bf24775e-074a-5c72-85bd-5243f443f94a.local at=ae82b15c-c2ff-5b62-a365-7d6aadb4e68a] Exercise 8
++> $f(x)=0, g(x)=\sin \pi x, c=1$.
++
++
++> [!exercise|d6724e3f-adef-553f-a9f7-8047760439a4.local at=abc583bf-e6ad-5030-b13b-c30a4af5590c] Exercise 9
++> Determine the first time the string returns to its initial shape in Exercises 1 and 5.
++
++
++> [!exercise|d80a61a9-463e-5eb1-ac2a-82f36d584f79.local at=caad9bb2-5ebd-576b-a8d1-8bd864c235f4] Exercise 10
++> Plot the solution in Exercise 1 for $t=1 / 2$ and 1 .
++
++
++> [!exercise|14c6226a-0bca-547a-81d1-4956ea5d05f7.local at=f3cf3bd9-f440-5172-a89b-2fc114b6f93d] Exercise 11
++> Plot the solution in Exercise 4 for $t=1 / 2$ and 1.
++
++
++> [!exercise|c7ad3d21-1818-577e-ab18-1164a50ccfc7.local at=2a4a98dd-85f2-565c-b310-7de6bf843449] Exercise 12
++> Time period of motion. Prove the results of Exercise 11(b), Section 11.3, using d'Alembert's solution.
++
++
++> [!exercise|045cb455-ea16-5b92-bbb1-f9bc67fa44b7.local at=25873232-d50c-5059-8818-c1fa456110a1] Exercise 13
++> Suppose that both $f$ and $g$ are symmetric about $x=\frac{L}{2}$; that is, $f(L-x)=f(x)$ and $g(L-x)=g(x)$. Show that
++>
++> $$
++> u\left(x, t+\frac{L}{c}\right)=-u(x, t)
++> $$
++>
++> for all $0<x<L$ and $t>0$.
++
++
++> [!exercise|6a6742b3-9fbc-517b-8444-7dd14b0014d9.local at=ff44d753-bc54-5606-9169-1c7217fda18b] Exercise 14
++> Check that d'Alembert's solution (4) satisfies (a) the boundary condition $u(L,t)=0$ for all $t>0$; and (b) the initial conditions (3). [Hint: For (a), use the oddness and the $2 L$-periodicity of $f$ and $g$.]
++
++
++> [!exercise|861e9355-8b89-573d-9bf2-4a9f9fb39126.local at=bae72c5b-85a8-556f-b6a8-85e8e7ca3e59] Exercise 15
++> Consider the boundary value problem (1)-(3) with $c=1, L=1, g(x)=0$, and
++>
++> $$
++> f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4} \\ 4\left(\frac{1}{2}-x\right) & \text { if } \frac{1}{4}<x \leq \frac{1}{2} \\ 0 & \text { if } \frac{1}{2}<x \leq 1\end{cases}
++> $$
++>
++> (a) Use d'Alembert's method to plot the string at times $t=0, \frac{1}{4}, \frac{1}{2}$.
++> (b) For $t=\frac{1}{4}$, identify the points on the string that are still in rest position.
++> (c) Take a point $x$ on the string with zero initial displacement $\left(\frac{1}{2}<x<1\right)$. How long does it take before the point $x$ starts to vibrate?
++> (d) What is the answer in (c) for an arbitrary string constant $c>0$ ?
++
++
++> [!exercise|bb3b3940-aaba-5000-a26f-f47b49b16d1e.local at=ffca406c-849b-59c7-9b3f-610a02740002] Exercise 16
++> D'Alembert's solution for zero initial velocity. (a) Starting from (8), Section 11.3, show that, if the initial velocity $g(x)=0$, then
++>
++> $$
++> u(x, t)=\frac{1}{2} \sum_{n=1}^{\infty} b_{n}\left[\sin \frac{n \pi}{L}(x-c t)+\sin \frac{n \pi}{L}(x+c t)\right] .
++> $$
++>
++> (b) Derive d'Alembert's solution (4) using (a). [Hint: $f^{*}(s)=\sum_{n=1}^{\infty} b_{n} \sin \frac{n \pi}{L} s$.]
++
++
++> [!exercise|35088c25-bb65-5d46-a1b4-ba1d62383d00.local at=024ee70a-52b7-5079-bfdd-cfbcb4ee346a] Exercise 17
++> Project Problem: D'Alembert's solution (the general case). Let $g^{*}$ denote the odd $2 L$-periodic extension of $g$, and let
++>
++> $$
++> G(x)=\int_{0}^{x} g^{*}(s) d s
++> $$
++>
++> (a) Show that $G$ is even and $2 L$-periodic, and
++>
++> $$
++> G(x)=\sum_{n=1}^{\infty} B_{n}\left(\cos \frac{n \pi}{L} x-1\right),
++> $$
++>
++> where
++>
++> $$
++> B_{n}=\frac{-2}{n \pi} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x=-c b_{n}^{*} \quad(n=1,2, \ldots)
++> $$
++>
++> [Hint: Exercise 33, Section 7.3.]
++> (b) Use (a) to show that
++>
++> $$
++> G(x+c t)-G(x-c t)=\sum_{n=1}^{\infty} B_{n}\left[\cos \frac{n \pi}{L}(x+c t)-\cos \frac{n \pi}{L}(x-c t)\right] .
++> $$
++>
++> (c) Using (b), show that $\frac{1}{2 c} \int_{x-c t}^{x+c t} g^{*}(s) d s=\sum_{n=1}^{\infty} b_{n}^{*} \sin \frac{n \pi}{L} x \sin \lambda_{n} t$.
++> (d) Use (c), (8) of Section 11.3, and Exercise 16 to derive d'Alembert's solution (4).
++
++
++> [!exercise|891dc1e5-6f04-5cf3-bb20-41d24871a678.local at=af799e54-f6fb-5a5c-a157-e777b3ba71d3] Exercise 18
++> Project Problem: Conservation of energy. The energy at time $t$ of a vibrating string is given by
++>
++> $$
++> E(t)=\frac{1}{2} \int_{0}^{L}\left(u_{t}^{2}+c^{2} u_{x}^{2}\right) d x
++> $$
++>
++> (a) By differentiating under the integral sign, show that
++>
++> $$
++> \frac{d E}{d t}=\int_{0}^{L}\left(u_{t} u_{t t}+c^{2} u_{x} u_{x t}\right) d x
++> $$
++>
++> (b) Use the wave equation (1) to replace $u_{t t}$ by $c^{2} u_{x x}$ and obtain
++>
++> $$
++> \frac{d E}{d t}=c^{2} \int_{0}^{L}\left(u_{x} u_{t}\right)_{x} d x
++> $$
++>
++> (c) Using (2), show that $u_{t}(0, t)=u_{t}(L, t)=0$ for all $t>0$.
++> (d) Prove the principle of conservation of energy, which states that the energy during the free vibrations of a string is constant for all time. [Hint: Prove that $d E / d t=0$, using (b) and (c).]
++
++
++> [!exercise|c39639ec-eb58-5186-b880-58cc07de54e3.local at=f0cea3ce-965a-5425-aab3-10a15794cfce] Exercise 19
++> Refer to Example 3.
++> (a) What are the characteristic lines?
++> (b) Find the intervals of dependence of the points (.5, .2) and (.3,2).
++> (c) Describe the region $I$ in this case. Which one of the points in (b) belongs to the region $I$ ?
++> (d) Find $u(x, t)$ for all points in the region $I$.
++
++
++> [!exercise|b19698b5-46d7-5c7c-8052-bc826dd9bac2.local at=bd47f5ef-b4f1-5b0f-8466-eb4c680181b0] Exercise 20
++> Refer to Example 3. Find $u(x, t)$ for all points in the region $I I$.
++
++
++> [!exercise|8e5bd83e-e6ab-5d86-8ec9-87b056b69eab.local at=33576b88-5936-5dd4-ba07-0a4f3ba7b237] Exercise 21
++> Refer to Example 4. Find $u(x, t)$ for all points in the region III (see Figure 8).
++
++
++```scientific-figure
++id: 8e24befa-9bbc-4652-9884-e72aabe512a0
++numbered: false
++title: ""
++caption: Figure 8 Characteristic regions for Exercises 21 and 22.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-33_495_484_220_21.jpg
++    caption: ""
++```
++> [!exercise|f05f73f8-a30a-5ae1-b3cd-d42f73b40fca.local at=c3b53706-da5e-51c5-bb64-f086cde9633b] Exercise 22
++> Refer to Example 4. Find $u(x, t)$ for all points in the region $I V$ (see Figure 8).
+
+`````

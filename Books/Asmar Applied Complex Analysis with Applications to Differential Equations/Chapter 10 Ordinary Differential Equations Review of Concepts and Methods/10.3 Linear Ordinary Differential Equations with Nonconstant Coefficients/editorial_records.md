@@ -160,3 +160,741 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients.md
+@@ -1,9 +1,11 @@
+-## 10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients
+-
+-In the previous two sections we saw that the general solution of the secondorder linear differential equation
++
++# 10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients
++
++In the previous two sections we saw that the general solution of the second-order linear differential equation
+ 
+ $$
+ y^{\prime \prime}+p(x) y^{\prime}+q(x) y=g(x)
++\tag{1}
+ $$
+ 
+ is of the form $y=y_{h}+y_{p}$, where $y_{h}$ is the general solution of the associated homogeneous equation and $y_{p}$ is any particular solution of (1). We obtained a complete description of the solution when the coefficient functions are constants and $g$ is of a special form. In this section we present two general methods for handling the cases not covered by the previous section. The first one is usually applied when solving for $y_{h}$, and the second one can be used to find $y_{p}$. We end the section by applying these methods to solve the important class of Euler equations.
+@@ -13,7 +15,7 @@
+ For second-order linear differential equations, we know that
+ 
+ $$
+-y_{n}=c_{1} y_{1}+c_{2} y_{2},
++y_h=c_1 y_{1}+c_{2} y_{2},
+ $$
+ 
+ where $y_{1}$ and $y_{2}$ are linearly independent solutions of the homogeneous equation
+@@ -21,24 +23,28 @@
+ Note that the equation is in standard form. That is, the leading coefficient is 1 .
+ 
+ $$
+-y^{\prime \prime}+p(x) y^{\prime}+q(r) y=0 .
++y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0 .
++\tag{2}
+ $$
+ 
+ Suppose that we know one nontrivial solution to (2), say $y_{1}$. The method of reduction of order allows us to find a second solution $y_{2}$ such that $y_{1}$ and $y_{2}$ are independent.
+ 
+-## REDUCTION OF ORDER FORMULA
+-
+-A second linearly independent solution of (2) given $y_{1}$ is
+-
+-$$
+-y_{2}=y_{1} \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}} d x .
+-$$
+-
+-Before you apply this formula, be sure that your equation is in standard form.
+-
+-Since we are seeking only one independent solution, we can assign my fixed values to the constants of integration appearing in this formula. We will often neglect these constants.
+-
+-Proof We know that $c y_{1}$ is a solution of (2). But of course this solution is lincarly dependent with $y_{1}$. The idea is to find a nonconstant function $v(x)$ such that
++> [!rule|f272087c-bbd0-5309-a2f3-ce52cf655a7a.local at=ca9cb3db-25df-58e8-b879-5ec5e7e621a5] Reduction of Order Formula
++> Let $p,q$ be continuous on an interval where the known solution $y_1$ of $y^{\prime\prime}+p(x)y^{\prime}+q(x)y=0$ does not vanish.
++>
++> A second linearly independent solution of $y^{\prime\prime}+p(x)y^{\prime}+q(x)y=0$ given $y_{1}$ is
++>
++> $$
++> y_{2}=y_{1} \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}} d x .
++> $$
++>
++> Before you apply this formula, be sure that your equation is in standard form.
++
++*Printed equation label: (3).*
++
++Since we are seeking only one independent solution, we can assign any fixed values to the constants of integration appearing in this formula. We will often neglect these constants.
++
++Proof We know that $c y_{1}$ is a solution of (2). But of course this solution is linearly dependent with $y_{1}$. The idea is to find a nonconstant function $v(x)$ such that
+ $v(x) y_{1}$ is a solution. Substituting $y=v(x) y_{1}$ into (2), we get
+ 
+ $$
+@@ -49,10 +55,10 @@
+ \end{aligned}
+ $$
+ 
+-because $y_{1}^{\prime \prime}+p(x) y_{1}^{\prime}+q(x) y_{1}=0$. Hence for $y=w y_{1}$ to be a solution to (2), $v$ must satisfy $y_{1} v^{\prime \prime}+\left(2 y_{1}^{\prime}+p(x) y_{1}\right) v^{\prime}=0$. This is a first-order equation in $v^{\prime}$ (hence the name reduction of order). Equivalently,
+-
+-$$
+-v^{\prime \prime}+\left(2 \frac{y_{1}^{\prime}}{y_{1}}+p(x)\right) v^{\prime} \cdots 0
++because $y_{1}^{\prime \prime}+p(x) y_{1}^{\prime}+q(x) y_{1}=0$. Hence for $y=v y_1$ to be a solution to (2), $v$ must satisfy $y_{1} v^{\prime \prime}+\left(2 y_{1}^{\prime}+p(x) y_{1}\right) v^{\prime}=0$. This is a first-order equation in $v^{\prime}$ (hence the name reduction of order). Equivalently,
++
++$$
++v^{\prime \prime}+\left(2 \frac{y_{1}^{\prime}}{y_{1}}+p(x)\right) v^{\prime}=0
+ $$
+ 
+ and thus by Theorem 1, Section 10.1, we find
+@@ -63,8 +69,47 @@
+ 
+ (We have taken the constant in this theorem to be 1, since we are only interested in one solution.) Hence (3) follows by integrating and multiplying by $y_{1}$. The linear independence of $y_{1}$ and $y_{2}$ can be checked by computing the Wronskian. See Exercise 41.
+ 
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-22_418_477_1169_58.jpg)
+-Figure 1 Solutions in Example 1.
++```scientific-figure
++id: 6296f032-4884-40ca-ab3c-0b3905cb1ef3
++numbered: false
++title: ""
++caption: Figure 1 Solutions in Example 1.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-22_418_477_1169_58.jpg
++    caption: ""
++```
++
++
++
++
++> [!exercise|3bc3d399-212b-51ff-8348-a457719da313.local at=3828e564-d8df-59ce-9ef8-d89d19775f1d] EXAMPLE 1 Reduction of order in the presence of a double root
++> Given $y_1=e^x$ for $y^{\prime\prime}-2y^{\prime}+y=0$, find a linearly independent second solution by reduction of order.
++
++##### solution
++
++Given that $y_{1}=e^{x}$ is a solution to $y^{\prime \prime}-2 y^{\prime}+y=0$, a second linearly independent solution is obtained from (3), as follows (Figure 1):
++
++$$
++y_{2}=e^{x} \int \frac{e^{2 x}}{\left(e^{x}\right)^{2}} d x=x e^{x}
++$$
++
++The characteristic equation in Example 1 has 1 as a double root. We could have used the methods of the previous section to write down the second solution. However, the point of Example 1 is to show how reduction of order can be used to derive such solutions.
++
++> [!exercise|075add88-d545-53de-8279-e20ea36cbf6f.local at=a8709427-524a-5212-9994-27d4b738659d] EXAMPLE 2 Applying the reduction of order formula
++> Given $y_1=e^x$ for $xy^{\prime\prime}-(1+x)y^{\prime}+y=0$, use reduction of order to find a second linearly independent solution on an interval that excludes zero.
++
++##### solution
++
++Given that $e^x$ is a solution of $x y^{\prime \prime}-(1+x) y^{\prime}+y=0$, a second linearly independent solution is obtained by appealing to (3). We have
++
++$$
++y_{2}=e^{x} \int \frac{e^{\int\left(\frac{1}{x}+1\right) d x}}{\left(e^{x}\right)^{2}} d x=e^{x} \int \frac{x e^{x}}{\left(e^x\right)^{2}} d x=e^x\int xe^{-x}\,dx
++$$
++
++Observe that before evaluating (3), we must put the equation in standard form.
+ 
+ $$
+ \begin{aligned}
+@@ -73,25 +118,7 @@
+ \end{aligned}
+ $$
+ 
+-## EXAMPLE 1 Reduction of order in the presence of a double root
+-
+-Given that $y_{1}=e^{x}$ is a solution to $y^{\prime \prime}-2 y^{\prime}+y=0$, a second linearly independent solution is obtained from (3), as follows (Figure 1):
+-
+-$$
+-y_{2}=e^{x} \int \frac{e^{2 x}}{\left(e^{x}\right)^{2}} d x=x e^{x}
+-$$
+-
+-The characteristic equation in Example 1 has 1 as a double root. We could have used the methods of the previous section to write down the second solution. However, the point of Example 1 is to show how reduction of order can be used to derive such solutions.
+-
+-## EXAMPLE 2 Applying the reduction of order formula
+-
+-Given that $c^{x}$ is a solution of $x y^{\prime \prime}-(1+x) y^{\prime}+y=0$, a second linearly independent solution is obtained by appealing to (3). We have
+-
+-$$
+-y_{2}=e^{x} \int \frac{e^{\int\left(\frac{1}{1}+1\right) d x}}{\left(e^{x}\right)^{2}} d x=e^{x} \int \frac{x e^{x}}{\left(\epsilon^{x}\right)^{2}} d x=e^{x} \int x e^{x} d x
+-$$
+-
+-Observe that before evaluating (3), we must put the equation in standard form. Integrating by parts, we find
++Integrating by parts, we find
+ 
+ $$
+ y_{2}=e^{x}\left(-x e^{-x}-e^{-x}\right)=-x-1
+@@ -99,31 +126,36 @@
+ 
+ At this point, we may use $y_{2}=x+1$.
+ 
+-VARIATION OF PARAMETERS FORMULA
+-
+ ## Variation of Parameters
+ 
+-In this part, we suppose that we know the solution of the associated homogeneous equation (2) and describe a general method for gonerating a particular solution of (1). This method is called variation of parameters.
+-
+-A particular solution of (1) is given by
+-
+-$$
+-y_{p}=y_{1} \int \frac{-y_{2} g(x)}{W\left(y_{1}, y_{2}\right)} d x+y_{2} \int \frac{y_{1} g(x)}{W\left(y_{1}, y_{2}\right)} d x
+-$$
+-
+-where $y_{1}$ and $y_{2}$ are linearly independent solutions of (2), and $W\left(y_{1}, y_{2}\right)= y_{1} y_{2}^{\prime}-y_{1}^{\prime} y_{2}$ is the Wronskian of $y_{1}$ and $y_{2}$.
++In this part, we suppose that we know the solution of the associated homogeneous equation (2) and describe a general method for generating a particular solution of (1). This method is called variation of parameters.
++
++> [!rule|8581a96b-e43e-5712-883a-446d14e9edc5.local at=79e898a5-d4a0-5a18-9dc1-7ffbb0360372] Variation of Parameters Formula
++> Assume $p,q,g$ are continuous on an interval $I$, and take a fundamental pair $y_1,y_2$ of the associated homogeneous equation, so their Wronskian is nowhere zero on $I$.
++>
++> A particular solution of $y^{\prime\prime}+p(x)y^{\prime}+q(x)y=g(x)$ is given by
++>
++> $$
++> y_{p}=y_{1} \int \frac{-y_{2} g(x)}{W\left(y_{1}, y_{2}\right)} d x+y_{2} \int \frac{y_{1} g(x)}{W\left(y_{1}, y_{2}\right)} d x
++> $$
++>
++> where $y_{1}$ and $y_{2}$ are linearly independent solutions of $y^{\prime\prime}+p(x)y^{\prime}+q(x)y=0$, and $W\left(y_{1}, y_{2}\right)= y_{1} y_{2}^{\prime}-y_{1}^{\prime} y_{2}$ is the Wronskian of $y_{1}$ and $y_{2}$.
++
++*Printed equation label: (4).*
+ 
+ As in the reduction of order method, we can neglect the constants of integration.
+-Proof Since $c_{1} y_{1}+c_{2} y_{2}$ is a solution of the homogencous equation, our hope is that by allowing functions instead of constants we can generate a solution of the nonhomogeneous equation. We thus try
++Proof Since $c_{1} y_{1}+c_{2} y_{2}$ is a solution of the homogeneous equation, our hope is that by allowing functions instead of constants we can generate a solution of the nonhomogeneous equation. We thus try
+ 
+ $$
+ y=u_{1}(x) y_{1}+u_{2}(x) y_{2}
++\tag{5}
+ $$
+ 
+ and solve for $u_{1}$ and $u_{2}$. Since we have two unknown functions and only one equation to satisfy, we are free to impose one additional relation between $u_{1}$ and $u_{2}$. As you will see, the following condition simplifies the computation:
+ 
+ $$
+ u_{1}^{\prime}(x) y_{1}+u_{2}^{\prime}(x) y_{2}=0
++\tag{6}
+ $$
+ 
+ We now compute using (5) and (6):
+@@ -160,15 +192,16 @@
+ 
+ Integrating and substituting in (5) yields (4). $\square$
+ 
+-## EXAMPLE 3 Variation of parameters
+-
+-Given that $y_{1}=x$ and $y_{2}=x^{4}$ are solutions of $x^{2} y^{\prime \prime}-4 x y^{\prime}+4 y=0$, find a particular solution of
+-
+-$$
+-x^{2} y^{\prime \prime}-4 x y^{\prime}+4 y=3 x^{2} .
+-$$
+-
+-Solution We have
++> [!exercise|06939ae1-b653-57df-b35c-b90fbff49380.local at=407ed3c1-1e03-52b3-a3f4-a7b250f703cd] EXAMPLE 3 Variation of parameters
++> Given that $y_{1}=x$ and $y_{2}=x^{4}$ are solutions of $x^{2} y^{\prime \prime}-4 x y^{\prime}+4 y=0$, find a particular solution of
++>
++> $$
++> x^{2} y^{\prime \prime}-4 x y^{\prime}+4 y=3 x^{2} .
++> $$
++
++##### solution
++
++We have
+ 
+ $$
+ W\left(y_{1}, y_{2}\right)=W\left(x, x^{4}\right)=3 x^{4} .
+@@ -188,56 +221,63 @@
+ 
+ $$
+ x^{2} y^{\prime \prime}+\alpha x y^{\prime}+\beta y=0,
+-$$
+-
+-where $\alpha$ and $\beta$ are constants, is known as Euler's equation. It is the simplest example of a second-order linear differential equation with nonconstant coefficients for which we have an explicit solution. Motivated by the firstorder version of this equation, $x y^{\prime}+\alpha y=0$, which has solution $y=x^{-\alpha}$, we try
++\tag{7}
++$$
++
++where $\alpha$ and $\beta$ are constants, is known as Euler's equation. It is the simplest example of a second-order linear differential equation with nonconstant coefficients for which we have an explicit solution. Motivated by the first-order version of this equation, $x y^{\prime}+\alpha y=0$, which has solution $y=x^{-\alpha}$, we try
+ 
+ $$
+ y=x^{r}
++\tag{8}
+ $$
+ 
+ as a solution of (7). Plugging $x^{r}$ into the equation, it follows that $r$ must be a root of
+ 
+ $$
+ r(r-1)+\alpha r+\beta=0
++\tag{9}
+ $$
+ 
+ This quadratic equation, known as the indicial equation, is the key to solving (7), in the same way that the characteristic equation is the key to solving an equation with constant coefficients. As expected, the solutions will depend on the nature of the roots, referred to as the indicial roots.
+ 
+ If we put the general Euler's equation in standard form, the coefficients of $y^{\prime}$ and $y$ are not defined at $x=0$. Because of this problem at 0 , the cases $x>0$ and $x<0$ are to be treated separately. In fact, in most applications we are only interested in the case $x>0$. For completeness, in the following box we present the solution of Euler's equation in both cases using the absolute value.
+ 
+-GENERAL SOLUTION OF EULER'S EQUATION
+-
+-Consider Euler's equation (7) with indicial equation (9), which we write as
+-
+-$$
+-r^{2}+(\alpha-1) r+\beta=0
+-$$
+-
+-Let $r_{1}$ and $r_{2}$ denote the indicial roots. The general solution $y$ of this equation is given by the following cases.
+-Case I If $r_{1}$ and $r_{2}$ are distinct real roots, then
+-
+-$$
+-y=c_{1}|x|^{r_{1}}+c_{2}|x|^{r_{2}}
+-$$
+-
+-Case II If $r_{1}=r_{2}$, then
+-
+-$$
+-y=\left(c_{1}+c_{2} \ln |x|\right)|x|^{r_{1}}
+-$$
+-
+-Case III If $r_{1}$ and $r_{2}$ are complex conjugate roots with $r_{1}=a+i b$, then
+-
+-$$
+-y=|x|^{a}\left[c_{1} \cos (b \ln |x|)+c_{2} \sin (b \ln |x|)\right]
+-$$
+-
+-Clearly when $x>0$ we may drop the absolute values.
++> [!rule|ddb62b20-b6b9-5464-af10-4b6d045eb481.local at=eb679021-cd50-5280-861b-e10948fd15ec] General Solution of Euler's Equation
++> Work on a connected interval contained in $x>0$ or $x<0$. Constants on the two sides of zero are independent.
++>
++> Consider $x^2y^{\prime\prime}+\alpha xy^{\prime}+\beta y=0$ with real constants $\alpha,\beta$ and its indicial equation, which we write as
++>
++> $$
++> r^{2}+(\alpha-1) r+\beta=0
++> $$
++>
++> Let $r_{1}$ and $r_{2}$ denote the indicial roots. The general solution $y$ of this equation is given by the following cases.
++> Case I If $r_{1}$ and $r_{2}$ are distinct real roots, then
++>
++> $$
++> y=c_{1}|x|^{r_{1}}+c_{2}|x|^{r_{2}}
++> $$
++>
++> Case II If $r_{1}=r_{2}$, then
++>
++> $$
++> y=\left(c_{1}+c_{2} \ln |x|\right)|x|^{r_{1}}
++> $$
++>
++> Case III If $r_{1}$ and $r_{2}$ are complex conjugate roots with $r_{1}=a+i b$, then
++>
++> $$
++> y=|x|^{a}\left[c_{1} \cos (b \ln |x|)+c_{2} \sin (b \ln |x|)\right]
++> $$
++>
++> Clearly when $x>0$ we may drop the absolute values.
++
++*Printed equation label: (10).*
++
+ Proof For clarity's sake, we take $x>0$. Case I follows immediately from (8) and the fact that $W\left(x^{r_{1}}, x^{r_{2}}\right)=\left(r_{2}-r_{1}\right) x^{r_{1}+r_{2}-1} \neq 0$ for $x>0$. Case II is derived via reduction of order. Using $y_{1}=x^{r_{1}}$ in (3), we get
+ 
+ $$
+-y_{2}=x^{r_{1}} \int \frac{e^{-\int \frac{\alpha}{r} d x}}{x^{2 r_{1}}} d x=x^{r_{1}} \int x^{-\alpha-2 r_{1}} d x
++y_{2}=x^{r_{1}} \int \frac{e^{-\int \frac{\alpha}{x} d x}}{x^{2 r_{1}}} d x=x^{r_{1}} \int x^{-\alpha-2 r_{1}} d x
+ $$
+ 
+ But because $r_{1}$ is a double root of the indicial equation (10), we have $2 r_{1}=r_{1}+ r_{2}=-(\alpha-1)$. So $x^{-\alpha-2 r_{1}}=x^{-1}$, and the integral evaluates to $\ln x$, implying $y=x^{r_{1}} \ln x$.
+@@ -256,17 +296,28 @@
+ 
+ Taking linear combinations, we arrive at the desired real solutions as we did previously when dealing with constant coefficient equations having complex characteristic roots. Linear independence follows by computing the Wronskian and is left as Exercise 42.
+ 
+-There is a close similarity between the solution to Euler's equation and the solution to the constant coefficient equation. Indeed, the change of variables $t=\ln x$ in Euler's equation transforms it to an equation with
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-26_470_470_331_63.jpg)
+-Figure 2 Solutions in Example 4. Notice that $\frac{1}{x^{2}}$ is not defined at $x=0$ and $\sqrt{x}$ is not differentiable at $x=0$. These solutions are valid for $x>0$, where the differential equation is defined.
+-
+-constant coefficients. This provides an alternative derivation of the general solution of Euler's equation. See Exercise 43.
+-
+-## EXAMPLE 4 Euler's equation
+-
+-Solve $2 x^{2} y^{\prime \prime}+5 x y^{\prime}-2 y=0$ for $x>0$.
+-Solution We rewrite the equation as $x^{2} y^{\prime \prime}+\frac{5}{2} x y^{\prime}-y=0$. From (10), the indicial equation is $r^{2}+\frac{3}{2} r-1=0$, which factors as $\left(r-\frac{1}{2}\right)(r+2)=0$. We get the indicial roots $r_{1}=\frac{1}{2}, r_{2}=-2$. Thus by Case I, the general solution is $y=c_{1} \sqrt{x}+\frac{c_{2}}{x^{2}}$. The general solution is illustrated in Figure 2.
++There is a close similarity between the solution to Euler's equation and the solution to the constant coefficient equation. Indeed, the change of variables $t=\ln x$ in Euler's equation transforms it to an equation with constant coefficients. This provides an alternative derivation of the general solution of Euler’s equation. See Exercise 43.
++
++```scientific-figure
++id: 5f1261c3-31fb-49d3-b419-e492a5ec2cc8
++numbered: false
++title: ""
++caption: Figure 2 Solutions in Example 4. Notice that $\frac{1}{x^{2}}$ is not defined at $x=0$ and $\sqrt{x}$ is not differentiable at $x=0$. These solutions are valid for $x>0$, where the differential equation is defined.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-26_470_470_331_63.jpg
++    caption: ""
++```
++
++
++> [!exercise|f8f7ebde-bf5c-5fa8-b389-9ebae39aa8f0.local at=7f804410-91f4-52ea-adc9-973ec8291107] EXAMPLE 4 Euler's equation
++> Solve $2 x^{2} y^{\prime \prime}+5 x y^{\prime}-2 y=0$ for $x>0$.
++
++##### solution
++
++We rewrite the equation as $x^{2} y^{\prime \prime}+\frac{5}{2} x y^{\prime}-y=0$. From (10), the indicial equation is $r^{2}+\frac{3}{2} r-1=0$, which factors as $\left(r-\frac{1}{2}\right)(r+2)=0$. We get the indicial roots $r_{1}=\frac{1}{2}, r_{2}=-2$. Thus by Case I, the general solution is $y=c_{1} \sqrt{x}+\frac{c_{2}}{x^{2}}$. The general solution is illustrated in Figure 2.
+ 
+ Note that when $x<0$, the solution in Example 4 becomes
+ 
+@@ -274,99 +325,259 @@
+ y=c_{1} \sqrt{-x}+\frac{c_{2}}{x^{2}} .
+ $$
+ 
+-## Exercises A. 3
+-
+-In Exercises 1-20, verify that the given function is a solution of the given equation. and then find the general solution using the reduction of order formula.
+-
+-1. $y^{\prime \prime}+2 y^{\prime}-3 y=0, \quad y_{1}=e^{x}$.
+-2. $y^{\prime \prime}-5 y^{\prime}+6 y=0, \quad y_{1}=e^{3 x}$.
+-3. $x y^{\prime \prime}-(3+x) y^{\prime}+3 y=0, \quad y_{1}=e^{x}$.
+-4. $x y^{\prime \prime}-(2-x) y^{\prime}-2 y=0, \quad y_{1}=e^{-x}$.
+-5. $y^{\prime \prime}+4 y=0, \quad y_{1}=\cos 2 x$.
+-6. $y^{\prime \prime}+9 y=0, \quad y_{1}=\sin 3 x$.
+-7. $y^{\prime \prime}-y=0, \quad y_{1}=\cosh x$.
+-8. $y^{\prime \prime}+2 y^{\prime}+y=0, \quad y_{1}=e^{-x}$.
+-9. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, \quad y_{1}=x$.
+-10. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}=0, \quad y_{1}=1$.
+-11. $x^{2} y^{\prime \prime}+x y^{\prime}-y=0, \quad y_{1}=x$.
+-12. $x^{2} y^{\prime \prime}-x y^{\prime}+y=0, \quad y_{1}=x$.
+-13. $x^{2} y^{\prime \prime}+x y^{\prime}+y=0, \quad y_{1}=\cos (\ln x)$.
+-14. $x^{2} y^{\prime \prime}+2 x y^{\prime}+\frac{1}{4} y=0, \quad y_{1}=1 / \sqrt{x}$.
+-15. $x y^{\prime \prime}+2 y^{\prime}+4 x y=0, \quad y_{1}=\frac{\sin 2 x}{x}$.
+-16. $x y^{\prime \prime}+2 y^{\prime}-x y=0, \quad y_{1}-\frac{e^{x}}{x}$.
+-17. $x y^{\prime \prime}+2(1-x) y^{\prime}+(x-2) y=0, \quad y_{1}=e^{x}$.
+-18. $(x-1)^{2} y^{\prime \prime}-3(x-1) y^{\prime}+4 y=0, \quad y_{1}=(x-1)^{2}$.
+-19. $x^{2} y^{\prime \prime}-2 x y^{\prime}+2 y=0, \quad y_{1}=x^{2}$.
+-20. $\left(x^{2}-2 x\right) y^{\prime \prime}-\left(x^{2}-2\right) y^{\prime}+2(x-1) y=0, \quad y_{1}=e^{x}$.
+-
+-In Exercises 21-30, find the general solution of the given equation using the method of variation of parameters. Take $x>0$.
+-21. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{-x}$.
+-23. $3 y^{\prime \prime}+13 y^{\prime}+10 y=\sin x$.
+-25. $y^{\prime \prime}+y=\sec x$.
+-27. $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^{3}$.
+-[Hint: $y_{1}=1+x, y_{2}=e^{x}$.]
+-29. $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=\sqrt{x}$.
+-22. $y^{\prime \prime}-15 y^{\prime}+56 y=\epsilon^{7 x}+12 x$.
+-24. $y^{\prime \prime}+3 y=x$.
+-26. $y^{\prime \prime}+y=\sin x+\cos x$.
+-28. $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^{4} \epsilon^{\prime \prime}$.
+-[Hint: Exercise 27.]
+-30. $x^{2} y^{\prime \prime}+x y^{\prime}+y=x$.
+-
+-In Exercises 31-40, solve the given Euler equation. Take $x>0$, unless otherwise stated.
+-31. $x^{2} y^{\prime \prime}+4 x y^{\prime}+2 y=0$.
+-32. $x^{2} y^{\prime \prime}+x y^{\prime}-4 y=0$.
+-33. $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=0$.
+-34. $4 x^{2} y^{\prime \prime}+8 x y^{\prime}+y=0$.
+-35. $x^{2} y^{\prime \prime}+x y^{\prime}+4 y=0$.
+-36. $4 x^{2} y^{\prime \prime}+4 x y^{\prime}+y=0$.
+-37. $x^{2} y^{\prime \prime}+7 x y^{\prime}+13 y=0$.
+-38. $x^{2} y^{\prime \prime}-x y^{\prime}+5 y=0$.
+-39. $(x-2)^{2} y^{\prime \prime}+3(x-2) y^{\prime}+y=0$
+-40. $(x+1)^{2} y^{\prime \prime}+(x+1) y^{\prime}+y=0$
+-$(x>2)$.
+-$(x>-1)$.
+-[Hint: Let, $t=x-2$.]
+-[Hint: Let $t=x+1$.]
+-41. Compute $W\left(y_{1}, y_{2}\right)$ with $y_{2}$ given by (3) and conclude that the reduction of order formula yields a second linearly independent solution.
+-42. Let $y_{1}$ and $y_{2}$ be the solutions of Euler's equation in Case III. Show that $W\left(y_{1}, y_{2}\right)=x^{2 a-1}$ and conclude that $y_{1}$ and $y_{2}$ are linearly independent for $x>0$.
+-43 Show that the change of variables $t=\ln x(x>0)$ transforms Euler's equation (7) to the equation
+-
+-$$
+-\frac{d^{2} y}{d t^{2}}+(\alpha-1) \frac{d y}{d t}+\beta y=0
+-$$
+-
+-with constant coefficients.
+-44. An alternative solution of Euler's equation. Using Exercise 43 and the solution of (6), Section 10.2, derive the three cases of the general solution of Euler's equation.
+-45. Reduction of order formula from Abel's formula.
+-(a) Use Abel's formula (Theorem 2, Section 10.1) to conclude that
+-
+-$$
+-y_{1} y_{2}^{\prime}-y_{1}^{\prime} y_{2}=C e^{-\int p(x) d x}
+-$$
+-
+-where $y_{1}$ and $y_{2}$ are any two solution of (2).
+-(b) Given $y_{1}$, set $C=1$ in (a) and solve the resulting first-order differential equation in $y_{2}$, thereby deriving (3).
+-46. Reduction of order for nonhomogeneous equations. In this exercise we demonstrate that the method of reduction of order also applies to nonhomogeneous equations given a solution $y_{1}$ to the associated homogeneous equation. Thus, given $y_{1}$, we may solve (1) directly without recourse to the method of variation of parameters.
+-(a) Show that if we want to solve (1) and carry out the proof of (3) we arrive at the equation
+-
+-$$
+-v^{\prime \prime}+\left(\frac{y_{1}^{\prime}}{y_{1}}+p(x)\right) v^{\prime}=\frac{g(x)}{y_{1}} .
+-$$
+-
+-(b) Solve the equation using Theorem 1, Section 10.1, and conclude that the general solution of (1) is
+-
+-$$
+-\begin{aligned}
+-y= & c_{1} y_{1}+c_{2} y_{1} \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}} d x \\
+-& +y_{1} \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}} d x\left(\int y_{1} e^{\int p(x) d x} g(x) d x\right) d x
+-\end{aligned}
+-$$
+-
+-where the last two occurrences of $\int p(x) d x$ represent the same antiderivative of $p(x)$.
+-
+-In Exercises 47-50, find the general solution of the given equation by using the method of Exercise 46. To get a good feel for Exercise 46, we suggest that you repeat its proof with at least one of the following exercises.
+-47. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{x}, \quad y_{1}=e^{x}$.
+-48. $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=\sqrt{x}, \quad y_{1}=\frac{1}{x}$.
+-49. $3 y^{\prime \prime}+13 y^{\prime}+10 y=\sin x, \quad y_{1}=e^{-x}$.
+-50. $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^{3}, \quad y_{1}=e^{x}$.
++## Exercises 10.3
++
++
++> [!prompt|f89e835f-ee26-5560-b380-e8cd047cde4b.local at=c5bee74d-a63b-5bc6-baf8-f8b5e34cf66f] Shared exercise instructions
++> In Exercises 1-20, verify that the given function is a solution of the given equation. and then find the general solution using the reduction of order formula.
++
++
++
++> [!exercise|9a16b81c-018d-5078-be50-79afbd9d1030.local at=f859c55a-1cf4-595c-b553-73d99d7641df] Exercise 1
++> $y^{\prime \prime}+2 y^{\prime}-3 y=0, \quad y_{1}=e^{x}$.
++
++
++> [!exercise|c045c2b0-1e2b-526a-8a93-4bc448953864.local at=0d1a758e-b73b-5f63-8b8b-346977a7079e] Exercise 2
++> $y^{\prime \prime}-5 y^{\prime}+6 y=0, \quad y_{1}=e^{3 x}$.
++
++
++> [!exercise|12e2b901-798a-599f-a503-97c57007bcbe.local at=b64c217e-885b-5d10-99ce-14c0ea62b479] Exercise 3
++> $x y^{\prime \prime}-(3+x) y^{\prime}+3 y=0, \quad y_{1}=e^{x}$.
++
++
++> [!exercise|84fca44b-ca3d-51a6-9a1a-06841706a4cd.local at=aa9727bd-917c-579f-8ad0-156c7e3bad85] Exercise 4
++> $x y^{\prime \prime}-(2-x) y^{\prime}-2 y=0, \quad y_{1}=e^{-x}$.
++
++
++> [!exercise|c473c3ad-7976-5094-8253-8821fcffbb7c.local at=d3ba4da8-29ba-5cdf-ad95-8009177fd653] Exercise 5
++> $y^{\prime \prime}+4 y=0, \quad y_{1}=\cos 2 x$.
++
++
++> [!exercise|e277b338-7789-5c72-94a3-e8f035ad1b9f.local at=0fb93f2b-aed8-5b6f-8a31-4b8edd959d37] Exercise 6
++> $y^{\prime \prime}+9 y=0, \quad y_{1}=\sin 3 x$.
++
++
++> [!exercise|93ebde83-bf9b-5534-bbca-969db7013f31.local at=fb67caf4-163f-5e79-bb94-8e4cfd35fb9a] Exercise 7
++> $y^{\prime \prime}-y=0, \quad y_{1}=\cosh x$.
++
++
++> [!exercise|5b11db29-6a21-5efd-94d7-9de8378ea102.local at=56a36429-9b57-5eef-8cf3-3c0f1bdf6ab2] Exercise 8
++> $y^{\prime \prime}+2 y^{\prime}+y=0, \quad y_{1}=e^{-x}$.
++
++
++> [!exercise|aa68deaf-14ea-59bb-8830-c0e3c1a7f954.local at=2b301e2e-bdd8-5fe3-af34-17969b78eb5c] Exercise 9
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, \quad y_{1}=x$.
++
++
++> [!exercise|9635181e-993e-5585-8e42-eb35fef2d9d5.local at=388abf85-d632-53b3-bdab-ec75db67d35c] Exercise 10
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}=0, \quad y_{1}=1$.
++
++
++> [!exercise|884fe708-ec30-5c38-a6a8-064eb255fff9.local at=df0bfc6d-7537-5b16-a356-cef46b8ce0c1] Exercise 11
++> $x^{2} y^{\prime \prime}+x y^{\prime}-y=0, \quad y_{1}=x$.
++
++
++> [!exercise|591c90fe-a0b5-5049-aef8-9f634014bf37.local at=7df4c6b1-b46d-5cf6-9d10-7b799c08d830] Exercise 12
++> $x^{2} y^{\prime \prime}-x y^{\prime}+y=0, \quad y_{1}=x$.
++
++
++> [!exercise|5bb0dea5-1f5b-51b5-882f-964ff827d11e.local at=a5a3a162-cc64-514c-8264-3c53f8c05471] Exercise 13
++> $x^{2} y^{\prime \prime}+x y^{\prime}+y=0, \quad y_{1}=\cos (\ln x)$.
++
++
++> [!exercise|20e40f73-8b0f-5f1a-a0a5-9b231748307b.local at=c27b40f0-f5df-5c93-90d9-6f98ee8fc181] Exercise 14
++> $x^{2} y^{\prime \prime}+2 x y^{\prime}+\frac{1}{4} y=0, \quad y_{1}=1 / \sqrt{x}$.
++
++
++> [!exercise|62c0547c-49b5-5717-a27f-6e6977f1d049.local at=931cf7be-95a1-5542-be8d-5d92a6622047] Exercise 15
++> $x y^{\prime \prime}+2 y^{\prime}+4 x y=0, \quad y_{1}=\frac{\sin 2 x}{x}$.
++
++
++> [!exercise|893b2b8f-e22c-5772-a1c4-e2214865736a.local at=e6e7446a-e82f-5591-b1d0-11f3837b5769] Exercise 16
++> $x y^{\prime \prime}+2 y^{\prime}-x y=0, \quad y_1=\frac{e^x}{x}$.
++
++
++> [!exercise|c4550958-8709-53a8-9ebb-7d4c638483bb.local at=342c0dee-cb2d-5be4-8f70-6a4cc86c035d] Exercise 17
++> $x y^{\prime \prime}+2(1-x) y^{\prime}+(x-2) y=0, \quad y_{1}=e^{x}$.
++
++
++> [!exercise|bc9a3791-3120-58c5-bc5c-182ca815f75e.local at=dd2bf1a7-6314-5efd-967d-58eefe58129a] Exercise 18
++> $(x-1)^{2} y^{\prime \prime}-3(x-1) y^{\prime}+4 y=0, \quad y_{1}=(x-1)^{2}$.
++
++
++> [!exercise|78ce459f-2264-57ce-a017-6a4c388139ea.local at=d0797463-74ae-5639-ab1b-4fdfd2c577bc] Exercise 19
++> $x^{2} y^{\prime \prime}-2 x y^{\prime}+2 y=0, \quad y_{1}=x^{2}$.
++
++
++> [!exercise|13d1848f-fe4b-556b-a543-789513a338c6.local at=c9309df9-acf3-59e4-a31b-29ea15fa8c41] Exercise 20
++> $\left(x^{2}-2 x\right) y^{\prime \prime}-\left(x^{2}-2\right) y^{\prime}+2(x-1) y=0, \quad y_{1}=e^{x}$.
++
++
++> [!prompt|8a8f1aeb-73d5-5eb5-9064-3cd11c671026.local at=323a95a4-9eff-5cbb-bee1-3683a35279f6] Shared exercise instructions
++> In Exercises 21-30, find the general solution of the given equation using the method of variation of parameters. Take $x>0$.
++
++
++
++> [!exercise|8a779dc5-cf65-584f-ac72-8272592d45d0.local at=12324b18-7938-541d-8fce-41d5899b4f54] Exercise 21
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{-x}$.
++
++
++> [!exercise|8ac987cb-dff0-5943-8243-8d643c25f590.local at=be7233a0-2524-51b6-bf1d-477169e1f6ee] Exercise 22
++> $y^{\prime \prime}-15 y^{\prime}+56 y=e^{7x}+12 x$.
++
++
++> [!exercise|c19e89cf-8e7c-59c7-84d4-aa15032cd7fd.local at=3c7491b0-a5a1-50de-ada8-76fd4677de42] Exercise 23
++> $3 y^{\prime \prime}+13 y^{\prime}+10 y=\sin x$.
++
++
++> [!exercise|b4d3838f-6e5e-5b40-ba07-5efb835c5b04.local at=818dd760-6172-5852-9e77-346508fd293f] Exercise 24
++> $y^{\prime \prime}+3 y=x$.
++
++
++> [!exercise|db3f9cae-fe06-5eeb-abcf-10076e35351f.local at=cdce5f8e-f2b5-5b8d-bed6-02831dbc12d0] Exercise 25
++> $y^{\prime \prime}+y=\sec x$.
++
++
++> [!exercise|054ba648-eee6-5028-9b05-ce96950855f6.local at=2610ff4f-1bd0-5b35-afb8-520bdb5dac6b] Exercise 26
++> $y^{\prime \prime}+y=\sin x+\cos x$.
++
++
++> [!exercise|33be75ac-85b2-53a6-a78d-6147c0c1da49.local at=f1f3ed2e-9f04-5134-be68-4f349f83cd35] Exercise 27
++> $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^{3}$.
++> [Hint: $y_{1}=1+x, y_{2}=e^{x}$.]
++
++
++> [!exercise|de4afad0-5144-58da-a9bf-e01b044cb9d0.local at=6a1795ce-6d0f-58f7-a38e-fd35605eca58] Exercise 28
++> $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^4e^x$.
++> [Hint: Exercise 27.]
++
++
++> [!exercise|db41cbe6-79c2-5d5b-98f2-d7840395550c.local at=f68f13be-9995-5263-8d95-6847cf2695b8] Exercise 29
++> $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=\sqrt{x}$.
++
++
++> [!exercise|dcf5b1b6-a1fe-570d-b4e5-40266733f4cd.local at=24ce3900-b51f-56d5-b680-b2b5c001824c] Exercise 30
++> $x^{2} y^{\prime \prime}+x y^{\prime}+y=x$.
++
++
++> [!prompt|ecefbf9d-743b-5eec-97da-cd238f2584ac.local at=b5ecbf20-86ad-5258-8840-d81d37842936] Shared exercise instructions
++> In Exercises 31-40, solve the given Euler equation. Take $x>0$, unless otherwise stated.
++
++
++
++> [!exercise|11107c36-5b79-5d2c-9f59-5bc6742f8d6b.local at=d95d0ee6-a6a5-575c-877f-471a5bfd99d0] Exercise 31
++> $x^{2} y^{\prime \prime}+4 x y^{\prime}+2 y=0$.
++
++
++> [!exercise|6a49697e-588e-5938-a7b3-dbc7079196f5.local at=f430572c-4911-5208-a1f0-068f954283df] Exercise 32
++> $x^{2} y^{\prime \prime}+x y^{\prime}-4 y=0$.
++
++
++> [!exercise|be824018-a016-503a-9def-24ec3c02a576.local at=e9522774-1198-591a-ae9c-a5f221ca9d0e] Exercise 33
++> $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=0$.
++
++
++> [!exercise|3cfdf796-ce2a-5e30-bba6-d476e704d184.local at=a14f3852-50fe-54e9-80cc-dc28bcc6088d] Exercise 34
++> $4 x^{2} y^{\prime \prime}+8 x y^{\prime}+y=0$.
++
++
++> [!exercise|f2703b7a-4b05-58d3-83d1-d2d97e1679cb.local at=7b63dc4a-6766-5fd1-a54d-1ba25d2d692b] Exercise 35
++> $x^{2} y^{\prime \prime}+x y^{\prime}+4 y=0$.
++
++
++> [!exercise|c30efce4-c355-5023-9209-4a092078fb3f.local at=6b60def5-4f41-5218-a14e-4e2f83f340c3] Exercise 36
++> $4 x^{2} y^{\prime \prime}+4 x y^{\prime}+y=0$.
++
++
++> [!exercise|68d308f8-fcc5-5e01-819c-d481948cab59.local at=d5b3fc16-6b63-57c6-9084-1e2e6d201187] Exercise 37
++> $x^{2} y^{\prime \prime}+7 x y^{\prime}+13 y=0$.
++
++
++> [!exercise|45ee6ca3-1ba1-5daf-9e4f-94112de22d70.local at=1c73d287-a089-521d-bd5f-a7488716270c] Exercise 38
++> $x^{2} y^{\prime \prime}-x y^{\prime}+5 y=0$.
++
++
++> [!exercise|ddc1e2c8-548d-5e01-af9c-29a946836112.local at=cbd10d29-89d1-5821-b929-5591d2ae67f1] Exercise 39
++> $(x-2)^2y^{\prime\prime}+3(x-2)y^{\prime}+y=0$, $x>2$. [Hint: Let $t=x-2$.]
++
++
++> [!exercise|9cbc91c8-a4c5-561f-b99d-ca52d1ad99fd.local at=35184c38-d0a4-5997-9593-dbd6cc7b9534] Exercise 40
++> $(x+1)^2y^{\prime\prime}+(x+1)y^{\prime}+y=0$, $x>-1$. [Hint: Let $t=x+1$.]
++
++
++> [!exercise|3aad5432-84aa-5852-bce5-712543d627e9.local at=a0c4709a-07a0-5a8f-8b97-8535729d9486] Exercise 41
++> Compute $W\left(y_{1}, y_{2}\right)$ with $y_{2}$ given by (3) and conclude that the reduction of order formula yields a second linearly independent solution.
++
++
++> [!exercise|644f5724-9f68-5611-a934-132d09fa3a71.local at=b4e3b110-2346-5aa6-86c6-2407a75128fb] Exercise 42
++> Let $y_{1}$ and $y_{2}$ be the solutions of Euler's equation in Case III. Show that $W\left(y_1,y_2\right)=b x^{2a-1}$ and conclude that $y_1$ and $y_2$ are linearly independent for $x>0$ when $b
++> e0$. 
++
++
++> [!exercise|8d7f19a5-0c92-5edc-9d60-9b6d7d663e33.local at=1eeb6f90-40ad-507a-b39a-9784c71c737e] Exercise 43
++> Show that the change of variables $t=\ln x(x>0)$ transforms Euler's equation (7) to the equation
++>
++> $$
++> \frac{d^{2} y}{d t^{2}}+(\alpha-1) \frac{d y}{d t}+\beta y=0
++> $$
++>
++> with constant coefficients.
++
++
++> [!exercise|12998fe5-fe46-575e-964e-106e714a3c24.local at=d5283291-5c2b-5481-8e8c-ffbc7e487d84] Exercise 44
++> An alternative solution of Euler's equation. Using Exercise 43 and the solution of (6), Section 10.2, derive the three cases of the general solution of Euler's equation.
++
++
++> [!exercise|c54562a8-2513-5479-8f0b-722ca1f47f26.local at=908ced8d-bc7e-5971-bdad-f4a4e79f8472] Exercise 45
++> Reduction of order formula from Abel's formula.
++> (a) Use Abel's formula (Theorem 2, Section 10.1) to conclude that
++>
++> $$
++> y_{1} y_{2}^{\prime}-y_{1}^{\prime} y_{2}=C e^{-\int p(x) d x}
++> $$
++>
++> where $y_{1}$ and $y_{2}$ are any two solutions of (2).
++> (b) Given $y_{1}$, set $C=1$ in (a) and solve the resulting first-order differential equation in $y_{2}$, thereby deriving (3).
++
++
++> [!exercise|b706383c-43e8-5439-bf09-5daccb1ae272.local at=fa10d3eb-4e91-5112-9dba-b9e29ba093b7] Exercise 46
++> Reduction of order for nonhomogeneous equations. In this exercise we demonstrate that the method of reduction of order also applies to nonhomogeneous equations given a solution $y_{1}$ to the associated homogeneous equation. Thus, given $y_{1}$, we may solve (1) directly without recourse to the method of variation of parameters.
++> (a) Show that if we want to solve (1) and carry out the proof of (3) we arrive at the equation
++>
++> $$
++> v^{\prime \prime}+\left(2\frac{y_1^{\prime}}{y_1}+p(x)\right)v^{\prime}=\frac{g(x)}{y_{1}} .
++> $$
++>
++> (b) Solve the equation using Theorem 1, Section 10.1, and conclude that the general solution of (1) is
++>
++> $$
++> \begin{aligned}
++> y= & c_{1} y_{1}+c_{2} y_{1} \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}} d x \\
++> & +y_1\int\frac{e^{-\int p(x)\,dx}}{y_1^2}\left(\int y_1e^{\int p(x)\,dx}g(x)\,dx\right)\,dx
++> \end{aligned}
++> $$
++
++
++
++
++Here the last two occurrences of $\int p(x) d x$ represent the same antiderivative of $p(x)$.
++
++> [!prompt|438bad6b-4446-5e25-b2eb-b761df807cbf.local at=e5ca96d9-4ca2-510b-9f44-e5adc216ad21] Shared exercise instructions
++> In Exercises 47-50, find the general solution of the given equation by using the method of Exercise 46. To get a good feel for Exercise 46, we suggest that you repeat its proof with at least one of the following exercises.
++
++
++
++> [!exercise|d7afb23b-51ed-54f9-9872-038aceb75e99.local at=38344bda-12b8-5ed1-876a-4fcfbf43e104] Exercise 47
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{x}, \quad y_{1}=e^{x}$.
++
++
++> [!exercise|6ae4887d-ae79-5b3e-b475-9b2a823e4e9a.local at=5bdae79a-855b-5f95-8448-fcf577277852] Exercise 48
++> $x^{2} y^{\prime \prime}+3 x y^{\prime}+y=\sqrt{x}, \quad y_{1}=\frac{1}{x}$.
++
++
++> [!exercise|2009b15d-ea3e-5d75-9b9a-b15c72d8552f.local at=9d0b67bb-c79f-5292-9bd5-d8e01d9c2fa1] Exercise 49
++> $3 y^{\prime \prime}+13 y^{\prime}+10 y=\sin x, \quad y_{1}=e^{-x}$.
++
++
++> [!exercise|92b97b58-b2cb-5417-bbea-0ff4669fac68.local at=9b9cd4b0-53cf-5df2-b62d-370dc4af4372] Exercise 50
++> $x y^{\prime \prime}-(1+x) y^{\prime}+y=x^{3}, \quad y_{1}=e^{x}$.
+
+`````

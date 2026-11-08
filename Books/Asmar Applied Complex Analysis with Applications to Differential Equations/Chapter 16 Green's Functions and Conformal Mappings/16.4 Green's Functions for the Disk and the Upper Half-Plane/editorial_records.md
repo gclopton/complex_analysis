@@ -297,3 +297,542 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 >
 > where $-\infty<x_{0}<\infty$ and $0<y$.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 16 Green's Functions and Conformal Mappings/16.4 Green's Functions for the Disk and the Upper Half-Plane.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 16 Green's Functions and Conformal Mappings/16.4 Green's Functions for the Disk and the Upper Half-Plane.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.4 Green's Functions for the Disk and the Upper Half-Plane.md
+@@ -1,14 +1,21 @@
++
+ ### 16.4 Green's Functions for the Disk and the Upper Half-Plane
+ 
+-Green's function for the unit disk was computed in the previous section using the method of eigenfunction expansions and was obtained in the form of a double series that involves cosine, sine and Bessel functions. In this section we apply the so-called method of images, which uses basic facts from plane geometry about the circle and gives a much simpler derivation of
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-29_403_394_622_31.jpg)
+-Figure 1 The point $A^{*}$ is such that for all points $P$ on $C_{R}$, we have $A P=k \cdot A^{*} P$ for some $k>0$.
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-29_397_379_1541_29.jpg)
+-Figure 2 The point $A^{*}$ is the image of $A$ by the Steiner inversion. $A^{*}$ is on the ray $O A$, such that $O A \cdot O A^{*}=R^{2}$.
+-
+-Green's function. These geometric ideas apply as well on other regions and yield concrete formulas for Green's functions.
++Green's function for the unit disk was computed in the previous section using the method of eigenfunction expansions and was obtained in the form of a double series that involves cosine, sine and Bessel functions. In this section we apply the so-called method of images, which uses basic facts from plane geometry about the circle and gives a much simpler derivation of Green's function. These geometric ideas apply as well on other regions and yield concrete formulas for Green's functions.
++
++```scientific-figure
++id: 33e5ad0a-b0c2-40c3-bf70-e295ae8f4bfb
++numbered: false
++title: ""
++caption: Figure 1 The point $A^{*}$ is such that for all points $P$ on $C_{R}$, we have $A P=k \cdot A^{*} P$ for some $k>0$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-29_403_394_622_31.jpg
++    caption: ""
++```
++
+ 
+ Throughout this section, let $D_{R}$ denote a disk centered at the origin with radius $R>0$, and $C_{R}$ its positively oriented boundary. Recall from (2) of the previous section that Green's function is of the form
+ 
+@@ -16,10 +23,11 @@
+ G\left(x, y, x_{0}, y_{0}\right)=\overbrace{\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)}^{v\left(x, y, x_{0}, y_{0}\right)}+h\left(x, y, x_{0}, y_{0}\right)
+ $$
+ 
+-where $h$ is harmonic on $D_{R}$ and $h\left(x, y, x_{0}, y_{0}\right)=-v\left(x, y, x_{0}, y_{0}\right)$ for all ( $x . y$ ) on $C_{R}$. So the first half of the formula for $G$ is known, and to determine the second half, we must find a harmonic function $h$ on $D_{R}$ that equals $-v$ on $C_{R}$. Thus $h$ is the solution of a particular Dirichlet problem on $D_{R}$, with boundary condition $h=-v$ on $C_{R}$. Suppose for a moment that there is a point $A^{*}=\left(x_{0}^{*}, y_{0}^{*}\right)$ outside $D_{R}$ such that the distance from $A=\left(x_{0}, y_{0}\right)$ to any point $P=(x, y)$ on $C_{R}$ is proportional to the distance from ( $x_{0}^{*}, y_{0}^{*}$ ) to $(x, y)$ (Figure 1). That is, $\left(x_{0}^{*}, y_{0}^{*}\right)$ is such that there is a constant $k>0$ with
++where $h$ is harmonic on $D_{R}$ and $h\left(x, y, x_{0}, y_{0}\right)=-v\left(x, y, x_{0}, y_{0}\right)$ for all $(x,y)$ on $C_{R}$. So the first half of the formula for $G$ is known, and to determine the second half, we must find a harmonic function $h$ on $D_{R}$ that equals $-v$ on $C_{R}$. Thus $h$ is the solution of a particular Dirichlet problem on $D_{R}$, with boundary condition $h=-v$ on $C_{R}$. Suppose for a moment that there is a point $A^{*}=\left(x_{0}^{*}, y_{0}^{*}\right)$ outside $D_{R}$ such that the distance from $A=\left(x_{0}, y_{0}\right)$ to any point $P=(x, y)$ on $C_{R}$ is proportional to the distance from ( $x_{0}^{*}, y_{0}^{*}$ ) to $(x, y)$ (Figure 1). That is, $\left(x_{0}^{*}, y_{0}^{*}\right)$ is such that there is a constant $k>0$ with
+ 
+ $$
+ \sqrt{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}=k \sqrt{\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}}
++\tag{1}
+ $$
+ 
+ for all $(x, y)$ on $C_{R}$. Given such a point $\left(x_{0}^{*}, y_{0}^{*}\right)$, define
+@@ -29,41 +37,67 @@
+ h\left(x, y, x_{0}, y_{0}\right) & =-\ln \left(k \sqrt{\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}}\right) \\
+ & =-\frac{1}{2} \ln \left(\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}\right)-\ln k
+ \end{aligned}
+-$$
+-
+-Then $h$ is harmonic for all $(x, y) \neq\left(x_{0}^{*}, y_{0}^{*}\right)$, in particular, $h$ is harmonic on $D_{R}$; and for all $(x, y)$ on $C_{R}$, we have $h\left(x, y, x_{0}, y_{0}\right)=-v\left(x, y, r_{U}, y_{0}\right)$, by (1). Thus $h$ is precisely the function that we are looking for, and consequently, Green's function for $D_{R}$ is
++\tag{2}
++$$
++
++Then $h$ is harmonic for all $(x, y) \neq\left(x_{0}^{*}, y_{0}^{*}\right)$, in particular, $h$ is harmonic on $D_{R}$; and for all $(x, y)$ on $C_{R}$, we have $h\left(x, y, x_{0}, y_{0}\right)=-v\left(x, y, x_0, y_{0}\right)$, by (1). Thus $h$ is precisely the function that we are looking for, and consequently, Green's function for $D_{R}$ is
+ $G\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)-\frac{1}{2} \ln \left(\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}\right)-\ln k$.
+ Simplifying, we find that, for all $(x, y) \neq\left(x_{0}, y_{0}\right)$ in $D_{R}$,
+ 
+ $$
+ G\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left[\frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}}\right]-\ln k
++\tag{3}
+ $$
+ 
+ With this we have reduced the construction of Green's function on the disk $D_{R}$ to the following geometric problem. Given a point $A=\left(x_{0}, y_{0}\right)$ inside $D_{R}$, find a point $A^{*}=\left(x_{0}^{*}, y_{0}^{*}\right)$ outside $D_{R}$ and a constant $k>0$ so that (1) holds for all points ( $x, y$ ) on the circle $C_{R}$.
+ 
+-The solution of this problem is given by a well-known geometric construction or transformation called the Steiner inversion: When $A$ is not
+-
+-## PROPOSITION 1 STEINER INVERSION
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-30_731_475_1184_70.jpg)
+-Figure 3 Rotate the picture in Figure 3(a) to bring $A$ and $A^{*}$ to the positive $x$-axis (Figure 3(b)). A rotation does not change distances.
+-
+-the origin, the point $A^{*}$ is the inverse of the point $A$ through the circle $C_{R}$. By definition of the Steiner inversion, $A^{*}$ is the point on the ray from the origin $O$ through $A$ at a distance such that
++```scientific-figure
++id: 05223e93-b53a-4796-9fac-80595e4ee0ba
++numbered: false
++title: ""
++caption: Figure 2 The point $A^{*}$ is the image of $A$ by the Steiner inversion. $A^{*}$ is on the ray $O A$, such that $O A \cdot O A^{*}=R^{2}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-29_397_379_1541_29.jpg
++    caption: ""
++```
++
++
++The solution of this problem is given by a well-known geometric construction or transformation called the Steiner inversion: When $A$ is not the origin, the point $A^{*}$ is the inverse of the point $A$ through the circle $C_{R}$. By definition of the Steiner inversion, $A^{*}$ is the point on the ray from the origin $O$ through $A$ at a distance such that
+ 
+ $$
+ O A \cdot O A^{*}=R^{2}
++\tag{4}
+ $$
+ 
+ (Figure 2). (Even though we exclude from our discussion the case where $A$ is the center of $C_{R}$, the formulas that we derive apply even when $A$ is the center of $C_{R}$.) We next state the property of the inversion that is key to the construction of Green's function. We use the notation $|A-B|= \sqrt{\left(x_{1}-x_{2}\right)^{2}+\left(y_{1}-y_{2}\right)^{2}}$ for the distance between the points $A=\left(x_{1}, y_{1}\right)$ and $B=\left(x_{2}, y_{2}\right)$, and $|A|=\sqrt{x_{1}^{2}+y_{1}^{2}}$ for the distance from $A$ to the origin.
+ 
+-Let $A=\left(x_{0}, y_{0}\right)$ be a a fixed point in $D_{R}$ minus its center and let $A^{*}= \left(x_{0}^{*}, y_{0}^{*}\right)$ be its image by the Steiner inversion. For any point $P=(x, y)$ on $C_{R}$, we have
+-(5)
+-
+-$$
+-|A-P|=\frac{|A|}{R}\left|A^{*}-P\right|=k \cdot\left|A^{*}-P\right|,
+-$$
+-
+-where $k=\frac{|A|}{R}=\frac{\sqrt{x_{0}^{2}+y_{0}^{2}}}{R}$.
++> [!proposition|7112982e-ecb6-51c2-8bb5-2b1e4132df24.local at=cf51912a-e210-5bfc-9215-22d31a88f591] Steiner Inversion
++> Let $A=\left(x_{0}, y_{0}\right)$ be a fixed point in $D_{R}$ minus its center and let $A^{*}= \left(x_{0}^{*}, y_{0}^{*}\right)$ be its image by the Steiner inversion. For any point $P=(x, y)$ on $C_{R}$, we have
++> $$
++> |A-P|=\frac{|A|}{R}\left|A^{*}-P\right|=k \cdot\left|A^{*}-P\right|,
++> $$
++>
++> where $k=\frac{|A|}{R}=\frac{\sqrt{x_{0}^{2}+y_{0}^{2}}}{R}$. Here $D_R=\{P:|P|<R\}$, $C_R=\partial D_R$, $R>0$, and $A^*=R^2A/|A|^2$.
++
++*Printed equation label: (5).*
++
++```scientific-figure
++id: d55b7d99-9e0e-42ba-98e1-ef64982cfcf7
++numbered: false
++title: ""
++caption: Figure 3 Rotate the picture in Figure 3(a) to bring $A$ and $A^{*}$ to the positive $x$-axis (Figure 3(b)). A rotation does not change distances.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-30_731_475_1184_70.jpg
++    caption: ""
++```
++
++
+ Proof By rotating the picture, if necessary, we may assume that the points $A$ and $A^{*}$ are on the positive $x$-axis, located at the distances $|A|$ and $\left|A^{*}\right|$, respectively, where $\left|A^{*}\right|=\frac{R^{2}}{|A|}$, by (4) (Figure 3). Using polar coordinates, write $P=(R \cos \theta, R \sin \theta)$. Then
+ 
+ $$
+@@ -78,44 +112,61 @@
+ 
+ $$
+ G\left(x, y, x_{0}, y_{0}\right)=\frac{1}{2} \ln \left[\frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}^{*}\right)^{2}+\left(y-y_{0}^{*}\right)^{2}}\right]-\ln \frac{\sqrt{x_{0}^{2}+y_{0}^{2}}}{R} .
+-$$
+-
+-It will be useful to have and expression for Green's function in polar coordinates. If $A=\left(r_{0} \cos \phi, r_{0} \sin \phi\right)$, then $A^{*}=\left(\frac{R^{2}}{r_{0}} \cos \phi, \frac{R^{2}}{r_{0}} \sin \phi\right)$. For $P=(r \cos \theta, r \sin \theta)$, using the law of cosines in the triangles $O A P$ and $O A^{*} P$ (Figure 4), we find $|A-P|^{2}=r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)$ and $\left|A^{*}-P\right|^{2}=$
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-31_406_433_220_37.jpg)
+-Figure 4 Law of cosines in a triangle.
+-
+-> THEOREM 1 SOLUTION OF POISSON'S EQUATION ON THE DISK
+-$r^{2}+\frac{R^{1}}{r_{0}^{2}}-2 r \frac{R^{2}}{r_{0}} \cos (\theta-\phi)$, and so
+-
+-$$
+-\begin{aligned}
+-G\left(r, \theta, r_{0}, \phi\right) & =\frac{1}{2} \ln \left[\frac{|A-P|^{2}}{\left|A-P^{*}\right|^{2}}\right]-\ln \frac{|A|}{R} \\
++\tag{6}
++$$
++
++```scientific-figure
++id: 633e423f-433f-4a0c-9e48-f20f02cc6653
++numbered: false
++title: ""
++caption: Figure 4 Law of cosines in a triangle.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-31_406_433_220_37.jpg
++    caption: ""
++```
++
++
++It will be useful to have an expression for Green's function in polar coordinates. If $A=\left(r_{0} \cos \phi, r_{0} \sin \phi\right)$, then $A^{*}=\left(\frac{R^{2}}{r_{0}} \cos \phi, \frac{R^{2}}{r_{0}} \sin \phi\right)$. For $P=(r \cos \theta, r \sin \theta)$, using the law of cosines in the triangles $O A P$ and $O A^{*} P$ (Figure 4), we find $|A-P|^{2}=r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)$ and $\left|A^{*}-P\right|^{2}=$
++
++
++$r^{2}+\frac{R^4}{r_{0}^{2}}-2 r \frac{R^{2}}{r_{0}} \cos (\theta-\phi)$, and so
++
++$$
++\begin{aligned}
++G\left(r, \theta, r_{0}, \phi\right) & =\frac{1}{2} \ln \left[\frac{|A-P|^{2}}{\left|A^*-P\right|^{2}}\right]-\ln \frac{|A|}{R} \\
+ & =\frac{1}{2} \ln \left[\frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2}+\frac{R^{4}}{r_{0}^{2}}-2 r \frac{R^{2}}{r_{0}} \cos (\theta-\phi)}\right]-\frac{1}{2} \ln \frac{r_{0}^{2}}{R^{2}} \\
+-& =\frac{1}{2} \ln \left[R^{2} \frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+R^{4}-2 r r_{0}} \frac{R^{2} \cos (\theta-\phi)}{}\right]
+-\end{aligned}
++& =\frac{1}{2} \ln \left[R^{2} \frac{r^2+r_0^2-2rr_0\cos(\theta-\phi)}{r^2r_0^2+R^4-2rr_0R^2\cos(\theta-\phi)}\right]
++\end{aligned}
++\tag{7}
+ $$
+ 
+ With this formula in hand, we can now return to the previous section and derive concrete formulas for the solutions of Poisson's equation and the Dirichlet problem on the disk. For example, appealing to Theorem 4 of the previous section, we obtain the following interesting formula.
+-Let $f(r, \theta)$ be a function on the disk $D_{R}$. The solution of
+-
+-$$
+-\nabla^{2} u(r, \theta)=f(r, \theta), \quad 0 \leq r<R, 0 \leq \theta \leq 2 \pi,
+-$$
+-
+-with boundary values $u=0$ on $C_{R}$, is
+-
+-$$
+-u\left(r_{0}, \phi\right)=\frac{1}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{R} f(r, \theta) \ln \left[R^{2} \frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+R^{4}-2 r r_{0} R^{2} \cos (\theta-\phi)}\right] r d r d \theta
+-$$
+-
+-where $0 \leq r_{0}<R$ and $0 \leq \phi \leq 2 \pi$.
+-Our next goal is to derive a concrete formula for the solution of the Dirichlet problem (Theorem 2, Section 16.3). For this purpose, we need to find the normal derivative $\partial / \partial r_{0}$ of Green's function at the points on the circle $C_{R}$. Computing directly from (7), we get
+-
+-$$
+-\begin{aligned}
+-\left.\frac{\partial}{\partial r_{0}} G\left(r, \theta, r_{0},()\right)\right|_{r_{0}=R} & =\left.\frac{1}{2} \frac{\partial}{\partial r_{0}} \ln \left[R^{2} \frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+R^{4}-2 r r_{0} R^{2} \cos (\theta-\omega)}\right]\right|_{r_{0}=R} \\
+-& =\frac{1}{2} \frac{1}{N} \times\left.\frac{N^{\prime} \cdot D-N \cdot D^{\prime}}{D}\right|_{r_{0} \cdot R},
++> [!theorem|7824230a-489f-518c-90b8-6dd44c9aee12.local at=d3d55a19-d8a9-5aa3-a991-c3c51a850555] Solution of Poisson's Equation on the Disk
++> Let $f(r, \theta)$ be a smooth function on the disk $D_{R}$. The solution of
++>
++> $$
++> \nabla^{2} u(r, \theta)=f(r, \theta), \quad 0 \leq r<R, 0 \leq \theta \leq 2 \pi,
++> $$
++>
++> with boundary values $u=0$ on $C_{R}$, is
++>
++> $$
++> u\left(r_{0}, \phi\right)=\frac{1}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{R} f(r, \theta) \ln \left[R^{2} \frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+R^{4}-2 r r_{0} R^{2} \cos (\theta-\phi)}\right] r d r d \theta
++> $$
++>
++> where $0 \leq r_{0}<R$ and $0 \leq \phi \leq 2 \pi$. Here $D_R$ is the disk of radius $R>0$ centered at the origin and $C_R$ is its boundary.
++
++*Printed equation label: (8) Poisson equation.*
++
++By symmetry of $G$, either point can serve as the boundary variable in the next calculation. Our next goal is to derive a concrete formula for the solution of the Dirichlet problem (Theorem 2, Section 16.3). For this purpose, we need to find the normal derivative $\partial / \partial r_{0}$ of Green's function at the points on the circle $C_{R}$. Computing directly from (7), we get
++
++$$
++\begin{aligned}
++\left.\frac{\partial}{\partial r_{0}} G(r,\theta,r_0,\phi)\right|_{r_{0}=R} & =\left.\frac{1}{2} \frac{\partial}{\partial r_{0}} \ln \left[R^{2} \frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+R^{4}-2 r r_{0} R^{2} \cos (\theta-\phi)}\right]\right|_{r_{0}=R} \\
++& =\frac{1}{2} \frac{1}{N} \times\left.\frac{N^{\prime} \cdot D-N \cdot D^{\prime}}{D}\right|_{r_0=R},
+ \end{aligned}
+ $$
+ 
+@@ -130,33 +181,56 @@
+ \end{aligned}
+ $$
+ 
+-## THEOREM 2 SOLUTION OF DIRICHLET'S PROBLEM ON THE DISK
+-
+-![](./images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-32_444_440_1597_74.jpg)
+-Figure 5 Image of a source point in the upper half-plane.
++
+ 
+ Using this in the normal derivative and simplifying, we obtain
+ 
+ $$
+ \left.\frac{\partial}{\partial r_{0}} G\left(r, \theta, r_{0}, \phi\right)\right|_{r_{0}=R}=\frac{R^{2}-r^{2}}{R\left(R^{2}+r^{2}-2 r R \cos (\theta-\phi)\right)} .
++\tag{9}
+ $$
+ 
+ We now restate Theorem 2, Section 16.3, using (9), with $d s=R d \theta$, and the following minor modification: Since the points on the boundary depend only on $\theta$, we set $u(x, y)=f(\theta)$ for all $(x, y)$ on $C_{R}$.
+ 
+-Suppose that $u$ is harmonic in $D_{R}$ and $u(R, \theta)=f(\theta)$ on the boundary $C_{R}$. Then
+-
+-$$
+-u(r, \phi)=\frac{R^{2}-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{f(\theta)}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta
+-$$
+-
+-where $0 \leq r<R$ and $0 \leq \phi \leq 2 \pi$.
+-Formula (10) is know as the Poisson integral formula on the disk $D_{R}$. The function
+-
+-$$
+-P(r, \theta)=\frac{R^{2}-r^{2}}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)}, \quad 0 \leq r<R, 0 \leq \phi \leq 2 \pi
+-$$
+-
+-is called the Poisson kernel on the disk $D_{R}$. Both formulas (10) and (11) were derived in the exercises of Section 4.4 using Fourier series.
++> [!theorem|085c8b9c-2da6-5374-b4d0-8218f2dab441.local at=a48455fd-1410-59da-9551-f52b6081645b] Solution of Dirichlet's Problem on the Disk
++> Suppose that $u$ is harmonic in $D_{R}$ , continuous on $\overline{D_R}$, and $u(R, \theta)=f(\theta)$ on the boundary $C_{R}$. Then
++>
++> $$
++> u(r, \phi)=\frac{R^{2}-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{f(\theta)}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta
++> $$
++>
++> where $0 \leq r<R$ and $0 \leq \phi \leq 2 \pi$. Here $D_R$ is the disk of radius $R>0$ centered at the origin and $C_R$ is its boundary.
++
++*Printed equation label: (10).*
++
++Formula (10) is known as the Poisson integral formula on the disk $D_{R}$.
++
++> [!definition|7dcff161-bc01-5934-8a51-69019c6630a7.local at=7d1c341b-fafe-5cc7-acd6-016d3f373b95] Poisson Kernel for a Disk in Angular Coordinates
++> For a disk of radius $R>0$, define the angular Poisson kernel by
++>
++> $$
++> P_R(r,\alpha)=\frac{R^2-r^2}{R^2+r^2-2rR\cos\alpha},\qquad0\le r<R,\quad\alpha\in\mathbb R.
++> $$
++>
++> In the boundary integral with measure $d\theta/(2\pi)$, the angular difference is $\alpha=\theta-\phi$, where $(r,\phi)$ is the interior evaluation point.
++
++*Printed equation label: (11).*
++
++Both formulas (10) and (11) were derived in the exercises of Section 12.4 using Fourier series.
++
++```scientific-figure
++id: ecf4d385-fbf6-4cd5-94a4-684e21fe8deb
++numbered: false
++title: ""
++caption: Figure 5 Image of a source point in the upper half-plane.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/7ce1063d-f13d-4631-8956-8a97e0eaf48a-32_444_440_1597_74.jpg
++    caption: ""
++```
++
+ 
+ ## Green's Function for the Upper Half-Plane
+ 
+@@ -168,31 +242,29 @@
+ G\left(x, y, x_{0}, y_{0}\right)=\overbrace{\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right)}^{v\left(x, y, x_{0}, y_{0}\right)}+h\left(x, y, x_{0}, y_{0}\right),
+ $$
+ 
+-and let us look for a harmonic function $h$ on $\Omega$ such that $h\left(. x . y, x_{0}, y_{0}\right)= -v\left(x, y, x_{0}, y_{0}\right)$ on the boundary of $\Omega$; that is, when $y=0$. The image, $A^{*}$, of the point $A$ is clear in this case: Take $A^{*}=\left(x_{0},-y_{0}\right)$. If you think of $A$ as the location of a heat source in the upper half-plane, then $A^{*}$ is the location of the heat source in the lower half-plane that yields a similar effect
+-
+-## THEOREM 3 SOLUTION OF POISSON'S EQUATION ON THE UPPER HALF-PLANE
+-
+-## THEOREM 4 SOLUTION OF DIRICHLET'S PROBLEM ON THE UPPER HALF-PLANE
+-
+-on the boundary (Figure 5). Set $h\left(x, y, x_{0}, y_{0}\right)=-\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+(y+\right. \left.\left.y_{0}\right)^{2}\right)$. On the boundary, $y=0$, we see immediately that $h\left(x, 0, x_{0}, y_{0}\right)= -v\left(x, 0, x_{0}, y_{0}\right)$. Thus Green's function for the upper half-plane is
+-
+-$$
+-G\left(x, y ., r_{0}, y_{0}\right)=\frac{1}{2} \ln \frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}}
++and let us look for a harmonic function $h$ on $\Omega$ such that $h\left(x,y, x_{0}, y_{0}\right)= -v\left(x, y, x_{0}, y_{0}\right)$ on the boundary of $\Omega$; that is, when $y=0$. The image, $A^{*}$, of the point $A$ is clear in this case: Take $A^{*}=\left(x_{0},-y_{0}\right)$. If you think of $A$ as the location of a heat source in the upper half-plane, then $A^{*}$ is the location of the heat source in the lower half-plane that yields a similar effect on the boundary (Figure 5). Set $h\left(x, y, x_{0}, y_{0}\right)=-\frac{1}{2} \ln \left(\left(x-x_{0}\right)^{2}+(y+\right. \left.\left.y_{0}\right)^{2}\right)$. On the boundary, $y=0$, we see immediately that $h\left(x, 0, x_{0}, y_{0}\right)= -v\left(x, 0, x_{0}, y_{0}\right)$. Thus Green's function for the upper half-plane is
++
++$$
++G(x,y,x_0,y_0)=\frac{1}{2} \ln \frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}}
++\tag{12}
+ $$
+ 
+ where $x_{0}$ and $x$ are arbitrary and $y_{0}$ and $y$ are $>0$. For future reference, we write the solution of Poisson's problem in the upper half-plane as follows.
+ 
+-Let $f(x, y)$ be a function defined on the upper half-plane. The solution of
+-
+-$$
+-\nabla^{2} u(r, \theta)=f(x, y), \quad-\infty<x<\infty, 0<y .
+-$$
+-
+-with boundary values $u=0$ on the $x$-axis $(y=0)$, is
+-
+-$$
+-u\left(x_{0}, y_{0}\right)=\frac{1}{4 \pi} \int_{0}^{\infty} \int_{-\infty}^{\infty} f(x, y) \ln \frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}} d x d y
+-$$
++> [!theorem|1be9f76d-35f8-5d7b-a140-6dc2ab962fd5.local at=9542d3ef-da00-5ce7-9529-328e4ee86e35] Solution of Poisson's Equation on the Upper Half-Plane
++> Let $f(x, y)$ be a Hölder continuous function of compact support defined on the upper half-plane. The bounded solution of
++>
++> $$
++> \nabla^{2} u(x,y)=f(x, y), \quad-\infty<x<\infty, 0<y .
++> $$
++>
++> with boundary values $u=0$ on the $x$-axis $(y=0)$, is
++>
++> $$
++> u\left(x_{0}, y_{0}\right)=\frac{1}{4 \pi} \int_{0}^{\infty} \int_{-\infty}^{\infty} f(x, y) \ln \frac{\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}}{\left(x-x_{0}\right)^{2}+\left(y+y_{0}\right)^{2}} d x d y
++> $$
++
++*Printed equation label: (13) Poisson equation.*
+ 
+ To derive the solution of the Dirichlet problem in the upper half-plane, we first compute the normal derivative of $G$ at the points on the $x$-axis. The normal derivative in this case is $-\partial / \partial y_{0}$. Computing directly from (12), we get
+ 
+@@ -205,62 +277,118 @@
+ $$
+ 
+ With this, Theorem 2, Section 16.3, takes the following form.
+-Suppose that $u$ is harmonic in the upper half-plane and $u(x, 0)=f(x)$ on the boundary. Then
+-
+-$$
+-u\left(x_{0}, y\right)=\frac{y}{\pi} \int_{-\infty}^{\infty} \frac{f(x)}{\left(x-x_{0}\right)^{2}+y^{2}} d x
+-$$
+-
+-where $-\infty<x_{0}<\infty$ and $0<y$.
+-We recognize (14) as the Poisson integral formula for the upper halfplane, which we have derived in Section 7.5 using the Fourier transform.
++> [!theorem|80e9f0c0-0701-5904-a9df-a6cb291067a3.local at=394f2488-c1fc-59a1-9c13-a06dacf708fe] Solution of Dirichlet's Problem on the Upper Half-Plane
++> Suppose that $u$ is bounded and harmonic in the upper half-plane and extends continuously to $u(x,0)=f(x)$ on the boundary. Then
++>
++> $$
++> u\left(x_{0}, y\right)=\frac{y}{\pi} \int_{-\infty}^{\infty} \frac{f(x)}{\left(x-x_{0}\right)^{2}+y^{2}} d x
++> $$
++>
++> where $-\infty<x_{0}<\infty$ and $0<y$.
++
++*Printed equation label: (14).*
++
++We recognize (14) as the Poisson integral formula for the upper half-plane, which we have derived in Section 8.5 using the Fourier transform.
+ 
+ In the next sections, we introduce the powerful method of conformal mappings and derive formulas for Green's functions on various regions and
+ corresponding formulas for the solutions of Dirichlet's problem and Poisson's equation.
+ 
+-## Exercises 12.4
+-
+-In Exercises 1-8, evaluate the given expression without computing. Appeal to various results from this section and uplain how you are using them.
+-
+-1. $\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{1-r^{2}}{1+r^{2}-2 r \cos (\theta-\phi)} d \theta$. (This is the integral of the Poisson kernel on the unit disk.)
+-2. $\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{R^{2}-r^{2}}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$.
+-3. $\quad \frac{1-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{\cos n \theta}{1+r^{2}-2 r \cos (\theta-r)} d \theta$, where $n=1,2, \ldots$.
+-4. $\quad \frac{1-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{\sin n \theta}{1+r^{2}-2 r \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
+-5. $\frac{R^{n}\left(R^{2}-r^{2}\right)}{2 \pi} \int_{0}^{2 \pi} \frac{\cos n \theta}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
+-6. $\frac{R^{n}\left(R^{2}-r^{2}\right)}{2 \pi \bar{R}^{n}} \int_{0}^{2 \pi} \frac{r^{n} \sin n \theta}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
+-7. $\frac{-\alpha_{n}^{2}}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{1} J_{0}\left(\alpha_{n} r\right) \ln \left[\frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+1-2 r r_{0} \cos (\theta-\phi)}\right] r d r d \theta$, where $\alpha_{n}$ is the $n$th positive zero of Bessel's function $J_{0}$.
+-8. $\frac{-\alpha_{m, n}^{2}}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{1} J_{m}\left(\alpha_{m, n} r\right) \cos (m \theta) \ln \left[\frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+1-2 r r_{0} \cos (\theta-\phi)}\right] r d r d \theta$. where $m$ is a positive integer and $\alpha_{m, n}$ is the $n$th positive zero of Bessel's function $J_{m}$.
+-9. Verify directly from (7) that Green's function for the disk is 0 on the boundary $(r=R)$.
+-10. Verify directly from (7) that Green's function for the disk is $\leq 0$ for $0 \leq r<R$ and all $\theta$.
+-11. Verify directly from (7) that Green's function for the disk is symmetric.
+-12. Verify directly from (12) that Green's function in the upper half-plane satisfies properties (ii), (iii), and (v) of Theorem 3, Section 16.3.
+-13. Verify directly from (12) that Green's function in the upper half-plane satisfies Theorem 3(i), Section 16.3.
+-14. Combine Theorems 1 and 2 to solve the general Poisson problem: $\nabla^{2} \cdot u=f(r, \theta)$ on $D_{R}$, with boundary condition $u(R, \theta)=g(\theta)$ on $C_{R}$.
+-15. Combine Theorems 3 and 4 to solve the general Poisson problem: $\nabla^{2} u=f(x, y)$ in the upper half-plane, with boundary condition $u(x, 0)=g(x)$ on the $x$-axis.
+-16. Suppose in Theorem 1 that $f(r, \theta)=f(r)$ (thus $f$ depends only on $r$ and not
+-on $\theta)$. Show that the solution depends only on $r$. [Hint: Differentiate under the double integral sign with respect to $\phi$ and show that the derivative is 0 .]
+-17. Project Problem: A Neumann problem in the upper half-plane. In this exercise, you are asked to show that the solution of
+-
+-$$
+-\phi_{x x}+\phi_{y y}=0 \quad(-\infty<x<\infty, y>0),
+-$$
+-
+-subject to the Neumann boundary condition, $\phi_{y}(x, 0)=f(x)$, is
+-
+-$$
+-\phi(x, y)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \ln \left((x-t)^{2}+y^{2}\right) f(t) d t
+-$$
+-
+-Note that the solution can be determined only up to an arbitrary additive constant. For an alternative derivation, see Section 16.8 .
+-(a) Show that if 0 satisfies the stated Neumann problem, then $v=\frac{\partial \rho}{\partial y}$ satisfies the Dirichlet problem: For $-\infty<x<\infty$ and $y>0$,
+-
+-$$
+-v_{x x}+v_{y y}=0, \text { and } v(x, 0)=f(x)
+-$$
+-
+-(b) Apply Poisson's formula to obtain
+-
+-$$
+-v(r . y)=\frac{y}{\pi} \int_{-\infty}^{\infty} \frac{f(t)}{(x-t)^{2}+y^{2}} d t
+-$$
+-
+-(c) Derive the solution of the Neumann problem.
++## Exercises 16.4
++
++
++> [!prompt|eda8602e-9c78-5db7-ba1c-a57b36a5eccc.local at=17f23324-6da9-5eaf-b4d7-f8f4b276df39] Shared exercise instructions
++> In Exercises 1–8, take the evaluation point inside the indicated disk ($0\le r<1$ for the unit disk, $0\le r<R$ for radius $R$, and $0\le r_0<1$ in Exercises 7–8). Evaluate the given expression without computing. Appeal to various results from this section and explain how you are using them.
++
++
++> [!exercise|4af0016a-b3c7-5223-b326-74a72b014b75.local at=cd365693-9a61-5e11-8e72-fa226475e0f0] Exercise 1
++> $\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{1-r^{2}}{1+r^{2}-2 r \cos (\theta-\phi)} d \theta$. (This is the integral of the Poisson kernel on the unit disk.)
++
++
++> [!exercise|1874d5c9-8f71-5184-be5e-f1a532d579f6.local at=0e16dbd4-ecd4-5156-a5ca-a749be92a358] Exercise 2
++> $\frac{1}{2 \pi} \int_{0}^{2 \pi} \frac{R^{2}-r^{2}}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$.
++
++
++> [!exercise|f7f98866-e4f3-56f4-8565-d041d38f36e4.local at=a87323a2-db0d-5ca5-bb72-e687aeb1870f] Exercise 3
++> $\quad \frac{1-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{\cos n \theta}{1+r^{2}-2 r \cos(\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
++
++
++> [!exercise|71507071-4fb6-5054-b6fa-1dae12e847ec.local at=78802e0e-c82b-5d37-b483-fc5df7ef8e03] Exercise 4
++> $\quad \frac{1-r^{2}}{2 \pi} \int_{0}^{2 \pi} \frac{\sin n \theta}{1+r^{2}-2 r \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
++
++
++> [!exercise|5cf8bdd0-bfab-50c0-ac0a-4aaf6e7a45d2.local at=e4a6521d-fb1f-5ce5-b85a-9a812a18d2e2] Exercise 5
++> $\frac{R^{n}\left(R^{2}-r^{2}\right)}{2 \pi} \int_{0}^{2 \pi} \frac{\cos n \theta}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
++
++
++> [!exercise|af886d5c-11f3-56ee-8f45-8b7f705848a9.local at=280656bf-66e2-5a99-bf23-3641c021292a] Exercise 6
++> $\frac{R^{n}\left(R^{2}-r^{2}\right)}{2 \pi R^n} \int_{0}^{2 \pi} \frac{r^{n} \sin n \theta}{R^{2}+r^{2}-2 r R \cos (\theta-\phi)} d \theta$, where $n=1,2, \ldots$.
++
++
++> [!exercise|09cff9c1-3889-5895-a77f-24c486788e99.local at=7ba3b169-84af-5d68-b315-3fb6141782fb] Exercise 7
++> $\frac{-\alpha_{n}^{2}}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{1} J_{0}\left(\alpha_{n} r\right) \ln \left[\frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+1-2 r r_{0} \cos (\theta-\phi)}\right] r d r d \theta$, where $\alpha_{n}$ is the $n$th positive zero of Bessel's function $J_{0}$.
++
++
++> [!exercise|ea4fc76a-2665-5842-91a0-04c8f147a9a3.local at=0c389dc2-fac7-59c0-9571-b95c61306752] Exercise 8
++> $\frac{-\alpha_{m, n}^{2}}{4 \pi} \int_{0}^{2 \pi} \int_{0}^{1} J_{m}\left(\alpha_{m, n} r\right) \cos (m \theta) \ln \left[\frac{r^{2}+r_{0}^{2}-2 r r_{0} \cos (\theta-\phi)}{r^{2} r_{0}^{2}+1-2 r r_{0} \cos (\theta-\phi)}\right] r d r d \theta$. where $m$ is a positive integer and $\alpha_{m, n}$ is the $n$th positive zero of Bessel's function $J_{m}$.
++
++
++> [!exercise|19ad278b-39db-5808-9fc5-fa1536f085eb.local at=a0c674f2-0ad1-5fc6-8d43-f769c064cd47] Exercise 9
++> Verify directly from (7) that Green's function for the disk is 0 on the boundary $(r=R)$.
++
++
++> [!exercise|594d2e2d-471c-5e9a-a352-a1195b276b49.local at=fe4fee9b-402f-5a47-8c0f-8b6ed767ecd7] Exercise 10
++> Verify directly from (7) that Green's function for the disk is $\leq 0$ for $0 \leq r<R$ and all $\theta$.
++
++
++> [!exercise|32847584-5502-51d1-89a3-20adc71f7450.local at=5ddd002d-20ca-55c2-a598-238029001e46] Exercise 11
++> Verify directly from (7) that Green's function for the disk is symmetric.
++
++
++> [!exercise|f5cf53b0-3334-5d26-93ca-9158b00dbb6c.local at=3bf22775-7985-59a1-af39-2db4660c93ce] Exercise 12
++> Verify directly from (12) that Green's function in the upper half-plane satisfies properties (ii), (iii), and (v) of Theorem 3, Section 16.3.
++
++
++> [!exercise|1cc17251-efea-5337-b857-a38927963fc4.local at=29086a0f-c093-5b53-804c-10e01f0c8546] Exercise 13
++> Verify directly from (12) that Green's function in the upper half-plane satisfies Theorem 3(i), Section 16.3.
++
++
++> [!exercise|f8befbd3-f469-5ac4-998c-517a42671b8b.local at=ceb8ab0c-94b3-58f0-90f7-e6ef58fa5a4a] Exercise 14
++> Combine Theorems 1 and 2 to solve the general Poisson problem: $\nabla^2u=f(r, \theta)$ on $D_{R}$, with boundary condition $u(R, \theta)=g(\theta)$ on $C_{R}$.
++
++
++> [!exercise|daf56420-0b31-52ed-800d-361d035b9040.local at=fe37afe9-b545-550e-9475-7d1d6e6f52ec] Exercise 15
++> Combine Theorems 3 and 4 to solve the general Poisson problem: $\nabla^{2} u=f(x, y)$ in the upper half-plane, with boundary condition $u(x, 0)=g(x)$ on the $x$-axis.
++
++
++> [!exercise|4c609abb-7680-5d0e-9366-baf48e3fe9bd.local at=c2b28f29-be85-5b0a-a89b-8c86f5fdedd8] Exercise 16
++> Suppose in Theorem 1 that $f(r, \theta)=f(r)$ (thus $f$ depends only on $r$ and not
++> on $\theta)$. Show that the solution depends only on $r$. [Hint: Differentiate under the double integral sign with respect to $\phi$ and show that the derivative is 0 .]
++
++
++> [!exercise|4008bae6-85f6-5ede-a7b8-4c93c0c4a3b7.local at=b6d2c75b-78ef-5b22-b967-ae902cab5f84] Exercise 17
++> Project Problem: A Neumann problem in the upper half-plane. Assume $f\in C_c^1(\mathbb R)$. In this exercise, show that a solution of
++>
++> $$
++> \phi_{x x}+\phi_{y y}=0 \quad(-\infty<x<\infty, y>0),
++> $$
++>
++> subject to the Neumann boundary condition, $\phi_{y}(x, 0)=f(x)$, is
++>
++> $$
++> \phi(x, y)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \ln \left((x-t)^{2}+y^{2}\right) f(t) d t
++> $$
++>
++> An arbitrary additive constant may be added. Without a growth condition at infinity, other homogeneous solutions (for example, a multiple of $x$) can also be added; the boundary data alone do not imply uniqueness up to a constant. For an alternative derivation, see Section 16.8 .
++> (a) Show that if $\phi$ satisfies the stated Neumann problem, then $v=\frac{\partial \phi}{\partial y}$ satisfies the Dirichlet problem: For $-\infty<x<\infty$ and $y>0$,
++>
++> $$
++> v_{x x}+v_{y y}=0, \text { and } v(x, 0)=f(x)
++> $$
++>
++> (b) Apply Poisson's formula to obtain
++>
++> $$
++> v(x,y)=\frac{y}{\pi} \int_{-\infty}^{\infty} \frac{f(t)}{(x-t)^{2}+y^{2}} d t
++> $$
++>
++> (c) Derive the solution of the Neumann problem.
+
+`````

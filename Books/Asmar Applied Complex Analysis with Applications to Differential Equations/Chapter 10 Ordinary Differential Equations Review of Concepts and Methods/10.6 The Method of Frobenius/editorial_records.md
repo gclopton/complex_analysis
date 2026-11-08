@@ -162,3 +162,857 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.6 The Method of Frobenius.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.6 The Method of Frobenius.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.6 The Method of Frobenius.md
+@@ -1,4 +1,5 @@
+-## 10.6 The Method of Frobenius
++
++# 10.6 The Method of Frobenius
+ 
+ While the method of power series is useful in many situations, and perhaps the most widely applicable method that we have developed thus far, there are still important differential equations that cannot be fully understood by this method. For example, consider Bessel's equation
+ 
+@@ -6,38 +7,53 @@
+ x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-p^{2}\right) y=0
+ $$
+ 
+-Putting it in standard form, we see that $x=0$ is not an ordinary point. Hence, Theorem 1 of Appendix A. 5 does not apply. For applications, it is of particular importance to understand the behavior of the solutions at $x=0$. To this end, we will develop a generalization of the power series method, known as the method of Frobenius.
++Putting it in standard form, we see that $x=0$ is not an ordinary point. Hence, Theorem 1 of Section 10.5 does not apply. For applications, it is of particular importance to understand the behavior of the solutions at $x=0$. To this end, we will develop a generalization of the power series method, known as the method of Frobenius.
+ 
+ Consider the homogeneous differential equation
+ 
+ $$
+ y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0
+-$$
+-
+-Recall that $a$ is an ordinary point of the differential equation if $p$ and $q$ have power series expansions at $a$. Otherwise, $a$ is called a singular point. If $a$ is an ordinary point, then we know from our work in the preceding section that the solutions of this equation have power series expansions at the point $x=a$. If $a$ is a singular point, then the method of power series fails, as our next example shows.
+-
+-EXAMPLE 1 An equation for which the power series method fails Consider the differential equation $x y^{\prime \prime}+2 y^{\prime}+x y=0$.
+-(a) Determine whether $x=0$ is an ordinary or singular point.
+-(b) Apply the method of power series at $x=0$ to the differential equation.
+-
+-Solution (a) We have $p(x)=2 / x$, and $q(x)=1$. Since $p(x)$ does not have a power series expansion at $x=0$, the point $x=0$ is a singular point of the equation. (b) We assume that $y$ has a power series representation centered at $x=0, y= \sum_{m=0}^{\infty} a_{m} x^{m}$. Substituting into the differential equation and reindexing as needed gives
++\tag{1}
++$$
++
++Recall that $a$ is an ordinary point of the differential equation if $p$ and $q$ have power series expansions at $a$. Otherwise, $a$ is called a singular point. If $a$ is an ordinary point, then we know from our work in the preceding section that the solutions of this equation have power series expansions at the point $x=a$. At a singular point, the power-series method may fail to give a full fundamental set, as our next example shows.
++
++> [!exercise|acd96925-729e-581c-90bc-a8d35e6d642c.local at=2eb69ad9-73c4-5500-b314-9d1e8634163e] EXAMPLE 1 An equation for which the power series method fails
++> Consider the differential equation $x y^{\prime \prime}+2 y^{\prime}+x y=0$.
++> (a) Determine whether $x=0$ is an ordinary or singular point.
++> (b) Apply the method of power series at $x=0$ to the differential equation.
++
++##### solution
++
++(a) We have $p(x)=2 / x$, and $q(x)=1$. Since $p(x)$ does not have a power series expansion at $x=0$, the point $x=0$ is a singular point of the equation. (b) We assume that $y$ has a power series representation centered at $x=0, y= \sum_{m=0}^{\infty} a_{m} x^{m}$. Substituting into the differential equation and reindexing as needed gives
+ 
+ $$
+ \begin{gathered}
+ \sum_{m=2}^{\infty} m(m-1) a_{m} x^{m-1}+\sum_{m=1}^{\infty} 2 m a_{m} x^{m-1}+\sum_{m=0}^{\infty} a_{m} x^{m+1}=0 \\
+ \sum_{m=1}^{\infty}(m+1) m a_{m+1} x^{m}+\sum_{m=0}^{\infty} 2(m+1) a_{m+1} x^{m}+\sum_{m=1}^{\infty} a_{m-1} x^{m}=0 \\
+-2 a_{1}+\sum_{m=1}^{\infty}\left[m(m+1) a_{m+1}+2(m+1) a_{m+1}+a_{m-1}\right] \cdot r^{m}=0
++2 a_{1}+\sum_{m=1}^{\infty}\left[m(m+1) a_{m+1}+2(m+1) a_{m+1}+a_{m-1}\right] x^m=0
+ \end{gathered}
+ $$
+ 
+ Equating coefficients, we find that $a_{1}=0$ and
+ 
+ $$
+-m(m+1) a_{m+1}+2(m+1) a_{m+1}+a_{m-1}=0, \quad \text { for all } m
+-$$
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-52_317_462_514_59.jpg)
+-Figure 1 Graph of $y=\frac{\sin x}{x}$.
++m(m+1) a_{m+1}+2(m+1) a_{m+1}+a_{m-1}=0, \quad \text { for all } m\geq1
++$$
++
++```scientific-figure
++id: d4593362-64cd-4e96-b8d7-11813f70ebf6
++numbered: false
++title: ""
++caption: Figure 1 Graph of $y=\frac{\sin x}{x}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-52_317_462_514_59.jpg
++    caption: ""
++```
++
+ 
+ from which we get the two-step recurrence relation
+ 
+@@ -77,23 +93,34 @@
+ 
+ This is not a power series, since it contains a negative power of $x$. It turns out that if the singular point of a differential equation is not "very bad" then the solutions follow a pattern similar to that of Example 1. That is, at least one solution is a power series multiplied by $x^{r}$. We devote the rest of this section to making this idea precise. For simplicity, we consider only series expansions about $x=0$, although analogous methods apply for series expanded about an arbitrary $x=a$.
+ 
+-Suppose that $x=0$ is a singular point of the equation
+-
+-$$
+-y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0
+-$$
+-
+-We say that $x=0$ is a regular singular point of the equation if both of the functions $x p(x)$ and $x^{2} q(x)$ have power series expansions at $x=0$. (This
+-is what we mean by a singularity that is not "very bad.") The Frobenius method that we now describe applies to equations for which $x=0$ is a regular singular point. For clarity's sake, we restrict our attention to the case $x>0$. The case $x<0$ is handled similarly (or can be reduced to the case $x>0$ by the change of variables $t=-x$ ). Motivated by Example 1, we try a series solution of the form
+-
+-$$
+-y=x^{r}\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right)=\sum_{m=0}^{\infty} a_{m} x^{r+m}
+-$$
+-
+-with $a_{0} \neq 0$. Such a series is called a Frobenius series. We have
+-
+-$$
+-y^{\prime}=\sum_{m=0}^{\infty} a_{m}(r+m) x^{r \vdash m-1}
++> [!definition|4310fc90-62ef-5896-a361-26ea63c28f90.local at=21cf724c-a744-50f3-a019-c9fa29c80ce8] Regular Singular Point of a Second-Order Linear ODE
++> Suppose that $x=0$ is a singular point of the equation
++>
++> $$
++> y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0
++> $$
++>
++> We say that $x=0$ is a regular singular point of the equation if both of the functions $x p(x)$ and $x^{2} q(x)$ have power series expansions at $x=0$.
++
++*Printed equation label: (2).*
++
++The Frobenius method that we now describe applies to equations for which $x=0$ is a regular singular point. For clarity's sake, we restrict our attention to the case $x>0$. The case $x<0$ is handled similarly (or can be reduced to the case $x>0$ by the change of variables $t=-x$ ). Motivated by Example 1, we try a series solution of the form
++
++> [!definition|fe802857-e36c-5f71-a6c2-6811da025301.local at=2f51e866-9c22-53d2-abfd-ab33ef363c92] Frobenius Series about the Origin
++> For $x>0$ and exponent $r$,
++>
++> $$
++> y=x^{r}\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right)=\sum_{m=0}^{\infty} a_{m} x^{r+m}
++> $$
++>
++> with $a_{0} \neq 0$. Such a series is called a Frobenius series. The power series is assumed to have positive radius of convergence.
++
++*Printed equation label: (3).*
++
++We have
++
++$$
++y^{\prime}=\sum_{m=0}^{\infty} a_{m}(r+m) x^{r+m-1}
+ $$
+ 
+ and
+@@ -102,7 +129,7 @@
+ y^{\prime \prime}=\sum_{m=0}^{\infty} a_{m}(r+m)(r+m-1) x^{r+m-2}
+ $$
+ 
+-(Observe that the index of summation begins at 0 in both these scries. Why?) Thus (2) becomes
++(Observe that the index of summation begins at 0 in both these series. Why?) Thus (2) becomes
+ 
+ $$
+ \begin{aligned}
+@@ -115,9 +142,10 @@
+ 
+ $$
+ \begin{aligned}
+-& \text { (4) } \sum_{m-0}^{\infty} a_{m}(r+m)(r+m-1) x^{r+m-2} \\
++& \sum_{m=0}^{\infty} a_{m}(r+m)(r+m-1) x^{r+m-2} \\
+ & \quad+x p(x) \sum_{m=0}^{\infty} a_{m}(r+m) x^{r+m-2}+x^{2} q(x) \sum_{m=0}^{\infty} a_{m} x^{r+m-2}=0
+ \end{aligned}
++\tag{4}
+ $$
+ 
+ Since by assumption $x=0$ is a regular singular point, the functions $x p(x)$ and $x^{2} q(x)$ have power series expansions about 0 , say
+@@ -131,8 +159,6 @@
+ $$
+ x^{2} q(x)=q_{0}+q_{1} x+q_{2} x^{2}+\cdots
+ $$
+-
+-THEOREM 1 FROBENIUS METHOD FIRST SOLUTION
+ 
+ Substituting these into (4) gives
+ 
+@@ -144,69 +170,80 @@
+ \end{aligned}
+ $$
+ 
+-The total coefficient of cach power of $x$ on the left side of this equation must be 0 , since the right side is 0 . The lowest power of $x$ that appears in the equation is $x^{r-2}$. Its coefficient is $a_{0} r(r-1)+p_{0} a_{0} r+q_{0} a_{0}= a_{0}\left[r(r-1)+p_{0} r+q_{0}\right]=0$. Since $a_{0} \neq 0, r$ must be a root of the indicial equation
++The total coefficient of each power of $x$ on the left side of this equation must be 0 , since the right side is 0 . The lowest power of $x$ that appears in the equation is $x^{r-2}$. Its coefficient is $a_{0} r(r-1)+p_{0} a_{0} r+q_{0} a_{0}= a_{0}\left[r(r-1)+p_{0} r+q_{0}\right]=0$. Since $a_{0} \neq 0, r$ must be a root of the indicial equation
+ 
+ $$
+ r(r-1)+p_{0} r+q_{0}=0 .
++\tag{5}
+ $$
+ 
+ The roots of this equation are called the indicial roots and are denoted by $r_{1}$ and $r_{2}$ with the convention that $r_{1} \geq r_{2}$ whenever they are real. Note that $p_{0}$ and $q_{0}$ are easily determined, since they are the values of $x p(x)$ and $x^{2} q(x)$ at $x=0$. Once we have determined $r_{1}$ and $r_{2}$, we substitute $r_{1}$ in (4) and solve for the unknown coefficients $a_{n}$ as we would do with the power series method. This will determine a first solution of (2). Summing up, we have the following important result.
+ 
+-If $x=0$ is a regular singular point of the equation
+-
+-$$
+-y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0 .
+-$$
+-
+-then one solution is of the form
+-
+-$$
+-y_{1}=|x|^{r_{1}}\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right) . \quad a_{0} \neq 0
+-$$
+-
+-where $r_{1}$ is a root of the indicial equation (5). with the convention that $r_{1}$ is the larger of the two roots when both roots are real.
++> [!theorem|4c10f688-34c5-5087-9fb3-d3a4eb8115f3.local at=0df8f924-a00e-566d-b7a8-9531941750cf] Frobenius Method First Solution
++> Let $P(x)=xp(x)$ and $Q(x)=x^2q(x)$ extend analytically to $x=0$, with power series converging for $|x|<R$, $R>0$. Write $p_0=P(0)$ and $q_0=Q(0)$. Treat the intervals $0<x<R$ and $-R<x<0$ separately; for complex exponents use $|x|^r=e^{r\ln|x|}$.
++>
++> If $x=0$ is a regular singular point of the equation
++>
++> $$
++> y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0 .
++> $$
++>
++> then one solution is of the form
++>
++> $$
++> y_{1}=|x|^{r_{1}}\left(a_{0}+a_{1} x+a_{2} x^{2}+\cdots\right) . \quad a_{0} \neq 0
++> $$
++>
++> where $r_{1}$ is a root of $r(r-1)+p_0r+q_0=0$. with the convention that $r_{1}$ is the larger of the two roots when both roots are real.
++>
++> The analytic factor converges for $|x|<R$.
+ 
+ For a proof of this theorem, see Chapter 9 of Ordinary Differential Equations by Garrett Birkhoff and Gian-Carlo Rota, 2nd ed., Wiley, 1969. It can be shown that if $x p(x)$ and $x^{2} q(x)$ have power series expansions that converge for $|x|<R$, then the series solution will converge for $0<|x|<R$.
+ 
+ Note that Theorem 1 says nothing about a second solution of (2). This solution may have one of three forms, as described in the following box. The proofs are presented in an appendix at the end of this section.
+ 
+-THEOREM 2 THE FROBENIUS METHOD
+-
+-Suppose that $x=0$ is a regular singular point of the differential equation
+-
+-$$
+-y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0 .
+-$$
+-
+-and let $r_{1}$ and $r_{2}$ denote the indicial roots. The differential equation has two linearly independent solutions $y_{1}$ and $y_{2}$, as we now describe.
+-Case 1. If $r_{1}-r_{2}$ is not an integer. then
+-
+-$$
+-y_{1}=|x|^{r_{1}} \sum_{m=0}^{\infty} a_{m} x^{m} . \quad y_{2}=|x|^{r_{2}} \sum_{m=0}^{\infty} b_{m} x^{m} . \quad a_{0} \neq 0 \text { and } b_{0} \neq 0 .
+-$$
+-
+-Case 2. If $r=r_{1}=r_{2}$, then
+-
+-$$
+-y_{1}=|x|^{r} \sum_{m=0}^{\infty} a_{m} x^{m}, \quad y_{2}=y_{1} \ln |x|+|x|^{r} \sum_{m=1}^{\infty} b_{m} x^{m} . \quad a_{0} \neq 0 .
+-$$
+-
+-Case 3. If $r_{1}-r_{2}$ is a positive integer, with $r_{1} \geq r_{2}$, then
+-
+-$$
+-y_{1}=|x|^{r_{1}} \sum_{m=0}^{\infty} a_{m} x^{m}, \quad y_{2}=k y_{1} \ln |x|+|x|^{r_{2}} \sum_{m=0}^{\infty} b_{m} x^{m} .
+-$$
+-
+-where $a_{0} \neq 0, b_{0} \neq 0$ ( $k$ may or may not be 0 ).
++> [!theorem|a6cbc45d-0dc2-5f2c-abd7-3b407939e739.local at=006d8e52-423a-5e14-afc1-429cb581b13c] The Frobenius Method
++> Let $P(x)=xp(x)$ and $Q(x)=x^2q(x)$ be analytic for $|x|<R$, with $R>0$. Set $p_0=P(0)$, $q_0=Q(0)$, and let $r_1,r_2$ solve $r(r-1)+p_0r+q_0=0$, ordered $r_1\geq r_2$ if real. Work separately on either side of zero; interpret complex powers as $|x|^r=e^{r\ln|x|}$. All analytic series factors below converge for $|x|<R$.
++>
++> Suppose that $x=0$ is a regular singular point of the differential equation
++>
++> $$
++> y^{\prime \prime}+p(x) y^{\prime}+q(x) y=0 .
++> $$
++>
++> and let $r_{1}$ and $r_{2}$ denote the indicial roots. The differential equation has two linearly independent solutions $y_{1}$ and $y_{2}$, as we now describe.
++> Case 1. If $r_{1}-r_{2}$ is not an integer. then
++>
++> $$
++> y_{1}=|x|^{r_{1}} \sum_{m=0}^{\infty} a_{m} x^{m} . \quad y_{2}=|x|^{r_{2}} \sum_{m=0}^{\infty} b_{m} x^{m} . \quad a_{0} \neq 0 \text { and } b_{0} \neq 0 .
++> $$
++>
++> Case 2. If $r=r_{1}=r_{2}$, then
++>
++> $$
++> y_{1}=|x|^{r} \sum_{m=0}^{\infty} a_{m} x^{m}, \quad y_{2}=y_{1} \ln |x|+|x|^{r} \sum_{m=1}^{\infty} b_{m} x^{m} . \quad a_{0} \neq 0 .
++> $$
++>
++> Case 3. If $r_{1}-r_{2}$ is a positive integer, with $r_{1} \geq r_{2}$, then
++>
++> $$
++> y_{1}=|x|^{r_{1}} \sum_{m=0}^{\infty} a_{m} x^{m}, \quad y_{2}=k y_{1} \ln |x|+|x|^{r_{2}} \sum_{m=0}^{\infty} b_{m} x^{m} .
++> $$
++>
++> where $a_{0} \neq 0, b_{0} \neq 0$ ( $k$ may or may not be 0 ).
++
+ Thus we find two linearly independent Frobenius series solutions in Case 1 and also in Case 3 when $k=0$. Otherwise we can find only one Frobenius series solution, and any linearly independent solution must involve a logarithmic term. In computing $y_{1}$ and $y_{2}$ it is convenient to take $a_{0}=1$ and $b_{0}=1$; then the two arbitrary constants will appear when writing the general solution in the form of an arbitrary linear combination of $y_{1}$ and $y_{2}$.
+ 
+-EXAMPLE 2 Frobenius method: $r_{1}-r_{2}$ is not an integer Solve the differential equation
+-
+-$$
+-y^{\prime \prime}+\frac{1}{2 x} \cdot y^{\prime}-\frac{1}{4 x} y=0, \quad x>0 .
+-$$
+-
+-Solution Theorem 1 applies, since both $x p(x)=\frac{1}{2}$ and $x^{2} q(x)=-\frac{1}{4} x$ have power series expansions at $x=0$. Morcover, $p_{0}=\frac{1}{2}$ and $q_{0}=0$, so the indicial equation and indicial roots are
++> [!exercise|9f54e0f5-050c-5ff8-bd28-eaa8b174b036.local at=53bee850-50fe-571b-bd21-434be726eaca] EXAMPLE 2 Frobenius method: $r_1-r_2$ is not an integer
++> Solve the differential equation
++>
++> $$
++> y^{\prime \prime}+\frac{1}{2 x} \cdot y^{\prime}-\frac{1}{4 x} y=0, \quad x>0 .
++> $$
++
++##### solution
++
++Theorem 1 applies, since both $x p(x)=\frac{1}{2}$ and $x^{2} q(x)=-\frac{1}{4} x$ have power series expansions at $x=0$. Moreover, $p_{0}=\frac{1}{2}$ and $q_{0}=0$, so the indicial equation and indicial roots are
+ 
+ $$
+ \begin{gathered}
+@@ -245,6 +282,7 @@
+ 
+ $$
+ 4 a_{m}(m+r)(m+r-1)+2 a_{m}(m+r)-a_{m-1}=0 .
++\tag{6}
+ $$
+ 
+ At this point, we treat separately the case $r_{1}=\frac{1}{2}$ and $r_{2}=0$. When $r=\frac{1}{2}$, the recurrence relation (6) becomes
+@@ -281,11 +319,33 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-57_348_426_592_49.jpg)
+-Figure 2 Solutions and partial sum approximation from Example 2.
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-57_378_463_1585_56.jpg)
+-Figure 3 Approximation of $y_{1}$ near 0. Notice the blow-up due to the term $\frac{1}{r}$.
++```scientific-figure
++id: 24c1ff72-9877-4d9c-a614-ddce3182e3b0
++numbered: false
++title: ""
++caption: Figure 2 Solutions and partial sum approximation from Example 2.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-57_348_426_592_49.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: 69253403-921e-4044-b37d-c7366c1dc27c
++numbered: false
++title: ""
++caption: Figure 3 Approximation of $y_{1}$ near 0. Notice the blow-up due to the term $\frac1x$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-57_378_463_1585_56.jpg
++    caption: ""
++```
++
+ 
+ This gives the following pattern for the coefficients:
+ 
+@@ -313,15 +373,18 @@
+ 
+ Do you see why? [Hint: Write $x^{m}$ as $(\sqrt{x})^{2 m}$.] We can verify the validity of these solutions by plugging them into the differential equation. In Figure 2 we compare the graphs $\cosh \sqrt{x}$ and the partial sums of $y_{2}$. Notice how the partial sums of $y_{2}$ approximate the real solution. With the aid of a computer system, you can do the same for $y_{1}$.
+ 
+-## EXAMPLE 3 Case of a double root $r=r_{1}=r_{2}$
+-
+-Solve the differential equation
+-
+-$$
+-x^{2} y^{\prime \prime}+3 x y^{\prime}+(1-x) y=0, \quad x>0 .
+-$$
+-
+-Solution We easily verify that $p_{0}=3, q_{0}=1$, and so the indicial equation is $r^{2}+2 r+1=0$. We have a double root $r=-1$, and so we are in Case 2. Let $y_{1}=\sum_{m=0}^{\infty} a_{m} x^{m-1}$ with $a_{0} \neq 0$. Substituting in (7), after some computations as in Example 2, we arrive at the recurrence relation
++> [!exercise|ba414f4b-2e22-54f0-b520-cea5f1513a04.local at=94df747d-72bd-5b2d-9ab6-1ffe4c6f6a0f] EXAMPLE 3 Case of a double root $r=r_{1}=r_{2}$
++> Solve the differential equation
++>
++> $$
++> x^{2} y^{\prime \prime}+3 x y^{\prime}+(1-x) y=0, \quad x>0 .
++> $$
++
++*Printed equation label: (7).*
++
++##### solution
++
++We easily verify that $p_{0}=3, q_{0}=1$, and so the indicial equation is $r^{2}+2 r+1=0$. We have a double root $r=-1$, and so we are in Case 2. Let $y_{1}=\sum_{m=0}^{\infty} a_{m} x^{m-1}$ with $a_{0} \neq 0$. Substituting in (7), after some computations as in Example 2, we arrive at the recurrence relation
+ 
+ $$
+ a_{m+1}=\frac{a_{m}}{(m+1)^{2}}
+@@ -347,6 +410,7 @@
+ & \quad+\sum_{m=1}^{\infty} b_{m}(m-1)(m-2) x^{m-1}+\sum_{m=1}^{\infty} 3 b_{m}(m-1) x^{m-1} \\
+ & \quad+\sum_{m=1}^{\infty} b_{m} x^{m-1}-\sum_{m=2}^{\infty} b_{m-1} x^{m-1}=0
+ \end{aligned}
++\tag{8}
+ $$
+ 
+ The coefficient of $\ln x$ in (8) is 0 , since $y_{1}$ is a solution of (7). From the series representation of $y_{1}$ we see that
+@@ -373,7 +437,7 @@
+ From this relation we can calculate as many coefficients as we wish, although it would be difficult to find a closed formula for $b_{m}$ in terms of $m$. Using the first five coefficients, we have
+ 
+ $$
+-y_{2}=\ln x \sum_{m=0}^{\infty} \frac{1}{(m!)^{2}} x^{m-1}-\left(2+\frac{3}{4} x+\frac{11}{108} x^{2}+\frac{25}{3.456} x^{3}+\frac{137}{432,000} x^{4}+\cdots\right)
++y_{2}=\ln x \sum_{m=0}^{\infty} \frac{1}{(m!)^{2}} x^{m-1}-\left(2+\frac{3}{4} x+\frac{11}{108} x^{2}+\frac{25}{3456} x^{3}+\frac{137}{432,000} x^{4}+\cdots\right)
+ $$
+ 
+ Hence the general solution of (7) is
+@@ -381,22 +445,25 @@
+ $$
+ \begin{aligned}
+ y= & c_{1} y_{1}+c_{2} y_{2} \\
+-= & \left(c_{1}+c_{2} \ln x\right) \sum_{m=0} \frac{1}{(m!)^{2}} x^{m-1} \\
++= & \left(c_{1}+c_{2} \ln x\right) \sum_{m=0}^{\infty}\frac{1}{(m!)^2} x^{m-1} \\
+ & -c_{2}\left(2+\frac{3}{4} x+\frac{11}{108} x^{2}+\frac{25}{3,456} x^{3}+\frac{137}{432,000} x^{4}+\cdots\right),
+ \end{aligned}
+ $$
+ 
+ where $c_{1}$ and $c_{2}$ are arbitrary constants. $\square$
+ 
+-## EXAMPLE 4 Case $r_{1}-r_{2}$ is an integer
+-
+-Solve the differential equation
+-
+-$$
+-x^{2} y^{\prime \prime}-x y^{\prime}+(x-3) y=0, \quad x>0 .
+-$$
+-
+-Solution We have $p_{0}=-1, q_{0}=-3$, and so the indicial equation is $r^{2}-2 r-3=0$. The indicial roots are $r_{1}=3$ and $r_{2}=-1$. We are in Case 3. For a first solution we try $y_{1}=\sum_{m=0}^{\infty} a_{m} x^{m+3}$. Substituting in (9) and solving for the coefficients $a_{m}$, we arrive at the recurrence relation
++> [!exercise|fa1ae9f9-7bfd-5758-8b53-29bdfbfa9464.local at=cd54a649-a8f8-543e-b3c6-957f80788257] EXAMPLE 4 Case $r_{1}-r_{2}$ is an integer
++> Solve the differential equation
++>
++> $$
++> x^{2} y^{\prime \prime}-x y^{\prime}+(x-3) y=0, \quad x>0 .
++> $$
++
++*Printed equation label: (9).*
++
++##### solution
++
++We have $p_{0}=-1, q_{0}=-3$, and so the indicial equation is $r^{2}-2 r-3=0$. The indicial roots are $r_{1}=3$ and $r_{2}=-1$. We are in Case 3. For a first solution we try $y_{1}=\sum_{m=0}^{\infty} a_{m} x^{m+3}$. Substituting in (9) and solving for the coefficients $a_{m}$, we arrive at the recurrence relation
+ 
+ $$
+ a_{m}=\frac{-1}{m^{2}+4 m} a_{m-1}
+@@ -406,6 +473,7 @@
+ 
+ $$
+ y_{1}=a_{0} x^{3}\left(1-\frac{1}{5} x+\frac{1}{60} x^{2}-\frac{1}{1,260} x^{3}+\frac{1}{40,320} x^{4}-\cdots\right) .
++\tag{10}
+ $$
+ 
+ The details are left as an exercise (Exercise 31). The second solution is of the form
+@@ -418,7 +486,7 @@
+ 
+ $$
+ \begin{aligned}
+-& {[\overbrace{x^{2} y_{1}^{\prime \prime}-x y_{1}^{\prime}+(x-3) y_{1}}^{=0}] \ln x+2 k\left(x y_{1}^{\prime}-y_{1}\right)} \\
++& {k[\overbrace{x^{2} y_{1}^{\prime \prime}-x y_{1}^{\prime}+(x-3) y_{1}}^{=0}] \ln x+2 k\left(x y_{1}^{\prime}-y_{1}\right)} \\
+ & \quad+\sum_{m=0}^{\infty} b_{m}(m-1)(m-2) x^{m-1}-\sum_{m=0}^{\infty} b_{m}(m-1) x^{m-1} \\
+ & \quad-\sum_{m=0}^{\infty} 3 b_{m} x^{m-1}+\sum_{m=1}^{\infty} b_{m-1} x^{m-1}=0
+ \end{aligned}
+@@ -431,9 +499,10 @@
+ \left(b_{0}-3 b_{1}\right)+\left(b_{1}-4 b_{2}\right) x+\left(b_{2}-3 b_{3}\right) x^{2}+2 k\left(x y_{1}^{\prime}-y_{1}\right) \\
+ +\sum_{m=4}^{\infty}\left[b_{m}\left(m^{2}-4 m\right)+b_{m-1}\right] x^{m-1}=0
+ \end{gathered}
+-$$
+-
+-Taking $b_{0}=1$, setting the first three coefficients equal to 0 , and solving, we obtain
++\tag{11}
++$$
++
++Taking $a_0=1$ for $y_1$ and $b_0=1$, setting the first three coefficients equal to 0 , and solving, we obtain
+ 
+ $$
+ b_{1}=\frac{1}{3}, \quad b_{2}=\frac{1}{12}, \quad b_{3}=\frac{1}{36}
+@@ -462,8 +531,8 @@
+ $$
+ \begin{aligned}
+ y= & c_{1} y_{1}+c_{2} y_{2} \\
+-= & x^{3}\left(c_{1}-c_{2} \frac{\ln x}{144}\right)\left(1-\frac{1}{5} x+\frac{1}{60} x^{2}-\frac{1}{1,260} x^{3}+\frac{1}{4,032} x^{4}-\cdots\right) \\
+-& +c_{2} x^{-1}\left(1+\frac{1}{3} x+\frac{1}{12} x^{2}+\frac{1}{36} x^{3}+x^{1}-\frac{121}{600} x^{3}+\cdots\right)
++= & x^{3}\left(c_{1}-c_{2} \frac{\ln x}{144}\right)\left(1-\frac{1}{5} x+\frac{1}{60} x^{2}-\frac{1}{1,260} x^{3}+\frac1{40320} x^{4}-\cdots\right) \\
++& +c_{2} x^{-1}\left(1+\frac{1}{3} x+\frac{1}{12} x^{2}+\frac{1}{36} x^{3}+x^4-\frac{121}{600}x^5+\cdots\right)
+ \end{aligned}
+ $$
+ 
+@@ -472,27 +541,29 @@
+ 
+ ## Use of the Reduction of Order Formula
+ 
+-In all threc cases of the Frobenius method, once we have found $y_{1}$ (using Theorem 1), a second solution can be derived by using the reduction of order formula:
++In all three cases of the Frobenius method, once we have found $y_{1}$ (using Theorem 1), a second solution can be derived by using the reduction of order formula:
+ 
+ $$
+ y_{2}(x)=y_{1}(x) \int \frac{e^{-\int p(x) d x}}{y_{1}^{2}(x)} d x
++\tag{12}
+ $$
+ 
+ To get the series for $y_{2}$, we expand the integrand and integrate term by term. This process is illustrated by our next example and is justified in the appendix of this section. The task of expanding is greatly simplified with the help of a computer.
+ 
+-## EXAMPLE 5 The reduction of order formula
+-
+-Find the general solution of the differential equation
+-
+-$$
+-x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-1\right) y=0, \quad x>0 .
+-$$
+-
+-Solution The indicial equation is $r^{2}-1=0$ with indicial roots $r_{1}=1$ and $r_{2}=-1$. (Note that the indicial roots differ by an integer, so we cannot assume at the outset
++> [!exercise|dbdd95bf-7c69-5297-8e82-4d9a1c03eaab.local at=76fafce2-9506-568a-99c9-d62cdaaf0513] EXAMPLE 5 The reduction of order formula
++> Find the general solution of the differential equation
++>
++> $$
++> x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-1\right) y=0, \quad x>0 .
++> $$
++
++##### solution
++
++The indicial equation is $r^{2}-1=0$ with indicial roots $r_{1}=1$ and $r_{2}=-1$. (Note that the indicial roots differ by an integer, so we cannot assume at the outset
+ that the solutions are both of the form (3).) By Theorem 1, one solution is of the form $y_{1}=x^{r_{1}} \sum_{m=0}^{\infty} a_{m} x^{m}$ with $r_{1}=1$. Plugging in the differential equation and solving for the coefficients as in the previous examples, we find
+ 
+ $$
+-y_{1}=x\left(1-\frac{x^{2}}{8}+\frac{x^{4}}{192}-\frac{x^{6}}{9,216}+\frac{x^{8}}{737,280}-\frac{r^{10}}{88,473,600}+\cdots\right)
++y_{1}=x\left(1-\frac{x^{2}}{8}+\frac{x^{4}}{192}-\frac{x^{6}}{9,216}+\frac{x^{8}}{737,280}-\frac{x^{10}}{88,473,600}+\cdots\right)
+ $$
+ 
+ (Exercise 32). We find a second linearly independent solution with the help of the reduction of order formula. Putting $y_{1}$ in (12) we get
+@@ -500,8 +571,8 @@
+ $$
+ \begin{aligned}
+ y_{2}(x)= & y_{1} \int \frac{e^{-\int 1 / x d x}}{y_{1}^{2}} d x \quad\left(e^{-\int 1 / x d x}=\frac{1}{x}\right) \\
+-= & y_{1} \int \frac{1}{x^{3}\left(1-\frac{x^{2}}{8}+\frac{x^{4}}{192}-\frac{x^{6}}{9.216}+\frac{x^{8}}{737.280}-\frac{x^{10}}{88.473 .600}+\cdots\right)^{2}} d x \\
+-= & y_{1} \int \frac{1}{x^{3}\left(1-\frac{x^{2}}{4}+\frac{5 x^{4}}{192}-\frac{7 x^{6}}{4,608}+\frac{7 x^{8}}{122.880}-\frac{11 x^{10}}{7,372,800}+\cdots\right)} d x \\
++= & y_{1} \int \frac{1}{x^{3}\left(1-\frac{x^{2}}{8}+\frac{x^{4}}{192}-\frac{x^{6}}{9216}+\frac{x^{8}}{737280}-\frac{x^{10}}{88473600}+\cdots\right)^{2}} d x \\
++= & y_{1} \int \frac{1}{x^{3}\left(1-\frac{x^{2}}{4}+\frac{5 x^{4}}{192}-\frac{7 x^{6}}{4,608}+\frac{7 x^{8}}{122880}-\frac{11 x^{10}}{7,372,800}+\cdots\right)} d x \\
+ & \quad \text { (Squaring) } \\
+ = & y_{1} \int\left(\frac{1}{x^{3}}+\frac{1}{4 x}+\frac{7 x}{192}+\frac{19 x^{3}}{4,608}+\frac{149 x^{5}}{368,640}+\frac{803 x^{7}}{22,118,400}+\cdots\right) d x \\
+ & \quad \text { (Series expansion or long division) } \\
+@@ -537,18 +608,21 @@
+ 
+ $$
+ e^{-\int p(x) d x}=x^{-p_{0}} G(x)
++\tag{13}
+ $$
+ 
+ where $G$ is the function $e^{-\int a(x) d x}$, and, in particular, $G(0) \neq 0$. (Note that $G$ has a power series expansion at $x=0$.) Now, using Theorem 1, we can write
+ 
+ $$
+ \frac{1}{y_{1}^{2}}=\frac{1}{x^{2 r_{1}}} H(x)
++\tag{14}
+ $$
+ 
+ where $H(x)=1 /\left(\sum_{m=0}^{\infty} a_{m} x^{m}\right)^{2}$. Since $a_{0} \neq 0$, the function $H(x)$ has a power series expansion at 0 and $H(0) \neq 0$. Combining (12), (13), and (14), we find that
+ 
+ $$
+ y_{2}=y_{1} \int x^{-p_{0}-2 r_{1}} K(x) d x
++\tag{15}
+ $$
+ 
+ where $K(x)$ has a power series expansion about 0 , and $K(0) \neq 0$. We write
+@@ -561,93 +635,222 @@
+ 
+ $$
+ y_{2}=y_{1} \int x^{-\left(r_{1}-r_{2}+1\right)}\left(k_{0}+k_{1} x+k_{2} x^{2}+\cdots\right) d x, \quad k_{0} \neq 0
+-$$
+-
+-Note that a logarithmic term in $y_{2}$ will appear if and only if a term in $x^{-1}$ occurs in the integrand (after multiplying through by $x^{-\left(r_{1}-r_{2}+1\right)}$ ). This is why $r_{1}=r_{2}$ determines the nature of the second solution.
++\tag{16}
++$$
++
++Note that a logarithmic term in $y_{2}$ will appear if and only if a term in $x^{-1}$ occurs in the integrand (after multiplying through by $x^{-\left(r_{1}-r_{2}+1\right)}$ ). This is why $r_1-r_2$ determines the nature of the second solution.
+ Case 1: If $r_{1}-r_{2}$ is not an integer, clearly there can be no term in $x^{-1}$, and hence no logarithmic term in $y_{2}$.
+ Case 2: If $r_{1}=r_{2}$, then the very first term yields the logarithmic term in $y_{2}$, since $k_{0} \neq 0$.
+ Case 3: If $r_{1}-r_{2}$ is a positive integer, say $r_{1}-r_{2}=n$, we may or may not have a logarithmic term, depending on whether $k_{n}$ is 0 .
+ 
+-## Exercises A. 5
+-
+-In Exercises 1-6, decide whether $x=0$ is an ordinary point or a singular point. In case it is a singular point, determine if it is a regular singular point.
+-
+-1. $y^{\prime \prime}+\left(1-x^{2}\right) y^{\prime}+x y=0$.
+-2. $x y^{\prime \prime}+\sin x y^{\prime}+\frac{1}{x} y=0$.
+-3. $x^{3} y^{\prime \prime}+x^{2} y^{\prime}+y=0$.
+-4. $\sin x y^{\prime \prime}+y^{\prime}+\frac{1}{x} y=0$.
+-5. $x^{2} y^{\prime \prime}+\left(1-e^{x}\right) y^{\prime}+x y=0$.
+-6. $3 x y^{\prime \prime}+2 y^{\prime}-\frac{1}{3 x} y=0$.
+-
+-In Exercises $7-22$, (a) check that $x=0$ is a regular singular point. (b) Determine which case of the Frobenius method applies. (c) Determine at least three nonzero terms in each of two linearly independent scries solutions. Take $x>0$.
+-7. $4 x y^{\prime \prime}+6 y^{\prime}+y=0$.
+-8. $4 x y^{\prime \prime}+6 y^{\prime}-y=0$.
+-9. $4 x^{2} y^{\prime \prime}-14 x y^{\prime}+(20-x) y=0$.
+-10. $4 x y^{\prime \prime}+2 y^{\prime}+y=0$.
+-11. $2 x y^{\prime \prime}+(1+x) y^{\prime}+y=0$.
+-12. $y^{\prime \prime}-\frac{1}{2 x} y^{\prime}+\frac{1}{x} y=0$.
+-13. $x y^{\prime \prime}+(1-x) y^{\prime}+y=0$.
+-14. $x y^{\prime \prime}+2 y^{\prime}-x y=0$.
+-15. $x y^{\prime \prime}+2(1+x) y^{\prime}+(x+2) y=0$.
+-16. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{4}\right) y=0$.
+-17. $x^{2} y^{\prime \prime}+4 x y^{\prime}+\left(2-x^{2}\right) y=0$.
+-18. $x y^{\prime \prime}+(x+2) y^{\prime}+(x+1) y=0$.
+-19. $x y^{\prime \prime}+3 y^{\prime}+\frac{1+x}{x} y=0$.
+-20. $x^{2} y^{\prime \prime}+4 x y^{\prime}+\left(2+x^{2}\right) y=0$.
+-21. $x y^{\prime \prime}+y^{\prime}-\frac{1+x}{x} y=0$.
+-22. $4 x y^{\prime \prime}+2 y^{\prime}+x y=0$.
+-
+-In Exercises 23-28, determine which case of the Frobenius method applies. and then solve the equation using Theorem 1 and raduction of order as we did in Example 5. Does your second solution contain a logarithmic term?
+-23. $4 x^{2} y^{\prime \prime}-14 x y^{\prime}+(20+x) y=0, \quad x>0$.
+-24. $y^{\prime \prime}-\frac{1+x^{2}}{2 x} y^{\prime}+\frac{1}{2 x} y=0, \quad x>0$.
+-25. $y^{\prime \prime}+\frac{1}{x} y^{\prime}+\frac{x}{x^{2}} y=0, \quad x>0$.
+-26. $y^{\prime \prime}-\frac{1+x}{2 x} y^{\prime}+\frac{1+2 x}{2 x^{2}} y=0, x>0$.
+-27. $x(1-x) y^{\prime \prime}+(1-3 x) y^{\prime}-y=0, \quad 0<x<1$.
+-28. $x(1-x) y^{\prime \prime}-\frac{1}{4} y=0, \quad 0<x<1$.
+-29. (a) Make the change of variables $u=x y$ in the differential equation of Example 1 and show that it becomes $u^{\prime \prime}+u=0$.
+-(b) Use (a) to derive the solutions $y_{1}=\frac{\sin x}{x}$ and $y_{2}=\frac{\cos x}{x}$.
+-30. Derive the first solution in Example 3.
+-31. Supply the details leading to the first solution in Example 4.
+-32. Supply the details leading to the first solution in Example 5.
+-
+-Euler's equation can be used to illustrate the solutions in all thre cases of the Frobenius method. In Exercises 33-36, (a) show that $x=0$ is a regular singular point, and determine which case of the Frobenius method applies. (b) Find two linearly independent solutions, using the methods of Section 10.3.
+-33. $y^{\prime \prime}+\frac{1}{x} y^{\prime}-\frac{2}{x^{2}} y=0$.
+-34. $y^{\prime \prime}+\frac{2}{x} y^{\prime}-\frac{3}{x^{2}} y=0$.
+-35. $y^{\prime \prime}+\frac{1}{x} y^{\prime}+\frac{1}{9 x^{2}} y=0$.
+-36. $y^{\prime \prime}+\frac{1}{2 x} y^{\prime}+\frac{1}{2 x^{2}} y=0$.
+-37. (a) Show that $x=0$ is a regular singular point of the differential equation
+-
+-$$
+-(\sin x)^{2} y^{\prime \prime}+\tan x y^{\prime}+(\cos x)^{2} y=0 .
+-$$
+-
+-(b) Find the indicial roots and determine which case of the Frobenius method applies.
+-(c) Verify that $\left.y_{1}=\sin (\ln (\sin x))\right)$ and $\left.y_{2}=\cos (\ln (\sin x))\right)$ are solutions of the differential equation for $0<x<R$, where $R$ is a positive number. How large can $R$ be?
+-(d) Make a change of variables $u=\sin x$ and transform the given equation to an Euler quation. Then derive the solutions given in (c).
+-(e) Plot the graphs of the solutions. Explain the behavior of the graphs near 0 and $\pi$.
+-38. Consider the equation
+-
+-$$
+-x y^{\prime \prime}-(2+x) y^{\prime}+2 y=0, \quad x>0 .
+-$$
+-
+-(a) Show that $x=0$ is a regular singular point. Find the indicial equation and the indicial roots. and conclude that we are in Case 3 of the Frobenius method.
+-(b) Use the method of Frobenius to find a Frobenius series solution corresponding to the larger root $r_{1}$.
+-(c) Identify the solution in (b) as $3!\left(e^{x}-1-x-\frac{x^{2}}{2}\right)$.
+-(d) Even though the roots differ by an integer, there exists a sccond Frobenius series solution. Using the method of Frobenius, show that $e^{x}$ or $1+x+x^{2} / 2$ can be taken as a second solution. [Hint: Argue that the coefficient $b_{3}$ is arbitrary.]
+-39. Consider the equation
+-
+-$$
+-x y^{\prime \prime}-(n+x) y^{\prime}+n y=0, \quad x>0,
+-$$
+-
+-where $n$ is a nomnegative integer.
+-(a) Show that $x=0$ is a regular singular point. Find the indicial equation and the indicial roots, and conclude that we are in Case 3 of the Frobenius method.
+-(b) Use the method of Frobenius to find a Frobenius series solution corresponding to the larger root $r_{1}$.
+-(c) Identify the solution in (b) as
+-
+-$$
+-(n+1)!\left(c^{r}-1-x-\frac{x^{2}}{2}-\cdots-\frac{x^{n}}{n!}\right) .
+-$$
+-
+-(d) Using the method of Frobenius, show that $e^{x}$ or $1+x+x^{2} / 2+\cdots+\frac{x^{n}}{n!}$ can be taken as a second solution. [Hint: Argue that the coefficient $b_{n+1}$ is arbitrary.]
++## Exercises 10.6
++
++
++> [!prompt|29ddbd3a-e8d5-50f2-a672-4c6ecf71d923.local at=cf65aa76-c374-5a5d-ac34-9a8515133e21] Shared exercise instructions
++> In Exercises 1-6, decide whether $x=0$ is an ordinary point or a singular point. In case it is a singular point, determine if it is a regular singular point.
++
++
++
++> [!exercise|0a027fdd-e485-5fba-8fc2-407bf38bf665.local at=085490a5-c886-5be2-9aec-3550780e8133] Exercise 1
++> $y^{\prime \prime}+\left(1-x^{2}\right) y^{\prime}+x y=0$.
++
++
++> [!exercise|35832461-0965-5611-bdb8-b2ddca35cedf.local at=4891b864-bf1f-5531-8774-84bd1e679949] Exercise 2
++> $x y^{\prime \prime}+\sin x y^{\prime}+\frac{1}{x} y=0$.
++
++
++> [!exercise|423b1d46-ba6d-5811-bc02-1ec2fa7bdc60.local at=d509cc69-841c-5583-bdb8-fe131113c7a6] Exercise 3
++> $x^{3} y^{\prime \prime}+x^{2} y^{\prime}+y=0$.
++
++
++> [!exercise|6e9dc93f-2d8f-5466-bdc1-5082793dce9f.local at=e405c605-e643-5f83-9dfe-6acf8106ac2d] Exercise 4
++> $\sin x y^{\prime \prime}+y^{\prime}+\frac{1}{x} y=0$.
++
++
++> [!exercise|61ac8e10-1730-5d20-97e1-c3ca6b467479.local at=8de09df0-6bf3-52f5-a493-ba8d8b25fd9d] Exercise 5
++> $x^{2} y^{\prime \prime}+\left(1-e^{x}\right) y^{\prime}+x y=0$.
++
++
++> [!exercise|d4d10a0b-d71e-5c2b-9ff8-edcbd82a3fc4.local at=c9825021-47ab-58a6-b69c-25a3c6690138] Exercise 6
++> $3 x y^{\prime \prime}+2 y^{\prime}-\frac{1}{3 x} y=0$.
++
++
++> [!prompt|98463dd8-3173-536d-af5e-0c5fa3515264.local at=40766b73-15d1-5fd0-93d0-15ba0d69ba0c] Shared exercise instructions
++> In Exercises $7-22$, (a) check that $x=0$ is a regular singular point. (b) Determine which case of the Frobenius method applies. (c) Determine at least three nonzero terms in each of two linearly independent series solutions. Take $x>0$.
++
++
++
++> [!exercise|d5c877eb-03c9-5538-bd82-3da08e56b60e.local at=9fd7913c-e3e7-536e-ab85-e00d1203c6fd] Exercise 7
++> $4 x y^{\prime \prime}+6 y^{\prime}+y=0$.
++
++
++> [!exercise|a2975688-9536-5f4b-ac88-9cdeccbe04f0.local at=37e1dd8d-c8c3-5109-b186-90ce29cb462c] Exercise 8
++> $4 x y^{\prime \prime}+6 y^{\prime}-y=0$.
++
++
++> [!exercise|b84d64a1-549a-5c1f-bf21-8a45bee0a589.local at=96a547fa-5407-5c6f-b39e-b7777d0feac6] Exercise 9
++> $4 x^{2} y^{\prime \prime}-14 x y^{\prime}+(20-x) y=0$.
++
++
++> [!exercise|e6ee81c5-c93b-5079-b57b-0aa79693b506.local at=730789b1-a824-5fa1-a230-06ba5c296128] Exercise 10
++> $4 x y^{\prime \prime}+2 y^{\prime}+y=0$.
++
++
++> [!exercise|0e3e55af-2d10-5305-b0c5-f3291ffbb8e8.local at=5149e32e-a4cf-5f1b-ba87-3826a462191b] Exercise 11
++> $2 x y^{\prime \prime}+(1+x) y^{\prime}+y=0$.
++
++
++> [!exercise|a37f9b5b-16a3-5067-a9e6-d524ac82e5ce.local at=1d419f06-696b-5217-98a5-4a6ce8636f74] Exercise 12
++> $y^{\prime \prime}-\frac{1}{2 x} y^{\prime}+\frac{1}{x} y=0$.
++
++
++> [!exercise|8fdbddf8-9423-5dd3-bd91-844987fa5bf5.local at=fc87d232-e329-5534-9eff-b494e98547f0] Exercise 13
++> $x y^{\prime \prime}+(1-x) y^{\prime}+y=0$.
++
++
++> [!exercise|ed28f717-3600-58cf-a28e-2f408b5c1309.local at=86f308b6-3c32-54ea-ad97-a6672757f60b] Exercise 14
++> $x y^{\prime \prime}+2 y^{\prime}-x y=0$.
++
++
++> [!exercise|451f4ebe-66f2-52cc-8fe2-6b49386c30a6.local at=b150e93c-154d-54ad-819a-b1a086dc77be] Exercise 15
++> $x y^{\prime \prime}+2(1+x) y^{\prime}+(x+2) y=0$.
++
++
++> [!exercise|b6b5bafb-b899-5e46-8bb1-57bf8ec4c7dd.local at=3522338d-eeca-58a0-9574-ca145038088b] Exercise 16
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{4}\right) y=0$.
++
++
++> [!exercise|f84fe681-6296-5535-bc07-3de4407dad1f.local at=5304315a-353f-5c5f-be24-d827c824d7e4] Exercise 17
++> $x^{2} y^{\prime \prime}+4 x y^{\prime}+\left(2-x^{2}\right) y=0$.
++
++
++> [!exercise|9b289dcc-39e6-5b7c-a632-2ee7f2c3df6c.local at=4f57a5d1-97ef-5f7a-b5a6-228266e652ed] Exercise 18
++> $x y^{\prime \prime}+(x+2) y^{\prime}+(x+1) y=0$.
++
++
++> [!exercise|97c09855-a3e6-526e-b470-f123f8af2cba.local at=ed2337e3-c042-50a8-a13e-21e3f886f3ec] Exercise 19
++> $x y^{\prime \prime}+3 y^{\prime}+\frac{1+x}{x} y=0$.
++
++
++> [!exercise|f9693a54-a62a-55ba-8804-e07293cfb2b7.local at=8320feae-c739-572f-b03f-f4522f69b3ac] Exercise 20
++> $x^{2} y^{\prime \prime}+4 x y^{\prime}+\left(2+x^{2}\right) y=0$.
++
++
++> [!exercise|ca2064dd-722f-5d69-a35a-42a994376af4.local at=6a36bcad-ff2d-5388-bbac-aba129f1edcb] Exercise 21
++> $x y^{\prime \prime}+y^{\prime}-\frac{1+x}{x} y=0$.
++
++
++> [!exercise|c27cd14a-d5d2-5ea6-a6a7-b67cefd312c6.local at=a8b21c43-9b75-51fc-9eda-b060ca238a46] Exercise 22
++> $4 x y^{\prime \prime}+2 y^{\prime}+x y=0$.
++
++
++> [!prompt|213832b1-fea0-5da7-badf-73e37ccc4a2a.local at=a3574339-5e22-526b-a503-4c583c5a9d9d] Shared exercise instructions
++> In Exercises 23-28, determine which case of the Frobenius method applies. and then solve the equation using Theorem 1 and reduction of order as we did in Example 5. Does your second solution contain a logarithmic term?
++
++
++
++> [!exercise|cf773c38-c75a-538b-98f7-74649857ba5e.local at=3bd25eab-dcae-5786-88f1-0d9aec32630d] Exercise 23
++> $4 x^{2} y^{\prime \prime}-14 x y^{\prime}+(20+x) y=0, \quad x>0$.
++
++
++> [!exercise|347add14-17c2-562c-ba80-597ec06ed5d6.local at=8cdc621e-f4a0-5cc7-8acf-0c744b342d3c] Exercise 24
++> $y^{\prime \prime}-\frac{1+x^{2}}{2 x} y^{\prime}+\frac{1}{2 x} y=0, \quad x>0$.
++
++
++> [!exercise|c774c56d-93b6-5b45-a880-f17d4158e344.local at=2bf0d8e5-f712-5594-8b52-3ebfd2c9dac7] Exercise 25
++> $y^{\prime \prime}+\frac{1}{x} y^{\prime}+\frac{x}{x^{2}} y=0, \quad x>0$.
++
++
++> [!exercise|04eaa2ed-0128-5c8e-87ab-40792ab923c9.local at=c94b9f16-8635-5eff-a970-2fabadbc17e8] Exercise 26
++> $y^{\prime \prime}-\frac{1+x}{2 x} y^{\prime}+\frac{1+2 x}{2 x^{2}} y=0, x>0$.
++
++
++> [!exercise|b6345df8-0036-5dc8-858b-0b4715a7673f.local at=0ef60526-101d-5a17-9de0-56acc74b69ab] Exercise 27
++> $x(1-x) y^{\prime \prime}+(1-3 x) y^{\prime}-y=0, \quad 0<x<1$.
++
++
++> [!exercise|b141651e-1a57-5867-b49f-5135ec89f9ba.local at=0f9be3a5-9cd0-58c1-96db-9d1fa0367cc4] Exercise 28
++> $x(1-x) y^{\prime \prime}-\frac{1}{4} y=0, \quad 0<x<1$.
++
++
++> [!exercise|b73501ba-e112-5c28-b2c3-64f6fbf239cc.local at=f4e9f4e0-d9de-5545-be62-dcc1d1fcbaef] Exercise 29
++> (a) Make the change of variables $u=x y$ in the differential equation of Example 1 and show that it becomes $u^{\prime \prime}+u=0$.
++> (b) Use (a) to derive the solutions $y_{1}=\frac{\sin x}{x}$ and $y_{2}=\frac{\cos x}{x}$.
++
++
++> [!exercise|3e2decfb-abca-518c-b19b-f9130a994597.local at=a333e15e-c8fd-5295-a3f3-d7504d422b5f] Exercise 30
++> Derive the first solution in Example 3.
++
++
++> [!exercise|11cd8e79-8399-58fc-9471-243fec118822.local at=b9b77736-4d6e-5f49-8173-e974ac9f1afe] Exercise 31
++> Supply the details leading to the first solution in Example 4.
++
++
++> [!exercise|9dfd570c-d648-524d-8aca-ee900ab20734.local at=d9a72cad-eb04-5299-a0f8-f7f0b6f1b446] Exercise 32
++> Supply the details leading to the first solution in Example 5.
++
++
++> [!prompt|24cb21a7-ff22-5394-b36a-46d2f84b177b.local at=6cb5e5d7-243c-52c8-aaf9-893f13477912] Shared exercise instructions
++> Euler's equation can be used to illustrate the solutions in all three cases of the Frobenius method. In Exercises 33-36, (a) show that $x=0$ is a regular singular point, and determine which case of the Frobenius method applies. (b) Find two linearly independent solutions, using the methods of Section 10.3.
++
++
++
++> [!exercise|7eeec973-d21b-57f3-a171-0554e1add6e2.local at=534787ac-b216-51d2-9966-b8eb8bda461e] Exercise 33
++> $y^{\prime \prime}+\frac{1}{x} y^{\prime}-\frac{2}{x^{2}} y=0$.
++
++
++> [!exercise|db63006d-147a-52c1-808c-838447674242.local at=cd61b00f-da31-5409-b4b1-f7653ebde502] Exercise 34
++> $y^{\prime \prime}+\frac{2}{x} y^{\prime}-\frac{3}{x^{2}} y=0$.
++
++
++> [!exercise|0fe9f5e2-1aee-556c-b7d5-630b443a317b.local at=e96da582-4041-57f6-a959-f83151eb051a] Exercise 35
++> $y^{\prime \prime}+\frac{1}{x} y^{\prime}+\frac{1}{9 x^{2}} y=0$.
++
++
++> [!exercise|7d41704e-1f4a-588b-9522-c9a158db8571.local at=313ac7a6-cd3d-5319-b7ca-b3a711f3067a] Exercise 36
++> $y^{\prime \prime}+\frac{1}{2 x} y^{\prime}+\frac{1}{2 x^{2}} y=0$.
++
++
++> [!exercise|af5d7ef9-7e51-5302-abe9-31b67e3b6a1b.local at=52bbefe3-06ff-5125-b2da-a13051195aa3] Exercise 37
++> (a) Show that $x=0$ is a regular singular point of the differential equation
++>
++> $$
++> (\sin x)^{2} y^{\prime \prime}+\tan x y^{\prime}+(\cos x)^{2} y=0 .
++> $$
++>
++> (b) Find the indicial roots and determine which case of the Frobenius method applies.
++> (c) Verify that $y_1=\sin(\ln(\sin x))$ and $y_2=\cos(\ln(\sin x))$ are solutions of the differential equation for $0<x<R$, where $R$ is a positive number. How large can $R$ be?
++> (d) Make a change of variables $u=\sin x$ and transform the given equation to an Euler equation. Then derive the solutions given in (c).
++> (e) Plot the graphs of the solutions on the intervals where the original equation is defined. Explain the behavior near $0$ and $\pi$. Note that its coefficient $\tan x$ is undefined at $x=\pi/2$, so the original equation does not define one regular interval across that point.
++
++
++> [!exercise|f4d02c53-9ed8-512e-b77e-05cb2a5c4e97.local at=dde01553-2a7a-5f91-a472-1fd5c00f96f0] Exercise 38
++> Consider the equation
++>
++> $$
++> x y^{\prime \prime}-(2+x) y^{\prime}+2 y=0, \quad x>0 .
++> $$
++>
++> (a) Show that $x=0$ is a regular singular point. Find the indicial equation and the indicial roots. and conclude that we are in Case 3 of the Frobenius method.
++> (b) Use the method of Frobenius to find a Frobenius series solution corresponding to the larger root $r_{1}$.
++> (c) Identify the solution in (b) as $3!\left(e^{x}-1-x-\frac{x^{2}}{2}\right)$.
++> (d) Even though the roots differ by an integer, there exists a second Frobenius series solution. Using the method of Frobenius, show that $e^{x}$ or $1+x+x^{2} / 2$ can be taken as a second solution. [Hint: Argue that the coefficient $b_{3}$ is arbitrary.]
++
++
++> [!exercise|e6b7db20-71d3-5b30-8b60-6f3c122bd76f.local at=cd07a615-1b6e-5866-bd0e-84600cc7a22a] Exercise 39
++> Consider the equation
++>
++> $$
++> x y^{\prime \prime}-(n+x) y^{\prime}+n y=0, \quad x>0,
++> $$
++>
++> where $n$ is a positive integer. 
++> (a) Show that $x=0$ is a regular singular point. Find the indicial equation and the indicial roots, and conclude that we are in Case 3 of the Frobenius method.
++> (b) Use the method of Frobenius to find a Frobenius series solution corresponding to the larger root $r_{1}$.
++> (c) Identify the solution in (b) as
++>
++> $$
++> (n+1)!\left(e^x-1-x-\frac{x^{2}}{2}-\cdots-\frac{x^{n}}{n!}\right) .
++> $$
++>
++> (d) Using the method of Frobenius, show that $e^{x}$ or $1+x+x^{2} / 2+\cdots+\frac{x^{n}}{n!}$ can be taken as a second solution. [Hint: Argue that the coefficient $b_{n+1}$ is arbitrary.]
+
+`````

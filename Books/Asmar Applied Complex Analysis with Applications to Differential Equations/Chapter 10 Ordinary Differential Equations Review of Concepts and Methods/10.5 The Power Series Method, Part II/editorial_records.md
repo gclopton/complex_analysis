@@ -43,3 +43,638 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 >
 > Moreover, the radius of convergence of this power series is at least as large as the minimum of the radii of convergence of $p, q$, and $g$.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.5 The Power Series Method, Part II.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.5 The Power Series Method, Part II.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.5 The Power Series Method, Part II.md
+@@ -1,30 +1,34 @@
+-## 10.5 The Power Series Method, Part II
+-
+-The solutions of many differential equations have power series expansions. For example, the solution of $y^{\prime}-y=0$ is $y=C e^{x}$ or $y=C \sum_{m=0}^{\infty} \frac{x^{n}}{n!}$. The power series method, that we present in this section, allows us to find the power series solution (when it exists) directly from the differential equation. This method is very useful in solving a wide class of important second-order linear differential equations with variable coefficients that cannot be solved by the methods that we discussed in previous sections. The power series method works as follows. First, assume that the solution is a power series. Second, write each term in the given differential equation as a power series. Third, equate coefficients of the resulting serics on both sides of the equation.
+-
+-To combine the saries. we need to have the same powers of $x$ appearing in botll. For this purpose, we reindex the first. series by changing $m$ to $m+1$. The index of summation has to be lowered by 1 , and so the first series will have to start at 0 .
++
++# 10.5 The Power Series Method, Part II
++
++The solutions of many differential equations have power series expansions. For example, the solution of $y^{\prime}-y=0$ is $y=C e^{x}$ or $y=C \sum_{m=0}^{\infty}\frac{x^m}{m!}$. The power series method, that we present in this section, allows us to find the power series solution (when it exists) directly from the differential equation. This method is very useful in solving a wide class of important second-order linear differential equations with variable coefficients that cannot be solved by the methods that we discussed in previous sections. The power series method works as follows. First, assume that the solution is a power series. Second, write each term in the given differential equation as a power series. Third, equate coefficients of the resulting series on both sides of the equation.
+ 
+ Finally, solve for the unknown coefficients in the series representation of the assumed solution.
+ 
+ Let us illustrate this by deriving the power series solution of $y^{\prime}-y=0$.
+ 
+-## EXAMPLE 1 A first-order equation
+-
+-Assuming that you know that the solution of $y^{\prime}-y=0$ has a power series expansion about 0 , find this solution.
+-Solution Write $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. Differentiating term-by-term we have $y^{\prime}= \sum_{m=1}^{\infty} m a_{m} x^{m-1}$. If we substitute the power series of $y$ and $y^{\prime}$ into the equation and combine the series, we obtain
++> [!exercise] EXAMPLE 1 A first-order equation
++> Assuming that you know that the solution of $y^{\prime}-y=0$ has a power series expansion about 0 , find this solution.
++
++##### solution
++
++Write $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. Differentiating term-by-term we have $y^{\prime}= \sum_{m=1}^{\infty} m a_{m} x^{m-1}$. If we substitute the power series of $y$ and $y^{\prime}$ into the equation and combine the series, we obtain
+ 
+ $$
+ \begin{gathered}
+-\sum_{m=1}^{\infty} m a_{m} x^{m-1}-\sum_{m=0}^{\lambda} a_{m} x^{m}=0 \\
+-\sum_{m=0}^{\infty}(m+1) a_{m+1} x^{m}-\sum_{m-n}^{\infty} a_{m} x^{m}=0 \\
++\sum_{m=1}^{\infty} m a_{m} x^{m-1}-\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
++\sum_{m=0}^{\infty}(m+1) a_{m+1} x^{m}-\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
+ \sum_{m=0}^{\infty}\left[(m+1) a_{m+1}-a_{m}\right] x^{m}=0
+ \end{gathered}
+ $$
+ 
++To combine the series, we need to have the same powers of $x$ appearing in both. For this purpose, we reindex the first. series by changing $m$ to $m+1$. The index of summation has to be lowered by 1 , and so the first series will have to start at 0 .
++
+ By the identity principle, $(m+1) a_{m+1}-a_{m}=0$ for all $m$, and so
+ 
+ $$
+ a_{m+1}=\frac{a_{m}}{m+1}
++\tag{1}
+ $$
+ 
+ Thus,
+@@ -43,12 +47,14 @@
+ 
+ Recall from the previous section that reindexing a series works like a change of variables in an integral. If $k$ is a positive integer and you change $m$ to $m+k$ inside the series, then the starting point of the series must be lowered by $k$. If you change $m$ to $m-k$, then the starting point of the series must be raised by $k$.
+ 
+-An expression like (1) that gives each coefficient in terms of preceding ones is called a recurrence relation. In Example 1 the recurrence relation determines the coefficients in steps of one. That is, from $a_{0}$ we get $a_{1}$, from $a_{1}$ we get $a_{2}$, and so on. In the nexl example, the recurrence relation determines the coefficients in steps of two.
+-
+-## EXAMPLE 2 A familiar second-order equation
+-
+-We know that two linearly independent solutions of the differential equation $y^{\prime \prime}+y=$ 0 are $y_{1}=\cos x$ and $y_{2}=\sin x$. We also know that both of these solutions have power series expansions about 0 . Derive the power series solutions using the power series method.
+-Solution If we assume that the differential equation has a power series solution
++An expression like (1) that gives each coefficient in terms of preceding ones is called a recurrence relation. In Example 1 the recurrence relation determines the coefficients in steps of one. That is, from $a_{0}$ we get $a_{1}$, from $a_{1}$ we get $a_{2}$, and so on. In the next example, the recurrence relation determines the coefficients in steps of two.
++
++> [!exercise] EXAMPLE 2 A familiar second-order equation
++> We know that two linearly independent solutions of the differential equation $y^{\prime \prime}+y=$ 0 are $y_{1}=\cos x$ and $y_{2}=\sin x$. We also know that both of these solutions have power series expansions about 0 . Derive the power series solutions using the power series method.
++
++##### solution
++
++If we assume that the differential equation has a power series solution
+ 
+ $$
+ y=\sum_{m=0}^{\infty} a_{m} x^{m}=a_{0}+a_{1} x+a_{2} x^{2}+a_{3} x^{3}+\cdots,
+@@ -69,9 +75,9 @@
+ 
+ $$
+ \begin{gathered}
+-\sum_{m 2}^{\infty} m(m-1) a_{m} x^{m-2}+\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
+-\sum_{m=0}^{\infty}(m+2)(m+1) a_{m \cdot 2} x^{m}+\sum_{m 0}^{\infty} a_{m} x^{\prime \prime}=0 \\
+-\sum_{m=0}^{\infty}\left[(m+2)(m+1) a_{m \cdot 2}+a_{m}\right] x^{m}=0
++\sum_{m=2}^{\infty} m(m-1) a_{m} x^{m-2}+\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
++\sum_{m=0}^{\infty}(m+2)(m+1) a_{m+2} x^{m}+\sum_{m=0}^{\infty} a_m x^m=0 \\
++\sum_{m=0}^{\infty}\left[(m+2)(m+1) a_{m+2}+a_{m}\right] x^{m}=0
+ \end{gathered}
+ $$
+ 
+@@ -100,10 +106,10 @@
+ Writing the even-indexed and the odd-indexed terms separately, we get the solution
+ 
+ $$
+-y=a_{0} \sum_{k=0}^{\infty}(-1)^{k} \frac{x^{2 k}}{(2 k)!}+a_{1} \sum_{k=0}^{\infty}(-1)^{k} \frac{r^{2 k+1}}{(2 k+1)!} .
+-$$ already observed, $y=a_{0} \cos x-a_{1} \sin x$.
+-
+-We recognize these series as the Taylor series for the sine and cosine; thus, as we already observed, $y=a_{0} \cos x-a_{1} \sin x$.
++y=a_{0} \sum_{k=0}^{\infty}(-1)^{k} \frac{x^{2 k}}{(2 k)!}+a_{1} \sum_{k=0}^{\infty}(-1)^{k} \frac{x^{2k+1}}{(2 k+1)!} .
++$$
++
++We recognize these series as the Taylor series for the sine and cosine; thus, as we already observed, $y=a_0\cos x+a_1\sin x$.
+ 
+ Note that $a_{0}$ and $a_{1}$ account for the two arbitrary constants that we expect in the general solution to a second-order differential equation.
+ 
+@@ -113,41 +119,42 @@
+ x y^{\prime}+y=x \sum_{m=0}^{\infty} m a_{m} x^{m-1}+\sum_{m=0}^{\infty} a_{m} x^{m}=\sum_{m=0}^{\infty}(1+m) a_{m} x^{m} .
+ $$
+ 
+-So $x y^{\prime}+y=0$ implies that $\sum_{m=0}^{\infty}(1+m) a_{m} x^{\prime \prime \prime}=0$, which in turn implies that $(1+m) a_{m}=0$ for all $m$. Since $1+m \neq 0$, it follows that $a_{m}=0$, which implies that the solution is $y=0$. But you can easily verify that $y=C / x$ is a solution (you can derive the solution by using Theorem 1, Appendix A.1, or by simply guessing it). Indeed, $y^{\prime}=-C / x^{2}$ and so $x y^{\prime}+y=(-C / x)+ (C / x)=0$. So the power series method did not work in this case. This is to be expected since the solution is not even defined at $x=0$ and so it cannot possibly have a power series centered at 0 .
++So $x y^{\prime}+y=0$ implies that $\sum_{m=0}^{\infty}(1+m) a_m x^m=0$, which in turn implies that $(1+m) a_{m}=0$ for all $m$. Since $1+m \neq 0$, it follows that $a_{m}=0$, which implies that the solution is $y=0$. But you can easily verify that $y=C / x$ is a solution (you can derive the solution by using Theorem 1, Section 10.1, or by simply guessing it). Indeed, $y^{\prime}=-C / x^{2}$ and so $x y^{\prime}+y=(-C / x)+ (C / x)=0$. So the power series method did not work in this case. This is to be expected since the solution is not even defined at $x=0$ and so it cannot possibly have a power series centered at 0 .
+ 
+ Thus we cannot always assume that the solution has a power series expansion centered at a given point. The following theorem of Fuchs gives sufficient conditions that justify using the power series method.
+ 
+-THEOREM 1 POWER SERIES SOLUTIONS
+-
+-Suppose that the functions $p(x), q(x)$, and $g(x)$ have power series expansions at $x=a$; then any solution of
+-
+-$$
+-y^{\prime \prime}+p(x) y^{\prime}+q(x) y=g(x)
+-$$
+-
+-has a power series expansion at $x=a$. Thus any solution $y$ can be expressed as a power series centered at $a$,
+-
+-$$
+-y=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}
+-$$
+-
+-Moreover, the radius of convergence of this power series is at least as large as the minimum of the radii of convergence of $p, q$, and $g$.
+-
+-When $p(x), q(x)$, and $g(x)$ have power series expansions with positive radius of convergence at $x=a$, the point $a$ is called an ordinary point for the equation (2).
+-
+-Note how the index of summation in the first sum dropped by 2 .
+-
+-Since the existence of the solutions of (2) is guaranteed by Theorem 3, Appendix A.1, the real purpose of Theorem 1 is to address the existence of power series expansions of the solutions. For a proof of Theorem 1, see Chapter 3 of Ordinary Differential Equations. by Garrett Birkhoff and GianCarlo Rota, 2nd ed., Wiley, 1969. To appreciate the power of Theorem 1, note that it asserts that a complicated equation such as $y^{\prime \prime}+e^{x} y^{\prime}+\cos x y= 1 /\left(1+x^{2}\right)$ has a power series solution about $x=0$ with radius of convergence at least 1 .
+-
+-## EXAMPLE 3 A second-order initial value problem
+-
+-Solve the initial value problem
+-
+-$$
+-y^{\prime \prime}+r y^{\prime}+y=0, \quad y(0): \quad 0, \quad y^{\prime}(0)=1 .
+-$$
+-
+-Solution Using the notation of Theorem 1, we let $p(x)=x$ and $q(x)=1$. Sincu both functions have power series expansions at 0 (given by the functions themselves), we can assume a solution of the form
++> [!theorem] Power Series Solutions
++> Suppose that the functions $p(x), q(x)$, and $g(x)$ have power series expansions at $x=a$ with positive radii of convergence; then any solution of
++>
++> $$
++> y^{\prime \prime}+p(x) y^{\prime}+q(x) y=g(x)
++> $$
++>
++> has a power series expansion at $x=a$. Thus any solution $y$ can be expressed as a power series centered at $a$,
++>
++> $$
++> y=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}
++> $$
++>
++> Moreover, the radius of convergence of this power series is at least as large as the minimum of the radii of convergence of $p, q$, and $g$.
++
++*Printed equation label: (2).*
++
++> [!definition] Ordinary Point of an Analytic Linear ODE
++> When $p(x), q(x)$, and $g(x)$ have power series expansions with positive radius of convergence at $x=a$, the point $a$ is called an ordinary point for the normalized equation $y^{\prime\prime}+p(x)y^{\prime}+q(x)y=g(x)$.
++
++Since existence of the solutions of (2) is guaranteed by the linear initial-value theorem in Section 10.1, the real purpose of Theorem 1 is to address the existence of power series expansions of the solutions. For a proof of Theorem 1, see Chapter 3 of Ordinary Differential Equations. by Garrett Birkhoff and GianCarlo Rota, 2nd ed., Wiley, 1969. To appreciate the power of Theorem 1, note that it asserts that a complicated equation such as $y^{\prime \prime}+e^{x} y^{\prime}+\cos x y= 1 /\left(1+x^{2}\right)$ has a power series solution about $x=0$ with radius of convergence at least 1 .
++
++> [!exercise] EXAMPLE 3 A second-order initial value problem
++> Solve the initial value problem
++>
++> $$
++> y^{\prime\prime}+xy^{\prime}+y=0,\quad y(0)=0, \quad y^{\prime}(0)=1 .
++> $$
++
++##### solution
++
++Using the notation of Theorem 1, we let $p(x)=x$ and $q(x)=1$. Since both functions have power series expansions at 0 (given by the functions themselves), we can assume a solution of the form
+ 
+ $$
+ y=\sum_{m=0}^{\infty} a_{m} x^{m}=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
+@@ -162,7 +169,7 @@
+ \end{gathered}
+ $$
+ 
+-and so the initial conditions imply that $a_{0}=0$ and $a_{1}=1$. Substituting the serios for $y$ and its derivatives into the differential equation yields
++and so the initial conditions imply that $a_{0}=0$ and $a_{1}=1$. Substituting the series for $y$ and its derivatives into the differential equation yields
+ 
+ $$
+ \sum_{m=2}^{\infty} m(m-1) a_{m} x^{m-2}+\sum_{m=1}^{\infty} m a_{m} x^{m}+\sum_{m=0}^{\infty} a_{m} x^{m}=0 .
+@@ -183,12 +190,22 @@
+ a_{m+2}=\frac{-1}{m+2} a_{m}
+ $$
+ 
+-As in the preceding example, $a_{0}$ determines the coefficients with even indices and $a_{1}$ those with odd indices. Since $a_{0}=0$, we get $a_{2}=0, a_{4}=0$, and so on. For
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-45_299_458_892_59.jpg)
+-Figure 1 Polynomial (degree $2 n \quad 1$ ) approximation of the solution in Example 3.
+-
+-the coefficients with odd indices. the recurrence relation gives
++As in the preceding example, $a_{0}$ determines the coefficients with even indices and $a_{1}$ those with odd indices. Since $a_{0}=0$, we get $a_{2}=0, a_{4}=0$, and so on. For the coefficients with odd indices, the recurrence relation gives
++
++```scientific-figure
++id: 39973035-d298-4655-867d-6dadbb551ab6
++numbered: false
++title: ""
++caption: Figure 1 Polynomial (degree $2n-1$ ) approximation of the solution in Example 3.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-45_299_458_892_59.jpg
++    caption: ""
++```
++
++
+ 
+ $$
+ \begin{aligned}
+@@ -211,7 +228,7 @@
+ y=x-\frac{1}{3} x^{3}+\frac{1}{15} x^{5}-\frac{1}{105} x^{7}+\cdots+\frac{(-1)^{k}}{1 \cdot 3 \cdot 5 \cdots(2 k+1)} x^{2 k+1}+\cdots .
+ $$
+ 
+-This solution can be expressed in a more compact form (sce Exercise 23).
++This solution can be expressed in a more compact form (see Exercise 23).
+ 
+ Polynomial approximations of the solution of Example 3 are graphed in Figure 1. The more terms we include, the better the approximation is on a larger interval. Note that all the polynomials satisfy the initial conditions.
+ 
+@@ -223,27 +240,39 @@
+ 
+ As should be expected, it is not always possible to find simple patterns for the coefficients in the solution. In such cases we can determine as many terms of the series as we wish in order to obtain a Taylor polynomial approximation of the solution.
+ 
+-## EXAMPLE 4 Approximation by a Taylor polynomial
+-
+-Find a fourth degree Taylor polynomial approximation of the solution of the initial value problem
+-
+-$$
+-y^{\prime \prime}+e^{x} y=\cos x, \quad y(0)=1, \quad y^{\prime}(0)=0 .
+-$$
+-
+-Solution In the notation of Theorem 1, we have $p(x)=0, q(x)=e^{x}$, and $g(x)= \cos x$, and each of these functions has a power series expansion at 0 , valid for all $x$. Hence we have a power series solution, centered at 0 with an infinite radius of convergence. Let us write this series as a Taylor series in the form
++> [!exercise] EXAMPLE 4 Approximation by a Taylor polynomial
++> Find a fourth degree Taylor polynomial approximation of the solution of the initial value problem
++>
++> $$
++> y^{\prime \prime}+e^{x} y=\cos x, \quad y(0)=1, \quad y^{\prime}(0)=0 .
++> $$
++
++##### solution
++
++In the notation of Theorem 1, we have $p(x)=0, q(x)=e^{x}$, and $g(x)= \cos x$, and each of these functions has a power series expansion at 0 , valid for all $x$. Hence we have a power series solution, centered at 0 with an infinite radius of convergence. Let us write this series as a Taylor series in the form
+ 
+ $$
+ y=\sum_{m=0}^{\infty} \frac{y^{(m)}(0)}{m!} x^{m} .
+ $$
+ 
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-46_334_468_1019_63.jpg)
+-Figure 2 Polynomial (degree $n$ ) approximation of the solution.
+-
+-Our goal is to determine the first five coefficients, $a_{0}, a_{1}, \ldots, a_{5}$, in order to obtain a Taylor polynomial approximation
+-
+-$$
+-P_{\downarrow}(x)=y(0)+y^{\prime}(0) x+\frac{y^{\prime \prime}(0)}{2!} x^{2}+\frac{y^{\prime \prime \prime}(0)}{3!} x^{3}+\frac{y^{(-4)}(0)}{4!} x^{4} .
++```scientific-figure
++id: 96562012-5281-4be8-8481-1af8ccb6a950
++numbered: false
++title: ""
++caption: Figure 2 Polynomial (degree $n$ ) approximation of the solution.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-46_334_468_1019_63.jpg
++    caption: ""
++```
++
++
++Our goal is to determine the first five coefficients, $a_0,a_1,\ldots,a_4$, in order to obtain a Taylor polynomial approximation
++
++$$
++P_4(x)=y(0)+y^{\prime}(0) x+\frac{y^{\prime \prime}(0)}{2!} x^{2}+\frac{y^{\prime \prime \prime}(0)}{3!} x^{3}+\frac{y^{(4)}(0)}{4!} x^{4} .
+ $$
+ 
+ Instead of using the power series method, we will use the differential equation and the initial conditions directly. Indeed the initial conditions, $y(0)=1$ and $y^{\prime}(0)=0$, give us immediately the first two coefficients of the Taylor polynomial. From the differential equation, we have
+@@ -264,10 +293,10 @@
+ We can continue this procedure and find as many terms as we please. Here is the seventh-degree Taylor polynomial approximation
+ 
+ $$
+-P_{7}(x)=1-\frac{1}{6} x^{3}-\frac{1}{12} x^{-4}+\frac{1}{120} x^{6}+\frac{19}{5,040} x^{7} .
+-$$
+-
+-On the interval $[-1,1]$, the graph of the approximating polynomial of degree 4 is indistinguishable from the graph of the polynomial of degree 7 (Figure 2). This suggests that on this interval we have a good approximation with a polynomial of degree 4. However, as we move away from the center, more terms are noeded to get, a good approximation.
++P_{7}(x)=1-\frac{1}{6} x^{3}-\frac{1}{12} x^4+\frac{1}{120} x^{6}+\frac{19}{5,040} x^{7} .
++$$
++
++On the interval $[-1,1]$, the graph of the approximating polynomial of degree 4 is indistinguishable from the graph of the polynomial of degree 7 (Figure 2). This suggests that on this interval we have a good approximation with a polynomial of degree 4. However, as we move away from the center, more terms are needed to get, a good approximation.
+ 
+ In second-order homogeneous problems, it is instructive to identify linearly independent solutions $y_{1}$ and $y_{2}$. As we saw in Examples 2 and 3. the recurrence relations allowed us to solve for the coefficients $a_{m}, m \geq 2$, in terms of $a_{0}$ and $a_{1}$. We can define $y_{1}$ by taking $a_{0}=1, a_{1}=0$ and $y_{2}$ by taking $a_{0}=0, a_{1}=1$. Then the general solution can be written as
+ 
+@@ -275,19 +304,20 @@
+ y=c_{1} y_{1}+c_{2} y_{2} .
+ $$
+ 
+-In terms of initial value problems, it is casily seen that $y_{1}$ satisfies the initial values $y_{1}(a)=1, y_{1}^{\prime}(a)=0$. Similarly, $y_{2}$ satisfies $y_{2}(a)=0, y_{2}^{\prime}(a)=1$.
+-
+-The following example deals with a particular case of a Legendre's differential equation. A detailed treatment of these equations is presented in Sections 5.5 and 5.6. This treatment is one of the most important applications of the power series method in this book.
+-
+-## EXAMPLE 5 A Legendre's differential equation
+-
+-Solve the initial value problem
+-
+-$$
+-\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0, \quad y(0)=0, \quad y^{\prime}(0)=1 .
+-$$
+-
+-Solution Put the equation in standard form:
++In terms of initial value problems, it is easily seen that $y_{1}$ satisfies the initial values $y_{1}(a)=1, y_{1}^{\prime}(a)=0$. Similarly, $y_{2}$ satisfies $y_{2}(a)=0, y_{2}^{\prime}(a)=1$.
++
++The following example deals with a particular case of a Legendre's differential equation. A detailed treatment of these equations is presented in Sections 13.5 and 13.6. This treatment is one of the most important applications of the power series method in this book.
++
++> [!exercise] EXAMPLE 5 A Legendre's differential equation
++> Solve the initial value problem
++>
++> $$
++> \left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0, \quad y(0)=0, \quad y^{\prime}(0)=1 .
++> $$
++
++##### solution
++
++Put the equation in standard form:
+ 
+ $$
+ y^{\prime \prime}-\frac{2 x}{1-x^{2}} y^{\prime}+\frac{12}{1-x^{2}} y=0 .
+@@ -315,7 +345,7 @@
+ \begin{gathered}
+ \sum_{m=0}^{\infty}(m+2)(m+1) a_{m+2} x^{m}-\sum_{m=1}^{\infty} m(m-1) a_{m} x^{m} \\
+ -\sum_{m=1}^{\infty} 2 m a_{m} x^{m}+12 \sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
+-2 a_{2}+12 a_{0}+\sum_{m=1}^{\infty}[(m+2)(m+1) a_{m+2}+a_{m}(\overbrace{-m(m-1)-2 m+12}^{(m-3)(m+4)})] x^{m}
++2 a_{2}+12 a_{0}+\sum_{m=1}^{\infty}[(m+2)(m+1)a_{m+2}+a_m(\overbrace{-m(m-1)-2m+12}^{-(m-3)(m+4)})]x^m=0
+ \end{gathered}
+ $$
+ 
+@@ -326,7 +356,7 @@
+ $$
+ 
+ The initial conditions determine $a_{0}$ and $a_{1}$. Indeed, $a_{0}=y(0)=0$ and $a_{1}=y^{\prime}(0)=$ 1. The two step-recurrence relation determines the remaining coefficients. From
+-$a_{0}=0$, we get that $a_{2}=0, a_{4}=0$, and, more generally, $a_{2 k}=0$ for all $k \geq 0$. We now turn to the odd indices. Taking $m=1$ in the recurrence relation, we obtain: $a_{3}=a_{1}(-10) / 6=-5 / 3$. Next, we take $m=3$ and find $a_{5}=0$, and so $a_{7}=0, a_{9}=0$, and, more generally, $a_{2 k+1}=0$ for all $k \geq 1$. Thus the solution is a polynomial:
++$a_{0}=0$, we get that $a_{2}=0, a_{4}=0$, and, more generally, $a_{2 k}=0$ for all $k \geq 0$. We now turn to the odd indices. Taking $m=1$ in the recurrence relation, we obtain: $a_{3}=a_{1}(-10) / 6=-5 / 3$. Next, we take $m=3$ and find $a_{5}=0$, and so $a_{7}=0, a_{9}=0$, and, more generally, $a_{2k+1}=0$ for all $k\geq2$. Thus the solution is a polynomial:
+ 
+ $$
+ y=a_{1} x+a_{3} x^{3}=x-\frac{5}{3} x^{3} .
+@@ -344,15 +374,17 @@
+ 
+ We next derive the general solution of the equation in Example 5.
+ 
+-## EXAMPLE 6 General solution of a Legendre's differential equation
+-
+-Find two linearly independent solutions of Legendre's equation
+-
+-$$
+-\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0 .
+-$$
+-
+-Solution In Example 5 we found one particular solution, $y_{1}=x-(5 / 3) x^{3}$. To find a second linearly independent solution, we return to the recurrence relation that we found in the previous solution and let $a_{0}$ be arbitrary. This gives $a_{2}=a_{0} \frac{(-3)(4)}{(2)(1)}= -6 a_{0} . a_{4}=a_{2} \frac{(-1)(6)}{(4)(3)}=3 a_{0}, a_{6}=a_{4} \frac{(1)(8)}{(6)(5)}=\frac{4}{5} a_{0}$, and so on. Thus,
++> [!exercise] EXAMPLE 6 General solution of a Legendre's differential equation
++> Find two linearly independent solutions of Legendre's equation
++>
++> $$
++> \left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0 .
++> $$
++
++##### solution
++
++In Example 5 we found one particular solution, $y_{1}=x-(5 / 3) x^{3}$. To find a second linearly independent solution, we return to the recurrence relation, set $a_1=0$, and choose $a_0
++e0$. This gives $a_{2}=a_{0} \frac{(-3)(4)}{(2)(1)}= -6 a_{0} . a_{4}=a_{2} \frac{(-1)(6)}{(4)(3)}=3 a_{0}, a_{6}=a_{4} \frac{(1)(8)}{(6)(5)}=\frac{4}{5} a_{0}$, and so on. Thus,
+ 
+ $$
+ y_{2}=a_{0}\left(1-6 x^{2}+3 x^{4}+\frac{4}{5} x^{6}+\cdots\right) .
+@@ -360,87 +392,171 @@
+ 
+ The solution is an infinite power series in even powers of $x$. Unlike $y_{1}, y_{2}$ has infinitely many nonzero terms. $\square$
+ 
+-The fact that Legendre's equation in Example 5 has a polynomial solution and an infinite series solution is not a coincidence. Indeed this will happen every time the equation can be put in the form $\left(1 \quad x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+n(n+1) y=0$ for some nonnegative integer $n$. (In Example 5, we have $n=3$.) Many interesting facts about Legendre's equation can be found in Sections 5.5 and 5.6.
+-
+-## Exercises A. 5
+-
+-In Exercises 1 12, show that 0 is an ordinary point, and then find the power series solutions centered at 0 . In each case, write down the recurrence relation for the coefficients, and compute at least three nonzero terms from each power series solution.
+-
+-1. $y^{\prime}+2 x y=0$.
+-2. $y^{\prime}+y=0$.
+-3. $y^{\prime}+y=x$.
+-4. $y^{\prime}+(\cos x) y=0$.
+-5. $y^{\prime \prime}-y=0$.
+-6. $y^{\prime \prime}-y=x$.
+-7. $y^{\prime \prime}-x y^{\prime}+y=0$.
+-8. $y^{\prime \prime}+2 y^{\prime}+2 y=0$.
+-9. $y^{\prime \prime}+2 x y^{\prime}+y=0$.
+-10. $y^{\prime \prime}+x y^{\prime}+y=0$.
+-11. $y^{\prime \prime}-2 y^{\prime}+y=0, \quad y(0)=0, y^{\prime}(0)=1$.
+-12. $y^{\prime \prime}-2 y^{\prime}+y=x, \quad y(0)=2, y^{\prime}(0)=1$.
+-
+-In Exercises 13-16, use the power series method to solve the given Legondre's differential equation.
+-13. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, y(0)=0, y^{\prime}(0)=3$.
+-14. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+6 y=0, \quad y(0)=1, \quad y^{\prime}(0)=1$.
+-15. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0, y(0)=1, y^{\prime}(0)=0$.
+-16. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, y(0)=1, y^{\prime}(0)=0$.
+-17. Find two linearly independent solutions of $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0$ on the interval $-1<x<1$. [Hint: From the power series method, one solution is a first degree polynomial. You may use the reduction of order formula to find a second linearly independent solution.]
+-18. Find two linearly independent solutions of $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+6 y=0$ on the interval $-1<x<1$.
+-
+-In Exercises 19-22, (a) justify the existence of a power scries solution centered at 0, and then find a fifth-degree Taylor polynomial approximation of the solution. (b) With the help of a computer, find higher-degree Taylor polynomials that approximate the solution. Plot them on the interval $[-2,2]$, and then decide the lowest degree needed in order to obtain a good approximation of the solution on the interval $[-1,1]$.
+-19. $y^{\prime \prime}-y^{\prime}+2 y=e^{x}, y(0)=0, \quad y^{\prime}(0)=1$.
+-20. $y^{\prime \prime}+(\sin x) y=x, \quad y(0)=0, y^{\prime}(0)=1$.
+-21. $y^{\prime \prime}+e^{x} y=0, \quad y(0)=1, y^{\prime}(0)=0$.
+-22. $y^{\prime \prime}+x y=\cosh x, y(0)=0, y^{\prime}(0)=1$.
+-23. Show that the solution in Example 3 is
+-
+-$$
+-y=\sum_{k=0}^{\infty} \frac{(-1)^{k} 2^{k} k!}{(2 k+1)!} x^{2 k+1}
+-$$
+-
+-24. Airy's differential equation. In this exercise, we find a series solution of Airy's equation
+-
+-$$
+-y^{\prime \prime}-x y=0
+-$$
+-
+-(a) State why the solutions of the differential equation have power series solutions with infinite radius of convergence.
+-(b) Assume that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. Show that $a_{2}=0$ and derive the three-step recurrence relation
+-
+-$$
+-(m+2)(m+1) a_{m+2}=a_{m-1}, \quad m=1,2,3, \ldots .
+-$$
+-
+-(c) Show that the general solution is
+-
+-$$
+-\begin{aligned}
+-y= & a_{0}\left[1+\sum_{n=1}^{\infty} \frac{x^{3 n}}{(3 n)(3 n-1)(3 n-3) \ldots 3 \cdot 2}\right] \\
+-& +a_{1}\left[x+\sum_{n=1}^{\infty} \frac{x^{3 n+1}}{(3 n+1)(3 n)(3 n-2) \ldots 4 \cdot 3}\right] .
+-\end{aligned}
+-$$
+-
+-(d) Write $y=a_{0} y_{1}+a_{1} y_{2}$ and plot several polynomial approximations of $y_{1}$ and $y_{2}$. Note that for negative values of $x$ the graphs look like those of $\sin x$ and $\cos x$, and for positive values of $x$ the graphs look like those of $e^{x}$. Examine the differential equation and give a reason for these observations.
+-25. Solve the following initial value problem for Airy's equation:
+-
+-$$
+-y^{\prime \prime}-x y=0, \quad y(0)=1, y^{\prime}(0)=0 .
+-$$
+-
+-26. The sine and cosine functions. In this exercise, we show how a differential equation can be used to derive properties of its solutions. We refer to the differential equation of Example 2 with the two linearly independent solutions
+-
+-$$
+-C(x)=\sum_{k=0}^{\infty}(-1)^{k} \frac{1}{(2 k)!} x^{2 k} \quad \text { and } \quad S(x)=\sum_{k=0}^{\infty}(-1)^{k} \frac{1}{(2 k+1)!} x^{2 k+1} .
+-$$
+-
+-We pretend for now that we do not recognize these functions as the sine and cosine functions, and we derive their basic properties from the differential equation.
+-(a) Show that $C^{\prime}(x)=-S(x)$ and $S^{\prime}(x)=C(x)$.
+-(b) Using Abel's form of the Wronskian, show that $C^{2}(x)+S^{2}(x)=1$.
+-(c) Using the fact that any solution of the differential equation $y^{\prime \prime}+y=0$ is a linear combination of $C(x)$ and $S(x)$, show that $S(x+a)=S(x) C(a)+C(x) S(a)$. [Hint: Show that $S(x+a)$ is a solution and conclude that $S(x+a)=c_{1} S(x)+c_{2} C(x)$. Determine the constants by evaluating at $x=0$.]
+-(d) Establish the identity
+-
+-$$
+-C(x+a)=C(x) C(a)-S(x) S(a) .
+-$$
+-
+-(e) Which trigonometric identities are implied by (c) and (d)?
++The fact that Legendre's equation in Example 5 has a polynomial solution and an infinite series solution is not a coincidence. Indeed this will happen every time the equation can be put in the form $\left(1-x^2\right) y^{\prime \prime}-2 x y^{\prime}+n(n+1) y=0$ for some nonnegative integer $n$. (In Example 5, we have $n=3$.) Many interesting facts about Legendre's equation can be found in Sections 13.5 and 13.6.
++
++## Exercises 10.5
++
++
++> [!prompt] Shared exercise instructions
++> In Exercises 1–12, show that 0 is an ordinary point, and then find the power series solutions centered at 0 . In each case, write down the recurrence relation for the coefficients, and compute at least three nonzero terms from each power series solution.
++
++
++
++> [!exercise] Exercise 1
++> $y^{\prime}+2 x y=0$.
++
++
++> [!exercise] Exercise 2
++> $y^{\prime}+y=0$.
++
++
++> [!exercise] Exercise 3
++> $y^{\prime}+y=x$.
++
++
++> [!exercise] Exercise 4
++> $y^{\prime}+(\cos x) y=0$.
++
++
++> [!exercise] Exercise 5
++> $y^{\prime \prime}-y=0$.
++
++
++> [!exercise] Exercise 6
++> $y^{\prime \prime}-y=x$.
++
++
++> [!exercise] Exercise 7
++> $y^{\prime \prime}-x y^{\prime}+y=0$.
++
++
++> [!exercise] Exercise 8
++> $y^{\prime \prime}+2 y^{\prime}+2 y=0$.
++
++
++> [!exercise] Exercise 9
++> $y^{\prime \prime}+2 x y^{\prime}+y=0$.
++
++
++> [!exercise] Exercise 10
++> $y^{\prime \prime}+x y^{\prime}+y=0$.
++
++
++> [!exercise] Exercise 11
++> $y^{\prime \prime}-2 y^{\prime}+y=0, \quad y(0)=0, y^{\prime}(0)=1$.
++
++
++> [!exercise] Exercise 12
++> $y^{\prime \prime}-2 y^{\prime}+y=x, \quad y(0)=2, y^{\prime}(0)=1$.
++
++
++> [!prompt] Shared exercise instructions
++> In Exercises 13-16, use the power series method to solve the given Legendre’s differential equation.
++
++
++
++> [!exercise] Exercise 13
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, y(0)=0, y^{\prime}(0)=3$.
++
++
++> [!exercise] Exercise 14
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+6 y=0, \quad y(0)=1, \quad y^{\prime}(0)=1$.
++
++
++> [!exercise] Exercise 15
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+12 y=0, y(0)=1, y^{\prime}(0)=0$.
++
++
++> [!exercise] Exercise 16
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0, y(0)=1, y^{\prime}(0)=0$.
++
++
++> [!exercise] Exercise 17
++> Find two linearly independent solutions of $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+2 y=0$ on the interval $-1<x<1$. [Hint: From the power series method, one solution is a first degree polynomial. You may use the reduction of order formula to find a second linearly independent solution.]
++
++
++> [!exercise] Exercise 18
++> Find two linearly independent solutions of $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+6 y=0$ on the interval $-1<x<1$.
++
++
++> [!prompt] Shared exercise instructions
++> In Exercises 19-22, (a) justify the existence of a power series solution centered at 0, and then find a fifth-degree Taylor polynomial approximation of the solution. (b) With the help of a computer, find higher-degree Taylor polynomials that approximate the solution. Plot them on the interval $[-2,2]$, and then decide the lowest degree needed in order to obtain a good approximation of the solution on the interval $[-1,1]$.
++
++
++
++> [!exercise] Exercise 19
++> $y^{\prime \prime}-y^{\prime}+2 y=e^{x}, y(0)=0, \quad y^{\prime}(0)=1$.
++
++
++> [!exercise] Exercise 20
++> $y^{\prime \prime}+(\sin x) y=x, \quad y(0)=0, y^{\prime}(0)=1$.
++
++
++> [!exercise] Exercise 21
++> $y^{\prime \prime}+e^{x} y=0, \quad y(0)=1, y^{\prime}(0)=0$.
++
++
++> [!exercise] Exercise 22
++> $y^{\prime \prime}+x y=\cosh x, y(0)=0, y^{\prime}(0)=1$.
++
++
++> [!exercise] Exercise 23
++> Show that the solution in Example 3 is
++>
++> $$
++> y=\sum_{k=0}^{\infty} \frac{(-1)^{k} 2^{k} k!}{(2 k+1)!} x^{2 k+1}
++> $$
++
++
++> [!exercise] Exercise 24
++> Airy's differential equation. In this exercise, we find a series solution of Airy's equation
++>
++> $$
++> y^{\prime \prime}-x y=0
++> $$
++>
++> (a) State why the solutions of the differential equation have power series solutions with infinite radius of convergence.
++> (b) Assume that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$. Show that $a_{2}=0$ and derive the three-step recurrence relation
++>
++> $$
++> (m+2)(m+1) a_{m+2}=a_{m-1}, \quad m=1,2,3, \ldots .
++> $$
++>
++> (c) Show that the general solution is
++>
++> $$
++> \begin{aligned}
++> y= & a_{0}\left[1+\sum_{n=1}^{\infty} \frac{x^{3n}}{\prod_{j=1}^n(3j)(3j-1)}\right] \\
++> & +a_{1}\left[x+\sum_{n=1}^{\infty} \frac{x^{3n+1}}{\prod_{j=1}^n(3j+1)(3j)}\right] .
++> \end{aligned}
++> $$
++>
++> (d) Write $y=a_{0} y_{1}+a_{1} y_{2}$ and plot several polynomial approximations of $y_{1}$ and $y_{2}$. Note that for negative values of $x$ the graphs look like those of $\sin x$ and $\cos x$, and for positive values of $x$ the graphs look like those of $e^{x}$. Examine the differential equation and give a reason for these observations.
++
++
++> [!exercise] Exercise 25
++> Solve the following initial value problem for Airy's equation:
++>
++> $$
++> y^{\prime \prime}-x y=0, \quad y(0)=1, y^{\prime}(0)=0 .
++> $$
++
++
++> [!exercise] Exercise 26
++> The sine and cosine functions. In this exercise, we show how a differential equation can be used to derive properties of its solutions. We refer to the differential equation of Example 2 with the two linearly independent solutions
++>
++> $$
++> C(x)=\sum_{k=0}^{\infty}(-1)^{k} \frac{1}{(2 k)!} x^{2 k} \quad \text { and } \quad S(x)=\sum_{k=0}^{\infty}(-1)^{k} \frac{1}{(2 k+1)!} x^{2 k+1} .
++> $$
++>
++> We pretend for now that we do not recognize these functions as the sine and cosine functions, and we derive their basic properties from the differential equation.
++> (a) Show that $C^{\prime}(x)=-S(x)$ and $S^{\prime}(x)=C(x)$.
++> (b) Using Abel's form of the Wronskian, show that $C^{2}(x)+S^{2}(x)=1$.
++> (c) Using the fact that any solution of the differential equation $y^{\prime \prime}+y=0$ is a linear combination of $C(x)$ and $S(x)$, show that $S(x+a)=S(x) C(a)+C(x) S(a)$. [Hint: Show that $S(x+a)$ is a solution and conclude that $S(x+a)=c_{1} S(x)+c_{2} C(x)$. Determine the constants by evaluating at $x=0$.]
++> (d) Establish the identity
++>
++> $$
++> C(x+a)=C(x) C(a)-S(x) S(a) .
++> $$
++>
++> (e) Which trigonometric identities are implied by (c) and (d)?
+
+`````

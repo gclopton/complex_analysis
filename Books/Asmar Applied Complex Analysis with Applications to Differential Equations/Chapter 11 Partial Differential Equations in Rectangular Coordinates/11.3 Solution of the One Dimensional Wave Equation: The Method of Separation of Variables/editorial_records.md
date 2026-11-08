@@ -28,3 +28,783 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 >
 > When the string vibrates according to one of the $u_{n}$ 's, we say that it is in its $n$th normal mode of vibration. The first normal mode is called the fundamental mode; all other modes are known as overtones.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.3 Solution of the One Dimensional Wave Equation: The Method of Separation of Variables.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.3 Solution of the One Dimensional Wave Equation: The Method of Separation of Variables.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.3 Solution of the One Dimensional Wave Equation: The Method of Separation of Variables.md
+@@ -1,22 +1,39 @@
++
+ ### 11.3 Solution of the One Dimensional Wave Equation: The Method of Separation of Variables
+ 
+-Recall that in Section 1.2 we made a preliminary study of the problem of the vibrating string (with its ends held fixed). In this section we give the full
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-12_348_434_1604_58.jpg)
+-Figure 1 Initial shape of a stretched string, $u(x, 0)$.
++The preceding section derived the wave equation for a vibrating string. In this section we give the full solution of that problem with arbitrary initial position (displacement) and velocity using the method of separation of variables. That is, we solve the boundary value problem for the wave equation that describes the vibrations of a string with fixed ends. The string is assumed to be stretched on the $x$-axis with ends fastened at $x=0$ and $x=L$ (Figure 1). Let $u(x,t)$ denote the transverse position at time $t$ of the point $x$ on the string. We saw in the previous section that $u$ satisfies the one dimensional wave equation
++
++```scientific-figure
++id: a68e4834-db97-4ad3-91bf-b67a3373e1eb
++numbered: false
++title: ""
++caption: Figure 1 Initial shape of a stretched string, $u(x, 0)$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-12_348_434_1604_58.jpg
++    caption: ""
++```
++
+ 
+ $$
+ \frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad 0<x<L, t>0
+-$$
++\tag{1}
++$$
++
++To find $u$, we solve this equation subject to the boundary conditions
+ 
+ $$
+ u(0, t)=0 \quad \text { and } \quad u(L, t)=0 \text { for all } t>0
++\tag{2}
+ $$
+ 
+ and the initial conditions
+ 
+ $$
+ u(x, 0)=f(x) \quad \text { and } \quad \frac{\partial u}{\partial t}(x, 0)=g(x) \text { for } 0<x<L .
++\tag{3}
+ $$
+ 
+ The boundary conditions state that the ends of the string are held fixed for all time, while the initial conditions give the initial shape of the string $f(x)$ and its initial velocity $g(x)$.
+@@ -31,6 +48,7 @@
+ 
+ $$
+ u(x, t)=X(x) T(t)
++\tag{4}
+ $$
+ 
+ where $X(x)$ is a function of $x$ alone and $T(t)$ is a function of $t$ alone. The problem is now reduced to finding $X$ and $T$. Differentiating (4) with respect to $t$ and $x$, we get
+@@ -49,30 +67,32 @@
+ 
+ $$
+ \frac{T^{\prime \prime}}{c^{2} T}=\frac{X^{\prime \prime}}{X}
+-$$
+-
+-(We will not worry about $X T$ being 0 , and we continue formally with the solution.) In equation (5) the variables are separated in the sense that the left side of the equation is a function of $t$ alone, and the right side is a
++\tag{5}
++$$
++
++(We will not worry about $X T$ being 0 , and we continue formally with the solution.) In equation (5) the variables are separated in the sense that the left side of the equation is a function of $t$ alone, and the right side is a function of $x$ alone. Since the variables $t$ and $x$ are independent of each other, the only way to get equality is to have the functions on both sides of (5) constant and equal. Thus
++
++$$
++\frac{T^{\prime \prime}}{c^{2} T}=k \quad \text { and } \quad \frac{X^{\prime \prime}}{X}=k
++$$
++
++where $k$ is an arbitrary constant called the separation constant. We rewrite the separated equations as two ordinary differential equations
++
++$$
++X^{\prime \prime}-k X=0
++\tag{6}
++$$
++
++and
++
++$$
++T^{\prime \prime}-k c^{2} T=0
++\tag{7}
++$$
+ 
+ At this point we have arrived at two ordinary differential equations in place of our original partial differential equation. This is the gist of the method of separation of variables. Notice, however, that the two equations are coupled by the constant $k$, and so they are not independent of each other, as you might think.
+ 
+ We start by solving the equation for $X$ because this equation comes with boundary conditions, whereas the equation for $T$ does not. The boundary conditions allow us to narrow down the possible solutions.
+-function of $x$ alone. Since the variables $t$ and $x$ are independent of each other, the only way to get equality is to have the functions on both sides of (5) constant and equal. Thus
+-
+-$$
+-\frac{T^{\prime \prime}}{c^{2} T}=k \quad \text { and } \quad \frac{X^{\prime \prime}}{X}=k
+-$$
+-
+-where $k$ is an arbitrary constant called the separation constant. We rewrite the separated equations as two ordinary differential equations
+-
+-$$
+-X^{\prime \prime}-k X=0
+-$$
+-
+-and
+-
+-$$
+-T^{\prime \prime}-k c^{2} T=0
+-$$
+ 
+ Our next move is to separate the variables in the boundary conditions (2). Using (4) and the boundary conditions, we get
+ 
+@@ -92,7 +112,7 @@
+ X^{\prime \prime}-k X=0, \quad X(0)=0 \text { and } X(L)=0 .
+ $$
+ 
+-As we will see in the next step, not all values of the separation constant $k$ yield a nontrivial solution $X$. Our discussion will revolve around the solutions of simple second order linear ordinary differential equations with constant coefficients. You should refer to Appendix A. 2 for a thorough review of these topics.
++As we will see in the next step, not all values of the separation constant $k$ yield a nontrivial solution $X$. Our discussion will revolve around the solutions of simple second order linear ordinary differential equations with constant coefficients. You should refer to Section 10.2 for a thorough review of these topics.
+ 
+ ## Step 2: Solving the Separated Equations
+ 
+@@ -108,7 +128,7 @@
+ X(x)=c_{1} \cosh \mu x+c_{2} \sinh \mu x
+ $$
+ 
+-(see Appendix A.2, Example 1). We now show that the only way to satisfy the conditions on $X$ is to take $c_{1}=c_{2}=0$. Indeed, $X(0)=0$ implies that
++(see Section 10.2, Example 1). We now show that the only way to satisfy the conditions on $X$ is to take $c_{1}=c_{2}=0$. Indeed, $X(0)=0$ implies that
+ $0=c_{1} \cosh (0)+c_{2} \sinh (0)=c_{1}$, so that $X(x)=c_{2} \sinh \mu x$. The condition $X(L)=0$ implies that $c_{2} \sinh (\mu L)=0$. But $\mu L \neq 0$, so $\sinh \mu L \neq 0$, and hence $c_{2}=0$, implying that $X=0$. Thus, the case $k>0$ yields trivial solutions.
+ 
+ Similarly for $k=0$, the differential equation reduces to $X^{\prime \prime}=0$ with general solution $X(x)=c_{1} x+c_{2}$. The only way to satisfy the boundary conditions on $X$ is to take $c_{1}=c_{2}=0$, which again leads to the trivial solution $u=0$. The only choice left to check is
+@@ -129,7 +149,7 @@
+ X=c_{1} \cos \mu x+c_{2} \sin \mu x
+ $$
+ 
+-The condition $X(0)=0$ implies that $c_{1}=0$, and hence $X=\sin \mu x$. The condition $X(L)=0$ implies that
++The condition $X(0)=0$ implies that $c_{1}=0$, and hence $X=c_2\sin \mu x$. The condition $X(L)=0$ implies that
+ 
+ $$
+ c_{2} \sin \mu L=0
+@@ -181,7 +201,7 @@
+ u_{n}(x, t)=\sin \frac{n \pi}{L} x\left(b_{n} \cos \lambda_{n} t+b_{n}^{*} \sin \lambda_{n} t\right), \quad n=1,2, \ldots
+ $$
+ 
+-These are the normal modes of the wave equation (see Section 1.2). Their physical significance will be discussed at the end of the section.
++These are the normal modes of the wave equation . Their physical significance will be discussed at the end of the section.
+ 
+ Since all the normal modes satisfy the linear and homogeneous equation (1) and boundary conditions (2), by the superposition principle (Theorem 1, Section 11.1), any linear combination will also solve (1) and (2). However, it is not hard to see that in general, such a linear combination may not satisfy the initial conditions (3). So, motivated by the superposition principle, it is natural to try an "infinite" linear combination
+ 
+@@ -199,7 +219,7 @@
+ u(x, 0)=f(x)=\sum_{n=1}^{\infty} b_{n} \sin \frac{n \pi}{L} x, \quad 0<x<L
+ $$
+ 
+-The series on the right is the half-range sine series expansion of $f$. We thus conclude that the coefficients $b_{n}$ are the sine coefficients given by (4), Section 2.4:
++The series on the right is the half-range sine series expansion of $f$. We thus conclude that the coefficients $b_{n}$ are the sine coefficients given by (4), Section 7.4:
+ 
+ $$
+ b_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x, \quad n=1,2, \ldots
+@@ -225,56 +245,70 @@
+ 
+ We have thus determined all the unknown coefficients in the series representation of the solution $u$. We summarize our findings in the following box.
+ 
+-SOLUTION OF THE ONE DIMENSIONAL WAVE EQUATION
+-
+-The solution of the one dimensional wave equation
+-
+-$$
+-\frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad 0<x<L, t>0
+-$$
+-
+-with boundary conditions
+-
+-$$
+-u(0, t)=0 \quad \text { and } \quad u(L, t)=0 \text { for all } t>0
+-$$
+-
+-and initial conditions
+-
+-$$
+-u(x, 0)=f(x) \text { and } \frac{\partial u}{\partial t}(x, 0)=g(x) \text { for } 0<x<L
+-$$
+-
+-is
+-
+-$$
+-u(x, t)=\sum_{n=1}^{\infty} \sin \frac{n \pi}{L} x\left(b_{n} \cos \lambda_{n} t+b_{n}^{*} \sin \lambda_{n} t\right)
+-$$
+-
+-where
+-(9) $\quad b_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x, \quad b_{n}^{*}=\frac{2}{c n \pi} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x$, and
+-
+-$$
+-\lambda_{n}=c \frac{n \pi}{L}, \quad n=1,2, \ldots
+-$$
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_331_424_169_51.jpg)
+-Figure 2 Initial shape of the string in Example 1.
+-
+-## EXAMPLE 1 Vibration of a stretched string with fixed ends
+-
+-The ends of a stretched string of length $L=1$ are fixed at $x=0$ and $x=1$. The string is set to vibrate from rest by releasing it from an initial triangular shape modeled by the function
+-
+-$$
+-f(x)= \begin{cases}\frac{3}{10} x & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{3(1-x)}{20} & \text { if } \frac{1}{3} \leq x \leq 1 .\end{cases}
+-$$
+-
+-Determine the subsequent motion of the string, given that $c=1 / \pi$.
+-Solution Since $g(x)=0$, we have $b_{n}^{*}=0$. Using (9) and integrating by parts, we
++> [!equation|42a9293d-9ab5-5a0a-9e9d-58f153c669c5.local at=bf1ea29d-8e6a-5e79-800a-03c4a311111e] Fourier sine series solution of the fixed-end wave equation
++> Let $L,c>0$. With initial data whose odd $2L$-periodic extensions satisfy $f^*\in C^2$ and $g^*\in C^1$, the solution of the one dimensional wave equation
++>
++> $$
++> \frac{\partial^{2} u}{\partial t^{2}}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}, \quad 0<x<L, t>0
++> $$
++>
++> with boundary conditions
++>
++> $$
++> u(0, t)=0 \quad \text { and } \quad u(L, t)=0 \text { for all } t>0
++> $$
++>
++> and initial conditions
++>
++> $$
++> u(x, 0)=f(x) \text { and } \frac{\partial u}{\partial t}(x, 0)=g(x) \text { for } 0<x<L
++> $$
++>
++> is
++>
++> $$
++> u(x, t)=\sum_{n=1}^{\infty} \sin \frac{n \pi}{L} x\left(b_{n} \cos \lambda_{n} t+b_{n}^{*} \sin \lambda_{n} t\right)
++> $$
++>
++> where
++> $\quad b_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x, \quad b_{n}^{*}=\frac{2}{c n \pi} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x$, and
++>
++> $$
++> \lambda_{n}=c \frac{n \pi}{L}, \quad n=1,2, \ldots
++> $$
++
++*Printed equation labels: (8) sine-series solution; (9) initial-data coefficients; (10) modal frequencies.*
++
++For less regular piecewise smooth initial data, the same expansion is interpreted piecewise or as a generalized solution; termwise differentiation at corners is not automatic.
++
++```scientific-figure
++id: 29821083-761f-4f69-9fd7-f36c5c2d5acd
++numbered: false
++title: ""
++caption: Figure 2 Initial shape of the string in Example 1.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_331_424_169_51.jpg
++    caption: ""
++```
++
+ 
+ In some of our examples we may see unrealistically large displacements. This is only a matter of convenience. Since our equations are linear, to obtain realistic displacements, we need only multiply our solution by a scaling factor.
+ 
+-Figure 3 The instantaneous shape of the string at various times, plotted using the 10th partial sum of the series solution. get
++> [!exercise|3f996755-1075-51f2-aaf2-cb5ba0f775ac.local at=a79245e7-8114-56da-8000-feeb771e08fd] EXAMPLE 1 Vibration of a stretched string with fixed ends
++> The ends of a stretched string of length $L=1$ are fixed at $x=0$ and $x=1$. The string is set to vibrate from rest by releasing it from an initial triangular shape modeled by the function
++>
++> $$
++> f(x)= \begin{cases}\frac{3}{10} x & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{3(1-x)}{20} & \text { if } \frac{1}{3} \leq x \leq 1 .\end{cases}
++> $$
++>
++> Determine the subsequent motion of the string, given that $c=1 / \pi$.
++
++##### solution
++
++Since $g(x)=0$, we have $b_{n}^{*}=0$. Using the Fourier coefficients above and integrating by parts, we get
+ 
+ $$
+ \begin{aligned}
+@@ -291,44 +325,100 @@
+ u(x, t)=\frac{9}{10 \pi^{2}} \sum_{n=1}^{\infty} \frac{\sin \frac{n \pi}{3}}{n^{2}} \sin n \pi x \cos n t
+ $$
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_211_345_1343_592.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_213_355_1553_587.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_207_359_1756_585.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_207_345_1347_1003.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_205_336_1556_1004.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-18_207_346_1756_1005.jpg)
++```scientific-figure
++id: beae595b-e1d7-406c-aa9c-a7996f356de6
++numbered: false
++title: ""
++caption: Figure 3 The instantaneous shape of the string at various times, plotted using the 10th partial sum of the series solution.
++captionVisible: true
++captionPosition: below
++columns: 3
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel1.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel2.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel3.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel4.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel5.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel6.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel7.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel8.png
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel9.png
++    caption: ""
++```
++
+ 
+ By plotting $u(x, t)$ for a fixed value of $t$, we get the shape of the string at that time. An approximation of the graphs is obtained by plotting partial sums of the series. As expected, when $t=0$ we have the initial shape of the string given by the function $f(x)$ (see Figure 3).
+ 
+-Figure 4 Normal modes Not counting the ends of the string, there are ( $n-$ 1) equidistant points on the string that do not vibrate in the $n$th normal mode.
+-
+ As given by (8), the solution of the vibrating string problem is an infinite sum of the normal modes
+ 
+ $$
+ u_{n}(x, t)=\sin \frac{n \pi}{L} x\left(b_{n} \cos \lambda_{n} t+b_{n}^{*} \sin \lambda_{n} t\right) \quad n=1,2, \ldots
+-$$
+-
+-When the string vibrates according to one of the $u_{n}$ 's, we say that it is in its $n$th normal mode of vibration. The first normal mode is called the fundamental mode; all other modes are known as overtones. In music, the intensity of the sound produced by a given normal mode depends on $\sqrt{b_{n}^{2}+\left(b_{n}^{*}\right)^{2}}$, the amplitude of the $n$th normal mode. The circular or natural frequency of the normal mode, which gives the number of oscillation in $2 \pi$ units of time, is $\lambda_{n}=n \pi c / L$. The larger the natural frequency, the higher the pitch of the sound produced. Recall from (4), Section 11.2, that $c=\sqrt{\tau / \rho}$, where $\tau$ is the tension of the string and $\rho$ is the mass density. Thus the pitch of the sound can be changed by varying the tension or the length of the string. For example, by clamping down the string, the length is shortened and the pitch is increased.
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_284_436_1072_513.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_281_433_1075_945.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_278_442_1075_1354.jpg)
++\tag{11}
++$$
++
++> [!definition|18460707-322c-5ff2-851e-d581c88c0460.local at=65199ab8-13a2-5639-949a-fb7e406644f2] Normal modes and fundamental frequency of a fixed-end string
++> For $u_{tt}=c^2u_{xx}$ on $0<x<L$ with $u(0,t)=u(L,t)=0$ and $L,c>0$, the $n$th normal mode is a motion of the form
++> $$
++> u_n(x,t)=\sin\frac{n\pi x}{L}\left(b_n\cos\omega_nt+b_n^*\sin\omega_nt\right),\qquad\omega_n=\frac{n\pi c}{L},\quad n=1,2,\ldots.
++> $$
++>
++> When the string vibrates according to one of the $u_{n}$ 's, we say that it is in its $n$th normal mode of vibration. The first normal mode is called the fundamental mode; all other modes are known as overtones.
++
++In music, the intensity of the sound produced by a given normal mode depends on $\sqrt{b_{n}^{2}+\left(b_{n}^{*}\right)^{2}}$, the amplitude of the $n$th normal mode. The circular or natural frequency of the normal mode, which gives the number of oscillation in $2 \pi$ units of time, is $\lambda_{n}=n \pi c / L$. The larger the natural frequency, the higher the pitch of the sound produced. Recall from (4), Section 11.2, that $c=\sqrt{\tau / \rho}$, where $\tau$ is the tension of the string and $\rho$ is the mass density. Thus the pitch of the sound can be changed by varying the tension or the length of the string. For example, by clamping down the string, the length is shortened and the pitch is increased.
++```scientific-figure
++id: e9dcf018-61ad-42cc-a2a8-976e28658b8d
++numbered: false
++title: ""
++caption: Figure 4 Normal modes. Excluding the endpoints, the $n$th mode has $n-1$ equally spaced nodes.
++captionVisible: true
++captionPosition: below
++columns: 3
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_284_436_1072_513.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_281_433_1075_945.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-19_278_442_1075_1354.jpg
++    caption: ""
++```
++
+ 
+ When the string vibrates in a normal mode, some points on the string are fixed at all times (Figure 4). These are the solutions of the equation $\sin \frac{n \pi}{L} x=0$. Not counting the ends of the string among these points, there are $n-1$ equidistant points that do not vibrate in the $n$th normal mode.
+ 
+ We talked about a string vibrating in a normal mode. Which initial conditions cause the string to vibrate this way? We illustrate the answer with the following example.
+ 
+-## EXAMPLE 2 Normal modes of vibration
+-
+-Show that if a string with initial shape $f(x)=\sin \frac{m \pi}{L} x$ for $0<x<L$ is set to vibrate from rest, then its vibrations are given by the $m$ th mode. (Note that the initial shape of the string is obtained from the $m$ th normal mode (11) by setting $t=0$.)
+-
+-Solution We use (8) to find the function $u(x, t)$. Since $g(x)=0$, we get $b_{n}^{*}=0$. To find $b_{n}$, we compute the integral
++> [!exercise|a007b943-d598-5ff9-bf61-45a694f3bd69.local at=40359339-739f-5abc-b186-119e14620362] EXAMPLE 2 Normal modes of vibration
++> Show that if a string with initial shape $f(x)=\sin \frac{m \pi}{L} x$ for $0<x<L$ is set to vibrate from rest, then its vibrations are given by the $m$ th mode. (Note that the initial shape of the string is obtained from the $m$ th normal mode (11) by setting $t=0$.)
++
++##### solution
++
++We use (8) to find the function $u(x, t)$. Since $g(x)=0$, we get $b_{n}^{*}=0$. To find $b_{n}$, we compute the integral
+ 
+ $$
+ b_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x=\frac{2}{L} \int_{0}^{L} \sin \frac{m \pi}{L} x \sin \frac{n \pi}{L} x d x
+ $$
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-20_276_456_268_63.jpg)
+-Figure 5 The 5th normal modes $u_{5}(x, t)$, shown for various values of $t$.
++```scientific-figure
++id: 21ff1261-3121-42f1-b665-f633a939f14d
++numbered: false
++title: ""
++caption: Figure 5 The 5th normal mode $u_{5}(x, t)$, shown for various values of $t$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-20_276_456_268_63.jpg
++    caption: ""
++```
++
+ 
+ By the orthogonality of the trigonometric system, the last expression is zero unless $m=n$, in which case its value is 1 . Thus $b_{n}=0$ if $n \neq m$ and $b_{m}=1$. Putting these values in (8), we find the solution
+ 
+@@ -340,11 +430,12 @@
+ 
+ We close with another example illustrating how we can use normal modes to understand more complicated motions.
+ 
+-## EXAMPLE 3 A nonzero initial velocity
+-
+-Solve for the motion of a string of length $L=\frac{\pi}{2}$ if $c=1$ and the initial displacement and velocity are given by $f(x)=0$ and $g(x)=x \cos x$.
+-
+-Solution Since $f(x)=0$, all the $b_{n}$ 's in (8) are 0 . In computing $b_{n}^{*}$ we first note from (9) that $b_{n}^{*}$ is equal to $\frac{1}{\lambda_{n}}$ times the sine Fourier coefficient of the function $g(x)=x \cos x, 0<x<\frac{\pi}{2}$, where $\lambda_{n}=2 n$. Since $x \cos x$ is odd, its Fourier sine series on $0<x<\frac{\pi}{2}$ is identical to its Fourier series on $-\frac{\pi}{2}<x<\frac{\pi}{2}$. Appealing to the result of Example 5, Section 2.3, we obtain
++> [!exercise|523dfae2-e93c-5eb8-90bb-c677a3ace902.local at=8db65474-d2e7-5e1e-bba6-270511610951] EXAMPLE 3 A nonzero initial velocity
++> Solve for the motion of a string of length $L=\frac{\pi}{2}$ if $c=1$ and the initial displacement and velocity are given by $f(x)=0$ and $g(x)=x \cos x$.
++
++##### solution
++
++Since $f(x)=0$, all the $b_{n}$ 's in (8) are 0 . In computing $b_{n}^{*}$ we first note from (9) that $b_{n}^{*}$ is equal to $\frac{1}{\lambda_{n}}$ times the sine Fourier coefficient of the function $g(x)=x \cos x, 0<x<\frac{\pi}{2}$, where $\lambda_{n}=2 n$. Since $x \cos x$ is odd, its Fourier sine series on $0<x<\frac{\pi}{2}$ is identical to its Fourier series on $-\frac{\pi}{2}<x<\frac{\pi}{2}$. Appealing to the result of Example 5, Section 7.3, we obtain
+ 
+ $$
+ b_{n}^{*}=\frac{1}{\lambda_{n}} \frac{16(-1)^{n+1} n}{\pi\left(4 n^{2}-1\right)^{2}}=\frac{8(-1)^{n+1}}{\pi\left(4 n^{2}-1\right)^{2}}, \quad n=1,2, \ldots .
+@@ -354,9 +445,22 @@
+ 
+ $$
+ u(x, t)=\frac{8}{\pi} \sum_{n=1}^{\infty} \frac{(-1)^{n+1}}{\left(4 n^{2}-1\right)^{2}} \sin 2 n x \sin 2 n t .
+-$$
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-20_407_1257_1558_544.jpg)
++\tag{12}
++$$
++
++```scientific-figure
++id: b3844471-0258-4a29-98a7-29bb315314f8
++numbered: false
++title: ""
++caption: Figure 6 Snapshots of the string with zero displacement and initial velocity $x\cos x$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-20_407_1257_1558_544.jpg
++    caption: ""
++```
++
+ 
+ In Figure 6, we show several snapshots of the string as it begins to move under the influence of the initial velocity. Note that the first partial sum
+ 
+@@ -368,146 +472,189 @@
+ 
+ For problems with nonzero initial displacement and velocity, we have only to work them as in Examples 1 and 3 and put the results together, as specified by equations (8) and (9). That is, from the initial displacement $f(x)$ we find the $b_{n}$ 's as in Example 1, from the initial velocity $g(x)$ we find the $b_{n}^{*}$ 's as in Example 3, and then we put these results into (8). We note too that if we have the Fourier sine series of $f(x)$ and/or $g(x)$ at hand, our task is considerably reduced, as illustrated by Example 3.
+ 
+-## Exercises 3.3
+-
+-In Exercises 1-10, (a) solve the boundary value problem (1)-(3) for a string of unit length, subject to the given, conditions.
+-(b) Illustrate the motion of the string by plotting a partial sum of your series solution at various values of $t$. To decide how many terms to include in your partial sum, compare the graph at $t=0$ and the graph of $f(x)$. The graphs should match when you have enough terms in your partial sum.
+-
+-1. $f(x)=.05 \sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
+-2. $f(x)=\sin \pi x \cos \pi x, g(x)=0, \quad c=\frac{1}{\pi}$.
+-3. $f(x)=\sin \pi x+3 \sin 2 \pi x-\sin 5 \pi x, g(x)=0, c=1$.
+-4. $f(x)=\sin \pi x+\frac{1}{2} \sin 3 \pi x+3 \sin 7 \pi x, g(x)=\sin 2 \pi x, c=1$.
+-5. $g(x)=0, c=4$,
+-
+-$$
+-f(x)= \begin{cases}2 x & \text { if } 0 \leq x \leq \frac{1}{2}, \\ 2(1-x) & \text { if } \frac{1}{2}<x \leq 1 .\end{cases}
+-$$
+-
+-6. $g(x)=2, \quad c=\frac{1}{\pi}$,
+-
+-$$
+-f(x)= \begin{cases}0 & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{1}{30}(x-1 / 3) & \text { if } \frac{1}{3} \leq x \leq \frac{2}{3}, \\ \frac{1}{30}(1-x) & \text { if } \frac{2}{3}<x \leq 1 .\end{cases}
+-$$
+-
+-7. $g(x)=1, c=4$,
+-
+-$$
+-f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4}, \\ 1 & \text { if } \frac{1}{4}<x \leq \frac{3}{4}, \\ 4(1-x) & \text { if } \frac{3}{4}<x \leq 1 .\end{cases}
+-$$
+-
+-8. $f(x)=x \sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
+-9. $f(x)=x(1-x), g(x)=\sin \pi x, c=1$.
+-10. $g(x)=0, c=1$,
+-
+-$$
+-f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4}, \\ -4(x-1 / 2) & \text { if } \frac{1}{4}<x \leq \frac{3}{4}, \\ 4(x-1) & \text { if } \frac{3}{4}<x \leq 1 .\end{cases}
+-$$
+-
+-11. Time period of motion. (a) Show that the $n$th normal mode (11) is periodic in time with period $2 L / n c$. Conclude that for any $n$, a period of $u_{n}$ is $2 L / c$.
+-(b) Show that any superposition of normal modes is periodic in time with period $2 L / c$. Conclude that the string vibrates with a time period $2 L / c$.
+-(c) Shape of the string at half a time period. Using (8), show that for all $x$ and $t, u(x, t+L / c)=-u(L-x, t)$. What does this imply about the shape of the string at half a time period?
+-Project Problem: Solve a case of the wave equation with damping in Exercise 12 and then apply your solution to a specific problem by doing any one of Exercises 1315.
+-12. Damped vibrations of a string. In the presence of resistance proportional to velocity, the one dimensional wave equation becomes
+-
+-$$
+-\frac{\partial^{2} u}{\partial t^{2}}+2 k \frac{\partial u}{\partial t}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}
+-$$
+-
+-(see (7), Section 11.2). We will solve this equation subject to conditions (2) and (3) by following the method of this section.
+-(a) Assume a product solution of the form $u(x, t)=X(x) T(t)$, and derive the following equations for $X$ and $T$ :
+-
+-$$
+-\begin{gathered}
+-X^{\prime \prime}+\mu^{2} X=0, \quad X(0)=0, X(L)=0 \\
+-T^{\prime \prime}+2 k T^{\prime}+(\mu c)^{2} T=0
+-\end{gathered}
+-$$
+-
+-where $\mu$ is the separation constant.
+-(b) Show that
+-
+-$$
+-\mu=\mu_{n}=\frac{n \pi}{L} \quad \text { and } \quad X=X_{n}=\sin \frac{n \pi}{L} x, n=1,2, \ldots
+-$$
+-
+-(c) To determine the solutions in $T$ we have to solve $T^{\prime \prime}+2 k T^{\prime}+\left(\frac{n \pi}{L} c\right)^{2} T=0$. Review the general solution of the second order linear differential equation with constant coefficients (Appendix A.2), and explain why three possible cases are to be treated separately: $n<\frac{k L}{\pi c}, n=\frac{k L}{\pi c}$, and $n>\frac{k L}{\pi c}$. The respective solutions for $T$ are
+-
+-$$
+-\begin{gathered}
+-T_{n}=e^{-k t}\left(a_{n} \cosh \lambda_{n} t+b_{n} \sinh \lambda_{n} t\right), \\
+-T_{\frac{k L}{\pi c}}=a_{\frac{k L}{\pi c}} e^{-k t}+b_{\frac{k L}{\pi c}} t e^{-k t} \\
+-T_{n}=e^{-k t}\left(a_{n} \cos \lambda_{n} t+b_{n} \sin \lambda_{n} t\right),
+-\end{gathered}
+-$$
+-
+-where
+-
+-$$
+-\lambda_{n}=\sqrt{\left|k^{2}-\left(\frac{n \pi}{L} c\right)^{2}\right|} .
+-$$
+-
+-(d) Conclude that when $\frac{k L}{\pi c}$ is not a positive integer, the solution is
+-
+-$$
+-\begin{aligned}
+-u(x, t)= & e^{-k t} \sum_{1 \leq n<\frac{k L}{\pi c}} \sin \frac{n \pi}{L} x\left(a_{n} \cosh \lambda_{n} t+b_{n} \sinh \lambda_{n} t\right) \\
+-& +e^{-k t} \sum_{\frac{k L}{\pi c}<n<\infty} \sin \frac{n \pi}{L} x\left(a_{n} \cos \lambda_{n} t+b_{n} \sin \lambda_{n} t\right)
+-\end{aligned}
+-$$
+-
+-where these sums run over integers only, and where
+-
+-$$
+-a_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x, \quad n=1,2, \ldots,
+-$$
+-
+-and the $b_{n}$ are determined from the equation
+-
+-$$
+--k a_{n}+\lambda_{n} b_{n}=\frac{2}{L} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x, \quad n=1,2, \ldots
+-$$
+-
+-(e) Conclude that when $\frac{k L}{\pi c}$ is a positive integer, the solution is as in (d) with the one additional term
+-
+-$$
+-\sin \left(\frac{k}{c} x\right)\left(a_{\frac{k L}{\pi c}} e^{-k t}+b_{\frac{k L}{\pi c}} t e^{-k t}\right)
+-$$
+-
+-with $a_{n}$ and $b_{n}$ as in (d), except that $b_{\frac{k L}{\pi c}}$ is determined from the equation
+-
+-$$
+--k a_{\frac{k L}{\pi c}}+b_{\frac{k L}{\pi c}}=\frac{2}{L} \int_{0}^{L} g(x) \sin \frac{k}{c} x d x
+-$$
+-
+-13. Solve
+-
+-$$
+-\begin{gathered}
+-\frac{\partial^{2} u}{\partial t^{2}}+\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-u(0, t)=u(\pi, t)=0 \\
+-u(x, 0)=\sin x, \quad \frac{\partial u}{\partial t}(x, 0)=0 .
+-\end{gathered}
+-$$
+-
+-[Hint: Since $k=.5$ and $L=\pi$, we have $n>\frac{k L}{\pi}$ for all $n$. So only one case from the solution of Exercise 12 needs to be considered.]
+-14. Solve
+-
+-$$
+-\begin{gathered}
+-\frac{\partial^{2} u}{\partial t^{2}}+\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-u(0, t)=u(\pi, t)=0 \\
+-u(x, 0)=x \sin x, \quad \frac{\partial u}{\partial t}(x, 0)=0
+-\end{gathered}
+-$$
+-
+-15. (a) Solve
+-
+-$$
+-\begin{gathered}
+-\frac{\partial^{2} u}{\partial t^{2}}+3 \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
+-u(0, t)=u(\pi, t)=0 \\
+-u(x, 0)=0, \quad \frac{\partial u}{\partial t}(x, 0)=10
+-\end{gathered}
+-$$
+-
+-(b) Illustrate graphically the fact that the solution tends to zero as $t$ tends to infinity.
++## Exercises 11.3
++
++
++> [!prompt|e266ef77-a850-5a1e-8243-804f1c64ce03.local at=88c03175-978b-5c64-b3dd-dd475b7ca540] Shared exercise instructions
++> In Exercises 1-10, (a) solve the boundary value problem (1)-(3) for a string of unit length, subject to the given conditions.
++> (b) Illustrate the motion of the string by plotting a partial sum of your series solution at various values of $t$. To decide how many terms to include in your partial sum, compare the graph at $t=0$ and the graph of $f(x)$. The graphs should match when you have enough terms in your partial sum.
++
++
++> [!exercise|eb845db9-071d-5ab0-a35a-a6b4d55cbc1a.local at=67197177-79c7-5c82-ad04-595b7fdaa868] Exercise 1
++> $f(x)=.05 \sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
++
++
++> [!exercise|bdaa27d2-a029-5c12-b521-7b66fd44f851.local at=ebe1769a-13d2-541c-b42c-808d675bafa7] Exercise 2
++> $f(x)=\sin \pi x \cos \pi x, g(x)=0, \quad c=\frac{1}{\pi}$.
++
++
++> [!exercise|a648d7a2-ba07-527b-8755-053a382c84cd.local at=18239a3e-25a4-5aca-accb-4fb28b775636] Exercise 3
++> $f(x)=\sin \pi x+3 \sin 2 \pi x-\sin 5 \pi x, g(x)=0, c=1$.
++
++
++> [!exercise|9d5ab752-317a-50f7-9e18-29ed6b44364c.local at=00d01dce-22aa-5f1a-b3bd-17ad84154422] Exercise 4
++> $f(x)=\sin \pi x+\frac{1}{2} \sin 3 \pi x+3 \sin 7 \pi x, g(x)=\sin 2 \pi x, c=1$.
++
++
++> [!exercise|0a4d0157-4faf-5e29-b20e-805b48f42219.local at=0c142360-536f-5dea-b8d7-bf01f9b7c1f7] Exercise 5
++> $g(x)=0, c=4$,
++>
++> $$
++> f(x)= \begin{cases}2 x & \text { if } 0 \leq x \leq \frac{1}{2}, \\ 2(1-x) & \text { if } \frac{1}{2}<x \leq 1 .\end{cases}
++> $$
++
++
++> [!exercise|5f75fccc-fc50-58a6-af05-321ad982406a.local at=8118e76d-0487-52d3-9540-6cd5f8c5d1d0] Exercise 6
++> $g(x)=2, \quad c=\frac{1}{\pi}$,
++>
++> $$
++> f(x)= \begin{cases}0 & \text { if } 0 \leq x \leq \frac{1}{3}, \\ \frac{1}{30}(x-1 / 3) & \text { if } \frac{1}{3} \leq x \leq \frac{2}{3}, \\ \frac{1}{30}(1-x) & \text { if } \frac{2}{3}<x \leq 1 .\end{cases}
++> $$
++
++
++> [!exercise|1f3c5561-a4e0-5545-8c55-b69ad9da3840.local at=30ead4d2-2ec5-5c3d-97e5-564d79dcdda3] Exercise 7
++> $g(x)=1, c=4$,
++>
++> $$
++> f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4}, \\ 1 & \text { if } \frac{1}{4}<x \leq \frac{3}{4}, \\ 4(1-x) & \text { if } \frac{3}{4}<x \leq 1 .\end{cases}
++> $$
++
++
++> [!exercise|344c4602-06d2-5589-baf3-652ab48753b4.local at=876ded5a-8526-5e75-9e7f-6aa1b9778310] Exercise 8
++> $f(x)=x \sin \pi x, g(x)=0, c=\frac{1}{\pi}$.
++
++
++> [!exercise|7d4eeced-2aef-54ea-9a79-ca84a131198e.local at=70db9abf-a99a-5e04-97b9-79bb5f93d2ba] Exercise 9
++> $f(x)=x(1-x), g(x)=\sin \pi x, c=1$.
++
++
++> [!exercise|aa592f1e-8750-5286-bd88-ffee7a99b372.local at=6974ca63-f312-5a3a-af4a-b8ebb209d02a] Exercise 10
++> $g(x)=0, c=1$,
++>
++> $$
++> f(x)= \begin{cases}4 x & \text { if } 0 \leq x \leq \frac{1}{4}, \\ -4(x-1 / 2) & \text { if } \frac{1}{4}<x \leq \frac{3}{4}, \\ 4(x-1) & \text { if } \frac{3}{4}<x \leq 1 .\end{cases}
++> $$
++
++
++> [!exercise|8c9ab7a2-8655-553b-9e72-71bfff21ef41.local at=0e69faf1-62b1-5f0d-8267-1d63700c9f04] Exercise 11
++> Time period of motion. (a) Show that the $n$th normal mode (11) is periodic in time with period $2 L / n c$. Conclude that for any $n$, a period of $u_{n}$ is $2 L / c$.
++> (b) Show that any superposition of normal modes is periodic in time with period $2 L / c$. Conclude that the string vibrates with a time period $2 L / c$.
++> (c) Shape of the string at half a time period. Using (8), show that for all $x$ and $t, u(x, t+L / c)=-u(L-x, t)$. What does this imply about the shape of the string at half a time period?
++
++
++> [!prompt|ebd6afa6-b4a9-5722-bb53-6193958545f1.local at=a5f6238b-f684-58e0-98e0-ce71133c78aa] Shared exercise instructions
++> Project Problem: Solve a case of the wave equation with damping in Exercise 12 and then apply your solution to a specific problem by doing any one of Exercises 13–15.
++
++
++> [!exercise|83bc9d55-b62e-5af9-aa7b-1dbb5625476a.local at=81426a16-a351-5ce9-8166-74edaa23ebff] Exercise 12
++> Damped vibrations of a string. In the presence of resistance proportional to velocity, the one dimensional wave equation becomes
++>
++> $$
++> \frac{\partial^{2} u}{\partial t^{2}}+2 k \frac{\partial u}{\partial t}=c^{2} \frac{\partial^{2} u}{\partial x^{2}}
++> $$
++>
++> (see (7), Section 11.2). We will solve this equation subject to conditions (2) and (3) by following the method of this section.
++> (a) Assume a product solution of the form $u(x, t)=X(x) T(t)$, and derive the following equations for $X$ and $T$ :
++>
++> $$
++> \begin{gathered}
++> X^{\prime \prime}+\mu^{2} X=0, \quad X(0)=0, X(L)=0 \\
++> T^{\prime \prime}+2 k T^{\prime}+(\mu c)^{2} T=0
++> \end{gathered}
++> $$
++>
++> where $\mu$ is the separation constant.
++> (b) Show that
++>
++> $$
++> \mu=\mu_{n}=\frac{n \pi}{L} \quad \text { and } \quad X=X_{n}=\sin \frac{n \pi}{L} x, n=1,2, \ldots
++> $$
++>
++> (c) To determine the solutions in $T$ we have to solve $T^{\prime \prime}+2 k T^{\prime}+\left(\frac{n \pi}{L} c\right)^{2} T=0$. Review the general solution of the second order linear differential equation with constant coefficients (Section 10.2), and explain why three possible cases are to be treated separately: $n<\frac{k L}{\pi c}, n=\frac{k L}{\pi c}$, and $n>\frac{k L}{\pi c}$. The respective solutions for $T$ are
++>
++> $$
++> \begin{gathered}
++> T_{n}=e^{-k t}\left(a_{n} \cosh \lambda_{n} t+b_{n} \sinh \lambda_{n} t\right), \\
++> T_{\frac{k L}{\pi c}}=a_{\frac{k L}{\pi c}} e^{-k t}+b_{\frac{k L}{\pi c}} t e^{-k t} \\
++> T_{n}=e^{-k t}\left(a_{n} \cos \lambda_{n} t+b_{n} \sin \lambda_{n} t\right),
++> \end{gathered}
++> $$
++>
++> where
++>
++> $$
++> \lambda_{n}=\sqrt{\left|k^{2}-\left(\frac{n \pi}{L} c\right)^{2}\right|} .
++> $$
++>
++> (d) Conclude that when $\frac{k L}{\pi c}$ is not a positive integer, the solution is
++>
++> $$
++> \begin{aligned}
++> u(x, t)= & e^{-k t} \sum_{1 \leq n<\frac{k L}{\pi c}} \sin \frac{n \pi}{L} x\left(a_{n} \cosh \lambda_{n} t+b_{n} \sinh \lambda_{n} t\right) \\
++> & +e^{-k t} \sum_{\frac{k L}{\pi c}<n<\infty} \sin \frac{n \pi}{L} x\left(a_{n} \cos \lambda_{n} t+b_{n} \sin \lambda_{n} t\right)
++> \end{aligned}
++> $$
++>
++> where these sums run over integers only, and where
++>
++> $$
++> a_{n}=\frac{2}{L} \int_{0}^{L} f(x) \sin \frac{n \pi}{L} x d x, \quad n=1,2, \ldots,
++> $$
++>
++> and the $b_{n}$ are determined from the equation
++>
++> $$
++> -k a_{n}+\lambda_{n} b_{n}=\frac{2}{L} \int_{0}^{L} g(x) \sin \frac{n \pi}{L} x d x, \quad n=1,2, \ldots
++> $$
++>
++> (e) Conclude that when $\frac{k L}{\pi c}$ is a positive integer, the solution is as in (d) with the one additional term
++>
++> $$
++> \sin \left(\frac{k}{c} x\right)\left(a_{\frac{k L}{\pi c}} e^{-k t}+b_{\frac{k L}{\pi c}} t e^{-k t}\right)
++> $$
++>
++> with $a_{n}$ and $b_{n}$ as in (d), except that $b_{\frac{k L}{\pi c}}$ is determined from the equation
++>
++> $$
++> -k a_{\frac{k L}{\pi c}}+b_{\frac{k L}{\pi c}}=\frac{2}{L} \int_{0}^{L} g(x) \sin \frac{k}{c} x d x
++> $$
++
++
++> [!exercise|69b01e7f-2215-5151-a0ed-857d58dc9a47.local at=a1e61701-45a4-5145-9eb8-0e6bf1986e11] Exercise 13
++> Solve
++>
++> $$
++> \begin{gathered}
++> \frac{\partial^{2} u}{\partial t^{2}}+\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> u(0, t)=u(\pi, t)=0 \\
++> u(x, 0)=\sin x, \quad \frac{\partial u}{\partial t}(x, 0)=0 .
++> \end{gathered}
++> $$
++>
++> [Hint: Since $k=.5$ and $L=\pi$, we have $n>\frac{k L}{\pi}$ for all $n$. So only one case from the solution of Exercise 12 needs to be considered.]
++
++
++> [!exercise|9767211f-2c34-57af-b98e-b09a6351a649.local at=2f5bd8c3-dd2c-5eef-b58e-6369c1f5f561] Exercise 14
++> Solve
++>
++> $$
++> \begin{gathered}
++> \frac{\partial^{2} u}{\partial t^{2}}+\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> u(0, t)=u(\pi, t)=0 \\
++> u(x, 0)=x \sin x, \quad \frac{\partial u}{\partial t}(x, 0)=0
++> \end{gathered}
++> $$
++
++
++> [!exercise|6a87556d-0577-57c8-b78b-d85fe95ca5e6.local at=aab40b53-c697-5001-95aa-8795820928ec] Exercise 15
++> (a) Solve
++>
++> $$
++> \begin{gathered}
++> \frac{\partial^{2} u}{\partial t^{2}}+3 \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial x^{2}} \\
++> u(0, t)=u(\pi, t)=0 \\
++> u(x, 0)=0, \quad \frac{\partial u}{\partial t}(x, 0)=10
++> \end{gathered}
++> $$
++>
++> (b) Illustrate graphically the fact that the solution tends to zero as $t$ tends to infinity.
+
+`````

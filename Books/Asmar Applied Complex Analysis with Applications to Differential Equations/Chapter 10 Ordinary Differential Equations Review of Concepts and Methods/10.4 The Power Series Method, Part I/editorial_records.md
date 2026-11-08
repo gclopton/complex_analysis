@@ -127,3 +127,857 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.4 The Power Series Method, Part I.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.4 The Power Series Method, Part I.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.4 The Power Series Method, Part I.md
+@@ -1,37 +1,48 @@
+-## 10.4 The Power Series Method, Part I
+-
+-Power series will be used to solve ordinary differential equations, including many important differential equations with nonconstant coefficients. such as the Legendre and Bessel equations. In this section we review the basic properties of power series, and present some techniques that will be needed in the next sections.
+-
+-A power series is a series of the form
+-
+-$$
+-\sum_{m=0}^{\infty} a_{m}(x-a)^{m}=a_{0}+a_{1}(x-a)+a_{2}(x-a)^{2}+\cdots,
+-$$
+-
+-where $a, a_{0}, a_{1}, a_{2}, \ldots$ are constants and $x$ is a variable. The series is said to be centered at $a$. If the series is centered at $a=0$, it takes on the simpler form
+-
+-$$
+-\sum_{m=0}^{\infty} a_{m} x^{m}=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
+-$$
++
++# 10.4 The Power Series Method, Part I
++
++Power series will be used to solve ordinary differential equations, including many important differential equations with nonconstant coefficients, such as the Legendre and Bessel equations. In this section we review the basic properties of power series, and present some techniques that will be needed in the next sections.
++
++> [!definition|cbf289c6-b5df-518b-b621-db258f675bd6.local at=9fe1ef30-cc04-588a-abc1-919ccafce5b5] Power Series Centered at a Real Point
++> A power series is a series of the form
++>
++> $$
++> \sum_{m=0}^{\infty} a_{m}(x-a)^{m}=a_{0}+a_{1}(x-a)+a_{2}(x-a)^{2}+\cdots,
++> $$
++>
++> where $a, a_{0}, a_{1}, a_{2}, \ldots$ are constants and $x$ is a variable. The series is said to be centered at $a$. If the series is centered at $a=0$, it takes on the simpler form
++>
++> $$
++> \sum_{m=0}^{\infty} a_{m} x^{m}=a_{0}+a_{1} x+a_{2} x^{2}+\cdots
++> $$
++
++*Printed equation labels: (1) series centered at $a$; (2) series centered at zero.*
+ 
+ Given the power series (1), we define a function $f(x)$ whose domain is the set of all $x$ for which the series converges, and whose value at every such $x$ is the sum of the series for that $x$. We say that the power series represents the function $f(x)$.
+ 
+-Series converges for $|x-a|<R$.
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-29_172_465_1523_49.jpg)
+-
+-Series diverges for $|x-a|>R$.
+-
+-Figure 1 The interval of convergence of a power series centered at the point $x=a$. The series may converge or diverge at the endpoints $x=a \pm R$.
++```scientific-figure
++id: 4b6c9d8d-2cfa-4779-a1ea-95dfc1ee32a4
++numbered: false
++title: ""
++caption: Figure 1 Convergence holds for $|x-a|<R$ and divergence for $|x-a|>R$. The interval of convergence of a power series centered at the point $x=a$. The series may converge or diverge at the endpoints $x=a \pm R$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-29_172_465_1523_49.jpg
++    caption: ""
++```
++
+ 
+ Recall from calculus that certain functions have a Taylor series representation centered at $x=a$ of the form
+-(3) $f(x)=f(0)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(k)}(a)}{k!}(x-a)+\cdots$.
+-
+-Thus a Taylor series is an example of a power series where the coefficients are uniquely determined by $f(x)$ and its derivatives. In fact, we have $a_{0} \cdots f(a)$ and $a_{k}=f^{(k)}(a) / k!$. The following list gives Taylor series representations of some elementary functions, together with the domains for which the series expansions are valid. All the series are centered at 0 .
++(3) $f(x)=f(a)+\frac{f^{\prime}(a)}{1!}(x-a)+\frac{f^{\prime \prime}(a)}{2!}(x-a)^{2}+\cdots+\frac{f^{(k)}(a)}{k!}(x-a)^k+\cdots$.
++
++Thus a Taylor series is an example of a power series where the coefficients are uniquely determined by $f(x)$ and its derivatives. In fact, we have $a_0=f(a)$ and $a_{k}=f^{(k)}(a) / k!$. The following list gives Taylor series representations of some elementary functions, together with the domains for which the series expansions are valid. All the series are centered at 0 .
+ 
+ $$
+ \begin{aligned}
+ \frac{1}{1-x} & =\sum_{m=0}^{\infty} x^{m}=1+x+x^{2}+x^{3}+\cdots, & & |x|<1 ; \\
+-\epsilon^{r} & =\sum_{m=0}^{\infty} \frac{x^{m}}{m!}=1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots, & & -\infty<x<\infty ; \\
++e^x & =\sum_{m=0}^{\infty} \frac{x^{m}}{m!}=1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+\cdots, & & -\infty<x<\infty ; \\
+ \sin x & =\sum_{m=0}^{\infty} \frac{(-1)^{m} x^{2 m+1}}{(2 m+1)!}=x-\frac{x^{3}}{3!}+\frac{x^{5}}{5!}-\cdots, & & -\infty<x<\infty ; \\
+ \cos x & =\sum_{m=0}^{\infty} \frac{(-1)^{m} x^{2 m}}{(2 m)!}=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\cdots, & & -\infty<x<\infty ; \\
+ \ln (1+x) & =\sum_{m=1}^{\infty} \frac{(-1)^{m+1} x^{m}}{m}=x-\frac{x^{2}}{2}+\frac{x^{3}}{3}-\cdots, & & |x|<1 ; \\
+@@ -46,12 +57,15 @@
+ - The power series (1) always converges at its center $x=a$.
+ - If the series converges for values of $x$ other than $a$, then these values form an interval centered at $a$, called the interval of convergence. If the interval is finite, then there is a number $R>0$, called the radius of convergence, such that the series converges at all $x$ for which $|x-a|<R$, and diverges at all $x$ for which $|x-a|>R$ (Figure 1). If the series converges only at $x=a$, we set $R=0$, and if the series converges for all $x$, we set $R=\infty$.
+ 
+-A function defined by a power series is said to be analytic on the interval of convergence. (In Section 12.5 we used the term analytic to describe a
+-complex function that is differentiable in an open subset of the plane. A basic result from complex analysis tells us that this property is equivalent to having a power series expansion. So the usage of the term analytic in this section is consistent with our previous usage in Section 12.5.)
++A function defined by a power series is said to be analytic on the open interval of convergence. (In Section 2.5 we used the term analytic to describe a
++complex function that is differentiable in an open subset of the plane. A basic result from complex analysis tells us that this property is equivalent to having a power series expansion. So the usage of the term analytic in this section is consistent with our previous usage in Section 2.5.)
+ 
+ A useful test for finding the radius of convergence of a power series is the ratio test, as illustrated by the following examples. (In some cases the root test may be more convenient.)
+ 
+-## EXAMPLE 1 Radius and interval of convergence
++> [!exercise|adadc5b3-ea27-55a6-ac3f-86b65da5b411.local at=20275b78-a368-5f1e-b9ac-29fdf9c0a7db] EXAMPLE 1 Radius and interval of convergence
++> Find the radius and interval of convergence of $\sum_{m=1}^{\infty}(-1)^m m x^{2m}/4^m$, including the endpoints.
++
++##### solution
+ 
+ Consider the power series
+ 
+@@ -67,23 +81,27 @@
+ 
+ is less than 1. That is, $x^{2} / 4<1$ or $x^{2}<4$. Thus, the interval of convergence is $|x|<2$, or ( $-2,2$ ). Since the series is centered at 0 , the radius of convergence is 2 . The behavior of the series at the endpoints, $x= \pm 2$, is not determined by the ratio test. In this example, you can check that the series diverges at $x= \pm 2$. Thus we can define a function for all $x$ in ( $-2,2$ ) by the power series, as follows: $f(x)=\sum_{m=1}^{\infty} \frac{(-1)^{m} m}{4^{m}} x^{2 m}$. For each value of $x$ in $(-2,2)$, the series converges to a real number, which is $f(x)$.
+ 
+-## EXAMPLE 2 A power series that converges for all $x$
+-
+-Find the radius of convergence of the series
+-
+-$$
+-\sum_{m=1}^{\infty} \frac{(-1)^{m+1}}{2^{m}(m!)^{2}} x^{m}=\frac{x}{2}-\frac{x^{2}}{16}+\frac{x^{3}}{288}-\cdots
+-$$
+-
+-Solution Evaluating the limit obtained from the ratio test, we find
+-
+-$$
+-\lim _{m \rightarrow \infty}\left|\frac{x^{n+1}}{2^{m+1}[(m+1)!]^{2}} / \frac{x^{m}}{2^{m}(m!)^{2}}\right|=\lim _{m \rightarrow \infty}\left(\frac{|x|}{2(m+1)^{2}}\right)=0
++> [!exercise|677a2c62-67e5-53c9-a536-6e0cccb71eda.local at=0fc5be8e-176c-54c6-8d57-e4d074506490] EXAMPLE 2 A power series that converges for all $x$
++> Find the radius of convergence of the series
++>
++> $$
++> \sum_{m=1}^{\infty} \frac{(-1)^{m+1}}{2^{m}(m!)^{2}} x^{m}=\frac{x}{2}-\frac{x^{2}}{16}+\frac{x^{3}}{288}-\cdots
++> $$
++
++##### solution
++
++Evaluating the limit obtained from the ratio test, we find
++
++$$
++\lim _{m \rightarrow \infty}\left|\frac{x^{m+1}}{2^{m+1}[(m+1)!]^{2}} / \frac{x^{m}}{2^{m}(m!)^{2}}\right|=\lim _{m \rightarrow \infty}\left(\frac{|x|}{2(m+1)^{2}}\right)=0
+ $$
+ 
+ for all $x$. Thus the series converges for all $x$. The radius of convergence is $\infty$, and the interval of convergence is $(-\infty, \infty)$.
+ 
+-## EXAMPLE 3 A power series that converges only at its center
++> [!exercise|0399ece9-82b1-5c54-abf3-035aa29192d2.local at=4ccd7f12-09d1-595b-945a-58fae9a9ba6e] EXAMPLE 3 A power series that converges only at its center
++> Find the radius and interval of convergence of $\sum_{m=1}^{\infty}m^m(x-1)^m$.
++
++##### solution
+ 
+ For the power series
+ 
+@@ -103,17 +121,20 @@
+ 
+ Power series are like polynomials of "infinite degree," and like polynomials they can be added, multiplied, differentiated, and integrated term-by-term. We now recall how these operations apply.
+ 
+-Linear Combinations and Products. Consider the power series representations
+-
+-$$
+-f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m} \quad \text { and } \quad g(x)=\sum_{m=0}^{\infty} b_{m}(x-a)^{m},
+-$$
+-
+-with common center at $a$ and radii of convergence $R_{1}>0$ and $R_{2}>0$, respectively. Then it is not difficult to show that for any real numbers $\alpha$ and $\delta$, we have
+-
+-$$
+-\alpha f(x)+\beta g(x)=\sum_{m=0}^{\infty}\left(\alpha a_{m}+\beta b_{m}\right)(x-a)^{m}
+-$$
++> [!property|f3a33803-a80f-5388-85fa-9b47a1cf80aa.local at=ec80d941-813c-53a4-a67e-cb433b51a3c6] Linear Combinations and Products
++> Consider the power series representations
++>
++> $$
++> f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m} \quad \text { and } \quad g(x)=\sum_{m=0}^{\infty} b_{m}(x-a)^{m},
++> $$
++>
++> with common center at $a$ and radii of convergence $R_{1}>0$ and $R_{2}>0$, respectively. Then it is not difficult to show that for any real numbers $\alpha$ and $\beta$, we have
++>
++> $$
++> \alpha f(x)+\beta g(x)=\sum_{m=0}^{\infty}\left(\alpha a_{m}+\beta b_{m}\right)(x-a)^{m}
++> $$
++>
++> The equality holds for $|x-a|<\min(R_1,R_2)$.
+ 
+ The multiplication of power series is done in much the same way as for polynomials:
+ 
+@@ -121,7 +142,7 @@
+ \begin{aligned}
+ & f(x) \cdot g(x) \\
+ & \quad=\left(a_{0}+a_{1}(x-a)+a_{2}(x-a)^{2}+\cdots\right) \cdot\left(b_{0}+b_{1}(x-a)+b_{2}(x-a)^{2}+\cdots\right) \\
+-& \quad=a_{0}+b_{0}+\left(a_{0} b_{1}+a_{1} b_{0}\right)(x-a)+\left(a_{0} b_{2}+a_{1} b_{1}+a_{2} b_{0}\right)(x-a)^{2}+\cdots \\
++& \quad=a_0b_0+\left(a_{0} b_{1}+a_{1} b_{0}\right)(x-a)+\left(a_{0} b_{2}+a_{1} b_{1}+a_{2} b_{0}\right)(x-a)^{2}+\cdots \\
+ & \quad=\sum_{m=0}^{\infty}\left(a_{0} b_{m}+a_{1} b_{m-1}+\cdots+a_{m} b_{0}\right)(x-a)^{m} .
+ \end{aligned}
+ $$
+@@ -130,15 +151,17 @@
+ 
+ $$
+ f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m} \quad(|x-a|<R, R>0)
++\tag{4}
+ $$
+ 
+ can be differentiated term-by-term to yield
+ 
+ $$
+ f^{\prime}(x)=\sum_{m=1}^{\infty} m a_{m}(x-a)^{m-1} \quad(|x-a|<R) .
+-$$
+-
+-Moreover, the series (4) and (5) have the same interval of convergence. The proof is sketched in the exercises; it uses the notion of uniform convergence and results about series of functions from Section 2.9. Since the differentiated series (5) is itself a power series with interval of convergence equal to the interval of convergence of the series (4), we can differentiate it again, and again, and conclude that $f$ is infinitely differentiable.
++\tag{5}
++$$
++
++Moreover, the series (4) and (5) have the same radius of convergence; endpoint convergence may change. The proof is sketched in the exercises; it uses the notion of uniform convergence and results about series of functions from Section 4.2. Since the differentiated series (5) is itself a power series with the same open interval of convergence as the series (4), we can differentiate it again, and again, and conclude that $f$ is infinitely differentiable.
+ 
+ If we differentiate the power series $k$ times, we find
+ 
+@@ -155,16 +178,17 @@
+ Substituting back into (4), we obtain the Taylor series expansion of $f(x)$ :
+ 
+ $$
+-f(x)=\sum_{m=1}^{\infty} \frac{f^{(k)}(a)}{m!}(x-a)^{m} \quad(|x-a|<R)
+-$$
+-
+-This shows that every power series with a positive radius of convergence is the Taylor series of the function $f(x)$ that it represents. (In general, you may not be able to express $f(x)$ in terms of familiar elenentary functions, as shown in the list at the outset of the section.)
+-
+-The power series (4) can be integrated term-by-tern on any closed and bounded subintervals of the interval of convergence, as follows. Let $[b, c]$ be a closed interval in the interval of convergence: then
+-
+-$$
+-\begin{aligned}
+-\int_{b}^{c} f(t) d t & =\sum_{m=0}^{\infty} a_{m} \int_{b}^{c}(t-a)^{m} \\
++f(x)=\sum_{m=0}^{\infty}\frac{f^{(m)}(a)}{m!}(x-a)^{m} \quad(|x-a|<R)
++\tag{6}
++$$
++
++This shows that every power series with a positive radius of convergence is the Taylor series of the function $f(x)$ that it represents. (In general, you may not be able to express $f(x)$ in terms of familiar elementary functions, as shown in the list at the outset of the section.)
++
++The power series (4) can be integrated term-by-term on any closed and bounded subintervals of the interval of convergence, as follows. Let $[b, c]$ be a closed interval in the interval of convergence: then
++
++$$
++\begin{aligned}
++\int_{b}^{c} f(t) d t & =\sum_{m=0}^{\infty} a_{m} \int_b^c(t-a)^m\,dt \\
+ & =\sum_{m=0}^{\infty} \frac{a_{m}}{m+1}\left[(c-a)^{m+1}-(b-a)^{m+1}\right]
+ \end{aligned}
+ $$
+@@ -183,7 +207,10 @@
+ 
+ The proof is also sketched in the exercises. Let us illustrate the usefulness of term-by-term differentiation and integration by deriving new power series from known ones, without performing excessive computations.
+ 
+-## EXAMPLE 4 Differentiation and integration term-by-term
++> [!exercise|6818b8b0-2442-5462-b81f-9bb58fe4c485.local at=28100560-3c27-555c-b68f-2715d9febb9c] EXAMPLE 4 Differentiation and integration term-by-term
++> Use the geometric series to derive power-series expansions of (a) $1/(1-x)^2$ by differentiation and (b) $\ln(1-x)$ by integration. State where the expansions are valid.
++
++##### solution
+ 
+ (a) Start with the geometric series
+ 
+@@ -191,7 +218,7 @@
+ \frac{1}{1-x}=1+x+x^{2}+x^{3}+\cdots=\sum_{m=0}^{\infty} x^{m} \quad(-1<x<1) .
+ $$
+ 
+-Differentiate both sides of the the first equality:
++Differentiate both sides of the first equality:
+ 
+ $$
+ \frac{1}{(1-x)^{2}}=0+1+2 x+3 x^{2}+\cdots=\sum_{m=1}^{\infty} m x^{m-1} \quad(-1<x<1) .
+@@ -207,7 +234,7 @@
+ \begin{aligned}
+ \int_{0}^{x} \frac{1}{1-t} d t & =\int_{0}^{x}\left(1+t+t^{2}+t^{3}+\cdots\right) d t \\
+ -\left.\ln (1-t)\right|_{0} ^{x} & =\left.\left(t+\frac{t^{2}}{2}+\frac{t^{3}}{3}+\frac{t^{4}}{4}+\cdots\right)\right|_{0} ^{x} \\
+--\ln (1 \cdots x) & =x+\frac{x^{2}}{2}+\frac{x^{3}}{3}+\frac{x^{4}}{4}+\cdots
++-\ln(1-x) & =x+\frac{x^{2}}{2}+\frac{x^{3}}{3}+\frac{x^{4}}{4}+\cdots
+ \end{aligned}
+ $$
+ 
+@@ -215,40 +242,43 @@
+ 
+ In the preceding examples, we used various operations on known series to derive new power series expansions. Thus we claimed to have found the power series expansions of $1 /(1-x)^{2}$ and $\ln (1-x)$. The question that comes to mind is whether there are other power series representations of these functions. The answer is provided by the following important result.
+ 
+-The Identity Principle. Suppose $f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}$ and $g(x)= \sum_{m=0}^{\infty} b_{m}(x-a)^{m}$, where both series have positive radii of convergence. If $f(x)=g(x)$ for all $x$ in an interval containing $a$, then $a_{m}=b_{m}$ for all $m$. In other words, a power series representation is unique.
++> [!property|55d973e6-e5a8-5f66-9ddd-46efc46e43f7.local at=ff821645-d23f-5da1-a423-585c58853692] The Identity Principle
++> Suppose $f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}$ and $g(x)= \sum_{m=0}^{\infty} b_{m}(x-a)^{m}$, where both series have positive radii of convergence. If $f(x)=g(x)$ for all $x$ in an open interval containing $a$, then $a_{m}=b_{m}$ for all $m$. In other words, a power series representation is unique.
+ 
+ This is an immediate consequence of the fact that the coefficients in the power series are determined from the values of the function and its derivatives at $x=a$ (Taylor's formula). So if $f=g$ in an interval containing $a$, then $f^{(m)}(a)=g^{(m)}(a)$ for all $m$, which implies that the coefficients are the same in both power series.
+ 
+ We will often use the identity principle to determine the coefficients of a power series that appears in an equation, as the following examples illustrate.
+ 
+-## EXAMPLE 5 The identity principle
+-
+-Determine $a_{m}$ if for all $x$ in the interval $(\cdots 1,1)$, we have
+-
+-$$
+-\sum_{m=0}^{2}\left(u_{m}-2 m\right) r^{m}=0 .
+-$$
+-
+-Solution By the identity principle, there is only one power series that vanishes identically on ( $-1,1$ ), and this is the power series whose coefficients are all equal to 0 . Thus $a_{m}-2 m=0$ for all $m$, and so $a_{m}=2 m$.
+-
+-## EXAMPLE 6 Equation involving a power series
+-
+-Determine $a_{m}$ if for all $x$ in the interval ( $-1,1$ ), we have
+-
+-$$
+-\sum_{m=0}^{\infty} a_{m} x^{m}+\sum_{m=0}^{\infty} m a_{m} x^{m}=\frac{1}{1-x} .
+-$$
+-
+-Solution Combining the two series on the left, the equation becomes
+-
+-$$
+-\sum_{m=0}^{\infty}(1+m) a_{m}: x^{m}=\frac{1}{1-x}
++> [!exercise|b3ed7a1f-d43f-5652-9c88-2bf648ab2c28.local at=17635262-0eb1-5b8a-82fc-ac2f09638b7e] EXAMPLE 5 The identity principle
++> Determine $a_{m}$ if for all $x$ in the interval $(-1,1)$, we have
++>
++> $$
++> \sum_{m=0}^{\infty}(a_m-2m)x^m=0 .
++> $$
++
++##### solution
++
++By the identity principle, there is only one power series that vanishes identically on ( $-1,1$ ), and this is the power series whose coefficients are all equal to 0 . Thus $a_{m}-2 m=0$ for all $m$, and so $a_{m}=2 m$.
++
++> [!exercise|12613f24-6408-523d-a145-57e81a4f7fb3.local at=932f8508-dce5-5a4a-a372-945941752d0a] EXAMPLE 6 Equation involving a power series
++> Determine $a_{m}$ if for all $x$ in the interval ( $-1,1$ ), we have
++>
++> $$
++> \sum_{m=0}^{\infty} a_{m} x^{m}+\sum_{m=0}^{\infty} m a_{m} x^{m}=\frac{1}{1-x} .
++> $$
++
++##### solution
++
++Combining the two series on the left, the equation becomes
++
++$$
++\sum_{m=0}^{\infty}(1+m) a_m x^m=\frac{1}{1-x}
+ $$
+ 
+ To be able to proceed from this point, we express $1 /(1-x)$ in a power series about 0 and use the identity principle to equate the corresponding coefficients of $x^{m}$. Thus
+ 
+ $$
+-\sum_{m=0}^{\infty}(1+m) a_{m} x^{m}=\sum_{m}^{\infty} x^{m} \quad \Rightarrow \quad(1+m) a_{m}=1 \text { for all } m
++\sum_{m=0}^{\infty}(1+m) a_{m} x^{m}=\sum_{m=0}^{\infty}x^m\quad\Rightarrow \quad(1+m) a_{m}=1 \text { for all } m
+ $$
+ 
+ because all the coefficients in the expansion of $1 /(1-x)$ are equal to 1 . Solving the last equation, we find $a_{m}=1 /(1+m)$. Thus $a_{0}=1, a_{1}=1 / 2, a_{2}=1 / 3$, and so on.
+@@ -261,19 +291,21 @@
+ e^{x^{2}}=\sum_{m=0}^{\infty} \frac{x^{2 m}}{m!}=1+x^{2}+\frac{x^{4}}{2!}+\frac{x^{6}}{3!}+\cdots \quad(-\infty<x<\infty) .
+ $$
+ 
+-Quotients of Analytic Functions. Suppose that $f$ and $g$ are analytic at $a$ and $g(a) \neq 0$. Then the quotient $f / g$ is also analytic at $a$.
++> [!property|1604b309-c377-522d-bce7-1a378a2a99fe.local at=ddf5b4d0-7c15-57e4-b5ef-414bfc5932db] Quotients of Analytic Functions
++> Suppose that $f$ and $g$ are analytic at $a$ and $g(a) \neq 0$. Then the quotient $f / g$ is also analytic at $a$.
+ 
+ To see this, we view the function $1 / g$ as the composition of $g$ with the function $1 / x$. The latter being analytic everywhere except at $x=0$ (Exercise 25 ), it follows that $1 / g$ is analytic at $a$ if $g(a) \neq 0$. Now $f / g=f \cdot(1 / g)$, and the desired conclusion follows since the product of two analytic functions is again analytic.
+ 
+ The following examples illustrate some useful techniques that can be used when computing a power series of a rational function.
+ 
+-## EXAMPLE 7 Power series of rational functions
+-
+-Find the power series expansion at $a=0$ of the given function, and determine the radius of convergence.
+-(a) $\frac{1}{3+2 x}$.
+-(b) $\frac{4 x^{2}+8 x-4}{3+2 x}$.
+-
+-Solution (a) To find the power expansion, we try to relate the function to the geometric series, which we recall in the following form:
++> [!exercise|70294533-012b-5360-a2ca-4bb40b32d117.local at=c518a2fb-2bde-5c26-82c3-5c8007c5bc55] EXAMPLE 7 Power series of rational functions
++> Find the power series expansion at $a=0$ of the given function, and determine the radius of convergence.
++> (a) $\frac{1}{3+2 x}$.
++> (b) $\frac{4 x^{2}+8 x-4}{3+2 x}$.
++
++##### solution
++
++(a) To find the power expansion, we try to relate the function to the geometric series, which we recall in the following form:
+ 
+ $$
+ \sum_{m=0}^{\infty} u^{m}=\frac{1}{1-u} \quad(|u|<1)
+@@ -303,16 +335,16 @@
+ $$
+ \begin{aligned}
+ \frac{4 x^{2}+8 x-4}{3+2 x} & =1+2 x-7 \sum_{m=0}^{\infty}(-1)^{m} \frac{2^{m} x^{m}}{3^{m+1}} \\
+-& =1-\frac{7}{3}+x\left(2+\frac{14}{9}\right)-7\left(\frac{4}{27} x^{2}-\frac{8}{243} x^{3}+\cdots\right) \\
++& =1-\frac{7}{3}+x\left(2+\frac{14}{9}\right)-7\left(\frac{4}{27} x^{2}-\frac{8}{81} x^{3}+\cdots\right) \\
+ & =-\frac{4}{3}+\frac{32}{9} x-7 \sum_{m=2}^{\infty}(-1)^{m} \frac{2^{m} x^{m}}{3^{m+1}}
+ \end{aligned}
+ $$
+ 
+-The power serios has the same radius of convergence as the one in part (a).
++The power series has the same radius of convergence as the one in part (a).
+ Shifting the Index in a Power Series. When using power series to solve differential equations, we are often required to combine several power series into a single one, as we did in Example 6. Suppose you want to combine the expression
+ 
+ $$
+-\sum_{m=0}^{\infty} x^{m+1}+\sum_{m-0}^{\infty}(m+1) x^{m}
++\sum_{m=0}^{\infty} x^{m+1}+\sum_{m=0}^{\infty}(m+1) x^{m}
+ $$
+ 
+ into one power series. Unlike what we did in Example 6, here we cannot simply add terms with corresponding indices, because the variable $x$ has a different power in the general term of each series. To deal with this situation, we can rewrite the first series in terms of $x^{m}$, as follows. Let $m+1=n$. As $m$ varies from 0 to $\infty, n$ varies from 1 to $\infty$ and the first series becomes
+@@ -324,7 +356,7 @@
+ Now rewrite the index $n$ as $m$, and you have
+ 
+ $$
+-\sum_{m=0}^{\infty} x^{m \cdot \mathrm{i}}=\sum_{m}^{\infty} x^{m}
++\sum_{m=0}^{\infty}x^{m+1}=\sum_{m=1}^{\infty}x^m
+ $$
+ 
+ So we were able to shift the index of the terms without changing the power series. In general, the index $m$ in a power series can be shifted by $k$ units as follows:
+@@ -341,15 +373,16 @@
+ 
+ Thus, if we shift the index of summation by changing $m$ to $m+k$ in the general term of the series, then we must decrease the starting point of the summation by $k$.
+ 
+-## EXAMPLE 8 Shifting indices
+-
+-Write the following sum as a single power series
+-
+-$$
+-\sum_{m=1}^{\infty} m x^{m-1}+\sum_{m=0}^{\infty} 2 x^{m+1}
+-$$
+-
+-Solution Let us express both series in terms of $x^{m}$. That means we must change $m$ to $m+1$ in the first series, so that the exponent of $x$ becomes $(m+1)-1=m$. In the second series we must change $m$ to $m-1$. With this in mind, the series become
++> [!exercise|cf12da4d-bb1b-53fe-ab0b-44ad4b47bed3.local at=586ff968-893a-58dd-8d4e-8404807a9274] EXAMPLE 8 Shifting indices
++> Write the following sum as a single power series
++>
++> $$
++> \sum_{m=1}^{\infty} m x^{m-1}+\sum_{m=0}^{\infty} 2 x^{m+1}
++> $$
++
++##### solution
++
++Let us express both series in terms of $x^{m}$. That means we must change $m$ to $m+1$ in the first series, so that the exponent of $x$ becomes $(m+1)-1=m$. In the second series we must change $m$ to $m=1$. With this in mind, the series become
+ 
+ $$
+ \sum_{m=0}^{\infty}(m+1) x^{m}+\sum_{m=1}^{\infty} 2 x^{m}
+@@ -361,25 +394,26 @@
+ (0+1) x^{0}+\sum_{m=1}^{\infty}(m+1) x^{m}+\sum_{m=1}^{\infty} 2 x^{m}=1+\sum_{m=1}^{\infty}(m+3) x^{m} .
+ $$
+ 
+-Note how we split off the $m=0$ term from the first series. since the second one starts at $m-1$.
++Note how we split off the $m=0$ term from the first series. since the second one starts at $m=1$.
+ 
+ The following two examples illustrate some of the basic steps in the power series method of the next section.
+ 
+-## EXAMPLE 9 Combining power series and their derivatives
+-
+-Suppose that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$ is a power series with radius of convergence $R>0$. Find a power series representation for the expression
+-
+-$$
+-(1+x) y^{\prime}-2 y
+-$$
+-
+-Solution A power series can be differentiated term-by-term within its radius of convergence. So for $|x|<R$, we have
++> [!exercise|286c13ac-ac26-5140-993d-aaadcbcab374.local at=b43651a7-89fa-5a5e-8f6e-12e27733c67c] EXAMPLE 9 Combining power series and their derivatives
++> Suppose that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$ is a power series with radius of convergence $R>0$. Find a power series representation for the expression
++>
++> $$
++> (1+x) y^{\prime}-2 y
++> $$
++
++##### solution
++
++A power series can be differentiated term-by-term within its radius of convergence. So for $|x|<R$, we have
+ 
+ $$
+ y^{\prime}=\sum_{m=1}^{\infty} a_{m} m x^{m-1}
+ $$
+ 
+-Using that $x \sum_{m=1}^{\infty} a_{m} m x^{m-1}=\sum_{m=1}^{\infty} a_{m} m x^{n}$, we obtain
++Using that $x \sum_{m=1}^{\infty} a_{m} m x^{m-1}=\sum_{m=1}^{\infty} a_m m x^m$, we obtain
+ 
+ $$
+ \begin{aligned}
+@@ -398,127 +432,280 @@
+ \end{aligned}
+ $$
+ 
+-EXAMPLE 10 Combining power series and their derivatives Continuing the previous example, find a power series representation of
+-
+-$$
+-x^{2} y^{\prime \prime}+(1+x) y^{\prime}-2 y .
+-$$
+-
+-Solution Differentiating the power series of $y$ twice, we obtain
+-
+-$$
+-y^{\prime \prime}=\sum_{m=2}^{\infty} a_{m} m(m-1) x^{m-2} \Rightarrow x^{2} y^{\prime \prime}=\sum_{m-2}^{\infty} a_{m} m(m-1) x^{m} .
+-$$
+-
+-We now appeal to the result of the previous exercise and get
++> [!exercise|a3e02c20-1059-57c3-94b1-6936b51c0436.local at=df6b0bcd-f19d-562a-977e-303b23654e33] EXAMPLE 10 Combining power series and their derivatives
++> Continuing the previous example, find a power series representation of
++>
++> $$
++> x^{2} y^{\prime \prime}+(1+x) y^{\prime}-2 y .
++> $$
++
++##### solution
++
++Differentiating the power series of $y$ twice, we obtain
++
++$$
++y^{\prime \prime}=\sum_{m=2}^{\infty} a_{m} m(m-1) x^{m-2} \Rightarrow x^{2} y^{\prime \prime}=\sum_{m=2}^{\infty} a_{m} m(m-1) x^{m} .
++$$
++
++We now appeal to the result of the previous example and get
+ 
+ $$
+ \begin{aligned}
+ & x^{2} y^{\prime \prime}+(1+x) y^{\prime}-2 y \\
+-& \quad=\sum_{m=2}^{\infty} a_{m} m(m-1) x^{2 n}+\sum_{m=0}^{\infty}\left[(m+1) a_{m 1}+(m-2) a_{m}\right] x^{m}
+-\end{aligned}
+-$$
+-
+-To combine the two series, we split off the terms corresponding to $m$ - 0 and 1 from the second series and get
++& \quad=\sum_{m=2}^{\infty} a_{m} m(m-1)x^m+\sum_{m=0}^{\infty}\left[(m+1) a_{m+1}+(m-2) a_{m}\right] x^{m}
++\end{aligned}
++$$
++
++To combine the two series, we split off the terms corresponding to $m=0$ and 1 from the second series and get
+ 
+ $$
+ \begin{aligned}
+ x^{2} & y^{\prime \prime}+(x+1) y^{\prime}-2 y \\
+-& =\left(a_{1}-2 a_{0}\right)+\left(2 a_{2}-a_{1}\right)+\sum_{m=2}^{\infty}\left[a_{m} m(m-1)+(m+1) a_{m+1}+(m-2) a_{m}\right] x^{m} \\
+-& =2\left(a_{2}-a_{0}\right)+\sum_{m=2}^{\infty}\left[(m+1) a_{m+1}+a_{m}\left(m^{2}-2\right)\right] x^{m}
+-\end{aligned}
+-$$
+-
+-## Exercises A. 4
+-
+-In Exercises 1-12, find the radius and interval of convergence of the given series.
+-
+-1. $\sum_{m=0}^{\infty} \frac{x^{m}}{5 m+1}$.
+-2. $\sum_{m=0}^{\infty} \frac{3^{m} x^{m}}{m!}$.
+-3. $\sum_{m=0}^{\infty} \frac{(-1)^{m} x^{m+2}}{2^{m}}$.
+-4. $\sum_{m=0}^{\infty}(x-2)^{m}$.
+-5. $\sum_{m=1}^{\infty} \frac{m^{m} x^{m}}{m!}$.
+-6. $\sum_{m=1}^{\infty} \frac{(m-1)(m+3) x^{m}}{m}$.
+-7. $\sum_{m=2}^{\infty} \frac{x^{m}}{\ln m}$.
+-8. $\sum_{m=1}^{\infty} \frac{(x+1)^{m}}{m^{2}}$.
+-9. $\sum_{m=1}^{\infty} \frac{[10(x+1)]^{2 m}}{(m!)^{2}}$.
+-10. $\sum_{m=0}^{\infty} \frac{(9 x)^{2 m}}{(m!)^{2}}$.
+-11. $\sum_{m=0}^{\infty} \frac{2^{m}(x-2)^{m}}{10^{m}}$.
+-12. $\sum_{m-0}^{\infty} \frac{m!(x-2)^{m}}{10^{m}}$.
+-
+-In Exercises 13-20, use a Taylor series found in this section to derive the Taylor series expansion of the given function at 0 . In each case, specify the radius and interval of convergence.
+-13. $\frac{3-x}{1+x}$.
+-14. $\frac{x}{(1+x)^{2}}$.
+-15. $\frac{x}{\left(1+r^{2}\right)^{2}}$.
+-16. $\frac{x+2}{1-x^{2}}$.
+-17. $e^{3 x^{2}+1}$.
+-18. $x \ln (1+x)$.
+-19. $x \sin x \cos x$.
+-20. $x \sin (x+1)$.
+-
+-In Ererrises 21-24, use the geometric series to derive the Taylor series expansion of the gimn function at 0 . In each case, specify the radius and interval of convergence.
+-21. $\frac{1}{2-3 x}$.
+-22. $\frac{1+x}{2-3 x}$.
+-23. $3 \frac{x+x^{3}}{2+3 x^{2}}$.
+-24. $\frac{1}{x^{2}-2 x+2}$
+-25. Let $a$ be any real number $\neq 0$. Use ideas found in Example 7(a) to show that
+-
+-$$
+-\frac{1}{x}=\frac{1}{a} \sum_{m-0}^{\infty}(-1)^{n} \frac{(x-a)^{n}}{a^{n}}
+-$$
+-
+-with radius of convergence $R=|a|$. Thus $1 / x$ is analytic everywhere except at 0 .
+-26. Let
+-
+-$$
+-f(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2 k}}{(k!)^{2} 2^{2 k}} \quad \text { and } \quad g(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2 k+1}}{k!(k+1)!2^{2 k \cdot 1}} .
+-$$
+-
+-Prove the following assertions. (a) Both power series converge for all $x$.
+-(b) $f^{\prime}(x)=-g(x)$.
+-(c) $\int g(x) d x=f(x)+C$.
+-(d) $\int x f(x) d x=x g(x)+C$.
+-(The functions $f$ and $g$ are known as Bessel functions or order 0 and 1 , respectively. They are usually denoted by $J_{0}(x)$ (for $f(x)$ ) and $J_{1}(x)$ (for $g(x)$ ). Bessel functions are studied in detail in Chapter 4.)
+-27. Let $f(x)$ be as in Exercise 26. (a) Find $f(0), f^{\prime}(0), f^{\prime \prime}(0)$.
+-(b) More generally, find $f^{(k)}(0)$, for $k=0,1.2, \ldots$.
+-(c) Integrate term-by-term to find $\int_{0}^{1} f(x) d x$, then estimate the integral with a calculator.
+-28. Let $f(x)=\frac{1+x}{1-x}$. Find $f(0), f^{\prime}(0)$, and $f^{(100)}(0)$.
+-
+-In Exercises 29-32, write the given expression as a single power series (and possibly some lower powet terms, as in Example 8).
+-29. $\sum_{m=1}^{\infty} \frac{x^{m}}{m}-2 \sum_{m=0}^{\infty} m x^{m+1}$.
+-30. $\sum_{m=1}^{\infty} \frac{x^{m+1}}{m!}+\sum_{m=3}^{\infty}(m-1) x^{m-1}$.
+-31. $2 x \sum_{m=2}^{\infty} 2 \sqrt{m+2} x^{m}+\sum_{m=2}^{\infty} \frac{x^{m-1}}{m+6}$.
+-32. $(x+1) \sum_{m=2}^{\infty} 2 x^{m-1}$.
+-
+-In Exercises 33-40, suppose that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$ is a power series with a positive radius of convergence, and find a power series representation for the given expression.
+-33. $y^{\prime}+y$.
+-34. $y^{\prime}+x^{2} y$.
+-35. $\left(1-x^{2}\right) y^{\prime \prime}+2 x y^{\prime}$.
+-36. $(2+x) y^{\prime}+x^{3} y$.
+-37. $x^{2} y^{\prime \prime}+y$.
+-38. $y^{\prime \prime}+y^{\prime}+x y$.
+-39. $x y^{\prime}+y-e^{x}$.
+-40. $(1 \cdots x) y^{\prime \prime}+\sin x$.
+-41. Geometric series. Fix a real (or complex) number $x$ such that $|x|<1$, and let $n$ be a positive integer. (a) Show that
+-
+-$$
+-1+x+x^{2}+\cdots+x^{n}=\frac{1-x^{n+1}}{1-x}
+-$$
+-
+-(b) Conclude that the geometric series $\sum_{m=0}^{\infty} x^{m}$ converges to $1 /(1-x)$ if $|x|<1$ and diverges otherwise. [Hint: What are the partial sums? Also, $x^{n+1} \rightarrow 0$ if and only if $|x|<1$.]
+-42. Uniform convergence of the geometric series. (a.) Let $\rho$ be any number such that $0<p<1$. Use the Weierstrass $M$-test to show that the goometric series $\sum_{m=0}^{\infty} x^{m}$ converges uniformly for all $x$ in $[-\rho, \rho]$.
+-(b) Show that the differentiated series $\sum_{m=1}^{\infty} m x^{m-1}$ converges uniformly on $[\rho, \rho]$.
+-(c) Justify term-by-term differentiation of the geometric series. (See Theorem 5, Section 2.9.)
+-43. Uniform convergence of power series. Suppose that $\sum_{m=0}^{\infty} a_{m} x^{m}$ has radius of convergence $R>0$. Let $r$ be any real number such that $0<r<R$.
+-(a) Show that $a_{m} r^{m} \rightarrow 0$. Conclude that $\left|a_{m} r^{m}\right| \leq M$ for some $M>0$ and all $m$.
+-[Hint: Apply the $n$th term test to a convergent series.]
+-(b) For $x$ such that $|x| \leq r$, we have
+-
+-$$
+-\left|a_{m} x^{m}\right|=\left|a_{m}\right| r^{m}(|x| / r)^{m} \leq M(|x| / r)^{m} .
+-$$
+-
+-Use these inequalities, the fact that $|x| / r<1$, and the Weierstrass $M$-test to conclude that $\sum_{m=0}^{\infty} a_{m} x^{m}$ converges uniformly on $[-r, r]$.
+-44. Term-by-term differentiation of power series. (a) Show that if $\sum_{m=0}^{\infty} a_{m} x^{m}$ has radius of convergence $R>0$, then $\sum_{m=1}^{\infty} m a_{m} x^{m-1}$ has the same radius of convergence. [Hint: Given $0 \leq|x|<R$, let $r$ be such that $|x|<r<R$. Then $\left|m a_{m} x^{m-1}\right| \leq m(|x| / r)^{m-1}\left|a_{m}\right| r^{m-1}$. Use the fact that the geometric series can be differentiated term-by-term (so $\sum m(|x| / r)^{m-1}$ is convergent); also prove and then use that $\left|a_{m}\right| r^{m-1} \leq M$ for some $M$.]
+-(b) Show that the derivative of $\sum_{m=0}^{\infty} a_{m} x^{m}$ is $\sum_{m=1}^{\infty} m a_{m} x^{m-1}$.
+-(c) Show that the derivative of $f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}$ (for $|x-a|<R$ ) is $f^{\prime}(x)=\sum_{m=1}^{\infty} m a_{m}(x-a)^{m-1}$ (for $|x-a|<R$ ). [Hint: Define $g(x)=f(x+a)$.]
++& =(a_1-2a_0)+(2a_2-a_1)x+\sum_{m=2}^{\infty}\left[a_{m} m(m-1)+(m+1) a_{m+1}+(m-2) a_{m}\right] x^{m} \\
++& =(a_1-2a_0)+(2a_2-a_1)x+\sum_{m=2}^{\infty}\left[(m+1) a_{m+1}+a_{m}\left(m^{2}-2\right)\right] x^{m}
++\end{aligned}
++$$
++
++
++
++## Exercises 10.4
++
++
++> [!prompt|7f8dbbf2-7f55-5b65-ab41-b96ecb5ec964.local at=a4cedae6-0c39-589d-a6bb-a94e713bd494] Shared exercise instructions
++> In Exercises 1-12, find the radius and interval of convergence of the given series.
++
++
++
++> [!exercise|eef701fc-8e24-53b5-af1f-1fd301efb1e2.local at=a422abec-0228-5602-913f-70ec90fc3f53] Exercise 1
++> $\sum_{m=0}^{\infty} \frac{x^{m}}{5 m+1}$.
++
++
++> [!exercise|90c8985b-c227-5ce4-8a73-501cbf56d59f.local at=7eb24bc8-90e6-54fa-bc12-976add065f0a] Exercise 2
++> $\sum_{m=0}^{\infty} \frac{3^{m} x^{m}}{m!}$.
++
++
++> [!exercise|c6f619f0-e013-5d64-9709-fae2488e5f66.local at=c663aef2-5ca8-5ae9-848a-6bfc34592704] Exercise 3
++> $\sum_{m=0}^{\infty} \frac{(-1)^{m} x^{m+2}}{2^{m}}$.
++
++
++> [!exercise|a898db8e-3885-5cc2-bf71-14d70fa6ba1f.local at=8460900e-91ac-557b-b183-838b8f3d2bc9] Exercise 4
++> $\sum_{m=0}^{\infty}(x-2)^{m}$.
++
++
++> [!exercise|8e10609d-e684-5f61-9d4c-1ae6a11ab3b0.local at=b0161a15-859e-5358-8ae2-e65b06bf6a6f] Exercise 5
++> $\sum_{m=1}^{\infty} \frac{m^{m} x^{m}}{m!}$.
++
++
++> [!exercise|bafb9d65-825c-549f-b62b-720f4dd3a206.local at=907feeb8-76a0-52de-b8c8-802e2c3538da] Exercise 6
++> $\sum_{m=1}^{\infty} \frac{(m-1)(m+3) x^{m}}{m}$.
++
++
++> [!exercise|0b30f2ad-5e53-5d25-bcee-57d7fd76101b.local at=af7320aa-c239-57d0-96c1-afe35ebf9990] Exercise 7
++> $\sum_{m=2}^{\infty} \frac{x^{m}}{\ln m}$.
++
++
++> [!exercise|f36f1fbc-4620-5921-af23-dc014e766e20.local at=a2248344-5091-59eb-9151-a11d8f4d3a54] Exercise 8
++> $\sum_{m=1}^{\infty} \frac{(x+1)^{m}}{m^{2}}$.
++
++
++> [!exercise|35d66ec5-5c95-5ed2-84d4-49ca207a240e.local at=788de28e-e003-51ca-844c-10ad97343fd8] Exercise 9
++> $\sum_{m=1}^{\infty} \frac{[10(x+1)]^{2 m}}{(m!)^{2}}$.
++
++
++> [!exercise|9020c65f-ea46-53ba-958a-a4b620cbacab.local at=6cd54e47-e2a0-5279-84c4-de1861e11cc6] Exercise 10
++> $\sum_{m=0}^{\infty} \frac{(9 x)^{2 m}}{(m!)^{2}}$.
++
++
++> [!exercise|11a7a1e0-99de-5b0d-b6d8-363480a73d6b.local at=de391647-6915-50d2-a30a-0defc840dabc] Exercise 11
++> $\sum_{m=0}^{\infty} \frac{2^{m}(x-2)^{m}}{10^{m}}$.
++
++
++> [!exercise|42b1172e-13dd-5c39-a2e2-c3de7ea7e017.local at=9d1a8ef3-4ee5-5ddd-b97e-4737ea289ac3] Exercise 12
++> $\sum_{m=0}^{\infty} \frac{m!(x-2)^{m}}{10^{m}}$.
++
++
++> [!prompt|bb784f41-8f51-5f4e-ad6c-a49802ac4b4b.local at=494b8d31-41cb-5dff-b7b1-d580afb83270] Shared exercise instructions
++> In Exercises 13-20, use a Taylor series found in this section to derive the Taylor series expansion of the given function at 0 . In each case, specify the radius and interval of convergence.
++
++
++
++> [!exercise|51f8c378-e822-5bda-aac6-a7ec39a71e32.local at=956b5d9c-56a2-57dd-a132-56bb608ad70c] Exercise 13
++> $\frac{3-x}{1+x}$.
++
++
++> [!exercise|c9369c20-a379-5f31-afc4-0320087b972c.local at=4ce8ec3c-ba2b-51e7-9161-54976d41ac01] Exercise 14
++> $\frac{x}{(1+x)^{2}}$.
++
++
++> [!exercise|4a29b8a6-d00b-50a1-88ae-c84aa0d39bdf.local at=c2ed5c44-3f86-595d-8b31-6ed2cae194de] Exercise 15
++> $\frac{x}{\left(1+x^2\right)^{2}}$.
++
++
++> [!exercise|8358dc65-e425-57fa-af64-f89d81dd2aa7.local at=a0d74a70-a781-5e93-956d-d6ae129a2503] Exercise 16
++> $\frac{x+2}{1-x^{2}}$.
++
++
++> [!exercise|c0084352-0a87-55ff-82de-87851fefb95c.local at=f0a87365-b28c-5ca5-ad2f-d8c09a10fb02] Exercise 17
++> $e^{3 x^{2}+1}$.
++
++
++> [!exercise|eb1d083e-bc5b-5f0e-bdd3-3aaa65d2103b.local at=2e1bad9a-71b1-5b0d-9a84-d019e4716f65] Exercise 18
++> $x \ln (1+x)$.
++
++
++> [!exercise|210d8ca8-1c65-54ba-b553-b67b4025bb51.local at=92b20d7a-cbc1-5bb7-a7ce-021072e883de] Exercise 19
++> $x \sin x \cos x$.
++
++
++> [!exercise|0bb60dfd-9afd-5fcc-9d48-2ff761a3730e.local at=0d5ebd73-60f3-51ea-81f4-fe15ba9b3b56] Exercise 20
++> $x \sin (x+1)$.
++
++
++> [!prompt|403bc8b5-e67e-5a00-9dd9-2b144ba017a2.local at=4fbdcc08-ad1a-5542-b4e4-7378d1684c57] Shared exercise instructions
++> In Exercises 21-24, use the geometric series to derive the Taylor series expansion of the given function at 0 . In each case, specify the radius and interval of convergence.
++
++
++
++> [!exercise|7fbba086-73e5-5c11-bc3b-ae7b9009b123.local at=407d23f7-7ef1-5c84-8c3b-9da88d4fcfff] Exercise 21
++> $\frac{1}{2-3 x}$.
++
++
++> [!exercise|de73bf89-2f0e-503c-ad6a-a3b5ce60d5e8.local at=ee1bab7b-ee26-565f-b87f-7b47a49d6f7a] Exercise 22
++> $\frac{1+x}{2-3 x}$.
++
++
++> [!exercise|520ce916-76db-5f17-8ef1-b479fe727554.local at=6951e89c-397e-5368-ab48-1c460fd2d270] Exercise 23
++> $3 \frac{x+x^{3}}{2+3 x^{2}}$.
++
++
++> [!exercise|f7a5f28c-2449-5696-87b4-fd066e0c4b00.local at=2ebf4fe1-1b23-540d-a355-925336ed6f7d] Exercise 24
++> $\frac{1}{x^{2}-2 x+2}$
++
++
++> [!exercise|84e3c8f3-e535-5d94-8b6e-73bddfb25168.local at=b1309f02-abe5-5660-98f4-1f1ea5822148] Exercise 25
++> Let $a$ be any real number $\neq 0$. Use ideas found in Example 7(a) to show that
++>
++> $$
++> \frac{1}{x}=\frac1a\sum_{m=0}^{\infty}(-1)^m\frac{(x-a)^m}{a^m}
++> $$
++>
++> with radius of convergence $R=|a|$. Thus $1 / x$ is analytic everywhere except at 0 .
++
++
++> [!exercise|95f087a2-8f19-5e70-b3ed-15d7169715fc.local at=1514a03b-cf24-53d4-8b4c-2fb422d10830] Exercise 26
++> Let
++>
++> $$
++> f(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2 k}}{(k!)^{2} 2^{2 k}} \quad \text { and } \quad g(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k} x^{2 k+1}}{k!(k+1)!2^{2k+1}} .
++> $$
++>
++> Prove the following assertions. (a) Both power series converge for all $x$.
++> (b) $f^{\prime}(x)=-g(x)$.
++> (c) $\int g(x)\,dx=-f(x)+C$.
++> (d) $\int x f(x) d x=x g(x)+C$.
++> (The functions $f$ and $g$ are known as Bessel functions of order 0 and 1 , respectively. They are usually denoted by $J_{0}(x)$ (for $f(x)$ ) and $J_{1}(x)$ (for $g(x)$ ). Bessel functions are studied in detail in Chapter 12.)
++
++
++> [!exercise|9b51081e-6c07-5c06-89b9-367fa428a998.local at=1d027746-1bf7-5765-99c8-196331093009] Exercise 27
++> Let $f(x)$ be as in Exercise 26. (a) Find $f(0), f^{\prime}(0), f^{\prime \prime}(0)$.
++> (b) More generally, find $f^{(k)}(0)$, for $k=0,1.2, \ldots$.
++> (c) Integrate term-by-term to find $\int_{0}^{1} f(x) d x$, then estimate the integral with a calculator.
++
++
++> [!exercise|7a3fb9b6-2fd9-56e1-9c23-5da4610565b6.local at=116b7522-42c4-53dc-90a6-9a8315e772a2] Exercise 28
++> Let $f(x)=\frac{1+x}{1-x}$. Find $f(0), f^{\prime}(0)$, and $f^{(100)}(0)$.
++
++
++> [!prompt|2bccfdba-3b5e-5b82-bd5e-11fb8918b4c5.local at=5533a85a-e548-5a00-a799-f33035dc365b] Shared exercise instructions
++> In Exercises 29-32, write the given expression as a single power series (and possibly some lower power terms, as in Example 8).
++
++
++
++> [!exercise|95d5cb88-4159-5458-b1ef-9bb5b73f4eb9.local at=244db499-bc98-5777-bdd0-755e3f883c78] Exercise 29
++> $\sum_{m=1}^{\infty} \frac{x^{m}}{m}-2 \sum_{m=0}^{\infty} m x^{m+1}$.
++
++
++> [!exercise|1c28bc09-46aa-598d-b2ef-56c020592b1d.local at=d1a15b64-14fa-537b-b8d7-067d50407ed3] Exercise 30
++> $\sum_{m=1}^{\infty} \frac{x^{m+1}}{m!}+\sum_{m=3}^{\infty}(m-1) x^{m-1}$.
++
++
++> [!exercise|e57a2f79-824f-595d-bccf-3ecd409c952b.local at=355126c9-c131-54e6-936d-1d8aa49632f6] Exercise 31
++> $2 x \sum_{m=2}^{\infty} 2 \sqrt{m+2} x^{m}+\sum_{m=2}^{\infty} \frac{x^{m-1}}{m+6}$.
++
++
++> [!exercise|97df0319-de48-580e-89e8-5ee8e516444b.local at=34071f96-d0c3-5438-9e52-795b4b56586c] Exercise 32
++> $(x+1) \sum_{m=2}^{\infty} 2 x^{m-1}$.
++
++
++> [!prompt|0bfd7175-039a-5e5e-a474-b4218c5848e7.local at=8b3a1dd0-1988-5fe1-8f78-91d1e512e662] Shared exercise instructions
++> In Exercises 33-40, suppose that $y=\sum_{m=0}^{\infty} a_{m} x^{m}$ is a power series with a positive radius of convergence, and find a power series representation for the given expression.
++
++
++
++> [!exercise|683df90a-2c6f-5835-8cbc-2a21d326d164.local at=1e1cf90a-a643-5d42-be58-c76c566a06e6] Exercise 33
++> $y^{\prime}+y$.
++
++
++> [!exercise|abccccfc-a3c8-549e-bb44-46eef27e2310.local at=ed9b65d9-6590-5ea7-afc9-3e23c3120702] Exercise 34
++> $y^{\prime}+x^{2} y$.
++
++
++> [!exercise|2bf38fb2-a9f7-5592-aa06-7430ed57e6b5.local at=79ba3a4e-9914-5b27-9c81-5364168fe9fc] Exercise 35
++> $\left(1-x^{2}\right) y^{\prime \prime}+2 x y^{\prime}$.
++
++
++> [!exercise|56cf3e09-a873-551c-a337-06af9e3d239a.local at=b9b62d38-8f9e-5c3d-a5f5-22986636a691] Exercise 36
++> $(2+x) y^{\prime}+x^{3} y$.
++
++
++> [!exercise|b7022464-e466-5070-8b1d-ec5a985e190e.local at=21c2b333-b32f-5aa7-8d28-06a8d4f7d9ff] Exercise 37
++> $x^{2} y^{\prime \prime}+y$.
++
++
++> [!exercise|f4fd1f45-132f-5cc1-8fc1-ae6cf035577c.local at=91ebb144-e7da-5050-b64e-43752390b541] Exercise 38
++> $y^{\prime \prime}+y^{\prime}+x y$.
++
++
++> [!exercise|54d68f7c-09fc-53bc-8771-86193302d200.local at=93fa1fbf-7501-5cfb-805a-cd197d896b03] Exercise 39
++> $x y^{\prime}+y-e^{x}$.
++
++
++> [!exercise|c1cffbfb-be75-5a9f-bd5f-34052b6bfba0.local at=4b7513dd-a131-5865-9af5-bcfd9a8ed79e] Exercise 40
++> $(1-x) y^{\prime \prime}+\sin x$.
++
++
++> [!exercise|f9e68113-f695-5935-ab28-c3628efe96af.local at=057e0f5b-5b9c-5e5b-8253-58b35b2b6d4b] Exercise 41
++> Geometric series. Fix a real (or complex) number $x$ such that $|x|<1$, and let $n$ be a positive integer. (a) Show that
++>
++> $$
++> 1+x+x^{2}+\cdots+x^{n}=\frac{1-x^{n+1}}{1-x}
++> $$
++>
++> (b) Conclude that the geometric series $\sum_{m=0}^{\infty} x^{m}$ converges to $1 /(1-x)$ if $|x|<1$ and diverges otherwise. [Hint: What are the partial sums? Also, $x^{n+1} \rightarrow 0$ if and only if $|x|<1$.]
++
++
++> [!exercise|7c6c8c1d-e1cf-59a2-8bbe-cdc33b36ea9c.local at=67c708b8-1ff4-548b-ad47-b3a6f55ae2ec] Exercise 42
++> Uniform convergence of the geometric series. (a.) Let $\rho$ be any number such that $0<\rho<1$. Use the Weierstrass $M$-test to show that the geometric series $\sum_{m=0}^{\infty} x^{m}$ converges uniformly for all $x$ in $[-\rho, \rho]$.
++> (b) Show that the differentiated series $\sum_{m=1}^{\infty} m x^{m-1}$ converges uniformly on $[-\rho,\rho]$.
++> (c) Justify term-by-term differentiation of the geometric series. (See Theorem 5, Section 4.2.)
++
++
++> [!exercise|1639fcc1-f740-5efa-975f-564c3c82c478.local at=5dadc83e-6e7a-592d-9755-be3144675a5a] Exercise 43
++> Uniform convergence of power series. Suppose that $\sum_{m=0}^{\infty} a_{m} x^{m}$ has radius of convergence $R>0$. Let $r$ be any real number such that $0<r<R$, and choose $\rho$ with $r<\rho<R$.
++> (a) Show that $a_m\rho^m \rightarrow 0$. Conclude that $\left|a_m\rho^m\right| \leq M$ for some $M>0$ and all $m$.
++> [Hint: Apply the $n$th term test to a convergent series.]
++> (b) For $x$ such that $|x| \leq r$, we have
++>
++> $$
++> \left|a_{m} x^{m}\right|=\left|a_m\right|\rho^m(|x|/\rho)^m \leq M(r/\rho)^m .
++> $$
++>
++> Use these inequalities, the fact that $r/\rho<1$, and the Weierstrass $M$-test to conclude that $\sum_{m=0}^{\infty} a_{m} x^{m}$ converges uniformly on $[-r, r]$.
++
++
++
++
++> [!exercise|d7417b60-9ab0-54cf-b985-3cf20cccc15f.local at=6cf61b41-023d-559d-94c5-f37f33c35c02] Exercise 44
++> Term-by-term differentiation of power series. (a) Show that if $\sum_{m=0}^{\infty} a_{m} x^{m}$ has radius of convergence $R>0$, then $\sum_{m=1}^{\infty} m a_{m} x^{m-1}$ has the same radius of convergence. [Hint: Given $0 \leq|x|<R$, let $r$ be such that $|x|<r<R$. Then $\left|m a_{m} x^{m-1}\right| \leq m(|x| / r)^{m-1}\left|a_{m}\right| r^{m-1}$. Use the fact that the geometric series can be differentiated term-by-term (so $\sum m(|x| / r)^{m-1}$ is convergent); also prove and then use that $\left|a_{m}\right| r^{m-1} \leq M$ for some $M$.]
++> (b) Show that the derivative of $\sum_{m=0}^{\infty} a_{m} x^{m}$ is $\sum_{m=1}^{\infty} m a_{m} x^{m-1}$.
++> (c) Show that the derivative of $f(x)=\sum_{m=0}^{\infty} a_{m}(x-a)^{m}$ (for $|x-a|<R$ ) is $f^{\prime}(x)=\sum_{m=1}^{\infty} m a_{m}(x-a)^{m-1}$ (for $|x-a|<R$ ). [Hint: Define $g(x)=f(x+a)$.]
+
+`````

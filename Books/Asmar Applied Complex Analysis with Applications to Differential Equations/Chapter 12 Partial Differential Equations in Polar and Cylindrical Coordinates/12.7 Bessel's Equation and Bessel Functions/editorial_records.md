@@ -103,3 +103,895 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.7 Bessel's Equation and Bessel Functions.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.7 Bessel's Equation and Bessel Functions.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.7 Bessel's Equation and Bessel Functions.md
+@@ -1,21 +1,24 @@
++
+ ### 12.7 Bessel's Equation and Bessel Functions
+ 
+ We saw in this chapter that Bessel's equation of order $p \geq 0$,
+ 
+ $$
+ x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-p^{2}\right) y=0, \quad x>0
++\tag{1}
+ $$
+ 
+ arises when solving partial differential equations involving the Laplacian in polar and cylindrical coordinates. Note that Bessel's equation is a whole family of differential equations, one for each value of $p$. Note also the unfortunate clash of terminology-Bessel's equation of order $p$ is a differential equation of order 2 .
+ 
+-Bessel's equation also appears in solving various other classical problems. Historically, the equation with $p=0$ was first encountered and solved by Daniel Bernoulli in 1732 in his study of the hanging chain problem (Section 6.3). Similar equations appeared later in 1770 in the work of Lagrange on astronomical problems. In 1824, while investigating the problem of elliptic planetary motion, the great German astronomer F. W. Bessel encountered a special form of (1). Influenced by the monumental work of Fourier that had just appeared in 1822 (see Chapter 2), Bessel conducted a systematic study of (1).
++Bessel's equation also appears in solving various other classical problems. Historically, the equation with $p=0$ was first encountered and solved by Daniel Bernoulli in 1732 in his study of the hanging chain problem (Section 14.3). Similar equations appeared later in 1770 in the work of Lagrange on astronomical problems. In 1824, while investigating the problem of elliptic planetary motion, the great German astronomer F. W. Bessel encountered a special form of (1). Influenced by the monumental work of Fourier that had just appeared in 1822 (see Chapter 7), Bessel conducted a systematic study of (1).
+ 
+ ## Solution of Bessel's Equation
+ 
+-We will apply the method of Frobenius from Appendix A.6. It is easy to show that $x=0$ is a regular singular point of Bessel's equation. So, as suggested by the method of Frobenius, we try for a solution
++We will apply the method of Frobenius from Section 10.6. It is easy to show that $x=0$ is a regular singular point of Bessel's equation. So, as suggested by the method of Frobenius, we try for a solution
+ 
+ $$
+ y=\sum_{m=0}^{\infty} a_{m} x^{r+m}
++\tag{2}
+ $$
+ 
+ where $a_{0} \neq 0$. Substituting this into (1) yields
+@@ -48,6 +51,8 @@
+ \end{gathered}
+ $$
+ 
++*Printed equation labels: (3) indicial equation; (4) first coefficient condition; (5) coefficient recurrence.*
++
+ From (3), since $a_{0} \neq 0$, we get the indicial equation
+ 
+ $$
+@@ -84,6 +89,7 @@
+ 
+ $$
+ y=a_{0} \sum_{k=0}^{\infty} \frac{(-1)^{k}}{2^{2 k} k!(1+p)(2+p) \cdots(k+p)} x^{2 k+p},
++\tag{6}
+ $$
+ 
+ where $a_{0} \neq 0$ is arbitrary. This solution may be written in a nicer way with the aid of the gamma function. (If you have not previously encountered this function, it is described at the end of this section.) We choose
+@@ -102,13 +108,20 @@
+ \end{aligned}
+ $$
+ 
+-After this simplification, (6) yields the first solution, denoted by $J_{p}$ and called the Bessel function of order $p$,
+-
+-$$
+-J_{p}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!\Gamma(k+p+1)}\left(\frac{x}{2}\right)^{2 k+p} .
+-$$
+-
+-When $p=n$, we have $\Gamma(k+p+1)=(k+n)$ ! (see (14) below), and so the Bessel function of order $n$ is
++After this simplification, we obtain the following normalized solution.
++
++> [!definition|8b252a49-ba06-58f7-8ee0-2ea2e2b6f5fb.local at=20a2e4df-9ff2-5ed7-a842-048160670720] Bessel function of the first kind
++> For real order $p\ge0$ and $x>0$, the Bessel function of the first kind is
++>
++> $$
++> J_{p}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!\Gamma(k+p+1)}\left(\frac{x}{2}\right)^{2 k+p} .
++> $$
++>
++> Here $\Gamma$ denotes the gamma function. The value at $x=0$ is defined by the right-hand limit.
++
++*Printed equation label: (7).*
++
++When $p=n$, we have $\Gamma(k+p+1)=(k+n)!$ (see (14) below), and so the Bessel function of order $n$ is
+ 
+ $$
+ J_{n}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!(k+n)!}\left(\frac{x}{2}\right)^{2 k+n} .
+@@ -123,8 +136,19 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-48_509_1237_188_544.jpg)
+-Figure 1 Graphs of $J_{p}(x)$ for $p=0, \frac{1}{2}, 1,2,7$.
++```scientific-figure
++id: 4fd8743f-5f14-4271-9c09-00a5388046d2
++numbered: false
++title: ""
++caption: Figure 1 Graphs of $J_{p}(x)$ for $p=0, \frac{1}{2}, 1,2,7$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-48_509_1237_188_544.jpg
++    caption: ""
++```
++
+ 
+ Note that $J_{p}$ is bounded at 0 . As we will see shortly, this property is not shared by the second linearly independent solution.
+ 
+@@ -134,19 +158,21 @@
+ 
+ $$
+ J_{-p}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!\Gamma(k-p+1)}\left(\frac{x}{2}\right)^{2 k-p}
++\tag{8}
+ $$
+ 
+ It turns out that if $p$ is not an integer, then (8) is linearly independent of $J_{p}$. Thus when $p$ is not an integer, (7) and (8) determine a fundamental set of solutions of Bessel's equation of order $p$. Before turning to the case when $p$ is an integer, we compute the Bessel functions $J_{p}$ and $J_{-p}$ for the value $p=\frac{1}{2}$.
+ 
+-## EXAMPLE 1 Bessel functions of order $p= \pm \frac{1}{2}$
+-
+-Show that
+-
+-$$
+-J_{1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \sin x \quad \text { and } \quad J_{-1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \cos x .
+-$$
+-
+-Solution Substituting $p=\frac{1}{2}$ in (7), we get
++> [!exercise|8b172e9f-e34c-5546-b785-59170a6c1452.local at=cab7411f-e66b-5cc4-b182-5dbbc008f3d2] EXAMPLE 1 Bessel functions of order $p= \pm \frac{1}{2}$
++> Show that
++>
++> $$
++> J_{1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \sin x \quad \text { and } \quad J_{-1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \cos x .
++> $$
++
++##### solution
++
++Substituting $p=\frac{1}{2}$ in (7), we get
+ 
+ $$
+ J_{1 / 2}(x)=\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!\Gamma\left(k+\frac{1}{2}+1\right)}\left(\frac{x}{2}\right)^{2 k+\frac{1}{2}} .
+@@ -158,11 +184,19 @@
+ \Gamma\left(k+\frac{1}{2}+1\right)=\frac{(2 k+1)!}{2^{2 k+1} k!} \sqrt{\pi} .
+ $$
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_369_444_178_47.jpg)
+-Figure 2 Graphs of $J_{1 / 2}$, $J_{-1 / 2}$, and their envelopes $y= \pm \sqrt{\frac{2}{\pi x}}$.
+-
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_362_467_1026_45.jpg)
+-Figure 3 Approximation of $Y_{2}$.
++```scientific-figure
++id: b37f6b89-5480-4123-8547-9de8cd161d53
++numbered: false
++title: ""
++caption: Figure 2 Graphs of $J_{1 / 2}$, $J_{-1 / 2}$, and their envelopes $y= \pm \sqrt{\frac{2}{\pi x}}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_369_444_178_47.jpg
++    caption: ""
++```
++
+ 
+ Thus
+ 
+@@ -173,65 +207,109 @@
+ \end{aligned}
+ $$
+ 
+-The other part is proved similarly by substituting $p=-\frac{1}{2}$ into (8) and simplifying with the help Exercise 44(a) (see Exercise 21). In Figure 2 we plotted $J_{\frac{1}{2}}$ and $J_{-\frac{1}{2}}$. Clearly these two functions are linearly independent, since the first one is bounded while the second one is not.
++The other part is proved similarly by substituting $p=\frac{1}{2}$ into the series for $J_{-p}$ and simplifying with the help of Exercise 44(a) (see Exercise 21). In Figure 2 we plotted $J_{\frac{1}{2}}$ and $J_{-\frac{1}{2}}$. Clearly these two functions are linearly independent, since the first one is bounded while the second one is not.
+ 
+ It is important to keep in mind that $J_{p}$ and $J_{-p}$ are linearly independent only when $p$ is not an integer. In fact, when $p$ is a positive integer, we observe that $k-p+1 \leq 0$ for $k=0,1, \ldots, p-1$, and so the coefficients in (8) are not even defined for $k=0,1, \ldots, p-1$, because the gamma function is not defined at 0 and negative integers. It is useful, however, to have a definition for $J_{-n}$ for $n=1,2, \ldots$. A simple construction of this function is presented in Exercise 16. It yields a second linearly dependent solution that satisfies
+ 
+ $$
+ J_{-n}(x)=(-1)^{n} J_{n}(x) \quad(n \text { integer } \geq 0)
++\tag{9}
+ $$
+ 
+ We could use the Frobenius method to derive a second linearly independent solution. However, we will describe an alternative method that is commonly used in applied mathematics. We start again with the case when $p$ is not an integer and define
+ 
+-$$
+-Y_{p}(x)=\frac{J_{p}(x) \cos p \pi-J_{-p}(x)}{\sin p \pi} \quad(p \text { not an integer }) .
+-$$
+-
+-Since $J_{p}$ and $J_{-p}$ are in this case linearly independent solutions of Bessel's equation, it follows from (10) that $Y_{p}$ is also a solution of Bessel's equation that is linearly independent of $J_{p}$. The function $Y_{p}$ is called a Bessel function of the second kind of order $p$. For integer $p$, this function is constructed by a limiting process from the noninteger values as follows:
+-
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_373_467_1777_45.jpg)
+-Figure $4 Y_{0}, Y_{1}, Y_{2}$.
+-
+-$$
+-Y_{p}=\lim _{\nu \rightarrow p} Y_{\nu}
+-$$
++> [!definition|3eb52e35-d2a0-5902-ab98-9f125f2a5d2a.local at=b2fd50e8-8398-5a9d-9334-bc1f95265c68] Bessel function of the second kind
++> For $x>0$ and real $p\geq0$, let $J_p$ denote the Bessel function of the first kind.
++>
++> $$
++> Y_{p}(x)=\frac{J_{p}(x) \cos p \pi-J_{-p}(x)}{\sin p \pi} \quad(p \text { not an integer }) .
++> $$
++>
++> Since $J_{p}$ and $J_{-p}$ are in this case linearly independent solutions of Bessel's equation, it follows from this formula that $Y_{p}$ is also a solution of Bessel's equation that is linearly independent of $J_{p}$. The function $Y_{p}$ is called a Bessel function of the second kind of order $p$. For integer $p$, this function is constructed by a limiting process from the noninteger values as follows:
++>
++> $$
++> Y_{p}=\lim _{\nu \rightarrow p} Y_{\nu}
++> $$
++
++*Printed equation labels: (10) noninteger order; (11) integer-order limit.*
++
++```scientific-figure
++id: 1df168d5-f135-4cbc-a88a-8ad6dcdae0d8
++numbered: false
++title: ""
++caption: Figure 3 Approximation of $Y_{2}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_362_467_1026_45.jpg
++    caption: ""
++```
++
+ 
+ It can be shown that this limit exists (see Figure 3 for an illustration) and defines a solution of Bessel's equation of order $p$ which is also linearly independent of $J_{p}$. As illustrated in Figure 4, we have
+ 
+-## GENERAL
+-
+-SOLUTION OF BESSEL'S EQUATION OF ORDER $p$
++> [!property|e8592b84-46f2-501c-a88f-0d3577aa0a55.local at=1614d4e0-c6bd-56c0-9383-ac1a9102df62] Bessel functions of the second kind diverge at the origin
++> For real order $p\ge0$, the Bessel function of the second kind satisfies
++> $$
++> \lim_{x\to0^+}Y_p(x)=-\infty.
++> $$
++
++*Printed equation label: (12).*
++
++```scientific-figure
++id: ae5c60db-bf82-434e-bde5-3581cbda687e
++numbered: false
++title: ""
++caption: Figure 4 $Y_{0}, Y_{1}, Y_{2}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-49_373_467_1777_45.jpg
++    caption: ""
++```
++
+ 
+ In particular, the Bessel functions of the second kind are not bounded near 0 . We summarize our analysis of (1) as follows.
+ 
+-The general solution of Bessel's equation (1) of order $p$ is
+-
+-$$
+-y(x)=c_{1} J_{p}(x)+c_{2} Y_{p}(x)
+-$$
+-
+-where $J_{p}$ is given by (7) and $Y_{p}$ is given by (10) or (11). When $p$ is not an integer, a general solution is also given by
+-
+-$$
+-y(x)=c_{1} J_{p}(x)+c_{2} J_{-p}(x),
+-$$
+-
+-where $J_{p}$ is given by (7) and $J_{-p}$ is given by (8).
++> [!equation|3f367ba5-7274-57c5-9f48-982e8ed1dfc3.local at=299d01d5-9a3e-50af-8a46-629dbeb9d5ed] General Solution of Bessel's Equation
++> Let $p\geq0$.
++>
++> The general solution of Bessel's equation $x^2y''+xy'+(x^2-p^2)y=0$, $x>0$, of order $p$ is
++>
++> $$
++> y(x)=c_{1} J_{p}(x)+c_{2} Y_{p}(x)
++> $$
++>
++> where $J_p$ and $Y_p$ are the Bessel functions of the first and second kinds. When $p$ is not an integer, a general solution is also given by
++>
++> $$
++> y(x)=c_{1} J_{p}(x)+c_{2} J_{-p}(x),
++> $$
++>
++> where $J_p$ and $J_{-p}$ are Bessel functions of the first kind.
++
+ Explicit formulas and computations of the Bessel functions are presented in the exercises. We next investigate the gamma function.
+ 
+ ## The Gamma Function
+ 
+-The gamma function is defined for $x>0$ by
+-
+-$$
+-\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} d t
+-$$
+-
+-This integral is improper and converges for all $x>0$. The basic property of the gamma function is
+-
+-$$
+-\Gamma(x+1)=x \Gamma(x) .
+-$$
++> [!definition|1e29771b-e89a-59e7-a628-b61ecfa915b8.local at=816109b3-eb31-5aa3-8e54-d94e615da8be] Euler gamma function on the positive real axis
++> The gamma function is defined for $x>0$ by
++>
++> $$
++> \Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t} d t
++> $$
++
++*Printed equation label: (13).*
++
++This integral is improper and converges for all $x>0$.
++
++> [!property|36db6dd5-e306-5bc8-af5c-34dc0fb418b4.local at=44e8b883-b973-5a2e-8211-6a2a95012654] Recurrence relation for the gamma function
++> For $x>0$, the Euler gamma function satisfies
++> $$
++> \Gamma(x+1)=x\Gamma(x).
++> $$
+ 
+ To prove this we use integration by parts as follows:
+ 
+@@ -257,12 +335,14 @@
+ 
+ $$
+ \Gamma(n+1)=n!
++\tag{14}
+ $$
+ 
+ for all $n=0,1,2,3, \ldots$, where we have set $0!=1$. For this reason the gamma function is sometimes called the generalized factorial function. Other values of the gamma function can be found with various degrees of difficulty. From the value
+ 
+ $$
+ \Gamma\left(\frac{1}{2}\right)=\sqrt{\pi}
++\tag{15}
+ $$
+ 
+ (Exercise 34) and the basic property we find
+@@ -292,204 +372,366 @@
+ $\Gamma(x)>0$ for $x>0$
+ $\Gamma(x)$ alternates signs on the negative axis.
+ 
+-![](./images/1c611338-958a-44f7-9d79-2dde87e6ac2a-52_528_1248_208_558.jpg)
+-Figure $5 \Gamma(x)$, the generalized factorial function.
+-
+-## Exercises 4.7
+-
+-In Exercises 1-4, determine the order $p$ of the given Bessel equation. Use (7) to write down three terms of the first series solution.
+-
+-1. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-9\right) y=0$.
+-2. $x^{2} y^{\prime \prime}+x y^{\prime}+x^{2} y=0$.
+-3. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{4}\right) y=0$.
+-4. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{9}\right) y=0$.
+-
+-In Exercises 5-8, find the general solution of the given differential equation on $(0, \infty)$. Write down two terms of the series expansions of each part of the solution. [Hint: Use (8).]
+-5. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{9}{4}\right) y=0$.
+-6. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{25}{4}\right) y=0$.
+-7. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{16}\right) y=0$.
+-8. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{25}\right) y=0$.
+-9. Find at least three terms of a second linearly independent solution of the equation of Exercise 1 using the Frobenius method. (A first solution is given by (7).)
+-10. Verify that $y_{1}=x^{p} J_{p}(x)$ and $y_{2}=x^{p} Y_{p}(x)$ are linearly independent solutions of
+-
+-$$
+-x y^{\prime \prime}+(1-2 p) y^{\prime}+x y=0, \quad x>0
+-$$
+-
+-In Exercises 11-14, use the result of Exercise 10 to solve the given equation for $x>0$.
+-11. $x y^{\prime \prime}-y^{\prime}+x y=0$.
+-12. $y^{\prime \prime}+y=0$.
+-13. $x y^{\prime \prime}-2 y^{\prime}+x y=0$.
+-14. $x y^{\prime \prime}-3 y^{\prime}+x y=0$.
+-15. Establish the following properties:
+-(a) $J_{0}(0)=1, J_{p}(0)=0$ if $p>0$;
+-(b) $J_{n}(x)$ is an even function if $n$ is even, and odd if $n$ is odd;
+-(c) $\lim _{x \rightarrow 0^{+}} \frac{J_{p}(x)}{x^{p}}=\frac{1}{2^{p} \Gamma(p+1)}$.
+-16. Suppose in (7) we replace $p$ by a negative integer $-n$.
+-(a) Based on the properties of the gamma function, explain why in (7) it makes sense to set $1 / \Gamma(k-p+1)=0$ for $k=0,1,2, \ldots, p-1$. [Hint: Exercise 32 below.]
+-(b) By reindexing the series that you obtain, show that $J_{-n}(x)=(-1)^{n} J_{n}(x)$.
+-
+-In Exercises 17-20, solve the given equation by reducing it first to a Bessel's equation. Use the suggested change of variables and take $x>0$.
+-17. $x y^{\prime \prime}+(1+2 p) y^{\prime}+x y=0, y=x^{-p} u$.
+-18. $x y^{\prime \prime}+y^{\prime}+\frac{1}{4} y=0, z=\sqrt{x}$.
+-19. $y^{\prime \prime}+e^{-x} y=0, \quad z=2 e^{-\frac{x}{2}}$.
+-20. $x^{2} y^{\prime \prime}+x y^{\prime}+\left(4 x^{4}-\frac{1}{4}\right) y=0, z=x^{2}$.
+-21. Show that $J_{-1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \cos x$.
+-22. Establish the identities
+-(a) $J_{3 / 2}(x)=\sqrt{\frac{2}{\pi x}}\left[\frac{\sin x}{x}-\cos x\right]$.
+-(b) $J_{-3 / 2}(x)=\sqrt{\frac{2}{\pi x}}\left[-\frac{\cos x}{x}-\sin x\right]$.
+-
+-## 23. General solution of Bessel's equation of order 0.
+-
+-(a) Use (7) to derive the first six terms of the series solution $J_{0}$ of the Bessel's equation $x^{2} y^{\prime \prime}+x y^{\prime}+x^{2} y=0$.
+-(b) Use (a) and the reduction of order formula to find six terms of $y_{2}$, the second series solution. [Hint: See Example 5, Appendix A.6.]
+-(b) Plot your answers and compare their graphs to those of $J_{0}$ and $Y_{0}$ for $x$ near zero, say $0<x<4$. Describe what you find.
+-(c) Explain why we must have $Y_{0}=a J_{0}+b y_{2}$, where $a$ and $b$ are some constants. Evaluate the functions at two points in the interval $0<x<4$, say at $x=.2$ and $x=.3$, and obtain two equations in the unknown coefficients $a$ and $b$. Solve the equations to determine $a$ and $b$, and then plot and compare the graphs of $Y_{0}$ and $a J_{0}+b y_{2}$.
+-24. Repeat Exercise 23 with Bessel's equation of order 1.
+-25. Project Problem: The aging spring problem. The equation
+-
+-$$
+-y^{\prime \prime}(t)+e^{-a t+b} y(t)=0 \quad(a>0), \quad t>0
+-$$
+-
+-models the vibrations of a spring whose spring constant is tending to zero with time.
+-(a) Show that the change of variables $u=\frac{2}{a} e^{-\frac{1}{2}(a t-b)}$ transforms the differential equation into Bessel's equation of order zero (with the new variable $u$ ). [Hint: Let $\left.Y(u)=y(t), e^{-a t+b}=\frac{a^{2}}{4} u^{2} ; \quad \frac{d y}{d t}=-\frac{a}{2} u \frac{d Y}{d u} ; \quad \frac{d^{2} y}{d t^{2}}=\frac{a^{2}}{4} u\left[\frac{d Y}{d u}+u \frac{d^{2} Y}{d u^{2}}\right].\right]$
+-(b) Obtain the general solution of the differential equation in the form
+-
+-$$
+-y(t)=c_{1} J_{0}\left(\frac{2}{a} e^{-\frac{1}{2}(a t-b)}\right)+c_{2} Y_{0}\left(\frac{2}{a} e^{-\frac{1}{2}(a t-b)}\right),
+-$$
+-
+-where $c_{1}$ and $c_{2}$ are arbitrary constants, $J_{0}$ is the Bessel function of order 0 , and $Y_{0}$ is the Bessel function of order 0 of the second kind.
+-(c) Discuss the behavior of the solution as $t \rightarrow \infty$ in the following three cases: $c_{1}=0, c_{2} \neq 0 ; c_{1} \neq 0, c_{2}=0 ; c_{1} \neq 0, c_{2} \neq 0$. Does it make sense to have unbounded solutions of the differential equation? [Hint: What happens to the differential equation as $t \rightarrow \infty$ ?]
+-
+-In Exercises 26-27, solve the given aging spring problem. In each case determine whether the solution is bounded or unbounded as $t \rightarrow \infty$.
+-26. $y^{\prime \prime}(t)+e^{-2 t} y(t)=0, y(0)=J_{0}(1) \approx .765, y^{\prime}(0)=-J_{0}^{\prime}(1) \approx .440$.
+-27. $y^{\prime \prime}(t)+e^{-2 t} y(t)=0, y(0)=.1, y^{\prime}(0)=0$. [Use $J_{0}(1) \approx .765 ; J_{0}^{\prime}(1) \approx-.440$; $Y_{0}(1) \approx .088 ; Y_{0}^{\prime}(1) \approx .781$.]
+-28. Bessel's function of the second kind of order zero. The Bessel function of the second kind of order 0 is given explicitly by the formula
+-
+-$$
+-Y_{0}(x)=\frac{2}{\pi}\left[J_{0}(x)(\ln x+\gamma)+\sum_{m=1}^{\infty} \frac{(-1)^{m-1} h_{m}}{2^{2 m}(m!)^{2}} x^{2 m}\right],
+-$$
+-
+-where $h_{m}=1+\frac{1}{2}+\frac{1}{3}+\ldots+\frac{1}{m}$ and $\gamma$ is Euler's constant:
+-
+-$$
+-\gamma=\lim _{m \rightarrow \infty}\left(h_{m}-\ln m\right) \approx 0.577216 .
+-$$
+-
+-(a) Approximate the numerical value of Euler's constant.
+-(b) Justify the property $\lim _{x \rightarrow 0^{+}} Y_{0}(x)=-\infty$.
+-29. Modified Bessel function. In some applications the Bessel function $J_{p}$ appears as a function of the pure imaginary number $i x$.
+-(a) Show that $J_{p}(i x)=i^{p} \sum_{k=0}^{\infty} \frac{(x / 2)^{2 k+p}}{k!\Gamma(k+p+1)}$. Thus except for the factor $i^{p}$ the function that we get is real-valued. This function defines the so-called modified Bessel function of order $p$,
+-
+-$$
+-I_{p}(x)=\sum_{k=0}^{\infty} \frac{(x / 2)^{2 k+p}}{k!\Gamma(k+p+1)} .
+-$$
+-
+-(b) Verify that the modified Bessel function of order $p$ satisfies the modified Bessel's differential equation
+-
+-$$
+-x^{2} y^{\prime \prime}+x y^{\prime}-\left(x^{2}+p^{2}\right) y=0 .
+-$$
+-
+-(c) Plot the modified Bessel function of order 0 and note that it is positive and increasing for $x>0$.
+-30. Modified Bessel functions of the second kind.
+-(a) Show that $K_{p}(x)=\frac{\pi}{2 \sin p \pi}\left[I_{-p}(x)-I_{p}(x)\right]$ is also a solution of the modified Bessel's equation of Exercise 29. This function is called the modified Bessel function of the second kind (sometimes called of the third kind).
+-(b) Show that when $p$ is not an integer $I_{p}(x)$ and $K_{p}(x)$ are linearly independent.
+-(c) How would you construct $K_{p}(x)$ when $p$ is an integer?
++```scientific-figure
++id: d0555323-aa87-4c22-b869-e2d7c3e5ae44
++numbered: false
++title: ""
++caption: Figure 5 $\Gamma(x)$, the generalized factorial function.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/1c611338-958a-44f7-9d79-2dde87e6ac2a-52_528_1248_208_558.jpg
++    caption: ""
++```
++
++
++## Exercises 12.7
++
++
++> [!prompt|45f9ba1f-67ff-558b-93ca-be8bd853b25b.local at=87df936e-df73-5b6a-80c8-867e885024a7] Shared exercise instructions
++> In Exercises 1-4, determine the order $p$ of the given Bessel equation. Use (7) to write down three terms of the first series solution.
++
++
++> [!exercise|e756d1ea-f848-5761-9f48-628538e0da1f.local at=00e30926-cc93-5758-a2f8-81f94cae8f80] Exercise 1
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-9\right) y=0$.
++
++
++> [!exercise|b9e65791-b35b-53e8-8b4d-7444452607c9.local at=6fa4e999-7016-5280-b38a-1eb459c773bf] Exercise 2
++> $x^{2} y^{\prime \prime}+x y^{\prime}+x^{2} y=0$.
++
++
++> [!exercise|6a573f8d-f3b4-5f5d-a437-a33e7b552438.local at=810132d3-d1c8-5a65-9c5e-db1e35a27fcb] Exercise 3
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{4}\right) y=0$.
++
++
++> [!exercise|393bd2d0-4001-5fe1-a5c1-0aece208ec8b.local at=015184b7-8ab8-5048-b0af-37f86788c76f] Exercise 4
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{9}\right) y=0$.
++
++
++> [!prompt|ce175573-5bee-5e0e-8728-380785b59536.local at=4a64506e-ac00-5b04-b17b-0e30c7f87fe3] Shared exercise instructions
++> In Exercises 5-8, find the general solution of the given differential equation on $(0, \infty)$. Write down two terms of the series expansions of each part of the solution. [Hint: Use (8).]
++
++
++> [!exercise|ff1c0d35-dc76-5929-88a5-2a366f0d4af8.local at=da117cd3-f24a-553a-a52e-2451228b2565] Exercise 5
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{9}{4}\right) y=0$.
++
++
++> [!exercise|4aa1fdbc-e708-54fc-966f-55cdb32850bf.local at=42821d84-80ca-53c8-af6e-b7c52182d414] Exercise 6
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{25}{4}\right) y=0$.
++
++
++> [!exercise|51f05c02-ee6c-56da-a791-7189e4fb8202.local at=85a04648-ec9c-550a-9b6b-bca0d7d6061a] Exercise 7
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{16}\right) y=0$.
++
++
++> [!exercise|cd5491f7-7a38-5d5f-98d8-de43de8d9c37.local at=d95af105-5744-5d92-92f5-a8ddc3d6cf9f] Exercise 8
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(x^{2}-\frac{1}{25}\right) y=0$.
++
++
++> [!exercise|b4925a15-1867-5803-85d6-a6ec982904c4.local at=6179453d-fbcc-5600-958a-c39aab04f906] Exercise 9
++> Find at least three terms of a second linearly independent solution of the equation of Exercise 1 using the Frobenius method. (A first solution is given by (7).)
++
++
++> [!exercise|ef69d1e6-ae6f-5f2d-9bea-be20ef71b718.local at=a0e0f259-99b4-5779-bc70-37279bc199b1] Exercise 10
++> Verify that $y_{1}=x^{p} J_{p}(x)$ and $y_{2}=x^{p} Y_{p}(x)$ are linearly independent solutions of
++>
++> $$
++> x y^{\prime \prime}+(1-2 p) y^{\prime}+x y=0, \quad x>0
++> $$
++
++
++> [!prompt|3aa852f6-7470-56b5-90bc-6b9b19d3aefa.local at=b104fc38-509d-59c4-a77f-84843884f1fe] Shared exercise instructions
++> In Exercises 11-14, use the result of Exercise 10 to solve the given equation for $x>0$.
++
++
++> [!exercise|2cd28204-574b-57ff-a116-7715fe30d757.local at=320ae0df-b678-55d3-ad07-4bc0bc4ad519] Exercise 11
++> $x y^{\prime \prime}-y^{\prime}+x y=0$.
++
++
++> [!exercise|864470b4-2498-5988-b9e7-ce3d2136dcc5.local at=9550b652-e0a6-5fc6-8010-431c079fdb15] Exercise 12
++> $y^{\prime \prime}+y=0$.
++
++
++> [!exercise|bfdd68e5-7464-57fb-b6c6-e6d2f14c65a3.local at=7e1b57f0-4e88-517d-b31b-1b6631867db0] Exercise 13
++> $x y^{\prime \prime}-2 y^{\prime}+x y=0$.
++
++
++> [!exercise|6d204848-4ed7-58d2-b466-116c4b207c96.local at=e7f14275-8892-5358-800d-67d98315077c] Exercise 14
++> $x y^{\prime \prime}-3 y^{\prime}+x y=0$.
++
++
++> [!exercise|5dfe70d4-0e67-5083-a773-ca064b2a717f.local at=7664e9fc-30e5-54f1-8c78-f80592ba920e] Exercise 15
++> Establish the following properties:
++> (a) $J_{0}(0)=1, J_{p}(0)=0$ if $p>0$;
++> (b) $J_{n}(x)$ is an even function if $n$ is even, and odd if $n$ is odd;
++> (c) $\lim _{x \rightarrow 0^{+}} \frac{J_{p}(x)}{x^{p}}=\frac{1}{2^{p} \Gamma(p+1)}$.
++
++
++> [!exercise|9bbc4f06-762f-5689-b8a7-936fdf0b8342.local at=c866eac8-f62b-54d9-a755-e2b37ec90baf] Exercise 16
++> Suppose in (7) we replace $p$ by a negative integer $-n$.
++> (a) Based on the properties of the gamma function, explain why in (7) it makes sense to set $1 / \Gamma(k-n+1)=0$ for $k=0,1,2, \ldots, n-1$. [Hint: Exercise 32 below.]
++> (b) By reindexing the series that you obtain, show that $J_{-n}(x)=(-1)^{n} J_{n}(x)$.
++
++
++> [!prompt|778f88aa-5541-51d6-ae6f-c951324d68f6.local at=d59ac5e1-a5ab-596d-9ac4-480ff76026f1] Shared exercise instructions
++> In Exercises 17-20, solve the given equation by reducing it first to a Bessel's equation. Use the suggested change of variables and take $x>0$.
++
++
++> [!exercise|bfeaf2e0-1086-5de8-8c45-bc364595b440.local at=21f97dcf-92cb-5e9c-88d6-30c573b1da3c] Exercise 17
++> $x y^{\prime \prime}+(1+2 p) y^{\prime}+x y=0, y=x^{-p} u$.
++
++
++> [!exercise|b1a4f4e9-b10b-529a-b307-0af92331a945.local at=3523e784-2f4e-5acb-b204-e2b9ace63965] Exercise 18
++> $x y^{\prime \prime}+y^{\prime}+\frac{1}{4} y=0, z=\sqrt{x}$.
++
++
++> [!exercise|549b5ed8-f03a-5e7b-9a22-2567dae59ede.local at=c48c9666-416f-593c-a59b-b4ef00602c66] Exercise 19
++> $y^{\prime \prime}+e^{-x} y=0, \quad z=2 e^{-\frac{x}{2}}$.
++
++
++> [!exercise|c0401880-3d5b-5389-8ae6-978182f321ff.local at=5d5a36f8-769d-5504-a2fd-7f14257d24ed] Exercise 20
++> $x^{2} y^{\prime \prime}+x y^{\prime}+\left(4 x^{4}-\frac{1}{4}\right) y=0, z=x^{2}$.
++
++
++> [!exercise|3cafbc5d-37fe-5492-ba5c-dd56d4c92dec.local at=90329ec8-6b6a-569c-bc73-314ffc430c3e] Exercise 21
++> Show that $J_{-1 / 2}(x)=\sqrt{\frac{2}{\pi x}} \cos x$.
++
++
++> [!exercise|71ba17db-694d-55df-84ac-15c2b8b33cc4.local at=1f32b0f5-8162-5284-bfe9-672c6405b48d] Exercise 22
++> Establish the identities
++> (a) $J_{3 / 2}(x)=\sqrt{\frac{2}{\pi x}}\left[\frac{\sin x}{x}-\cos x\right]$.
++> (b) $J_{-3 / 2}(x)=\sqrt{\frac{2}{\pi x}}\left[-\frac{\cos x}{x}-\sin x\right]$.
++
++
++> [!exercise|6c206b61-12fa-5bde-aa0d-486b8f2ee769.local at=bef999b8-8771-54fd-a65c-f6e27aab0166] Exercise 23
++> General solution of Bessel's equation of order 0.
++>
++> (a) Use (7) to derive the first six terms of the series solution $J_{0}$ of the Bessel's equation $x^{2} y^{\prime \prime}+x y^{\prime}+x^{2} y=0$.
++> (b) Use (a) and the reduction of order formula to find six terms of $y_{2}$, the second series solution. [Hint: See Example 5, Section 10.6.]
++> (c) Plot your answers and compare their graphs to those of $J_{0}$ and $Y_{0}$ for $x$ near zero, say $0<x<4$. Describe what you find.
++> (d) Explain why we must have $Y_{0}=a J_{0}+b y_{2}$, where $a$ and $b$ are some constants. Evaluate the functions at two points in the interval $0<x<4$, say at $x=.2$ and $x=.3$, and obtain two equations in the unknown coefficients $a$ and $b$. Solve the equations to determine $a$ and $b$, and then plot and compare the graphs of $Y_{0}$ and $a J_{0}+b y_{2}$.
++
++
++> [!exercise|868da622-0c44-5a55-83eb-27df8add3db6.local at=246b8a15-5009-59cd-9176-f875776c46c3] Exercise 24
++> Repeat Exercise 23 with Bessel's equation of order 1.
++
++
++> [!exercise|782a3326-a7af-5385-915f-941c5fd09ae0.local at=b7b3c386-508b-55a0-9a28-c468f4bb48ec] Exercise 25
++> Project Problem: The aging spring problem. The equation
++>
++> $$
++> y^{\prime \prime}(t)+e^{-a t+b} y(t)=0 \quad(a>0), \quad t>0
++> $$
++>
++> models the vibrations of a spring whose spring constant is tending to zero with time.
++> (a) Show that the change of variables $u=\frac{2}{a} e^{-\frac{1}{2}(a t-b)}$ transforms the differential equation into Bessel's equation of order zero (with the new variable $u$ ). [Hint: Let $Y(u)=y(t), e^{-a t+b}=\frac{a^{2}}{4} u^{2} ; \quad \frac{d y}{d t}=-\frac{a}{2} u \frac{d Y}{d u} ; \quad \frac{d^{2} y}{d t^{2}}=\frac{a^{2}}{4} u\left[\frac{d Y}{d u}+u \frac{d^{2} Y}{d u^{2}}\right]$.]
++> (b) Obtain the general solution of the differential equation in the form
++>
++> $$
++> y(t)=c_{1} J_{0}\left(\frac{2}{a} e^{-\frac{1}{2}(a t-b)}\right)+c_{2} Y_{0}\left(\frac{2}{a} e^{-\frac{1}{2}(a t-b)}\right),
++> $$
++>
++> where $c_{1}$ and $c_{2}$ are arbitrary constants, $J_{0}$ is the Bessel function of order 0 , and $Y_{0}$ is the Bessel function of order 0 of the second kind.
++> (c) Discuss the behavior of the solution as $t \rightarrow \infty$ in the following three cases: $c_{1}=0, c_{2} \neq 0 ; c_{1} \neq 0, c_{2}=0 ; c_{1} \neq 0, c_{2} \neq 0$. Does it make sense to have unbounded solutions of the differential equation? [Hint: What happens to the differential equation as $t \rightarrow \infty$ ?]
++
++
++> [!prompt|a0195a24-139e-5fc8-ba8d-48223fb836a8.local at=336e7627-9dac-5a62-809b-aa27d4d13255] Shared exercise instructions
++> In Exercises 26-27, solve the given aging spring problem. In each case determine whether the solution is bounded or unbounded as $t \rightarrow \infty$.
++
++
++> [!exercise|f388c341-c0f3-57e8-a35b-c6b4b61fe1ac.local at=87fc9a9c-5c05-5ae5-a884-b99674cc0128] Exercise 26
++> $y^{\prime \prime}(t)+e^{-2 t} y(t)=0, y(0)=J_{0}(1) \approx .765, y^{\prime}(0)=-J_{0}^{\prime}(1) \approx .440$.
++
++
++> [!exercise|f87bad98-7bad-5053-b02b-f7e627ce15da.local at=993bb890-2d9f-5497-950c-4c5924e82146] Exercise 27
++> $y^{\prime \prime}(t)+e^{-2 t} y(t)=0, y(0)=.1, y^{\prime}(0)=0$. [Use $J_{0}(1) \approx .765 ; J_{0}^{\prime}(1) \approx-.440$; $Y_{0}(1) \approx .088 ; Y_{0}^{\prime}(1) \approx .781$.]
++
++
++> [!exercise|cb1875eb-38c5-530e-bf0e-55be051baff7.local at=1f3e7ce9-5b99-5bf2-a86d-be99c9264633] Exercise 28
++> Bessel's function of the second kind of order zero. The Bessel function of the second kind of order 0 is given explicitly by the formula
++>
++> $$
++> Y_{0}(x)=\frac{2}{\pi}\left[J_{0}(x)(\ln(x/2)+\gamma)+\sum_{m=1}^{\infty} \frac{(-1)^{m-1} h_{m}}{2^{2 m}(m!)^{2}} x^{2 m}\right],
++> $$
++>
++> 
++>
++> where $h_{m}=1+\frac{1}{2}+\frac{1}{3}+\ldots+\frac{1}{m}$ and $\gamma$ is Euler's constant:
++>
++> $$
++> \gamma=\lim _{m \rightarrow \infty}\left(h_{m}-\ln m\right) \approx 0.577216 .
++> $$
++>
++> (a) Approximate the numerical value of Euler's constant.
++> (b) Justify the property $\lim _{x \rightarrow 0^{+}} Y_{0}(x)=-\infty$.
++
++
++> [!exercise|e03b6a0b-2658-553e-95d9-af7247c6b4f0.local at=a43c606f-8fc0-57ff-bd5d-e1df74f1e72c] Exercise 29
++> Modified Bessel function. In some applications the Bessel function $J_{p}$ appears as a function of the pure imaginary number $i x$.
++> (a) Show that $J_{p}(i x)=i^{p} \sum_{k=0}^{\infty} \frac{(x / 2)^{2 k+p}}{k!\Gamma(k+p+1)}$. Thus except for the factor $i^{p}$ the function that we get is real-valued. This function defines the so-called modified Bessel function of order $p$,
++>
++> $$
++> I_{p}(x)=\sum_{k=0}^{\infty} \frac{(x / 2)^{2 k+p}}{k!\Gamma(k+p+1)} .
++> $$
++>
++> (b) Verify that the modified Bessel function of order $p$ satisfies the modified Bessel's differential equation
++>
++> $$
++> x^{2} y^{\prime \prime}+x y^{\prime}-\left(x^{2}+p^{2}\right) y=0 .
++> $$
++>
++> (c) Plot the modified Bessel function of order 0 and note that it is positive and increasing for $x>0$.
++
++
++> [!exercise|daad9315-6673-5045-8913-6270a4690f3e.local at=a05bc9c2-9358-5a6e-a311-1fb3aec76a98] Exercise 30
++> Modified Bessel functions of the second kind.
++> (a) For $x>0$ and noninteger $p$, show that $K_{p}(x)=\frac{\pi}{2 \sin p \pi}\left[I_{-p}(x)-I_{p}(x)\right]$ is also a solution of the modified Bessel's equation of Exercise 29. This function is called the modified Bessel function of the second kind (sometimes called of the third kind).
++> (b) Show that when $p$ is not an integer $I_{p}(x)$ and $K_{p}(x)$ are linearly independent.
++> (c) How would you construct $K_{p}(x)$ when $p$ is an integer?
++
+ 
+ ## The Gamma Function
+ 
+-31. (a) Compute the numerical values of $\Gamma(1)$ and $\Gamma(2)$ starting from (13).
+-(b) Use (15) and the basic property of the gamma function to compute the values of $\Gamma\left(\frac{5}{2}\right)$ and $\Gamma\left(-\frac{3}{2}\right)$.
+-32. The reciprocal of the gamma function.
+-(a) Show that $1 / \Gamma(x) \rightarrow 0$ as $x$ approaches a negative integer or 0 . For this reason, we define $1 / \Gamma(x)=0$ for $x=0,-1,-2, \ldots$.
+-(b) Plot the graph of $1 / \Gamma(x)$ and show that it is continuous for all $x$.
+-33. For $x, y>0$,
+-
+-$$
+-\frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}=2 \int_{0}^{\pi / 2} \cos ^{2 x-1} \theta \sin ^{2 y-1} \theta d \theta .
+-$$
+-
+-Derive this useful formula as follows.
+-(a) Make the change of variables $u^{2}=t$ in (13) and obtain
+-
+-$$
+-\Gamma(x)=2 \int_{0}^{\infty} e^{-u^{2}} u^{2 x-1} d u, \quad x>0
+-$$
+-
+-(b) Use (a) to show that for $x, y>0$,
+-
+-$$
+-\Gamma(x) \Gamma(y)=4 \int_{0}^{\infty} \int_{0}^{\infty} e^{-\left(u^{2}+v^{2}\right)} u^{2 x-1} v^{2 y-1} d u d v
+-$$
+-
+-(c) Change to polar coordinates in (b) ( $u=r \cos \theta, v=r \sin \theta, \quad d u d v=r d r d \theta$ ) and obtain that for $x, y>0$,
+-
+-$$
+-\Gamma(x) \Gamma(y)=2 \Gamma(x+y) \int_{0}^{\pi / 2} \cos ^{2 x-1} \theta \sin ^{2 y-1} \theta d \theta
+-$$
+-
+-[Hint: After you change coordinates, keep in mind (a) as you compute the integral in $r$.]
+-34. Use the result of Exercise 33 to obtain (15).
+-35. Derive the formula
+-
+-$$
+-\frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-u^{2}} d u=1
+-$$
+-
+-[Hint: Use (15) and Exercise 33(a).]
+-In Exercises 36-39, use the result of Exercise 33 to compute the given integral.
+-36. $\int_{0}^{\pi / 2} \cos \theta \sin \theta d \theta$.
+-37. $\int_{0}^{\pi / 2} \cos ^{2} \theta \sin ^{3} \theta d \theta$.
+-38. $\int_{0}^{\pi / 2} \cos ^{5} \theta \sin ^{6} \theta d \theta$.
+-39. $\int_{0}^{\pi / 2} \cos ^{8} \theta d \theta$.
+-
+-Use the result of Exercise 33 to establish the following Wallis's formulas.
+-40. $\int_{0}^{\pi / 2} \sin ^{2 k} \theta d \theta=\frac{\pi}{2} \frac{(2 k)!}{2^{2 k}(k!)^{2}}, \quad k=0,1,2, \ldots$.
+-41. $\int_{0}^{\pi / 2} \sin ^{2 k+1} \theta d \theta=\frac{2^{2 k}(k!)^{2}}{(2 k+1)!}, \quad k=0,1,2, \ldots$.
+-42. (a) Explain with the help of a graph why
+-
+-$$
+-\int_{0}^{\pi / 2} \cos ^{2 k} \theta d \theta=\int_{0}^{\pi / 2} \sin ^{2 k} \theta d \theta
+-$$
+-
+-and
+-
+-$$
+-\int_{0}^{\pi / 2} \cos ^{2 k+1} \theta d \theta=\int_{0}^{\pi / 2} \sin ^{2 k+1} \theta d \theta
+-$$
+-
+-(b) Use (a) and Exercises 40, and 41 to show that for $k=0,1,2, \ldots$,
+-
+-$$
+-\int_{0}^{\pi / 2} \cos ^{2 k} \theta d \theta=\frac{\pi}{2} \frac{(2 k)!}{2^{2 k}(k!)^{2}} \quad \text { and } \quad \int_{0}^{\pi / 2} \cos ^{2 k+1} \theta d \theta=\frac{2^{2 k}(k!)^{2}}{(2 k+1)!}
+-$$
+-
+-43. Derive the following formulas using Exercise 42: for $k=0,1,2, \ldots$
+-
+-$$
+-\frac{1}{\pi} \int_{0}^{\pi} \cos ^{2 k} \theta d \theta=\frac{(2 k)!}{2^{2 k}(k!)^{2}} \quad \text { and } \quad \int_{0}^{\pi} \cos ^{2 k+1} \theta d \theta=0
+-$$
+-
+-44. Show that (a) $\quad \Gamma\left(n+\frac{1}{2}\right)=\frac{(2 n)!}{2^{2 n} n!} \sqrt{\pi}$. (b) $\quad \Gamma\left(n+\frac{1}{2}+1\right)=\frac{(2 n+1)!}{2^{2 n+1} n!} \sqrt{\pi}$.
+-45. (a) Use the result of Exercise 33 to obtain that the arc length of the lemniscate $r^{2}=2 \cos 2 \theta$ is $2 \sqrt{2 \pi} \Gamma\left(\frac{1}{4}\right) / \Gamma\left(\frac{3}{4}\right)$. [Hint: Arc length in polar coordinates is $L=\int_{a}^{b} \sqrt{r^{2}+\left(\frac{d r}{d \theta}\right)^{2}} d \theta$.]
+-(b) Approximate the arc length in (a).
+-46. The beta function is defined for $r, s>0$ by
+-
+-$$
+-\beta(r, s)=\int_{0}^{1} t^{r-1}(1-t)^{s-1} d t
+-$$
+-
+-(a) Use the change of variables $t=\sin ^{2} \theta$ to obtain
+-
+-$$
+-\beta(r, s)=2 \int_{0}^{\pi / 2} \cos ^{2 s-1} \theta \sin ^{2 r-1} \theta d \theta
+-$$
+-
+-(b) From Exercise 33 conclude that
+-
+-$$
+-\beta(r, s)=\frac{\Gamma(r) \Gamma(s)}{\Gamma(r+s)}
+-$$
++> [!exercise|db00a680-494c-5807-8376-5900f76c9aa4.local at=cf71ffbe-5d4f-55c5-b5c2-39d28d559673] Exercise 31
++> (a) Compute the numerical values of $\Gamma(1)$ and $\Gamma(2)$ starting from (13).
++> (b) Use (15) and the basic property of the gamma function to compute the values of $\Gamma\left(\frac{5}{2}\right)$ and $\Gamma\left(-\frac{3}{2}\right)$.
++
++
++> [!exercise|9fc66ef6-61a5-5604-80e4-4b34dcb398fa.local at=8861a3db-92ad-5369-8be1-579ff7591db1] Exercise 32
++> The reciprocal of the gamma function.
++> (a) Show that $1 / \Gamma(x) \rightarrow 0$ as $x$ approaches a negative integer or 0 . For this reason, we define $1 / \Gamma(x)=0$ for $x=0,-1,-2, \ldots$.
++> (b) Plot the graph of $1 / \Gamma(x)$ and show that it is continuous for all $x$.
++
++
++> [!exercise|2e0b11b6-8cea-5873-8727-4c0103c7da51.local at=da254596-3d49-565c-8f27-cecad0498e59] Exercise 33
++> For $x, y>0$,
++>
++> $$
++> \frac{\Gamma(x) \Gamma(y)}{\Gamma(x+y)}=2 \int_{0}^{\pi / 2} \cos ^{2 x-1} \theta \sin ^{2 y-1} \theta d \theta .
++> $$
++>
++> Derive this useful formula as follows.
++> (a) Make the change of variables $u^{2}=t$ in (13) and obtain
++>
++> $$
++> \Gamma(x)=2 \int_{0}^{\infty} e^{-u^{2}} u^{2 x-1} d u, \quad x>0
++> $$
++>
++> (b) Use (a) to show that for $x, y>0$,
++>
++> $$
++> \Gamma(x) \Gamma(y)=4 \int_{0}^{\infty} \int_{0}^{\infty} e^{-\left(u^{2}+v^{2}\right)} u^{2 x-1} v^{2 y-1} d u d v
++> $$
++>
++> (c) Change to polar coordinates in (b) ( $u=r \cos \theta, v=r \sin \theta, \quad d u d v=r d r d \theta$ ) and obtain that for $x, y>0$,
++>
++> $$
++> \Gamma(x) \Gamma(y)=2 \Gamma(x+y) \int_{0}^{\pi / 2} \cos ^{2 x-1} \theta \sin ^{2 y-1} \theta d \theta
++> $$
++>
++> [Hint: After you change coordinates, keep in mind (a) as you compute the integral in $r$.]
++
++
++> [!exercise|89dd368d-de6f-5fe2-99e2-463030f73fe8.local at=d427acf8-3322-5a90-9830-badee4ed6d3d] Exercise 34
++> Use the result of Exercise 33 to obtain (15).
++
++
++> [!exercise|c920925b-b919-52c2-b807-fc5c2413c2d1.local at=a924d32e-2c68-5179-8070-2e59ab5f9945] Exercise 35
++> Derive the formula
++>
++> $$
++> \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-u^{2}} d u=1
++> $$
++>
++> [Hint: Use (15) and Exercise 33(a).]
++
++
++> [!prompt|a42eb16e-f1c6-5677-916b-973e98f85005.local at=ce0e3a1c-fb81-5d57-a090-dc7e679cda0a] Shared exercise instructions
++> In Exercises 36-39, use the result of Exercise 33 to compute the given integral.
++
++
++> [!exercise|097e8aa5-1112-5917-b99e-bc0953c1e88f.local at=2bd07a22-9f7f-53c6-850b-1dd9afbd3e03] Exercise 36
++> $\int_{0}^{\pi / 2} \cos \theta \sin \theta d \theta$.
++
++
++> [!exercise|268033e1-f98d-5f63-96d0-442cd9c23e6f.local at=2c1127ed-0b7a-5a73-b26d-fa747be27ccd] Exercise 37
++> $\int_{0}^{\pi / 2} \cos ^{2} \theta \sin ^{3} \theta d \theta$.
++
++
++> [!exercise|cef07b5c-05a8-52c4-81d3-5aca62f5b517.local at=0e9d3b6f-daa8-5d7d-b060-b3e0f7ea1040] Exercise 38
++> $\int_{0}^{\pi / 2} \cos ^{5} \theta \sin ^{6} \theta d \theta$.
++
++
++> [!exercise|c8694725-cc4c-5796-9144-ce85639790d5.local at=c77af755-fc28-5a70-9940-e322c7483b5c] Exercise 39
++> $\int_{0}^{\pi / 2} \cos ^{8} \theta d \theta$.
++
++
++> [!prompt|05f9d5d4-6411-5222-bc9c-54bf5a3180a8.local at=96172f77-96eb-512d-852f-ce66603f4f90] Shared exercise instructions
++> Use the result of Exercise 33 to establish the following Wallis's formulas.
++
++
++> [!exercise|495be75e-c6f4-5588-96fb-f6e94dc64148.local at=a1a59e32-c6ee-5b52-9e91-70332850a1f2] Exercise 40
++> $\int_{0}^{\pi / 2} \sin ^{2 k} \theta d \theta=\frac{\pi}{2} \frac{(2 k)!}{2^{2 k}(k!)^{2}}, \quad k=0,1,2, \ldots$.
++
++
++> [!exercise|fb6b5e43-d33d-5391-a13c-25607b341eb8.local at=184e8887-2381-5917-a7d6-396808dd3f87] Exercise 41
++> $\int_{0}^{\pi / 2} \sin ^{2 k+1} \theta d \theta=\frac{2^{2 k}(k!)^{2}}{(2 k+1)!}, \quad k=0,1,2, \ldots$.
++
++
++> [!exercise|ff1a2eba-0400-5dfd-b0e7-7e24f391a0bc.local at=82676507-2a8b-5422-b37c-c833fc6c9da0] Exercise 42
++> (a) Explain with the help of a graph why
++>
++> $$
++> \int_{0}^{\pi / 2} \cos ^{2 k} \theta d \theta=\int_{0}^{\pi / 2} \sin ^{2 k} \theta d \theta
++> $$
++>
++> and
++>
++> $$
++> \int_{0}^{\pi / 2} \cos ^{2 k+1} \theta d \theta=\int_{0}^{\pi / 2} \sin ^{2 k+1} \theta d \theta
++> $$
++>
++> (b) Use (a) and Exercises 40, and 41 to show that for $k=0,1,2, \ldots$,
++>
++> $$
++> \int_{0}^{\pi / 2} \cos ^{2 k} \theta d \theta=\frac{\pi}{2} \frac{(2 k)!}{2^{2 k}(k!)^{2}} \quad \text { and } \quad \int_{0}^{\pi / 2} \cos ^{2 k+1} \theta d \theta=\frac{2^{2 k}(k!)^{2}}{(2 k+1)!}
++> $$
++
++
++> [!exercise|e76c3530-893d-5026-b9ef-3a2abc805b37.local at=4d9ed981-eec5-54df-9d2a-391c27dd681a] Exercise 43
++> Derive the following formulas using Exercise 42: for $k=0,1,2, \ldots$
++>
++> $$
++> \frac{1}{\pi} \int_{0}^{\pi} \cos ^{2 k} \theta d \theta=\frac{(2 k)!}{2^{2 k}(k!)^{2}} \quad \text { and } \quad \int_{0}^{\pi} \cos ^{2 k+1} \theta d \theta=0
++> $$
++
++
++> [!exercise|47555982-2f8a-5f11-b3e5-80aa81bd77e7.local at=6828f0ab-b98b-504b-8469-a5eddf6e2df9] Exercise 44
++> For integers $n\ge0$, show that (a) $\quad \Gamma\left(n+\frac{1}{2}\right)=\frac{(2 n)!}{2^{2 n} n!} \sqrt{\pi}$. (b) $\quad \Gamma\left(n+\frac{1}{2}+1\right)=\frac{(2 n+1)!}{2^{2 n+1} n!} \sqrt{\pi}$.
++
++
++> [!exercise|b326756a-45c7-52ea-943b-ea552e8885da.local at=87cb843c-f3c6-538c-9337-a5cde77abe8f] Exercise 45
++> (a) Use the result of Exercise 33 to obtain that the arc length of the lemniscate $r^{2}=2 \cos 2 \theta$ is $\sqrt{2 \pi} \Gamma\left(\frac{1}{4}\right) / \Gamma\left(\frac{3}{4}\right)$. [Hint: Arc length in polar coordinates is $L=\int_{a}^{b} \sqrt{r^{2}+\left(\frac{d r}{d \theta}\right)^{2}} d \theta$.]
++> 
++> (b) Approximate the arc length in (a).
++
++
++> [!exercise|17419b89-9509-554a-90cd-f2386f64a7a9.local at=1f1a7955-1383-582d-b2cf-4f63d6b8e8a6] Exercise 46
++> The beta function is defined for $r, s>0$ by
++>
++> $$
++> \beta(r, s)=\int_{0}^{1} t^{r-1}(1-t)^{s-1} d t
++> $$
++>
++> (a) Use the change of variables $t=\sin ^{2} \theta$ to obtain
++>
++> $$
++> \beta(r, s)=2 \int_{0}^{\pi / 2} \cos ^{2 s-1} \theta \sin ^{2 r-1} \theta d \theta
++> $$
++>
++> (b) From Exercise 33 conclude that
++>
++> $$
++> \beta(r, s)=\frac{\Gamma(r) \Gamma(s)}{\Gamma(r+s)}
++> $$
+
+`````

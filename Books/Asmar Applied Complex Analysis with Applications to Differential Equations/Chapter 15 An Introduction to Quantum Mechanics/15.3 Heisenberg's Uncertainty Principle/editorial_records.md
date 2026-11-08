@@ -115,3 +115,460 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 >
 > Here $\hat f(\omega)=(2\pi)^{-1/2}\int_{-\infty}^{\infty}e^{-i\omega x}f(x)\,dx$, extended to square integrable functions by mean-square limits. The quantities are $\Delta_af=\int(x-a)^2|f(x)|^2\,dx/\int|f(x)|^2\,dx$ and $\Delta_\alpha\hat f=\int(\omega-\alpha)^2|\hat f(\omega)|^2\,d\omega/\int|\hat f(\omega)|^2\,d\omega$, allowing infinite values.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 15 An Introduction to Quantum Mechanics/15.3 Heisenberg's Uncertainty Principle.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 15 An Introduction to Quantum Mechanics/15.3 Heisenberg's Uncertainty Principle.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.3 Heisenberg's Uncertainty Principle.md
+@@ -1,3 +1,4 @@
++
+ ### 15.3 Heisenberg's Uncertainty Principle
+ 
+ In this section, we will prove a famous result in quantum mechanics that asserts that one cannot at the same time be certain of the position and of the velocity of an electron (or any particle). That is, increasing the knowledge of the position decreases the knowledge of the velocity or momentum of the electron. This mysterious fact about electrons is known as the Heisenberg uncertainty principle. It is proved with the help of the Fourier transform. As a matter of fact, it is simply a restatement of a property of the Fourier transform.
+@@ -6,40 +7,51 @@
+ 
+ Recall that a function $f$ defined on the real line is square integrable if $\int_{-\infty}^{\infty}|f(t)|^{2} d t<\infty$. Since we will allow complex-valued functions, whenever we write $|f|$ we mean $\sqrt{f \bar{f}}$. The Fourier transform of $f$ will be written $\hat{f}$.
+ 
+-THEOREM 1 (PARSEVAL'S THEOREM)
+-
+-Suppose that $f$ and $g$ are square integrable functions on the real line. Then
+-
+-$$
+-\int_{-\infty}^{\infty} f(t) \overline{g(t)} d t=\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\hat{g}(\omega)} d \omega
+-$$
++> [!theorem|1027638f-2ec8-5470-94a9-e130f8e0b80a.local at=f265bf63-621d-5060-9c20-6f8ecb1f4f1a] Parseval's Theorem
++> Suppose that $f$ and $g$ are square integrable functions on the real line. Then
++>
++> $$
++> \int_{-\infty}^{\infty} f(t) \overline{g(t)} d t=\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\hat{g}(\omega)} d \omega
++> $$
++>
++> Here $\hat f(\omega)=(2\pi)^{-1/2}\int_{-\infty}^{\infty}e^{-i\omega x}f(x)\,dx$, extended to square integrable functions by mean-square limits.
++
++*Printed equation label: (1).*
+ 
+ By taking $f=g$ in Parseval's theorem, we obtain Plancherel's theorem.
+ 
+-THEOREM 2 (PLANCHEREL'S THEOREM)
+-
+-Suppose that $f$ is a square integrable function on the real line. Then
+-
+-$$
+-\int_{-\infty}^{\infty}|f(t)|^{2} d t=\int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2} d \omega
+-$$
+-
+-Proof of Parseval's theorem. Use the inverse Fourier transform (Section 7.2, (2)) to write $g(t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \omega t} \hat{g}(\omega) d \omega$, and recall that $\overline{e^{i \omega t}}=e^{-i \omega t}$. Now, assuming that we can interchange the order of integration, we have
++> [!theorem|53a7cbce-e8ac-580f-adec-f211d6ebcd85.local at=751cc718-f630-584d-b54b-90e3afaf91fa] Plancherel's Theorem
++> Suppose that $f$ is a square integrable function on the real line. Then
++>
++> $$
++> \int_{-\infty}^{\infty}|f(t)|^{2} d t=\int_{-\infty}^{\infty}|\hat{f}(\omega)|^{2} d \omega
++> $$
++>
++> Here $\hat f(\omega)=(2\pi)^{-1/2}\int_{-\infty}^{\infty}e^{-i\omega x}f(x)\,dx$, extended to square integrable functions by mean-square limits.
++
++*Printed equation label: (2).*
++
++### Proof of Parseval's theorem
++
++First take rapidly decreasing smooth functions, for which inversion and the following integrations are justified. Use the inverse Fourier transform (Section 8.2, (2)) to write $g(t)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i \omega t} \hat{g}(\omega) d \omega$, and recall that $\overline{e^{i \omega t}}=e^{-i \omega t}$. Now, assuming that we can interchange the order of integration, we have
+ 
+ $$
+ \begin{aligned}
+-\int^{\infty} f(t) \overline{g(t)} d t & =\int_{-\infty}^{\infty} f(t) \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega t} \overline{\hat{g}(\omega)} d \omega d t \\
++\int_{-\infty}^{\infty} f(t) \overline{g(t)} d t & =\int_{-\infty}^{\infty} f(t) \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega t} \overline{\hat{g}(\omega)} d \omega d t \\
+ & =\int_{-\infty}^{\infty} \overline{\hat{g}(\omega)} \overbrace{\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-i \omega t} f(t) d t}^{=\hat{f}(\omega)} d \omega \\
+ & =\int_{-\infty}^{\infty} \hat{f}(\omega) \overline{\hat{g}(\omega)} d \omega
+ \end{aligned}
+ $$
+ 
+-which proves the theorem.
++This proves the identity for that dense class. Continuity of the Fourier transform in the $L^2$ norm extends it to all square-integrable functions.
+ 
+ Before turning to the main applications of this section, we illustrate
+ a technique for computing some important integrals based on Plancherel's theorem.
+ 
+-## EXAMPLE 1 Evaluating integrals with Plancherel's theorem
++> [!exercise|0d74dc07-0904-56b4-9dbf-0e3db3c1e9cc.local at=7a4039c5-7243-5cbd-968c-f31ad133a7d4] EXAMPLE 1 Evaluating integrals with Plancherel's theorem
++> For $a>0$, use the Fourier transform and Plancherel's theorem to evaluate $\int_{-\infty}^{\infty}(\sin(ax)/x)^2\,dx$. State the result for $a=1$.
++
++##### solution
+ 
+ The fact that the Fourier transform of $f(x)=\frac{\sin a x}{x}$ is
+ 
+@@ -71,62 +83,96 @@
+ 
+ $$
+ g(p)=\frac{1}{\sqrt{\hbar}} \hat{f}\left(\frac{p}{\hbar}\right), \quad-\infty<p<\infty,
+-$$
+-
+-where $\hbar$ is Planck's constant. Hence $g(p)$ is a scaled Fourier transform of $f$. Using Plancherel's theorem, you can show that $|g(p)|^{2}$ is a probability density (Exercise 16). That is,
++\tag{3}
++$$
++
++where $\hbar$ is the reduced Planck constant. Hence $g(p)$ is a scaled Fourier transform of $f$. Using Plancherel's theorem, you can show that $|g(p)|^{2}$ is a probability density (Exercise 16). That is,
+ 
+ $$
+ \int_{-\infty}^{\infty}|g(p)|^{2} d p=1
+ $$
+ 
+-The function $|g(p)|^{2}$ is the probability density for the momentum of the clectron. Thus
++The function $|g(p)|^{2}$ is the probability density for the momentum of the electron. Thus
+ 
+ $$
+ \text { Probability that the momentum is in }[c, d]=\int_{c}^{d}|g(p)|^{2} d p \text {. }
+ $$
+ 
+-We now introduce the notion of uncertainty of a nontrivial function $f$ about a point $a$ as
+-
+-$$
+-\Delta_{a} f=\int_{-\infty}^{\infty}(x-a)^{2}|f(x)|^{2} d x / \int_{-\infty}^{\infty}|f(x)|^{2} d x
+-$$
+-
+-Figure 1 A probability density with low uncertainty. The graph of $|f(x)|^{2}$ in (a) is localized near 0 . Consequently, the function $x^{2}|f(x)|^{2}$ in (b) (shown not to scale) is almost identically 0 and encloses a very small area under its graph and above the $x$-axis.
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-20_464_1269_536_558.jpg)
+-
+-To understand this definition, suppose for a moment that $|f(x)|^{2}$ is a probability density of an electron so that, on the right side of (4), the integral in the denominator is 1 . Suppose that there is a very good chance of finding the electron near a point $a$. In this case, the probability density $|f(x)|^{2}$ is concentrated near $a$ and is very small away from $a$. Consequently, $(x-a)^{2}|f(x)|^{2}$ is small for all $x$ and so $\Delta_{a} f$ is small in this case. Thus, the more we know about the position of the electron (i.e., the larger the probability of finding the clectron near $a$ ), the less is the degree of uncertainty $\Delta_{a} f$. (This case is illustrated in Figure 1 with $a=0$.) On the other hand, if $|f(x)|^{2}$ is large away from $a$ (which would correspond to a small chance of finding the electron near $a$ ), a similar argument shows that the uncertainty $\Delta_{a} f$ is large in this case. (See Figure 2 for an illustration with $a=0$.)
++> [!definition|ed5fa2e1-80e1-5e31-a743-ccf855acdb28.local at=b0d75f5e-b823-50cd-b9ea-1d50e814fd40] Mean-Square Spread of a Square-Integrable Function About a Point
++> We now introduce the notion of uncertainty of a nonzero square integrable function $f$ about a point $a$ as
++>
++> $$
++> \Delta_{a} f=\int_{-\infty}^{\infty}(x-a)^{2}|f(x)|^{2} d x / \int_{-\infty}^{\infty}|f(x)|^{2} d x
++> $$
++
++*Printed equation label: (4).*
++
++```scientific-figure
++id: 7d896327-91b9-4636-9f64-ee9ee87478a9
++numbered: false
++title: ""
++caption: Figure 1 A probability density with low uncertainty. The graph of $|f(x)|^{2}$ in (a) is localized near 0 . Consequently, the function $x^{2}|f(x)|^{2}$ in (b) (shown not to scale) is almost identically 0 and encloses a very small area under its graph and above the $x$-axis.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-20_464_1269_536_558.jpg
++    caption: ""
++```
++
++
++To understand this definition, suppose for a moment that $|f(x)|^{2}$ is a probability density of an electron so that, on the right side of (4), the integral in the denominator is 1 . Suppose that there is a very good chance of finding the electron near a point $a$. In this case, the probability density $|f(x)|^{2}$ is concentrated near $a$ and is very small away from $a$. Consequently, $(x-a)^{2}|f(x)|^{2}$ is small for all $x$ and so $\Delta_{a} f$ is small in this case. Thus, the more we know about the position of the electron (i.e., the larger the probability of finding the electron near $a$ ), the less is the degree of uncertainty $\Delta_{a} f$. (This case is illustrated in Figure 1 with $a=0$.) On the other hand, if $|f(x)|^{2}$ is large away from $a$ (which would correspond to a small chance of finding the electron near $a$ ), a similar argument shows that the uncertainty $\Delta_{a} f$ is large in this case. (See Figure 2 for an illustration with $a=0$.)
+ 
+ The exact quantitative estimate of the Heisenberg uncertainty principle states that, for any $a$ (on the $x$-axis) and for any $\alpha$ (on the $p$-axis),
+ 
+ $$
+ \Delta_{a} f \Delta_{\alpha} g \geq \frac{\hbar^{2}}{4}
++\tag{5}
+ $$
+ 
+ Thus, decreasing the uncertainty $\Delta_{a} f$ toward 0 about some point $a$ causes an increase in the uncertainty $\Delta_{\alpha} g$ in the momentum about all values $\alpha$, and vice versa. Thus, an electron whose position is highly localized must necessarily have a very nonlocalized momentum density.
+ 
+-Figure 2 A probability density with high uncertainty. The graph in (a) is spread over the line.
+-
+-THEOREM 3 HEISENBERG'S INEQUALITY
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-21_447_630_246_543.jpg)
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-21_447_647_243_1177.jpg)
++
++```scientific-figure
++id: d7251d72-ade1-434d-90e0-6f5ea5820754
++numbered: false
++title: ""
++caption: Figure 2 A probability density with high uncertainty. The graph in (a) is spread over the line.
++captionVisible: true
++captionPosition: below
++columns: 2
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-21_447_630_246_543.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-21_447_647_243_1177.jpg
++    caption: ""
++```
++
++
+ 
+ We will prove a scaled version of (5). Then (5) will follow from a change of variables outlined in Exercise 13. We need the following inequality for square integrable functions, known as the Cauchy-Schwarz inequality:
+ 
+ $$
+-\left|\int_{-\infty}^{\infty} f(r) \overline{g(x)} d x\right|^{2} \leq \int_{-\infty}^{\infty}|f(x)|^{2} d x \int_{-\infty}^{\infty}|g(x)|^{2} d x
++\left|\int_{-\infty}^{\infty} f(x) \overline{g(x)} d x\right|^{2} \leq \int_{-\infty}^{\infty}|f(x)|^{2} d x \int_{-\infty}^{\infty}|g(x)|^{2} d x
+ $$
+ 
+ The proof is outlined in Exercise 15.
+ 
+-Suppose that $f(x)$ is a square integrable function on the real line that is not identically 0. Then
+-(6)
+-
+-$$
+-\Delta_{a} f \Delta_{\alpha} \hat{f} \geq \frac{1}{4}
+-$$
+-
+-for all $a$ on the $x$-axis and all $\alpha$ on the $\omega$-axis.
+-Proof To simplify the proof, we will assume that $\lim _{x \rightarrow \pm \infty} x|f(x)|^{2}=0$. We start with the case $a=\alpha=0$. Integrating by parts, and remembering that $\overline{f(x)} f(x)=|f(x)|^{2}$, we get
++> [!theorem|b2853fb2-4b61-5ff1-ae4b-2f9b2f1f032d.local at=a8920430-5d02-57d7-9ac0-111b097ee555] Heisenberg's Inequality
++> Suppose that $f(x)$ is a square integrable function on the real line that is not identically 0. Then
++> $$
++> \Delta_{a} f \Delta_{\alpha} \hat{f} \geq \frac{1}{4}
++> $$
++>
++> for all $a$ on the $x$-axis and all $\alpha$ on the $\omega$-axis.
++>
++> Here $\hat f(\omega)=(2\pi)^{-1/2}\int_{-\infty}^{\infty}e^{-i\omega x}f(x)\,dx$, extended to square integrable functions by mean-square limits. The quantities are $\Delta_af=\int(x-a)^2|f(x)|^2\,dx/\int|f(x)|^2\,dx$ and $\Delta_\alpha\hat f=\int(\omega-\alpha)^2|\hat f(\omega)|^2\,d\omega/\int|\hat f(\omega)|^2\,d\omega$, allowing infinite values.
++
++*Printed equation label: (6).*
++
++### Proof
++
++First suppose $f$ is smooth and rapidly decreasing; in particular, assume that $\lim _{x \rightarrow \pm \infty} x|f(x)|^{2}=0$. We start with the case $a=\alpha=0$. Integrating by parts, and remembering that $\overline{f(x)} f(x)=|f(x)|^{2}$, we get
+ 
+ $$
+ \int_{-\infty}^{\infty} x \overline{f(x)} f^{\prime}(x) d x=\left.x|f(x)|^{2}\right|_{-\infty} ^{\infty}-\int_{-\infty}^{\infty}\left(|f(x)|^{2}+x f(x) \overline{f^{\prime}(x)}\right) d x
+@@ -141,7 +187,7 @@
+ The last integrand is of the form $z+\bar{z}$, where $z=x \overline{f(x)} f^{\prime}(x)$. Using the fact that $z+\bar{z}=2 \operatorname{Re}(z)$ (here $\operatorname{Re}(z)$ denotes the real part of $z$ ), and the Cauchy-Schwarz inequality, we get
+ 
+ $$
+-\int_{-\infty}^{\infty} \mid f(x)^{2} d x=-2 \int_{-\infty}^{\infty} \operatorname{Re}\left(x \overline{f(x)} f^{\prime}(x)\right) d x
++\int_{-\infty}^{\infty} |f(x)|^2 d x=-2 \int_{-\infty}^{\infty} \operatorname{Re}\left(x \overline{f(x)} f^{\prime}(x)\right) d x
+ $$
+ 
+ and so
+@@ -157,10 +203,10 @@
+ where the last equality follows from
+ 
+ $$
+-\int_{-\infty}^{\backslash} x^{2}|f(x)|^{2} d x=\Delta_{0} f \int_{-\infty}^{1}|f(x)|^{2} d x
+-$$
+-
+-Plancherel's theorem and Theorem 2 of Section 7.2 yield
++\int_{-\infty}^{\infty} x^{2}|f(x)|^{2} d x=\Delta_{0} f \int_{-\infty}^{\infty}|f(x)|^{2} d x
++$$
++
++Plancherel's theorem and Theorem 2 of Section 8.2 yield
+ 
+ $$
+ \begin{aligned}
+@@ -181,23 +227,27 @@
+ 
+ $$
+ 1 \leq 4 \Delta_{0} f \Delta_{0} \widehat{f}
+-$$
+-
+-which is what we want to prove. The general case follows from (7) by translation (Exercise 14).
+-
+-EXAMPLE 2 Heisenberg's inequality for a Gaussian Illustrate Theorem 3 with $a=\alpha=0$, and
+-
+-$$
+-f(x)=\frac{1}{\left(2 \pi \sigma^{2}\right)^{1 / 4}} e^{-x^{2} / 4 \sigma^{2}}, \quad \sigma>0 .
+-$$
+-
+-Solution Using Theorem 5 of Section 7.2, we have
++\tag{7}
++$$
++
++which is what we want to prove. Arbitrary centers follow by translation and modulation (Exercise 14). For finite second moments, approximation in the corresponding weighted and derivative $L^2$ norms extends the inequality to the stated class.
++
++> [!exercise|b3bb589b-adac-5bb8-84fa-d647786e8fe5.local at=d028a248-a07b-5d68-a84e-b278e0ea0c8e] EXAMPLE 2 Heisenberg's inequality for a Gaussian
++> Illustrate Theorem 3 with $a=\alpha=0$, and
++>
++> $$
++> f(x)=\frac{1}{\left(2 \pi \sigma^{2}\right)^{1 / 4}} e^{-x^{2} / 4 \sigma^{2}}, \quad \sigma>0 .
++> $$
++
++##### solution
++
++Using Theorem 5 of Section 8.2, we have
+ 
+ $$
+ \widehat{f}(\omega)=\left(\frac{2 \sigma^{2}}{\pi}\right)^{1 / 4} e^{-\sigma^{2} \omega^{2}}
+ $$
+ 
+-Also, from (4), Section 7.2, $\int_{-\infty}^{\infty} e^{-x^{2}} d x=\sqrt{\pi}$. Using this identity and a change of variables, we get
++Also, from (4), Section 8.2, $\int_{-\infty}^{\infty} e^{-x^{2}} d x=\sqrt{\pi}$. Using this identity and a change of variables, we get
+ 
+ $$
+ \int_{-\infty}^{\infty}|f(x)|^{2} d x=\frac{1}{\left(2 \pi \sigma^{2}\right)^{1 / 2}} \int_{-\infty}^{\infty} e^{-x^{2} / 2 \sigma^{2}} d x=1
+@@ -223,63 +273,123 @@
+ 
+ where we have used the result of Exercise 10 to evaluate the integrals. Thus $\Delta_{0} f \Delta_{0} \widehat{f}=\frac{1}{4}$. $\square$
+ 
+-Figure 3 The more localized the graph of $f(x)$, the more spread out the graph of $\widehat{f}(\omega)$, and vice-versa.
+-![](./images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-23_469_1238_1039_523.jpg)
++```scientific-figure
++id: ed26fcd3-40f8-4f77-99ee-ecd6a38f68d2
++numbered: false
++title: ""
++caption: Figure 3 The more localized the graph of $f(x)$, the more spread out the graph of $\widehat{f}(\omega)$, and vice-versa.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/images/68a1ca9d-3a11-44bb-a7dd-ac2482ab3577-23_469_1238_1039_523.jpg
++    caption: ""
++```
++
+ 
+ Example 2 shows that the lower bound in Heisenberg's inequality is attained for any Gaussian. The functions that were used in this example give a concrete illustration of Heisenberg's inequality. In Figures 3(a) and (b) we have plotted $f$ and $\widehat{f}$ for various choices of $\sigma$. Note that as $\sigma$ decreases to 0 , the graphs of $f$ become more and more localized about 0 , while the graphs of $\widehat{f}$ spread farther and farther out. The opposite happens as we increase $\sigma$. This gives graphical evidence for the fact that we cannot localize both a function and its Fourier transform, which is basically what Heisenberg's inequality asserts.
+ 
+ Because Heisenberg's inequality is really a statement about waves in general, it also appears in various branches of science other than quantum mechanics. For applications in signal processing and electrical engineering, see The Fourier Integral and Its Applications, by Athanasious Papoulis, McGraw-Hill, 1962.
+ 
+-## Exercises 11.3
+-
+-In Exercises 1-4, use Plancherel's theorem or Parseval's theorem and known Fourier transforms to compute the given integral.
+-
+-1. $\int_{-\infty}^{\infty} \frac{1}{\left(1+x^{2}\right)^{2}} d x$.
+-2. $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{4} d x$.
+-3. $\sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{2} \frac{1}{\left(1+x^{2}\right)} d x$.
+-4. $\sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty} \frac{\sin x}{x\left(1+x^{2}\right)} d x$.
+-
+-In Excrcises 5-8. verify Heisenberg's inequality for the given function. Take $a= \alpha=0$.
+-5. $f(x)=e^{-2 x^{2}}$.
+-6. $f(x)=\frac{\sin x}{x}$.
+-7. $f(x)=\frac{1}{1+x^{2}}$. [Hint: Exercise 1.]
+-8. $f(x)=e^{-x^{2}}$.
+-9. (a) The integrals $I_{n}=\int_{0}^{\infty} x^{n} e^{-x^{2}} d x, n=0,1,2, \ldots$, arise frequently in applications. In probability theory they are called the moments of the Gaussian. To compute them, let $t=x^{2}$, and show that $I_{n}=\frac{1}{2} \Gamma\left(\frac{n+1}{2}\right)$, where the gamma function is defined in Section 4.7.
+-(b) More generally, if $a>0$, use (a) and a change of variables to show that
+-
+-$$
+-\int_{0}^{\infty} x^{n} e^{-a x^{2}} d x=\frac{\Gamma\left(\frac{n+1}{2}\right)}{2 a^{(n+1) / 2}}
+-$$
+-
+-10. Let $a>0$. Conclude from Exercise 9 that
+-
+-$$
+-\int_{-\infty}^{\infty} x^{n} e^{-a x^{2}} d x= \begin{cases}\frac{\Gamma\left(\frac{n+1}{2}\right)}{a^{(n+1) / 2}} & \text { if } n \text { is even } \\ 0 & \text { if } n \text { is odd }\end{cases}
+-$$
+-
+-11. Use the result of Exercise 10 and what you know about the gamma function to evaluate the following integrals.
+-(a) $\quad \int_{-\infty}^{\infty} x^{2} e^{-x^{2}} d x=\frac{\sqrt{\pi}}{2}$.
+-(b) $\quad \int_{-\infty}^{\infty} x^{4} e^{-x^{2}} d x=3 \frac{\sqrt{\pi}}{4}$.
+-12. Verify Heisenberg's inequality for the function $f(x)=x e^{-x^{2}}$. Take $a=\alpha=0$.
+-13. Prove (5) using Theorem 3. [Hint: Use (3) to show that $\Delta_{\alpha} g=\hbar^{2} \Delta_{\frac{\alpha}{h}} \widehat{f}$.]
+-14. Given two arbitrary numbers $a$ and $\alpha$, and given a square integrable function $f$. let $F(x)=e^{-i \alpha x} f(x+a)$.
+-(a) Show that $\int_{-\infty}^{\infty}|F(x)|^{2} d x=\int_{-\infty}^{\infty}|f(x)|^{2} d x$.
+-(b) Show that $\Delta_{0} F=\Delta_{a} f$, and $\Delta_{0} \widehat{F}=\Delta_{\alpha} \widehat{f}$. [Hint: $\widehat{F}(\omega)=e^{i a(\omega+\alpha)} \widehat{f}(\omega+\alpha)$.]
+-(c) Complete the proof of Theorem 3.
+-15. Proof of the Cauchy-Schwarz inequality. We will use the inner product notation $(f, g)=\int_{-\infty}^{\infty} f(x) \overline{g(x)} d x$ and $\|f\|=\sqrt{(f, f)}$. The inequality is equivalent to $|(f, g)| \leq\|f\|\|g\|$. (This inequality is true for any inner product.)
+-(a) Show that for all real $t$
+-
+-$$
+-0 \leq\|f+t g\|^{2}=\|f\|^{2}+2 t \operatorname{Re}(f, g)+t^{2}\|g\|^{2}
+-$$
+-
+-(. Vote that $(g, f)=\overline{(f, g)}$. and hence $(f, g)+(g, f)=2 \operatorname{Re}(f . g)$.)
+-(b) Assume that ( $f, g$ ) is real and $\|g\| \neq 0$. (If $\|g\|=0$, we get 0 on both sides of the inequality, and so there is nothing to prove in this case.) Take $t=-\frac{(f, g)}{\|g\|^{2}}$ and conclude from (a) that
+-
+-$$
+-0 \leq\|f\|^{2}\|g\|^{2}-(f, g)^{2},
+-$$
+-
+-which proves the desired inequality in this case.
+-(c) Prove the incquality in general. [Hint: Write $(f, g)=r e^{i \theta}$ for some $r$ and $\theta$, and consider the function $F(x)=e^{-i \theta} f(x)$.]
+-16. Let $g(p)$ be as in (3). Use (2) and Plancherel's theorem to establish that $|g(p)|^{2}$ is a probability density function.
++## Exercises 15.3
++
++
++> [!prompt|cef20d06-6f59-500f-8707-5ce78920ee39.local at=be05aa2c-d71a-5637-a951-9d3178e56685] Shared exercise instructions
++> In Exercises 1-4, use Plancherel's theorem or Parseval's theorem and known Fourier transforms to compute the given integral.
++
++
++> [!exercise|1a3c43ea-8c0b-5b09-b48b-461c875b0bfa.local at=e9c44ae6-4359-50ce-b660-0f49ab0af004] Exercise 1
++> $\int_{-\infty}^{\infty} \frac{1}{\left(1+x^{2}\right)^{2}} d x$.
++
++
++> [!exercise|793a99db-976e-5636-bfbd-f808222e94ec.local at=72b36158-bd49-5a16-8268-795034602399] Exercise 2
++> $\int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{4} d x$.
++
++
++> [!exercise|017e326b-3d19-5a29-9d73-7ec8bc6b3f12.local at=095ccb81-fafa-5d78-9ddd-c90833ff9f6c] Exercise 3
++> $\sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty}\left(\frac{\sin x}{x}\right)^{2} \frac{1}{\left(1+x^{2}\right)} d x$.
++
++
++> [!exercise|891dd0ab-e2a2-5878-a6f1-261a6427988b.local at=7d8fcf73-030d-51cd-bf6b-9b1ab018df8e] Exercise 4
++> $\sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty} \frac{\sin x}{x\left(1+x^{2}\right)} d x$.
++
++
++> [!prompt|d63e8cb6-b2a8-50a3-b240-689fcb515dbb.local at=f9e2c1ca-cf0b-5691-ac8f-4a09cce9a79f] Shared exercise instructions
++> In Exercises 5-8. verify Heisenberg's inequality for the given function. Take $a= \alpha=0$.
++
++
++> [!exercise|3e5703b9-d7b0-5fdf-8c51-3b1f739226dc.local at=c433d929-694c-5d03-b668-ed47d66b34ca] Exercise 5
++> $f(x)=e^{-2 x^{2}}$.
++
++
++> [!exercise|c95f8ada-1e90-5a65-83de-7a0759b57c8c.local at=7e8dd838-0ca0-5048-be09-482f1c8f463f] Exercise 6
++> $f(x)=\frac{\sin x}{x}$, interpreted continuously at $x=0$. Allow an infinite mean-square spread where the defining integral diverges.
++
++
++> [!exercise|438de4bb-9e26-56f0-98cb-1a6acf790021.local at=a01e89fa-6dbd-5ba3-9af9-ff374a8b073d] Exercise 7
++> $f(x)=\frac{1}{1+x^{2}}$. [Hint: Exercise 1.]
++
++
++> [!exercise|87f78788-fcbe-56da-9554-4ff76beeb8ab.local at=b9a377ca-21a3-5898-8c4d-097b49e00a4f] Exercise 8
++> $f(x)=e^{-x^{2}}$.
++
++
++> [!exercise|cf551d2e-6ce8-5de2-9790-95b921902f84.local at=68946bb2-e17a-5eaf-a279-41e870f631e0] Exercise 9
++> (a) The integrals $I_{n}=\int_{0}^{\infty} x^{n} e^{-x^{2}} d x, n=0,1,2, \ldots$, arise frequently in applications. In probability theory they are called the moments of the Gaussian. To compute them, let $t=x^{2}$, and show that $I_{n}=\frac{1}{2} \Gamma\left(\frac{n+1}{2}\right)$, where the gamma function is defined in Section 12.7.
++> (b) More generally, if $a>0$, use (a) and a change of variables to show that
++>
++> $$
++> \int_{0}^{\infty} x^{n} e^{-a x^{2}} d x=\frac{\Gamma\left(\frac{n+1}{2}\right)}{2 a^{(n+1) / 2}}
++> $$
++
++
++> [!exercise|b45fbf1f-ee32-517f-944b-0065ad85098e.local at=3e3b25e8-e504-5a4c-be72-e860072607ea] Exercise 10
++> Let $a>0$. Conclude from Exercise 9 that
++>
++> $$
++> \int_{-\infty}^{\infty} x^{n} e^{-a x^{2}} d x= \begin{cases}\frac{\Gamma\left(\frac{n+1}{2}\right)}{a^{(n+1) / 2}} & \text { if } n \text { is even } \\ 0 & \text { if } n \text { is odd }\end{cases}
++> $$
++
++
++> [!exercise|1b9228aa-2e6f-54de-9524-368f9a4cc89a.local at=aebb5bd9-9a0e-5d12-b17a-63ca0bf85f05] Exercise 11
++> Use the result of Exercise 10 and what you know about the gamma function to evaluate the following integrals.
++> (a) $\quad \int_{-\infty}^{\infty} x^{2} e^{-x^{2}} d x=\frac{\sqrt{\pi}}{2}$.
++> (b) $\quad \int_{-\infty}^{\infty} x^{4} e^{-x^{2}} d x=3 \frac{\sqrt{\pi}}{4}$.
++
++
++> [!exercise|3069e64e-d223-59b3-8483-93594c1f3a55.local at=0ba16f48-54bd-5d55-abb2-636e91a1d04f] Exercise 12
++> Verify Heisenberg's inequality for the function $f(x)=x e^{-x^{2}}$. Take $a=\alpha=0$.
++
++
++> [!exercise|4af32e8a-ab67-51fe-8674-80233f008998.local at=e785e27f-4450-510a-abbb-e75c3d020daa] Exercise 13
++> Prove (5) using Theorem 3. [Hint: Use (3) to show that $\Delta_{\alpha} g=\hbar^{2} \Delta_{\frac{\alpha}{\hbar}} \widehat{f}$.]
++
++
++> [!exercise|4e2921ca-5bf1-5103-b8d7-8f5960c8a787.local at=7a197f99-3f7f-56ee-a679-bac121a81dce] Exercise 14
++> Given two arbitrary numbers $a$ and $\alpha$, and given a square integrable function $f$. let $F(x)=e^{-i \alpha x} f(x+a)$.
++> (a) Show that $\int_{-\infty}^{\infty}|F(x)|^{2} d x=\int_{-\infty}^{\infty}|f(x)|^{2} d x$.
++> (b) Show that $\Delta_{0} F=\Delta_{a} f$, and $\Delta_{0} \widehat{F}=\Delta_{\alpha} \widehat{f}$. [Hint: $\widehat{F}(\omega)=e^{i a(\omega+\alpha)} \widehat{f}(\omega+\alpha)$.]
++> (c) Complete the proof of Theorem 3.
++
++
++> [!exercise|5f7d2165-3bff-53b2-b1e1-dec870801926.local at=50a51901-1ed2-5b32-9551-a18e041bde53] Exercise 15
++> Proof of the Cauchy-Schwarz inequality. We will use the inner product notation $(f, g)=\int_{-\infty}^{\infty} f(x) \overline{g(x)} d x$ and $\|f\|=\sqrt{(f, f)}$. The inequality is equivalent to $|(f, g)| \leq\|f\|\|g\|$. (This inequality is true for any inner product.)
++> (a) Show that for all real $t$
++>
++> $$
++> 0 \leq\|f+t g\|^{2}=\|f\|^{2}+2 t \operatorname{Re}(f, g)+t^{2}\|g\|^{2}
++> $$
++>
++> (Note that $(g, f)=\overline{(f, g)}$. and hence $(f, g)+(g, f)=2 \operatorname{Re}(f,g)$.)
++> (b) Assume that ( $f, g$ ) is real and $\|g\| \neq 0$. (If $\|g\|=0$, we get 0 on both sides of the inequality, and so there is nothing to prove in this case.) Take $t=-\frac{(f, g)}{\|g\|^{2}}$ and conclude from (a) that
++>
++> $$
++> 0 \leq\|f\|^{2}\|g\|^{2}-(f, g)^{2},
++> $$
++>
++> which proves the desired inequality in this case.
++> (c) Prove the inequality in general. [Hint: Write $(f, g)=r e^{i \theta}$ for some $r$ and $\theta$, and consider the function $F(x)=e^{-i \theta} f(x)$.]
++
++
++> [!exercise|b1bc8e9b-e8f3-5d5d-977b-9abfa9bc428a.local at=195cc68e-3870-50e8-bc7d-e4d275b6a566] Exercise 16
++> Let $g(p)$ be as in (3). Use (2) and Plancherel's theorem to establish that $|g(p)|^{2}$ is a probability density function.
+
+`````

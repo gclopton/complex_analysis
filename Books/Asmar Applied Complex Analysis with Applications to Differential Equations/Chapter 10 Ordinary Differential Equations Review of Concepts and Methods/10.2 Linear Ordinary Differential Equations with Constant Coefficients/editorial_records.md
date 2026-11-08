@@ -262,3 +262,1103 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.2 Linear Ordinary Differential Equations with Constant Coefficients.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.2 Linear Ordinary Differential Equations with Constant Coefficients.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.2 Linear Ordinary Differential Equations with Constant Coefficients.md
+@@ -1,9 +1,11 @@
+-## 10.2 Linear Ordinary Differential Equations with Constant Coefficients
++
++# 10.2 Linear Ordinary Differential Equations with Constant Coefficients
+ 
+ The general form of the $\boldsymbol{n}$ th order homogeneous linear differential equation with constant coefficients is
+ 
+ $$
+ a_{n} y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0,
++\tag{1}
+ $$
+ 
+ where each $a_{j}$ is a constant and $a_{n} \neq 0$. The equation can be put in standard form by dividing through by the leading coefficient $a_{n}$. This important class of equations is needed throughout this book. Our presentation will emphasize the second-order case, which is by far the most useful.
+@@ -17,7 +19,7 @@
+ in solving the general case. Since
+ 
+ $$
+-y^{\prime}=\lambda e^{\lambda x}, y^{\prime \prime}=\lambda^{2} e^{\lambda x}, \ldots, y^{(n-1)}=\lambda^{n-1} e^{\lambda x}, y^{(n)} \cdots \lambda^{n} e^{\lambda x},
++y^{\prime}=\lambda e^{\lambda x}, y^{\prime \prime}=\lambda^{2} e^{\lambda x}, \ldots, y^{(n-1)}=\lambda^{n-1} e^{\lambda x}, y^{(n)}=\lambda^n e^{\lambda x},
+ $$
+ 
+ substituting these into (1), we get
+@@ -32,11 +34,14 @@
+ a_{n} \lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0}=0
+ $$
+ 
+-The roots of this equation are called the characteristic roots. For future use, we define the characteristic polynomial
+-
+-$$
+-p(\lambda)=a_{n} \lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0} .
+-$$
++> [!definition|eba8ca54-49e4-5791-b9e6-01e14d7501d4.local at=720a90e2-5470-5843-861c-c13980bb09de] Characteristic Polynomial of a Constant-Coefficient Linear ODE
++> For $a_ny^{(n)}+\cdots+a_1y^{\prime}+a_0y=0$ with constant coefficients and $a_n\ne0$,
++>
++> The roots of this equation are called the characteristic roots. For future use, we define the characteristic polynomial
++>
++> $$
++> p(\lambda)=a_{n} \lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0} .
++> $$
+ 
+ In the case when this polynomial has $n$ distinct characteristic roots $\lambda_{1}, \lambda_{2}$, $\ldots, \lambda_{n}$, the general solution of (1) is
+ 
+@@ -47,19 +52,44 @@
+ Equivalently, a fundamental set of solutions is given by
+ 
+ $$
+-e^{\lambda_{1} x}, e^{\lambda_{2} x}, \ldots, e^{\lambda_{\mu} x} .
++e^{\lambda_{1} x}, e^{\lambda_{2} x}, \ldots, e^{\lambda_n x} .
++\tag{2}
+ $$
+ 
+ This follows from the nonvanishing of the Wronskian $W\left(e^{\lambda_{1} x}, e^{\lambda_{2} x}, \ldots\right.$, $\left.e^{\lambda_{n} x}\right)$. See Exercise 77.
+ 
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-11_418_447_364_43.jpg)
+-Figure 1 The hyperbolic cosine and sine (with $\mu>0$ ): $\cosh \mu x$ is even and $\cosh \mu x \geq$ 1 for all $x$.
+-$\sinh \mu x$ is odd and $\sinh \mu x=0$ if and only if $x=0$.
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-11_408_412_1608_45.jpg)
+-Figure 2 The complex number $\mu=\alpha+i \beta$ and its conjugate $\bar{\mu}=\alpha-i \beta$.
+-
+-## EXAMPLE 1 Hyperbolic functions
++```scientific-figure
++id: 4ad0ca4b-853c-4928-b256-88245068741e
++numbered: false
++title: ""
++caption: "Figure 1 The hyperbolic cosine and sine (with $\\mu>0$ ): $\\cosh \\mu x$ is even and $\\cosh \\mu x \\geq$ 1 for all $x$. $\\sinh \\mu x$ is odd and $\\sinh \\mu x=0$ if and only if $x=0$."
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-11_418_447_364_43.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: e2fd1bde-e1f4-40de-93d8-a69e59f7ac9c
++numbered: false
++title: ""
++caption: Figure 2 The complex number $\mu=\alpha+i \beta$ and its conjugate $\bar{\mu}=\alpha-i \beta$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-11_408_412_1608_45.jpg
++    caption: ""
++```
++
++
++> [!exercise|f0e78570-ec22-574f-81f2-a304f726e2fc.local at=c8316f08-d01d-5da7-9b48-b06fad40cad4] EXAMPLE 1 Hyperbolic functions
++> For $\mu>0$, solve $y^{\prime\prime}-\mu^2y=0$ and obtain a fundamental set using hyperbolic functions.
++
++##### solution
+ 
+ The equation $y^{\prime \prime}-\mu^{2} y=0(\mu>0)$ occurs frequently in this book. Its characteristic equation is
+ 
+@@ -67,7 +97,7 @@
+ \lambda^{2}-\mu^{2}=0 .
+ $$
+ 
+-with characteristic roots $\lambda_{1}=\mu$ and $\lambda_{2}=-\mu$. Thus a fundamental set of solutions is $\left\{e^{\mu x}, e^{-\mu x}\right\}$. As we observed following Example 4 of the previous section, the fundamental sel of solutions is not unique. In fact, we now describe another set that is more convenient in some applications. Recall the definition of the hyperbolic functions
++with characteristic roots $\lambda_{1}=\mu$ and $\lambda_{2}=-\mu$. Thus a fundamental set of solutions is $\left\{e^{\mu x}, e^{-\mu x}\right\}$. As we observed following Example 4 of the previous section, the fundamental set of solutions is not unique. In fact, we now describe another set that is more convenient in some applications. Recall the definition of the hyperbolic functions
+ 
+ $$
+ \cosh \mu x=\frac{e^{\mu x}+e^{-\mu x}}{2} \quad \text { and } \quad \sinh \mu x=\frac{e^{\mu x}-e^{-\mu x}}{2} .
+@@ -88,9 +118,12 @@
+ \end{array}\right|=\mu \overbrace{\left(\cosh ^{2} \mu x-\sinh ^{2} \mu x\right)}^{=1}=\mu \neq 0 .
+ $$
+ 
+-By Theorem 7 of Appendix A. 1 (with $n=2$ ), we conclude that $\cosh \mu x$ and sinh $\mu x$ form a fundamental set of solutions and so the general solution of the differential equation is of the form $y=c_{1} \cosh \mu x+c_{2} \sinh \mu x$. Basic propertics of cosli $\mu x$ and sinh $\mu x$ are illustrated by the graphs shown in Figure 1.
+-
+-## EXAMPLE 2 Characteristic equation with distinct real roots
++By Theorem 7 of Section 10.1 (with $n=2$ ), we conclude that $\cosh \mu x$ and $\sinh\mu x$ form a fundamental set of solutions and so the general solution of the differential equation is of the form $y=c_{1} \cosh \mu x+c_{2} \sinh \mu x$. Basic properties of $\cosh\mu x$ and $\sinh\mu x$ are illustrated by the graphs shown in Figure 1.
++
++> [!exercise|40689284-e622-512d-8e1b-ec7d8b17a3e5.local at=aaf7478c-2355-5617-ae7c-2231752e20d4] EXAMPLE 2 Characteristic equation with distinct real roots
++> Find the general solution of $y^{\prime\prime\prime}-y^{\prime\prime}-6y^{\prime}=0$ using its characteristic equation.
++
++##### solution
+ 
+ The third-order equation $y^{\prime \prime \prime}-y^{\prime \prime}-6 y^{\prime}=0$ has characteristic equation
+ 
+@@ -98,19 +131,22 @@
+ \lambda^{3}-\lambda^{2}-6 \lambda=0
+ $$
+ 
+-Since this equation factors as $\lambda(\lambda-3)(\lambda+2)=0$, we get the characteristic roots $\lambda_{1}=0, \lambda_{2}=3 . \lambda_{3}=-2$. Thus the general solution of the differential equation is $y=c_{1}+c_{2} \epsilon^{3 x}+c_{3} t^{2 x}$. Observe that $\left\{1, e^{3 x}, e^{-2 x}\right\}$ is a fundamental set of solutions. You should check that $W\left(1, e^{3 x}, e^{-2 x}\right) \neq 0$.
++Since this equation factors as $\lambda(\lambda-3)(\lambda+2)=0$, we get the characteristic roots $\lambda_{1}=0, \lambda_{2}=3 . \lambda_{3}=-2$. Thus the general solution of the differential equation is $y=c_{1}+c_2e^{3x}+c_3e^{-2x}$. Observe that $\left\{1, e^{3 x}, e^{-2 x}\right\}$ is a fundamental set of solutions. You should check that $W\left(1, e^{3 x}, e^{-2 x}\right) \neq 0$.
+ 
+ In the case of $n$ distinct roots, the functions in (2) can still be used as a fundamental set even when some or all of the characteristic roots are complex numbers. However, for practical purposes, it is preferable to have real-valued functions. This can be done by using the fact that for any nonreal root $\mu=\alpha+i \beta(\beta \neq 0)$ of a polynomial with real coefficients its complex conjugate $\bar{\mu}=\alpha-i \beta$ is also a root (Figure 2). We illustrate this technique with a simple but very important example.
+ 
+-## EXAMPLE 3 Trigonometric functions
+-
+-The characteristic equation of $y^{\prime \prime}+k^{2} y \quad 0(k>0)$ is
++> [!exercise|2cd21cf1-317c-52bd-b567-b4b3d9691a62.local at=4e900524-fff2-517f-98b4-479cf5061a24] EXAMPLE 3 Trigonometric functions
++> For $k>0$, find a real fundamental solution set of $y^{\prime\prime}+k^2y=0$ using the complex characteristic roots.
++
++##### solution
++
++The characteristic equation of $y^{\prime\prime}+k^2y=0(k>0)$ is
+ 
+ $$
+ \lambda^{2}+k^{2}=0 .
+ $$
+ 
+-Its characteristic roots are $\lambda_{1}=i k$ and $\lambda_{2}=-i k$. Thus a fundamental set of solutions is $\left\{e^{i k x}, e^{-i k x}\right\}$. We now describe an alternative fundamental set of realvalued solutions. The construction is similar to the one we used in constructing the hyperbolic cosine and sine solutions in the previous example. Recall Euler's identity: $e^{i k x}=\cos k x+i \sin k x$. Consider the following solution, which is formed by taking a particular linear combination from the fundamental set of solutions:
++Its characteristic roots are $\lambda_{1}=i k$ and $\lambda_{2}=-i k$. Thus a fundamental set of solutions is $\left\{e^{i k x}, e^{-i k x}\right\}$. We now describe an alternative fundamental set of real-valued solutions. The construction is similar to the one we used in constructing the hyperbolic cosine and sine solutions in the previous example. Recall Euler's identity: $e^{i k x}=\cos k x+i \sin k x$. Consider the following solution, which is formed by taking a particular linear combination from the fundamental set of solutions:
+ 
+ $$
+ \begin{aligned}
+@@ -123,7 +159,10 @@
+ 
+ In the previous example, the characteristic roots were purely imaginary (their real parts $=0$ ). The next example illustrates a case in which the characteristic roots have nonzero real parts. The solutions will involve real exponential functions, along with cosines and sines.
+ 
+-## EXAMPLE 4 Complex characteristic roots
++> [!exercise|682a08ef-7c04-5b74-960e-f7d85c1d878a.local at=35f99c76-d65d-53e6-bf80-c2077a4e4dae] EXAMPLE 4 Complex characteristic roots
++> Find a real fundamental solution set of $y^{\prime\prime}-4y^{\prime}+5y=0$ and verify its Wronskian is nonzero.
++
++##### solution
+ 
+ The characteristic roots of the equation $y^{\prime \prime}-4 y^{\prime}+5 y=0$ are $\lambda_{1}=2+i$ and $\lambda_{2}=2-i$. From (2), the functions $e^{(2+i) x}$ and $e^{(2-i) x}$ form a fundamental set. of solutions. We next show how to obtain real-valued solutions. Using Euler's identity, $e^{i \theta}=\cos \theta+i \sin \theta$, we have
+ 
+@@ -144,23 +183,37 @@
+ \end{aligned}
+ $$
+ 
+-We conclude that $e^{2 x} \cos x$ and $\epsilon^{2 x} \sin x$ form a fundamental set of solutions. Note that in the case of two solutions, we could have verified that the set is fundamental by simply observing that one is not a constant multiple of the other.
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-13_390_454_1497_49.jpg)
+-Figure 3 Solutions from Example 6(a).
++We conclude that $e^{2 x} \cos x$ and $e^{2x} \sin x$ form a fundamental set of solutions. Note that in the case of two solutions, we could have verified that the set is fundamental by simply observing that one is not a constant multiple of the other.
++
++```scientific-figure
++id: dbe0c20a-451b-4187-9ebf-6113bc8b155f
++numbered: false
++title: ""
++caption: Figure 3 Solutions from Example 6(a).
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-13_390_454_1497_49.jpg
++    caption: ""
++```
++
+ 
+ In general, when we have complex characteristic roots, these roots come in conjugate pairs. A fundamental set of real-valued solutions is obtained by replacing the pair of functions $e^{\mu x}, e^{\bar{\mu} x}$ in (2) by
+ 
+ $$
+ e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x
++\tag{3}
+ $$
+ 
+ for each nonreal pair of characteristic roots $\mu=\alpha \pm i \beta$. Let us illustrate the pairing of complex roots with one more example.
+ 
+-## EXAMPLE 5 Pairing complex characteristic roots
+-
+-Find a fundamental set of solutions of $y^{\prime \prime \prime}-y=0$.
+-Solution Let us find the characteristic roots:
++> [!exercise|f83dfebe-4bdb-592a-b956-fa928371e89f.local at=9d2f0f08-a817-50cf-b618-107300eed56a] EXAMPLE 5 Pairing complex characteristic roots
++> Find a fundamental set of solutions of $y^{\prime \prime \prime}-y=0$.
++
++##### solution
++
++Let us find the characteristic roots:
+ 
+ $$
+ \begin{aligned}
+@@ -173,10 +226,13 @@
+ 
+ Thus far we have not dealt with the case of a repeated root $\mu$ of the characteristic polynomial of multiplicity $m>1$. If we try to use (2), we get the function $e^{\mu x}$ repeated $m$ times, and hence we do not obtain a fundamental set. The following example illustrates how to resolve this problem.
+ 
+-## EXAMPLE 6 Repeated roots of the characteristic polynomial
++> [!exercise|9e9fb7a4-bb34-51d7-b7d4-99abca611433.local at=cadf1605-b6dd-5da0-858c-98fbb056fbf2] EXAMPLE 6 Repeated roots of the characteristic polynomial
++> Find fundamental solution sets for (a) $y^{\prime\prime}+2y^{\prime}+y=0$ and (b) $y^{\prime\prime\prime}-6y^{\prime\prime}+12y^{\prime}-8y=0$, accounting for repeated characteristic roots.
++
++##### solution
+ 
+ (a) The second-order equation $y^{\prime \prime}+2 y^{\prime}+y=0$ has characteristic polynomial $(\lambda+1)^{2}$, which has -1 as a root of multiplicity two. One solution of the equation is $e^{-x}$. A simple verification shows that the function $x e^{-x}$ is also a solution of the differential equation, which is also independent of $e^{-x}$. We conclude that $e^{-x}$ and $x e^{-x}$ form a fundamental set of solutions (Figure 3). (We note that the method of reduction of order, presented in the next section, provides a straightforward way to obtain the second solution $x e^{-x}$.)
+-(b) The third-order equation $y^{\prime \prime \prime}-6 y^{\prime \prime}+12 y^{\prime}-8 y=0$ has characteristic polynomial $(\lambda-2)^{3}$, which has 2 as a root of multiplicity three. One solution of the equation is $e^{2 x}$. Taking a hint from the previous example, we try $y=x e^{2 x}$ for a sccond solution. We have
++(b) The third-order equation $y^{\prime \prime \prime}-6 y^{\prime \prime}+12 y^{\prime}-8 y=0$ has characteristic polynomial $(\lambda-2)^{3}$, which has 2 as a root of multiplicity three. One solution of the equation is $e^{2 x}$. Taking a hint from the previous example, we try $y=x e^{2 x}$ for a second solution. We have
+ 
+ $$
+ y^{\prime}=e^{2 x}(1+2 x), \quad y^{\prime \prime}=4 e^{2 x}(1+x), \quad y^{\prime \prime \prime}=4 e^{2 x}(3+2 x)
+@@ -194,14 +250,15 @@
+ y^{\prime}=2 x e^{2 x}(1+x), \quad y^{\prime \prime}=2 e^{2 x}\left(1+4 x+2 x^{2}\right), \quad y^{\prime \prime \prime}=4 e^{2 x}\left(3+6 x+2 x^{2}\right)
+ $$
+ 
+-and that $x^{2} \epsilon^{2 x}$ is a solution. It is easy to check that the solutions $r^{2 x}, x e^{2 x}, x^{2} e^{2 x}$ are linearly independent, and hence they form a fundamental set of solutions of the differential equation.
++and that $x^{2} e^{2x}$ is a solution. It is easy to check that the solutions $e^{2x},xe^{2x},x^2e^{2x}$ are linearly independent, and hence they form a fundamental set of solutions of the differential equation.
+ 
+ This example motivates the following prescription for obtaining a fundamental set of solutions of (1) in the case when multiple roots occur. Let $\mu$ be a repeated root having multiplicity $m$. In (2), we replace the $m$ occurrences of $e^{\mu x}$ by the following $m$ functions:
+ 
+ Note that there are $m$ linearly independent solutions corresponding to repeated roots of order $m$.
+ 
+ $$
+-e^{\mu x}, x t^{\mu x}, \ldots, x^{m-1} e^{\mu x} .
++e^{\mu x}, xe^{\mu x}, \ldots, x^{m-1} e^{\mu x} .
++\tag{4}
+ $$
+ 
+ To obtain a fundamental set of solutions of (1), make this replacement for each repeated characteristic root. (Keep in mind that the multiplicity $m$ may vary from one root to another.)
+@@ -210,54 +267,68 @@
+ 
+ $$
+ \begin{aligned}
+-& e^{\alpha x} \cos \beta x, x e^{\alpha x} \cos \beta x, \ldots, x^{m-1} e^{\alpha x} \cos 3 x \\
+-& e^{\alpha x} \sin \beta x, x e^{\alpha x} \sin 3 x, \ldots, x^{m-1} e^{\alpha x} \sin 3 x
++& e^{\alpha x} \cos \beta x, x e^{\alpha x} \cos \beta x, \ldots, x^{m-1} e^{\alpha x} \cos \beta x \\
++& e^{\alpha x} \sin \beta x, x e^{\alpha x} \sin \beta x, \ldots, x^{m-1} e^{\alpha x} \sin \beta x
+ \end{aligned}
++\tag{5}
+ $$
+ 
+ For ease of reference, we restate in the following box the results of our discussion in terms of general solutions of (1). For convenience we view a nonrepeated characteristic root as a root of multiplicity $m=1$.
+ 
+-GENERAL SOLUTION OF THE $n$ th-ORDER LINEAR HOMOGENEOUS EQUATION WITH CONSTANT COEFFICIENTS
+-
+-![](./images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-15_412_469_1484_52.jpg)
+-Figure 4 Various solutions from Example 7(b).
+-
+-Consider the equation
+-
+-$$
+-a_{n} y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0
+-$$
+-
+-with characteristic equation
+-
+-$$
+-a_{n} \lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0}=0
+-$$
+-
+-The general solution of the differential equation is constructed according to the nature of the roots of the characteristic equation as follows.
+-
+-Case I For each real root $\mu$ of multiplicity $m \geq 1$, we include a linear combination of the form
+-
+-$$
+-c_{1} e^{\mu x}+c_{2} x e^{\mu x}+\cdots+c_{m} x^{m-1} c^{\mu x}
+-$$
+-
+-Case II For each nonreal root $\mu=\alpha+i \beta$ and its complex conjugate $\bar{\mu}=\alpha-i \beta$ of multiplicity $m \geq 1$, we include a linear combination of the form
+-
+-$$
+-\begin{aligned}
+-& c_{1} e^{\alpha x} \cos \beta x+c_{2} x e^{\alpha x} \cos \beta x+\cdots+c_{m} x^{m-1} e^{\alpha x} \cos \beta x \\
+-& \quad+d_{1} e^{\alpha x} \sin \beta x+d_{2} x e^{\alpha x} \sin \beta x+\cdots+d_{m} x^{m-1} e^{\alpha x} \sin \beta x
+-\end{aligned}
+-$$
+-
+-## EXAMPLE 7 Fourth-order equations
+-
+-Find the general solution of the following equations:
+-(a) $y^{(4)}-16 y=0$;
+-(b) $y^{(4)}+2 y^{\prime \prime}+y=0$.
+-
+-Solution (a) The characteristic equation is $\lambda^{4}-16=0$, with characteristic roots $\pm 2$ and $\pm 2 i$. Thus, the general solution is
++> [!rule|d20db426-76e0-56ae-a30c-c4dd6a5f292d.local at=dec31ecc-135b-5e87-983e-541fa27dba48] General Solution of the $n$th-Order Linear Homogeneous Equation with Constant Coefficients
++> Let all coefficients $a_j$ be real constants, with $a_n\ne0$. Multiplicities are algebraic multiplicities, and constants in different root contributions are independent.
++>
++> Consider the equation
++>
++> $$
++> a_{n} y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} y^{\prime}+a_{0} y=0
++> $$
++>
++> with characteristic equation
++>
++> $$
++> a_{n} \lambda^{n}+a_{n-1} \lambda^{n-1}+\cdots+a_{1} \lambda+a_{0}=0
++> $$
++>
++> The general real solution of the differential equation is constructed according to the nature of the roots of the characteristic equation as follows.
++>
++> Case I For each real root $\mu$ of multiplicity $m \geq 1$, we include a linear combination of the form
++>
++> $$
++> c_{1} e^{\mu x}+c_{2} x e^{\mu x}+\cdots+c_{m} x^{m-1}e^{\mu x}
++> $$
++>
++> Case II For each nonreal root $\mu=\alpha+i \beta$ and its complex conjugate $\bar{\mu}=\alpha-i \beta$ of multiplicity $m \geq 1$, we include a linear combination of the form
++>
++> $$
++> \begin{aligned}
++> & c_{1} e^{\alpha x} \cos \beta x+c_{2} x e^{\alpha x} \cos \beta x+\cdots+c_{m} x^{m-1} e^{\alpha x} \cos \beta x \\
++> & \quad+d_{1} e^{\alpha x} \sin \beta x+d_{2} x e^{\alpha x} \sin \beta x+\cdots+d_{m} x^{m-1} e^{\alpha x} \sin \beta x
++> \end{aligned}
++> $$
++
++```scientific-figure
++id: 6cae6e32-7522-4f1b-bbf9-c94f3193b7d6
++numbered: false
++title: ""
++caption: Figure 4 Various solutions from Example 7(b).
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/images/ecab6dba-4966-4870-8bb0-6c1f9a8f866d-15_412_469_1484_52.jpg
++    caption: ""
++```
++
++
++> [!exercise|7fad4a30-b9a7-5aa3-bea5-6c2736461fb6.local at=8c562b27-494f-580c-936b-3fc8a73c425f] EXAMPLE 7 Fourth-order equations
++> Find the general solution of the following equations:
++> (a) $y^{(4)}-16 y=0$;
++> (b) $y^{(4)}+2 y^{\prime \prime}+y=0$.
++
++##### solution
++
++(a) The characteristic equation is $\lambda^{4}-16=0$, with characteristic roots $\pm 2$ and $\pm 2 i$. Thus, the general solution is
+ 
+ $$
+ y=c_{1} e^{2 x}+c_{2} e^{-2 x}+d_{1} \cos 2 x+d_{2} \sin 2 x
+@@ -269,7 +340,7 @@
+ \left(\lambda^{2}+1\right)^{2}=0 \text { or }(\lambda-i)^{2}(\lambda+i)^{2}=0 .
+ $$
+ 
+-Thus the characteristic roots are $i$ and $-i$ with multiplicity 2 cach. Accordingly, the general solution is
++Thus the characteristic roots are $i$ and $-i$ with multiplicity 2 each. Accordingly, the general solution is
+ 
+ $$
+ y=c_{1} \cos x+c_{2} x \cos x+d_{1} \sin x+d_{2} x \sin x
+@@ -279,46 +350,49 @@
+ 
+ In the second-order case, we have a simpler form of the general solution which we now describe. You will be asked to verify these solutions in the exercises.
+ 
+-GENERAL SOLUTION OF THE SECOND-ORDER LINEAR HOMOGENEOUS EQUATION WITH CONSTANT COEFFICIENTS
+-
+-## Consider the equation
+-
+-$$
+-a y^{\prime \prime}+b y^{\prime}+c y=0
+-$$
+-
+-with characteristic equation
+-
+-$$
+-a \lambda^{2}+b \lambda+c=0
+-$$
+-
+-Let $\lambda_{1}$ and $\lambda_{2}$ denote the characteristic roots. The general solution y of this differential equation is given by one of the following cases.
+-Case I If $\lambda_{1}$ and $\lambda_{2}$ are distinct real roots, then
+-
+-$$
+-y=c_{1} e^{\lambda_{1} x}+c_{2} e^{\lambda_{2} x}
+-$$
+-
+-Equivalently, write $\lambda_{1}=\frac{-b}{2 a}+\frac{\sqrt{b^{2}-4 a c}}{2 a}=\alpha+\beta$ and $\lambda_{2}=\alpha-\beta$, then
+-
+-$$
+-y=e^{\alpha x}\left(c_{1} \cosh \beta x+c_{2} \sinh \beta x\right) .
+-$$
+-
+-Case II If $\lambda_{1}=\lambda_{2}$, then
+-
+-$$
+-y=c_{1} e^{\lambda_{1} x}+c_{2} x e^{\lambda_{1} x}
+-$$
+-
+-Case III If $\lambda_{1}$ and $\lambda_{2}$ are complex conjugate roots with $\lambda_{1}=\alpha+i \beta$, then
+-
+-$$
+-y=c_{1} e^{\alpha x} \cos \beta x+c_{2} e^{\alpha x} \sin \beta x .
+-$$
+-
+-We now turn our attention to nonhomogencous second-order equations with constant coefficients.
++> [!rule|82e7bb10-ee1c-58b9-a1b4-179d76a3554d.local at=80cec4ea-5d4d-5671-b00d-2a975958e9e0] General Solution of the Second-Order Linear Homogeneous Equation with Constant Coefficients
++> Let $a,b,c$ be real constants with $a\ne0$. The constants $c_1,c_2$ below are arbitrary.
++>
++> Consider the equation
++>
++> $$
++> a y^{\prime \prime}+b y^{\prime}+c y=0
++> $$
++>
++> with characteristic equation
++>
++> $$
++> a \lambda^{2}+b \lambda+c=0
++> $$
++>
++> Let $\lambda_{1}$ and $\lambda_{2}$ denote the characteristic roots. The general solution y of this differential equation is given by one of the following cases.
++> Case I If $\lambda_{1}$ and $\lambda_{2}$ are distinct real roots, then
++>
++> $$
++> y=c_{1} e^{\lambda_{1} x}+c_{2} e^{\lambda_{2} x}
++> $$
++>
++> Equivalently, write $\lambda_{1}=\frac{-b}{2 a}+\frac{\sqrt{b^{2}-4 a c}}{2 a}=\alpha+\beta$ and $\lambda_{2}=\alpha-\beta$, then
++>
++> $$
++> y=e^{\alpha x}\left(c_{1} \cosh \beta x+c_{2} \sinh \beta x\right) .
++> $$
++>
++> Case II If $\lambda_{1}=\lambda_{2}$, then
++>
++> $$
++> y=c_{1} e^{\lambda_{1} x}+c_{2} x e^{\lambda_{1} x}
++> $$
++>
++> Case III If $\lambda_{1}$ and $\lambda_{2}$ are complex conjugate roots with $\lambda_{1}=\alpha+i \beta$, then
++>
++> $$
++> y=c_{1} e^{\alpha x} \cos \beta x+c_{2} e^{\alpha x} \sin \beta x .
++> $$
++
++*Printed equation label: (6).*
++
++We now turn our attention to nonhomogeneous second-order equations with constant coefficients.
+ 
+ ## The Method of Undetermined Coefficients
+ 
+@@ -326,18 +400,20 @@
+ 
+ $$
+ a y^{\prime \prime}+b y^{\prime}+c y=g(x) .
+-$$
+-
+-The general solution of the associated homogeneous equation $y_{h}$ has already been given explicitly. Thus, to find the general solution of (7), it is enough by Theorem 5 of the previous section to find a particular solution $y_{p}$. Finding $y_{p}$ depends on the nonhomogeneous term $g$. In many intercsting cases, the form of $g$ allows us to guess the form of $y_{p}$ up to a set of unknown coefficients. This method is called the method of undetermined coefficients. We illustrate it with examples. We also note that in other cases where the method of undetermined coefficients does not work, we can use variation of parameters, as described in the next section.
+-
+-## EXAMPLE 8 A simple undetermined coefficients problem
+-
+-Find the general solution of the given nonhomogeneous equation.
+-(a) $y^{\prime \prime}-4 y^{\prime}+5 y=e^{x}$.
+-(b) $y^{\prime \prime}+2 y^{\prime}+y=e^{-x}$.
+-
+-Solution (a) The associated homogeneous equation is solved in Example 4. We have $y_{h}=c_{1} e^{2 x} \cos x+c_{2} e^{2 x} \sin x$. To determine the general solution, it remains to find $y_{p}$. Since the right side of the equation is $e^{x}$ it makes sense to try $y_{p}=A e^{x}$, where $A$ is an unknown constant yet to be determined. A computation shows that $y_{p}^{\prime \prime}-4 y_{p}^{\prime}+5 y_{p}=2 A e^{x}$. Jor $y_{p}$ to be a solution we must set $A=\frac{1}{2}$. Thus the general solution is $y=c_{1} e^{2 x} \cos x+c_{2} e^{2 x} \sin x+\frac{1}{2} e^{x}$.
+-(b) The associated homogeneous equation is solved in Example 6. We have $y_{h}= c_{1} e^{-x}+c_{2} x e^{-x}$. To find $y_{n}$ it is pointless to try $A e^{-x}$ or $A x e^{-x}$ since both of these solve the homogencous equation. We modify our guess to $y_{p}=A x^{2} e^{-x}$. Differentiating $y_{p}$, we find
++\tag{7}
++$$
++
++The general solution of the associated homogeneous equation $y_{h}$ has already been given explicitly. Thus, to find the general solution of (7), it is enough by Theorem 5 of the previous section to find a particular solution $y_{p}$. Finding $y_{p}$ depends on the nonhomogeneous term $g$. In many interesting cases, the form of $g$ allows us to guess the form of $y_{p}$ up to a set of unknown coefficients. This method is called the method of undetermined coefficients. We illustrate it with examples. We also note that in other cases where the method of undetermined coefficients does not work, we can use variation of parameters, as described in the next section.
++
++> [!exercise|741ab2ea-9397-5a47-abab-18df86dc0761.local at=5da602e7-d761-580d-8c2c-4f0aef941120] EXAMPLE 8 A simple undetermined coefficients problem
++> Find the general solution of the given nonhomogeneous equation.
++> (a) $y^{\prime \prime}-4 y^{\prime}+5 y=e^{x}$.
++> (b) $y^{\prime \prime}+2 y^{\prime}+y=e^{-x}$.
++
++##### solution
++
++(a) The associated homogeneous equation is solved in Example 4. We have $y_{h}=c_{1} e^{2 x} \cos x+c_{2} e^{2 x} \sin x$. To determine the general solution, it remains to find $y_{p}$. Since the right side of the equation is $e^{x}$ it makes sense to try $y_{p}=A e^{x}$, where $A$ is an unknown constant yet to be determined. A computation shows that $y_{p}^{\prime \prime}-4 y_{p}^{\prime}+5 y_{p}=2 A e^{x}$. For $y_{p}$ to be a solution we must set $A=\frac{1}{2}$. Thus the general solution is $y=c_{1} e^{2 x} \cos x+c_{2} e^{2 x} \sin x+\frac{1}{2} e^{x}$.
++(b) The associated homogeneous equation is solved in Example 6. We have $y_{h}= c_{1} e^{-x}+c_{2} x e^{-x}$. To find $y_p$ it is pointless to try $A e^{-x}$ or $A x e^{-x}$ since both of these solve the homogeneous equation. We modify our guess to $y_{p}=A x^{2} e^{-x}$. Differentiating $y_{p}$, we find
+ 
+ $$
+ y_{p}^{\prime}=2 A x e^{-x}-A x^{2} e^{-x}, \quad y_{p}^{\prime \prime}=2 A e^{-x}-4 A x e^{-x}+A x^{2} e^{-x}
+@@ -347,38 +423,40 @@
+ 
+ The procedure we have used above is covered by the following general rules.
+ 
+-## THE METHOD OF UNDETERMINED COEFFICIENTS
+-
+-To find a particular solution of (7) when
+-
+-$$
+-g(x)=\left(a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{0}\right) e^{\alpha x}\left\{\begin{array}{l}
+-\cos \beta x \\
+-\sin \beta x
+-\end{array}\right.
+-$$
+-
+-we use
+-
+-$$
+-\begin{aligned}
+-y_{p}= & \left(A_{n} x^{n}+A_{n-1} x^{n-1}+\cdots+A_{0}\right) e^{\alpha x} \cos \beta x \\
+-& +\left(B_{n} x^{n}+B_{n-1} x^{n-1}+\cdots+B_{0}\right) e^{\alpha x} \sin \beta x
+-\end{aligned}
+-$$
+-
+-provided that no term in the expression of $y_{p}$ is a solution of the associated homogeneous equation. If not, we modify this expression by multiplying by $x$ or $x^{2}$. We use $x$ if the characteristic polynomial of the associated homogeneous equation has distinct roots, and $x^{2}$ if it has a double root.
+-Superposition rule If the right side of (7) is a sum of several different functions of the form (8), we use a corresponding sum of terms of the form (9).
+-
+-## EXAMPLE 9 The method of undetermined coefficients
+-
+-Use the method of undetermined coefficients to find the general solution of
+-
+-$$
+-y^{\prime \prime}-3 y^{\prime}+2 y=x^{3} .
+-$$
+-
+-Solution It is straightforward to see that $y_{h}=c_{1} e^{x}+c_{2} e^{2 x}$. From (9), we see that $y_{p}=A x^{3}+B x^{2}+C x+D$. Note that none of these terms appears in the expression of $y_{h}$. We have
++> [!procedure|8ee66310-8c6c-5b69-87bb-fd2965628cac.local at=151d6798-685e-5922-8104-417e052e6120] The Method of Undetermined Coefficients
++> To find a particular solution of $ay^{\prime\prime}+by^{\prime}+cy=g(x)$, where $a,b,c$ are real constants and $a\ne0$, when
++>
++> $$
++> g(x)=\left(a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{0}\right) e^{\alpha x}\left\{\begin{array}{l}
++> \cos \beta x \\
++> \sin \beta x
++> \end{array}\right.
++> $$
++>
++> we use
++>
++> $$
++> \begin{aligned}
++> y_{p}= & \left(A_{n} x^{n}+A_{n-1} x^{n-1}+\cdots+A_{0}\right) e^{\alpha x} \cos \beta x \\
++> & +\left(B_{n} x^{n}+B_{n-1} x^{n-1}+\cdots+B_{0}\right) e^{\alpha x} \sin \beta x
++> \end{aligned}
++> $$
++>
++> provided that no term in the expression of $y_{p}$ is a solution of the associated homogeneous equation. If not, we modify this expression by multiplying by $x$ or $x^{2}$. We use $x$ if the characteristic polynomial of the associated homogeneous equation has distinct roots, and $x^{2}$ if it has a double root.
++> Superposition rule If the right side of $ay^{\prime\prime}+by^{\prime}+cy=g(x)$, where $a,b,c$ are real constants and $a\ne0$, is a sum of several different functions of the stated polynomial–exponential–trigonometric form, we use a corresponding sum of terms of the corresponding trial form.
++
++*Printed equation labels: (8) forcing term; (9) trial particular solution before any required resonance factor.*
++
++> [!exercise|105823a5-c489-56d3-b053-cb4dbf2b20c6.local at=e9336308-069c-5e99-b24a-bdac6fbb9e9f] EXAMPLE 9 The method of undetermined coefficients
++> Use the method of undetermined coefficients to find the general solution of
++>
++> $$
++> y^{\prime \prime}-3 y^{\prime}+2 y=x^{3} .
++> $$
++
++##### solution
++
++It is straightforward to see that $y_{h}=c_{1} e^{x}+c_{2} e^{2 x}$. From (9), we see that $y_{p}=A x^{3}+B x^{2}+C x+D$. Note that none of these terms appears in the expression of $y_{h}$. We have
+ 
+ $$
+ \begin{aligned}
+@@ -406,27 +484,32 @@
+ 
+ and the general solution is obtained by adding on $y_{h}$. $\square$
+ 
+-## EXAMPLE 10 The method of undetermined coefficients
+-
+-Use the method of undetermined coefficients to find the general solution of
+-
+-$$
+-y^{\prime \prime}-3 y^{\prime}+2 y=e^{x} \cos x .
+-$$
+-
+-Solution According to (9), we take $y_{p}=A e^{x} \cos x+B e^{x} \sin x$. Since neither of these terms appears in the expression of $y_{h}$ (see Example 9), there is no need for modification. Now $y_{p}^{\prime}=(A+B) e^{x} \cos x+(-A+B) e^{x} \sin x$ and $y_{p}^{\prime \prime}=2 B e^{x} \cos x- 2 A e^{x} \sin x$, and hence
+-
+-$$
+-y_{p}^{\prime \prime}-3 y_{p}^{\prime}+2 y_{p}=-(A+B) c^{x} \cos x+(A-B) c^{x} \sin x .
++> [!exercise|7ec94288-735e-5029-8d88-af7a4bd4ceaf.local at=06310ddd-cacd-50ee-9387-ec94d5db8975] EXAMPLE 10 The method of undetermined coefficients
++> Use the method of undetermined coefficients to find the general solution of
++>
++> $$
++> y^{\prime \prime}-3 y^{\prime}+2 y=e^{x} \cos x .
++> $$
++
++##### solution
++
++According to (9), we take $y_{p}=A e^{x} \cos x+B e^{x} \sin x$. Since neither of these terms appears in the expression of $y_{h}$ (see Example 9), there is no need for modification. Now $y_{p}^{\prime}=(A+B) e^{x} \cos x+(-A+B) e^{x} \sin x$ and $y_{p}^{\prime \prime}=2 B e^{x} \cos x- 2 A e^{x} \sin x$, and hence
++
++$$
++y_{p}^{\prime \prime}-3 y_{p}^{\prime}+2 y_{p}=-(A+B) e^{x} \cos x+(A-B) e^{x} \sin x .
+ $$
+ 
+ For $y_{p}$ to be a solution, we must solve $A+B=-1$ and $A-B=0$. From this we get $y_{p}=-\frac{1}{2} e^{x} \cos x-\frac{1}{2} e^{x} \sin x$ and hence the general solution is
+ 
+ $$
+-y=c_{1} e^{x}+c_{2} e^{2 x}-\frac{1}{2} c^{x}(\cos x+\sin x) .
+-$$ $\square$
+-
+-## EXAMPLE 11 Using the superposition rule
++y=c_{1} e^{x}+c_{2} e^{2 x}-\frac{1}{2} e^{x}(\cos x+\sin x) .
++$$
++
++$\square$
++> [!exercise|45a02b46-b8ff-5400-a6b3-6c6b03cf79b0.local at=8dc260b8-4272-5070-b936-5ba1c5d30d0b] EXAMPLE 11 Using the superposition rule
++> Use superposition and undetermined coefficients to solve $y^{\prime\prime}+4y=e^{-2x}+3\sin2x$.
++
++##### solution
+ 
+ Consider the equation $y^{\prime \prime}+4 y=e^{-2 x}+3 \sin 2 x$. It is easy to see that
+ 
+@@ -434,118 +517,373 @@
+ y_{h}=c_{1} \cos 2 x+c_{2} \sin 2 x .
+ $$
+ 
+-The term $e^{-2 x}$ requires a term $A e^{-2 x}$ in $y_{p}$. The term $3 \sin 2 x$ suggests the expression $B \cos 2 x+C \sin 2 x$. but because these terms appear in $y_{k}$ we must introduce
++The term $e^{-2 x}$ requires a term $A e^{-2 x}$ in $y_{p}$. The term $3 \sin 2 x$ suggests the expression $B \cos 2 x+C \sin 2 x$. but because these terms appear in $y_h$ we must introduce
+ an extra factor of $x$ (the characteristic polynomial has distinct roots). Hence we take
+ 
+ $$
+-y_{p}=A, 2 x+B x \cos 2 x+C x \sin 2 x .
++y_p=Ae^{-2x}+B x \cos 2 x+C x \sin 2 x .
+ $$
+ 
+ Solving for $A, B$, and $C$ as before, we find $y_{p}=\frac{1}{8} e^{-2 x}-\frac{3}{4} x \cos 2 x$.
+ Note that even though the nonhomogeneous term $g(x)$ in the equation of Example 11 has no cosine term in it, the particular solution does have one. This emphasizes the necessity of including both cosine and sine terms in $y_{p}$ even when only one of these appears in $g(x)$.
+ 
+-## Exercises A. 2
+-
+-In Excrises 1-24, find the general solution of the given equation.
+-
+-1. $y^{\prime \prime}-4 y^{\prime}+3 y=0$.
+-2. $y^{\prime \prime}-y^{\prime}-6 y=0$.
+-3. $y^{\prime \prime}-5 y^{\prime}+6 y=0$.
+-4. $2 y^{\prime \prime}-3 y^{\prime}+y=0$.
+-$5 y^{\prime \prime}+2 y^{\prime}+y=0$.
+-5. $4 y^{\prime \prime}-13 y^{\prime}+9 y=0$.
+-6. $4 y^{\prime \prime}-4 y^{\prime}+y=0$.
+-7. $4 y^{\prime \prime}-12 y^{\prime}+9 y=0$.
+-8. $y^{\prime \prime}+y=0$.
+-9. $9 y^{\prime \prime}+4 y=0$.
+-10. $y^{\prime \prime}-4 y=0$.
+-11. $y^{\prime \prime}+3 y^{\prime}+3 y=0$.
+-12. $y^{\prime \prime}+4 y^{\prime}+5 y=0$.
+-13. $y^{\prime \prime}-2 y^{\prime}+5 y=0$.
+-14. $y^{\prime \prime}+6 y^{\prime}+13 y=0$.
+-15. $2 y^{\prime \prime}-6 y^{\prime}+5 y=0$.
+-16. $y^{\prime \prime \prime}-2 y^{\prime \prime}+y^{\prime}=0$.
+-17. $y^{\prime \prime \prime}-3 y^{\prime \prime}+2 y=0$.
+-18. $y^{(4)}-2 y^{\prime \prime}+y=0$.
+-19. $y^{(4)}-y=0$.
+-20. $y^{\prime \prime \prime}-3 y^{\prime \prime}+3 y^{\prime}-y=0$.
+-21. $y^{\prime \prime \prime}+y=0$.
+-22. $y^{(4)}-6 y^{\prime \prime}+8 y^{\prime}-3 y=0$.
+-23. $y^{(4)}+4 y^{\prime \prime \prime}+6 y^{\prime \prime}+4 y^{\prime}+y=0$.
+-
+-In Exercises 25-44, find the general solution of the given equation using the method of undetermined coefficients.
+-25. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{2 x}$.
+-26. $y^{\prime \prime}-y^{\prime}-6 y=e^{x}$.
+-27. $y^{\prime \prime}-5 y^{\prime}+6 y=e^{x}+x$.
+-28. $2 y^{\prime \prime}-3 y^{\prime}+y=e^{2 x}+\sin x$.
+-29. $y^{\prime \prime}-4 y^{\prime}+3 y=x e^{-x}$.
+-30. $y^{\prime \prime}-4 y=\cosh x$.
+-31. $y^{\prime \prime}+4 y=\sin ^{2} x$.
+-32. $y^{\prime \prime}+4 y=x \sin 2 x$.
+-33. $y^{\prime \prime}+y=\cos ^{2} x$.
+-34. $y^{\prime \prime}+2 y^{\prime}+2 y=e^{-x} \cos x$.
+-35. $y^{\prime \prime}+2 y^{\prime}+y=e^{-x}$.
+-36. $y^{\prime \prime}+2 y^{\prime}+y=x e^{-x}+6$.
+-37. $y^{\prime \prime}-y^{\prime}-2 y=x^{2}-4$.
+-38. $y^{\prime \prime}+y^{\prime}-2 y=2 x^{2}+x e^{x}$.
+-39. $y^{\prime}+2 y=2 x+\sin x$.
+-40. $y^{\prime}+2 y=\sin x$.
+-41. $2 y^{\prime}-y=e^{2 x}$.
+-42. $y^{\prime}-7 y=e^{x}+\cos x$.
+-43. $y^{\prime \prime}+9 y=\sum_{n=1}^{6} \frac{\sin n: r}{n}$.
+-44. $y^{\prime \prime}+y=\sum_{n=1}^{6} \frac{\sin 2 n r}{\prime \prime}$.
+-
+-In Exercises 45-54, find the solution of the associated homogeneous equation and state the form of a particular solution. Do not solve for the coefficients. Be sure to modify by $x$ or $x^{2}$ as appropriate.
+-45. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{2 x} \sinh x$.
+-46. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{x} \sinh 2 x$.
+-47. $y^{\prime \prime}+2 y^{\prime}+2 y=\cos x+6 x^{2}-e^{-x} \sin x$.
+-48. $y^{(1)}-y=\cosh x+\cosh 2 x$.
+-49. $y^{\prime \prime}-3 y^{\prime}+2 y=3 x^{1} c^{r}+x e^{-2 x} \cos 3 x$.
+-50. $y^{\prime \prime}-3 y^{\prime}+2 y=x^{4},^{x}+7 x^{2},{ }^{2 x}$.
+-51. $y^{\prime \prime}+4 y=e^{2 x}(\sin 2 x+2 \cos 2 x)$.
+-52. $y^{\prime \prime}+4 y=x \sin 2 x+2 e^{2 x} \cos 2 x$.
+-53. $y^{\prime \prime}-2 y^{\prime \prime}+y=6 x-e^{x}$.
+-54. $y^{\prime \prime}-3 y^{\prime}+2 y=e^{x}+3 e^{-2 x}$.
+-
+-In Exercises 55-60, find the gencral solution of the given equation. Since an arbitrary parumeter appears in the equation, you have to distinguish separate cases.
+-55. $y^{\prime \prime}-4 y^{\prime}+3 y=e^{\alpha x}$.
+-56. $y^{\prime \prime}-4 y^{\prime}+4 y=c^{\alpha x}$.
+-57. $y^{\prime \prime}+4 y=\cos \omega x$.
+-58. $y^{\prime \prime}+9 y=\sin \omega x$.
+-59. $y^{\prime \prime}+\omega^{2} y=\sin 2 x$.
+-60. $y^{\prime \prime}+b y^{\prime}+y=\sin x$.
+-
+-In Exercises 61-70, solve the given initial value problem.
+-61. $y^{\prime \prime}-4 y=0, \quad y(0)=0, y^{\prime}(0)=3$.
+-62. $y^{\prime \prime}+2 y^{\prime}+y=0, \quad y(0)=2, y^{\prime}(0)=-1$.
+-63. $4 y^{\prime \prime}-4 y^{\prime}+y=0, \quad y(0)=-1, y^{\prime}(0)=1$.
+-64. $y^{\prime \prime}+y=0, \quad y(\pi)=1, y^{\prime}(\pi)=0$.
+-65. $y^{\prime \prime}-5 y^{\prime}+6 y=e^{x}, \quad y(0)=0, y^{\prime}(0)=0$.
+-66. $2 y^{\prime \prime}-3 y^{\prime}+y=\sin x, \quad y(0)=0, y^{\prime}(0)=0$.
+-67. $y^{\prime \prime}-4 y^{\prime}+3 y=x e^{-x}, \quad y(0)=0, y^{\prime}(0)=1$.
+-68. $y^{\prime \prime}-4 y=\cosh x, \quad y(0)=1, y^{\prime}(0)=0$.
+-69. $y^{\prime \prime}+4 y=\cos 2 x, \quad y(\pi / 2)=1, y^{\prime}(\pi / 2)=0$.
+-70. $y^{\prime \prime}+9 y=\sum_{n=1}^{6} \frac{\sin n x}{n}, \quad y(0)=0, y^{\prime}(0)=2$.
+-
+-Integrals via undetermined coefficients. In Exercises 71-74, compute $\int g(x) d x$ by solving $y^{\prime}=g(x)$ using the method of undetermined coefficients.
+-71. $g(x)=e^{x} \sin x$.
+-72. $e^{x} \cos 2 x$.
+-73. $g(x)=e^{a x} \cos b x$.
+-74. $e^{a x} \sin b x$.
+-
+-Given $n$ numbers $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}$, we define the Vandermonde determinant $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right)$ to be
+-
+-$$
+-\left|\begin{array}{cccc}
+-1 & 1 & \ldots & 1 \\
+-\lambda_{1} & \lambda_{2} & \ldots & \lambda_{n} \\
+-\vdots & \vdots & \vdots & \vdots \\
+-\lambda_{1}^{n-1} & \lambda_{2}^{n-1} & \ldots & \lambda_{n}^{n-1}
+-\end{array}\right|
+-$$
+-
+-75. Compute $V\left(\lambda_{1}, \lambda_{2}\right)$ and show that it is nonzero if and only if $\lambda_{1} \neq \lambda_{2}$.
+-76. Show that $V\left(\lambda_{1}, \lambda_{2}, \lambda_{3}\right)=\left(\lambda_{3}-\lambda_{2}\right)\left(\lambda_{3}-\lambda_{1}\right)\left(\lambda_{2}-\lambda_{1}\right)$ and conclude that $V\left(\lambda_{1}, \lambda_{2}, \lambda_{3}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct.
+-77. It is a fact that $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct (see Exercise 78). Use this fact to prove that the Wronskian $W\left(e^{\lambda_{1} x}, e^{\lambda_{2} x}, \ldots, e^{\lambda_{n} x}\right) \neq$ 0 if all the $\lambda$ 's are distinct.
+-78. (a) Based on Exercise 76, guess the formula for $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right)$. Verify your guess for $n=2,3,4$.
+-(b) Using (a), show that $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct.
++## Exercises 10.2
++
++
++> [!prompt|a7d4b2de-8f7e-50bc-8c6d-56ce0e305170.local at=fe9325d8-263b-5b9c-baea-eeec517bfbd7] Shared exercise instructions
++> In Exercises 1-24, find the general solution of the given equation.
++
++
++
++> [!exercise|1096d6d5-9350-53cb-b854-781dbeeecfc9.local at=614f1fa7-d23b-5afc-8e1d-18e278efd8c8] Exercise 1
++> $y^{\prime \prime}-4 y^{\prime}+3 y=0$.
++
++
++> [!exercise|386321c7-69cf-5312-a8d6-680bbafe2042.local at=f8417aba-9763-50c0-91cf-4a90993b80b1] Exercise 2
++> $y^{\prime \prime}-y^{\prime}-6 y=0$.
++
++
++> [!exercise|23f59a8a-737b-5b4e-be35-1e9314836a53.local at=552b758e-ed1b-5a0d-9eca-ac4f77bb0387] Exercise 3
++> $y^{\prime \prime}-5 y^{\prime}+6 y=0$.
++
++
++> [!exercise|43d691b3-7674-5c66-8099-01a9016e8d4e.local at=18c60afe-cbc7-52a8-a2db-9f9a2176419b] Exercise 4
++> $2 y^{\prime \prime}-3 y^{\prime}+y=0$.
++
++
++> [!exercise|268c21ee-9266-58a2-93a6-f24fec86abaf.local at=60cfc2c5-f4c9-599c-90eb-2922fb837ad1] Exercise 5
++> $y^{\prime\prime}+2y^{\prime}+y=0$.
++
++
++> [!exercise|c0f309a1-916f-559a-8a25-a02e1d52455f.local at=12eadcf2-da3c-5416-9cf2-52251dd55007] Exercise 6
++> $4 y^{\prime \prime}-13 y^{\prime}+9 y=0$.
++
++
++> [!exercise|cfbd734e-fbdc-5af2-a95c-f6435a0aa6df.local at=a76037ea-1e1d-5ab2-ba60-bb1cac32e326] Exercise 7
++> $4 y^{\prime \prime}-4 y^{\prime}+y=0$.
++
++
++> [!exercise|7c24197d-f452-590f-aad2-59b36f5e55d1.local at=c6436d8e-f887-5545-a4da-99481217ad29] Exercise 8
++> $4 y^{\prime \prime}-12 y^{\prime}+9 y=0$.
++
++
++> [!exercise|cee70d1a-4ade-56b8-9fce-fa067567176d.local at=e872e26f-6a02-5546-b500-0206b6e99f43] Exercise 9
++> $y^{\prime \prime}+y=0$.
++
++
++> [!exercise|4e3ec3a0-1dea-5eea-a7b2-c9a89b443c4d.local at=78f5081d-a281-5e3a-bec3-a8a4d7311326] Exercise 10
++> $9 y^{\prime \prime}+4 y=0$.
++
++
++> [!exercise|4bd7b9b6-f1f4-55d2-ae3c-e68d262c0832.local at=f1f951c2-3a52-572c-89c6-1367311918eb] Exercise 11
++> $y^{\prime \prime}-4 y=0$.
++
++
++> [!exercise|6dd62482-05cb-5b7e-a7a4-cc0363483713.local at=014b12b6-de4f-51e0-bbda-3691783e1c73] Exercise 12
++> $y^{\prime \prime}+3 y^{\prime}+3 y=0$.
++
++
++> [!exercise|3c07035c-7bd9-550a-a3e2-87ae67c2726b.local at=d605d1cc-806b-54e7-a40b-7af0604fb69b] Exercise 13
++> $y^{\prime \prime}+4 y^{\prime}+5 y=0$.
++
++
++> [!exercise|b62a2812-481d-5023-a6b4-fef115514214.local at=d9aa249a-bd3c-5c34-8bd7-0391203dd58a] Exercise 14
++> $y^{\prime \prime}-2 y^{\prime}+5 y=0$.
++
++
++> [!exercise|52d49d0b-d36a-518e-adbd-174ade7fd738.local at=7927a962-4311-5f85-ab07-d2b683efa174] Exercise 15
++> $y^{\prime \prime}+6 y^{\prime}+13 y=0$.
++
++
++> [!exercise|7a24a6d2-9c62-56ba-a93b-a82fd92c378e.local at=0e783462-b720-50b5-9ad5-f55ddc2bd02a] Exercise 16
++> $2 y^{\prime \prime}-6 y^{\prime}+5 y=0$.
++
++
++> [!exercise|240d307c-2072-57b3-add2-ce0ab02301c5.local at=3c252022-1e2b-5e12-ba75-e54d38f6db8e] Exercise 17
++> $y^{\prime \prime \prime}-2 y^{\prime \prime}+y^{\prime}=0$.
++
++
++> [!exercise|e25752af-8274-530b-b904-ea56a81d863e.local at=87013502-c8ed-5829-ad87-9a7951b736e2] Exercise 18
++> $y^{\prime \prime \prime}-3 y^{\prime \prime}+2 y=0$.
++
++
++> [!exercise|d13eebbe-7982-559f-b81b-a923ed308d43.local at=3bcc8076-1e3a-529d-847b-dfbedd112b1c] Exercise 19
++> $y^{(4)}-2 y^{\prime \prime}+y=0$.
++
++
++> [!exercise|98d033e2-935f-5f92-a7d3-a2e687b9d338.local at=7072b8a3-cabe-577e-a9c4-dea680580a11] Exercise 20
++> $y^{(4)}-y=0$.
++
++
++> [!exercise|ab9524ba-4037-5aa4-bab7-61d9ae6635f6.local at=3db9f9a7-131c-5585-bf84-080c85c4e42c] Exercise 21
++> $y^{\prime \prime \prime}-3 y^{\prime \prime}+3 y^{\prime}-y=0$.
++
++
++> [!exercise|1b59b187-1183-5944-bff4-fcfcd7481e10.local at=3f609387-d526-5fe3-bd7d-f44589de28f7] Exercise 22
++> $y^{\prime \prime \prime}+y=0$.
++
++
++> [!exercise|8ae23243-025d-52c5-a30d-1bd4778a422b.local at=4490e5f6-0821-5783-ac59-be0265469b41] Exercise 23
++> $y^{(4)}-6 y^{\prime \prime}+8 y^{\prime}-3 y=0$.
++
++
++> [!exercise|e0b349d6-52e4-58be-bf52-19955bb18a64.local at=29f36860-1b99-584f-a225-217f012b07c9] Exercise 24
++> $y^{(4)}+4 y^{\prime \prime \prime}+6 y^{\prime \prime}+4 y^{\prime}+y=0$.
++
++
++> [!prompt|cf2a1eff-c1aa-5ee1-b01d-ce85a2bfc375.local at=d2a05607-d783-5f70-a22a-b21aaf693d8f] Shared exercise instructions
++> In Exercises 25-44, find the general solution of the given equation using the method of undetermined coefficients.
++
++
++
++> [!exercise|ad782be7-18dc-5d4f-acf9-d95de45d03de.local at=194d9fa7-925e-5a08-b05b-fd49eb501185] Exercise 25
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{2 x}$.
++
++
++> [!exercise|f795b6b9-47c1-52dd-9c70-b89fa816dacd.local at=e1cad7b1-022b-5660-b7b8-3ab7b41635da] Exercise 26
++> $y^{\prime \prime}-y^{\prime}-6 y=e^{x}$.
++
++
++> [!exercise|2e800c84-7672-5655-a4ae-8362c2a58000.local at=f0987122-d26a-55f6-acf3-a23dab90a3db] Exercise 27
++> $y^{\prime \prime}-5 y^{\prime}+6 y=e^{x}+x$.
++
++
++> [!exercise|79eee7cb-46e5-56a1-8af5-ded118a0f554.local at=6376fc8f-19c2-5f75-bcfa-776e8c4f3f56] Exercise 28
++> $2 y^{\prime \prime}-3 y^{\prime}+y=e^{2 x}+\sin x$.
++
++
++> [!exercise|587f8945-c19e-53f9-bd73-64305adfde02.local at=e88ecf36-5b05-5610-9167-af53634d2590] Exercise 29
++> $y^{\prime \prime}-4 y^{\prime}+3 y=x e^{-x}$.
++
++
++> [!exercise|6e01dc3d-09ab-55c7-b956-cdd6ed5827d9.local at=c3acb2a8-7147-56b6-bb80-4b4c71490c17] Exercise 30
++> $y^{\prime \prime}-4 y=\cosh x$.
++
++
++> [!exercise|7456ecb5-8d77-5fb8-8298-ee8bf84a5e49.local at=10c58e6d-5240-5491-9447-d9514a7aa7fe] Exercise 31
++> $y^{\prime \prime}+4 y=\sin ^{2} x$.
++
++
++> [!exercise|c22a4115-1025-5c02-bb7e-f082b77cea4e.local at=baedfbda-90eb-51b6-86b3-40b9232aee27] Exercise 32
++> $y^{\prime \prime}+4 y=x \sin 2 x$.
++
++
++> [!exercise|700b083e-b954-509a-a46f-341f1e42c9a0.local at=edd24532-1734-571a-b184-7a8ce0e6c0bf] Exercise 33
++> $y^{\prime \prime}+y=\cos ^{2} x$.
++
++
++> [!exercise|1b98c1a2-a724-56e2-922c-e5e5d1715cf3.local at=e84818ee-0c92-5fcd-b457-2b46c26544ec] Exercise 34
++> $y^{\prime \prime}+2 y^{\prime}+2 y=e^{-x} \cos x$.
++
++
++> [!exercise|96450d1d-be2d-590b-8b2f-9838069613ac.local at=aa9f80b5-e158-5a16-92b6-196ffa5087ca] Exercise 35
++> $y^{\prime \prime}+2 y^{\prime}+y=e^{-x}$.
++
++
++> [!exercise|88fc239d-b3b0-53ce-be44-82dd129f4233.local at=b25042be-208c-544c-a2e5-48fe270db171] Exercise 36
++> $y^{\prime \prime}+2 y^{\prime}+y=x e^{-x}+6$.
++
++
++> [!exercise|1c469349-d31d-5923-b48b-8a2bf9ba5d90.local at=83f1ac55-f6dd-544d-821a-1effa30f652f] Exercise 37
++> $y^{\prime \prime}-y^{\prime}-2 y=x^{2}-4$.
++
++
++> [!exercise|39bc76c8-bacc-5eca-8145-69f576da1cd4.local at=8f6412ce-7949-5eaa-be29-ab3af4512f57] Exercise 38
++> $y^{\prime \prime}+y^{\prime}-2 y=2 x^{2}+x e^{x}$.
++
++
++> [!exercise|29c96ac7-56f0-5688-bd76-186163f03a10.local at=8e5580d9-b6af-54f7-829b-2f81697dfd9d] Exercise 39
++> $y^{\prime}+2 y=2 x+\sin x$.
++
++
++> [!exercise|cd45f3cd-3dd0-5407-bf45-8e641c944162.local at=5a0046f0-6d14-519c-80fd-00e05adef050] Exercise 40
++> $y^{\prime}+2 y=\sin x$.
++
++
++> [!exercise|c146dbdd-10d4-58d4-9f5d-9f3de4408b23.local at=2b361bb7-786b-5408-af5c-ba208447739a] Exercise 41
++> $2 y^{\prime}-y=e^{2 x}$.
++
++
++> [!exercise|66cfc2ac-ade8-55d4-b659-c1c5ba50b967.local at=5799d068-2fa1-53f1-b2d0-36937a3d2bf0] Exercise 42
++> $y^{\prime}-7 y=e^{x}+\cos x$.
++
++
++> [!exercise|fbe7699d-8fd6-5bf2-9ba0-3d0083d22c3e.local at=4c6ad778-115b-509a-a2c5-98cd83bab1a0] Exercise 43
++> $y^{\prime \prime}+9 y=\sum_{n=1}^{6} \frac{\sin nx}{n}$.
++
++
++> [!exercise|8aca0074-c90b-55af-a90b-1c5d2e242765.local at=739de4a8-b87d-5c9d-a0aa-034c0723dcdd] Exercise 44
++> $y^{\prime \prime}+y=\sum_{n=1}^{6} \frac{\sin 2nx}{n}$.
++
++
++> [!prompt|e35d0676-0da5-522a-ac4d-6a87e7af564f.local at=0af5bdfc-974d-5712-905e-5f3cabd91dcf] Shared exercise instructions
++> In Exercises 45-54, find the solution of the associated homogeneous equation and state the form of a particular solution. Do not solve for the coefficients. Be sure to modify by $x$ or $x^{2}$ as appropriate.
++
++
++
++> [!exercise|6420b122-82c8-5c2f-8b4f-eca62767ede4.local at=f75fc83c-b0ca-5659-87db-d908d41eeb80] Exercise 45
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{2 x} \sinh x$.
++
++
++> [!exercise|6e3ed471-ce4b-54c2-8e2a-3bba7ebca372.local at=1ebebd43-d22f-50a9-b377-40698726ac61] Exercise 46
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{x} \sinh 2 x$.
++
++
++> [!exercise|dbd49a7f-adec-52e0-a2b8-10409890a562.local at=5964c31c-d280-52df-bd17-8de77f01f063] Exercise 47
++> $y^{\prime \prime}+2 y^{\prime}+2 y=\cos x+6 x^{2}-e^{-x} \sin x$.
++
++
++> [!exercise|359bbd7c-b3e8-5225-b13a-b58df26dfc22.local at=25cd9bea-66ef-5c75-afe6-6a9cce891dbd] Exercise 48
++> $y^{(1)}-y=\cosh x+\cosh 2 x$.
++
++
++
++
++> [!exercise|24ad8999-45bb-5f14-8386-6926253cd6dd.local at=3dc9552d-7ca7-598f-90f6-e7a4b235ecef] Exercise 49
++> $y^{\prime \prime}-3 y^{\prime}+2 y=3x^4e^x+x e^{-2 x}\cos 3x$.
++
++
++> [!exercise|03c50948-70d5-548a-9c77-f5f534a15ab1.local at=db2e94d2-48f9-55f3-8d7b-b1632b68c1b4] Exercise 50
++> $y^{\prime \prime}-3 y^{\prime}+2 y=x^4e^x+7x^2e^{2x}$.
++
++
++> [!exercise|363d1cdf-5ab1-5894-a486-113daa40f4f5.local at=177d3a15-e4c1-5a8b-be51-a43b26699a9a] Exercise 51
++> $y^{\prime \prime}+4 y=e^{2 x}(\sin 2 x+2 \cos 2 x)$.
++
++
++> [!exercise|bfa9a587-7565-5945-a043-2d6e70716f76.local at=5c8c131f-ff53-565b-8a28-5d969246795f] Exercise 52
++> $y^{\prime \prime}+4 y=x \sin 2 x+2 e^{2 x} \cos 2 x$.
++
++
++> [!exercise|116a54e0-49ea-5b67-bfc2-92db9f21ffeb.local at=b0a67294-56dd-5c27-835f-e99b5d6e1b46] Exercise 53
++> $y^{\prime \prime}-2 y^{\prime}+y=6 x-e^{x}$.
++
++[OCR corrected: the middle term is the first derivative. The matching Exercise A.2.53 in Asmar’s third-edition student solutions manual, printed p. A317, confirms the equation and forcing term.]
++
++
++> [!exercise|b44b9c4a-9226-5fff-87f2-59840b5955bf.local at=d5c2eabc-8bb6-5334-9856-5dbc04ea6f72] Exercise 54
++> $y^{\prime \prime}-3 y^{\prime}+2 y=e^{x}+3 e^{-2 x}$.
++
++
++> [!prompt|bc25fc53-098b-5d4a-934c-79dfa74abb31.local at=2627097b-0e3a-5e16-a2b4-1ed70307038b] Shared exercise instructions
++> In Exercises 55-60, find the general solution of the given equation. Since an arbitrary parameter appears in the equation, you have to distinguish separate cases.
++
++
++
++> [!exercise|ee04d9a0-7887-5e9d-a1cc-8ff1487bc438.local at=81314072-9028-5021-a1bd-0fd4c830d212] Exercise 55
++> $y^{\prime \prime}-4 y^{\prime}+3 y=e^{\alpha x}$.
++
++
++> [!exercise|40bd1beb-143f-536c-bb70-1d2b1f92bdd8.local at=9fe0d92a-26af-5952-a8d4-28ec8667d401] Exercise 56
++> $y^{\prime \prime}-4 y^{\prime}+4 y=e^{\alpha x}$.
++
++
++> [!exercise|6b4825f4-448d-501c-940a-77de4315676f.local at=88821e38-ea54-59c5-8825-96f058d09a4c] Exercise 57
++> $y^{\prime \prime}+4 y=\cos \omega x$.
++
++
++> [!exercise|7c63a41b-0d99-5255-9a2c-4b3a55ee9915.local at=ce1fcea3-d3e1-5429-9ace-c656af1518fb] Exercise 58
++> $y^{\prime \prime}+9 y=\sin \omega x$.
++
++
++> [!exercise|051aea64-a3f5-5c71-8e05-b5d0aa4a8e84.local at=a11d15f9-afa5-5bfe-a9ff-b29baad075ca] Exercise 59
++> $y^{\prime \prime}+\omega^{2} y=\sin 2 x$.
++
++
++> [!exercise|f256b455-e811-537c-b8db-5be7a6a48933.local at=a496fd08-04f4-51a7-a0a1-a10fee9945f4] Exercise 60
++> $y^{\prime \prime}+b y^{\prime}+y=\sin x$.
++
++
++> [!prompt|63baa95a-ca97-52c2-a7a1-25c575d259cd.local at=83f5336a-575c-5e7c-a196-424a7850d6a9] Shared exercise instructions
++> In Exercises 61-70, solve the given initial value problem.
++
++
++
++> [!exercise|a00339a0-259f-517f-a735-be0442f32edd.local at=db339c08-ce2f-537b-922c-3631014ae997] Exercise 61
++> $y^{\prime \prime}-4 y=0, \quad y(0)=0, y^{\prime}(0)=3$.
++
++
++> [!exercise|2651bc1a-a63d-5e12-b5e7-acd06e386698.local at=2ff0cbb9-9050-5be9-9395-cf5916f8ac86] Exercise 62
++> $y^{\prime \prime}+2 y^{\prime}+y=0, \quad y(0)=2, y^{\prime}(0)=-1$.
++
++
++> [!exercise|99cca858-ae35-58a4-b97e-6bbb65b28391.local at=0dab06d2-39af-5b47-9420-d8f03b90b88c] Exercise 63
++> $4 y^{\prime \prime}-4 y^{\prime}+y=0, \quad y(0)=-1, y^{\prime}(0)=1$.
++
++
++> [!exercise|a7cd0999-6dce-5b43-8ca4-0b5ab9bae396.local at=59fb06cd-28d6-52af-9c75-ee1299e2663c] Exercise 64
++> $y^{\prime \prime}+y=0, \quad y(\pi)=1, y^{\prime}(\pi)=0$.
++
++
++> [!exercise|f4d04554-311a-50ca-bb7f-9716207d07b7.local at=79448e70-e1ab-5252-9a84-caf9fd534ade] Exercise 65
++> $y^{\prime \prime}-5 y^{\prime}+6 y=e^{x}, \quad y(0)=0, y^{\prime}(0)=0$.
++
++
++> [!exercise|a8cc414f-b9fa-5cbd-bef7-c04a8a22408d.local at=9b7a641b-63bd-53e3-b330-5d5ee72ff782] Exercise 66
++> $2 y^{\prime \prime}-3 y^{\prime}+y=\sin x, \quad y(0)=0, y^{\prime}(0)=0$.
++
++
++> [!exercise|f64e1c1f-e071-5545-828f-a7db2406a028.local at=b29ac021-37d1-5f7e-a965-ba8faab93408] Exercise 67
++> $y^{\prime \prime}-4 y^{\prime}+3 y=x e^{-x}, \quad y(0)=0, y^{\prime}(0)=1$.
++
++
++> [!exercise|2825afad-8bae-57aa-87db-b67cae616464.local at=839fa1dc-9b7c-5138-a889-835186972293] Exercise 68
++> $y^{\prime \prime}-4 y=\cosh x, \quad y(0)=1, y^{\prime}(0)=0$.
++
++
++> [!exercise|4b6fa9cd-8c90-52ed-8f1b-8fe64be3f37d.local at=eb65689a-ef73-5853-a116-664940c07bd2] Exercise 69
++> $y^{\prime \prime}+4 y=\cos 2 x, \quad y(\pi / 2)=1, y^{\prime}(\pi / 2)=0$.
++
++
++> [!exercise|e505862e-71c4-5803-a152-f8e4449100d6.local at=c8f22ad0-e05c-5dfe-815d-8c88d24216b7] Exercise 70
++> $y^{\prime \prime}+9 y=\sum_{n=1}^{6} \frac{\sin n x}{n}, \quad y(0)=0, y^{\prime}(0)=2$.
++
++
++> [!prompt|ba5c59c4-6b8e-5384-950e-0cc11f4780d4.local at=26948414-d3b8-5f0f-8424-4c5f7c487f74] Shared exercise instructions
++> In Exercises 71-74, compute $\int g(x) d x$ by solving $y^{\prime}=g(x)$ using the method of undetermined coefficients.
++
++
++
++> [!exercise|650bc4e3-af96-529d-b79a-c8b1251b5a24.local at=664add51-840f-5bd7-bb58-53f02c0c72c4] Exercise 71
++> $g(x)=e^{x} \sin x$.
++
++
++> [!exercise|56a1c95a-abce-5479-a401-3d9ed8f3c39b.local at=45736bd3-35d4-530c-9408-cf20ca4e487d] Exercise 72
++> $g(x)=e^{x} \cos 2 x$.
++
++
++> [!exercise|b8ae0643-69f8-5ed2-b6e8-a574aa4a85cf.local at=2b3ca378-1acd-5a05-b5e2-6c945371ce3d] Exercise 73
++> $g(x)=e^{a x} \cos b x$.
++
++
++> [!exercise|8b1bc90d-89ac-523e-8701-c6ca31c187df.local at=c6acad1a-3218-5404-902c-d35b01479c99] Exercise 74
++> $g(x)=e^{a x} \sin b x$.
++
++
++> [!definition|0fe6cb98-c376-572e-834c-cef1f298e4ac.local at=f9c6be4e-8cae-526b-98b0-c2ae162f781e] Vandermonde Determinant
++> Given $n$ numbers $\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}$, we define the Vandermonde determinant $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right)$ to be
++>
++> $$
++> \left|\begin{array}{cccc}
++> 1 & 1 & \ldots & 1 \\
++> \lambda_{1} & \lambda_{2} & \ldots & \lambda_{n} \\
++> \vdots & \vdots & \vdots & \vdots \\
++> \lambda_{1}^{n-1} & \lambda_{2}^{n-1} & \ldots & \lambda_{n}^{n-1}
++> \end{array}\right|
++> $$
++
++> [!exercise|80bd1d6a-66f1-591f-b62d-fa249a948854.local at=a984839b-9ca3-51cf-90b2-36446dd440f3] Exercise 75
++> Compute $V\left(\lambda_{1}, \lambda_{2}\right)$ and show that it is nonzero if and only if $\lambda_{1} \neq \lambda_{2}$.
++
++
++> [!exercise|1d6ef2ff-2b44-5539-9937-fe84f0aadc4d.local at=76c2b557-bdaf-58fc-a472-6be3078759c7] Exercise 76
++> Show that $V\left(\lambda_{1}, \lambda_{2}, \lambda_{3}\right)=\left(\lambda_{3}-\lambda_{2}\right)\left(\lambda_{3}-\lambda_{1}\right)\left(\lambda_{2}-\lambda_{1}\right)$ and conclude that $V\left(\lambda_{1}, \lambda_{2}, \lambda_{3}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct.
++
++
++> [!exercise|50ec18fd-1d52-5493-af7f-2894a1cba312.local at=9f52f409-f630-5f97-80a2-85f3b5fc93ad] Exercise 77
++> It is a fact that $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct (see Exercise 78). Use this fact to prove that the Wronskian $W\left(e^{\lambda_{1} x}, e^{\lambda_{2} x}, \ldots, e^{\lambda_{n} x}\right) \neq$ 0 if all the $\lambda$ 's are distinct.
++
++
++> [!exercise|7a283aa5-6275-5bf9-9755-ba5a4a8d3b45.local at=8bd339d5-34fa-5e72-bbf9-8513ceab1772] Exercise 78
++> (a) Based on Exercise 76, guess the formula for $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right)$. Verify your guess for $n=2,3,4$.
++> (b) Using (a), show that $V\left(\lambda_{1}, \lambda_{2}, \ldots, \lambda_{n}\right) \neq 0$ if and only if all the $\lambda$ 's are distinct.
+
+`````

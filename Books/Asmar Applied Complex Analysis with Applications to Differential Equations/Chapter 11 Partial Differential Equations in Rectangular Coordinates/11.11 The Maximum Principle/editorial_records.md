@@ -112,3 +112,318 @@ In the notation below the initial data are $f(x)=u(x,0)$ and the endpoint data a
 > (ii) The maximum value of $v$ over the rectangle $R_{T}$ occurs somewhere on the three sides $x=0, x=L$, or $t=0$.
 > (iii) For all $(x, t)$ in $R_{T}$, we have $v(x, t) \leq M+\frac{L^{2}}{n}$.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.11 The Maximum Principle.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.11 The Maximum Principle.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.11 The Maximum Principle.md
+@@ -1,35 +1,44 @@
++
+ ### 11.11 The Maximum Principle
+ 
+-The title of this section refers to a property of the solutions of the heat and Laplace's equations. Consider, for example, the temperature distribution inside a uniform bar with insulated lateral surface and no internal sources of heat, subject to boundary and initial conditions. If the initial temperature distribution and the temperature of the endpoints do not exceed a certain value $M$, then, arguing on physical grounds, we infer that the temperature distribution inside the bar at any subsequent time will remain smaller than $M$. Similarly, if the initial temperature distribution and the temperature of the endpoints do not fall below a certain value $m$, then we infer that the temperature distribution inside the bar at any subsequent time will remain greater than $m$. The mathematical formulation of these assertions leads to what is known as the maximum principle, or the maximum-minimum principle. Our goal in this section is to prove this principle for the heat and Laplace's equations and derive some of its theoretical and practical applications. Another approach to the results concerning Laplace's equation is presented in Chapter 12. We start with the heat equation.
+-
+-THEOREM 1
+-THE MAXIMUM PRINCIPLE FOR THE HEAT EQUATION
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-86_239_437_1706_59.jpg)
+-
+-Figure 1 Maximum $M= e^{-1} \approx .37$, attained at $t=1$.
+-
+-Consider the heat boundary value problem with nonconstant boundary conditions
+-
+-$$
+-\begin{gathered}
+-u_{t}=c^{2} u_{x x}, \quad 0<x<L, \quad t>0 \\
+-u(0, t)=g_{1}(t), \quad u(L, t)=g_{2}(t), \quad t \geq 0 \\
+-u(x, 0)=f(x), \quad 0<x<L
+-\end{gathered}
+-$$
+-
+-Suppose that $f, g_{1}, g_{2}$ are bounded. Thus, there are constants $m$ and $M$ such that for all $0 \leq x \leq L$, and all $t \geq 0$, we have
+-(4) $\quad m \leq f(x) \leq M ; \quad m \leq g_{1}(t) \leq M ; \quad m \leq g_{2}(t) \leq M$.
+-
+-Then the solution of (1)-(3) satisfies the inequalities
+-
+-$$
+-m \leq u(x, t) \leq M ; \quad 0 \leq x \leq L ; \quad t \geq 0
+-$$
++The title of this section refers to a property of the solutions of the heat and Laplace's equations. Consider, for example, the temperature distribution inside a uniform bar with insulated lateral surface and no internal sources of heat, subject to boundary and initial conditions. If the initial temperature distribution and the temperature of the endpoints do not exceed a certain value $M$, then, arguing on physical grounds, we infer that the temperature distribution inside the bar at any subsequent time will remain no greater than $M$. Similarly, if the initial temperature distribution and the temperature of the endpoints do not fall below a certain value $m$, then we infer that the temperature distribution inside the bar at any subsequent time will remain no less than $m$. The mathematical formulation of these assertions leads to what is known as the maximum principle, or the maximum-minimum principle. Our goal in this section is to prove this principle for the heat and Laplace's equations and derive some of its theoretical and practical applications. Another approach to the results concerning Laplace's equation is presented in Chapter 16. We start with the heat equation.
++
++> [!theorem|e3151e58-4abe-51b8-994f-5bf8715928e5.local at=3ed9a45d-0de1-5b88-855b-c847ceddd982] The Maximum Principle for the Heat Equation
++> Let $L,c>0$. Assume the solution is continuous on each closed finite-time rectangle and satisfies the heat equation classically in its spatial interior.
++>
++> Consider the heat boundary value problem with nonconstant boundary conditions
++>
++> $$
++> \begin{gathered}
++> u_{t}=c^{2} u_{x x}, \quad 0<x<L, \quad t>0 \\
++> u(0, t)=g_{1}(t), \quad u(L, t)=g_{2}(t), \quad t \geq 0 \\
++> u(x, 0)=f(x), \quad 0<x<L
++> \end{gathered}
++> $$
++>
++> Suppose that $f, g_{1}, g_{2}$ are bounded. Thus, there are constants $m$ and $M$ such that for all $0 \leq x \leq L$, and all $t \geq 0$, we have
++> $\quad m \leq f(x) \leq M ; \quad m \leq g_{1}(t) \leq M ; \quad m \leq g_{2}(t) \leq M$.
++>
++> Then the solution of this boundary value problem satisfies the inequalities
++>
++> $$
++> m \leq u(x, t) \leq M ; \quad 0 \leq x \leq L ; \quad t \geq 0
++> $$
++
++*Printed equation labels: (1) heat equation $u_t=c^2u_{xx}$; (2) endpoint data $u(0,t)=g_1(t)$ and $u(L,t)=g_2(t)$; (3) initial data $u(x,0)=f(x)$; (4) bounds on the initial and endpoint data; (5) bounds on the solution.*
+ 
+ At the endpoints $x=0, x=L$, or $t=0$, (5) reduces to (4). So the only new information in (5) concerns the values of $u(x, t)$ when $0<x<L$ and $t>0$. The proof of (5) is presented in the Appendix at the end of the section. We continue with some examples and applications.
+ 
+-## EXAMPLE 1 The maximum principle for the heat equation
++> [!exercise|9ed7a1d2-6555-5fdc-a136-7670638561d1.local at=4cf9224a-b24d-558f-aaaf-95b484c2c3cd] EXAMPLE 1 The maximum principle for the heat equation
++> Apply the heat-equation maximum principle to bound the temperature without solving the PDE, in each case with $u_t=u_{xx}$:
++>
++> (a) A bar of length $\pi$ initially at temperature $100$, with both ends kept at zero.
++>
++> (b) A bar of length $\pi$ initially at temperature $100$, with its left end kept at zero and right end at $100$.
++>
++> (c) A bar of length $1$ initially at temperature zero, with $u(0,t)=te^{-t}$ and $u(1,t)=0$.
++
++##### solution
+ 
+ (a) In Example 1, Section 11.5, we have $f(x)=100,0<x<\pi ; g_{1}(t)=0, g_{2}(t)=0$, for $t \geq 0$. Taking $m=0$ and $M=100$ in (4), we infer from (5) that at all time $0 \leq u(x, t) \leq 100$. For $t>0$, this is clearly illustrated in Figure 4, Section 11.5.
+ (b) In Example 3, Section 11.5, we have $f(x)=100, g_{1}(t)=0, g_{2}(t)=100$. Again, taking $m=0$ and $M=100$ in (4), we infer from (5) that $0 \leq u(x, t) \leq 100$. This is illustrated in Figure 6, Section 11.5.
+@@ -44,19 +53,37 @@
+ 
+ Here $m=0$, and $M=e^{-1}$, which is the maximum value of $t e^{-t}$ for $t \geq 0$ (see Figure 1). Without solving the problem, we can infer from (5) that $0 \leq u(x, t) \leq e^{-1}$.
+ 
++```scientific-figure
++id: 0a7ae39f-198e-4159-9a66-e0f32cff1b4f
++numbered: false
++title: ""
++caption: Figure 1 Maximum $M= e^{-1} \approx .37$, attained at $t=1$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-86_239_437_1706_59.jpg
++    caption: ""
++```
++
++
+ In the following example, we apply the maximum principle to prove the uniqueness of the solution of the heat problem (1)-(3).
+ 
+-## EXAMPLE 2 Uniqueness of the solution of the heat problem
+-
+-Show that if $u_{1}(x, t)$ and $u_{2}(x, t)$ are solutions of the heat problem (1)-(3), then $u_{1}(x, t)=u_{2}(x, t)$. Thus the solution of the heat problem (1)-(3) is unique.
+-Solution Consider the function $u(x, t)=u_{1}(x, t)-u_{2}(x, t)$. Since $u_{1}$ and $u_{2}$ are solutions of (1)-(3), it is easy to check that $u$ is also a solution of (1) with boundary conditions $u(0, t)=u(L, t)=0$ and initial condition $u(x, 0)=0$. Thus $m=0$ and $M=0$ for $u$ and (5) implies that $0 \leq u(x, t) \leq 0$. Hence $u(x, t)=0$, implying that $u_{1}(x, t)=u_{2}(x, t)$.
++> [!exercise|e975578a-0112-5855-9c4d-aab528a7fc3c.local at=755d3bee-6520-5316-b8ae-ec7d1720b8da] EXAMPLE 2 Uniqueness of the solution of the heat problem
++> Show that if $u_{1}(x, t)$ and $u_{2}(x, t)$ are solutions of the heat problem (1)-(3), then $u_{1}(x, t)=u_{2}(x, t)$. Thus the solution of the heat problem (1)-(3) is unique.
++
++##### solution
++
++Consider the function $u(x, t)=u_{1}(x, t)-u_{2}(x, t)$. Since $u_{1}$ and $u_{2}$ are solutions of (1)-(3), it is easy to check that $u$ is also a solution of (1) with boundary conditions $u(0, t)=u(L, t)=0$ and initial condition $u(x, 0)=0$. Thus $m=0$ and $M=0$ for $u$ and (5) implies that $0 \leq u(x, t) \leq 0$. Hence $u(x, t)=0$, implying that $u_{1}(x, t)=u_{2}(x, t)$.
+ 
+ We next apply the maximum principle to derive a comparison principle for the solution of the heat problem.
+ 
+-## EXAMPLE 3 A comparison principle
+-
+-Let $u_{1}(x, t)$ and $u_{2}(x, t)$ denote the solutions of two heat problems of the form (1)(3). Suppose that $u_{1}(0, t) \leq u_{2}(0, t), u_{1}(L, t) \leq u_{2}(L, t)$, and $u_{1}(x, 0) \leq u_{2}(x, 0)$. In other words, suppose that the boundary and initial data for $u_{2}$ dominate those for $u_{1}$. Show that $u_{1}(x, t) \leq u_{2}(x, t)$ for all $0 \leq x \leq L$ and all $t \geq 0$.
+-Solution The function $u(x, t)=u_{2}(x, t)-u_{1}(x, t)$ satisfies the heat equation (1), with boundary conditions $u(0, t)=u_{2}(0, t)-u_{1}(0, t) \geq 0$ and $u(L, t)=u_{2}(L, t)- u_{1}(L, t) \geq 0$, and initial condition $u(x, 0)=u_{2}(x, 0)-u_{1}(x, 0) \geq 0$. Applying (5) with $m \geq 0$, we get $0 \leq u(x, t)$; equivalently $u_{1}(x, t) \leq u_{2}(x, t)$.
++> [!exercise|aaf25ea5-9411-59ae-928a-01d9be0fef28.local at=335dca4f-1e75-58d8-a654-d4e3e3be0c56] EXAMPLE 3 A comparison principle
++> Let $u_{1}(x, t)$ and $u_{2}(x, t)$ denote the solutions of two heat problems of the form (1)(3). Suppose that $u_{1}(0, t) \leq u_{2}(0, t), u_{1}(L, t) \leq u_{2}(L, t)$, and $u_{1}(x, 0) \leq u_{2}(x, 0)$. In other words, suppose that the boundary and initial data for $u_{2}$ dominate those for $u_{1}$. Show that $u_{1}(x, t) \leq u_{2}(x, t)$ for all $0 \leq x \leq L$ and all $t \geq 0$.
++
++##### solution
++
++The function $u(x, t)=u_{2}(x, t)-u_{1}(x, t)$ satisfies the heat equation (1), with boundary conditions $u(0, t)=u_{2}(0, t)-u_{1}(0, t) \geq 0$ and $u(L, t)=u_{2}(L, t)- u_{1}(L, t) \geq 0$, and initial condition $u(x, 0)=u_{2}(x, 0)-u_{1}(x, 0) \geq 0$. Applying the lower bound with $m=0$, we get $0 \leq u(x, t)$; equivalently $u_{1}(x, t) \leq u_{2}(x, t)$.
+ 
+ ## Laplace's Equation
+ 
+@@ -70,21 +97,26 @@
+ \end{gathered}
+ $$
+ 
++*Printed equation labels: (6) Laplace equation; (7) bottom and top data; (8) left and right data.*
++
+ Assuming that we know the upper and lower bounds of the boundary data, and thinking of the problem as modeling the steady-state temperature distribution in an insulated plate with no internal sources of heat, it is reasonable to infer that these bounds apply as well to the solution of the Dirichlet problem. Indeed, we have the following important result.
+ 
+-THEOREM 2 THE MAXIMUM PRINCIPLE FOR LAPLACE'S EQUATION
+-
+-Suppose that $f_{1}, f_{2}, g_{1}, g_{2}$ are bounded. Thus, there are constants $m$ and $M$ such that for all $0 \leq x \leq a$, and all $0 \leq y \leq b$, we have
+-
+-$$
+-m \leq f_{1}(x), f_{2}(x) \leq M ; \quad m \leq g_{1}(y), g_{2}(y) \leq M .
+-$$
+-
+-Then the solution of (6)-(8) satisfies the inequalities
+-
+-$$
+-m \leq u(x, y) \leq M ; \quad 0 \leq x \leq a ; \quad 0 \leq y \leq b .
+-$$
++> [!theorem|886b3dfe-9e5b-5024-a65a-175b637d5e91.local at=103584d6-0646-5778-bbb8-550810cc13e5] The Maximum Principle for Laplace's Equation
++> Let $a,b>0$, and let $u$ solve $u_{xx}+u_{yy}=0$ on $0<x<a$, $0<y<b$, continuously up to the boundary, with $u(x,0)=f_1(x)$, $u(x,b)=f_2(x)$, $u(0,y)=g_1(y)$, $u(a,y)=g_2(y)$.
++>
++> Suppose that $f_{1}, f_{2}, g_{1}, g_{2}$ are bounded. Thus, there are constants $m$ and $M$ such that for all $0 \leq x \leq a$, and all $0 \leq y \leq b$, we have
++>
++> $$
++> m \leq f_{1}(x), f_{2}(x) \leq M ; \quad m \leq g_{1}(y), g_{2}(y) \leq M .
++> $$
++>
++> Then the solution of this Dirichlet problem satisfies the inequalities
++>
++> $$
++> m \leq u(x, y) \leq M ; \quad 0 \leq x \leq a ; \quad 0 \leq y \leq b .
++> $$
++
++*Printed equation labels: (9) boundary bounds $m\le f_1,f_2,g_1,g_2\le M$; (10) solution bounds $m\le u\le M$.*
+ 
+ The proof will be presented in the appendix, following the proof of Theorem 1. You can use Theorem 2 in the same way that we used Theorem 1 and derive properties of Laplace's equation similar to those of the heat equation. In particular, we have a corresponding uniqueness theorem and a comparison principle. The exact statements of these results are presented in the exercises.
+ 
+@@ -94,36 +126,39 @@
+ 
+ $$
+ u(x, t) \leq M, \quad 0 \leq x \leq L, \quad 0 \leq t \leq T
+-$$
+-
+-where $T$ is fixed but arbitrary. To see that this is enough, suppose that (11) holds. By letting $T$ tend to infinity, we obtain inequality (11) with $0 \leq t<\infty$. Consider now the problem consisting of (1) subject to the initial conditions $u(0, t)=-g_{1}(t)$, $u(L, t)=-g_{2}(t)$, and the boundary condition $u(x, 0)=-f(x)$. For this problem, the upper bound is $-m$ and the lower bound is $-M$. Furthermore, the solution of this problem is $-u(x, t)$, where $u(x, t)$ is the solution of (1)-(3). Applying (11), we get $-u(x, t) \leq-m$, or $m \leq u(x, t)$. Thus (11) implies (5).
+-
+-In proving (11), we will assume that $u(x, t)$ is continuous on the rectangle $R_{T}= \{(x, t): 0 \leq x \leq L, 0 \leq t \leq T\}$. Now recall a result from calculus that asserts that a continuous function over a closed and bounded interval attains its maximum and minimum values on that interval. There is a similar result for continuous functions of several variables. It asserts that a continuous function over a closed and bounded set, such as our rectangle $R_{T}$, attains its maximum and minimum values. From this result, it follows that $u$ attains its maximum value over the rectangle $R_{T}$. Our goal is to show that this value cannot be attained on the inside of $R_{T}$, or on its upper side. This will imply that the maximum value is attained somewhere on the other three sides. But on these three sides $u$ is bounded by $M$, and so (11) holds, implying (5).
++\tag{11}
++$$
++
++where $T$ is fixed but arbitrary. To see that this is enough, suppose that (11) holds. By letting $T$ tend to infinity, we obtain inequality (11) with $0 \leq t<\infty$. Consider now the problem consisting of (1) subject to the boundary conditions $u(0, t)=-g_{1}(t)$, $u(L, t)=-g_{2}(t)$, and the initial condition $u(x, 0)=-f(x)$. For this problem, the upper bound is $-m$ and the lower bound is $-M$. Furthermore, the solution of this problem is $-u(x, t)$, where $u(x, t)$ is the solution of (1)-(3). Applying (11), we get $-u(x, t) \leq-m$, or $m \leq u(x, t)$. Thus (11) implies (5).
++
++In proving (11), we will assume that $u(x, t)$ is continuous on the rectangle $R_{T}= \{(x, t): 0 \leq x \leq L, 0 \leq t \leq T\}$. Now recall a result from calculus that asserts that a continuous function over a closed and bounded interval attains its maximum and minimum values on that interval. There is a similar result for continuous functions of several variables. It asserts that a continuous function over a closed and bounded set, such as our rectangle $R_{T}$, attains its maximum and minimum values. From this result, it follows that $u$ attains its maximum value over the rectangle $R_{T}$. Our goal is to show that the maximum value is attained somewhere on the initial or lateral boundary, even if it is also attained elsewhere. We will prove this by perturbing $u$ to a function that cannot have a maximum in the interior or on the upper side. But on these three sides $u$ is bounded by $M$, and so (11) holds, implying (5).
+ 
+ We need two lemmas.
+-LEMMA 1
+-Let $v(x, t)$ be a function of two variables such that $v_{t}$ and $v_{x x}$ exist for $0<x< L, 0<t \leq T$. Suppose that $v$ has a local maximum at ( $x_{0}, t_{0}$ ), where $0<x_{0}< L, 0<t_{0} \leq T$. Then
+-(i) $v_{x x}\left(x_{0}, t_{0}\right) \leq 0$;
+-(ii) $v_{t}\left(x_{0}, t_{0}\right)=0$, if $0<t_{0}<T$;
+-(iii) $v_{t}\left(x_{0}, t_{0}\right) \geq 0$, if $t_{0}=T$.
++> [!lemma|5908a523-5431-5b61-8806-b0e6c474157d.local at=437fcb59-c39b-5015-aeb4-c907f9ed468e] Derivative signs at an interior or final-time local maximum
++> Let $L,T>0$. Let $v(x, t)$ be a function of two variables such that $v_{t}$ and $v_{x x}$ exist for $0<x< L, 0<t \leq T$. Suppose that $v$ has a local maximum relative to $0<x<L$, $0<t\le T$ at ( $x_{0}, t_{0}$ ), where $0<x_{0}< L, 0<t_{0} \leq T$. At $t=T$, interpret $v_t$ as the derivative from the left. Then
++> (i) $v_{x x}\left(x_{0}, t_{0}\right) \leq 0$;
++> (ii) $v_{t}\left(x_{0}, t_{0}\right)=0$, if $0<t_{0}<T$;
++> (iii) $v_{t}\left(x_{0}, t_{0}\right) \geq 0$, if $t_{0}=T$.
+ 
+ Proof To prove (i), think of $v\left(x, t_{0}\right)$ as a function of $x$. Our assumption on $v$ implies that the function $x \mapsto v\left(x, t_{0}\right)$ has a local maximum at $x_{0}$. Hence the concavity of the graph cannot be positive, and (i) follows. To prove (ii) and (iii), we argue in a similar way, thinking of $v\left(x_{0}, t\right)$ as a function of $t$. If this function has a local maximum somewhere inside the interval $(0, T)$, then the derivative must vanish, implying (ii). If the function has a local maximum at $t=T$, then it cannot be decreasing at $t=T$, and hence (iii) follows.
+ 
+-We want to show that $u(x, t)$ cannot have a local maximum inside $R_{T}$ or on its upper side. If inequality (i) in Lemma 1 were strict, then we would be done
++To prove the boundary bound, we seek a perturbation of $u(x,t)$ that cannot have a local maximum inside $R_T$ or on its upper side. If inequality (i) in Lemma 1 were strict, then we would be done
+ because then we could apply Lemma 1 to $u$ and get that $u_{t} \geq 0$ and $u_{x x}<0$ and hence $u_{t} \neq c^{2} u_{x x}$ at any local maximum inside $R_{T}$ or on its upper side. This clearly contradicts the fact that $u$ is a solution of (1). Unfortunately, at a local maximum, we may have $u_{x x}=0$ which is not sufficient to reach a contradiction. To overcome this problem, we will introduce an auxiliary function
+ 
+ $$
+ v(x, t)=u(x, t)+\frac{1}{n} x^{2}
++\tag{12}
+ $$
+ 
+ for which an argument similar to the one that we just presented will work.
+ 
+-## LEMMA 2
+-
+-Let $v$ be as in (12). Then
+-(i) $v_{t}(x, t)<c^{2} v_{x x}(x, t)$ for all $(x, t)$ inside $R_{T}$ and on its upper side.
+-(ii) The maximum value of $v$ over the rectangle $R_{T}$ occurs somewhere on the three sides $x=0, x=L$, or $t=0$.
+-(iii) For all $(x, t)$ in $R_{T}$, we have $v(x, t) \leq M+\frac{L^{2}}{n}$.
++> [!lemma|6bb9824e-3ee6-5902-8dab-a1b393dc42ed.local at=e415ff92-81fa-5027-802b-2b56f8bd944e] Quadratic perturbation for the heat-equation maximum principle
++> Let $L,c,T>0$ and $R_T=[0,L]\times[0,T]$. Let $u$ be continuous on $R_T$, solve $u_t=c^2u_{xx}$ classically for $0<x<L$, $0<t\le T$, and satisfy $u\le M$ on $x=0$, $x=L$ and $t=0$. For any positive integer $n$, set $v(x,t)=u(x,t)+x^2/n$. 
++>
++> Then
++> (i) $v_{t}(x, t)<c^{2} v_{x x}(x, t)$ for all $(x, t)$ inside $R_{T}$ and on its upper side.
++> (ii) The maximum value of $v$ over the rectangle $R_{T}$ occurs somewhere on the three sides $x=0, x=L$, or $t=0$.
++> (iii) For all $(x, t)$ in $R_{T}$, we have $v(x, t) \leq M+\frac{L^{2}}{n}$.
+ 
+ Proof From (12), we have $v_{t}=u_{t}$ and $v_{x x}=u_{x x}+\frac{2}{n}$. Since $u_{t}=c^{2} u_{x x}$ inside $R_{T}$ and on its upper side, (i) follows. To prove (ii), assume that we have a local maximum at $\left(x_{0}, t_{0}\right)$ inside $R_{T}$. By Lemma 1, we have $v_{t}\left(x_{0}, t_{0}\right) \geq 0$ and $v_{x x}\left(x_{0}, t_{0}\right) \leq 0$. But by (i), $v_{x x}\left(x_{0}, t_{0}\right)>\frac{1}{c^{2}} v_{t}\left(x_{0}, t_{0}\right) \geq 0$, which is a contradiction. Hence (ii) follows. To prove (iii), we use (ii) and the fact that $u(x, t) \leq M$ for $x=0, x=L$, or $t=0$.
+ 
+@@ -138,18 +173,21 @@
+ 
+ $$
+ u(x, y) \leq M, \quad 0<x<a, \quad 0<y<b
++\tag{13}
+ $$
+ 
+ Using Lemma 1, or the proof of Lemma 1, we see that if $u$ has a local maximum inside the rectangle $R=\{(x, y): 0 \leq x \leq a, 0 \leq y \leq b\}$, say at the point $\left(x_{0}, y_{0}\right)$ where $0<x_{0}<a, 0<y_{0}<b$, then
+ 
+ $$
+ u_{x x}\left(x_{0}, y_{0}\right) \leq 0, \quad \text { and } \quad u_{y y}\left(x_{0}, y_{0}\right) \leq 0 .
++\tag{14}
+ $$
+ 
+ Here again, if one of these inequalities were strict, then this would contradict the equality $u_{x x}\left(x_{0}, y_{0}\right)+u_{y y}\left(x_{0}, y_{0}\right)=0$, and complete the proof. However, the second derivatives in (14) may be equal to zero. So, as we did in proof of (5), we introduce an auxiliary function
+ 
+ $$
+ v(x, y)=u(x, y)+\frac{x^{2}+y^{2}}{n}
++\tag{15}
+ $$
+ 
+ Since $u$ satisfies Laplace's equation inside $R$, it follows that
+@@ -172,24 +210,44 @@
+ 
+ Letting $n$ tend to infinity, we obtain (13) and hence (10). $\square$
+ 
+-## Exercises 3.11
+-
+-1. Refer to the heat problem in Exercise 3, Section 11.5. What does the maximum principle tell us about the solution in this case?
+-2. Repeat Exercise 1 with the heat problem of Exercise 11, Section 11.5.
+-3. In this exercise we consider a heat problem with an internal source of heat for which the maximum principle does not hold. The problem is the following:
+-
+-$$
+-\begin{aligned}
+-& u_{t}=u_{x x}+2(t+1)+x(1-x), \quad 0<x<1, \quad t>0 \\
+-& u(0, t)=0, \quad u(1, t)=0 \\
+-& u(x, 0)=x(1-x) \quad 0<x<1
+-\end{aligned}
+-$$
+-
+-(a) Verify that $u(x, t)=(t+1) x(1-x)$ is a solution.
+-(b) What are the maximum and minimum values of the initial and boundary data? Denote these values by $M$ and $m$, respectively.
+-(c) Show that for some values of $t>0$, the temperature distribution exceeds $M$ at certain points in the bar. Illustrate your answer with a concrete example.
+-4. State and prove the maximum principle for the two dimensional heat equation. (See Section 11.7 for a statement of the problem with zero boundary data.)
+-5. The maximum principle fails for the wave equation. Illustrate this fact with an example of a wave problem as in (1)-(3), Section 11.3, with zero initial velocity.
+-6. Uniqueness of the solution of the Dirichlet problem. Use the maximum principle to show that the Dirichlet problem (6)-(8) has a unique solution.
+-7. State and prove a comparison principle for the Dirichlet problem (6)-(8). Model your statement after the one for the heat equation (Example 3).
++## Exercises 11.11
++
++
++> [!exercise|83fffb0f-3ea7-5666-a233-b1444482363c.local at=c2a2994e-a98c-5903-8ad8-0d27588d0700] Exercise 1
++> Refer to the heat problem in Exercise 3, Section 11.5. What does the maximum principle tell us about the solution in this case?
++
++
++> [!exercise|d4ac4303-a483-5729-9d45-2cd1f9802913.local at=a7c52e3c-3c52-56b8-aef3-5ce913369e28] Exercise 2
++> Repeat Exercise 1 with the heat problem of Exercise 11, Section 11.5.
++
++
++> [!exercise|75145671-087e-516c-9e1e-d4062b408393.local at=bc46f668-e537-524e-bd5c-16e4f9cf9dec] Exercise 3
++> In this exercise we consider a heat problem with an internal source of heat for which the maximum principle does not hold. The problem is the following:
++>
++> $$
++> \begin{aligned}
++> & u_{t}=u_{x x}+2(t+1)+x(1-x), \quad 0<x<1, \quad t>0 \\
++> & u(0, t)=0, \quad u(1, t)=0 \\
++> & u(x, 0)=x(1-x) \quad 0<x<1
++> \end{aligned}
++> $$
++>
++> (a) Verify that $u(x, t)=(t+1) x(1-x)$ is a solution.
++> (b) What are the maximum and minimum values of the initial and boundary data? Denote these values by $M$ and $m$, respectively.
++> (c) Show that for some values of $t>0$, the temperature distribution exceeds $M$ at certain points in the bar. Illustrate your answer with a concrete example.
++
++
++> [!exercise|31f3d9cf-1c4d-55cb-8b5a-2e8fe6a94852.local at=ef2d17c0-c98a-5871-a873-d68dadd408c7] Exercise 4
++> State and prove the maximum principle for the two dimensional heat equation. (See Section 11.7 for a statement of the problem with zero boundary data.)
++
++
++> [!exercise|9fd55811-5ad3-5cd3-bb70-f07c47fc7249.local at=cd9adbd8-a07a-5b14-87c5-b1e047727e13] Exercise 5
++> The maximum principle fails for the wave equation. Illustrate this fact with an example of a wave problem as in (1)-(3), Section 11.3, with zero initial velocity.
++
++
++> [!exercise|415411f0-317c-57fa-8c58-c7c1dad6540e.local at=e0f2c87b-e099-5000-8fbe-a508b5f75af5] Exercise 6
++> Uniqueness of the solution of the Dirichlet problem. Use the maximum principle to show that the Dirichlet problem (6)-(8) has a unique solution.
++
++
++> [!exercise|207a22fa-e329-5f99-b419-0795b30e521d.local at=326b6802-82a2-5fd9-85c5-85f3f0152663] Exercise 7
++> State and prove a comparison principle for the Dirichlet problem (6)-(8). Model your statement after the one for the heat equation (Example 3).
+
+`````

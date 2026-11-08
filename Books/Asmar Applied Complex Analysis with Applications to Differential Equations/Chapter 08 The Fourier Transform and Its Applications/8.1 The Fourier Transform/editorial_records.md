@@ -309,3 +309,1121 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.1 The Fourier Transform.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 08 The Fourier Transform and Its Applications/8.1 The Fourier Transform.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.1 The Fourier Transform.md
+@@ -1,11 +1,12 @@
++
+ Topics to Review
+-Athough this chapter is largely self-contained, the ideas build on the theory of Fourier series and the heat and wave applications of Chapter 8. Whereas in Chapters 8-10 we dealt with problems on finite intervals or regions, here we are concerned with problems on unbounded regions, such as lines, half lines, planes, and halfplanes.
++Although this chapter is largely self-contained, the ideas build on the theory of Fourier series and the heat and wave applications of Chapter 11. Whereas in Chapters 11–13 we dealt with problems on finite intervals or regions, here we are concerned with problems on unbounded regions, such as lines, half lines, planes, and halfplanes.
+ Methods from complex analysis, in particular, residue theory, will be used to compute Fourier transforms and study the Hilbert transform in Section 8.5.
+ 
+ ## Looking Ahead
+ 
+ In Sections 8.1 and 8.2 we introduce the Fourier transform and study its properties, especially its effect on convolutions and derivatives.
+-In Section 8.3, we present the Fourier transform method as it is used in solving some standard partial differential equations. The ideas of this section are useful throughout the remainder of the chapter and in the next chapter. Based on the Fourier transform method, we show in Sections 8.4 and 8.5 how to express the solution of boundary value problems for infinite domains as convolutions involving the boundary or initial data. Sections 8.6 and 8.7 deal with the Fourier cosine and sine transforms and their applications on *mi-infinite regions. This parallels the development of Section 8.3.
++In Section 8.3, we present the Fourier transform method as it is used in solving some standard partial differential equations. The ideas of this section are useful throughout the remainder of the chapter and in the next chapter. Based on the Fourier transform method, we show in Sections 8.4 and 8.5 how to express the solution of boundary value problems for infinite domains as convolutions involving the boundary or initial data. Sections 8.6 and 8.7 deal with the Fourier cosine and sine transforms and their applications on semi-infinite regions. This parallels the development of Section 8.3.
+ 
+ ## 8
+ 
+@@ -15,11 +16,11 @@
+ 
+ -Henri Lebesgue
+ 
+-In Chapters 8-10 we used Fourier series and orthogonal expansions as tools to solve boundary value problems over bounded regions such as intervals, rectangles, disks and spheres. As you can imagine, the modeling of certain physical phenomena will give rise naturally to boundary value problems over unbounded regions. For example, to describe the temperature distribution in a very long insulated wire, you can suppose that the length of the wire is infinite, which gives rise to a boundary value problem over an infinite line. To solve this new type of problem we will generalize the notion of Fourier series by developing the Fourier transform. The applications that we present are as diverse and rich as the ones we studied with Fourier series. The methods of this chapter, although mainly tailored for the Fourier transform, are also suitable with other transforms-for example, the Fourier cosine and sine transforms (Sections 8.6-8.7) and the Laplace and Hankel transforms (Chapter 12).
++In Chapters 11–13 we used Fourier series and orthogonal expansions as tools to solve boundary value problems over bounded regions such as intervals, rectangles, disks and spheres. As you can imagine, the modeling of certain physical phenomena will give rise naturally to boundary value problems over unbounded regions. For example, to describe the temperature distribution in a very long insulated wire, you can suppose that the length of the wire is infinite, which gives rise to a boundary value problem over an infinite line. To solve this new type of problem we will generalize the notion of Fourier series by developing the Fourier transform. The applications that we present are as diverse and rich as the ones we studied with Fourier series. The methods of this chapter, although mainly tailored for the Fourier transform, are also suitable with other transforms-for example, the Fourier cosine and sine transforms (Sections 8.6-8.7) and the Laplace and Hankel transforms (Chapter 9).
+ 
+ In addition to the basic study of the Fourier transform, we introduce in Section 8.2 the class of generalized functions and consider some of their applications in solving partial differential equations and computing Fourier transforms. This material, along with the applications of complex analysis, is presented at the end of sections and is designed as enrichment in the subject. As a sample of applications, take a look at the exercises in Section 8.2. You will find transforms that involve Legendre polynomials, Chebyshev polynomials, Bessel functions, and other special functions. You will also find interesting improper integrals, whose evaluations illustrate the power of the Fourier analysis techniques.
+ 
+-### 8.1 The Fourier Transform
++# 8.1 The Fourier Transform
+ 
+ In Chapter 7, we used Fourier series to analyze functions that are periodic on the real line or that are defined on a finite interval and so can be considered as the restriction of periodic functions. Our goal in this section is to extend the basic tools of Fourier analysis to functions that are defined on the entire real line but are not periodic. We will replace Fourier series by the Fourier transform and prove results that are direct analogs of results about Fourier series.
+ 
+@@ -27,25 +28,35 @@
+ 
+ Like Fourier series, the Fourier transform can be expressed in terms of integrals involving the cosine and sine functions or the complex exponential. We will take the complex form of Fourier series as a model and make the following definition.
+ 
+-## DEFINITION 1 THE FOURIER TRANSFORM
+-
+-## DEFINITION 2 THE INVERSE FOURIER TRANSFORM
+-
+-Suppose that $f$ is integrable on the real line, the Fourier transform of $f$, denoted by $\mathcal{F}(f)$ or $\widehat{f}$, is defined by
+-
+-$$
+-\widehat{f}(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x) e^{-i \omega x} d x \quad(-\infty<\omega<\infty)
+-$$
++
++
++
++
++> [!definition|848a83d1-1f06-5ed3-8618-355d7855c621.local at=300bf9a5-9b50-534e-a926-8869a2be77d0] The Fourier transform
++> Here integrable means $\int_{\mathbb R}|f(x)|\,dx<\infty$.
++>
++> Suppose that $f$ is integrable on the real line, the Fourier transform of $f$, denoted by $\mathcal{F}(f)$ or $\widehat{f}$, is defined by
++>
++> $$
++> \widehat{f}(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x) e^{-i \omega x} d x \quad(-\infty<\omega<\infty)
++> $$
++
++*Printed equation label: (1).*
+ 
+ The notation $\mathcal{F}(f(x))(\omega)$ is also used to be specific about the variables. Like the Fourier coefficients, the Fourier transform of $f$ is defined by integrating $f$ against the exponential function over the domain of definition of $f$, which is the entire real line in the present case. However, unlike the Fourier coefficients of a periodic function, which are defined over a discrete set of values, the Fourier transform is defined over a continuous set of $\omega$ 's.
+ 
+ A Fourier series reconstructs a periodic function from its Fourier coefficients. To reconstruct a function on the real line from its Fourier transform, we must sum over a continuous set of Fourier coefficients; thus we must integrate the Fourier transform. The resulting integral is called the inverse Fourier transform.
+ 
+-The inverse Fourier transform of $g(\omega)$ is
+-
+-$$
+-\mathcal{F}^{-1}(g)(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} g(\omega) e^{i \omega x} d \omega \quad(-\infty<x<\infty)
+-$$
++> [!definition|9eb08051-45eb-51f2-9755-ab827dd4ca90.local at=c59c2eec-aca3-56b8-ba97-909a068daf57] The inverse Fourier transform
++> For $g\in L^1(\mathbb R)$, the following integral converges absolutely. More generally, when the symmetric principal value exists, it defines the inverse transform by the limit of integrals over $[-a,a]$ as $a\to\infty$.
++>
++> The inverse Fourier transform of $g(\omega)$ is
++>
++> $$
++> \mathcal{F}^{-1}(g)(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} g(\omega) e^{i \omega x} d \omega \quad(-\infty<x<\infty)
++> $$
++
++*Printed equation label: (2).*
+ 
+ The definition of the inverse Fourier transform is very similar to that of the Fourier transform; the only difference is the negative sign in the exponent
+ of the exponential function inside the integral. The improper integral in (2) is to be interpreted as a principal value:
+@@ -54,19 +65,22 @@
+ \mathcal{F}^{-1}(g)(x)=\lim _{a \rightarrow \infty} \frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} g(\omega) e^{i \omega x} d \omega
+ $$
+ 
+-THEOREM 1 INVERSION OF THE FOURIER TRANSFORM
+-
+-Suppose that $f$ is piecewise smooth and integrable on the real line. Then, for all $x$, we have
+-
+-$$
+-\frac{f(x+)+f(x-)}{2}=\mathcal{F}^{-1}(\hat{f})(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \widehat{f}(\omega) e^{i \omega x} d \omega
+-$$
+-
+-In particular, if $f$ is piecewise smooth and continuous at $x$, then
+-
+-$$
+-f(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \widehat{f}(\omega) e^{i \omega x} d \omega
+-$$
++
++
++> [!theorem|2ed5979b-d489-5724-bd76-1c83fd3dd815.local at=c88ef409-bda2-5f09-8ea9-bd195bb6319a] Inversion of the Fourier transform
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. The inverse integral is a symmetric principal value; $f(x\pm)$ denote one-sided limits.
++>
++> Suppose that $f$ is piecewise smooth and integrable on the real line. Then, for all $x$, we have
++>
++> $$
++> \frac{f(x+)+f(x-)}{2}=\mathcal{F}^{-1}(\hat{f})(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \widehat{f}(\omega) e^{i \omega x} d \omega
++> $$
++>
++> In particular, if $f$ is piecewise smooth and continuous at $x$, then
++>
++> $$
++> f(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \widehat{f}(\omega) e^{i \omega x} d \omega
++> $$
+ 
+ The proof is similar to the proof of the Fourier series representation theorem, Section 7.6. We will present it at the end of this section.
+ 
+@@ -80,18 +94,37 @@
+ 
+ Thus the value of the Fourier transform at $\omega=0$ is equal to the signed area between the graph of $f(x)$ and the $x$-axis, multiplied by a factor of $1 / \sqrt{2 \pi}$.
+ 
+-## EXAMPLE 1 A Fourier transform
+-
+-(a) Let $a>0$. Find the Fourier transform of the function
+-
+-$$
+-f(x)= \begin{cases}1 & \text { if }|x|<a, \\ 0 & \text { if }|x|>a,\end{cases}
+-$$
+-
+-shown in Figure 1. What is $\hat{f}(0)$ ?
+-(b) Express $f$ as an inverse Fourier transform.
+-
+-Solution For $\omega \neq 0$ we have
++> [!exercise|97706cb3-7d00-52d4-beef-2a611aefc71d.local at=54751f38-5713-5426-9687-c57677967cad] EXAMPLE 1 A Fourier transform
++> (a) Let $a>0$. Find the Fourier transform of the function
++>
++> $$
++> f(x)= \begin{cases}1 & \text { if }|x|<a, \\ 0 & \text { if }|x|>a,\end{cases}
++> $$
++>
++> shown in Figure 1. What is $\hat{f}(0)$ ?
++> (b) Express $f$ as an inverse Fourier transform.
++>
++
++
++
++
++
++```scientific-figure
++id: e8e24927-a4bf-4b8c-9ca2-bd65250ec6e7
++numbered: false
++title: ""
++caption: Figure 1 Graph of the interval indicator in Example 1.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-1-figure-1-restored.png
++    caption: ""
++```
++
++##### solution
++
++For $\omega \neq 0$ we have
+ 
+ $$
+ \begin{aligned}
+@@ -100,25 +133,49 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-04_410_509_360_123.jpg)
+-
+-Figure 2 Graph of $\widehat{f}$ in Example 1.
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-04_364_573_2173_123.jpg)
+-Figure 3 Graph of $f$ in Ex-
+-
+-amnle 2 . for the case $a=1$.
++```scientific-figure
++id: e724f8ee-f2f6-47f5-8cf1-cf0a7ad45fec
++numbered: false
++title: ""
++caption: Figure 2 Graph of $\widehat{f}$ in Example 1.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-04_410_509_360_123.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: ae9818a6-dba7-40c6-925a-a6f1eb185f44
++numbered: false
++title: ""
++caption: Figure 3 Graph of $f$ in Example 2, for the case $a=1$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-04_364_573_2173_123.jpg
++    caption: ""
++```
++
+ 
+ For $\omega=0$, we have
+ 
+ $$
+ \begin{gathered}
+ \hat{f}(0)=\frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} d x=a \sqrt{2 / \pi} \\
+-\lim _{\omega \rightarrow 0} \hat{f}(\omega)=\lim _{\omega \rightarrow 0} \sqrt{\frac{2}{\pi}} \frac{\sin a \omega}{\omega}=a \sqrt{\frac{2}{\pi}}=\hat{f}(0)
++\text{Since }\quad \lim _{\omega \rightarrow 0} \hat{f}(\omega)=\lim _{\omega \rightarrow 0} \sqrt{\frac{2}{\pi}} \frac{\sin a \omega}{\omega}=a \sqrt{\frac{2}{\pi}}=\hat{f}(0)
+ \end{gathered}
+ $$
+ 
+ it follows that $\hat{f}(\omega)$ is continuous at 0 (Figure 2), and we may write
++
++$$
++\hat{f}(\omega)=\sqrt{\frac{2}{\pi}}\frac{\sin a\omega}{\omega},\quad \omega\ne0,\qquad \hat f(0)=a\sqrt{2/\pi}.
++$$
++
+ (b) To express $f$ as an inverse Fourier transform, we use (2) and get
+ 
+ $$
+@@ -132,6 +189,7 @@
+ 
+ $$
+ \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{\cos \omega x \sin a \omega}{\omega} d \omega= \begin{cases}0 & \text { if } x<-a \text { or } x>a \\ 1 & \text { if }-a<x<a \\ \frac{1}{2} & \text { if } x= \pm a\end{cases}
++\tag{3}
+ $$
+ 
+ A particular case of this integral deserves special attention. If we take $a=1$ and $x=0$, we get
+@@ -144,33 +202,18 @@
+ 
+ The Fourier transform in Example 1 is continuous on the entire real line even though the function has jump discontinuities at $x= \pm a$. In fact, it can be shown that the Fourier transform of an integrable function is always continuous.
+ 
+-## EXAMPLE 2 A Fourier transform involving $e^{-a x}$
+-
+-Find the Fourier transform of
+-
+-$$
+-f(x)= \begin{cases}e^{-a x} & \text { if } x>0 \\ 0 & \text { if } x \leq 0\end{cases}
+-$$
+-
+-Since
+-
+-鈹
+-
+-$$
+-\hat{f}(\omega)=\sqrt{\frac{2}{\pi}} \frac{\sin a \omega}{\omega}, \quad \text { for all } \omega
+-$$
+-
+-                            I’
+-    ![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-05_402_423_623_48.jpg)
+-
+-Figure 4 Graph of $|\widehat{f}|$ in Example $2(a=1)$.
+-
+-THEOREM 2 CONJUGATING THE TRANSFORM
+-
+-## THEOREM 3 LINEARITY
+-
+-where $a>0$. The graph of $f$ is shown in Figure 3 for the case $a=1$.
+-Solution We have
++> [!exercise|d3a7d986-7ed8-5960-934a-ed7d31aa8827.local at=9bdb9cf8-92cb-5daa-b2ba-28afd235f661] EXAMPLE 2 A Fourier transform involving $e^{-a x}$
++> Find the Fourier transform of
++>
++> $$
++> f(x)= \begin{cases}e^{-a x} & \text { if } x>0 \\ 0 & \text { if } x \leq 0\end{cases}
++> $$
++>
++> where $a>0$. The graph of $f$ is shown in Figure 3 for the case $a=1$.
++
++##### solution
++
++We have
+ 
+ $$
+ \begin{aligned}
+@@ -185,15 +228,32 @@
+ \hat{f}(\omega)=\frac{1}{\sqrt{2 \pi}(a+i \omega)}=\frac{a-i \omega}{\sqrt{2 \pi}\left(a^{2}+\omega^{2}\right)}
+ $$
+ 
++```scientific-figure
++id: b361957f-b5d1-484b-b854-05c6802be7cc
++numbered: false
++title: ""
++caption: Figure 4 Graph of $|\widehat{f}|$ in Example $2(a=1)$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-05_402_423_623_48.jpg
++    caption: ""
++```
++
++
+ Figure 4 shows the graph of $|\hat{f}(\omega)|$ with $a=1$. Here again, it is worth noting that $\widehat{f}$ and $|\widehat{f}|$ are both continuous even though $f$ is not.
+ 
+ Example 2 illustrates a noteworthy fact that the Fourier transform may be complex-valued even though the function is real-valued. When is the Fourier transform real-valued? To answer this question we investigate the Fourier transform of $f(-x)$. We have the following useful result.
+ 
+-Suppose that $f$ is real-valued and integrable and let $g(x)=f(-x)$. Then
+-
+-$$
+-\widehat{f}(-\omega)=\overline{\widehat{f}(\omega)}=\widehat{g}(\omega), \quad \text { for all } \omega
+-$$
++> [!theorem|f05b6b1c-863e-565d-b503-17da680993ae.local at=97758786-f9ad-5c2f-8e46-1a861d40c2ac] Conjugating the transform
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$.
++>
++> Suppose that $f$ is real-valued and integrable and let $g(x)=f(-x)$. Then
++>
++> $$
++> \widehat{f}(-\omega)=\overline{\widehat{f}(\omega)}=\widehat{g}(\omega), \quad \text { for all } \omega
++> $$
+ 
+ Proof We leave the first equality as an exercise and prove that $\hat{f}(-\omega)=\hat{g}(\omega)$. Using (1) and a change of variables, we get
+ 
+@@ -206,39 +266,58 @@
+ 
+ The following property of the Fourier transform is straightforward to verify and is a consequence of the linearity of the integral.
+ 
+-The Fourier transform is a linear operation; that is, for any integrable functions $f$ and $g$ and any real numbers $a$ and $b$,
+-
+-$$
+-\mathcal{F}(a f+b g)=a \mathcal{F}(f)+b \mathcal{F}(g)
+-$$
++> [!theorem|26facabc-35ce-5616-a0db-7fb753cd4439.local at=14256709-18d0-5fc8-ab99-f127c16fd580] Linearity
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$.
++>
++> The Fourier transform is a linear operation; that is, for any integrable functions $f$ and $g$ and any real numbers $a$ and $b$,
++>
++> $$
++> \mathcal{F}(a f+b g)=a \mathcal{F}(f)+b \mathcal{F}(g)
++> $$
+ 
+ Proof See Exercise 14.
+ We can now answer our question about the values of the Fourier transform.
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-06_445_547_817_117.jpg)
+-Figure 5 Graph of $e^{-|x|}, a=$ 1 in Example 3.
+-
+-THEOREM 5 RECIPROCITY RELATIONS
+-
+-Suppose that $f$ is real-valued and integrable. Then
+-(i) $\hat{f}$ is real-valued if and only if $f$ is even;
+-(ii) $\hat{f}$ is purely imaginary if and only if $f$ is odd.
++```scientific-figure
++id: a5fd576f-e57b-4ca6-a341-b6e92e249fbb
++numbered: false
++title: ""
++caption: Figure 5 Graph of $e^{-a|x|}$ with $a=1$ in Example 3.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-06_445_547_817_117.jpg
++    caption: ""
++```
++
++
++
++
++> [!theorem|fbaee10e-5824-5e09-b674-46758f55ed36.local at=e017a07b-899c-513b-abec-5bade5e30679] Fourier Transform Parity for Real Integrable Functions
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$. Parity of an integrable function is understood up to equality almost everywhere; if $f$ is continuous, it is pointwise parity.
++>
++> Suppose that $f$ is real-valued and integrable. Then
++> (i) $\hat{f}$ is real-valued if and only if $f$ is even;
++> (ii) $\hat{f}$ is purely imaginary if and only if $f$ is odd.
+ 
+ Proof We prove (i) only and leave (ii) to Exercise 14. We have
+ 
+ $$
+ \begin{aligned}
+-f \text { is even } & \Leftrightarrow f(x)=\frac{f(x)+f(-x)}{2} \\
++f \text { is even almost everywhere } & \Leftrightarrow f(x)=\frac{f(x)+f(-x)}{2}\quad\text{almost everywhere} \\
+ & \Leftrightarrow \widehat{f}(\omega)=\frac{\widehat{f}(\omega)+\widehat{f(-x)}(\omega)}{2} \quad \text { (linearity) } \\
+-& \Leftrightarrow \widehat{f}(\omega)=\frac{\widehat{f}(\omega)+\widehat{f}(\omega)}{2} \quad \text { (Theorem 2) } \\
++& \Leftrightarrow \widehat{f}(\omega)=\frac{\widehat{f}(\omega)+\overline{\widehat{f}(\omega)}}{2} \quad \text { (Theorem 2) } \\
+ & \Leftrightarrow \widehat{f}(\omega)=\operatorname{Re}(\widehat{f}(\omega)) \quad \Leftrightarrow \quad \widehat{f}(\omega) \text { is real-valued. }
+ \end{aligned}
+ $$
+ 
+-## EXAMPLE 3 Fourier transform of $e^{-a|x|}(a>0)$
+-
+-Find the Fourier transform of $h(x)=e^{-a|x|}$ where $a>0$ (Figure 5).
+-Solution We can compute directly from the definition of the Fourier transform, or better yet, we can use the transform in Example 2 and properties of the Fourier transform. Since $h(x)=f(x)+f(-x)$, where $f(x)$ is as in Example 2, then by Theorem 2 and linearity,
++> [!exercise|d6aaf9ad-a5f7-59b9-b21a-77f398053cd6.local at=9ad0a2c1-3dfc-512a-bba0-6b5ee9dc78ed] EXAMPLE 3 Fourier transform of $e^{-a|x|}(a>0)$
++> Find the Fourier transform of $h(x)=e^{-a|x|}$ where $a>0$ (Figure 5).
++
++##### solution
++
++We can compute directly from the definition of the Fourier transform, or better yet, we can use the transform in Example 2 and properties of the Fourier transform. Since $h(x)=f(x)+f(-x)$, where $f(x)$ is as in Example 2, then by Theorem 2 and linearity,
+ 
+ $$
+ \begin{aligned}
+@@ -251,69 +330,110 @@
+ 
+ Example 3 illustrates how properties of the Fourier transform can be used to our advantage to find new transforms from known ones. The more we know about the transform, the easier it is to compute with it. Here are two simple observations which will yield interesting results.
+ 
+-If $f$ and $g$ are integrable, then
+-
+-$$
+-\begin{gathered}
+-\mathcal{F} g(\omega)=\mathcal{F}^{-1} g(-\omega) \\
+-\mathcal{F}(\mathcal{F}(f))(\omega)=f(-\omega)
+-\end{gathered}
+-$$
++> [!theorem|6dc6aa94-7a43-5053-8497-683d923db4e0.local at=56f0fe32-b398-522d-ac55-60c0a4a6f00b] Reciprocity relations
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$.
++>
++> If $g$, $f$, and $\widehat f$ are integrable, then
++>
++> $$
++> \begin{gathered}
++> \mathcal{F} g(\omega)=\mathcal{F}^{-1} g(-\omega) \\
++> \mathcal{F}(\mathcal{F}(f))(\omega)=f(-\omega)
++> \end{gathered}
++> $$ The second equality holds almost everywhere, and pointwise wherever Fourier inversion recovers $f$.
++
++*Printed equation labels: (4) transform–inverse reflection relation; (5) double-transform reflection relation.*
+ 
+ Proof In the definitions of the Fourier transform and its inverse, (1) and (2), the exponential functions in these integrals differ only by a negative sign in the exponent, and so (4) is immediate. Applying (4) with $g=\mathcal{F}(f)$, we obtain $\mathcal{F} \mathcal{F}(f)(\omega)=\mathcal{F}^{-1} \mathcal{F}(f)(-\omega)$. But $\mathcal{F}^{-1} \mathcal{F}(f)=f$, and (5) follows.
+ 
+-## EXAMPLE 4 A transform using reciprocity
++> [!exercise|28dc89be-f09f-5b48-a8fc-78ffe0cef112.local at=21962d91-4665-5e77-be79-a7ee07d65ce8] EXAMPLE 4 A transform using reciprocity
++> Use Fourier reciprocity to find the transform of $\sqrt{2/\pi}\,a/(a^2+x^2)$ for $a>0$.
++
++##### solution
+ 
+ From Example 3, the function $\sqrt{\frac{2}{\pi}} \frac{a}{a^{2}+x^{2}}(a>0)$ is the Fourier transform of $f(x)= e^{-a|x|}$. Using the reciprocity relation (5), we obtain
+ 
+ $$
+ \mathcal{F}\left(\sqrt{\frac{2}{\pi}} \frac{a}{a^{2}+x^{2}}\right)(\omega)=\mathcal{F}\left(\mathcal{F}\left(e^{-a|x|}\right)\right)(\omega)=f(-\omega)=e^{-a|-\omega|}=e^{-a|\omega|}
+-$$ $\square$
+-
+-If in Example 4 we were to compute the Fourier transform of $\frac{a}{a^{2}+x^{2}}$ from the definition (1), we would have to evaluate the integral $\int_{-\infty}^{\infty} \frac{\cos \omega x}{a^{2}+x^{2}} d x$. This nontrivial integral is one of many that we computed using the residue theorem in Chapter 5 (see Example 1, Section 5.4). The next example is another important Fourier transform, which we will obtain by simply recalling an integral that we computed using residues. A different derivation will be given
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-07_366_424_871_15.jpg)
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-07_366_419_1269_15.jpg)
+-
+-Figure 6 Graphs of $e^{-\frac{x^{2}}{2}}$ and its Fourier transform $e^{-\frac{\omega^{2}}{2}}$. They are the same functions of different variables). in the next section using operational properties of the transform.
+-
+-## EXAMPLE 5 Fourier transform of the Gaussian
++$$
++
++$\square$
++If in Example 4 we were to compute the Fourier transform of $\frac{a}{a^{2}+x^{2}}$ from the definition (1), we would have to evaluate the integral $\int_{-\infty}^{\infty} \frac{\cos \omega x}{a^{2}+x^{2}} d x$. This nontrivial integral is one of many that we computed using the residue theorem in Chapter 5 (see Example 1, Section 5.4). The next example is another important Fourier transform, which we will obtain by simply recalling an integral that we computed using residues. A different derivation will be given in the next section using operational properties of the transform.
++
++```scientific-figure
++id: 80f33fcb-16a3-4b5b-9bd8-16f31098f1f5
++numbered: false
++title: ""
++caption: Figure 6 Graphs of $e^{-\frac{x^{2}}{2}}$ and its Fourier transform $e^{-\frac{\omega^{2}}{2}}$. They are the same function of different variables.
++captionVisible: true
++captionPosition: below
++columns: 2
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-07_366_424_871_15.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-07_366_419_1269_15.jpg
++    caption: ""
++```
++
++
++> [!exercise|2859e274-dfc8-5634-b339-8c64c20bddc5.local at=ca5ce370-bba4-5506-9e38-f8976f8de69a] EXAMPLE 5 Fourier transform of the Gaussian
++> Find the symmetric Fourier transform of $e^{-a x^2}$ for $a>0$, using the Gaussian cosine integral.
++
++##### solution
+ 
+ Let $a>0$. We will derive the Fourier transform
+ 
+ $$
+ \mathcal{F}\left(e^{-a x^{2}}\right)(\omega)=\frac{1}{\sqrt{2 a}} e^{-\frac{\omega^{2}}{4 a}} \quad(-\infty<\omega<\infty)
++\tag{6}
+ $$
+ 
+ (See Figure 6 for the case $a=\frac{1}{2}$.) Using (1), we have
+ 
+ $$
+-\mathcal{F}\left(e^{-a x^{2}}\right)(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-a x^{2}} e^{-i \omega x} d x=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-a x^{2}}(\cos \omega x-i \sin \omega x) d x
++\mathcal{F}\left(e^{-a x^{2}}\right)(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-a x^{2}} e^{-i \omega x} d x=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-a x^{2}}(\cos \omega x-i \sin \omega x) d x
+ $$
+ 
+ The integral of the sine part is 0 , because the integrand is odd. So
+ 
+ $$
+-\mathcal{F}\left(e^{-a x^{2}}\right)(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} e^{-a x^{2}} \cos \omega x d x
+-$$
+-
+-and (6) follows from Example 1, Section 5.5. $\square$
++\mathcal{F}\left(e^{-a x^{2}}\right)(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{-a x^{2}} \cos \omega x d x
++$$
++
++and (6) follows from Example 1, Section 5.5.  $\square$
+ 
+ Taking $a=\frac{1}{2}$ in (6), we obtain the interesting formula
+ 
+ $$
+ \mathcal{F}\left(e^{-\frac{x^{2}}{2}}\right)(\omega)=e^{-\frac{\omega^{2}}{2}} \quad(-\infty<\omega<\infty)
++\tag{7}
+ $$
+ 
+ Thus $e^{-\frac{x^{2}}{2}}$ is its own Fourier transform; equivalently, formula (7) states that $e^{-\frac{x^{2}}{2}}$ is an eigenfunction of the Fourier transform corresponding to the eigenvalue 1. (See the next section for transforms with similar properties.)
+ 
+ In our next example, the function is not integrable; however, its Fourier transform does exist. This is one of many Fourier transforms of functions that are not necessarily integrable, but for which the improper integral (1)
+ does converge. In fact, the theory of Fourier transforms can be extended to a much wider class of functions than the integrable functions, including the so-called generalized functions. We will touch on this subject in the next section and derive some interesting applications.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-08_403_505_524_107.jpg)
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-08_397_507_965_111.jpg)
+-
+-Figure 7 for Example Graphs of $f(x)=\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$ and its Fourier transform $\widehat{f}(\omega)=1$ if $|\omega|<a$ and 0 if $|\omega|>a$. The function is not integrable and its transform is not continuous.
+-
+-EXAMPLE 6 Fourier transform of $\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$
++```scientific-figure
++id: 7bc9d8df-9430-4db1-b4ae-e3920da2cb36
++numbered: false
++title: ""
++caption: Figure 7 Graphs of $f(x)=\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$ and its Fourier transform $\widehat{f}(\omega)=1$ if $|\omega|<a$ and 0 if $|\omega|>a$. The function is not integrable and its transform is not continuous.
++captionVisible: true
++captionPosition: below
++columns: 2
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-08_403_505_524_107.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-08_397_507_965_111.jpg
++    caption: ""
++```
++
++
++> [!exercise|e4a92bcb-0613-575c-a629-4d72e2b75583.local at=c9f2e7ae-ec52-56fb-ace0-164b7d613513] EXAMPLE 6 Fourier transform of $\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$
++> For $a>0$, compute the Fourier transform of $\sqrt{2/\pi}\sin(ax)/x$ as an improper integral, including the values at $\omega=\pm a$.
++
++##### solution
++
+ The function $f(x)=\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$, where $a>0$ is not integrable over the real line because the improper integral of its absolute value is not finite (Exercise $14(\mathrm{c})$ ). We can still use (1) to compute its Fourier transform. For any $-\infty<\omega<\infty$, we have
+ 
+ $$
+@@ -326,7 +446,7 @@
+ because the imaginary part of the integrand is odd so its integral is zero. To evaluate the last integral, we appeal to (3) and find
+ 
+ $$
+-\widehat{f}(\omega)= \begin{cases}0 & \text { if } x<-a \text { or } x>a \\ 1 & \text { if }-a<x<a \\ \frac{1}{2} & \text { if } x= \pm a\end{cases}
++\widehat{f}(\omega)= \begin{cases}0 & \text { if } \omega<-a \text { or } \omega>a \\ 1 & \text { if }-a<\omega<a \\ \frac{1}{2} & \text { if } \omega= \pm a\end{cases}
+ $$
+ 
+ (See Figure 7.) These values can be confirmed by using the reciprocity relations. From Example 1, the function $\sqrt{\frac{2}{\pi}} \frac{\sin a x}{x}$ is the Fourier transform of $g(x)=1$ if $|x|<a$, and $g(x)=0$ if $|x|>a$. By (5), we get
+@@ -339,8 +459,12 @@
+ 
+ In our final example we compute some residues as we evaluate a Fourier transform.
+ 
+-EXAMPLE 7 Using residues to compute a Fourier transform Compute the Fourier transform of $f(x)=\frac{2}{\sqrt{\pi}\left(1+x^{4}\right)}$.
+-Solution Using (1), we compute
++> [!exercise|be46c5a1-c79f-5783-8d81-0b0fecce2d30.local at=fb613b5d-010d-549c-8740-15e1a1ad243b] EXAMPLE 7 Using residues to compute a Fourier transform
++> Compute the Fourier transform of $f(x)=\frac{2}{\sqrt{\pi}\left(1+x^{4}\right)}$.
++
++##### solution
++
++Using (1), we compute
+ 
+ $$
+ \begin{aligned}
+@@ -349,20 +473,44 @@
+ \end{aligned}
+ $$
+ 
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-09_469_442_182_26.jpg)
+-
+-Figure 8 The contour and poles in the upper half-plane in Example 7.
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-09_437_420_974_32.jpg)
+-Figure 9 The four unimodular roots of $z^{4}+1=0$.
++```scientific-figure
++id: c2003ba8-4e48-41e9-9958-e987d64f4194
++numbered: false
++title: ""
++caption: Figure 8 The contour and poles in the upper half-plane in Example 7.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-09_469_442_182_26.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: c7eff41c-ef59-4b26-a4ff-e9e71e5b204a
++numbered: false
++title: ""
++caption: Figure 9 The four unimodular roots of $z^{4}+1=0$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-09_437_420_974_32.jpg
++    caption: ""
++```
++
+ 
+ Note that the Fourier transform is an even function of $\omega$, so it is enough to compute it for $\omega \geq 0$. So suppose $\omega \geq 0$ and follow the steps in Example 1, Section 5.4, to compute the integral. Accordingly, we have
+ 
+ $$
+-\widehat{f}(\omega)=\frac{\sqrt{2}}{\pi} \int_{-\infty}^{\infty} \frac{\cos \omega x}{1+x^{4}} d x=\frac{\sqrt{2}}{\pi} \operatorname{Re}\left(\int_{\gamma_{R}} \frac{e^{i \omega z}}{1+z^{4}} d z\right)
+-$$
+-
+-where $\gamma_{R}$ is a closed semi-circular path with $R$ large enough to enclose the poles of $\frac{e^{i \omega z}}{1+z^{4}}$ (Figure 8). (As we will see shortly, $R$ must be $>1$.) The function $F(z)=\frac{e^{i \omega z}}{1+z^{4}}$ has four simple poles at the roots of $z^{4}+1=0$. These are $z_{1}=e^{i \frac{\pi}{4}}, z_{2}=e^{i \frac{3 \pi}{4}}$, $z_{3}=e^{i \frac{5 \pi}{4}}, z_{4}=e^{i \frac{7 \pi}{4}}$ (Figure 9). Only $z_{1}$ and $z_{2}$ are in the upper half-plane and so lie inside of $\gamma_{R}$ for $R>1$. To compute the residues at these poles, we will use Proposition 1(ii), Section 5.1. Accordingly,
++\widehat{f}(\omega)=\frac{\sqrt{2}}{\pi} \int_{-\infty}^{\infty} \frac{\cos \omega x}{1+x^{4}} d x=\frac{\sqrt{2}}{\pi} \lim_{R\to\infty}\operatorname{Re}\left(\int_{\gamma_{R}} \frac{e^{i \omega z}}{1+z^{4}} d z\right)
++\tag{8}
++$$
++
++
++
++Here $\gamma_{R}$ is a closed semi-circular path with $R$ large enough to enclose the poles of $\frac{e^{i \omega z}}{1+z^{4}}$ (Figure 8). (As we will see shortly, $R$ must be $>1$.) The function $F(z)=\frac{e^{i \omega z}}{1+z^{4}}$ has four simple poles at the roots of $z^{4}+1=0$. These are $z_{1}=e^{i \frac{\pi}{4}}, z_{2}=e^{i \frac{3 \pi}{4}}$, $z_{3}=e^{i \frac{5 \pi}{4}}, z_{4}=e^{i \frac{7 \pi}{4}}$ (Figure 9). Only $z_{1}$ and $z_{2}$ are in the upper half-plane and so lie inside of $\gamma_{R}$ for $R>1$. To compute the residues at these poles, we will use Proposition 1(ii), Section 5.1. Accordingly,
+ 
+ $$
+ \operatorname{Res}\left(\frac{e^{i \omega z}}{1+z^{4}}, z_{j}\right)=\left.\frac{e^{i \omega z}}{4 z^{3}}\right|_{z=z_{j}}=\frac{e^{i \omega z_{j}}}{4 z_{j}^{3}}
+@@ -379,7 +527,7 @@
+ $$
+ \begin{aligned}
+ \widehat{f}(\omega) & =-\frac{\sqrt{2}}{2} \operatorname{Im}\left(\frac{e^{i \omega z_{1}}}{z_{1}^{3}}+\frac{e^{i \omega z_{2}}}{z_{2}^{3}}\right) \\
+-& =-\frac{\sqrt{2}}{2} \operatorname{Im}\left(e^{-i \frac{3 \pi}{4}}\left(e^{i \omega\left(\frac{\sqrt{2}}{2}+i \frac{\sqrt{2}}{2}\right)}+i e^{i \omega\left(-\frac{\sqrt{2}}{3}+i \frac{\sqrt{2}}{2}\right)}\right)\right) \\
++& =-\frac{\sqrt{2}}{2} \operatorname{Im}\left(e^{-i \frac{3 \pi}{4}}\left(e^{i \omega\left(\frac{\sqrt{2}}{2}+i \frac{\sqrt{2}}{2}\right)}+i e^{i \omega\left(-\frac{\sqrt{2}}{2}+i \frac{\sqrt{2}}{2}\right)}\right)\right) \\
+ & =e^{-\frac{\sqrt{2}}{2} \omega}\left(\sin \left(\frac{\sqrt{2}}{2} \omega\right)+\cos \left(\frac{\sqrt{2}}{2} \omega\right)\right)
+ \end{aligned}
+ $$
+@@ -402,17 +550,22 @@
+ 
+ We need two lemmas. The first one is similar to the expression of the partial sums of Fourier series as a convolution with the Dirichlet kernel.
+ 
+-LEMMA 1 PARTIAL INVERSE FOURIER TRANSFORM
+-
+-To go from the first to the second equality, interchange the order of integration. To go from the second to the third equality, change variables: $x- y=Y, d y=-d Y$.
+-
+-LEMMA 2 RIEMANN-LEBESGUE LEMMA
+-
+-Suppose that $f$ is integrable on the real line and $a>0$. Then
+-
+-$$
+-\frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} \widehat{f}(\omega) e^{i x \omega} d \omega=\frac{1}{\pi} \int_{-\infty}^{\infty} f(x-y) \frac{\sin a y}{y} d y
+-$$
++
++
++
++
++
++
++> [!lemma|0b7769e9-2b04-5a1d-8591-269040ff5f2d.local at=efd6509c-54e7-5222-bb1a-5ab7e682286e] Partial inverse Fourier transform
++> Use the symmetric Fourier transform $\widehat f(\omega)=(2\pi)^{-1/2}\int_{\mathbb R}f(x)e^{-i\omega x}\,dx$.
++>
++> Suppose that $f$ is integrable on the real line and $a>0$. Then
++>
++> $$
++> \frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} \widehat{f}(\omega) e^{i x \omega} d \omega=\frac{1}{\pi} \int_{-\infty}^{\infty} f(x-y) \frac{\sin a y}{y} d y
++> $$
++
++*Printed equation label: (9).*
+ 
+ Proof Using $\frac{\sin a y}{y}=\frac{1}{2} \int_{-a}^{a} e^{i y \omega} d \omega$, we have
+ 
+@@ -420,15 +573,21 @@
+ \begin{aligned}
+ \sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty} f(x-y) \frac{\sin a y}{y} d y & =\sqrt{\frac{2}{\pi}} \int_{-\infty}^{\infty} \frac{1}{2} f(x-y) \int_{-a}^{a} e^{i y \omega} d \omega d y \\
+ & =\frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} \int_{-\infty}^{\infty} f(x-y) e^{i y \omega} d y d \omega \\
+-& =\int_{-a}^{a} \overbrace{\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(y) e^{-i y \omega} d y e^{i x \omega} d \omega} \\
++& =\int_{-a}^{a} \underbrace{\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(y) e^{-i y \omega} d y}_{\widehat f(\omega)} e^{i x\omega}\,d\omega \\
+ & =\int_{-a}^{a} \widehat{f}(\omega) e^{i x \omega} d \omega
+ \end{aligned}
+ $$
+ 
+ which is equivalent to (9).
++
++To go from the first to the second equality, interchange the order of integration. To go from the second to the third equality, change variables: $x- y=Y, d y=-d Y$.
+ The next result is an analog of the Riemann-Lebesgue lemma for Fourier series.
+-Suppose that $\int_{A}^{B}|g(x)| d x<\infty$, where $-\infty \leq A<B \leq \infty$. Then
+-(10) $\lim _{\omega \rightarrow \infty} \int_{A}^{B} g(y) \sin \omega y d y=0$ and $\lim _{\omega \rightarrow \infty} \int_{A}^{B} g(y) \cos \omega y d y=0$
++> [!lemma|43b9f535-b68f-5c4d-a712-bf5a8b3edec2.local at=1d5ca281-6948-599a-8154-da2a0e7526d8] Riemann-lebesgue lemma
++> Suppose that $\int_{A}^{B}|g(x)| d x<\infty$, where $-\infty \leq A<B \leq \infty$. Then
++> $\lim _{\omega \rightarrow \infty} \int_{A}^{B} g(y) \sin \omega y d y=0$ and $\lim _{\omega \rightarrow \infty} \int_{A}^{B} g(y) \cos \omega y d y=0$
++
++*Printed equation label: (10).*
++
+ Proof To simplify the proof, we will suppose that $g$ is bounded and $g^{\prime}$ is integrable. Integrating by parts, we obtain
+ 
+ $$
+@@ -442,7 +601,7 @@
+ $$
+ 
+ This proves the first limit in (10). The second one is done similarly.
+-We now sketch a proof of Theorem 1 for the case when $f$ is smooth. For fixed $x$, since $f^{\prime}(x)$ exists, the function $g(y)=\frac{f(x-y)-f(x)}{y}$ tends to $f^{\prime}(x)$ as $y \rightarrow 0$; hence it is bounded near 0 . For all other values of $y$, the function $g$ is smooth. Recall
++We now sketch a proof of Theorem 1 for the case when $f$ is smooth. For fixed $x$, since $f^{\prime}(x)$ exists, the function $g(y)=\frac{f(x-y)-f(x)}{y}$ tends to $-f^{\prime}(x)$ as $y \rightarrow 0$; hence it is bounded near 0 . For all other values of $y$, the function $g$ is smooth. Recall
+ from Example 3, Section 5.4, the integral $\frac{1}{\pi} \int_{-\infty}^{\infty} \frac{\sin x}{x} d x=1$. From this integral, it follows that for any $a>0, \frac{1}{\pi} \int_{-\infty}^{\infty} \frac{\sin a y}{y} d y=1$. (Just make a change of variables $a y=x$.) Using Lemma 1 , we have
+ 
+ $$
+@@ -453,178 +612,248 @@
+ \end{aligned}
+ $$
+ 
+-where $I_{1}$ is the integral over $(-\infty, 1), I_{2}$ is the integral over $(-1,1)$, and $I_{3}$ is the integral over $(1, \infty)$. To show that
++where $I_{1}$ is the integral over $(-\infty,-1), I_{2}$ is the integral over $(-1,1)$, and $I_{3}$ is the integral over $(1, \infty)$. To show that
+ 
+ $$
+ \lim _{a \rightarrow \infty} \frac{1}{\sqrt{2 \pi}} \int_{-a}^{a} \widehat{f}(\omega) e^{i x \omega} d \omega-f(x)=0
+ $$
+ 
+-we will show that $\lim _{a \rightarrow \infty} I_{j}=0$ for $j=1,2,3$. Since $g$ is bounded in the interval $(-1,1)$, the integral of its absolute value is finite on $(-1,1)$, and so, by Lemma 2, $\lim _{a \rightarrow \infty} I_{2}=0$. Write $I_{3}=\int_{1}^{\infty} \frac{f(x-y)}{y} \sin a y d y-f(x) \int_{1}^{\infty} \frac{\sin a y}{y} d y$. The first integral tends to 0 as $a \rightarrow \infty$, by Lemma 2, because $\int_{1}^{\infty}\left|\frac{f(x-y)}{y}\right| d y \leq \int_{1}^{\infty}|f(x-y)| d y \leq \int_{-\infty}^{\infty}|f(y)| d y<\infty$. To handle the second integral, we integrate by parts and get
+-
+-$$
+-f(x) \int_{1}^{\infty} \frac{\sin a y}{y} d y=\left.f(x) \frac{-\cos a y}{a y}\right|_{y=1} ^{\infty}-\frac{1}{a} \int_{1}^{\infty} \frac{\cos a y}{y^{2}} d y
+-$$
+-
+-which tends to 0 as $a \rightarrow \infty$, because $\left|\int_{1}^{\infty} \frac{\cos a y}{y^{2}} d y\right| \leq \int_{1}^{\infty} \frac{1}{y^{2}} d y=1$. Thus $\lim _{a \rightarrow \infty} I_{3}=0$ and similarly for $I_{1}$, which completes the proof.
+-
+-## Exercises 11.1
+-
+-In Exercises 1-10, find the Fourier transform of the given function.
+-1.
+-
+-$$
+-f(x)= \begin{cases}x & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-2. 
+-
+-$$
+-f(x)= \begin{cases}-1 & \text { if }-1<x<0 \\ 1 & \text { if } 0<x<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-3. 
+-
+-$$
+-f(x)= \begin{cases}1 & \text { if } 0<x<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-5. 
+-
+-$$
+-f(x)= \begin{cases}1-|x| & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-7. 
+-
+-$$
+-f(x)=e^{-|x|+2}
+-$$
+-
+-9. 
+-
+-$$
+-f(x)= \begin{cases}\cos x & \text { if }-\pi / 2<x<\pi / 2 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-4. 
+-
+-$$
+-f(x)= \begin{cases}0 & \text { if }-1<x<1 \\ 1 & \text { if } 1<|x|<2 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-6. 
+-
+-$$
+-f(x)= \begin{cases}1-x^{2} & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-8. 
+-
+-$$
+-f(x)=e^{-2\left(x^{2}+1\right)}
+-$$
+-
+-10. 
+-
+-$$
+-f(x)= \begin{cases}\sin x & \text { if }-\pi<x<\pi \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-In Exercises 11-13, derive the given integral formula by first taking the Fourier transform of the function on the right of the equality and then expressing the function as an inverse Fourier transform.
+-11.
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-12_805_566_1377_123.jpg)
+-
+-Figure 10 for Exercise 14(c). The graph of $\left|\frac{\sin x}{x}\right|$ and the area under one arch between $x=(n-1) \pi$ and $x=n \pi$. Show that the shaded area is $\geq \frac{1}{n-1}$.
+-12.
+-
+-$$
+-\int_{0}^{\infty} \frac{\cos x \omega+\omega \sin x \omega}{1+\omega^{2}} d \omega= \begin{cases}0 & \text { if } x<0 \\ \pi / 2 & \text { if } x=0 \\ \pi e^{-x} & \text { if } x>0\end{cases}
+-$$
+-
+-$$
+-\frac{2}{\pi} \int_{0}^{\infty} \frac{\sin \pi \omega}{1-\omega^{2}} \sin \omega x d \omega= \begin{cases}\sin x & \text { if }|x| \leq \pi \\ 0 & \text { if }|x|>\pi\end{cases}
+-$$
+-
+-13. 
+-
+-$$
+-\frac{2}{\pi} \int_{0}^{\infty} \frac{\cos \frac{\pi \omega}{2}}{1-\omega^{2}} \cos \omega x d \omega= \begin{cases}\cos x & \text { if }|x|<\pi / 2 \\ 0 & \text { if }|x|>\pi / 2\end{cases}
+-$$
+-
+-14. (a) Prove Theorem 3. (b) Prove Theorem 4(ii).
+-(c) Show that $\frac{\sin x}{x}$ is not integrable on the real line. That is, show that $\int_{-\infty}^{\infty} \left\lvert\, \frac{\sin x}{x} d x=\right. \infty$. [Hint: Show that for $n \geq 2$, the area under the arch of the curve, above the $x$-axis, between $(n-1) \pi$ and $n \pi$ is greater than $1 /(n-1)$ (Figure 10).]
+-15. (a) Use Example 1 to show that
+-
+-$$
+-\int_{0}^{\infty} \frac{\sin \omega \cos \omega}{\omega} d \omega=\frac{\pi}{4}
+-$$
+-
+-(b) Use integration by parts and (a) to obtain
+-
+-$$
+-\int_{0}^{\infty} \frac{\sin ^{2} \omega}{\omega^{2}} d \omega=\frac{\pi}{2}
+-$$
+-
+-![](./images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-13_395_495_564_38.jpg)
+-Figure 11 Graph of $\mathcal{F}\left(J_{0}(x)\right)(\omega)$, for Exercise 18. We have
+-
+-$$
+-\mathcal{F}\left(J_{0}(x)\right)(0)=\sqrt{\frac{2}{\pi}}
+-$$
+-
+-which implies that
+-
+-$$
+-\int_{-\infty}^{\infty} J_{0}(x) d x=2
+-$$
+-
+-But $J_{0}$ is not integrable on the real line, because the graph of its Fourier transform, $\mathcal{F}\left(J_{0}(x)\right)(\omega)$, is not continuous.
+-16. Derive the given identities: (a) $\int_{0}^{\infty} \frac{\sin \omega \cos 2 \omega}{\omega} d \omega=0$. [Hint: Example 1.]
+-(b) $\int_{0}^{\infty} \frac{1-\cos t}{t^{2}} d t=\frac{\pi}{2}$. [Hint: Integrate by parts and use Example 1.]
++we will show that $\lim _{a \rightarrow \infty} I_{j}=0$ for $j=1,2,3$. Since $g$ is bounded in the interval $(-1,1)$, the integral of its absolute value is finite on $(-1,1)$, and so, by Lemma 2, $\lim _{a \rightarrow \infty} I_{2}=0$. Write $I_{3}=\frac1\pi\int_{1}^{\infty} \frac{f(x-y)}{y} \sin a y d y-\frac{f(x)}{\pi} \int_{1}^{\infty} \frac{\sin a y}{y} d y$. The first integral tends to 0 as $a \rightarrow \infty$, by Lemma 2, because $\int_{1}^{\infty}\left|\frac{f(x-y)}{y}\right| d y \leq \int_{1}^{\infty}|f(x-y)| d y \leq \int_{-\infty}^{\infty}|f(y)| d y<\infty$. To handle the second integral, we integrate by parts and get
++
++$$
++f(x) \int_{1}^{\infty} \frac{\sin a y}{y} d y=\left.f(x) \frac{-\cos a y}{a y}\right|_{y=1} ^{\infty}-\frac{f(x)}{a} \int_{1}^{\infty} \frac{\cos a y}{y^{2}} d y
++$$
++
++which tends to 0 as $a \rightarrow \infty$, because $\left|\int_{1}^{\infty} \frac{\cos a y}{y^{2}} d y\right| \leq \int_{1}^{\infty} \frac{1}{y^{2}} d y=1$. Thus $\lim _{a \rightarrow \infty} I_{3}=0$ and similarly for $I_{1}$, which completes the proof. 
++
++## Exercises 8.1
++
++
++> [!prompt|0af309b9-a18e-558a-89a7-2f70627f53cd.local at=6b5d1a59-8b5c-542d-901e-dd86ab261ef9] Shared exercise instructions
++> In Exercises 1-10, find the Fourier transform of the given function.
++
++
++
++> [!exercise|e20678f0-e195-549b-a459-57f866568aab.local at=9abba393-20bb-5a9d-a593-82d71d2f4d2b] Exercise 1
++> $$
++> f(x)= \begin{cases}x & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|94ee7cb6-fdda-5069-936e-1099b0062858.local at=4f354b5e-262e-5895-8d3f-bbdfc2abf756] Exercise 2
++> $$
++> f(x)= \begin{cases}-1 & \text { if }-1<x<0 \\ 1 & \text { if } 0<x<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|a02daf46-0a7d-5509-8ab0-3f66fb78e841.local at=6cf28ae6-09e6-59e9-b5fb-e851c3998008] Exercise 3
++> $$
++> f(x)= \begin{cases}1 & \text { if } 0<x<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|b04f3ee5-a41c-5fa1-a647-7ed992c7c02e.local at=af05649b-d787-5cdb-9827-fd7e7d957724] Exercise 4
++> $$
++> f(x)= \begin{cases}0 & \text { if }-1<x<1 \\ 1 & \text { if } 1<|x|<2 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|2a35ec6e-7092-55d0-b143-df2e8f600fe2.local at=caaf5e2c-e36c-58d9-8e56-d1efabad2c86] Exercise 5
++> $$
++> f(x)= \begin{cases}1-|x| & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|2158fa07-fdb4-53c4-af77-c1b15f897b6d.local at=ad734e5a-e4ad-52bb-8fe1-30ccfc1a8e26] Exercise 6
++> $$
++> f(x)= \begin{cases}1-x^{2} & \text { if }-1<x<1 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|337dc6fc-6174-59fc-ab0f-d00e58145c0b.local at=89b2e419-e876-5fca-a6dc-ae819f4eca6f] Exercise 7
++> $$
++> f(x)=e^{-|x|+2}
++> $$
++
++
++> [!exercise|319819ba-5938-5b21-94ff-87aeef99a5ac.local at=88c93bf0-5c71-5a51-b9da-c28e9a8905cf] Exercise 8
++> $$
++> f(x)=e^{-2\left(x^{2}+1\right)}
++> $$
++
++
++> [!exercise|c55c1920-de12-5bcd-9477-d91712f7f79a.local at=2c508df4-5933-504f-8bd7-1e8ed22a8bec] Exercise 9
++> $$
++> f(x)= \begin{cases}\cos x & \text { if }-\pi / 2<x<\pi / 2 \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|2168c779-e4ed-57b8-8ed5-471f861e57fd.local at=318142c9-a661-543e-a551-04154b7e62dc] Exercise 10
++> $$
++> f(x)= \begin{cases}\sin x & \text { if }-\pi<x<\pi \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!prompt|8f089da7-1a69-5dd8-9752-0b7556600804.local at=c6995dd8-49e5-5393-b44c-8f0bb94aba10] Shared exercise instructions
++> In Exercises 11-13, derive the given integral formula by first taking the Fourier transform of the function on the right of the equality and then expressing the function as an inverse Fourier transform.
++
++
++
++> [!exercise|099efc4b-9d11-590c-ba27-87328061c423.local at=245f5e06-edde-5c29-abc1-4e5991abf39f] Exercise 11
++> $$
++> \int_{0}^{\infty} \frac{\cos x \omega+\omega \sin x \omega}{1+\omega^{2}} d \omega= \begin{cases}0 & \text { if } x<0 \\ \pi / 2 & \text { if } x=0 \\ \pi e^{-x} & \text { if } x>0\end{cases}
++> $$
++
++
++> [!exercise|807ac962-3606-5a67-b895-078586fb4e73.local at=ddafba2d-d955-5f5e-8180-217369593db7] Exercise 12
++> $$
++> \frac{2}{\pi} \int_{0}^{\infty} \frac{\sin \pi \omega}{1-\omega^{2}} \sin \omega x d \omega= \begin{cases}\sin x & \text { if }|x| \leq \pi \\ 0 & \text { if }|x|>\pi\end{cases}
++> $$
++
++
++> [!exercise|bc1ad644-5dc3-5a49-95a0-98cf873eb145.local at=ab4b39f0-9e0e-58d2-ad57-4e1b0cc2ed5c] Exercise 13
++> $$
++> \frac{2}{\pi} \int_{0}^{\infty} \frac{\cos \frac{\pi \omega}{2}}{1-\omega^{2}} \cos \omega x d \omega= \begin{cases}\cos x & \text { if }|x|<\pi / 2 \\ 0 & \text { if }|x|>\pi / 2\end{cases}
++> $$
++
++
++```scientific-figure
++id: 51ff4ac4-10c5-4b5c-9f4e-a5b064683997
++numbered: false
++title: ""
++caption: Figure 10 for Exercise 14(c). The graph of $\left|\frac{\sin x}{x}\right|$ and the area under one arch between $x=(n-1) \pi$ and $x=n \pi$. Show that the shaded area is $\geq \frac{2}{n\pi}$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-12_805_566_1377_123.jpg
++    caption: ""
++```
++
++> [!exercise|e478eb03-a804-5872-ac84-551f6ac9bfd6.local at=48414117-0cde-5547-a932-0ad1aa6af9d1] Exercise 14
++> (a) Prove Theorem 3. (b) Prove Theorem 4(ii).
++> (c) Show that $\frac{\sin x}{x}$ is not integrable on the real line. That is, show that $\int_{-\infty}^{\infty} \left|\frac{\sin x}{x}\right|\,dx=\infty$. [Hint: Show that for $n \geq 2$, the area under the arch of the curve, above the $x$-axis, between $(n-1) \pi$ and $n \pi$ is at least $2/(n\pi)$ (Figure 10). ]
++
++
++> [!exercise|54cc1d06-f7e1-5475-a4c3-0d47cae012f2.local at=c2bdbb4c-0b1b-5a71-9242-8fee3ed6ead9] Exercise 15
++> (a) Use Example 1 to show that
++>
++> $$
++> \int_{0}^{\infty} \frac{\sin \omega \cos \omega}{\omega} d \omega=\frac{\pi}{4}
++> $$
++>
++> (b) Use integration by parts and (a) to obtain
++>
++> $$
++> \int_{0}^{\infty} \frac{\sin ^{2} \omega}{\omega^{2}} d \omega=\frac{\pi}{2}
++> $$
++
++
++> [!exercise|ef23fbaa-23ff-546e-8218-9b21998ea40a.local at=ef157c0b-8739-5396-a41f-0f89d8aa8a26] Exercise 16
++> Derive the given identities: (a) $\int_{0}^{\infty} \frac{\sin \omega \cos 2 \omega}{\omega} d \omega=0$. [Hint: Example 1.]
++> (b) $\int_{0}^{\infty} \frac{1-\cos t}{t^{2}} d t=\frac{\pi}{2}$. [Hint: Integrate by parts and use Example 1.]
++
+ 
+ ## Methods from Complex Analysis
+ 
+-17. (a) Let $0<\alpha<1$ and define $f(x)=\frac{1}{|x|^{\alpha}}$. Using Example 2 , Section 5.5 , derive the Fourier transform
+-
+-$$
+-\mathcal{F}\left(\frac{1}{|x|^{\alpha}}\right)(\omega)=\sqrt{\frac{2}{\pi}}|\omega|^{\alpha-1} \Gamma(1-\alpha) \sin \frac{\alpha \pi}{2} \quad(-\infty<\omega<\infty)
+-$$
+-
+-(b) From (a), derive the Fourier transform
+-
+-$$
+-\mathcal{F}\left(\frac{1}{\sqrt{|x|}}\right)(\omega)=\frac{1}{\sqrt{|\omega|}} \quad(-\infty<\omega<\infty)
+-$$
+-
+-18. Project Problem: Fourier transform of the Bessel function $J_{0}(x)$. In this exercise, we will derive the formula
+-
+-$$
+-\mathcal{F}\left(J_{0}(a x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{1}{\sqrt{a^{2}-\omega^{2}}} & \text { if }|\omega|<a \\ 0 & \text { if }|\omega|>a\end{cases}
+-$$
+-
+-where $a>0$ (Figure 11). Instead of computing directly, we will compute the Fourier transform of the function on the right side of the equality and then use the reciprocity relation (5). So let $f(x)=\sqrt{\frac{2}{\pi}} \frac{1}{\sqrt{a^{2}-x^{2}}}$ if $|x|<a$ and $f(x)=0$ if $|x|>a$.
+-(a) Show that $\widehat{f}(\omega)=\frac{1}{\pi} \int_{0}^{\pi} \cos (a \omega \cos \theta) d \theta$. [Hint: Apply the definition (1), use the change of variables $x=\cos \theta$, then use one more change of variables $\theta=\theta+\pi$.] (b) Show that $\widehat{f}(\omega)=J_{0}(a \omega)$ and then use Theorem 5 to derive (11). [Hint: The first part is nontrivial, but it follows immediately from the cosine integral representation of the Bessel function $J_{0}$ (Exercise 36(a), Section 4.5).]
+-In Exercises 19-23, use residues, as we did in Example 7, to derive the given Fourier transform.
+-19. $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi}\left(1+x^{6}\right)}\right)(\omega)=\frac{e^{-\frac{|\omega|}{2}}}{3}\left(e^{-\frac{|\omega|}{2}}+\cos \left(\frac{\sqrt{3}}{2} \omega\right)+\sqrt{3} \sin \left(\frac{\sqrt{3}}{2}|\omega|\right)\right)$.
+-20. $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi}\left(1+x^{2}\right)^{2}}\right)(\omega)=\frac{e^{-|\omega|}}{2}(1+|\omega|)$.
+-21. $\mathcal{F}\left(\frac{\sqrt{2} x}{\sqrt{\pi}\left(1+x^{2}\right)^{2}}\right)(\omega)=\frac{i}{2}|\omega| e^{-|\omega|}$.
+-22. $\mathcal{F}\left(\frac{\sqrt{3}}{\sqrt{2 \pi}\left(1+x+x^{2}\right)}\right)(\omega)=e^{-\frac{\sqrt{3}}{2}|\omega|}\left(\cos \left(\frac{\omega}{2}\right)-i \sin \left(\frac{|\omega|}{2}\right)\right)$.
+-23. $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi} \cosh x}\right)(\omega)=\operatorname{sech} \frac{\pi \omega}{2}$.
+-24. Project Problem: Transforms related to the Fresnel integrals.
+-
+-In this exercise, we will derive the Fourier transforms
+-
+-$$
+-\begin{aligned}
+-& \mathcal{F}\left(\cos \left(x^{2}\right)\right)(\omega)=\frac{1}{2}\left(\cos \frac{\omega^{2}}{4}+\sin \frac{\omega^{2}}{4}\right) \\
+-& \mathcal{F}\left(\sin \left(x^{2}\right)\right)(\omega)=\frac{1}{2}\left(\cos \frac{\omega^{2}}{4}-\sin \frac{\omega^{2}}{4}\right)
+-\end{aligned}
+-$$
+-
+-(a) Let $f_{1}(\omega)=\mathcal{F}\left(\cos \left(x^{2}\right)\right)(\omega)$ and $f_{2}(\omega)=\mathcal{F}\left(\sin \left(x^{2}\right)\right)(\omega)$. Show that both $f_{1}$ and $f_{2}$ are real-valued and even and that
+-
+-$$
+-f_{1}(\omega)+i f_{2}(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i\left(x^{2}-x \omega\right)} d x=\frac{e^{-i \frac{\omega^{2}}{4}}}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i\left(x-\frac{\omega}{2}\right)^{2}} d x
+-$$
+-
+-(b) Make a change of variables, $u=x-\frac{\omega}{2}$, and then evaluate the resulting integral using the Fresnel integrals (see the discussion following Example 2, Section 5.5). Take real and imaginary parts of your answer and derive (12) and (13).
++> [!exercise|ee78e46c-c305-5d53-ab57-4bcb8efb2d10.local at=0253af1d-0658-54a8-b269-6bdaf6affccc] Exercise 17
++> (a) Let $0<\alpha<1$ and define $f(x)=\frac{1}{|x|^{\alpha}}$. Using Example 2 , Section 5.5 , derive the Fourier transform
++>
++> $$
++> \mathcal{F}\left(\frac{1}{|x|^{\alpha}}\right)(\omega)=\sqrt{\frac{2}{\pi}}|\omega|^{\alpha-1} \Gamma(1-\alpha) \sin \frac{\alpha \pi}{2} \quad(-\infty<\omega<\infty)
++> $$
++>
++> (b) From (a), derive the Fourier transform
++>
++> $$
++> \mathcal{F}\left(\frac{1}{\sqrt{|x|}}\right)(\omega)=\frac{1}{\sqrt{|\omega|}} \quad(-\infty<\omega<\infty)
++> $$
++
++
++```scientific-figure
++id: a554d144-3a84-4194-a4b2-034f5eb055fb
++numbered: false
++title: ""
++caption: |-
++  Figure 11 Graph of $\mathcal{F}\left(J_{0}(x)\right)(\omega)$, for Exercise 18. We have
++
++  $$
++  \mathcal{F}\left(J_{0}(x)\right)(0)=\sqrt{\frac{2}{\pi}}
++  $$
++
++  which implies that
++
++  $$
++  \int_{-\infty}^{\infty} J_{0}(x) d x=2
++  $$
++
++  But $J_{0}$ is not integrable on the real line, because the graph of its Fourier transform, $\mathcal{F}\left(J_{0}(x)\right)(\omega)$, is not continuous.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/c06ad946-a4be-44c4-a6a2-68af8ed4d18f-13_395_495_564_38.jpg
++    caption: ""
++```
++
++> [!exercise|bcaa98ad-8c71-59a8-9d81-63f439070395.local at=94841aa5-2fb1-5dac-b5a1-bd97527dbd1a] Exercise 18
++> Project Problem: Fourier transform of the Bessel function $J_{0}(x)$. In this exercise, we will derive the formula
++>
++> $$
++> \mathcal{F}\left(J_{0}(a x)\right)(\omega)= \begin{cases}\sqrt{\frac{2}{\pi}} \frac{1}{\sqrt{a^{2}-\omega^{2}}} & \text { if }|\omega|<a \\ 0 & \text { if }|\omega|>a\end{cases}
++> $$
++>
++> where $a>0$ (Figure 11). Instead of computing directly, we will compute the Fourier transform of the function on the right side of the equality and then use the reciprocity relation (5). So let $f(x)=\sqrt{\frac{2}{\pi}} \frac{1}{\sqrt{a^{2}-x^{2}}}$ if $|x|<a$ and $f(x)=0$ if $|x|>a$.
++> (a) Show that $\widehat{f}(\omega)=\frac{1}{\pi} \int_{0}^{\pi} \cos (a \omega \cos \theta) d \theta$. [Hint: Apply the definition (1), use the change of variables $x=a\cos\theta$ and symmetry of the integral.] (b) Show that $\widehat{f}(\omega)=J_{0}(a \omega)$ and then use Theorem 5 to derive (11). [Hint: The first part is nontrivial, but it follows immediately from the cosine integral representation of the Bessel function $J_{0}$ (the cosine integral representation of $J_0$).]
++
++*Printed equation label: (11).*
++
++
++> [!prompt|352599b0-5bff-5dd3-8207-4854cf71424e.local at=03765a02-e4ca-5bcb-81d4-4e47e848f20a] Shared exercise instructions
++> In Exercises 19-23, use residues, as we did in Example 7, to derive the given Fourier transform.
++
++
++
++> [!exercise|166f3abe-3e92-5991-98a9-cf010e799089.local at=e0f9d805-267f-5bfa-a931-30d9b14f71ed] Exercise 19
++> $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi}\left(1+x^{6}\right)}\right)(\omega)=\frac{e^{-\frac{|\omega|}{2}}}{3}\left(e^{-\frac{|\omega|}{2}}+\cos \left(\frac{\sqrt{3}}{2} \omega\right)+\sqrt{3} \sin \left(\frac{\sqrt{3}}{2}|\omega|\right)\right)$.
++
++
++> [!exercise|9cd3099f-3011-5b73-88c0-fc485f1f2260.local at=7e35f361-fc05-50a2-bec2-71c878d0cd35] Exercise 20
++> $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi}\left(1+x^{2}\right)^{2}}\right)(\omega)=\frac{e^{-|\omega|}}{2}(1+|\omega|)$.
++
++
++> [!exercise|4873fbae-be89-52c2-b64e-4c0833ebad88.local at=adae90f8-9d77-5102-a763-51d029394096] Exercise 21
++> $\mathcal{F}\left(\frac{\sqrt{2} x}{\sqrt{\pi}\left(1+x^{2}\right)^{2}}\right)(\omega)=-\frac{i\omega}{2} e^{-|\omega|}$.
++
++
++> [!exercise|6a63f950-1eb8-5adc-8d46-274a54fb421d.local at=98506439-6f1d-5706-a26c-f39a341e1aa2] Exercise 22
++> $\mathcal{F}\left(\frac{\sqrt{3}}{\sqrt{2 \pi}\left(1+x+x^{2}\right)}\right)(\omega)=e^{-\frac{\sqrt{3}}{2}|\omega|}\left(\cos \left(\frac{\omega}{2}\right)+i \sin \left(\frac{\omega}{2}\right)\right)$.
++
++
++
++
++> [!exercise|d5ab9027-dc18-5ac8-a694-731a49c782fe.local at=cecb2288-04f5-5d4d-ae49-a41015355831] Exercise 23
++> $\mathcal{F}\left(\frac{\sqrt{2}}{\sqrt{\pi} \cosh x}\right)(\omega)=\operatorname{sech} \frac{\pi \omega}{2}$.
++
++
++> [!exercise|e8ccaf1f-b97c-5ac7-9bc7-5d4ab275c080.local at=0a1a322d-199c-5de7-9e54-11508834d576] Exercise 24
++> Project Problem: Transforms related to the Fresnel integrals.
++>
++> In this exercise, we will derive the Fourier transforms
++>
++> $$
++> \begin{aligned}
++> & \mathcal{F}\left(\cos \left(x^{2}\right)\right)(\omega)=\frac{1}{2}\left(\cos \frac{\omega^{2}}{4}+\sin \frac{\omega^{2}}{4}\right) \\
++> & \mathcal{F}\left(\sin \left(x^{2}\right)\right)(\omega)=\frac{1}{2}\left(\cos \frac{\omega^{2}}{4}-\sin \frac{\omega^{2}}{4}\right)
++> \end{aligned}
++> $$
++>
++> (a) Let $f_{1}(\omega)=\mathcal{F}\left(\cos \left(x^{2}\right)\right)(\omega)$ and $f_{2}(\omega)=\mathcal{F}\left(\sin \left(x^{2}\right)\right)(\omega)$. Show that both $f_{1}$ and $f_{2}$ are real-valued and even and that
++>
++> $$
++> f_{1}(\omega)+i f_{2}(\omega)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i\left(x^{2}-x \omega\right)} d x=\frac{e^{-i \frac{\omega^{2}}{4}}}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{i\left(x-\frac{\omega}{2}\right)^{2}} d x
++> $$
++>
++> (b) Make a change of variables, $u=x-\frac{\omega}{2}$, and then evaluate the resulting integral using the Fresnel integrals (see the discussion following Example 2, Section 5.5). Take real and imaginary parts of your answer and derive (12) and (13).
++
++*Printed equation labels: (12) transform of $\cos(x^2)$; (13) transform of $\sin(x^2)$.*
+
+`````

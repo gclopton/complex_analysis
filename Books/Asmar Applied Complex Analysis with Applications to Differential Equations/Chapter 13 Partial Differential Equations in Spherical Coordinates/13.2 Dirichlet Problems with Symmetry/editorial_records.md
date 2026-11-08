@@ -35,3 +35,517 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > A_{n}=\frac{2 n+1}{2} \int_{0}^{\pi} f(\theta) P_{n}(\cos \theta) \sin \theta d \theta, \quad n=0,1,2, \ldots
 > $$ The boundary values are attained at continuity points of $f$.
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.2 Dirichlet Problems with Symmetry.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.2 Dirichlet Problems with Symmetry.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.2 Dirichlet Problems with Symmetry.md
+@@ -1,21 +1,33 @@
++
+ ### 13.2 Dirichlet Problems with Symmetry
+ 
+-In this section we will solve Laplace's equation inside a ball of radius $a>0$, with prescribed boundary values on the sphere of radius a (see Figure 1). We will assume throughout this section that the problem is independent of
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-06_491_469_1590_59.jpg)
+-Figure 1 A Dirichlet problem with symmetry.
+-
+-the angle $\phi$, and so we will be dealing with the radially symmetric Laplace equation
++In this section we will solve Laplace's equation inside a ball of radius $a>0$, with prescribed boundary values on the sphere of radius a (see Figure 1). We will assume throughout this section that the problem is independent of the angle $\phi$, and so we will be dealing with the axisymmetric Laplace equation
+ 
+ $$
+ \nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}\right)=0
+-$$
+-
+-where $0<r<a$, and $0<\theta<\pi$ (see (2), Section 13.1). The boundary condition is also radially symmetric:
++\tag{1}
++$$
++
++where $0<r<a$, and $0<\theta<\pi$ (see (2), Section 13.1). The boundary condition is also axisymmetric:
+ 
+ $$
+ u(a, \theta)=f(\theta) .
+-$$
++\tag{2}
++$$
++
++```scientific-figure
++id: 05a88f16-0753-42f3-8955-8395fe02b13f
++numbered: false
++title: ""
++caption: Figure 1 A Dirichlet problem with symmetry.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-06_491_469_1590_59.jpg
++    caption: ""
++```
++
+ 
+ Let us recall some facts from the previous section. Applying the separation of variables method, we let $u(r, \theta)=R(r) \Theta(\theta)$ plug into (1), and we arrive
+ at the separated equations
+@@ -37,23 +49,25 @@
+ 
+ $$
+ A_{n}\left(\frac{r}{a}\right)^{n} P_{n}(\cos \theta)
++\tag{3}
+ $$
+ 
+ where $A_{n}$ is an arbitrary constant, and $a$ is the radius of the ball. To complete the solution of the Dirichlet problem (1)-(2), we will superpose the product solutions (3) in an infinite series to form our candidate for a solution, then determine the $A_{n}$ 's in the series so as to satisfy the boundary condition (2). In this last step, we will appeal to the orthogonality of the Legendre polynomials from Section 13.6. We have the following important result.
+ 
+-THEOREM 1 DIRICHLET PROBLEM IN A BALL
+-
+-The solution of the Dirichlet problem (1)-(2), is given by
+-
+-$$
+-u(r, \theta)=\sum_{n=0}^{\infty} A_{n}\left(\frac{r}{a}\right)^{n} P_{n}(\cos \theta),
+-$$
+-
+-where $P_{n}$ is the $n$th Legendre polynomial (Section 13.5), and
+-
+-$$
+-A_{n}=\frac{2 n+1}{2} \int_{0}^{\pi} f(\theta) P_{n}(\cos \theta) \sin \theta d \theta, \quad n=0,1,2, \ldots
+-$$
++> [!theorem|dc29d4e6-1aee-5a21-a63d-46b8e290d2e4.local at=efc6be32-e1e9-5111-9eee-d0464b9e30e5] Dirichlet Problem in a Ball
++> The solution of the Dirichlet problem $\nabla^2u=0$ for $r<a$, $u(a,\theta)=f(\theta)$ with bounded piecewise smooth axisymmetric boundary data, is given by
++>
++> $$
++> u(r, \theta)=\sum_{n=0}^{\infty} A_{n}\left(\frac{r}{a}\right)^{n} P_{n}(\cos \theta),
++> $$
++>
++> where $P_{n}$ is the $n$th Legendre polynomial, and
++>
++> $$
++> A_{n}=\frac{2 n+1}{2} \int_{0}^{\pi} f(\theta) P_{n}(\cos \theta) \sin \theta d \theta, \quad n=0,1,2, \ldots
++> $$ The boundary values are attained at continuity points of $f$.
++
++*Printed equation labels: (4) Legendre-series solution; (5) Legendre coefficients $A_n$.*
+ 
+ Proof Superposing the product solutions (3), we arrive at (4). Setting $r=a$ in (4) and using the boundary condition (2), we get
+ 
+@@ -79,29 +93,46 @@
+ which implies (5).
+ It is clear from Theorem 1 that the functions $P_{n}(\cos \theta)$ play an important role in the solution of the Dirichlet problem in the sphere. To get an idea of the magnitude of these functions, we show in Figure 2 the graphs of $r=\left|P_{n}(\cos \theta)\right|$, for $0 \leq \theta \leq \pi, n=0,1,2,3$. The graphs are symmetric with respect to rotation about the $z$-axis and acquire more lobes as $n$ increases. The latter property is a consequence of the increasing number of zeros of the Legendre polynomials in the interval $[-1,1]$.
+ 
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_408_347_1463_75.jpg)
+-$r=P_{0}(\cos \theta)$
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_507_336_1424_527.jpg)
+-$r=\left|P_{1}(\cos \theta)\right|$
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_519_336_1419_932.jpg)
+-$r=\left|P_{2}(\cos \theta)\right|$
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_560_353_1385_1333.jpg)
+-$r=\left|P_{3}(\cos \theta)\right|$
+-
+-Figure 2 Graphs of $r=\left|P_{n}(\cos \theta)\right|, n=0,1,2,3$. In spherical coordinates, these represent the points
+-$\left(\left|P_{n}(\cos \theta)\right|, \theta, \phi\right)$ for $0<\theta<\pi, 0<\phi<2 \pi$. Because $r$ is independent of $\phi$, the graphs are symmetric with respect to the $z$-axis. They aquire more lobes, as $n$ increases, due to the increasing number of zeroes of $P_{n}(x)$, for $0<x<1$.
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-09_503_459_952_28.jpg)
+-Figure 3 Dirichlet problem.
+-
+-## EXAMPLE 1 A Dirichlet problem inside a sphere
+-
+-Find the steady-state temperature in a sphere of unit radius, given that the upper hemisphere is kept at $100^{\circ}$ and the lower one is kept at $0^{\circ}$ (Figure 3).
+-
+-Solution The boundary function is given by
++```scientific-figure
++id: e4f47e99-6036-4c73-b11f-1ed2f35bc13c
++numbered: false
++title: ""
++caption: Figure 2 Graphs of $r=\left|P_{n}(\cos \theta)\right|, n=0,1,2,3$. In spherical coordinates, these represent the points $\left(\left|P_{n}(\cos \theta)\right|, \theta, \phi\right)$ for $0<\theta<\pi, 0<\phi<2 \pi$. Because $r$ is independent of $\phi$, the graphs are symmetric with respect to the $z$-axis. They acquire more lobes, as $n$ increases, due to the increasing number of zeros of $P_{n}(x)$, for $-1<x<1$.
++captionVisible: true
++captionPosition: below
++columns: 3
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_408_347_1463_75.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_507_336_1424_527.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_519_336_1419_932.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-08_560_353_1385_1333.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: 28dd500b-e503-4e46-b9af-2419a35f41ec
++numbered: false
++title: ""
++caption: Figure 3 Dirichlet problem.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-09_503_459_952_28.jpg
++    caption: ""
++```
++
++
++> [!exercise|1eb1f8f3-6a77-530a-b6b3-6f1b88dc746a.local at=3e1a6a11-de84-5a53-a252-11f3baa4e613] EXAMPLE 1 A Dirichlet problem inside a sphere
++> Find the steady-state temperature in a sphere of unit radius, given that the upper hemisphere is kept at $100^{\circ}$ and the lower one is kept at $0^{\circ}$ (Figure 3).
++
++##### solution
++
++The boundary function is given by
+ 
+ $$
+ f(\theta)= \begin{cases}100 & \text { if } 0<\theta<\frac{\pi}{2}, \\ 0 & \text { if } \frac{\pi}{2}<\theta<\pi .\end{cases}
+@@ -117,6 +148,7 @@
+ 
+ $$
+ A_{n}=50(2 n+1) \int_{0}^{\pi / 2} P_{n}(\cos \theta) \sin \theta d \theta=50(2 n+1) \int_{0}^{1} P_{n}(x) d x .
++\tag{6}
+ $$
+ 
+ At this point, you can use the explicit formulas for the $P_{n}$ 's to compute as many coefficients as you wish. For example, since $P_{0}(x)=1$, we get $A_{0}=50 \int_{0}^{1} d x=50$. Also, using $P_{1}(x)=x$, we get $A_{1}=150 \int_{0}^{1} x d x=\frac{150}{2}=75$. Continuing in this manner, by appealing to the explicit formulas of the $P_{n}$ 's, we arrive at
+@@ -133,15 +165,45 @@
+ 
+ In Table 1, we have used the first three nonzero terms of the series solution to approximate the temperature inside the sphere at the indicated points.
+ 
+-| $\theta$ | 0 | $\pi / 4$ | $\pi / 2$ | $3 \pi / 4$ | $\pi$ |
+-| :---: | :---: | :---: | :---: | :---: | :---: |
+-| $u(1 / 4, \theta)$ | 68.1 | 63.4 | 50 | 36.6 | 32 |
+-| $u(1 / 2, \theta)$ | 82 | 77.5 | 50 | 22.5 | 18 |
+-| $u(3 / 4, \theta)$ | 87.8 | 93 | 50 | 7 | 12.2 |
+-
+-Table 1 Approximation of the temperature inside the ball.
+-
+-For fixed $r$, as $\theta$ varies from 0 to $\pi$, the points move from the north pole to the south pole. Note how the temperature decreases as $\theta$ increases. This is to be expected, given the boundary conditions. Also, note that as $r$ approaches 1 , the points in the upper hemisphere have temperature near $100^{\circ}$. Better approximation of the steady-state temperature can be obtained by taking more terms from the series solution.
++```scientific-table
++id: 690d8108-b24a-442f-a615-b9af25763575
++numbered: false
++title: ""
++caption: Table 1 Approximation of the temperature inside the ball.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $\theta$
++    - text: "0"
++    - text: $\pi / 4$
++    - text: $\pi / 2$
++    - text: $3 \pi / 4$
++    - text: $\pi$
++  - - text: $u(1 / 4, \theta)$
++    - text: "68.1"
++    - text: "63.4"
++    - text: "50"
++    - text: "36.6"
++    - text: "32"
++  - - text: $u(1 / 2, \theta)$
++    - text: "82"
++    - text: "77.5"
++    - text: "50"
++    - text: "22.5"
++    - text: "18"
++  - - text: $u(3 / 4, \theta)$
++    - text: "87.8"
++    - text: "93"
++    - text: "50"
++    - text: "7"
++    - text: "12.2"
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
++
++For fixed $r$, as $\theta$ varies from 0 to $\pi$, the points move from the north pole to the south pole. The exact temperature decreases from the hot side toward the cold side. The three-term approximation in Table 1 need not preserve that monotonicity near the surface; more terms improve the approximation. Also, note that as $r$ approaches 1 , the points in the upper hemisphere have temperature near $100^{\circ}$. Better approximation of the steady-state temperature can be obtained by taking more terms from the series solution.
+ 
+ As you will soon discover, you always learn more about a solution of a problem by appealing to properties of the Legendre polynomials from Sections 13.5 and 13.6. Here, for example, we will show how to compute the $A_{n}$ 's in closed form, thus
+ yielding a more satisfactory form of the solution. From Exercise 10, Section 13.6, we have
+@@ -158,26 +220,32 @@
+ $$
+ \begin{gathered}
+ A_{0}=50, \quad A_{2 n}=0, n=1,2,3, \ldots \\
+-A_{2 n+1}=50(4 n+3) \frac{(-1)^{n}(2 n)!}{2^{2 n+1}(n!)^{2}(n+1)}, n=1,2, \ldots
++A_{2 n+1}=50(4 n+3) \frac{(-1)^{n}(2 n)!}{2^{2 n+1}(n!)^{2}(n+1)}, n=0,1,2, \ldots
+ \end{gathered}
++\tag{7}
+ $$
+ 
+ Thus
+ 
+ $$
+ u(r, \theta)=50+25 \sum_{n=0}^{\infty}(4 n+3) \frac{(-1)^{n}(2 n)!}{2^{2 n}(n!)^{2}(n+1)} r^{2 n+1} P_{2 n+1}(\cos \theta)
++\tag{8}
+ $$
+ 
+ See Exercise 7 for further properties of the solution. $\square$
+ 
+-EXAMPLE 2 A polynomial temperature distribution on the surface The temperature on the surface of a ball of unit radius varies from $0^{\circ}$ to $100^{\circ}$ as one moves from the north pole to the south pole, according to the formula
+-
+-$$
+-f(\theta)=50(1-\cos \theta), \quad 0<\theta<\pi
+-$$
+-
+-(Thus $f$ is a first-degree polynomial in $\cos \theta$.) Find the steady-state temperature inside the ball.
+-Solution According to (4), the temperature is given by
++> [!exercise|845a5035-3641-5ce9-8084-e8889848bb87.local at=b3c2853d-a8e4-51a1-97c5-fdbf2205db8e] EXAMPLE 2 A polynomial temperature distribution on the surface
++> The temperature on the surface of a ball of unit radius varies from $0^{\circ}$ to $100^{\circ}$ as one moves from the north pole to the south pole, according to the formula
++>
++> $$
++> f(\theta)=50(1-\cos \theta), \quad 0<\theta<\pi
++> $$
++>
++> (Thus $f$ is a first-degree polynomial in $\cos \theta$.) Find the steady-state temperature inside the ball.
++
++##### solution
++
++According to (4), the temperature is given by
+ 
+ $$
+ u(r, \theta)=\sum_{n=0}^{\infty} A_{n} P_{n}(\cos \theta) r^{n}
+@@ -190,6 +258,7 @@
+ A_{n} & =\frac{2 n+1}{2} \int_{0}^{\pi} 50(1-\cos \theta) P_{n}(\cos \theta) \sin \theta d \theta \\
+ & =25(2 n+1) \int_{-1}^{1}(1-x) P_{n}(x) d x \quad(x=\cos \theta, d x=-\sin \theta d \theta)
+ \end{aligned}
++\tag{9}
+ $$
+ 
+ Using the explicit formulas for the $P_{n}$ 's, it is easy to check that
+@@ -214,77 +283,161 @@
+ 
+ In the next section we treat the general case of Laplace's equation without symmetry. This case requires more than the Legendre polynomials: We will need the so-called associated Legendre functions.
+ 
+-## Exercises 5.2
+-
+-In Exercises 1-6, you are asked to solve Laplace's equation (1) inside a sphere of unit radius subject to the given boundary condition. (a) Compute at least two nonzero coefficients of the Legendre series solution. (b) Find the general form of the coefficients in the series solution. A hint is given whenever you need results from Section 13.6.
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-11_505_493_1366_35.jpg)
+-Figure 4 for Exercise 9.
+-
+-1. $f(\theta)=20(\cos \theta+1)$.
+-2. $f(\theta)=\cos ^{2} \theta+2$.
+-3. $f(\theta)= \begin{cases}100 & \text { if } 0<\theta<\pi / 2, \\ 20 & \text { if } \pi / 2<\theta<\pi .\end{cases}$
+-4. $f(\theta)= \begin{cases}100 & \text { if } 0<\theta<\pi / 3, \\ 0 & \text { if } \pi / 3<\theta<\pi .\end{cases}$
+-[Hint: Exercise 10, Section 13.6.]
+-5. $f(\theta)= \begin{cases}\cos \theta & \text { if } 0<\theta<\pi / 2, \\ 0 & \text { if } \pi / 2<\theta<\pi .\end{cases}$
+-[Hint: Exercise 11, Section 13.6.]
+-6. $f(\theta)=|\cos \theta|$.
+-[Hint: Exercise 27, Section 13.6.]
+-7. Experimenting with Example 1. In this exercise, use various properties of Legendre polynomials from Sections 13.5 and 13.6 to derive properties of the solution in Example 1. Throughout this exercise, $u(r, \theta)$ refers to (8).
+-(a) Using (8), show that $u(r, \pi / 2)=50$. Does this meet with your expectation?
+-(b) If you take $r=1$ in (8), you should get the boundary function $f$. Confirm this fact by plotting several partial sums of the solution. Plot your partial sums as a function of $\theta$ over the interval $[0, \pi]$.
+-(c) If you take $\theta=0$ in (8), you should get the steady-state temperature of the points on the $z$-axis in the upper hemisphere. Plot (8) for $\theta=0$ and $0<r<1$, and comment on the graph.
+-(d) Show that, for $0<r<1, \frac{u(r, 0)+u(r, \pi)}{2}=50$. Does this make sense on physical grounds?
+-8. Get a better approximation of the temperature inside the sphere in Example 1 and the points indicated in Table 1. Use at least ten terms from (8).
+-9. Find the steady-state temperature inside a buoy floating on the ocean as shown in the figure. [Hint: Exercise 9, Section 13.6.]
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-12_417_451_864_59.jpg)
+-Figure 5 for Exercise 12.
+-
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-12_414_448_1609_59.jpg)
+-Figure 6 for Exercise 13.
+-
+-Project Problem: Dirichlet problem outside a sphere. Exercises 10 and 11 deal with Laplace's equation in the region outside the sphere $r>a$, subject to the boundary conditions $u(a, \theta)=f(\theta)$. Such equations arise in potential theory, when studying, for example, the potential outside a spherical capacitor. We will impose the additional condition $\lim _{r \rightarrow \infty} u(r, \theta)=0$, which expresses the fact that the potential tends to zero as we move far away from the sphere.
+-10. Show that the solution of (1) subject to the conditions $u(a, \theta)=f(\theta)$ and $\lim _{r \rightarrow \infty} u(r, \theta)=0$, in the region outside the sphere $r=a$, is given by
+-
+-$$
+-u(r, \theta)=\sum_{n=0}^{\infty} A_{n}\left(\frac{r}{a}\right)^{-(n+1)} P_{n}(\cos \theta), \quad(r>a)
+-$$
+-
+-where $A_{n}$ is as in (5). [Hint: Repeat the proof of Theorem 1, using the solutions $R_{n}^{*}$ instead of $R_{n}$ from (16), Section 13.1. Why should you make this change?]
+-11. Solve the Dirichlet problem outside the unit sphere with boundary values on the unit sphere as in Exercise 3.
+-Project Problem: A Dirichlet problem in the region between two concentric spheres. In Exercise 12 you are asked to solve this problem with nonzero data on the inner sphere and zero data on the outer sphere. In Exercise 13 you are asked to treat the opposite case, and in Exercise 14 you are asked to combine the results to give a solution of the Dirichlet problem with nonzero data on both spherical surfaces.
+-12. Consider the Dirichlet problem consisting of (1) with the boundary conditions described in the figure.
+-(a) Use both functions in (16), Section 13.1, and impose the condition $R\left(r_{2}\right)=0$ to arrive at the solution
+-
+-$$
+-u_{1}(r, \theta)=\sum_{n=0}^{\infty} A_{n}^{*}\left[\left(\frac{r}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r}\right)^{n+1}\right] P_{n}(\cos \theta)
+-$$
+-
+-where $r_{1}<r<r_{2}, 0<\theta<\pi$, and $A_{n}^{*}$ are to be determined. Verify that the boundary condition $u_{1}\left(r_{2}, \theta\right)=0$ is satisfied.
+-(b) The other boundary condition implies that
+-
+-$$
+-u_{1}\left(r_{1}, \theta\right)=f_{1}(\theta)=\sum_{n=0}^{\infty} A_{n}^{*}\left[\left(\frac{r_{1}}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r_{1}}\right)^{n+1}\right] P_{n}(\cos \theta)
+-$$
+-
+-Conclude that
+-
+-$$
+-A_{n}^{*}\left[\left(\frac{r_{1}}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r_{1}}\right)^{n+1}\right]=\frac{2 n+1}{2} \int_{0}^{\pi} f_{1}(\theta) P_{n}(\cos \theta) \sin \theta d \theta
+-$$
+-
+-Determine $A_{n}^{*}$ to complete the solution.
+-13. Show that the steady-state temperature in the region between the concentric spheres, as shown in the figure, is
+-
+-$$
+-u_{2}(r, \theta)=\sum_{n=0}^{\infty} B_{n}^{*}\left[\left(\frac{r}{r_{1}}\right)^{n}-\left(\frac{r_{1}}{r}\right)^{n+1}\right] P_{n}(\cos \theta)
+-$$
+-
+-where $r_{1}<r<r_{2}, 0<\theta<\pi$, and
+-
+-$$
+-B_{n}^{*}\left[\left(\frac{r_{2}}{r_{1}}\right)^{n}-\left(\frac{r_{1}}{r_{2}}\right)^{n+1}\right]=\frac{2 n+1}{2} \int_{0}^{\pi} f_{2}(\theta) P_{n}(\cos \theta) \sin \theta d \theta
+-$$
+-
+-14. Show that the solution of the Dirichlet problem consisting of (1) and the boundary conditions $u\left(r_{1}, \theta\right)=f_{1}(\theta)$ and $u\left(r_{2}, \theta\right)=f_{2}(\theta)$, in the region between the concentric sphere $r_{1}<r<r_{2}$ is $u(r, \theta)=u_{1}(r, \theta)+u_{2}(r, \theta)$, where $u_{1}$ and $u_{2}$ are given in Exercises 12 and 13, respectively.
++## Exercises 13.2
++
++
++> [!prompt|42ca5857-b483-5ea3-bae9-4dc4865c5ae9.local at=4b357b9c-7e99-5e8f-a2d2-ec569e725ad2] Shared exercise instructions
++> In Exercises 1-6, you are asked to solve Laplace's equation (1) inside a sphere of unit radius subject to the given boundary condition. (a) Compute at least two nonzero coefficients of the Legendre series solution. (b) Find the general form of the coefficients in the series solution. A hint is given whenever you need results from Section 13.6.
++
++
++> [!exercise|72c59643-a5fb-5fbc-a71b-bfb39b490fbb.local at=051c881c-caea-5398-8d60-53638cc09e01] Exercise 1
++> $f(\theta)=20(\cos \theta+1)$.
++
++
++> [!exercise|5662b24f-a29a-5b64-8254-fb466a666d89.local at=74993f82-c44b-53bc-8355-2736a673bf12] Exercise 2
++> $f(\theta)=\cos ^{2} \theta+2$.
++
++
++> [!exercise|1174b400-d9e1-5242-9493-c93e45c15cbd.local at=714061a5-170a-503a-a404-3b3d0fe0982e] Exercise 3
++> $f(\theta)= \begin{cases}100 & \text { if } 0<\theta<\pi / 2, \\ 20 & \text { if } \pi / 2<\theta<\pi .\end{cases}$
++
++
++> [!exercise|8836a2a4-02a3-5235-9413-71569d79ab9a.local at=ee250bbb-7a31-535a-bb58-01a5d59312b6] Exercise 4
++> $f(\theta)= \begin{cases}100 & \text { if } 0<\theta<\pi / 3, \\ 0 & \text { if } \pi / 3<\theta<\pi .\end{cases}$
++> [Hint: Exercise 10, Section 13.6.]
++
++
++> [!exercise|ecee21b8-d04a-558a-8e80-4bbf1c55df75.local at=af70e1c8-832e-596d-8120-da3b1596339e] Exercise 5
++> $f(\theta)= \begin{cases}\cos \theta & \text { if } 0<\theta<\pi / 2, \\ 0 & \text { if } \pi / 2<\theta<\pi .\end{cases}$
++> [Hint: Exercise 11, Section 13.6.]
++
++
++> [!exercise|a52dea01-8657-5699-8c62-f17cdc580c7b.local at=9620c50c-12a1-58fb-87f4-14d9da2429e0] Exercise 6
++> $f(\theta)=|\cos \theta|$.
++> [Hint: Exercise 27, Section 13.6.]
++
++
++> [!exercise|65c242fc-782f-5c68-8406-bd27cd297295.local at=fd78823a-e5b4-56fb-9a78-93bb9a942aac] Exercise 7
++> Experimenting with Example 1. In this exercise, use various properties of Legendre polynomials from Sections 13.5 and 13.6 to derive properties of the solution in Example 1. Throughout this exercise, $u(r, \theta)$ refers to (8).
++> (a) Using (8), show that $u(r, \pi / 2)=50$. Does this meet with your expectation?
++> (b) If you take $r=1$ in (8), you should get the boundary function $f$. Confirm this fact by plotting several partial sums of the solution. Plot your partial sums as a function of $\theta$ over the interval $[0, \pi]$.
++> (c) If you take $\theta=0$ in (8), you should get the steady-state temperature of the points on the $z$-axis in the upper hemisphere. Plot (8) for $\theta=0$ and $0<r<1$, and comment on the graph.
++> (d) Show that, for $0<r<1, \frac{u(r, 0)+u(r, \pi)}{2}=50$. Does this make sense on physical grounds?
++
++
++> [!exercise|ca2678ab-ff1e-5711-8cd2-f5583995f998.local at=5676f4ec-08c8-5172-83ed-b03e107336ce] Exercise 8
++> Get a better approximation of the temperature inside the sphere in Example 1 and the points indicated in Table 1. Use at least ten terms from (8).
++
++
++> [!exercise|917447df-139c-5a07-b673-9f70433d032d.local at=7c799af9-a3b2-5972-b955-623bc0232435] Exercise 9
++> Find the steady-state temperature inside a buoy floating on the ocean as shown in the figure. [Hint: Exercise 9, Section 13.6.]
++
++
++```scientific-figure
++id: 52bb52b6-ffed-4162-a092-fee748d1a0fb
++numbered: false
++title: ""
++caption: Figure 4 for Exercise 9.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-11_505_493_1366_35.jpg
++    caption: ""
++```
++> [!prompt|b0425f12-b1b5-5641-a4d8-fab0e7783fc8.local at=e920adf0-ff4d-5891-ad3b-eec785b88e94] Shared exercise instructions
++> Project Problem: Dirichlet problem outside a sphere. Exercises 10 and 11 deal with Laplace's equation in the region outside the sphere $r>a$, subject to the boundary conditions $u(a, \theta)=f(\theta)$. Such equations arise in potential theory, when studying, for example, the potential outside a spherical capacitor. We will impose the additional condition $\lim _{r \rightarrow \infty} u(r, \theta)=0$, which expresses the fact that the potential tends to zero as we move far away from the sphere.
++
++
++> [!exercise|72e28c62-dc57-58b5-98fd-a3caefdaffe9.local at=ef4b35a0-c75e-53fd-8561-5444ccaa8eab] Exercise 10
++> Show that the solution of (1) subject to the conditions $u(a, \theta)=f(\theta)$ and $\lim _{r \rightarrow \infty} u(r, \theta)=0$, in the region outside the sphere $r=a$, is given by
++>
++> $$
++> u(r, \theta)=\sum_{n=0}^{\infty} A_{n}\left(\frac{r}{a}\right)^{-(n+1)} P_{n}(\cos \theta), \quad(r>a)
++> $$
++>
++> where $A_{n}$ is as in (5). [Hint: Repeat the proof of Theorem 1, using the solutions $R_{n}^{*}$ instead of $R_{n}$ from (16), Section 13.1. Why should you make this change?]
++
++
++> [!exercise|7fb8c0b0-1c12-5f24-904a-5d6a61e8a14f.local at=9fe4f840-66a1-52f5-8ad5-1494fd819dda] Exercise 11
++> Solve the Dirichlet problem outside the unit sphere with boundary values on the unit sphere as in Exercise 3.
++
++
++> [!prompt|17e2311e-3f50-5e3e-a1b2-a4348f4713e3.local at=25ff610b-5b75-59c7-a153-29b16ea91dbd] Shared exercise instructions
++> Project Problem: A Dirichlet problem in the region between two concentric spheres. In Exercise 12 you are asked to solve this problem with nonzero data on the inner sphere and zero data on the outer sphere. In Exercise 13 you are asked to treat the opposite case, and in Exercise 14 you are asked to combine the results to give a solution of the Dirichlet problem with nonzero data on both spherical surfaces.
++
++
++> [!exercise|53952936-1e9a-5013-a590-2536da7aa13e.local at=5ccee174-eb53-5a5b-9099-7270ce0a6671] Exercise 12
++> Consider the Dirichlet problem consisting of (1) with the boundary conditions described in the figure.
++>
++> (a) Use both functions in (16), Section 13.1, and impose the condition $R\left(r_{2}\right)=0$ to arrive at the solution
++>
++> $$
++> u_{1}(r, \theta)=\sum_{n=0}^{\infty} A_{n}^{*}\left[\left(\frac{r}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r}\right)^{n+1}\right] P_{n}(\cos \theta)
++> $$
++>
++> where $r_{1}<r<r_{2}, 0<\theta<\pi$, and $A_{n}^{*}$ are to be determined. Verify that the boundary condition $u_{1}\left(r_{2}, \theta\right)=0$ is satisfied.
++> (b) The other boundary condition implies that
++>
++> $$
++> u_{1}\left(r_{1}, \theta\right)=f_{1}(\theta)=\sum_{n=0}^{\infty} A_{n}^{*}\left[\left(\frac{r_{1}}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r_{1}}\right)^{n+1}\right] P_{n}(\cos \theta)
++> $$
++>
++> Conclude that
++>
++> $$
++> A_{n}^{*}\left[\left(\frac{r_{1}}{r_{2}}\right)^{n}-\left(\frac{r_{2}}{r_{1}}\right)^{n+1}\right]=\frac{2 n+1}{2} \int_{0}^{\pi} f_{1}(\theta) P_{n}(\cos \theta) \sin \theta d \theta
++> $$
++>
++> Determine $A_{n}^{*}$ to complete the solution.
++
++
++```scientific-figure
++id: 89a873a2-cb9b-43ba-9200-79cb119388f8
++numbered: false
++title: ""
++caption: Figure 5 for Exercise 12.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-12_417_451_864_59.jpg
++    caption: ""
++```
++
++
++
++
++> [!exercise|f17545e4-ec97-5e47-85da-ff0c07d0e066.local at=28e517cb-b11c-579e-8cd7-3c1427b46534] Exercise 13
++> Show that the steady-state temperature in the region between the concentric spheres, as shown in the figure, is
++>
++> $$
++> u_{2}(r, \theta)=\sum_{n=0}^{\infty} B_{n}^{*}\left[\left(\frac{r}{r_{1}}\right)^{n}-\left(\frac{r_{1}}{r}\right)^{n+1}\right] P_{n}(\cos \theta)
++> $$
++>
++> where $r_{1}<r<r_{2}, 0<\theta<\pi$, and
++>
++> $$
++> B_{n}^{*}\left[\left(\frac{r_{2}}{r_{1}}\right)^{n}-\left(\frac{r_{1}}{r_{2}}\right)^{n+1}\right]=\frac{2 n+1}{2} \int_{0}^{\pi} f_{2}(\theta) P_{n}(\cos \theta) \sin \theta d \theta
++> $$
++
++
++```scientific-figure
++id: 81fbd37c-761c-45a9-b7e8-64fd011ef9a2
++numbered: false
++title: ""
++caption: Figure 6 for Exercise 13.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-12_414_448_1609_59.jpg
++    caption: ""
++```
++
++
++
++
++
++> [!exercise|884856ee-5a39-52b3-8105-b745ec88d0fa.local at=52412800-fc6b-5924-9138-2e9f800f2f49] Exercise 14
++> Show that the solution of the Dirichlet problem consisting of (1) and the boundary conditions $u\left(r_{1}, \theta\right)=f_{1}(\theta)$ and $u\left(r_{2}, \theta\right)=f_{2}(\theta)$, in the region between the concentric sphere $r_{1}<r<r_{2}$ is $u(r, \theta)=u_{1}(r, \theta)+u_{2}(r, \theta)$, where $u_{1}$ and $u_{2}$ are given in Exercises 12 and 13, respectively.
+
+`````

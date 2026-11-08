@@ -26,3 +26,302 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > u_{rr}+\frac2r u_r+\frac1{r^2}\left(u_{\theta\theta}+\cot\theta\,u_\theta\right)=0,\qquad r>0,\quad0<\theta<\pi.
 > $$
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.1 Preview of Problems and Methods.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.1 Preview of Problems and Methods.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.1 Preview of Problems and Methods.md
+@@ -1,6 +1,7 @@
++
+ ## Topics to Review
+ 
+-As in the previous chapter, the separation of variables method is crucial. The other essential tools are developed as needed. Section 13.1 is self-contained. Section 13.2 refers to Sections 5.1, 5.5 and 5.6. Sections 13.3 and 13.4 refer to Sections 13.1 and 13.5-5.7. Also, in Section 13.4, Bessel functions will reappear, and the material from Section 4.8 will be used again. Prior knowledge of the eigenfunction expansions method (Sections 3.9 and 4.6) is helpful but not required for Section 13.4. The supplementary material (Sections 13.5-13.7) is selfcontained and can be covered before starting the chapter. For Section 13.5 you need to review the power series method of Appendix A.4.
++As in the previous chapter, the separation of variables method is crucial. The other essential tools are developed as needed. Section 13.1 is self-contained. Section 13.2 refers to Sections 13.1, 13.5 and 13.6. Sections 13.3 and 13.4 refer to Sections 13.1 and 13.5–13.7. Also, in Section 13.4, Bessel functions will reappear, and the material from Section 12.8 will be used again. Prior knowledge of the eigenfunction expansions method (Sections 11.9 and 12.6) is helpful but not required for Section 13.4. The supplementary material (Sections 13.5-13.7) is self-contained and can be covered before starting the chapter. For Section 13.5 you need to review the power series method of Section 10.4.
+ 
+ ## Looking Ahead...
+ 
+@@ -24,32 +25,40 @@
+ 
+ ### 13.1 Preview of Problems and Methods
+ 
+-![](./images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-02_403_440_225_63.jpg)
+-Figure 1 Spherical coordinates.
+-
+-Here the polar angle in the $x y$ plane is denoted by $\phi$, while in the two-dimensional case (Chapter 4) we used $\theta$.
+-
+-In this chapter we will solve boundary value problems that involve the Laplacian in spherical coordinates. In this first section we will survey the methods and additional tools that are required for the solutions. As you would expect by now, the method will involve solving certain ordinary differential equations, forming generalized Fourier series, and expressing the boundary or initial data in terms of these series. For example, the solutions of problems in Cartesian coordinates (Chapter 3) involved, among other things, Fourier sine series. In Chapter 4, where we considered problems in polar coordinates, we were led to Bessel series expansions. In this section you will encounter new types of expansions (Legendre series, spherical harmonics expansions, and others) that arise naturally when solving problems in spherical coordinates.
+-
+-## Consider Laplace's equation in spherical coordinates
++```scientific-figure
++id: f2332d6e-c979-42cf-9c38-7642f124c03e
++numbered: false
++title: ""
++caption: Figure 1 Spherical coordinates.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/images/122e2a0e-ba5b-4934-9af1-dcd4ea360903-02_403_440_225_63.jpg
++    caption: ""
++```
++
++
++Here the polar angle in the $x y$ plane is denoted by $\phi$, while in the two-dimensional case (Chapter 12) we used $\theta$.
++
++In this chapter we will solve boundary value problems that involve the Laplacian in spherical coordinates. In this first section we will survey the methods and additional tools that are required for the solutions. As you would expect by now, the method will involve solving certain ordinary differential equations, forming generalized Fourier series, and expressing the boundary or initial data in terms of these series. For example, the solutions of problems in Cartesian coordinates (Chapter 11) involved, among other things, Fourier sine series. In Chapter 12, where we considered problems in polar coordinates, we were led to Bessel series expansions. In this section you will encounter new types of expansions (Legendre series, spherical harmonics expansions, and others) that arise naturally when solving problems in spherical coordinates.
++
++Consider Laplace's equation in spherical coordinates
+ 
+ $$
+ \nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}+\csc ^{2} \theta \frac{\partial^{2} u}{\partial \phi^{2}}\right)=0
+-$$
+-
+-where $0<r<a, 0<\phi<2 \pi$, and $0<\theta<\pi$ (see Section 4.1). The solution of this equation is quite involved. To clarify the presentation, we will treat simultaneously the simpler case when $u$ is symmetric with respect to the $z$-axis or axisymmetric. In this case, $u$ is independent of the azimuthal angle $\phi$, the derivatives with respect to $\phi$ are all 0 , and (1) reduces to
+-
+-## RADIALLY
+-
+-SYMMETRIC LAPLACE'S
+-
+-$$
+-\nabla^{2} u=\frac{\partial^{2} u}{\partial r^{2}}+\frac{2}{r} \frac{\partial u}{\partial r}+\frac{1}{r^{2}}\left(\frac{\partial^{2} u}{\partial \theta^{2}}+\cot \theta \frac{\partial u}{\partial \theta}\right)=0,
+-$$
+-
+-## EQUATION
+-
+-where $0<r<a$ and $0<\theta<\pi$.
++\tag{1}
++$$
++
++where $0<r<a, 0<\phi<2 \pi$, and $0<\theta<\pi$ (see Section 12.1). The solution of this equation is quite involved. To clarify the presentation, we will treat simultaneously the simpler case when $u$ is symmetric with respect to the $z$-axis or axisymmetric. In this case, $u$ is independent of the azimuthal angle $\phi$, the derivatives with respect to $\phi$ are all 0 , and (1) reduces to
++
++> [!equation|7c65c2f9-13c0-50ef-ac5c-c61c4139a2e9.local at=44d6584d-7551-5bbd-8ef1-ff5d1d330d76] Axisymmetric Laplace equation in spherical coordinates
++> Use spherical coordinates $x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$, $z=r\cos\theta$, with colatitude $\theta$ and azimuth $\phi$. For a twice differentiable function independent of $\phi$, Laplace's equation becomes
++> $$
++> u_{rr}+\frac2r u_r+\frac1{r^2}\left(u_{\theta\theta}+\cot\theta\,u_\theta\right)=0,\qquad r>0,\quad0<\theta<\pi.
++> $$
++
++*Printed equation label: (2).*
+ 
+ ## Separating Variables in Laplace's Equation
+ 
+@@ -63,49 +72,57 @@
+ 
+ $$
+ r^{2} R^{\prime \prime}+2 r R^{\prime}-\mu R=0, \quad 0<r<a
++\tag{3}
++$$
++
++and
++
++$$
++\frac{\Theta^{\prime \prime}}{\Theta}+\cot \theta \frac{\Theta^{\prime}}{\Theta}+\csc ^{2} \theta \frac{\Phi^{\prime \prime}}{\Phi}=-\mu,
++\tag{4}
++$$
++
++where $\mu$ is a separation constant. The details of the separation of variables are left to Exercise 1. Recall that when we separated variables in Laplace's equation in polar coordinates (Section 12.4), we also obtained an Euler equation in $R$. Separating variables in (4), we arrive at the equations
++
++$$
++\Phi^{\prime \prime}+m^{2} \Phi=0, \quad m=0,1,2, \ldots
++\tag{5}
++$$
++
++and
++
++$$
++\Theta^{\prime \prime}+\cot \theta \Theta^{\prime}+\left(\mu-m^{2} \csc ^{2} \theta\right) \Theta=0 .
++\tag{6}
++$$
++
++Expecting $2 \pi$-periodic solutions in $\Phi$, since $\phi$ is a polar angle, we have already determined that the separation constant should be $m^{2}$ in (5). We have now separated the variables in (1) and arrived at the three equations (3), (5), and (6). Of these three equations only (6) is new. As we will see shortly, it is related to a family of differential equations known as the associated Legendre differential equations.
++
++In the symmetric case, with no dependence on $\phi$, starting with (2), we arrive in a similar way at (3) and the following equation in $\Theta$ :
++
++$$
++\Theta^{\prime \prime}+\cot \theta \Theta^{\prime}+\mu \Theta=0
++\tag{7}
++$$
++
++Note that (7) is a special case of (6) with $m=0$. We will see shortly that it is related to the so-called Legendre's differential equation.
++
++## Product Solutions of Laplace's Equation
++
++We now describe the solutions of (3), (5), and (6) and derive the product solutions of (1). Equation (5) is readily solved and yields
++
++$$
++\Phi(\phi)=e^{i m \phi}, \quad m=0, \pm 1, \pm 2, \ldots
++\tag{8}
+ $$
+ 
+ We are using the complex form of the solution to keep the notation compact. You could use $\cos m \phi$ and $\sin m \phi$ instead. Recall that $e^{i m \phi}=\cos m \phi+i \sin m \phi$.
+-and
+-
+-$$
+-\frac{\Theta^{\prime \prime}}{\Theta}+\cot \theta \frac{\Theta^{\prime}}{\Theta}+\csc ^{2} \theta \frac{\Phi^{\prime \prime}}{\Phi}=-\mu,
+-$$
+-
+-where $\mu$ is a separation constant. The details of the separation of variables are left to Exercise 1. Recall that when we separated variables in Laplace's equation in polar coordinates (Section 4.4), we also obtained an Euler equation in $R$. Separating variables in (4), we arrive at the equations
+-
+-$$
+-\Phi^{\prime \prime}+m^{2} \Phi=0, \quad m=0,1,2, \ldots
+-$$
+-
+-and
+-
+-$$
+-\Theta^{\prime \prime}+\cot \theta \Theta^{\prime}+\left(\mu-m^{2} \csc ^{2} \theta\right) \Theta=0 .
+-$$
+-
+-Expecting $2 \pi$-periodic solutions in $\Phi$, since $\phi$ is a polar angle, we have already determined that the separation constant should be $m^{2}$ in (5). We have now separated the variables in (1) and arrived at the three equations (3), (5), and (6). Of these three equations only (6) is new. As we will see shortly, it is related to a family of differential equations known as the associated Legendre differential equations.
+-
+-In the symmetric case, with no dependence on $\phi$, starting with (2), we arrive in a similar way at (3) and the following equation in $\Theta$ :
+-
+-$$
+-\Theta^{\prime \prime}+\cot \theta \Theta^{\prime}+\mu \Theta=0
+-$$
+-
+-Note that (7) is a special case of (6) with $m=0$. We will see shortly that it is related to the so-called Legendre's differential equation.
+-
+-## Product Solutions of Laplace's Equation
+-
+-We now describe the solutions of (3), (5), and (6) and derive the product solutions of (1). Equation (5) is readily solved and yields
+-
+-$$
+-\Phi(\phi)=e^{i m \phi}, \quad m=0, \pm 1, \pm 2, \ldots
+-$$
+ 
+ To solve (6), we make the change of variables
+ 
+ $$
+ s=\cos \theta ; \quad \frac{d s}{d \theta}=-\sin \theta
++\tag{9}
+ $$
+ 
+ Hence, by the chain rule,
+@@ -118,33 +135,39 @@
+ \end{aligned}
+ $$
+ 
++*Printed equation labels: (10) first derivative under $s=\cos\theta$; (11) second derivative under $s=\cos\theta$.*
++
+ Plugging into (6) and simplifying, we arrive at
+ 
+ $$
+ \left(1-s^{2}\right) \frac{d^{2} \Theta}{d s^{2}}-2 s \frac{d \Theta}{d s}+\left(\mu-\frac{m^{2}}{1-s^{2}}\right) \Theta=0, \quad-1<s<1
++\tag{12}
+ $$
+ 
+ This second order, linear, ordinary differential equation is known as the associated Legendre differential equation (Section 13.7). The difficulty in solving this equation is due to the fact that the coefficients are nontrivial functions of $s$. In the symmetric case, back to equation (7), if we make the substitution $s=\cos \theta$ and simplify, we arrive at the equation
+ 
+ $$
+ \left(1-s^{2}\right) \frac{d^{2} \Theta}{d s^{2}}-2 s \frac{d \Theta}{d s}+\mu \Theta=0, \quad-1<s<1
+-$$
+-
+-This is Legendre's differential equation (Section 13.5). It is a special case of (12) with $m=0$. Legendre's differential equation is treated in detail in Sections 13.5 and 13.6. It is a fact that (12) and (13) have bounded solutions in the interval $[-1,1]$ if and only if the separation constant has the special form
++\tag{13}
++$$
++
++This is Legendre's differential equation (Section 13.5). It is a special case of (12) with $m=0$. Legendre's differential equation is treated in detail in Sections 13.5 and 13.6. For a fixed integer $m$, the associated equation has a nonzero solution regular at both endpoints only for degrees $n\ge |m|$; in the Legendre case $m=0$, the allowed degrees are $n\ge0$. In either case the separation constant has the form
+ 
+ $$
+ \mu=n(n+1), \quad n=0,1,2, \ldots .
++\tag{14}
+ $$
+ 
+ Since for practical reasons we are only interested in bounded solutions, henceforth we take $\mu$ as in (14). The corresponding bounded solutions of (12),
+ 
+-The functions $e^{\text {rmb }} P_{n}^{m}(\cos \theta)$ are very important in applications. When properly normalized, they are denoted by $Y_{n, m}(\theta, \phi)$ and called the spherical harmonics (see (4), Section 13.3).
+ when properly normalized, are denoted by $P_{n}^{m}(s)$ and are called the associated Legendre functions. Substituting back $s=\cos \theta$, we see that the bounded solutions of (6) are
+ 
+ $$
+ P_{n}^{m}(\cos \theta) .
+ $$
+ 
++The functions $e^{im\phi}P_n^m(\cos\theta)$, for $|m|\le n$, are the angular modes. Their normalized versions are the spherical harmonics $Y_{n,m}(\theta,\phi)$ (Section 13.3).
++
+ In the symmetric case, when $m=0, P_{n}^{0}$ reduces to the Legendre polynomial of degree $n$, which is denoted by $P_{n}$. This yields
+ 
+ $$
+@@ -155,9 +178,10 @@
+ 
+ $$
+ r^{2} R^{\prime \prime}+2 r R^{\prime}-n(n+1) R=0, \quad 0<r<a
+-$$
+-
+-To solve this equation, we appeal to results from Appendix A.3. The indicial equation is
++\tag{15}
++$$
++
++To solve this equation, we appeal to results from Section 10.3. The indicial equation is
+ 
+ $$
+ \nu^{2}+\nu-n(n+1)=0
+@@ -167,31 +191,51 @@
+ 
+ $$
+ R_{n}(r)=r^{n} \quad \text { and } \quad R_{n}^{*}(r)=r^{-(n+1)}, \quad n=0,1,2 \ldots
+-$$
+-
+-For problems inside the ball with $0<r<a$, we choose the bounded solutions in (16), $R_{n}(r)=r^{n}$, and discard the others. For problems outside the ball, with $r>a$, we take $R_{n}^{*}(r)=r^{-(n+1)}$ in (16) and discard $R_{n}(r)=r^{n}$, which is unbounded as $r \rightarrow \infty$.
++\tag{16}
++$$
++
++For problems inside the ball with $0<r<a$, we choose the bounded solutions in (16), $R_{n}(r)=r^{n}$, and discard the others. For exterior problems with the condition $u\to0$ as $r\to\infty$, we use $R_n^*(r)=r^{-(n+1)}$ and discard $r^n$. For $n\ge1$ the latter grows without bound; for $n=0$ it is constant and is excluded by the decay condition, not by boundedness alone.
+ 
+ Summing up, we have found the following product solutions of (1):
+ 
+ $$
+ u(r, \theta, \phi)=r^{n} e^{i m \phi} P_{n}^{m}(\cos \theta)
++\tag{17}
+ $$
+ 
+ where $P_{n}^{m}$ are the associated Legendre functions. We have also found the following product solutions of (2):
+ 
+ $$
+ u(r, \theta)=r^{n} P_{n}(\cos \theta)
++\tag{18}
+ $$
+ 
+ where $P_{n}$ is the $n$th Legendre polynomial, $n=0,1, \ldots$.
+ 
+ Solutions of boundary value problems involving Laplace's equation will be expressed as infinite series in terms of the product solutions (17) (superposition principle). In determining the coefficients in these series, we will use the boundary conditions and appeal to various properties of the associated Legendre functions (and Legendre polynomials). More specifically, we will require expansion theorems for associated Legendre functions (and Legendre polynomials) that are similar to Bessel series representations and Fourier series. This requisite material is developed in detail in Sections 13.5-13.7. We will refer to it as needed.
+ 
+-## Exercises 5.1
+-
+-1. Carry out the details of the separation of variables method to derive (3), (5), and (6) from (1).
+-2. Carry out the details of the separation of variables method to derive (3) and (7) from (2).
+-3. Refer to Section 13.5, where you will find a list of Legendre polynomials. Use this list to compute explicitly $P_{n}(\cos \theta)$ for $n=0,1,2$. Verify that these functions are solutions of (7) for the corresponding value of $\mu$.
+-4. Refer to Section 13.7, where you will find a list of associated Legendre functions. Use this list to compute explicitly $P_{1}^{m}(\cos \theta)$ for $m=-1,0,1$. Verify that these functions are solutions of (6) for the corresponding values of $\mu$ and $m$.
+-5. Write down (18) explicitly when $n=1$, and verify that it is a solution of (2).
+-6. Write down (17) explicitly when $m=n=1$, and verify that it is a solution of (1).
++## Exercises 13.1
++
++
++> [!exercise|cdb0e01d-ff40-527a-9b24-4a22605baeee.local at=9b7ba2ed-e145-5bf1-8416-bede6e0d7195] Exercise 1
++> Carry out the details of the separation of variables method to derive (3), (5), and (6) from (1).
++
++
++> [!exercise|13b734c3-c3a3-537d-85bc-708d8697c46a.local at=81d8af77-69c9-503b-ad25-cea1192586ac] Exercise 2
++> Carry out the details of the separation of variables method to derive (3) and (7) from (2).
++
++
++> [!exercise|d664c3ad-0da8-57bb-8d04-a304fe9b8c32.local at=6a80d406-839f-5cbf-aeb4-db28095dc3e2] Exercise 3
++> Refer to Section 13.5, where you will find a list of Legendre polynomials. Use this list to compute explicitly $P_{n}(\cos \theta)$ for $n=0,1,2$. Verify that these functions are solutions of (7) for the corresponding value of $\mu$.
++
++
++> [!exercise|430c5cbc-5a3a-5df6-8a4e-6db1aa6a4c8d.local at=6035ab98-4800-5154-bf6e-8f3fe0d46cc4] Exercise 4
++> Refer to Section 13.7, where you will find a list of associated Legendre functions. Use this list to compute explicitly $P_{1}^{m}(\cos \theta)$ for $m=-1,0,1$. Verify that these functions are solutions of (6) for the corresponding values of $\mu$ and $m$.
++
++
++> [!exercise|943bb200-c112-50ba-ad68-61664da8f697.local at=25cd18cd-ebe0-58a1-aa49-695426203475] Exercise 5
++> Write down (18) explicitly when $n=1$, and verify that it is a solution of (2).
++
++
++> [!exercise|ecb01a93-7da6-5791-ab83-ea994313627d.local at=e52979da-bf0f-50d3-891b-03c9e71be24c] Exercise 6
++> Write down (17) explicitly when $m=n=1$, and verify that it is a solution of (1).
+
+`````

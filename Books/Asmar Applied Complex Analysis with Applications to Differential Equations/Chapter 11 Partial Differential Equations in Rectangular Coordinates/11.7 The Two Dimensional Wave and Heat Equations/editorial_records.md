@@ -84,3 +84,544 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > B_{mn}=\frac4{ab}\int_0^b\int_0^a f(x,y)\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{b}\,dx\,dy,\qquad m,n\ge1.
 > $$
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.7 The Two Dimensional Wave and Heat Equations.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.7 The Two Dimensional Wave and Heat Equations.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.7 The Two Dimensional Wave and Heat Equations.md
+@@ -1,12 +1,25 @@
++
+ ### 11.7 The Two Dimensional Wave and Heat Equations
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-53_389_463_412_51.jpg)
+-Figure 1 Initial shape of a membrane with edges held fixed.
++```scientific-figure
++id: fc39d619-8466-4c10-a400-7f1cc99fa97e
++numbered: false
++title: ""
++caption: Figure 1 Initial shape of a membrane with edges held fixed.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-53_389_463_412_51.jpg
++    caption: ""
++```
++
+ 
+ Suppose that a thin elastic membrane is stretched over a rectangular frame with dimensions $a$ and $b$, and that the edges are held fixed (Figure 1). The membrane is then set to vibrate by displacing it vertically and then releasing it. The vibrations of the membrane are governed by the two dimensional wave equation
+ 
+ $$
+ \frac{\partial^{2} u}{\partial t^{2}}=c^{2}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}\right), \quad 0<x<a, \quad 0<y<b, \quad t>0,
++\tag{1}
+ $$
+ 
+ where $u=u(x, y, t)$ denotes the deflection at the point $(x, y)$ at time $t$ (see Exercise 8, Section 11.2). The fact that the edges are held fixed is expressed by the condition $u(x, y, t)=0$ on the boundary for all $t \geq 0$. More explicitly, we have the boundary conditions
+@@ -16,12 +29,14 @@
+ u(0, y, t)=0 \text { and } u(a, y, t)=0 & \text { for } 0 \leq y \leq b \text { and } t \geq 0, \\
+ u(x, 0, t)=0 \text { and } u(x, b, t)=0 & \text { for } 0 \leq x \leq a \text { and } t \geq 0 .
+ \end{array}
+-$$
+-
+-## The initial conditions
++\tag{2}
++$$
++
++The initial conditions
+ 
+ $$
+ u(x, y, 0)=f(x, y) \quad \text { and } \quad \frac{\partial u}{\partial t}(x, y, 0)=g(x, y)
++\tag{3}
+ $$
+ 
+ represent, respectively, the shape and the velocity of the membrane at time $t=0$. To determine the vibrations of the membrane, we must find the function $u$ that satisfies (1)-(3). We solve the boundary value problem using the separation of variables method, following the steps outlined in Section 11.3.
+@@ -101,7 +116,7 @@
+ \end{gathered}
+ $$
+ 
+-From the boundary conditions for $X$ and $Y$ we get $c_{1}=0$ and $c_{2} \sin \mu a=0$, $d_{1}=0$ and $d_{2} \sin \nu a=0$. Thus
++From the boundary conditions for $X$ and $Y$ we get $c_{1}=0$ and $c_{2} \sin \mu a=0$, $d_{1}=0$ and $d_{2} \sin \nu b=0$. Thus
+ 
+ $$
+ \mu=\mu_{m}=\frac{m \pi}{a} \quad \text { and } \quad \nu=\nu_{n}=\frac{n \pi}{b} \quad m, n=1,2, \ldots,
+@@ -147,34 +162,35 @@
+ 
+ $$
+ u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty}\left(B_{m n} \cos \lambda_{m n} t+B_{m n}^{*} \sin \lambda_{m n} t\right) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
++\tag{4}
+ $$
+ 
+ From the initial condition $u(x, y, 0)=f(x, y)$, we get
+ 
+ $$
+ f(x, y)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} B_{m n} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
++\tag{5}
+ $$
+ 
+ The key to computing the coefficients $B_{m n}$ is to observe that the functions $\sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y$ are "orthogonal" over the rectangle $0 \leq x \leq a, 0 \leq y \leq b$. That is,
+ 
+ $$
+ \int_{0}^{b} \int_{0}^{a} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y \sin \frac{m^{\prime} \pi}{a} x \sin \frac{n^{\prime} \pi}{b} y d x d y=0
++\tag{6}
+ $$
+ 
+ if $(m, n) \neq\left(m^{\prime}, n^{\prime}\right)$. Also, if $(m, n)=\left(m^{\prime}, n^{\prime}\right)$, then we get
+ 
+ $$
+ \int_{0}^{b} \int_{0}^{a} \sin ^{2} \frac{m \pi}{a} x \sin ^{2} \frac{n \pi}{b} y d x d y=\frac{a b}{4}
+-$$
+-
+-SOLUTION OF THE TWO DIMENSIONAL WAVE EQUATION
+-
+-THEOREM 1 DOUBLE SINE SERIES REPRESENTATION
++\tag{7}
++$$
+ 
+ The proofs of (6) and (7) are straightforward and are left to the exercises. Multiplying (5) by $\sin \frac{m^{\prime} \pi}{a} x \sin \frac{n^{\prime} \pi}{b} y$, integrating over the $a \times b$ rectangle, and using the orthogonality properties, we find
+ 
+ $$
+ B_{m n}=\frac{4}{a b} \int_{0}^{b} \int_{0}^{a} f(x, y) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y d x d y
++\tag{8}
+ $$
+ 
+ The series in (5) with coefficients given by (8) is called the double Fourier sine series of $f$. Similarly, using the second initial condition, we get
+@@ -187,36 +203,57 @@
+ 
+ $$
+ B_{m n}^{*}=\frac{4}{a b \lambda_{m n}} \int_{0}^{b} \int_{0}^{a} g(x, y) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y d x d y
++\tag{9}
+ $$
+ 
+ We have now completely determined the solution of the vibrating rectangular membrane and we summarize our results as follows.
+ 
+-The solution of the two dimensional wave equation (1) with boundary conditions (2) and initial conditions (3) is
+-
+-$$
+-u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty}\left(B_{m n} \cos \lambda_{m n} t+B_{m n}^{*} \sin \lambda_{m n} t\right) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
+-$$
+-
+-where
+-
+-$$
+-\lambda_{m n}=c \pi \sqrt{\frac{m^{2}}{a^{2}}+\frac{n^{2}}{b^{2}}}
+-$$
+-
+-and $B_{m n}$ and $B_{m n}^{*}$ are as in (8) and (9).
++> [!equation|c7aedb00-3e43-5e30-a0c8-8df3b6883019.local at=44160e7e-a39e-530b-8253-84cfc783831e] Solution of the Two Dimensional Wave Equation
++> Let $a,b,c>0$. On $0<x<a$, $0<y<b$, consider $u_{tt}=c^2(u_{xx}+u_{yy})$, with $u=0$ on all four edges, $u(x,y,0)=f(x,y)$ and $u_t(x,y,0)=g(x,y)$. Assume compatible initial data and convergence permitting the required differentiations.
++>
++> The solution of the two dimensional wave equation with the stated boundary and initial conditions is
++>
++> $$
++> u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty}\left(B_{m n} \cos \lambda_{m n} t+B_{m n}^{*} \sin \lambda_{m n} t\right) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
++> $$
++>
++> where
++>
++> $$
++> \lambda_{m n}=c \pi \sqrt{\frac{m^{2}}{a^{2}}+\frac{n^{2}}{b^{2}}}
++> $$
++>
++> where
++> $$
++> \begin{aligned}
++> \lambda_{mn}&=c\pi\sqrt{m^2/a^2+n^2/b^2},\\
++> B_{mn}&=\frac4{ab}\int_0^b\int_0^a f(x,y)\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{b}\,dx\,dy,\\
++> B^*_{mn}&=\frac4{ab\lambda_{mn}}\int_0^b\int_0^a g(x,y)\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{b}\,dx\,dy.
++> \end{aligned}
++> $$
++
+ To justify the convergence of the series in (5), and for ease of reference, we state the double Fourier sine series representation theorem which holds for continuous functions with continuous first and second partial derivatives in $x$ and $y$. (See Fourier Series, by Georgi P. Tolstov, Dover Publications, 1976, p. 178.) This important result will also be needed for the solution of Poisson's equation (Section 11.9).
+ 
+-Suppose that $f(x, y)$ is defined for all $0<x<a, 0<y<b$. Then we have the double Fourier sine series expansion
+-
+-$$
+-f(x, y)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} B_{m n} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
+-$$
+-
+-where the double Fourier sine series coefficient $B_{m n}$ is given by (8).
+-
+-EXAMPLE 1 Vibration of a stretched membrane with fixed edges A square membrane with $a=1, b=1$, and $c=1 / \pi$, is placed in the $x y$-plane as shown in the first picture in Figure 2. The edges of the membrane are held fixed, and the membrane is stretched into a shape modeled by the function $f(x, y)= x(x-1) y(y-1), 0<x<1,0<y<1$. Suppose that the membrane starts to vibrate from rest. Determine the position of each point on the membrane for $t>0$.
+-
+-Solution We have $g(x, y)=0$, and so $B_{m n}^{*}=0$. For $m, n=1,2, \ldots$, we have
++> [!theorem|fd168324-0286-5644-8537-4b299510d6bb.local at=33b94323-398f-5887-bbb2-160e06024e5c] Double Sine Series Representation
++> Suppose that $f(x, y)$ and its first and second partial derivatives are continuous on $[0,a]\times[0,b]$, where $a,b>0$. For $0<x<a$, $0<y<b$, we have the double Fourier sine series expansion
++>
++> $$
++> f(x, y)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} B_{m n} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y
++> $$
++>
++> where
++> $$
++> B_{mn}=\frac4{ab}\int_0^b\int_0^a f(x,y)\sin\frac{m\pi x}{a}\sin\frac{n\pi y}{b}\,dx\,dy,\qquad m,n\ge1.
++> $$
++
++*Printed equation label: (10).*
++
++> [!exercise|f254142d-55fa-510e-b5c7-ca204cae3616.local at=209cdf8a-0a76-5196-b930-6a85f936ecb6] EXAMPLE 1 Vibration of a stretched membrane with fixed edges
++> A square membrane with $a=1, b=1$, and $c=1 / \pi$, is placed in the $x y$-plane as shown in the first picture in Figure 2. The edges of the membrane are held fixed, and the membrane is stretched into a shape modeled by the function $f(x, y)= x(x-1) y(y-1), 0<x<1,0<y<1$. Suppose that the membrane starts to vibrate from rest. Determine the position of each point on the membrane for $t>0$.
++
++##### solution
++
++We have $g(x, y)=0$, and so $B_{m n}^{*}=0$. For $m, n=1,2, \ldots$, we have
+ 
+ $$
+ \begin{aligned}
+@@ -241,16 +278,27 @@
+ 
+ $$
+ \begin{aligned}
+-u(x, y, t)= & \sum_{n \text { odd } m \text { odd }} \frac{64}{\pi^{6} m^{3} n^{3}} \sin m \pi x \sin n \pi y \cos \sqrt{m^{2}+n^{2}} t \\
++u(x, y, t)= & \sum_{\substack{m,n\ge1\\m,n\text{ odd}}} \frac{64}{\pi^{6} m^{3} n^{3}} \sin m \pi x \sin n \pi y \cos \sqrt{m^{2}+n^{2}} t \\
+ = & \sum_{l=0}^{\infty} \sum_{k=0}^{\infty}\left\{\frac{64}{\pi^{6}(2 k+1)^{3}(2 l+1)^{3}} \sin ((2 k+1) \pi x) \sin ((2 l+1) \pi y)\right. \\
+ & \left.\quad \times \cos \sqrt{(2 k+1)^{2}+(2 l+1)^{2}} t\right\} .
+ \end{aligned}
+ $$
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-57_580_1711_1581_72.jpg)
+-Figure 2 Shape of the membrane in Example 1 at various values of $t$.
+-
+-It is important to note in Example 1 that, in contrast to the case of a vibrating string, the motion of the membrane is not periodic in $t$. This is due to the fact that the characteristic frequencies are not harmonically relatedthey are not integer multiples of a fixed frequency. Thus the superposition of the normal modes is not periodic.
++```scientific-figure
++id: 06026029-1fa3-4e6a-92a0-d0daaec76f6f
++numbered: false
++title: ""
++caption: Figure 2 Shape of the membrane in Example 1 at various values of $t$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-57_580_1711_1581_72.jpg
++    caption: ""
++```
++
++
++It is important to note in Example 1 that, in contrast to the case of a vibrating string, the motion of the membrane is not periodic in $t$. This is due to the fact that the characteristic frequencies are not harmonically related: they are not integer multiples of a fixed frequency. Thus the superposition of the normal modes is not periodic.
+ 
+ ## Nodal Lines
+ 
+@@ -268,67 +316,85 @@
+ 
+ For example, when $a=b=1$, the nodal line for $u_{21}$ is the line $x=\frac{1}{2}$. The nodal lines for $u_{22}$ are $x=\frac{1}{2}$ and $y=\frac{1}{2}$. The nodal lines for $u_{32}$ are $x=\frac{1}{3}$, $x=\frac{2}{3}, y=\frac{1}{2}$ (Figure 3).
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_380_528_1350_118.jpg)
+-Figure 3 Nodal lines for $u_{21}, u_{22}, u_{32}$.
+-
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_383_546_1347_685.jpg)
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_380_533_1350_1264.jpg)
++```scientific-figure
++id: 218583cf-bda0-460c-86f2-249e5b81fa7b
++numbered: false
++title: ""
++caption: Figure 3 Nodal lines for $u_{21}, u_{22}, u_{32}$.
++captionVisible: true
++captionPosition: below
++columns: 3
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_380_528_1350_118.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_383_546_1347_685.jpg
++    caption: ""
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-58_380_533_1350_1264.jpg
++    caption: ""
++```
++
+ 
+ ## Two Dimensional Heat Equation
+ 
+ We end this section by stating the solution of the two dimensional heat equation with homogeneous boundary conditions. This two dimensional heat problem models the distribution of temperature in a thin rectangular plate with insulated faces, edges kept at zero temperature, and with an initial temperature distribution $f(x, y)$. The solution of the problem is based on the separation of variables technique and follows step by step the solution of the two dimensional wave equation. The details are outlined in the exercises.
+ 
+-SOLUTION OF THE TWO DIMENSIONAL HEAT EQUATION FOR A RECTANGLE
+-
+-The solution of the two dimensional heat equation
+-
+-$$
+-\frac{\partial u}{\partial t}=c^{2}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}\right), \quad 0<x<a, \quad 0<y<b, \quad t>0
+-$$
+-
+-with boundary conditions
+-
+-$$
+-u(0, y, t)=u(a, y, t)=0, \quad 0<y<b, \quad t>0
+-$$
+-
+-(12)
+-
+-$$
+-u(x, 0, t)=u(x, b, t)=0, \quad 0<x<a, \quad t>0
+-$$
+-
+-and initial condition
+-
+-$$
+-u(x, y, 0)=f(x, y), \quad 0<x<a, \quad 0<y<b
+-$$
+-
+-is
+-
+-$$
+-u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} A_{m n} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y e^{-\lambda_{m n}^{2} t},
+-$$
+-
+-where
+-
+-$$
+-\lambda_{m n}=c \pi \sqrt{\frac{m^{2}}{a^{2}}+\frac{n^{2}}{b^{2}}}
+-$$
+-
+-and
+-
+-$$
+-\begin{gathered}
+-A_{m n}=\frac{4}{a b} \int_{0}^{b} \int_{0}^{a} f(x, y) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y d x d y \\
+-m, n=1,2, \ldots
+-\end{gathered}
+-$$
+-
+-## EXAMPLE 2 A two dimensional heat problem
+-
+-Solve the heat problem in a square plate with $a=b=1$, and $c=\frac{1}{\pi}$. Assume that the edges are kept at zero temperature and the initial temperature distribution is $u(x, y, 0)=100^{\circ}$.
+-Solution We have
++> [!equation|266f946b-4282-5c79-87dc-ec1a646cc15e.local at=c731967c-40af-5851-84f1-cbdfeb170fba] Double sine series solution of the heat equation on a rectangle with zero edge temperatures
++> Let $a,b,c>0$ and $f\in L^2((0,a)\times(0,b))$. The solution of the two dimensional heat equation
++>
++> $$
++> \frac{\partial u}{\partial t}=c^{2}\left(\frac{\partial^{2} u}{\partial x^{2}}+\frac{\partial^{2} u}{\partial y^{2}}\right), \quad 0<x<a, \quad 0<y<b, \quad t>0
++> $$
++>
++> with boundary conditions
++>
++> $$
++> u(0, y, t)=u(a, y, t)=0, \quad 0<y<b, \quad t>0
++> $$
++>
++>
++> $$
++> u(x, 0, t)=u(x, b, t)=0, \quad 0<x<a, \quad t>0
++> $$
++>
++> and initial condition
++>
++> $$
++> u(x, y, 0)=f(x, y), \quad 0<x<a, \quad 0<y<b
++> $$
++>
++> is
++>
++> $$
++> u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} A_{m n} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y e^{-\lambda_{m n}^{2} t},
++> $$
++>
++> where
++>
++> $$
++> \lambda_{m n}=c \pi \sqrt{\frac{m^{2}}{a^{2}}+\frac{n^{2}}{b^{2}}}
++> $$
++>
++> and
++>
++> $$
++> \begin{gathered}
++> A_{m n}=\frac{4}{a b} \int_{0}^{b} \int_{0}^{a} f(x, y) \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y d x d y \\
++> m, n=1,2, \ldots
++> \end{gathered}
++> $$
++>
++>
++>
++> The initial condition is attained in $L^2$ as $t\downarrow0$. For positive time the exponential factors regularize the series; at interior continuity points of bounded piecewise smooth data the initial limit is pointwise.
++
++*Printed equation labels: (11) heat equation; (12) zero edge temperatures; (13) double sine-series solution; (14) decay parameters; (15) Fourier coefficients.*
++
++> [!exercise|f64b5ece-817e-5678-8567-5f9b94f4851c.local at=56e5b379-6512-5f97-9b41-a4b5da1cacb8] EXAMPLE 2 A two dimensional heat problem
++> Solve the heat problem in a square plate with $a=b=1$, and $c=\frac{1}{\pi}$. Assume that the edges are kept at zero temperature and the initial temperature distribution is $u(x, y, 0)=100^{\circ}$.
++
++##### solution
++
++We have
+ 
+ $$
+ u(x, y, t)=\sum_{n=1}^{\infty} \sum_{m=1}^{\infty} A_{m n} \sin m \pi x \sin n \pi y e^{-\lambda_{m n}^{2} t}
+@@ -351,57 +417,121 @@
+ 
+ Figure 4 shows the temperature distribution in the plate at various values of $t$. Note how the temperature smooths out across the membrane and tends to zero. This is precisely what we would expect in view of the boundary conditions (zero temperature).
+ 
+-![](./images/e7203df9-f76c-453b-be1e-147d5ba42d96-60_610_1738_558_58.jpg)
+-Figure 4 Temperature distribution in Example 2 at various times (using a partial sum with $k$ and $l$ running from 0 to 4). The first picture approximates the initial temperature distribution. Note the zero temperature on the boundary for $t>0$.
+-
+-## Exercises 3.7
+-
+-In Exercises 1-8, (a) solve the boundary value problem (1)-(3) with $a=b=1$, $c=1 / \pi$, and the given functions $f$ and $g$.
+-(b) Plot a partial sum of the series solution at various values of to illustrate the vibrations of the membrane. Include the graph at $t=0$ and compare it to the graph of $f(x, y)$.
+-
+-1. $f(x, y)=\sin 3 \pi x \sin \pi y, g(x, y)=0$.
+-2. $f(x, y)=\sin \pi x \sin \pi y, g(x, y)=\sin \pi x$.
+-3. $f(x, y)=x(1-x) y(1-y), g(x, y)=2 \sin \pi x \sin 2 \pi y$.
+-4. $f(x, y)=x \cos \frac{\pi x}{2} y(1-y), g(x, y)=1$.
+-5. $f(x, y)=0, g(x, y)=1$.
+-6. $f(x, y)=0, g(x, y)=x(1-y)$.
+-7. $f(x, y)=x\left(1-e^{x-1}\right) y\left(1-y^{2}\right), g(x, y)=0$.
+-8. $f(x, y)=\sin (x y) \cos \frac{\pi x}{2} \sin \pi y, g(x, y)=0$.
+-
+-In Exercises 9-10, find and plot the nodal lines for the given function.
+-9. $u(x, y, t)=\sin 4 \pi x \sin \pi y \cos t, 0<x<1,0<y<1$.
+-10. $u(x, y, t)=\sin \frac{3 \pi}{2} x \sin \pi y \sin \sqrt{2} t, 0<x<2,0<y<1$.
+-
+-In Exercises 11-14, solve the heat equation (11) in a unit square ( $a=b=1$ ) with the given initial temperature distribution $f$. Assume that the edges are kept at zero temperature and that $c=1$.
+-11. $f(x, y)=100$.
+-12. $f(x, y)=x(1-x) y(1-y)$.
+-13. $f(x, y)=\sin \pi x \sin \pi y$
+-14.
+-
+-$$
+-f(x, y)= \begin{cases}1 & \text { if } y \leq x \\ 0 & \text { otherwise }\end{cases}
+-$$
+-
+-15. (a) Take $c=1$ in Example 2 and plot the solutions for various values of $t$.
+-
+-Approximate how long it will take for the maximum temperature in the plate to drop to $50^{\circ}$.
+-(b) What is the answer if $c=2$ ? What is your conclusion about the speed of heat transfer as a function of $c$ ?
+-16. Establish relations (6) and (7) (orthogonality and normalization of the functions $\sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y$ ).
+-17. Project Problem: In this exercise we derive (13), the solution of the heat problem.
+-(a) Show that if we assume $u=X(x) Y(y) T(t)$ then the separation of variables method yields
+-
+-$$
+-\begin{gathered}
+-X^{\prime \prime}+\mu^{2} X=0, \quad X(0)=0, \quad X(a)=0 \\
+-Y^{\prime \prime}+\nu^{2} Y=0, \quad Y(0)=0, \quad Y(b)=0 \\
+-T^{\prime}+c^{2}\left(\mu^{2}+\nu^{2}\right) T=0
+-\end{gathered}
+-$$
+-
+-(b) Obtain the product solutions
+-
+-$$
+-u_{m n}(x, y, t)=A_{m n} e^{-c^{2}\left[\left(\frac{m \pi}{a}\right)^{2}+\left(\frac{n \pi}{b}\right)^{2}\right] t} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y .
+-$$
+-
+-(c) Given the initial temperature distribution $f(x, y)$, derive (13)-(15) using Theorem 1.
++```scientific-figure
++id: 5aa6ed59-7a4f-474e-bc18-7b6f47dea889
++numbered: false
++title: ""
++caption: Figure 4 Temperature distribution in Example 2 at various times (using a partial sum with $k$ and $l$ running from 0 to 4). The first picture approximates the initial temperature distribution. Note the zero temperature on the boundary for $t>0$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/e7203df9-f76c-453b-be1e-147d5ba42d96-60_610_1738_558_58.jpg
++    caption: ""
++```
++
++
++## Exercises 11.7
++
++
++> [!prompt|cf6c7f06-5619-5a77-8d63-c9b1eca7e8fd.local at=5ec825cb-7bc3-526d-9848-75a8384e03d4] Shared exercise instructions
++> In Exercises 1-8, (a) solve the boundary value problem (1)-(3) with $a=b=1$, $c=1 / \pi$, and the given functions $f$ and $g$.
++> (b) Plot a partial sum of the series solution at various values of $t$ to illustrate the vibrations of the membrane. Include the graph at $t=0$ and compare it to the graph of $f(x, y)$.
++
++
++> [!exercise|c929ad02-f3e4-53e2-a2d5-b511d6666055.local at=23a1594f-2992-56a5-a06f-3bfa46909c29] Exercise 1
++> $f(x, y)=\sin 3 \pi x \sin \pi y, g(x, y)=0$.
++
++
++> [!exercise|1539d061-f3fa-5a7f-8443-97889a15b664.local at=057fd6f6-e479-5cbf-9924-a6af2415862e] Exercise 2
++> $f(x, y)=\sin \pi x \sin \pi y, g(x, y)=\sin \pi x$.
++
++
++> [!exercise|a04117bc-284c-5604-a09b-4db9f71f64e0.local at=005e5be0-d231-5794-84d3-a9cddb30a683] Exercise 3
++> $f(x, y)=x(1-x) y(1-y), g(x, y)=2 \sin \pi x \sin 2 \pi y$.
++
++
++> [!exercise|bd104901-e529-5219-87ef-301e946f96a5.local at=a099f2cd-33b2-51ca-96f9-11b20fe98511] Exercise 4
++> $f(x, y)=x \cos \frac{\pi x}{2} y(1-y), g(x, y)=1$.
++
++
++> [!exercise|808a4982-b59b-5855-a8ac-d739150a82a6.local at=0e0461e1-9de1-5813-bd1f-442c5f9cff8b] Exercise 5
++> $f(x, y)=0, g(x, y)=1$.
++
++
++> [!exercise|96db539d-377e-59f5-bd7c-5620cbeb874a.local at=85de1292-206e-5fee-8195-239445d91cc2] Exercise 6
++> $f(x, y)=0, g(x, y)=x(1-y)$.
++
++
++> [!exercise|bf7506fb-476d-5eca-b46b-918eed3453c6.local at=9f354dae-1cd7-5e3e-9d3d-a221d63b906e] Exercise 7
++> $f(x, y)=x\left(1-e^{x-1}\right) y\left(1-y^{2}\right), g(x, y)=0$.
++
++
++> [!exercise|a1088c94-a83c-5a18-82a6-18a2cd4a88ac.local at=f6430ece-fc0c-5313-b4cf-c300af833d9b] Exercise 8
++> $f(x, y)=\sin (x y) \cos \frac{\pi x}{2} \sin \pi y, g(x, y)=0$.
++
++
++> [!prompt|ddf51a01-7e90-5943-85f2-5fedd6e644d3.local at=1d47a7de-0abb-58f0-a926-67d3bbadbdbb] Shared exercise instructions
++> In Exercises 9-10, find and plot the nodal lines for the given function.
++
++
++> [!exercise|8bca4f43-7b15-50ab-8007-d19c38c1a107.local at=7d793782-d76c-5b7d-b45e-e31c31d5e783] Exercise 9
++> $u(x, y, t)=\sin 4 \pi x \sin \pi y \cos t, 0<x<1,0<y<1$.
++
++
++> [!exercise|475a6861-a1ac-5422-ad14-036949e3dceb.local at=2e63a6c9-d93f-52bd-8e4a-838884b8c9b2] Exercise 10
++> $u(x, y, t)=\sin \frac{3 \pi}{2} x \sin \pi y \sin \sqrt{2} t, 0<x<2,0<y<1$.
++
++
++> [!prompt|997d7ba2-f69b-54a3-bfcf-85dc8b3f92af.local at=10d5288f-55b0-53ce-bf5d-e963d9759e1f] Shared exercise instructions
++> In Exercises 11-14, solve the heat equation (11) in a unit square ( $a=b=1$ ) with the given initial temperature distribution $f$. Assume that the edges are kept at zero temperature and that $c=1$.
++
++
++> [!exercise|3e8db85b-acd0-5b4d-b8c7-a41af71b6ecd.local at=90a65158-d069-5628-a7b9-9e8245dd6f2a] Exercise 11
++> $f(x, y)=100$.
++
++
++> [!exercise|5b2e6e08-853a-54e9-861a-b441a62b4d73.local at=dba964ac-7974-5357-8f52-61c4db908621] Exercise 12
++> $f(x, y)=x(1-x) y(1-y)$.
++
++
++> [!exercise|60b29711-467b-568f-8f60-ceb2b7074967.local at=a050c30f-bb5b-5ea7-93d2-ec0d1465c3b2] Exercise 13
++> $f(x, y)=\sin \pi x \sin \pi y$
++
++
++> [!exercise|8b4ec96e-e475-59f5-9ba7-11da833f5d71.local at=e55b3893-a421-57d9-819e-8608c01cd7ac] Exercise 14
++> $$
++> f(x, y)= \begin{cases}1 & \text { if } y \leq x \\ 0 & \text { otherwise }\end{cases}
++> $$
++
++
++> [!exercise|e0889e79-e141-5d13-8816-34ebeba4a478.local at=5b9ec604-f6bc-551c-9404-1045c4a32b26] Exercise 15
++> (a) Take $c=1$ in Example 2 and plot the solutions for various values of $t$.
++>
++> Approximate how long it will take for the maximum temperature in the plate to drop to $50^{\circ}$.
++> (b) What is the answer if $c=2$ ? What is your conclusion about the speed of heat transfer as a function of $c$ ?
++
++
++> [!exercise|6cd248bf-3f3b-5093-b05f-ba6c6fe4e335.local at=496aca50-7436-59f4-a717-78c51ab32d82] Exercise 16
++> Establish relations (6) and (7) (orthogonality and normalization of the functions $\sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y$ ).
++
++
++> [!exercise|279d2d25-32ee-57ef-845c-c915e1b333b5.local at=e8305a77-d90f-5a8f-9123-2f0c16546f90] Exercise 17
++> Project Problem: In this exercise we derive (13), the solution of the heat problem.
++> (a) Show that if we assume $u=X(x) Y(y) T(t)$ then the separation of variables method yields
++>
++> $$
++> \begin{gathered}
++> X^{\prime \prime}+\mu^{2} X=0, \quad X(0)=0, \quad X(a)=0 \\
++> Y^{\prime \prime}+\nu^{2} Y=0, \quad Y(0)=0, \quad Y(b)=0 \\
++> T^{\prime}+c^{2}\left(\mu^{2}+\nu^{2}\right) T=0
++> \end{gathered}
++> $$
++>
++> (b) Obtain the product solutions
++>
++> $$
++> u_{m n}(x, y, t)=A_{m n} e^{-c^{2}\left[\left(\frac{m \pi}{a}\right)^{2}+\left(\frac{n \pi}{b}\right)^{2}\right] t} \sin \frac{m \pi}{a} x \sin \frac{n \pi}{b} y .
++> $$
++>
++> (c) Given the initial temperature distribution $f(x, y)$, derive (13)-(15) using Theorem 1.
+
+`````

@@ -199,3 +199,920 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.2 Sturm-Liouville Theory.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-admission-20261107/baseline/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.2 Sturm-Liouville Theory.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.2 Sturm-Liouville Theory.md
+@@ -1,29 +1,54 @@
++
+ ### 14.2 Sturm-Liouville Theory
+ 
+ In this section we explore the interplay between orthogonal functions, orthogonal expansions, and differential equations. We study the so-called Sturm-Liouville problems, which comprise a general class of boundary value problems with sets of solutions that have the property of being mutually orthogonal. Moreover, a given function can be expressed as a generalized Fourier series in terms of these sets of orthogonal solutions.
+ 
+-A regular Sturm-Liouville problem is a boundary value problem on a closed finite interval $[a, b]$ of the form
+-
+-## REGULAR STURM-LIOUVILLE PROBLEM
+-
+-$$
+-\begin{aligned}
+-& {\left[p(x) y^{\prime}\right]^{\prime}+[q(x)+\lambda r(x)] y=0, \quad a<x<b} \\
+-& \text { (a) }\left\{\begin{array}{c}
+-c_{1} y(a)+c_{2} y^{\prime}(a)=0 \\
+-d_{1} y(b)+d_{2} y^{\prime}(b)=0
+-\end{array}\right.
+-\end{aligned}
+-$$
+-
+-where at least one of $c_{1}$ and $c_{2}$ and at least one of $d_{1}$ and $d_{2}$ are nonzero, and $\lambda$ is a parameter. Equation (1) is said to be in Sturm-Liouville form. We further assume the regularity conditions: $p(x), p^{\prime}(x), q(x)$, and $r(x)$ are continuous on the closed interval $a \leq x \leq b$, with $p(x)>0$ and $r(x)>0$ for $a \leq x \leq b$. Often there is no need to mention the interval $a<x<b$ explicitly, since $a$ and $b$ can be understood from the boundary conditions.
+-
+-A singular Sturm-Liouville problem is a boundary value problem consisting of equation (1) either on a finite interval where at least one of the regularity properties fails or on an infinite interval. In this case the boundary conditions are not always described by sets of equations like (2a) and (2b). Typically, a Sturm-Liouville problem is singular either because it occurs on an infinite interval, or because one or more of the coefficients goes to 0 or $\infty$ at an endpoint of the interval, or both. Indeed, it is convenient to require that $p(x), p^{\prime}(x), q(x)$, and $r(x)$ are continuous on the open interval $a<x<b$, with $p(x)>0$ and $r(x)>0$ for $a<x<b$. This will be the case for all singular problems encountered in this book. We illustrate with some examples.
+-
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-10_303_442_1477_61.jpg)
++> [!definition|805bda36-235a-5169-9a2a-98b17eeb0c50.local at=8918ebfe-774e-5419-b917-6a9b41241c57] Regular Sturm-Liouville Problem
++> A regular Sturm-Liouville problem is a boundary value problem on a closed finite interval $[a, b]$ of the form
++>
++> $$
++> \begin{aligned}
++> & {\left[p(x) y^{\prime}\right]^{\prime}+[q(x)+\lambda r(x)] y=0, \quad a<x<b} \\
++> & \text { (a) }\left\{\begin{array}{c}
++> c_{1} y(a)+c_{2} y^{\prime}(a)=0 \\
++> d_{1} y(b)+d_{2} y^{\prime}(b)=0
++> \end{array}\right.
++> \end{aligned}
++> $$
++>
++> where all coefficients are real, at least one of $c_{1}$ and $c_{2}$ and at least one of $d_{1}$ and $d_{2}$ are nonzero, and $\lambda$ is a parameter. The differential equation is said to be in Sturm-Liouville form. We further assume the regularity conditions: $p(x), p^{\prime}(x), q(x)$, and $r(x)$ are continuous on the closed interval $a \leq x \leq b$, with $p(x)>0$ and $r(x)>0$ for $a \leq x \leq b$.
++
++*Printed equation labels: (1) differential equation; (2) separated endpoint conditions.*
++
++> [!definition|56de0eb2-bd59-5c60-bcac-93664c7073f9.local at=f989c2af-ea26-5bc3-9ccf-f756a65490e0] Singular Sturm–Liouville Problem
++> A singular Sturm-Liouville problem is a boundary value problem consisting of $(py')'+(q+\lambda r)y=0$ either on a finite interval where at least one of the regularity properties fails or on an infinite interval. In this case the boundary conditions are not always described by sets of equations like $c_1y(a)+c_2y'(a)=0$ and $d_1y(b)+d_2y'(b)=0$. Typically, a Sturm-Liouville problem is singular either because it occurs on an infinite interval, or because one or more of the coefficients goes to 0 or $\infty$ at an endpoint of the interval, or both. Indeed, it is convenient to require that $p(x), p^{\prime}(x), q(x)$, and $r(x)$ are continuous on the open interval $a<x<b$, with $p(x)>0$ and $r(x)>0$ for $a<x<b$.
++
++We illustrate with some examples.
++
++```scientific-figure
++id: 51e7aa3c-e5df-4fe0-bf27-66513f6e7056
++numbered: false
++title: ""
++caption: ""
++captionVisible: false
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-10_303_442_1477_61.jpg
++    caption: ""
++```
++
++
+ Figure $1 \sinh x$ is always increasing.
+ 
+-## EXAMPLE 1 Classical singular Sturm-Liouville problems
++> [!exercise|22874f50-df5b-57ec-bf7b-c1a8044617ea.local at=df7cb063-9fef-5dfd-a4be-0f1c2ce4fc8d] EXAMPLE 1 Classical singular Sturm-Liouville problems
++> Put the following equations in Sturm–Liouville form and explain their singular endpoints:
++>
++> (a) Legendre's equation $(1-x^2)y''-2xy'+n(n+1)y=0$ on $(-1,1)$.
++>
++> (b) The parametric Bessel equation $x^2y''+xy'+(\lambda^2x^2-p^2)y=0$ on $(0,a)$, with $y(a)=0$ and the regular bounded solution at $0$.
++
++##### solution
+ 
+ (a) Legendre's equation $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+n(n+1) y=0$ can be put in the Sturm-Liouville form
+ 
+@@ -32,7 +57,7 @@
+ $$
+ 
+ with $p(x)=1-x^{2}, q(x)=0, r(x)=1$, and $\lambda=n(n+1)$. Note that $p( \pm 1)=0$, and so one of the regularity conditions is not satisfied.
+-(b) Parametric form of Bessel's equation This refers to equation (18) in Section 4.8. It is easy to check that this equation can be put in the Sturm-Liouville form
++(b) Parametric form of Bessel's equation This refers to equation (18) in Section 12.8. It is easy to check that this equation can be put in the Sturm-Liouville form
+ 
+ $$
+ \left[x y^{\prime}\right]^{\prime}+\left[-\frac{p^{2}}{x}+\lambda^{2} x\right] y=0, \quad 0<x<a, \quad y(a)=0 .
+@@ -42,25 +67,24 @@
+ 
+ Clearly $y=0$ is a solution of every Sturm-Liouville problem. The nonzero solutions of a Sturm-Liouville problem are called the eigenfunctions of the problem, and those values of $\lambda$ for which nonzero solutions can be found are called the eigenvalues. In Example 2 we see how to determine eigenvalues and eigenfunctions.
+ 
+-## EXAMPLE 2 A regular Sturm-Liouville problem
+-
+-Find the eigenvalues and corresponding eigenfunctions of the Sturm-Liouville problem
+-
+-$$
+-y^{\prime \prime}+\lambda y=0, \quad y(0)=y(\pi)=0 .
+-$$
+-
+-Solution This differential equation fits the form of (1) with $p(x)=1, q(x)=0$, and $r(x)=1$. In the boundary conditions, $a=0$ and $b=\pi$, with $c_{1}=d_{1}=1$ and $c_{2}=d_{2}=0$, so this is a regular Sturm-Liouville problem.
+-
+-We seek nonzero solutions of the problem. As is often the case with SturmLiouville problems, the nature of the solution depends on the sign of $\lambda$, so we consider three cases.
++> [!exercise|822b7471-e4d3-570b-a0af-79250ddd305c.local at=c6fc2aaa-7062-54e8-8452-06d58e4ecf3d] EXAMPLE 2 A regular Sturm-Liouville problem
++> Find the eigenvalues and corresponding eigenfunctions of the Sturm-Liouville problem
++>
++> $$
++> y^{\prime \prime}+\lambda y=0, \quad y(0)=y(\pi)=0 .
++> $$
++
++##### solution
++
++This differential equation fits the form of (1) with $p(x)=1, q(x)=0$, and $r(x)=1$. In the boundary conditions, $a=0$ and $b=\pi$, with $c_{1}=d_{1}=1$ and $c_{2}=d_{2}=0$, so this is a regular Sturm-Liouville problem.
++
++We seek nonzero solutions of the problem. As is often the case with Sturm-Liouville problems, the nature of the solution depends on the sign of $\lambda$, so we consider three cases.
+ 
+ CASE 1: $\lambda<0$. Let us write $\lambda=-\alpha^{2}$, where $\alpha>0$. Then the equation becomes $y^{\prime \prime}-\alpha^{2} y=0$, and its general solution is $y=c_{1} \sinh \alpha x+c_{2} \cosh \alpha x$. We need $y(0)=0$, so substituting into the general solution gives $c_{2}=0$. Now using the condition $y(\pi)=0$, we get $0=c_{1} \sinh \alpha \pi$, and since $\sinh x \neq 0$ unless $x=0$ (see Figure 1), we infer that $c_{1}=0$. Thus there are no nonzero solutions in this case.
+ 
+ CASE 2: $\lambda=0$. Here the general solution of the differential equation is $y= c_{1} x+c_{2}$, and as in Case 1 the boundary conditions force $c_{1}$ and $c_{2}$ to be 0 . Thus again there is no nonzero solution.
+ CASE 3: $\lambda>0$. In this case we can write $\lambda=\alpha^{2}$ with $\alpha>0$, and so the equation becomes $y^{\prime \prime}+\alpha^{2} y=0$. The general solution is $y=c_{1} \cos \alpha x+c_{2} \sin \alpha x$. From $y(0)=0$ we get $0=c_{1} \cos 0+c_{2} \sin 0$, or $0=c_{1}$. Thus $y=c_{2} \sin \alpha x$. Now we substitute the other boundary condition to get $0=c_{2} \sin \alpha \pi$. Since we are seeking
+ 
+-# THEOREM 1 EIGENVALUES OF REGULAR STURM-LIOUVILLE PROBLEMS 
+-
+ nonzero solutions, we take $c_{2} \neq 0$. Thus we must have $\sin \alpha \pi=0$, and hence $\alpha=1,2,3, \ldots$. This means that, since $\lambda=\alpha^{2}$, the problem has eigenvalues
+ 
+ $$
+@@ -77,14 +101,18 @@
+ 
+ We now describe some fundamental properties of eigenvalues and eigenfunctions of regular Sturm-Liouville problems, all of which are illustrated by the solution to Example 2. In that example, the eigenvalues form an increasing sequence of real numbers. Moreover, to each eigenvalue there corresponds just one linearly independent eigenfunction. For instance, when $\lambda=4$ in Example 2, the corresponding eigenfunctions are all of the form $c_{2} \sin 2 x$; that is, they are all multiples of $\sin 2 x$. It can be checked easily that the eigenfunctions $\sin x, \sin 2 x, \sin 3 x, \ldots$ form an orthogonal set over the interval $0<x<\pi$. As Theorems 1 and 2 below indicate, these observations hold for all regular second order Sturm-Liouville problems. The proofs of these theorems are found in Ordinary Differential Equations, 2nd ed., by G. Birkhoff and G. Rota, Wiley, 1969.
+ 
+-The eigenvalues of a regular Sturm-Liouville problem are all real and form an increasing sequence
+-
+-$$
+-\lambda_{1}<\lambda_{2}<\lambda_{3}<\cdots
+-$$
+-
+-where $\lambda_{j} \rightarrow \infty$ as $j \rightarrow \infty$.
+-Our next result deals with the orthogonality of eigenfunctions. This property holds for regular as well as some singular Sturm-Liouville problems. To understand the reason behind the orthogonality property, we start by deriving some consequences of the boundary conditions (2), in regular SturmLiouville problems.
++> [!theorem|61c35791-6311-5925-97b4-7fa5400e592a.local at=f895caa3-0a82-5476-a777-7964874444e1] Eigenvalues of Regular Sturm-Liouville Problems
++> Let $a<b$ be finite, with real $p\in C^1[a,b]$, $q,r\in C[a,b]$, and $p,r>0$. The regular Sturm–Liouville problem is $(py')'+(q+\lambda r)y=0$, with real separated boundary conditions $c_1y(a)+c_2y'(a)=0$, $d_1y(b)+d_2y'(b)=0$, where neither coefficient pair is zero.
++>
++> The eigenvalues of a regular Sturm-Liouville problem are all real and form an increasing sequence
++>
++> $$
++> \lambda_{1}<\lambda_{2}<\lambda_{3}<\cdots
++> $$
++>
++> where $\lambda_{j} \rightarrow \infty$ as $j \rightarrow \infty$.
++
++Our next result deals with the orthogonality of eigenfunctions. This property holds for regular as well as some singular Sturm-Liouville problems. To understand the reason behind the orthogonality property, we start by deriving some consequences of the boundary conditions (2), in regular Sturm-Liouville problems.
+ 
+ Let $\lambda_{j}$ and $\lambda_{k}$ be two distinct eigenvalues of the regular Sturm-Liouville problem (1)-(2), and let $y_{j}$ and $y_{k}$ denote their corresponding eigenfunctions. From (2a) we have
+ 
+@@ -110,8 +138,6 @@
+ \end{array}\right] .
+ $$
+ 
+-## CONDITION FOR ORTHOGONALITY IN SINGULAR STURM-LIOUVILLE PROBLEMS
+-
+ Since not both $c_{1}$ and $c_{2}$ are 0 , we must have that
+ 
+ $$
+@@ -125,30 +151,37 @@
+ 
+ $$
+ p(b)\left(y_{k}(b) y_{j}^{\prime}(b)-y_{j}(b) y_{k}^{\prime}(b)\right)-p(a)\left(y_{k}(a) y_{j}^{\prime}(a)-y_{j}(a) y_{k}^{\prime}(a)\right)=0
++\tag{3}
+ $$
+ 
+ As you will see from the proof of Theorem 2, it is precisely this equation that will imply the orthogonality of the eigenfunctions.
+ 
+ In singular problems, since we may be dealing with infinite intervals, or with functions that may be unbounded near the endpoints, instead of (2) we will require a condition similar to (3), but stated using limits as follows.
+ 
+-$$
+-\begin{aligned}
+-& \text { Suppose that } y_{1} \text { and } y_{2} \text { are eigenfunctions of a Sturm-Liouville problem, } \\
+-& \text { corresponding to two distinct eigenvalues } \lambda_{1} \text { and } \lambda_{2} \text {, respectively. We require } \\
+-& \text { that } \\
+-& (4) \\
+-& \lim _{x \uparrow b} p(x)\left(y_{1}(x) y_{2}^{\prime}(x)-y_{2}(x) y_{1}^{\prime}(x)\right)-\lim _{x \downarrow a} p(x)\left(y_{1}(x) y_{2}^{\prime}(x)-y_{2}(x) y_{1}^{\prime}(x)\right)=0 .
+-\end{aligned}
+-$$
++> [!property|9d63ccb8-773a-5f08-9aac-aef50c8976b2.local at=abc50dbe-ec5f-50e5-b5c6-79eeb9d6d04e] Condition for Orthogonality in Singular Sturm-Liouville Problems
++> Let real functions $y_1,y_2$ solve $(py_j')'+(q+\lambda_jr)y_j=0$ on $(a,b)$ for distinct real parameters $\lambda_1,\lambda_2$, where $p\in C^1$, $q,r$ are continuous and real, and $p,r>0$ in the interior. Assume $y_1,y_2\in L^2((a,b),r\,dx)$ and the endpoint limits below exist. If
++>
++> $$
++> \lim_{x\uparrow b}p(x)(y_1y_2'-y_2y_1')
++> -\lim_{x\downarrow a}p(x)(y_1y_2'-y_2y_1')=0,
++> $$
++>
++> then $\int_a^b y_1(x)y_2(x)r(x)\,dx=0$.
++
++*Printed equation label: (4).*
+ 
+ As we just noted, (4) reduces to (3) for regular Sturm-Liouville problems, and thus it holds for regular Sturm-Liouville problems. It also holds in many important singular problems, such as Legendre's and Bessel's equations (see Example 3, below).
+ 
+ For another interesting example where (4) holds, consider the case of (1) when $a$ and $b$ are both finite and $p(a)=p(b)>0$. Instead of (2), we require that $y(a)=y(b)$ and $y^{\prime}(a)=y^{\prime}(b)$. These conditions appear frequently in applications. They are called periodic boundary conditions. It is easy to verify that (4) holds in this case.
+-(a) Each eigenvalue of a regular Sturm-Liouville problem has just one linearly independent eigenfunction corresponding to it.
+-(b) Eigenfunctions corresponding to different eigenvalues of a regular Sturm-Liouville problem are orthogonal with respect to the weight function $r(x)$. This assertion is also valid for the other Sturm-Liouville problems allowed by condition (4).
+-
+-[^0]The reason we can use a Wronskian argument to prove the linear dependence of $y_{1}$ and $y_{2}$ is because $y_{1}$ and $y_{2}$ are eigenfunctions corresponding to the same eigenvalue, and hence they are solutions of the same ordinary differential equation. This argument will not work with eigenfunctions corresponding to distinct eigenvalues.
+-at one point to show that $W\left(y_{1}, y_{2}\right)=0$ (Theorem 7 , Appendix A.1), so let us evaluate the Wronskian at $x=a$. We have
++> [!theorem|d47be7bf-422c-5bf2-adb7-8da618a5954a.local at=6572f4b5-3e07-592c-be0b-5f9a7b965356] Simplicity and Orthogonality for Regular Separated Sturm–Liouville Problems
++> Let $a<b$ be finite, with real $p\in C^1[a,b]$, $q,r\in C[a,b]$, and $p,r>0$. The regular Sturm–Liouville problem is $(py')'+(q+\lambda r)y=0$, with real separated boundary conditions $c_1y(a)+c_2y'(a)=0$, $d_1y(b)+d_2y'(b)=0$, where neither coefficient pair is zero.
++>
++> (a) Each eigenvalue of a regular Sturm-Liouville problem has just one linearly independent eigenfunction corresponding to it.
++> (b) Eigenfunctions corresponding to different eigenvalues of a regular Sturm-Liouville problem are orthogonal with respect to the weight function $r(x)$. This assertion is also valid for singular Sturm-Liouville problems when the endpoint boundary form $[p(y_1y_2^{\prime}-y_2y_1^{\prime})]_a^b$ vanishes and the weighted inner product exists.
++
++### Proof
++
++(a) Suppose $y_1,y_2$ are eigenfunctions for the same eigenvalue $\lambda$. We show they are linearly dependent by proving their Wronskian vanishes. Because they solve the same second-order linear ODE, it is enough to show that the Wronskian is zero at one point (Section 10.1). Evaluate it at $x=a$:
+ 
+ $$
+ W\left(y_{1}, y_{2}\right)(a)=\left|\begin{array}{ll}
+@@ -191,6 +224,7 @@
+ = & p(b)\left[y_{k}(b) y_{j}^{\prime}(b)-y_{j}(b) y_{k}^{\prime}(b)\right] \\
+ & -p(a)\left[y_{k}(a) y_{j}^{\prime}(a)-y_{j}(a) y_{k}^{\prime}(a)\right]
+ \end{aligned}
++\tag{5}
+ $$
+ 
+ Appealing to (4), we see that the right side of (5) is 0 . Since $\lambda_{k}-\lambda_{j} \neq 0$, we infer that
+@@ -209,10 +243,17 @@
+ with periodic boundary conditions $y(-\pi)=y(\pi), y^{\prime}(-\pi)=y^{\prime}(\pi)$ has eigenvalues $\lambda_{n}=n^{2}, n=0,1,2, \ldots$ and for each $\lambda_{n}$ with $n \geq 1$ there are two
+ linearly independent eigenfunctions $\sin n x$ and $\cos n x$ (see Exercise 14). In general, as illustrated by this example, in any second-order Sturm-Liouville problem, each eigenvalue has at most two linearly independent eigenfunctions corresponding to it. This is a consequence of the fact that we are dealing with a second-order differential equation.
+ 
+-## EXAMPLE 3 Legendre polynomials and Bessel functions
+-
+-(a) Looking back at Example 1(a), we see that, when Legendre's equation is put in Sturm-Liouville form, the function $p(x)=1-x^{2}$ satisfies $p( \pm 1)=0$. Thus (4) holds, and so Theorem 2 implies that its eigenfunctions, the Legendre polynomials, $P_{n}(x)(n=0,1,2, \ldots)$, are orthogonal on the interval $(-1,1)$ with respect to the weight function $r(x) \equiv 1$.
+-(b) In Example 1(b), we put the parametric form of Bessel's equation in SturmLiouville form and obtained the functions $p(x)=x$ and $r(x)=x$. Using the fact that $p(0)=0$ and $y(R)=0$, we see that (4) holds. Thus Theorem 2 implies that the solutions of this equation, $J_{p}\left(\frac{\alpha_{p j}}{R} x\right), j=1,2, \ldots$, are orthogonal on the interval $(0, R)$ with respect to the weight function $r(x)=x$.
++> [!exercise|78061395-c282-5eb5-935a-102e904ded0b.local at=5c5f75fd-3c41-51c5-a4a6-26abad7f4c4a] EXAMPLE 3 Legendre polynomials and Bessel functions
++> Use the vanishing boundary form to explain orthogonality for:
++>
++> (a) Legendre polynomials on $(-1,1)$.
++>
++> (b) $J_p(\alpha_{pj}x/R)$ on $(0,R)$ with weight $x$, where $p\ge0$, $R>0$, and $\alpha_{pj}$ are the positive zeros of $J_p$.
++
++##### solution
++
++(a) Looking back at Example 1(a), we see that, when Legendre's equation is put in Sturm-Liouville form, the function $p(x)=1-x^{2}$ satisfies $p( \pm 1)=0$. The polynomials and their derivatives are finite at the endpoints, so the boundary form vanishes. Thus the orthogonality theorem implies that its eigenfunctions, the Legendre polynomials, $P_{n}(x)(n=0,1,2, \ldots)$, are orthogonal on the interval $(-1,1)$ with respect to the weight function $r(x) \equiv 1$.
++(b) In Example 1(b), we put the parametric form of Bessel's equation in Sturm-Liouville form and obtained the functions $p(x)=x$ and $r(x)=x$. For the regular Bessel solutions of order $p\ge0$, their small-$x$ behavior gives $x(y_jy_k'-y_ky_j')\to0$ as $x\downarrow0$; at $R$ both solutions vanish. Thus the boundary-form condition holds. Thus Theorem 2 implies that the solutions of this equation, $J_{p}\left(\frac{\alpha_{p j}}{R} x\right), j=1,2, \ldots$, are orthogonal on the interval $(0, R)$ with respect to the weight function $r(x)=x$.
+ 
+ It is interesting to note that we do not have to impose a boundary condition (other than boundedness) at one of the singular points in (a) or (b). We do not apply a boundary condition at $\rho=0$ in cylindrical problems with Bessel functions, or at $x= \pm 1$ for Legendre polynomials.
+ 
+@@ -220,30 +261,31 @@
+ 
+ From Theorem 2 it follows that if $\lambda_{1}<\lambda_{2}<\lambda_{3}<\cdots$ is the set of eigenvalues for a regular Sturm-Liouville problem, then a corresponding set of eigenfunctions $\left\{y_{1}, y_{2}, y_{3}, \ldots\right\}$ is orthogonal with respect to the weight function $r(x)$. Thus, as in Section 14.1, we can find orthogonal expansions for suitable functions in terms of $y_{1}, y_{2}, y_{3}, \ldots$. More precisely, we have the following fundamental result in Sturm-Liouville theory. Recall that the inner product ( $y_{j}, y_{k}$ ) with weight $r(x)$ is defined as $\int_{a}^{b} y_{j} y_{k} r(x) d x$ and that the norm $\left\|y_{j}\right\|$ is $\sqrt{\left(y_{j}, y_{j}\right)}$.
+ 
+-## THEOREM 3 EIGENFUNCTION EXPANSIONS
+-
+-Let $y_{1}, y_{2}, y_{3}, \ldots$ be the collection of eigenfunctions for a regular SturmLiouville problem on an interval $[a, b]$. If $f$ is piecewise smooth on the interval $[a, b]$, then we have $f(x)=\sum_{j=1}^{\infty} A_{j} y_{j}(x)$, where
+-
+-$$
+-A_{j}=\frac{\left(f, y_{j}\right)}{\left\|y_{j}\right\|^{2}}=\int_{a}^{b} f(x) y_{j}(x) r(x) d x / \int_{a}^{b} y_{j}^{2}(x) r(x) d x
+-$$
+-
+-For $a<x<b$, the series converges to $f(x)$ if $f$ is continuous at $x$, and to $\frac{f(x+-)+f(x-)}{2}$ otherwise.
+-
+-The series expansion is called the eigenfunction expansion of the func-
+-tion $f$, and the coefficients $A_{j}$ are called generalized Fourier coefficients. Fourier sine (for the corresponding regular Sturm-Liouville problem, see Example 2 above) and cosine expansions provide illustrations of this theorem. The full proof of Theorem 3 is beyond the scope of this book. But we can derive the formula for the $A_{j}$ 's from Theorem 2 of Section 14.1. Beyond this, it is clear that much more is true. We have already seen that the conclusion of this theorem is valid for the singular cases of Legendre and Bessel series. Thus, Legendre series and Bessel series are examples of eigenfunction expansions. Similarly, the example of Fourier series shows that the conclusion also holds in a case where periodic boundary conditions are imposed.
+-
+-Eigenfunction expansions arise naturally in the solution of applied problems. For example, when we studied heat conduction in a bar with one radiating end (Example 2, Section 3.6), we encountered a regular SturmLiouville problem. As a further illustration, which demonstrates the role of the boundary conditions in determining the eigenvalues and eigenfunctions, we solve a related problem with altered boundary conditions.
+-
+-## EXAMPLE 4 Eigenvalues and eigenfunctions
+-
+-Find the eigenvalues and eigenfunctions of the regular Sturm-Liouville problem
+-
+-$$
+-X^{\prime \prime}+\lambda X=0, \quad X^{\prime}(0)=0, X(1)+X^{\prime}(1)=0 .
+-$$
+-
+-Solution If $\lambda=0$, the general solution of the differential equation is $X=a x+b$. It is easy to check that the only way to satisfy the boundary conditions is to take $a= b=0$. Thus $\lambda=0$ is not an eigenvalue since no nontrivial solutions exist. If $\lambda<0$, the general solution of the differential equation is $X=c_{1} \cosh \sqrt{-\lambda} x+c_{2} \sinh \sqrt{-\lambda} x$. It is a straightforward exercise to check that no nontrivial solution of this form will satisfy the boundary conditions. Thus there are no negative eigenvalues. When $\lambda>0$, for convenience, we set $\lambda=\mu^{2}$ and find that the general solution of the differential equation is
++> [!theorem|9fd91445-18fe-55d1-9aaa-1205e1e63c0d.local at=3a24cf97-788d-544f-8042-dca7da7b4f8f] Eigenfunction Expansions
++> Let $a<b$ be finite, with real $p\in C^1[a,b]$, $q,r\in C[a,b]$, and $p,r>0$. The regular Sturm–Liouville problem is $(py')'+(q+\lambda r)y=0$, with real separated boundary conditions $c_1y(a)+c_2y'(a)=0$, $d_1y(b)+d_2y'(b)=0$, where neither coefficient pair is zero.
++>
++> Let $y_{1}, y_{2}, y_{3}, \ldots$ be the collection of eigenfunctions for a regular Sturm-Liouville problem on an interval $[a, b]$. If $f$ is piecewise smooth on the interval $[a, b]$, then we have $f(x)=\sum_{j=1}^{\infty} A_{j} y_{j}(x)$, where
++>
++> $$
++> A_{j}=\frac{\left(f, y_{j}\right)}{\left\|y_{j}\right\|^{2}}=\int_{a}^{b} f(x) y_{j}(x) r(x) d x / \int_{a}^{b} y_{j}^{2}(x) r(x) d x
++> $$
++>
++> For $a<x<b$, the series converges to $f(x)$ if $f$ is continuous at $x$, and to $\frac{f(x+)+f(x-)}{2}$ otherwise.
++
++The series expansion is called the eigenfunction expansion of the function $f$, and the coefficients $A_{j}$ are called generalized Fourier coefficients. Fourier sine (for the corresponding regular Sturm-Liouville problem, see Example 2 above) and cosine expansions provide illustrations of this theorem. The full proof of Theorem 3 is beyond the scope of this book. But we can derive the formula for the $A_{j}$ 's from Theorem 2 of Section 14.1. Beyond this, it is clear that much more is true. We have already seen that the conclusion of this theorem is valid for the singular cases of Legendre and Bessel series. Thus, Legendre series and Bessel series are examples of eigenfunction expansions. Similarly, the example of Fourier series shows that the conclusion also holds in a case where periodic boundary conditions are imposed.
++
++Eigenfunction expansions arise naturally in the solution of applied problems. For example, when we studied heat conduction in a bar with one radiating end (Example 2, Section 11.6), we encountered a regular Sturm-Liouville problem. As a further illustration, which demonstrates the role of the boundary conditions in determining the eigenvalues and eigenfunctions, we solve a related problem with altered boundary conditions.
++
++> [!exercise|344edaf4-60fd-55f4-9977-1ad03b4684e7.local at=879b43f7-a48d-573e-a042-ee1de4e9a028] EXAMPLE 4 Eigenvalues and eigenfunctions
++> Find the eigenvalues and eigenfunctions of the regular Sturm-Liouville problem
++>
++> $$
++> X^{\prime \prime}+\lambda X=0, \quad X^{\prime}(0)=0, X(1)+X^{\prime}(1)=0 .
++> $$
++
++##### solution
++
++If $\lambda=0$, the general solution of the differential equation is $X=a x+b$. It is easy to check that the only way to satisfy the boundary conditions is to take $a= b=0$. Thus $\lambda=0$ is not an eigenvalue since no nontrivial solutions exist. If $\lambda<0$, the general solution of the differential equation is $X=c_{1} \cosh \sqrt{-\lambda} x+c_{2} \sinh \sqrt{-\lambda} x$. It is a straightforward exercise to check that no nontrivial solution of this form will satisfy the boundary conditions. Thus there are no negative eigenvalues. When $\lambda>0$, for convenience, we set $\lambda=\mu^{2}$ and find that the general solution of the differential equation is
+ 
+ $$
+ X=A \cos \mu x+B \sin \mu x
+@@ -268,6 +310,7 @@
+ 
+ $$
+ \cot \mu=\mu .
++\tag{6}
+ $$
+ 
+ Thus the eigenvalues $\lambda=\mu^{2}$ correspond to the positive roots $\mu$ of this equation. If we plot the graphs of $y=\cot \mu$ and $y=\mu$, we see that these graphs intersect infinitely often (see Figure 2 for an illustration). Thus, (6) has infinitely many
+@@ -279,14 +322,27 @@
+ 
+ The eigenvalues are $\mu_{1}^{2}, \mu_{2}^{2}, \ldots, \mu_{n}^{2}, \ldots$.
+ 
+-Figure 2 Roots of $\cot \mu=\mu$.
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-16_520_1022_410_647.jpg)
+-
+-## EXAMPLE 5 Eigenfunction expansions
+-
+-(a) Compute the first five eigenfunctions $X_{1}(x), X_{2}(x), \ldots, X_{5}(x)$ in Example 4 explicitly.
+-(b) Given $f(x)=x(1-x), 0<x<1$. What is the eigenfunction expansion of $f$ ? Plot $f$ and some partial sums of the eigenfunction expansion.
+-Solution (a) Figure 2 shows the graphs of $y=\cot \mu$ and $y=\mu$. According to the solution of Example 4, to find the eigenvalues, we must solve the equation $\cot \mu=\mu$. With the help of a computer system, we find the first five solutions to be approximately
++```scientific-figure
++id: 2d341d8a-95d5-4b64-a7b5-113a97e60b37
++numbered: false
++title: ""
++caption: Figure 2 Roots of $\cot \mu=\mu$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-16_520_1022_410_647.jpg
++    caption: ""
++```
++
++
++> [!exercise|ea56c127-229b-5f9d-a63a-fa22262bee2d.local at=cab6fd1f-6190-5bd5-9408-774552f14b61] EXAMPLE 5 Eigenfunction expansions
++> (a) Compute the first five eigenfunctions $X_{1}(x), X_{2}(x), \ldots, X_{5}(x)$ in Example 4 explicitly.
++> (b) Given $f(x)=x(1-x), 0<x<1$. What is the eigenfunction expansion of $f$ ? Plot $f$ and some partial sums of the eigenfunction expansion.
++
++##### solution
++
++(a) Figure 2 shows the graphs of $y=\cot \mu$ and $y=\mu$. According to the solution of Example 4, to find the eigenvalues, we must solve the equation $\cot \mu=\mu$. With the help of a computer system, we find the first five solutions to be approximately
+ 
+ $$
+ \mu_{1}=0.860, \mu_{2}=3.426, \mu_{3}=6.437, \mu_{4}=9.529, \mu_{5}=12.645 .
+@@ -328,88 +384,181 @@
+ \end{aligned}
+ $$
+ 
+-Figure 3 Eigenfunction expansion of $f(x)=x(1-x)$.
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-17_449_822_421_795.jpg)
++```scientific-figure
++id: 09937c11-ceae-4a9e-8244-da81d1c90f57
++numbered: false
++title: ""
++caption: Figure 3 Eigenfunction expansion of $f(x)=x(1-x)$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-17_449_822_421_795.jpg
++    caption: ""
++```
++
+ 
+ As guaranteed by Theorem 3 and illustrated in Figure 3, the partial sums of the eigenfunction expansion converge to $f(x)$.
+ 
+ Further information about the eigenfunctions in Examples 4 and 5 can be obtained by quoting results from this section. For example, Theorem 2 implies the orthogonality of these eigenfunctions on the interval $(0,1)$.
+ 
+-The problem that we consider next arises in the solution a heat equation on a disk with Robin-type boundary conditions (Exercise 35). We will use a notation that reflects this connection with the heat equation.
+-
+-## EXAMPLE 6 Bessel's equation with Robin conditions
+-
+-Find the eigenvalues and eigenfunctions of the singular Sturm-Liouville problem
+-
+-$$
+-r R^{\prime \prime}+R^{\prime}+\lambda^{2} r R=0 \quad(0 \leq r<a), \quad R^{\prime}(a)=-\kappa R(a) .
+-$$
+-
+-Here $\kappa>0$ is a heat transfer constant or coefficient, and $a>0$ is the radius of the disk. Note that we do not give a boundary condition at the 0 endpoint. Instead, we usually require that the solutions be bounded in the interval $[0, a]$.
+-Solution We recognize the equation as a parametric form of Bessel's equation of order 0 (see Theorem 3, Section 4.8). Its bounded solutions in the interval $[0, a]$ are of the form
++The problem that we consider next arises in the solution of a heat equation on a disk with Robin-type boundary conditions (Exercise 35). We will use a notation that reflects this connection with the heat equation.
++
++> [!exercise|ecec2a6f-a99e-5ce9-a2bf-d69e28f3e531.local at=a4989a15-48d1-50ec-99d2-a0f73bb2c58a] EXAMPLE 6 Bessel's equation with Robin conditions
++> Find the eigenvalues and eigenfunctions of the singular Sturm-Liouville problem
++>
++> $$
++> r R^{\prime \prime}+R^{\prime}+\lambda^{2} r R=0 \quad(0 \leq r<a), \quad R^{\prime}(a)=-\kappa R(a) .
++> $$
++>
++> Here $\kappa>0$ is a heat transfer constant or coefficient, and $a>0$ is the radius of the disk. Note that we do not give a boundary condition at the 0 endpoint. Instead, we usually require that the solutions be bounded in the interval $[0, a]$.
++
++##### solution
++
++We recognize the equation as a parametric form of Bessel's equation of order 0 (see Theorem 3, Section 12.8). Its bounded solutions in the interval $[0, a]$ are of the form
+ 
+ $$
+ R(r)=J_{0}(\lambda r)
+ $$
+ 
+-where the eigenvalue $\lambda$ is determined from the boundary condition:
++where the positive spectral parameter $\lambda$ (the Sturm–Liouville eigenvalue is $\lambda^2$) is determined from the boundary condition:
+ 
+ $$
+ R^{\prime}(a)=-\kappa R(a) \Rightarrow \lambda J_{0}^{\prime}(\lambda a)=-\kappa J_{0}(\lambda a) .
+ $$
+ 
+-Does this equation have infinitely many solutions in $\lambda$ ? Using facts from calculus and properties of Bessel functions, it is not difficult to show that the answer is affirmative (Exercise 36). Here we shall give an approximation of the roots. Using the formula $J_{0}^{\prime}(x)=-J_{1}(x)((1)$, Section 4.8), the equation becomes
++Does this equation have infinitely many solutions in $\lambda$ ? Using facts from calculus and properties of Bessel functions, it is not difficult to show that the answer is affirmative (Exercise 36). Here we shall give an approximation of the roots. Using the formula $J_{0}^{\prime}(x)=-J_{1}(x)((1)$, Section 12.8), the equation becomes
+ 
+ $$
+ \lambda J_{1}(a \lambda)=\kappa J_{0}(a \lambda)
++\tag{7}
+ $$
+ 
+ The graphs in Figure 4 suggest that indeed we do have infinitely many roots $\lambda=\lambda_{k}$, $k=1,2, \ldots$. The first six of these, for the case $\kappa=a=1$, are shown in Table 1.
+ 
+-| $k$ | 1 | 2 | 3 | 4 | 5 | 6 |
+-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+-| $\lambda_{k}$ | 1.25578 | 4.07948 | 7.1558 | 10.271 | 13.3984 | 16.5312 |
+-
+-Table 1. Positive roots of $\lambda J_{1}(\lambda)=J_{0}(\lambda)$.
+-
+-The fact that the roots of the equations $J_{0}(\lambda)=\lambda J_{1}(\lambda)$ and $-\lambda=\tan (\lambda+\pi / 4)$ are approximately equal can be used to estimate the eigenvalues in Example 6. For example, by considering the vertical asymptotes of the tangent, can you justify the claim that, for large $k, \lambda_{k} \approx \frac{\pi}{4}+k \pi$ ?
+-
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-18_406_595_578_553.jpg)
+-Figure 4
+-
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-18_404_588_580_1195.jpg)
+-Figure 5
+-
+-A more accurate description of the eigenvalues can be obtained by appealing to the asymptotic formulas for Bessel functions (Theorem 3, Section 4.9). We have $J_{0}(\lambda) \sim \sqrt{\frac{2}{\pi \lambda}} \cos \left(\lambda-\frac{\pi}{4}\right)$ and $J_{1}(\lambda) \sim \sqrt{\frac{2}{\pi \lambda}} \cos \left(\lambda-\frac{\pi}{4}-\frac{\pi}{2}\right)$. Hence the roots of $\lambda J_{1}(a \lambda)=\kappa J_{0}(a \lambda)$ are approximately the roots of the equation $\lambda \cos \left(a \lambda-\frac{3 \pi}{4}\right)= \kappa \cos \left(a \lambda-\frac{\pi}{4}\right) ;$ and since $\cos \left(a \lambda-\frac{3 \pi}{4}\right)=-\cos \left(a \lambda+\frac{\pi}{4}\right)$ and $\cos \left(a \lambda-\frac{\pi}{4}\right)=\sin \left(a \lambda+\frac{\pi}{4}\right)$, the equation becomes
++```scientific-table
++id: 03c1aaad-db07-4390-b6f7-91ce3c66fa9a
++numbered: false
++title: ""
++caption: Table 1. Positive roots of $\lambda J_{1}(\lambda)=J_{0}(\lambda)$.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $k$
++    - text: "1"
++    - text: "2"
++    - text: "3"
++    - text: "4"
++    - text: "5"
++    - text: "6"
++  - - text: $\lambda_{k}$
++    - text: "1.25578"
++    - text: "4.07948"
++    - text: "7.1558"
++    - text: "10.271"
++    - text: "13.3984"
++    - text: "16.5312"
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
++
++The fact that the roots of the equations $J_{0}(\lambda)=\lambda J_{1}(\lambda)$ and $-\lambda=\tan (\lambda+\pi / 4)$ are approximately equal can be used to estimate the eigenvalues in Example 6. For example, by considering the vertical asymptotes of the tangent, can you justify the claim that, for large $k, \lambda_{k} \approx \frac{\pi}{4}+(k-1)\pi$ ?
++
++```scientific-figure
++id: cebb8227-779d-42b8-ba91-e047ec0ba964
++numbered: false
++title: ""
++caption: Figure 4
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-18_406_595_578_553.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: c00f6ab7-b24c-40fa-80f6-ad72d79c3c68
++numbered: false
++title: ""
++caption: Figure 5
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-18_404_588_580_1195.jpg
++    caption: ""
++```
++
++
++A more accurate description of the eigenvalues can be obtained by appealing to the asymptotic formulas for Bessel functions (Theorem 3, Section 12.9). We have $J_{0}(\lambda) \sim \sqrt{\frac{2}{\pi \lambda}} \cos \left(\lambda-\frac{\pi}{4}\right)$ and $J_{1}(\lambda) \sim \sqrt{\frac{2}{\pi \lambda}} \cos \left(\lambda-\frac{\pi}{4}-\frac{\pi}{2}\right)$. Hence the roots of $\lambda J_{1}(a \lambda)=\kappa J_{0}(a \lambda)$ are approximately the roots of the equation $\lambda \cos \left(a \lambda-\frac{3 \pi}{4}\right)= \kappa \cos \left(a \lambda-\frac{\pi}{4}\right) ;$ and since $\cos \left(a \lambda-\frac{3 \pi}{4}\right)=-\cos \left(a \lambda+\frac{\pi}{4}\right)$ and $\cos \left(a \lambda-\frac{\pi}{4}\right)=\sin \left(a \lambda+\frac{\pi}{4}\right)$, the equation becomes
+ 
+ $$
+ -\frac{1}{\kappa} \lambda=\tan \left(a \lambda+\frac{\pi}{4}\right) .
++\tag{8}
+ $$
+ 
+ The first six roots of this equation with $\kappa=a=1$ (denoted $\alpha_{k}$ ) are shown in Table 2 (Figure 5), whose entries should be compared with the entries in Table 1 (Figure 4):
+ 
+-| $k$ | 1 | 2 | 3 | 4 | 5 | 6 |
+-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+-| $\alpha_{k}$ | 1.40422 | 4.16275 | 7.20647 | 10.3069 | 13.4261 | 16.5537 |
+-
+-Table 2. Positive roots of $-\lambda=\tan \left(\lambda+\frac{\pi}{4}\right)$.
+-
+-Because the asymptotic formulas for Bessel functions give better results for larger values of $\lambda$, the entries in Table 2 give a much better approximation for larger eigenvalues. To each eigenvalue $\lambda_{k}$ corresponds one eigenfunction $R_{k}(r)=J_{0}\left(\lambda_{k} r\right)$. We took $\kappa=a=1$ and plotted the eigenfunctions for $k=1,2$, and 3 in Figure 6. These should not be confused with the Bessel functions that arise from the solution of the heat equation on a disk, with 0 boundary condition. The latter are equal to 0 when $r=a$, which is not the case with the functions shown in Figure 6.
+-
+-![](./images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-19_414_458_627_33.jpg)
+-Figure 6 Eigenfunctions in Examples 6 and 7.
+-
+-## EXAMPLE 7 Orthogonality
+-
+-Show that the eigenfunctions in Example 6 are orthogonal on the interval ( $0, a$ ), with respect to the weight $r$. More explicitely, show that
+-
+-$$
+-\int_{0}^{a} J_{0}\left(\lambda_{j} r\right) J_{0}\left(\lambda_{k} r\right) r d r=0 \quad(j \neq k)
+-$$
+-
+-where $\lambda_{k}(k=1,2, \ldots)$ are the positive roots of (7).
+-
+-Solution It is enough to show that condition (4) is satisfied. The Sturm-Liouville form of the equation is (recall the result of Example 1(b) with order $p=0$ ):
++```scientific-table
++id: 201a5659-b40b-4e69-a2c6-b548d8ea9ae1
++numbered: false
++title: ""
++caption: Table 2. Positive roots of $-\lambda=\tan \left(\lambda+\frac{\pi}{4}\right)$.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: $k$
++    - text: "1"
++    - text: "2"
++    - text: "3"
++    - text: "4"
++    - text: "5"
++    - text: "6"
++  - - text: $\alpha_{k}$
++    - text: "1.40422"
++    - text: "4.16275"
++    - text: "7.20647"
++    - text: "10.3069"
++    - text: "13.4261"
++    - text: "16.5537"
++headerRows: 1
++rowHeaders: true
++style: scientific
++```
++
++
++Because the asymptotic formulas for Bessel functions give better results for larger values of $\lambda$, the entries in Table 2 give a much better approximation for larger eigenvalues. To each eigenvalue $\lambda_k^2$ corresponds one eigenfunction $R_{k}(r)=J_{0}\left(\lambda_{k} r\right)$. We took $\kappa=a=1$ and plotted the eigenfunctions for $k=1,2$, and 3 in Figure 6. These should not be confused with the Bessel functions that arise from the solution of the heat equation on a disk, with 0 boundary condition. The latter are equal to 0 when $r=a$, which is not the case with the functions shown in Figure 6.
++
++```scientific-figure
++id: 00c5c241-6847-42ae-acee-077ad76a2a63
++numbered: false
++title: ""
++caption: Figure 6 Eigenfunctions in Examples 6 and 7.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/images/28f4ed6f-dce0-442f-8bed-abc918ef4e83-19_414_458_627_33.jpg
++    caption: ""
++```
++
++
++> [!exercise|f7f425dc-d07e-5ea0-955e-c8a5546bd7a2.local at=c7e7e697-0b6d-5210-820c-3f5d9210aae6] EXAMPLE 7 Orthogonality
++> Show that the eigenfunctions in Example 6 are orthogonal on the interval ( $0, a$ ), with respect to the weight $r$. More explicitly, show that
++>
++> $$
++> \int_{0}^{a} J_{0}\left(\lambda_{j} r\right) J_{0}\left(\lambda_{k} r\right) r d r=0 \quad(j \neq k)
++> $$
++>
++> where $\lambda_{k}(k=1,2, \ldots)$ are the positive roots of (7).
++
++##### solution
++
++It is enough to show that condition (4) is satisfied. The Sturm-Liouville form of the equation is (recall the result of Example 1(b) with order $p=0$ ):
+ 
+ $$
+ \left[r R^{\prime}\right]^{\prime}+\lambda^{2} r R=0, \quad 0<r<a, \quad R^{\prime}(a)=-\kappa R(a) .
+@@ -435,111 +584,224 @@
+ 
+ which is a true statement. Hence (4) holds, and by Theorem 2 the eigenfunctions are orthogonal with respect to the weight $r$.
+ 
+-Additional properties of the eigenfunctions in Examples 6 and 7 will be investigated in the exercises. In particlar, the completeness property of the eigenfunctions will be illustrated by studying the convergence of specific eigenfunction expansions.
++Additional properties of the eigenfunctions in Examples 6 and 7 will be investigated in the exercises. In particular, the completeness property of the eigenfunctions will be illustrated by studying the convergence of specific eigenfunction expansions.
+ 
+ In Section 14.4, we will study Sturm-Liouville problems associated with differential equations of order 4. This generalization is motivated by our later study of the vibrations of a beam which will require the solution of such problems.
+ 
+-## Exercises 6.2
+-
+-In Exercises 1-10, put the given equation in Sturm-Liouville form and decide whether the problem is regular or singular.
+-
+-1. $x y^{\prime \prime}+y^{\prime}+\lambda y=0, y(0)=0, y(1)=0$.
+-2. $x y^{\prime \prime}+y^{\prime}+\lambda y=0, y(1)=0, y(2)=0$.
+-3. $x y^{\prime \prime}+2 y^{\prime}+\lambda y=0, y(1)=0, y^{\prime}(2)=0$. [Hint: Multiply by $x$.]
+-4. $y^{\prime \prime}+(x+\lambda) y=0, y(0)=0, y(1)=0$.
+-5. $x y^{\prime \prime}-y^{\prime}+\lambda x y=0, y(0)=0, y(1)=0$. [Hint: Divide by $x^{2}$.]
+-6. $y^{\prime \prime}+\left[\frac{1+\lambda x}{x}\right] y=0, y(1)=0, y(2)=0$.
+-7. $y^{\prime \prime}+\lambda x y=0, y(-1)=0, y(1)=0$.
+-8. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+(1+\lambda x) y=0, y(-1)=0, y(1)=0$.
+-9. $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+\lambda y=0, y(-1)=0, y(1)=0$.
+-10. $y^{\prime \prime}-\frac{x}{1-x^{2}} y^{\prime}+\lambda y=0, y(-1)=0, y(1)=0$.
+-
+-In Exercises 11-20, determine the eigenvalues and eigenfunctions of the given SturmLiouville problem.
+-11. $y^{\prime \prime}+\lambda y=0, y(0)=0, y(2 \pi)=0$.
+-12. $y^{\prime \prime}+\lambda y=0, y(0)=0, y(\pi / 2)=0$.
+-13. $y^{\prime \prime}+\lambda y=0, y(0)=0, y^{\prime}(\pi)=0$.
+-14. $y^{\prime \prime}+\lambda y=0, y(-\pi)=y(\pi), y^{\prime}(-\pi)=y^{\prime}(\pi)$.
+-15. $y^{\prime \prime}+\lambda y=0, y(0)=0, y(\pi)+y^{\prime}(\pi)=0$.
+-16. $y^{\prime \prime}+\lambda y=0, y(0)+y^{\prime}(0)=0, y(2 \pi)=0$.
+-17. $y^{\prime \prime}+\lambda y=0, y(0)+y^{\prime}(0)=0, y(1)+y^{\prime}(1)=0$.
+-18. $y^{\prime \prime}+\lambda y=0, y(0)+2 y^{\prime}(0)=0, y(1)=0$.
+-19. $x y^{\prime \prime}+y^{\prime}+\left[-\frac{4}{x}+\lambda x\right] y=0,0<x<1, y(0)$ is finite, $y(1)=0$.
+-20. $x y^{\prime \prime}+y^{\prime}+\left[-\frac{1}{x}+\lambda x\right] y=0,0<x<3, y(0)$ is finite, $y(3)=0$.
+-21. Show that the boundary value problem $y^{\prime \prime}-\lambda y=0, y(0)=0, y(1)=0$ has no positive eigenvalues. Does this contradict Theorem 1?
+-22. Show that the boundary value problem $y^{\prime \prime}-\lambda y=0, y(0)+y^{\prime}(0)=0, y(1)+ y^{\prime}(1)=0$ has one positive eigenvalue. Does this contradict Theorem 1?
+-23. (a) Find the eigenfunction expansion of the function $f(x)=x, 0<x<\pi$, using the eigenfunctions of the Sturm-Liouville problem of Example 2.
+-(b) Plot the function and several partial sums of the eigenfunction expansion and comment on the graphs.
+-24. Repeat Exercise 23 with the function $f(x)=1,0<x<\pi$.
+-25. Repeat Exercise 23 with the function $f(x)=\sin x, 0<x<\pi$.
+-26. (a) Approximate the numerical values of the first eight eigenvalues in the Sturm-Liouville problem of Exercise 15, and describe the corresponding eigenfunctions.
+-(b) Approximate the first eight nonzero terms of the eigenfunction expansion of $\sin x$. Plot the function and several partial sums of the expansion. Describe what is happening in the picture that you obtain.
+-27. Expand the function $f(x)=1,0<x<\pi$, in a series in terms of the eigenfunctions of Exercise 26. Plot the function and the partial sums of the eigenfunction expansion and comment on the graphs.
+-28. Expand the function $f(x)=\sin \pi x, 0<x<1$, in a series in terms of the eigenfunctions of Example 5. Plot the function and the partial sums of the eigenfunction expansion and comment on the graphs.
+-29. Verify the orthogonality of the eigenfunctions of Exercise 11.
+-30. Verify numerically the orthogonality of the eigenfunctions of Example 5.
+-31. The second order, linear ordinary differential equation
+-
+-$$
+-\left(1-x^{2}\right) y^{\prime \prime}-x y^{\prime}+n^{2} y=0, \quad-1<x<1
+-$$
+-
+-where $n=0,1,2, \ldots$, is known as Chebyshev's differential equation. We are interested in solving this equation with the boundary conditions $y(1)=1$ and $y^{\prime}(1)$ is finite.
+-(a) Put the equation in Sturm-Liouville form and determine $p(x), q(x)$, and $r(x)$.
+-[Hint: First, divide through by $\left(1-x^{2}\right)^{1 / 2}$.]
+-(b) Use the power series method, as we did in Section 5.5 with Legendre's equation, and show that Chebyshev's equation has one polynomial solution of degree $n$. The one that satisfies $y(1)=1$ is called the Chebyshev polynomial of degree $n$ and is denoted by $T_{n}(x)$.
+-
+-It is a fact that the derivative of the nonpolynomial solution is not bounded at $x=1$. Thus $T_{n}(x)$ is the only solution that satisfies the boundary conditions.
+-(c) Using (4), show that the Chebyshev polynomials are orthogonal on $(-1,1)$ with respect to the weight function $r(x)=\frac{1}{\sqrt{1-x^{2}}}$.
+-32. (a) Show that the change of variables $x=\cos \theta$ transforms Chebyshev's equation into $y^{\prime \prime}+n^{2} y=0,0<\theta<\pi$.
+-(b) Conclude that two linearly independent solutions of Chebyshev's equation are $y_{1}(x)=y_{1}(\cos \theta)=\cos n \theta$ and $y_{2}(x)=y_{2}(\cos \theta)=\sin n \theta$
+-(c) Show that $y_{2}^{\prime}(x)$ is not bounded at $x=1$. Hence $y_{1}(x)=\cos n \theta$ is the only solution that satisfies $y(1)=1$ and $y^{\prime}(1)$ is finite. Conclude that $T_{n}(x)=\cos n \theta$. As you know, $\cos n \theta$ can be expressed as a polynomial in $\cos \theta$. This polynomial expression is precisely $T_{n}(x)$ : for example, $T_{1}(x)=\cos \theta=x ; T_{2}(x)=\cos 2 \theta= 2 \cos ^{2} \theta-1=2 x^{2}-1$, and so on.
+-(d) Find $T_{3}(x)$ and $T_{4}(x)$.
+-33. (a) Show that the eigenfunctions in Example 6 satisfy
+-
+-$$
+-\int_{0}^{a}\left[J_{0}\left(\lambda_{k} r\right)\right]^{2} r d r=\frac{a^{2}}{2}\left(\left[J_{0}\left(\lambda_{k} a\right)\right]^{2}+\left[J_{1}\left(\lambda_{k} a\right)\right]^{2}\right)
+-$$
+-
+-[Hint: Exercise 36(b), Section 4.8.]
+-(b) Suppose that you know that the eigenfunctions form a complete set of orthogonal functions on the interval $(0, a)$. Show that if
+-
+-$$
+-f(r)=\sum_{k=1}^{\infty} A_{k} J_{0}\left(\lambda_{k} r\right) \quad(0 \leq r<a)
+-$$
+-
+-then
+-
+-$$
+-A_{k}=\frac{2}{a^{2}\left(\left[J_{0}\left(\lambda_{k} a\right)\right]^{2}+\left[J_{1}\left(\lambda_{k} a\right)\right]^{2}\right)} \int_{0}^{a} f(r) J_{0}\left(\lambda_{k} r\right) r d r
+-$$
+-
+-34. Consider the eigenfunctions in the preceeding exercise, and take $a=\kappa=1$. (a) Derive the following eigenfunction expansion of $f(r)=100$ for $0 \leq r<1$ :
+-
+-$$
+-100=200 \sum_{k=1}^{\infty} \frac{J_{1}\left(\lambda_{k}\right)}{\lambda_{k}\left(\left[J_{0}\left(\lambda_{k}\right)\right]^{2}+\left[J_{1}\left(\lambda_{k}\right)\right]^{2}\right)} J_{0}\left(\lambda_{k} r\right)
+-$$
+-
+-(b) Show that $J_{1}\left(\lambda_{k}\right)=\frac{J_{0}\left(\lambda_{k}\right)}{\lambda_{k}}$ and conclude that $0 \leq r<1$ :
+-
+-$$
+-100=200 \sum_{k=1}^{\infty} \frac{J_{0}\left(\lambda_{k}\right)}{\left(1+\lambda_{k}^{2}\right)\left[J_{0}\left(\lambda_{k}\right)\right]^{2}} J_{0}\left(\lambda_{k} r\right)
+-$$
+-
+-(c) Use the numerical values from Table 1 to obtain a six-term partial sum approximation of the function in part (b). Plot this partial sum to illustrate the convergence of the eigenfunction expansion.
+-35. Project Problem: Heat problem on a disk with Robin conditions. Use the method of separation of variable to solve the heat equation on a disk of unit radius
+-
+-$$
+-\frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}, \quad 0 \leq r<1, t>0,
+-$$
+-
+-with initial temperature distribution $u(r, 0)=100(0 \leq r<1)$, and Robin boundary condition
+-
+-$$
+-\left.\frac{\partial u}{\partial r}(r, t)\right|_{r=1}=-u(1, t) .
+-$$
+-
+-The problem models the temperature distribution in a plate with insulated lateral surface, whose boundary is exchanging heat with the surrounding medium at a rate proportional to the temperature at the boundary. Here the heat transfer constant or convection constant $\kappa$ is equal to 1 .
+-36. Fix $a, \kappa>0$ and let $h(\lambda)=\kappa J_{0}(a \lambda)+\lambda J_{0}^{\prime}(a \lambda)$, and $\lambda_{1}$ and $\lambda_{2}$ be two distinct consecutive zeros of $J_{0}(a \lambda)$ such that $0<\lambda_{1}<\lambda_{2}$.
+-(a) Show that $h\left(\lambda_{1}\right)=\lambda_{1} J_{0}^{\prime}\left(a \lambda_{1}\right), h\left(\lambda_{2}\right)=\lambda_{2} J_{0}^{\prime}\left(a \lambda_{2}\right)$ and that $h\left(a \lambda_{1}\right)$ and $h\left(a \lambda_{2}\right)$ have opposite signs. [Hint: Since $\lambda_{1}, \lambda_{2}>0$, it is enough to argue that the values of the derivative of $J_{0}$ at two consecutive roots of $J_{0}$ must have opposite signs.]
+-(b) Conclude that $h(a \lambda)=0$ for some $\lambda_{3}$ in the interval $\left(\lambda_{1}, \lambda_{2}\right)$.
+-(c) Using the fact that $J_{0}(a \lambda)$ has infinitely many positive zeros, show that $\kappa J_{0}(a \lambda)+ J_{0}^{\prime}(a \lambda)=0$ has infinitely many positive roots.
++## Exercises 14.2
++
++
++> [!prompt|c30c00d5-168e-57ae-81ae-8f1ae6c47f58.local at=66f44aaf-1c62-5d5d-be53-f205873f7518] Shared exercise instructions
++> In Exercises 1–10, put the given equation in Sturm–Liouville form and classify the endpoints. Also check the positive-weight hypothesis: the weights in Exercises 7 and 8 change sign, so these two problems fall outside the positive-weight theory stated here.
++
++
++> [!exercise|a91bb166-24dc-5721-b5e6-76ac4195564a.local at=176a2495-e607-56ad-ac5e-c49f970851c4] Exercise 1
++> $x y^{\prime \prime}+y^{\prime}+\lambda y=0, y(0)=0, y(1)=0$.
++
++
++> [!exercise|83e5c3e9-0543-551e-b550-4302458d8582.local at=9f492a98-ead9-51ca-bce0-2e2d57e6104b] Exercise 2
++> $x y^{\prime \prime}+y^{\prime}+\lambda y=0, y(1)=0, y(2)=0$.
++
++
++> [!exercise|780d176b-b08d-51dd-a55c-ddec0ad2fbe7.local at=aab5eef9-74b7-53a7-a0f4-0c220773eba0] Exercise 3
++> $x y^{\prime \prime}+2 y^{\prime}+\lambda y=0, y(1)=0, y^{\prime}(2)=0$. [Hint: Multiply by $x$.]
++
++
++> [!exercise|a73f8422-25b3-5053-8c5d-8287e345951e.local at=b52cbf64-078d-5a3f-af50-ab4e9a03ee5f] Exercise 4
++> $y^{\prime \prime}+(x+\lambda) y=0, y(0)=0, y(1)=0$.
++
++
++> [!exercise|ade1b29c-af11-5a10-a4d6-1c66aa6e82c9.local at=baaca3d8-1354-5f40-9192-6bf89f9b0b1d] Exercise 5
++> $x y^{\prime \prime}-y^{\prime}+\lambda x y=0, y(0)=0, y(1)=0$. [Hint: Divide by $x^{2}$.]
++
++
++> [!exercise|6404884a-5e04-5b28-97e7-9653e6ead911.local at=70803333-f335-5098-bdbf-2c3a9fa5eb4d] Exercise 6
++> $y^{\prime \prime}+\left[\frac{1+\lambda x}{x}\right] y=0, y(1)=0, y(2)=0$.
++
++
++> [!exercise|de475114-4593-5e97-9015-932a301879a3.local at=49edc183-8813-5f23-b7a9-f33db11d5f25] Exercise 7
++> $y^{\prime \prime}+\lambda x y=0, y(-1)=0, y(1)=0$.
++
++
++> [!exercise|8b084b9f-a44f-5060-a443-42083b09969b.local at=c8ab991a-7448-5c3d-af2d-c0d55580d062] Exercise 8
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+(1+\lambda x) y=0, y(-1)=0, y(1)=0$.
++
++
++> [!exercise|e0f08baa-dabc-55b6-bf52-5b9e27e04ee7.local at=8b4cf10f-9c32-5bf9-8c44-03e2d942c239] Exercise 9
++> $\left(1-x^{2}\right) y^{\prime \prime}-2 x y^{\prime}+\lambda y=0, y(-1)=0, y(1)=0$.
++
++
++> [!exercise|f091a203-3866-5a93-b620-1abb4707c084.local at=25eb29ca-8617-5dda-a260-eb04baeca152] Exercise 10
++> $y^{\prime \prime}-\frac{x}{1-x^{2}} y^{\prime}+\lambda y=0, y(-1)=0, y(1)=0$.
++
++
++> [!prompt|96e143f4-4743-5416-a4d9-06991eb1b4e8.local at=e99c9fd9-bab7-5110-8d21-5c75fa6620ea] Shared exercise instructions
++> In Exercises 11-20, determine the eigenvalues and eigenfunctions of the given Sturm-Liouville problem.
++
++
++> [!exercise|ee7c0ec4-978c-5e1a-8886-e704210a5b21.local at=47064498-37cd-5137-a774-39b6573bf92f] Exercise 11
++> $y^{\prime \prime}+\lambda y=0, y(0)=0, y(2 \pi)=0$.
++
++
++> [!exercise|0342d6cc-8c1c-5d01-b3eb-9e005216f15b.local at=4818f70a-d00f-538d-809c-93fc3f6236f5] Exercise 12
++> $y^{\prime \prime}+\lambda y=0, y(0)=0, y(\pi / 2)=0$.
++
++
++> [!exercise|81f48953-76ce-5863-b27a-05d13c82c751.local at=b4cc89d1-3d3b-5a7f-bfef-266173e24392] Exercise 13
++> $y^{\prime \prime}+\lambda y=0, y(0)=0, y^{\prime}(\pi)=0$.
++
++
++> [!exercise|6165dde2-ccee-5d76-9e68-b0ac91e5e424.local at=29a2eea9-07dc-56db-b486-320c7b801390] Exercise 14
++> $y^{\prime \prime}+\lambda y=0, y(-\pi)=y(\pi), y^{\prime}(-\pi)=y^{\prime}(\pi)$.
++
++
++> [!exercise|133b4791-5814-5e54-b3a4-e6aee0991cbe.local at=6d4cbf27-880c-5692-abf0-08416051dd33] Exercise 15
++> $y^{\prime \prime}+\lambda y=0, y(0)=0, y(\pi)+y^{\prime}(\pi)=0$.
++
++
++> [!exercise|4284cabe-715d-5fce-ae84-c83543392820.local at=b53ce70a-3c22-5694-ab5b-7b373825307a] Exercise 16
++> $y^{\prime \prime}+\lambda y=0, y(0)+y^{\prime}(0)=0, y(2 \pi)=0$.
++
++
++> [!exercise|742b1382-2128-551f-93e5-66c712ee4421.local at=d77abdb1-2615-5341-bedd-0a81819d9967] Exercise 17
++> $y^{\prime \prime}+\lambda y=0, y(0)+y^{\prime}(0)=0, y(1)+y^{\prime}(1)=0$.
++
++
++> [!exercise|7650939c-fbf0-54fd-90cb-88b35494ee1d.local at=c2db17ed-b938-5d44-89df-2646a766ad5a] Exercise 18
++> $y^{\prime \prime}+\lambda y=0, y(0)+2 y^{\prime}(0)=0, y(1)=0$.
++
++
++> [!exercise|cb95576f-b92e-5e0a-8094-bc85e073f724.local at=7de815b7-84ae-5bde-9ef1-9bc354613844] Exercise 19
++> $x y^{\prime \prime}+y^{\prime}+\left[-\frac{4}{x}+\lambda x\right] y=0,0<x<1, y(0)$ is finite, $y(1)=0$.
++
++
++> [!exercise|384ed785-be41-55a9-a2fc-6f7aa2a3d21b.local at=18c27995-b220-526d-bbfe-0debc600e5ee] Exercise 20
++> $x y^{\prime \prime}+y^{\prime}+\left[-\frac{1}{x}+\lambda x\right] y=0,0<x<3, y(0)$ is finite, $y(3)=0$.
++
++
++> [!exercise|e4794bb2-2e29-54bf-b1de-f1a10261794e.local at=b1f6e84f-66d4-5c27-818c-d66cab38fe30] Exercise 21
++> Show that the boundary value problem $y^{\prime \prime}-\lambda y=0, y(0)=0, y(1)=0$ has no positive eigenvalues. Does this contradict Theorem 1?
++
++
++> [!exercise|f398c713-e28c-5100-ab5d-cea153d8c211.local at=3162a53e-9998-5f46-b28a-1c75ab7f09a9] Exercise 22
++> Show that the boundary value problem $y^{\prime \prime}-\lambda y=0, y(0)+y^{\prime}(0)=0, y(1)+ y^{\prime}(1)=0$ has one positive eigenvalue. Does this contradict Theorem 1?
++
++
++> [!exercise|f7175ec9-92c6-5e26-937c-2b8ca46cb2f1.local at=9401703a-c2bd-5357-97cb-f5ead7b03a22] Exercise 23
++> (a) Find the eigenfunction expansion of the function $f(x)=x, 0<x<\pi$, using the eigenfunctions of the Sturm-Liouville problem of Example 2.
++> (b) Plot the function and several partial sums of the eigenfunction expansion and comment on the graphs.
++
++
++> [!exercise|b7b29ead-a0c7-546c-bd4c-0f0eb4524ffe.local at=e1cc1cd2-9ea4-547c-9ca3-03e724a6cd72] Exercise 24
++> Repeat Exercise 23 with the function $f(x)=1,0<x<\pi$.
++
++
++> [!exercise|bbdf433b-d753-51f9-906d-e5e545f77eb7.local at=90de4fd4-a7c7-5214-b21a-921c140dc51d] Exercise 25
++> Repeat Exercise 23 with the function $f(x)=\sin x, 0<x<\pi$.
++
++
++> [!exercise|3905b6b4-d480-570c-96e8-005f20e6e4a5.local at=7fde297b-d911-56ad-82f7-75cd6b0fc12f] Exercise 26
++> (a) Approximate the numerical values of the first eight eigenvalues in the Sturm-Liouville problem of Exercise 15, and describe the corresponding eigenfunctions.
++> (b) Approximate the first eight nonzero terms of the eigenfunction expansion of $\sin x$. Plot the function and several partial sums of the expansion. Describe what is happening in the picture that you obtain.
++
++
++> [!exercise|a755eeca-3aff-5b4e-9055-08050f8b24c2.local at=85de6e81-7350-5bcb-a028-c9afddabace5] Exercise 27
++> Expand the function $f(x)=1,0<x<\pi$, in a series in terms of the eigenfunctions of Exercise 26. Plot the function and the partial sums of the eigenfunction expansion and comment on the graphs.
++
++
++> [!exercise|e3ea83e5-79bb-5d62-9fa2-955e728f0def.local at=e5b6dcd7-831c-5e1e-80a7-1d38346b8a76] Exercise 28
++> Expand the function $f(x)=\sin \pi x, 0<x<1$, in a series in terms of the eigenfunctions of Example 5. Plot the function and the partial sums of the eigenfunction expansion and comment on the graphs.
++
++
++> [!exercise|fd7fdccf-2307-54d7-be3f-1c4859b39338.local at=b3ebb6d8-f811-5f73-86d2-ab4630a8b693] Exercise 29
++> Verify the orthogonality of the eigenfunctions of Exercise 11.
++
++
++> [!exercise|a755771e-c265-56bf-9b0f-5cba32a4bf3e.local at=c8f077a1-2adc-52e0-9025-cc2a985ae9bd] Exercise 30
++> Verify numerically the orthogonality of the eigenfunctions of Example 5.
++
++
++> [!exercise|e1264322-f1ed-54fb-bb81-5e2aa969a21c.local at=2dd1d731-527f-54f4-93c1-92d8262f7198] Exercise 31
++> The second order, linear ordinary differential equation
++>
++> $$
++> \left(1-x^{2}\right) y^{\prime \prime}-x y^{\prime}+n^{2} y=0, \quad-1<x<1
++> $$
++>
++> where $n=0,1,2, \ldots$, is known as Chebyshev's differential equation. We are interested in solving this equation with the boundary conditions $y(1)=1$ and $y^{\prime}(1)$ is finite.
++> (a) Put the equation in Sturm-Liouville form and determine $p(x), q(x)$, and $r(x)$.
++> [Hint: First, divide through by $\left(1-x^{2}\right)^{1 / 2}$.]
++> (b) Use the power series method, as we did in Section 13.5 with Legendre's equation, and show that Chebyshev's equation has one polynomial solution of degree $n$. The one that satisfies $y(1)=1$ is called the Chebyshev polynomial of degree $n$ and is denoted by $T_{n}(x)$.
++>
++> It is a fact that the derivative of the nonpolynomial solution is not bounded at $x=1$. Thus $T_{n}(x)$ is the only solution that satisfies the boundary conditions.
++> (c) Using (4), show that the Chebyshev polynomials are orthogonal on $(-1,1)$ with respect to the weight function $r(x)=\frac{1}{\sqrt{1-x^{2}}}$.
++
++
++> [!exercise|d1e719c9-b980-5a65-bf67-a868879af416.local at=f840f7d4-816c-5089-b085-5787cb059d77] Exercise 32
++> For $n\ge1$, carry out parts (a)–(d); treat $n=0$ separately, using the two solutions $1$ and $\theta$.
++> (a) Show that the change of variables $x=\cos \theta$ transforms Chebyshev's equation into $y^{\prime \prime}+n^{2} y=0,0<\theta<\pi$.
++> (b) Conclude that two linearly independent solutions of Chebyshev's equation are $y_{1}(x)=y_{1}(\cos \theta)=\cos n \theta$ and $y_{2}(x)=y_{2}(\cos \theta)=\sin n \theta$
++> (c) Show that $y_{2}^{\prime}(x)$ is not bounded at $x=1$. Hence $y_{1}(x)=\cos n \theta$ is the only solution that satisfies $y(1)=1$ and $y^{\prime}(1)$ is finite. Conclude that $T_{n}(x)=\cos n \theta$. As you know, $\cos n \theta$ can be expressed as a polynomial in $\cos \theta$. This polynomial expression is precisely $T_{n}(x)$ : for example, $T_{1}(x)=\cos \theta=x ; T_{2}(x)=\cos 2 \theta= 2 \cos ^{2} \theta-1=2 x^{2}-1$, and so on.
++> (d) Find $T_{3}(x)$ and $T_{4}(x)$.
++
++
++> [!exercise|beda38fb-97b6-5699-91ff-18bf73bfb5e2.local at=e771fa5a-ea6d-5027-a2d2-7870b8d459ce] Exercise 33
++> (a) Show that the eigenfunctions in Example 6 satisfy
++>
++> $$
++> \int_{0}^{a}\left[J_{0}\left(\lambda_{k} r\right)\right]^{2} r d r=\frac{a^{2}}{2}\left(\left[J_{0}\left(\lambda_{k} a\right)\right]^{2}+\left[J_{1}\left(\lambda_{k} a\right)\right]^{2}\right)
++> $$
++>
++> [Hint: Exercise 36(b), Section 12.8.]
++> (b) Suppose that you know that the eigenfunctions form a complete set of orthogonal functions on the interval $(0, a)$. Show that if
++>
++> $$
++> f(r)=\sum_{k=1}^{\infty} A_{k} J_{0}\left(\lambda_{k} r\right) \quad(0 \leq r<a)
++> $$
++>
++> then
++>
++> $$
++> A_{k}=\frac{2}{a^{2}\left(\left[J_{0}\left(\lambda_{k} a\right)\right]^{2}+\left[J_{1}\left(\lambda_{k} a\right)\right]^{2}\right)} \int_{0}^{a} f(r) J_{0}\left(\lambda_{k} r\right) r d r
++> $$
++
++
++> [!exercise|692f38a9-cb35-5fd4-a99f-47f29dd122c6.local at=2234714c-baf2-5bfa-a8d8-666e8ace8fae] Exercise 34
++> Consider the eigenfunctions in the preceding exercise, and take $a=\kappa=1$. (a) Derive the following eigenfunction expansion of $f(r)=100$ for $0 \leq r<1$ :
++>
++> $$
++> 100=200 \sum_{k=1}^{\infty} \frac{J_{1}\left(\lambda_{k}\right)}{\lambda_{k}\left(\left[J_{0}\left(\lambda_{k}\right)\right]^{2}+\left[J_{1}\left(\lambda_{k}\right)\right]^{2}\right)} J_{0}\left(\lambda_{k} r\right)
++> $$
++>
++> (b) Show that $J_{1}\left(\lambda_{k}\right)=\frac{J_{0}\left(\lambda_{k}\right)}{\lambda_{k}}$ and conclude that $0 \leq r<1$ :
++>
++> $$
++> 100=200 \sum_{k=1}^{\infty} \frac{J_{0}\left(\lambda_{k}\right)}{\left(1+\lambda_{k}^{2}\right)\left[J_{0}\left(\lambda_{k}\right)\right]^{2}} J_{0}\left(\lambda_{k} r\right)
++> $$
++>
++> (c) Use the numerical values from Table 1 to obtain a six-term partial sum approximation of the function in part (b). Plot this partial sum to illustrate the convergence of the eigenfunction expansion.
++
++
++> [!exercise|ddfefd0f-d5d6-50d6-be10-e9d7d00886e7.local at=1cabee19-8f21-52a2-9617-eab5d0a9b0e7] Exercise 35
++> Project Problem: Heat problem on a disk with Robin conditions. Use the method of separation of variables to solve the heat equation on a disk of unit radius
++>
++> $$
++> \frac{\partial u}{\partial t}=\frac{\partial^{2} u}{\partial r^{2}}+\frac{1}{r} \frac{\partial u}{\partial r}, \quad 0 \leq r<1, t>0,
++> $$
++>
++> with initial temperature distribution $u(r, 0)=100(0 \leq r<1)$, and Robin boundary condition
++>
++> $$
++> \left.\frac{\partial u}{\partial r}(r, t)\right|_{r=1}=-u(1, t) .
++> $$
++>
++> The problem models the temperature distribution in a plate with insulated lateral surface, whose boundary is exchanging heat with the surrounding medium at a rate proportional to the temperature at the boundary. Here the heat transfer constant or convection constant $\kappa$ is equal to 1 .
++
++
++ 
++
++> [!exercise|c07d2998-cbd8-544d-a71b-72633b71d733.local at=4cd1a08b-1639-5d71-9479-57b4c6c08a9b] Exercise 36
++> Fix $a, \kappa>0$ and let $h(\lambda)=\kappa J_{0}(a \lambda)+\lambda J_{0}^{\prime}(a \lambda)$, and $\lambda_{1}$ and $\lambda_{2}$ be two distinct consecutive zeros of $J_{0}(a \lambda)$ such that $0<\lambda_{1}<\lambda_{2}$.
++> (a) Show that $h\left(\lambda_{1}\right)=\lambda_{1} J_{0}^{\prime}\left(a \lambda_{1}\right), h\left(\lambda_{2}\right)=\lambda_{2} J_{0}^{\prime}\left(a \lambda_{2}\right)$ and that $h\left(\lambda_{1}\right)$ and $h\left(\lambda_{2}\right)$ have opposite signs. [Hint: Since $\lambda_{1}, \lambda_{2}>0$, it is enough to argue that the values of the derivative of $J_{0}$ at two consecutive roots of $J_{0}$ must have opposite signs.]
++> (b) Conclude that $h(\lambda_3)=0$ for some $\lambda_{3}$ in the interval $\left(\lambda_{1}, \lambda_{2}\right)$.
++> (c) Using the fact that $J_{0}(a \lambda)$ has infinitely many positive zeros, show that $\kappa J_{0}(a \lambda)+\lambda J_{0}^{\prime}(a \lambda)=0$ has infinitely many positive roots.
+
+`````

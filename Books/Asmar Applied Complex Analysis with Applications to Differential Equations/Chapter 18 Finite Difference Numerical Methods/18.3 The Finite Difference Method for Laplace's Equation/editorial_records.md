@@ -75,3 +75,658 @@ Even if you use a computer to invert the matrix $A$,
 ````text
 
 ````
+
+## Source-to-current comparison
+
+Source: /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/.reference_mdzip/reference.md
+
+This exact comparison preserves the full change evidence, including formatting, OCR corrections, restored source wording, and required standalone context. The entries above explain the recovery edits. The comparison is not a claim that every difference is a correction; component serialization, callout wrapping, and printed labels outside callouts are formatting.
+
+`````diff
+--- /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/.reference_mdzip/reference.md
++++ /Users/gradyclopton/ObsidianVaults/complex_analysis/Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.3 The Finite Difference Method for Laplace's Equation.md
+@@ -1,21 +1,44 @@
+-## The Finite Difference Method for Laplace's Equation
++
++### 18.3 The Finite Difference Method for Laplace's Equation
+ 
+ In this and the following section, we will consider Laplace's equation in two variables with given boundary data. That is, we consider the Dirichlet problem
+ 
+ $$
+ \Delta u \equiv u_{x x}+u_{y y}=0 \quad \text { in a domain } R
+-$$
+-
+-where $u$ is specificd on the boundary of $R$. We seek to find an approximate solution to this problem by discretizing it in the $x$ and $y$ variables and passing to a finite difference scheme, just as we did for the heat and wave problems in previous sections. The partial differential equation (1) is easily discretized using the centered second difference approximations for $u_{x x}$ and $u_{y y}((10)$, Section 9.1). Our biggest problem will be to handle the boundary conditions in the discretized setting. For the time being, we shall alleviate this problem by concentrating on rectangular domains. In the exercises we shall deal with other domains.
++\tag{1}
++$$
++
++where $u$ is specified on the boundary of $R$. We seek to find an approximate solution to this problem by discretizing it in the $x$ and $y$ variables and passing to a finite difference scheme, just as we did for the heat and wave problems in previous sections. The partial differential equation (1) is easily discretized using the centered second difference approximations for $u_{x x}$ and $u_{y y}((10)$, Section 18.1). Our biggest problem will be to handle the boundary conditions in the discretized setting. For the time being, we shall alleviate this problem by concentrating on rectangular domains. In the exercises we shall deal with other domains.
+ 
+ We consider the Dirichlet problem over a rectangular domain $R$ given by $0<x<a, 0<y<b$, with boundary data as shown in Figure 1.
+ 
+-Figure 1 A Dirichlet problem in a rectangle $R$.
+-
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-20_435_466_719_65.jpg)
+-Figure 2 A grid over $R$.
+-
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-20_403_1048_202_677.jpg)
++```scientific-figure
++id: bd539482-93ba-4e9a-9866-c9e91ef373a8
++numbered: false
++title: ""
++caption: Figure 1 A Dirichlet problem in a rectangle $R$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-20_435_466_719_65.jpg
++    caption: ""
++```
++
++
++```scientific-figure
++id: f1741d75-d9f9-42e1-90d6-92d99c86a283
++numbered: false
++title: ""
++caption: Figure 2 A grid over $R$.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-20_403_1048_202_677.jpg
++    caption: ""
++```
++
+ 
+ ## Discretizing Laplace's Equation
+ 
+@@ -29,54 +52,85 @@
+ 
+ $$
+ u_{i j}=u(i h, j k), \quad 0 \leq i \leq m, 0 \leq j \leq n .
+-$$
+-
+-Thus $u_{i j}$ represents the value of $u$ at the gridpoint $(i h, j k)$. We now appeal to the centered second difference approximation ((10), Section 9.1) and write:
+-
+-$$
+-u_{x: c}(i h, j k) \approx \frac{1}{h^{2}}\left(u_{i+1, j}-2 u_{i j}+u_{i-1, j}\right)
++\tag{2}
++$$
++
++Thus $u_{i j}$ represents the value of $u$ at the gridpoint $(i h, j k)$. We now appeal to the centered second difference approximation ((10), Section 18.1) and write:
++
++$$
++u_{xx}(i h, j k) \approx \frac{1}{h^{2}}\left(u_{i+1, j}-2 u_{i j}+u_{i-1, j}\right)
++\tag{3}
+ $$
+ 
+ and
+ 
+ $$
+ u_{y y}(i h, j k) \approx \frac{1}{k^{2}}\left(u_{i, j+1}-2 u_{i j}+u_{i, j-1}\right)
++\tag{4}
+ $$
+ 
+ Plugging into (1) and simplifying, we get our finite difference approximation to Laplace's equation:
+ 
+ $$
+ u_{i, j}=\frac{1}{2\left(h^{2}+k^{2}\right)}\left(k^{2}\left(u_{i+1, j}+u_{i-1, j}\right)+h^{2}\left(u_{i, j+1}+u_{i, j-1}\right)\right),
+-$$
+-
+-which says that $u_{i j}$ is a weighted average of the values of $u$ at the four neighboring gridpoints (see Figure 3). When $h<k$, the spacing in $x$ is less than that in $y$, and (5) tells us that the weight $k^{2} /\left(h^{2}+k^{2}\right)$ that goes with the gridpoints $((i+1) h, j k)$ and $((i-1) h, j k)$ is larger than the weight $h^{2} /\left(h^{2}+k^{2}\right)$ that goes with the other two points. This is expected, since these are the nearer of the four points.
+-
+-## DISCRETIZATION OF LAPLACE'S EQUATION
+-
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-21_210_80_670_185.jpg)
+-
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-21_276_425_897_37.jpg)
+-Figure 3 Average value property of a solution of a Dirichlet problem.
+-
+-In the important special case when $h=k$, the weights are all $1 / 4$, and therefore (5) reduces to
+-which has a very nice interpretation. In this case, $\|_{i j}$ is the average of the values of $u$ at the four neighboring points on the grid to $(i h, j k)$ (see Figure $3)$. Henceforth we shall proceed under this simplifying assumption.
+-
+-Equation (6) gives an expression for the value of $u$ at, each interior gridpoint of our region $R$ in terms of its four nearest neighbors. Since we have $(m-1)(n-1)$ interior gridpoints, (6) gives us $(m-1)(n-1)$ equations in the unknowns $u_{i j}, 1 \leq i \leq m-1,1 \leq j \leq n-1$. The problem of solving our discretized Dirichlet problem is now reduced to solving a system of $(m-1)(n-1)$ equations in the $(m-1)(n-1)$ unknowns $u_{i j}$. It turns out that this system of equations always has it unique solution, as will be illustrated by examples below.
+-
+-In listing the system of $(m-1)(n-1)$ equations we will run through all the indices $(i, j)$ row by row, starting from the bottom left of the grid. As you may recall from lincar algebra, the system of equations is conveniently represented in the form $A u=b$, where $A$ is the $(m-1)(n-1)$ by $(m-1)(n-1)$ matrix of coefficients, $b$ is a column $(m-1)(n-1)$-vector, and $u$ is a column $(m-1)(n-1)$-vector that contains the $u_{i j}$ in the order chosen above.
++\tag{5}
++$$
++
++which says that $u_{i j}$ is a weighted average of the values of $u$ at the four neighboring gridpoints (see Figure 3). When $h<k$, the spacing in $x$ is less than that in $y$, and (5) tells us that the weight $k^2/[2(h^2+k^2)]$ that goes with the gridpoints $((i+1) h, j k)$ and $((i-1) h, j k)$ is larger than the weight $h^2/[2(h^2+k^2)]$ that goes with the other two points. This is expected, since these are the nearer of the four points.
++
++In the important special case $h=k$, the weights are all $1/4$ and the scheme becomes
++
++> [!equation|933cc6a7-5662-5579-a1a8-dd5c8a9c42d3.local at=b29b3ea2-f5b9-5f74-858b-2fe2edf8d504] Discretization of Laplace's Equation
++> For Laplace's equation on a square grid of spacing $h>0$, let $u_{ij}$ denote the discrete approximations, with prescribed boundary values. Then
++> $$
++> u_{ij}=\frac14\left(u_{i+1,j}+u_{i-1,j}+u_{i,j+1}+u_{i,j-1}\right).
++> $$
++
++*Printed equation label: (6) average-value form.*
++
++Henceforth the grid spacings are equal.
++
++```scientific-figure
++id: aa07f9a7-ab6b-4e50-8c28-edc2796b3415
++numbered: false
++title: ""
++caption: Figure 3 Average-value property of the discrete Dirichlet solution.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/asmar18-3-figure3-restored.png
++    caption: ""
++```
++
++
++Equation (6) gives an expression for the value of $u$ at, each interior gridpoint of our region $R$ in terms of its four nearest neighbors. Since we have $(m-1)(n-1)$ interior gridpoints, (6) gives us $(m-1)(n-1)$ equations in the unknowns $u_{i j}, 1 \leq i \leq m-1,1 \leq j \leq n-1$. The problem of solving our discretized Dirichlet problem is now reduced to solving a system of $(m-1)(n-1)$ equations in the $(m-1)(n-1)$ unknowns $u_{i j}$. It turns out that this system of equations always has a unique solution, as will be illustrated by examples below.
++
++In listing the system of $(m-1)(n-1)$ equations we will run through all the indices $(i, j)$ row by row, starting from the bottom left of the grid. As you may recall from linear algebra, the system of equations is conveniently represented in the form $A u=b$, where $A$ is the $(m-1)(n-1)$ by $(m-1)(n-1)$ matrix of coefficients, $b$ is a column $(m-1)(n-1)$-vector, and $u$ is a column $(m-1)(n-1)$-vector that contains the $u_{i j}$ in the order chosen above.
+ 
+ Assuming that the square matrix $A$ has an inverse, the solution to our problem will then be given by $u=A^{-1} b$. We illustrate the entire process with a simple example.
+ 
+-## EXAMPLE 1 A Dirichlet problem on a square
+-
+-Approximate the solution to the problem (1) on a square of side 1 with boundary data given as 100 along the upper side and 0 along the other three sides (Figure 1). (a) Use the finite difference schenne developed above with $m=n=3$.
+-(b) Use the finite difference selyeme developed above with $m=n=4$, and compare the approximation you obtain for $u$ at the square's center with the value 25 found analytically (see the end of Section 3.8).
+-(c) Compare the valum you found in (b) to those of the analytical solution (Example 2, Section 3.8). That is, use the analytical solution to find the 9 values $u(1 / 4,1 / 4)$, $u(1 / 2,1 / 4), u(3 / 4,1 / 4), \ldots, u(3 / 4,3 / 4)$.
+-
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-22_500_482_132_51.jpg)
+-Figure 4 Schematic repre sentation of the discretized problem.
+-
+-Solution (a) Our discretized problem is represented schematically in Figure 1. By the averaging property (6) and using Figure 4. we can read off the four equations (in our conventional order)
++> [!exercise|47f41651-225b-59a3-9874-6e6d4c3ba542.local at=4ae07fdc-421a-5772-9fe3-a1ced93f5203] EXAMPLE 1 A Dirichlet problem on a square
++> Approximate the solution to the problem (1) on a square of side 1 with boundary data given as 100 along the upper side and 0 along the other three sides (Figure 1). (a) Use the finite difference scheme developed above with $m=n=3$.
++> (b) Use the finite difference scheme developed above with $m=n=4$, and compare the approximation you obtain for $u$ at the square's center with the value 25 found analytically (see the end of Section 11.8).
++> (c) Compare the values you found in (b) to those of the analytical solution (Example 2, Section 11.8). That is, use the analytical solution to find the 9 values $u(1 / 4,1 / 4)$, $u(1 / 2,1 / 4), u(3 / 4,1 / 4), \ldots, u(3 / 4,3 / 4)$.
++
++```scientific-figure
++id: b7f8e1ed-8cc0-4eb7-8a81-6bbfd27fb5da
++numbered: false
++title: ""
++caption: Figure 4 Schematic representation of the discretized problem.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-22_500_482_132_51.jpg
++    caption: ""
++```
++
++##### solution
++
++(a) Our discretized problem is represented schematically in Figure 4. By the averaging property (6) and using Figure 4. we can read off the four equations (in our conventional order)
+ 
+ $$
+ \begin{aligned}
+@@ -90,13 +144,12 @@
+ Note that here we do not need to worry about the corner points of the domain (that is, the values $u_{00}, u_{30}, u_{03}$, and $u_{33}$ ), since these never enter into our equations. Again, choosing to run through the indices in the order $(1,1),(2,1),(1,2),(2.2)$, we put our system in the form
+ 
+ $$
+-\begin{array}{llll}
+-4 u_{11} & -u_{21} & -u_{12} & =0 \\
+--u_{11}+4 u_{21} & & -u_{22} & =0 \\
+--u_{11} & & +4 u_{12} & -u_{22} \\
+-& -u_{21} & -u_{12}+4 u_{22} & =100 \\
+-& & 100 .
+-\end{array}
++\begin{aligned}
++4u_{11}-u_{21}-u_{12}&=0,\\
++-u_{11}+4u_{21}-u_{22}&=0,\\
++-u_{11}+4u_{12}-u_{22}&=100,\\
++-u_{21}-u_{12}+4u_{22}&=100.
++\end{aligned}
+ $$
+ 
+ This system can be represented using matrices as $A u=b$, where
+@@ -120,7 +173,7 @@
+ \end{array}\right] .
+ $$
+ 
+-We note that $A$ is a symmetric matrix with 1 s down its diagonal. (This is a consequence of the way we ordered our equations and variables.) This matrix is a special case of what is called a diagonally dominant matrix, which just says that in each row the diagonal element is larger (in absolute value) than the sum of the absolute values of all other entries from that row. It is known that such a matrix always has an inverse. In our case, we have
++We note that $A$ is a symmetric matrix with 4s down its diagonal. (This is a consequence of the way we ordered our equations and variables.) This particular matrix is strictly diagonally dominant: in every row the magnitude of the diagonal entry exceeds the sum of the magnitudes of the off-diagonal entries. Strict diagonal dominance implies invertibility. Weak diagonal dominance alone does not. In our case, we have
+ 
+ $$
+ A^{-1}=\frac{1}{24}\left[\begin{array}{cccc}
+@@ -131,8 +184,19 @@
+ \end{array}\right]
+ $$
+ 
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-23_495_468_213_35.jpg)
+-Figure 5 Schematic representation of the solution.
++```scientific-figure
++id: 9838626b-7dbb-4541-84cf-25c41fd9fe65
++numbered: false
++title: ""
++caption: Figure 5 Schematic representation of the solution.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-23_495_468_213_35.jpg
++    caption: ""
++```
++
+ 
+ Thus we have the solution
+ 
+@@ -162,7 +226,7 @@
+ 
+ This solution is represented schematically in Figure 5. Note that every interior value is the average of the values at its four nearest neighbors.
+ 
+-It is also worth noting that once we have computed $A^{-1}$, we can compute the numerical solution for new choices of boundary data with very little additional effort. We noed only compute $A^{-1} b$ for the new choices of $b$.
++It is also worth noting that once we have computed $A^{-1}$, we can compute the numerical solution for new choices of boundary data with very little additional effort. We need only compute $A^{-1} b$ for the new choices of $b$.
+ (b) Proceeding as in (a), we arrive at the 9 -by-9 system of equations represented by $A u=b$, where
+ 
+ $$
+@@ -239,27 +303,81 @@
+ 18.75 \\
+ 25 \\
+ 18.75 \\
+-12.86 \\
++42.86 \\
+ 52.68 \\
+ 42.86
+ \end{array}\right] .
+ $$
+ 
+-The solution is reprosented in Table 1. Since in our discretization of the problem $u_{22}$ represents the value at the square's center (recall that $h=k=1 / 4$ ), we have found the approximation 25 for the value $u(1 / 2,1 / 2)$, which also happens to be the exact value.
+-
+-| Temperature at the gridpoints |  |  |
+-| :--- | :--- | :--- |
+-| 42.86 | 52.68 | 42.86 |
+-| $u(1 / 4,3 / 4)$ | $u(1 / 2,3 / 4)$ | $u(3 / 4,3 / 4)$ |
+-| 43.20 | 54.05 | 43.20 |
+-| 18.75 | 25 | 18.75 |
+-| $u(1 / 4,1 / 2)$ | $u(1 / 2,1 / 2)$ | $u(3 / 4,1 / 2)$ |
+-| 18.20 | 25 | 18.20 |
+-| 7.14 | 9.82 | 7.14 |
+-| $u(1 / 4,1 / 4)$ | $u(1 / 2,1 / 4)$ | $u(3 / 4,1 / 4)$ |
+-| 6.80 | 9.54 | 6.80 |
+-
+-Table 1 In each cell, the top values wero generated with the finite difference method in (b). The bottom values were computed using the analytical solution.
++The solution is represented in Table 1. Since in our discretization of the problem $u_{22}$ represents the value at the square's center (recall that $h=k=1 / 4$ ), we have found the approximation 25 for the value $u(1 / 2,1 / 2)$, which also happens to be the exact value.
++
++```scientific-table
++id: 71e63047-c19e-4605-a159-b7a373559948
++numbered: false
++title: Temperature at the gridpoints
++caption: Table 1 Each cell shows its grid coordinate, followed by the finite-difference value and the analytical value.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: |-
++        $u(1 / 4,3 / 4)$
++
++        42.86
++
++        43.20
++    - text: |-
++        $u(1 / 2,3 / 4)$
++
++        52.68
++
++        54.05
++    - text: |-
++        $u(3 / 4,3 / 4)$
++
++        42.86
++
++        43.20
++  - - text: |-
++        $u(1 / 4,1 / 2)$
++
++        18.75
++
++        18.20
++    - text: |-
++        $u(1 / 2,1 / 2)$
++
++        25
++
++        25
++    - text: |-
++        $u(3 / 4,1 / 2)$
++
++        18.75
++
++        18.20
++  - - text: |-
++        $u(1 / 4,1 / 4)$
++
++        7.14
++
++        6.80
++    - text: |-
++        $u(1 / 2,1 / 4)$
++
++        9.82
++
++        9.54
++    - text: |-
++        $u(3 / 4,1 / 4)$
++
++        7.14
++
++        6.80
++headerRows: 0
++rowHeaders: false
++style: scientific
++```
++
+ (c) We use a computer to evaluate the analytical solution
+ 
+ $$
+@@ -270,17 +388,20 @@
+ 
+ There is no doubt that most of the work in applying the finite difference method to a Dirichlet problem goes toward inverting the matrix $A$ that arises in the problem. You should go over Example 1 with different boundary conditions in mind and check that only the vector $b$ changes when we change the boundary conditions. This means that we can solve a variety of Dirichlet problems by the finite difference method, without having to recompute $A^{-1}$. Indeed, the same remarks apply to some equations involving the Laplacian, as we now illustrate.
+ 
+-## EXAMPLE 2 A Poisson problem on a square
+-
+-Approximate the solution to the Poisson problem
+-
+-$$
+-\nabla^{2} u=1
+-$$
+-
+-on a square of side 1 with 0 boundary data. Use the finite difference scheme with $m=n=4$, and compare the approximation you obtain for $u$ with the values found analytically from Example 3, Section 3.9.
+-
+-Solution We follow the notation of Example 1. To discretize Poisson's equation, we use (3) and (4), with $h=k=\frac{1}{4}$, and get
++> [!exercise|a1348d76-edd3-514b-9a26-77837ee139f5.local at=1d41db7a-8dcd-50fc-8ec5-026768a24da1] EXAMPLE 2 A Poisson problem on a square
++> Approximate the solution to the Poisson problem
++>
++> $$
++> \nabla^{2} u=1
++> $$
++>
++> on a square of side 1 with 0 boundary data. Use the finite difference scheme with $m=n=4$, and compare the approximation you obtain for $u$ with the values found analytically from Example 3, Section 11.9.
++
++
++
++##### solution
++
++We follow the notation of Example 1. To discretize Poisson's equation, we use (3) and (4), with $h=k=\frac{1}{4}$, and get
+ 
+ $$
+ \frac{1}{h^{2}}\left(u_{i+1, j}+u_{i-1, j}+u_{i, j+1}+u_{i, j-1}-4 u_{i j}\right)=1 .
+@@ -289,24 +410,24 @@
+ Solving for $u_{i j}$, we get
+ 
+ $$
+-u_{i j}=\frac{1}{1}\left(u_{i+1, j}+u_{i-1, j}+u_{i, j+1}+u_{i, j-1}-\frac{1}{16}\right),
++u_{ij}=\frac14\left(u_{i+1, j}+u_{i-1, j}+u_{i, j+1}+u_{i, j-1}-\frac{1}{16}\right),
+ $$
+ 
+ which determines our finite difference scheme. The boundary values are
+ 
+ $$
+-u_{r, 0}=0 \quad \text { and } \quad u_{0, j}=0, \quad i, j>0 .
+-$$
+-
+-Reading off the values of $u_{i}$, from our finite difference scheme, we arrive at nine equations in the nine unknowns $u_{1.1}, u_{2.1}, u_{3.1}, u_{1.2}, \ldots, u_{3.3}$, where here we followed the same order as in Example 1. The system of equations can be put in the form $A u=b$. where $A$ is the sume matrix as in Example 1(b), and $b$ is the vector with entrios identically equal to $-h^{2}=-\frac{1}{16}$. Thus we have the solution
++u_{i,0}=u_{i,4}=0\quad(0\le i\le4),\qquad u_{0,j}=u_{4,j}=0\quad(0\le j\le4).
++$$
++
++Reading off the values of $u_{ij}$, from our finite difference scheme, we arrive at nine equations in the nine unknowns $u_{1,1},u_{2,1},u_{3,1},u_{1,2},\ldots,u_{3,3}$, where here we followed the same order as in Example 1. The system of equations can be put in the form $A u=b$. where $A$ is the same matrix as in Example 1(b), and $b$ is the vector with entries identically equal to $-h^{2}=-\frac{1}{16}$. Thus we have the solution
+ 
+ $$
+ u=A^{-1} b=\frac{1}{224}\left[\begin{array}{ccccccccc}
+-67 & 22 & 7 & 22 & 11 & 6 & 7 & 6 & 3 \\
+-22 & 74 & 22 & 11 & 28 & 14 & 6 & 10 & 6 \\
++67 & 22 & 7 & 22 & 14 & 6 & 7 & 6 & 3 \\
++22 & 74 & 22 & 14 & 28 & 14 & 6 & 10 & 6 \\
+ 7 & 22 & 67 & 6 & 14 & 22 & 3 & 6 & 7 \\
+-22 & 11 & 6 & 74 & 28 & 10 & 22 & 14 & 6 \\
+-14 & 28 & 14 & 28 & \times 1 & 28 & 14 & 28 & 14 \\
++22 & 14 & 6 & 74 & 28 & 10 & 22 & 14 & 6 \\
++14 & 28 & 14 & 28 & 84 & 28 & 14 & 28 & 14 \\
+ 6 & 14 & 22 & 10 & 28 & 74 & 6 & 14 & 22 \\
+ 7 & 6 & 3 & 22 & 14 & 6 & 67 & 22 & 7 \\
+ 6 & 10 & 6 & 14 & 28 & 14 & 22 & 74 & 22 \\
+@@ -344,51 +465,199 @@
+ \end{array}\right] .
+ $$
+ 
+-In Table 2. we compare the results of the finite difference method to those of the analytical solution. For the analytical solution, we took 30 terms in the series solution in Example 3. Section 3.9.
+-
+-| Solution of Poisson's equation |  |  |
+-| :--- | :--- | :--- |
+-| -0.043 | -0.055 | -0.043 |
+-| $u(1 / 4,3 / 4)$ | $u(1 / 2.3 / 4)$ | $u(3 / 4,3 / 4)$ |
+-| -0.045 | -0.057 | -0.045 |
+-| -0.055 | -0.070 | -0.055 |
+-| $u(1 / 4,1 / 2)$ | $u(1 / 2,1 / 2)$ | $u(3 / 4,1 / 2)$ |
+-| -0.57 | -0.073 | -0.057 |
+-| -0.043 | -0.055 | -0.013 |
+-| $u(1 / 4,1 / 4)$ | $u(1 / 2,1 / 4)$ | $u(3 / 4,1 / 4)$ |
+-| -0.045 | -0.057 | -0.045 |
+-
+-Table 2 In each cell, the top values were generated with the finite difference method. The bottom values were computed using the analytical solution.
+-
+-As you will see in the exercises, the method of this section applies with equal ease to Dirichlet problems over less regular regions, such as L-shaped, triangular, and cross-shaped regions. Finally, let us mention an obvious drawback to the method of this section. If you seek a solution by the finite difference method that is accurate to several decimal places, then you must take a large number of gridpoints. Say, if you divide the $x$ - and $y$-intervals into 100 parts (not at all unreasonable), then you will be dealing with a system of 10,000 equations, with a matrix $A$ having $100,000,000$ entrics. It is a fact that, in Dirichlet problems, even though the matrix $A$ may have many zero entrics, its inverse, $A^{-1}$, has all nonzero entries (see Example 1).
++
++
++In Table 2 we compare the results of the finite difference method to those of the analytical solution. For the analytical solution, we took 30 terms in the series solution in Example 3. Section 11.9.
++
++```scientific-table
++id: 28fae4fc-37b3-4c61-b87e-a71668cc6381
++numbered: false
++title: Solution of Poisson's equation
++caption: Table 2 Each cell shows its grid coordinate, followed by the finite-difference value and the analytical value.
++captionVisible: true
++captionPosition: below
++rows:
++  - - text: |-
++        $u(1 / 4,3 / 4)$
++
++        -0.043
++
++        -0.045
++    - text: |-
++        $u(1/2,3/4)$
++
++        -0.055
++
++        -0.057
++    - text: |-
++        $u(3 / 4,3 / 4)$
++
++        -0.043
++
++        -0.045
++  - - text: |-
++        $u(1 / 4,1 / 2)$
++
++        -0.055
++
++        -0.057
++    - text: |-
++        $u(1 / 2,1 / 2)$
++
++        -0.070
++
++        -0.073
++    - text: |-
++        $u(3 / 4,1 / 2)$
++
++        -0.055
++
++        -0.057
++  - - text: |-
++        $u(1 / 4,1 / 4)$
++
++        -0.043
++
++        -0.045
++    - text: |-
++        $u(1 / 2,1 / 4)$
++
++        -0.055
++
++        -0.057
++    - text: |-
++        $u(3 / 4,1 / 4)$
++
++        -0.043
++
++        -0.045
++headerRows: 0
++rowHeaders: false
++style: scientific
++```
++
++
++As you will see in the exercises, the method of this section applies with equal ease to Dirichlet problems over less regular regions, such as L-shaped, triangular, and cross-shaped regions. Finally, let us mention an obvious drawback to the method of this section. If you seek a solution by the finite difference method that is accurate to several decimal places, then you must take a large number of gridpoints. Say, if you divide the $x$ - and $y$-intervals into 100 parts (not at all unreasonable), then there are $99^2=9801$ interior unknowns and a matrix with $9801^2=96{,}059{,}601$ entries (roughly $10^8$). It is a fact that, in Dirichlet problems, even though the matrix $A$ may have many zero entries, its inverse, $A^{-1}$, has all nonzero entries (see Example 1).
+ 
+ Even if you use a computer to invert the matrix $A$, you can quickly run into storage problems. There are methods in numerical linear algebra that exploit the properties of the matrix $A$ to simplify computing its inverse. Instead of taking this approach, we will present in the next section new iteration methods that yield satisfactory results with problems involving large numbers of gridpoints.
+ 
+-## Exercises 9.3
+-
+-In Exercises 1-4, approximate the solution to the Dirichlet problem (1) on a square of side 1, with the given boundary data. Discretize the problem, using $m=n=3$ and compute the numerical solution by hand. [Hint: Read the remarks following Example 1.]
+-
+-1. $f_{1}(x)=0, f_{2}(x)=0, g_{1}(y)=100, g_{2}=0$.
+-2. $f_{1}(x)=100 x, f_{2}(x)=100, g_{1}=g_{2}=0$.
+-3. $f_{1}(x)=e^{x}, f_{2}(x)=1, g_{1}=g_{2}=0$.
+-4. $f_{2}(x)=\sin \pi x, f_{1}=g_{1}=g_{2}=0$.
+-[Compare your answer to the exact solution, which is $u(x, y)=\sin \pi x \frac{\sinh \pi y}{\sinh \pi}$.]
+-5. Repeat Exercise 4 with $m=n=5$. Compare your results with the exact solution.
+-6. Repeat Example 1 with $m=n=5$. Compare your results with the exact solution.
+-
+-In Exercises 7-10, approximate the solution of the given equation on a square of side 1 with zero boundary data. Discretize the problem, using $m=n=3$ and compute the numerical solution by hand. [Hint: Proceed as in Example 2.]
+-7. $\nabla^{2} u=x+y$.
+-8. $\nabla^{2} u=x y$.
+-9. $\nabla^{2} u=u+3$.
+-10. $\nabla^{2} u=u+x$.
+-
+-In Exercises 11-14. a Dirichlet problem is described over a given region. Solve the discretized problem by computing the values of $u$ at the interior points of the grid. You may want to use a computer to solve the insuing system of equations.
+-11. L shaped:
+-12. Cross shaped:
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-26_508_586_1653_569.jpg)
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-26_512_581_1652_1207.jpg)
+-13. Isosceles right triangle:
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-27_442_514_338_523.jpg)
+-14. A rectangular frame:
+-![](./images/3d691698-445f-4a4d-96f7-0cb184e4b380-27_514_588_268_1163.jpg)
+-
++## Exercises 18.3
++
++
++> [!prompt|dffc4c3d-182e-5662-b0d5-a4e23797149d.local at=f441435e-3464-5236-a18c-57e21f80c1c5] Shared exercise instructions
++> In Exercises 1-4, approximate the solution to the Dirichlet problem (1) on a square of side 1, with the given boundary data. Discretize the problem, using $m=n=3$ and compute the numerical solution by hand. [Hint: Read the remarks following Example 1.]
++
++
++> [!exercise|4fbee2d7-c547-5d24-a2ac-bf71746e2e04.local at=0e4cde57-fed5-5cd3-9bc5-a10fc05205f8] Exercise 1
++> $f_{1}(x)=0, f_{2}(x)=0, g_{1}(y)=100, g_{2}=0$.
++
++
++> [!exercise|6b027ad9-c5e9-560d-b1c9-1ec6dda1c49e.local at=82ec3c68-e399-53bf-b40c-6e783337e969] Exercise 2
++> $f_{1}(x)=100 x, f_{2}(x)=100, g_{1}=g_{2}=0$.
++
++
++> [!exercise|40b4a2b9-2a70-5b23-9cfb-ebc8e00f0ec1.local at=e9c04762-cca1-52fb-aba3-81ab64ae0173] Exercise 3
++> $f_{1}(x)=e^{x}, f_{2}(x)=1, g_{1}=g_{2}=0$.
++
++
++> [!exercise|c7b692a0-5b11-5c58-ab13-964d255e578e.local at=7a131573-04e0-5ecb-bb54-13547fd75455] Exercise 4
++> $f_{2}(x)=\sin \pi x, f_{1}=g_{1}=g_{2}=0$.
++> [Compare your answer to the exact solution, which is $u(x, y)=\sin \pi x \frac{\sinh \pi y}{\sinh \pi}$.]
++
++
++> [!exercise|19b373dc-ded9-5e21-b04b-f5eb4389d4ee.local at=5b720dde-6d6b-50f9-b428-5c095c8460c0] Exercise 5
++> Repeat Exercise 4 with $m=n=5$. Compare your results with the exact solution.
++
++
++> [!exercise|eafee54c-8922-55bb-a0ce-7e108fc02e6c.local at=a474aca9-2f67-5a82-89d6-d39587b1c31c] Exercise 6
++> Repeat Example 1 with $m=n=5$. Compare your results with the exact solution.
++
++
++> [!prompt|7924c38b-2d26-59e4-a7bd-10d0505a489f.local at=335de20e-a831-55a7-aa37-dcb9b3ad5afa] Shared exercise instructions
++> In Exercises 7-10, approximate the solution of the given equation on a square of side 1 with zero boundary data. Discretize the problem, using $m=n=3$ and compute the numerical solution by hand. [Hint: Proceed as in Example 2.]
++
++
++> [!exercise|ac070c90-c217-50b6-9131-14d146a1a6b7.local at=5160e67b-b5fa-5ddd-bd50-f1318bbfa15e] Exercise 7
++> $\nabla^{2} u=x+y$.
++
++
++> [!exercise|3cff431f-899f-55c0-92d5-ae7bd67eb94d.local at=249ffff2-a513-5fd6-88bd-6df77c2697d7] Exercise 8
++> $\nabla^{2} u=x y$.
++
++
++> [!exercise|3477c64a-762c-5394-a085-78a0d9355325.local at=7e399b73-7fd3-55e6-bc6b-78a1f50e5616] Exercise 9
++> $\nabla^{2} u=u+3$.
++
++
++> [!exercise|fd763568-a486-5a7a-abdc-081780ec97b9.local at=bd4e48cb-0421-5c92-a27f-0e0da75a69b5] Exercise 10
++> $\nabla^{2} u=u+x$.
++
++
++> [!prompt|5a0863f3-851c-598c-9e1f-b79a589ffc62.local at=21d6828c-4333-5b81-8c20-d2f4ba4eb31c] Shared exercise instructions
++> In Exercises 11-14. a Dirichlet problem is described over a given region. Solve the discretized problem by computing the values of $u$ at the interior points of the grid. You may want to use a computer to solve the ensuing system of equations.
++
++
++> [!exercise|bb6d63ba-e182-5a45-928e-1269c758c287.local at=d44648e5-d706-5b95-92bd-0ee6ba446ec9] Exercise 11
++> L-shaped:
++
++
++```scientific-figure
++id: a4577eed-7aee-4790-a2dc-3baa79a19f76
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 11.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-26_508_586_1653_569.jpg
++    caption: ""
++```
++> [!exercise|8cb8e4f7-9549-5510-a5f4-4f1eb9455ec3.local at=b47c523e-7e52-5571-9238-b77af59f161b] Exercise 12
++> Cross-shaped:
++
++
++```scientific-figure
++id: 2161bc94-141c-4c63-a536-c5c79cbced88
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 12.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-26_512_581_1652_1207.jpg
++    caption: ""
++```
++> [!exercise|f1f394ae-df74-5cca-85ab-bdf0a1e36ee0.local at=79447a54-9094-518a-ab81-e3742fde975a] Exercise 13
++> Isosceles right triangle:
++
++
++```scientific-figure
++id: f2023a5e-2ea5-423a-82de-f8d5cf3fb82a
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 13.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-27_442_514_338_523.jpg
++    caption: ""
++```
++> [!exercise|161a1325-bff4-5021-b390-38aea4ead901.local at=4970bead-1a8a-5598-a25b-d6eb2c71aa43] Exercise 14
++> A rectangular frame:
++
++
++```scientific-figure
++id: e833ffdc-5d14-4ecd-895f-8e6ea3b86a36
++numbered: false
++title: ""
++caption: Boundary conditions for Exercise 14.
++captionVisible: true
++captionPosition: below
++columns: 1
++panels:
++  - path: Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/3d691698-445f-4a4d-96f7-0cb184e4b380-27_514_588_268_1163.jpg
++    caption: ""
++```
+
+`````
