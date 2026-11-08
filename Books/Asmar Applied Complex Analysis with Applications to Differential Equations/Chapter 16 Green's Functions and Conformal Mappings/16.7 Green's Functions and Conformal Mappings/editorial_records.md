@@ -1028,3 +1028,41 @@ This exact comparison preserves the full change evidence, including formatting, 
 +> Study the proof of Theorem 1 and then prove Theorem 5.
 
 `````
+
+## Additional source comparison
+
+## 1. Restore author construction and wording in Example 4; correct the inconsistent conformal-map symbol and OCR denominator, retaining the printed equation labels.
+
+### Before
+
+````text
+Let $\phi(z)=z^2$, which maps the first quadrant conformally onto the upper half-plane. Composing with the Cayley map gives $\Phi(z)=(i-z^2)/(i+z^2)$, a conformal bijection onto the disk. Applying the disk formula and simplifying as in the preceding example gives
+
+$$
+\begin{aligned}
+G(z,z_0)
+&=\log\left|\frac{\Phi(z)-\Phi(z_0)}{1-\overline{\Phi(z_0)}\Phi(z)}\right|\\
+&=\log\left|\frac{\phi(z)-\phi(z_0)}{\phi(z)-\overline{\phi(z_0)}}\right|
+=\log\left|\frac{z^2-z_0^2}{z^2-\overline{z_0}^{\,2}}\right|.
+\end{aligned}
+$$
+
+*Printed equation labels: (9) disk-map expression; (10) equivalent half-plane expression and its square-map specialization.*
+````
+### After
+
+````text
+Let us start by constructing a one-to-one conformal mapping of the first quadrant onto the unit disk by mapping the first quadrant onto the upper half-plane and then using the mapping in Example 2(b). Put $\phi(z)=z^2$. Thus $\frac{i-\phi(z)}{i+\phi(z)}$ is a one-to-one conformal mapping of the first quadrant onto the unit disk. For $z$ and $z_{0}$ in the first quadrant, use Theorem 3 to get the Green's function for the first quadrant in the form
+
+$$
+G\left(z, z_{0}\right)=\ln \left|\frac{\frac{i-\phi(z)}{i+\phi(z)}-\frac{i-\phi\left(z_{0}\right)}{i+\phi\left(z_{0}\right)}}{1-\overline{\left(\frac{i-\phi\left(z_{0}\right)}{i+\phi\left(z_{0}\right)}\right)} \frac{i-\phi(z)}{i+\phi(z)}}\right| .
+\tag{9}
+$$
+
+This is the same expression as what we had in the previous example, except that $z$ and $z_{0}$ are now replaced by $\phi(z)$ and $\phi(z_0)$. Using the result of the previous example, we find:
+
+$$
+G\left(z, z_{0}\right)=\ln \left|\frac{\phi(z)-\phi\left(z_{0}\right)}{\phi(z)-\overline{\phi\left(z_{0}\right)}}\right|=\ln \left|\frac{z^{2}-z_{0}^{2}}{z^{2}-{\overline{z_{0}}}^{2}}\right| .
+\tag{10}
+$$
+````

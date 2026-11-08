@@ -678,3 +678,49 @@ This exact comparison preserves the full change evidence, including formatting, 
 +> (e) Which trigonometric identities are implied by (c) and (d)?
 
 `````
+
+## Additional source comparison
+
+## 1. Fix punctuation OCR error.
+
+### Before
+
+````text
+Change $m$ to $m+2$ in the first series. and start the new series at 0 .
+````
+### After
+
+````text
+Change $m$ to $m+2$ in the first series, and start the new series at 0.
+````
+
+## 2. Restore omitted author margin observation next to the displayed reindexing it describes.
+
+### Before
+
+````text
+Change $m$ to $m+2$ in the first series, and start the new series at 0.
+
+$$
+\begin{gathered}
+\sum_{m=2}^{\infty} m(m-1) a_{m} x^{m-2}+\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
+\sum_{m=0}^{\infty}(m+2)(m+1) a_{m+2} x^{m}+\sum_{m=0}^{\infty} a_m x^m=0 \\
+\sum_{m=0}^{\infty}\left[(m+2)(m+1) a_{m+2}+a_{m}\right] x^{m}=0
+\end{gathered}
+$$
+````
+### After
+
+````text
+Change $m$ to $m+2$ in the first series, and start the new series at 0.
+
+$$
+\begin{gathered}
+\sum_{m=2}^{\infty} m(m-1) a_{m} x^{m-2}+\sum_{m=0}^{\infty} a_{m} x^{m}=0 \\
+\sum_{m=0}^{\infty}(m+2)(m+1) a_{m+2} x^{m}+\sum_{m=0}^{\infty} a_m x^m=0 \\
+\sum_{m=0}^{\infty}\left[(m+2)(m+1) a_{m+2}+a_{m}\right] x^{m}=0
+\end{gathered}
+$$
+
+Note how the index of summation in the first sum dropped by 2.
+````

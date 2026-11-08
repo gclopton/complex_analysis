@@ -508,3 +508,52 @@ This exact comparison preserves the full change evidence, including formatting, 
 +> $f(x)=\sin x$ for $-\pi<x<\pi, T=2 \pi$.
 
 `````
+
+## Additional source comparison
+
+## 1. Restore original Exercise 5(b) wording and task; retain only the necessary periodic-extension qualification and corrected index/vector notation. Remove added request to discuss wraparound and padding.
+
+### Before
+
+````text
+> [!exercise] Exercise 5
+> Approximation of the convolution by the DFT. Let $f$ and $g$ be two functions defined on the real line, and recall from Section 8.2, (3), the formula for the convolution: $f * g(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x-t) g(t) d t$.
+> (a) Pick a large number $M$ so that $f * g(x) \approx \frac{1}{\sqrt{2 \pi}} \int_{-M}^{M} f(x-t) g(t) d t$. Using a left-endpoint Riemann sum approximation, argue that
+>
+> $$
+> f * g(x) \approx \frac{2 M}{N \sqrt{2 \pi}} \sum_{j=0}^{N-1} f\left(x-t_{j}\right) g\left(t_{j}\right),
+> $$
+>
+> where $t_{j}=-M+j \frac{2 M}{N}$.
+> (b) Let $\boldsymbol f_j=f(t_j)$ and $\boldsymbol g_j=g(t_j)$ for $t_j=-M+jh$, $h=2M/N$, and extend these sampled sequences periodically with period $N$. Put $x_m=mh$. For the $2M$-periodic extension of the truncated function, verify that its value at $x_m-t_j$ is $\boldsymbol f_{(m-j)\bmod N}$. Using the normalized cyclic convolution
+>
+> $$
+> (\boldsymbol f*\boldsymbol g)_m=\frac1{\sqrt N}\sum_{j=0}^{N-1}\boldsymbol f_j\boldsymbol g_{(m-j)\bmod N},
+> $$
+>
+> obtain the approximation
+>
+> $$
+> (f*g)(x_m)\approx\frac{2M}{\sqrt{2\pi N}}(\boldsymbol f*\boldsymbol g)_m.
+> $$
+>
+> Explain that replacing the original function by its periodic extension introduces wraparound error. Choose a sufficiently large window (or zero padding) so that this error and the omitted tails are negligible at the points being compared.
+````
+### After
+
+````text
+> [!exercise] Exercise 5
+> Approximation of the convolution by the DFT. Let $f$ and $g$ be two functions defined on the real line, and recall from Section 8.2, (3), the formula for the convolution: $f * g(x)=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} f(x-t) g(t) d t$.
+> (a) Pick a large number $M$ so that $f * g(x) \approx \frac{1}{\sqrt{2 \pi}} \int_{-M}^{M} f(x-t) g(t) d t$. Using a left-endpoint Riemann sum approximation, argue that
+>
+> $$
+> f * g(x) \approx \frac{2 M}{N \sqrt{2 \pi}} \sum_{j=0}^{N-1} f\left(x-t_{j}\right) g\left(t_{j}\right),
+> $$
+>
+> where $t_{j}=-M+j \frac{2 M}{N}$.
+> (b) Let $\boldsymbol{f}=\left(f\left(t_{j}\right)\right)_{j=0}^{N-1}, \boldsymbol{g}=\left(g\left(t_{j}\right)\right)_{j=0}^{N-1}$. Extend both sequences periodically, with period $N$. For $m=0, \pm 1, \pm 2, \ldots$, let $x_{m}=m \frac{2 M}{N}$. For the $2M$-periodic extension of $f|_{[-M,M)}$, show that $f\left(x_{m}-t_{j}\right)= \boldsymbol{f}\left(t_{m-j}\right)$. (Here we are using the notation $\boldsymbol{f}\left(x_{m}\right)$ instead of $\boldsymbol{f}(m)$, since the former is more suggestive.) Conclude that
+>
+> $$
+> f * g\left(x_{m}\right) \approx \frac{2 M}{\sqrt{2 \pi N}} \boldsymbol{f} * \boldsymbol{g}\left(x_{m}\right)
+> $$
+````
