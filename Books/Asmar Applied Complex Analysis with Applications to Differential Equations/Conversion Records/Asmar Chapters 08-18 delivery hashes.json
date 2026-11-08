@@ -1,0 +1,543 @@
+{
+  "created": "2026-11-08T03:23:15.247289-06:00",
+  "vault": "complex_analysis",
+  "writer": "Little brother (M4)",
+  "scope": "Asmar Chapters 8\u201318 prepared content; no Index admissions",
+  "files": [
+    {
+      "path": ".obsidian/snippets/asmar-chapters-8-18-figures.css",
+      "sha256": "4b764136023cfb318b35427e2400a31b9bdc3b3d83a028670e9cc0f212a213cb",
+      "bytes": 77567
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.1 The Fourier Transform.md",
+      "sha256": "46b1da6155ac3f78663c1a5110161f44c8438f74a210fda162160176345cd4ed",
+      "bytes": 47726
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.2 Operational Properties.md",
+      "sha256": "56bd036eb774523a41d8f1eededc264340312ba943dd785ed9510d191f22cbe9",
+      "bytes": 59833
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.3 The Fourier Transform Method.md",
+      "sha256": "3fa4df369ec3011728dd76bbc0493076189ef6fb5076eed8b6b06a45687014bc",
+      "bytes": 26548
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.4 The Heat Equation and Gauss's Kernel.md",
+      "sha256": "c816ae007cd321113509d2c1d262defe12c790a007fef40b6ddd74b6201fdde8",
+      "bytes": 20005
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.5 The Poisson Integral and the Hilbert Transform.md",
+      "sha256": "5c2f142279cba95df50e16cb9e7de9a1577e04822815b906010acf8f049c9e1c",
+      "bytes": 25331
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.6 The Fourier Cosine and Sine Transforms.md",
+      "sha256": "517d72688de1b86489c8749b8d837c26c0455c37da3ea80a92113179c19821e6",
+      "bytes": 19413
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/8.7 Problems Involving Semi-Infinite Intervals.md",
+      "sha256": "677e6f4c51fb19bb7877912fcfad78cf2edc622f830ce1be5e35d086f96f7d6d",
+      "bytes": 16311
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/Chapter 08 The Fourier Transform and Its Applications.md",
+      "sha256": "219ba88691d5690a35497d880650938c75ca678c4488cb5bcac5c35a94f7457e",
+      "bytes": 4763
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-1-figure-1-restored.png",
+      "sha256": "4bf87d86dcdb1ad7e6d8fa575faee3d65cefebba6cad3ffa3037ca03e01e1fd2",
+      "bytes": 145071
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-2-figure-5-restored.png",
+      "sha256": "024bfd1ff6c9b129eb0ff0940773585a69f4e929f8e86f7d9b25e905afb45848",
+      "bytes": 199619
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 08 The Fourier Transform and Its Applications/images/asmar-8-2-figure-6-restored.png",
+      "sha256": "28d11922986f6aa597de51ff4533f25d4b5fb274b35432f540aa92cdf030eee4",
+      "bytes": 438148
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/9.1 The Laplace Transform.md",
+      "sha256": "94c65c963594cb4b1502200f74c219ac68580f9dbf5c743a30ebd22b69107b70",
+      "bytes": 37764
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/9.2 Further Properties of the Laplace Transform.md",
+      "sha256": "bb4b496cb47ee59260214c68b8b732842313ca0faa99346830097ccd5399d11d",
+      "bytes": 33296
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/9.3 The Laplace Transform Method.md",
+      "sha256": "57f693080ab808840306689857123ddda8264fc51c4f5b73ccb2d4b48e48bfdd",
+      "bytes": 20968
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/9.4 The Hankel Transform with Applications.md",
+      "sha256": "87e055e6355b12d82a221f2e437edfb62ee2390c835137c16961396f94a46cc5",
+      "bytes": 19200
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/Chapter 09 The Laplace and Hankel Transforms with Applications.md",
+      "sha256": "662ee47090c4a3b94d3314df0c5849876b521470d8e9a5f25c68e1d9e85c7556",
+      "bytes": 3881
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/asmar-9-2-figure-1-restored.png",
+      "sha256": "f9b4792dacfadc86818d57c36e09754070f084188f7a29d9d4ec8f829b51155e",
+      "bytes": 147599
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 09 The Laplace and Hankel Transforms with Applications/images/asmar-9-3-figure-1-restored.png",
+      "sha256": "33fb547d5f2b3b1849a7426c1b9b203dd18cd76bc4329f37df9193ceb9598494",
+      "bytes": 144934
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.1 Linear Ordinary Differential Equations.md",
+      "sha256": "db7a9a50405360ffa045a66117bfe2e30e1ee7b929ac70d57b2683aa901876ce",
+      "bytes": 29811
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.2 Linear Ordinary Differential Equations with Constant Coefficients.md",
+      "sha256": "0e3f82d39e28aea76b777962a5cb5c78ea8a4be34e81c5923bf5ab00e9ff2ba7",
+      "bytes": 42514
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.3 Linear Ordinary Differential Equations with Nonconstant Coefficients.md",
+      "sha256": "153b30f32a24fdf5b9cac6c03317f96eb969679aae8fc99008651fd0f7fc8af2",
+      "bytes": 26883
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.4 The Power Series Method, Part I.md",
+      "sha256": "bf0d245d8511aaf33e9a5fde2ab3d418a534f70b2fd11fcb32449922519895dd",
+      "bytes": 35357
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.5 The Power Series Method, Part II.md",
+      "sha256": "2067f036de03e81403aac14cd844c0c98a46407c8ac1e9484404e77792903a52",
+      "bytes": 26531
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/10.6 The Method of Frobenius.md",
+      "sha256": "49736dcb282aa311664c9bb9615a3e16c8edb8df769b17465ed8739c1f31cff3",
+      "bytes": 39056
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods/Chapter 10 Ordinary Differential Equations Review of Concepts and Methods.md",
+      "sha256": "d03e419891c045a2e096ee8d42aee0a3d2b3c97f38d1e32e79fc57fee5626a35",
+      "bytes": 3239
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.1 Partial Differential Equations in Physics and Engineering.md",
+      "sha256": "44e1edf993c342d4cffd5eafc71d786ef3cd69689914d1b9aab4f7a3cf656410",
+      "bytes": 18418
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.10 Neumann and Robin Conditions.md",
+      "sha256": "a256706e3992e4bcbdd8e7ac6e77cb5e09b5c14a9998fbca9e7c400b9ce8d4bf",
+      "bytes": 27225
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.11 The Maximum Principle.md",
+      "sha256": "c66874576346acd9b8671a3f5c66ad6121664549c310e1be4745d8d1f7c2f85a",
+      "bytes": 17235
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.2 Modeling: Vibrating Strings and the Wave Equation.md",
+      "sha256": "5325de0d309d58e566279e7ff4218f49cb3db1bba4055636e5df4243819dd966",
+      "bytes": 16355
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.3 Solution of the One Dimensional Wave Equation: The Method of Separation of Variables.md",
+      "sha256": "61b9ba0c5248010de75664a298faa633dc3e0fb5e195109ff5ef4cc6cb368c55",
+      "bytes": 31357
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.4 D'Alembert's Method.md",
+      "sha256": "26893833db6f09e2e7c08ae13e569fb724a2b50e8e634774cc88c01582f1a1b2",
+      "bytes": 30023
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.5 The One Dimensional Heat Equation.md",
+      "sha256": "dcf70b94699e9eca4a1595a6958ecba48d92bf4d60e1815d293c8be0d0abc111",
+      "bytes": 28207
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.6 Heat Conduction in Bars: Varying the Boundary Conditions.md",
+      "sha256": "839a251602e8239e6dcc445745a0f46c828609fcefe76ebfc052626b8636f35f",
+      "bytes": 25492
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.7 The Two Dimensional Wave and Heat Equations.md",
+      "sha256": "8f9cba059dad808ea685931dabf37b9f76b2e9ee36e7e8401b63d243b143d854",
+      "bytes": 23453
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.8 Laplace's Equation in Rectangular Coordinates.md",
+      "sha256": "c91a3cf45cab25bc04186e9cc72650ae9f741f377742b318c2fcc470124821e2",
+      "bytes": 16760
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/11.9 Poisson's Equation: The Method of Eigenfunction Expansions.md",
+      "sha256": "eaea075030769bb4910b7a8253ca206fe445a5306ed4796d5c26cfbe5803acec",
+      "bytes": 27039
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/Chapter 11 Partial Differential Equations in Rectangular Coordinates.md",
+      "sha256": "34420d93b841cd2dad77ddd0abd45ca89e1cc99599b95258f147a9508e4b472a",
+      "bytes": 6073
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel1.png",
+      "sha256": "1a27663463ac61866ee7f09bfde2b802e89d221fa539bb2aaf89e0bf3ed9882a",
+      "bytes": 11213
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel2.png",
+      "sha256": "757f68205577fb36d54416c94cc81ca5fa6fcc45fe9fc9ff0a5ac6766c5c7fd2",
+      "bytes": 12219
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel3.png",
+      "sha256": "1aefe4921006498f0d51c02d26b6913790684a3547767dd77b62a8fc566dfbd2",
+      "bytes": 9921
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel4.png",
+      "sha256": "76f2025a17edef62259ff7940b8487d4dda3bb1ad19b84d3e68da7449e4c158a",
+      "bytes": 10624
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel5.png",
+      "sha256": "cc8ddfc84d468965ebbbe71804c05c838959436a7a9acb5c08b51e8e83f1e309",
+      "bytes": 11678
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel6.png",
+      "sha256": "28bf3bf0e46cfb149816d0a33c958378f82fde8bed6d7d35bca60eb1a37e9649",
+      "bytes": 12273
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel7.png",
+      "sha256": "5c3adc948d2596bb1bb9dd11cf6ec1a862b103fe21b2e8d3b5dc65f46baa3f21",
+      "bytes": 11198
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel8.png",
+      "sha256": "8f3e6229761f90b6fff2f701ba55056cc406c78da463fe723ca1ee092edcae60",
+      "bytes": 11317
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 11 Partial Differential Equations in Rectangular Coordinates/images/asmar11-3-figure3-panel9.png",
+      "sha256": "ae6ae32dc3e5faf4c24d9a8f806378f9930e9e34f8d7cc8704be218d296a5623",
+      "bytes": 10661
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.1 The Laplacian in Various Coordinate Systems.md",
+      "sha256": "c9eb0fcc2039793ff4c7614763cfbd0dec97fcfa1c35a6e976a112fce621b6c0",
+      "bytes": 21004
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.2 Vibrations of a Circular Membrane: Symmetric Case.md",
+      "sha256": "c33a3f547b339e2e83ff597f6d96c839a49103ddd300af6ab184aee4ef88621c",
+      "bytes": 23158
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.3 Vibrations of a Circular Membrane: General Case.md",
+      "sha256": "9973133c4fd4810e7e7a36c1b84166ef815b1d91607ba6c6d427aad3af06e180",
+      "bytes": 27623
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.4 Laplace's Equation in Circular Regions.md",
+      "sha256": "d713ed1d70e73a13c0b22e9c6ec7da914af7048e8822399a8fe927b76b6643f1",
+      "bytes": 38652
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.5 Laplace's Equation in a Cylinder.md",
+      "sha256": "b4bf89a13a7f4a7b913ada19a3921fd9518f7807a836d9d9577b61e580d64d2d",
+      "bytes": 11796
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.6 The Helmholtz and Poisson Equations.md",
+      "sha256": "c8e61d6979bfd3b2707e0c97f7c571c5d61e241c4446ef7b2a1280dbb03aed07",
+      "bytes": 18538
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.7 Bessel's Equation and Bessel Functions.md",
+      "sha256": "ec00f9af4a7464a8a7392f5fcc4fea67abdd4218696acfed1b66478f028ef9d3",
+      "bytes": 32896
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.8 Bessel Series Expansions.md",
+      "sha256": "51d227326e951c27b2c77b8bb6201503c6b01c273641edda5376e6e047ffa75c",
+      "bytes": 38858
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/12.9 Integral Formulas and Asymptotics for Bessel Functions.md",
+      "sha256": "eede2be2cfa4dd90ccede72d6289dc7cf1fb6b504c7583112686df0e96136483",
+      "bytes": 24131
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates.md",
+      "sha256": "f017a5b0cdaa28adca4557c0ab5b7e646049e2ccc7a060defc91e6e7858e4f5b",
+      "bytes": 5322
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/asmar-12-2-figure-4-source.png",
+      "sha256": "11abe8e80b4c9946367e1e79a7730b0badf2d4a72e302e01bdfd63caee1196e8",
+      "bytes": 27197
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 12 Partial Differential Equations in Polar and Cylindrical Coordinates/images/asmar-12-8-figure-4-source.png",
+      "sha256": "de3a1cc354977efcb10ac8803223a2092a1b92c6387683dd62a2f582b208e82f",
+      "bytes": 34392
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.1 Preview of Problems and Methods.md",
+      "sha256": "9bad8119febcb8b2c8cf479681e26d66c6f2014274615f5f101ff6691b9431d6",
+      "bytes": 14326
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.2 Dirichlet Problems with Symmetry.md",
+      "sha256": "bbf20f083621da9d915f7b79ad851a90b0dc44f13335e561f99d255a6289e0bf",
+      "bytes": 22647
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.3 Spherical Harmonics and the General Dirichlet Problem.md",
+      "sha256": "2f201105f6392cbc512c3a9d14e86ef08b8006221fde803e36105e274c1a16fe",
+      "bytes": 32097
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.4 The Helmholtz Equation with Applications to the Poisson, Heat, and Wave Equations.md",
+      "sha256": "1a5a0e79ae13088147486c84870b7b9d0b8399af020fdad3abe1aadd7845d64d",
+      "bytes": 23779
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.5 Legendre's Differential Equation.md",
+      "sha256": "2820bf908ad2106a21516ea30051aa423cf44c4d853192462f018b554dff0374",
+      "bytes": 26592
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.6 Legendre Polynomials and Legendre Series Expansions.md",
+      "sha256": "5f36b4660747a393792769636dc79d436c92a7fc7a94512adc2e916235931115",
+      "bytes": 30284
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/13.7 Associated Legendre Functions and Series Expansions.md",
+      "sha256": "3e9f4df43a4f038ef10d13ef003741d0730584a257de15f845cc2b6c4f4108f0",
+      "bytes": 17150
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 13 Partial Differential Equations in Spherical Coordinates/Chapter 13 Partial Differential Equations in Spherical Coordinates.md",
+      "sha256": "95682d0c3d104669204ca82ac13999a5ee749e3de8ec62e4b8fc07572119ee51",
+      "bytes": 4878
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.1 Orthogonal Functions.md",
+      "sha256": "33bf5008ee61f1abdf19159083c9f89fec1e953aac06ebefe76e46b414096500",
+      "bytes": 21779
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.2 Sturm-Liouville Theory.md",
+      "sha256": "c6d7814a8c854805a572528bb67f83933aee3ae8b5c4a1fb02a5b2e942e993ea",
+      "bytes": 46438
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.3 The Hanging Chain.md",
+      "sha256": "477ad51bb9b9120560c410ff5beacf233b83d20ccd91f31666d0c6aeafd4595b",
+      "bytes": 14191
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.4 Fourth Order Sturm-Liouville Theory.md",
+      "sha256": "5ab17a2157cabd3f933f5ba274ac6e357777cc4350a617f3d6cc667ff5c832e1",
+      "bytes": 18233
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.5 Elastic Vibrations and Buckling of Beams.md",
+      "sha256": "bcec7ffc416853e71ef16dc3ddef5ddccb92e58b610efa4bd96197e405e4391a",
+      "bytes": 29320
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.6 The Biharmonic Operator.md",
+      "sha256": "f764564c7e61d3dbd912a802d79109a5bfce8d818f47fc9557cd24b1c4a4eb6c",
+      "bytes": 17661
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/14.7 Vibrations of Circular Plates.md",
+      "sha256": "c7826d1ec35d726bca041a19bcc009d4ef0f1b1ef87147cb81c58ea8830e8750",
+      "bytes": 32869
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 14 Sturm-Liouville Theory with Engineering Applications/Chapter 14 Sturm-Liouville Theory with Engineering Applications.md",
+      "sha256": "8d965cd5ef21fdcc1453cc5dd71f828eebec39af8c0881212b01e5b85231ffad",
+      "bytes": 4806
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.1 Schr\u00f6dinger's Equation.md",
+      "sha256": "fa75840b20d0dad5c91da5c423cc2391b7fabef6b57563145c264c658f95daef",
+      "bytes": 24075
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.2 The Hydrogen Atom.md",
+      "sha256": "24f232a39b7c08ad6d41333d7da29e44b934a61abf816b5b29274949c6386a1d",
+      "bytes": 20408
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.3 Heisenberg's Uncertainty Principle.md",
+      "sha256": "d81d32f3f1d000899fb24db0130d383d05a5deaa8627772a75b6a1c5bd72ddc9",
+      "bytes": 21445
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/15.4 Hermite and Laguerre Polynomials.md",
+      "sha256": "93e6b2f8c0b65dc56f851a08815719da6d6e2130030d2c7aa896bdcf7abcc69f",
+      "bytes": 34603
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 15 An Introduction to Quantum Mechanics/Chapter 15 An Introduction to Quantum Mechanics.md",
+      "sha256": "34114c044b23377d08f9fc51988d3e952855fd6b1ce8279c771d68ddce55ce2a",
+      "bytes": 3600
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.1 Green's Theorem and Identities.md",
+      "sha256": "0c6b9cd488d220fc20a80c0662388969f41f8aeeb84685262cafb1dde7c0be1f",
+      "bytes": 39073
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.2 Harmonic Functions and Green's Identities.md",
+      "sha256": "47483e50a1d76ce9eecef550f134f4a690136c38a6ae122c085eda8134533ada",
+      "bytes": 22333
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.3 Green's Functions.md",
+      "sha256": "26c62c481e56ef51ac75bc8834f603a77306711922e5de23cf33534aafd39251",
+      "bytes": 40673
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.4 Green's Functions for the Disk and the Upper Half-Plane.md",
+      "sha256": "268ca83523d38cd3933e6a91064ef77723c59db1006151f7499aef187113c58f",
+      "bytes": 23882
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.5 Analytic Functions.md",
+      "sha256": "88dae3fd22abc3f29fd3e5ef4b231354fc80b664c20fb99052ee017fd510ed6f",
+      "bytes": 65019
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.6 Solving Dirichlet Problems with Conformal Mappings.md",
+      "sha256": "caba61cc9276a02374082928e639fd6fa1be5aac42f2727de678375d2686cd5d",
+      "bytes": 41918
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.7 Green's Functions and Conformal Mappings.md",
+      "sha256": "5c98c9634ad5e2ed5839673e15f9667ba04cf86d5a752afa7aa6b10fa4ee780b",
+      "bytes": 32194
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/16.8 Neumann Functions and the Solution of Neumann Problems.md",
+      "sha256": "d64815fdfa161be35db99cb9270bfa9ec4acf89e16d765a04acf340685a61922",
+      "bytes": 24814
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/Chapter 16 Green's Functions and Conformal Mappings.md",
+      "sha256": "ae6da08d527fffdb63db1a3dd49a8e9e68af6b930d7aec4d1983eb1de292ae82",
+      "bytes": 5285
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/asmar16-3-figure5-restored.png",
+      "sha256": "fb600fd4af19bb545dffd89515d9c202ce198799af876ac30d0fdbd8be0505d2",
+      "bytes": 32635
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/asmar16-8-figure1-restored.png",
+      "sha256": "d96223d4e85ce9e08ae4f4cf39335d38c8332bfe81a140d7d48566f29697292a",
+      "bytes": 20833
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 16 Green's Functions and Conformal Mappings/images/asmar16-8-figure4-restored.png",
+      "sha256": "b91aa43fc44344f4d82d3c835666b2667ffb5f839adca9bb16d80fb37695ae8f",
+      "bytes": 22857
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.1 The Sampling Theorem.md",
+      "sha256": "9b80d6176f0e66d6c117f310a4607221b0cc7c5218e79621cab1abc2fd04740d",
+      "bytes": 33437
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.2 Partial Differential Equations and the Sampling Theorem.md",
+      "sha256": "119c3518d3a7dd4acb6a6f7801ee41e5703114749181807e98edaff279dbbbf9",
+      "bytes": 10572
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.3 The Discrete and Fast Fourier Transforms.md",
+      "sha256": "06a3d1a570689088121480d44a3c98f29ccb1275543908f49dfb36299b51d75d",
+      "bytes": 19104
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/17.4 The Fourier and Discrete Fourier Transforms.md",
+      "sha256": "b8082e4da991d1333d7c88bc2a3cd8a4f85d11b981fb278f1b394e8369fbcf98",
+      "bytes": 17314
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations/Chapter 17 Sampling and Discrete Fourier Analysis with Applications to Partial Differential Equations.md",
+      "sha256": "f737bcdc8092d893f4a05d97ca9366ea741f016a3147e8ca0e71ddd796d4d195",
+      "bytes": 3879
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.1 The Finite Difference Method for the Heat Equation.md",
+      "sha256": "4a342299280119f5a2707cf1a30685a8281f9da422138feaf62083a947773f0e",
+      "bytes": 31419
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.2 The Finite Difference Method for the Wave Equation.md",
+      "sha256": "4ed0ec26e2f4a41f1c1f549af669c292b6de3bd363e068f7f930f42a6ed16b9d",
+      "bytes": 27124
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.3 The Finite Difference Method for Laplace's Equation.md",
+      "sha256": "b1be72c17d7c1ec7e7aa73a7e148c84f09990356639e545338164613303f707f",
+      "bytes": 23998
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.4 Iteration Methods for Laplace's Equation.md",
+      "sha256": "fc2551c26edf70a83a9b9907682ff77905e8e8e520dc3839e89b048185f21188",
+      "bytes": 16032
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/18.75 --.md",
+      "sha256": "3ac2b4247cb17ce1201d6487ee411804580f7b4a2669c99ad4570160e2d80e94",
+      "bytes": 1327
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/Chapter 18 Finite Difference Numerical Methods.md",
+      "sha256": "3bfbcb00e7b55604613ea11153aa23aa342d628810c5794cf684ece3f07185e1",
+      "bytes": 4219
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Chapter 18 Finite Difference Numerical Methods/images/asmar18-3-figure3-restored.png",
+      "sha256": "e00db26a29d38ea047cc0676240861a6a5042050d66c062fa663040a2f5d4fea",
+      "bytes": 11600
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Conversion Records/Asmar Chapters 08-18 candidate inventory.json",
+      "sha256": "bfd59c6c7a4fbd9888aded4323bc05b71696bc920fe0c130a7090008779e9b80",
+      "bytes": 246380
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Conversion Records/Asmar Chapters 08-18 preparation.md",
+      "sha256": "06ba5a141f6fc490f49973c497a2334de8a2c3f728a11521e53d58da9bf52d6c",
+      "bytes": 3122
+    },
+    {
+      "path": "Books/Asmar Applied Complex Analysis with Applications to Differential Equations/Conversion Records/Asmar Chapters 08-18 printed equation ledger.csv",
+      "sha256": "8823e6085a84f3c84b6a247ab2a455879f8b8ee7ad6fd935636214434b57b72d",
+      "bytes": 132505
+    }
+  ]
+}
