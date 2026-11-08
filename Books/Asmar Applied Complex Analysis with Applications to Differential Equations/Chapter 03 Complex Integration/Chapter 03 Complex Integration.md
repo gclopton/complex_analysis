@@ -1,3 +1,4 @@
+
 ## Topics to Review
 
 The definition of path in Section 3.1 is based on the parametric form of curves from calculus. The definition of path integral in Section 3.2 is based on the definition of definite integrals as a limit of Riemann sums, from calculus. A good understanding of these notions and the fundamental theorem of calculus are required. We will also use basic properties of continuous functions in proofs. (For example, if $f$ is continuous on $[a, b]$, then $f$ attains its maximum and minimum values in $[a, b]$.)

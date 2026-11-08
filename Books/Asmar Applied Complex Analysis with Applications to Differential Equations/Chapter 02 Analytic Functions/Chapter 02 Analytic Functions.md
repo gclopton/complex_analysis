@@ -1,3 +1,4 @@
+
 ## Topics to Review
 
 In this chapter we will present the fundamental definition of a derivative of a function of a complex variable. Like the definition from calculus, here the derivative will be defined as the limit of a difference quotient (although its existence will have consequences that have no analog in calculus). So it is helpful to review the basic definitions from calculus of limits, continuity, and derivatives.

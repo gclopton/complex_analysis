@@ -1,3 +1,4 @@
+
 Topics to Review
 Sections 4.14 .4 parallel the derelopment of series from calculis. A review of the basic definitions of convergence and the tests of convergence and divergence ( $n$th term test, root test, ratio test, comparison test) would help. Unlike calculus, where series were studied almost independently from integrals, here the path integral and, in particular, Canchy's theorem, will play a major role in proving facts about series.
 
