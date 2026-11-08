@@ -219,3 +219,46 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > provided that no term in the expression of $y_{p}$ is a solution of the associated homogeneous equation. If not, we modify this expression by multiplying by $x$ or $x^{2}$. We use $x$ if the characteristic polynomial of the associated homogeneous equation has distinct roots, and $x^{2}$ if it has a double root.
 > Superposition rule If the right side of $ay^{\prime\prime}+by^{\prime}+cy=g(x)$, where $a,b,c$ are real constants and $a\ne0$, is a sum of several different functions of the stated polynomial–exponential–trigonometric form, we use a corresponding sum of terms of the corresponding trial form.
 ````
+
+## Additional source comparison
+
+## 1. Restore the exact descriptive source title without its numbering.
+
+### Before
+
+````text
+> [!rule|d20db426-76e0-56ae-a30c-c4dd6a5f292d.local at=dec31ecc-135b-5e87-983e-541fa27dba48] General Solution of the $n$th-Order Homogeneous Equation
+````
+### After
+
+````text
+> [!rule|d20db426-76e0-56ae-a30c-c4dd6a5f292d.local at=dec31ecc-135b-5e87-983e-541fa27dba48] General Solution of the $n$th-Order Linear Homogeneous Equation with Constant Coefficients
+````
+
+## 2. Restore the exact descriptive source title without its numbering.
+
+### Before
+
+````text
+> [!rule|82e7bb10-ee1c-58b9-a1b4-179d76a3554d.local at=80cec4ea-5d4d-5671-b00d-2a975958e9e0] General Solution of the Second-Order Homogeneous Equation
+````
+### After
+
+````text
+> [!rule|82e7bb10-ee1c-58b9-a1b4-179d76a3554d.local at=80cec4ea-5d4d-5671-b00d-2a975958e9e0] General Solution of the Second-Order Linear Homogeneous Equation with Constant Coefficients
+````
+
+## Additional source comparison
+
+## 1. Move the remaining editorial notice into the separate record.
+
+### Before
+
+````text
+[Source uncertainty: the derivative order in Exercise 48 is faint in the supplied PDF. The transcribed $y^{(1)}$ is retained here; verify this order against a clearer source before solving.]
+````
+### After
+
+````text
+
+````

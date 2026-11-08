@@ -246,3 +246,31 @@ Original OCR/PDF and before-recovery snapshot are preserved. This record documen
 > (iii) $W\left(y_{1}, y_{2}, \ldots, y_{n}\right)\left(x_{0}\right) \neq 0$ for some $x_{0}$ in $I$;
 > (iv) $W\left(y_{1}, y_{2}, \ldots, y_{n}\right)(x) \neq 0$ for all $x$ in $I$.
 ````
+
+## Additional source comparison
+
+## 1. Restore the exact descriptive source title without its numbering.
+
+### Before
+
+````text
+> [!theorem|58d36e0f-23d5-5fc2-a7af-d48845743392.local at=ae61bbfd-6cf0-5838-a0b1-c687acef90cc] Abel's Formula
+````
+### After
+
+````text
+> [!theorem|58d36e0f-23d5-5fc2-a7af-d48845743392.local at=ae61bbfd-6cf0-5838-a0b1-c687acef90cc] Abel's Formula for the Wronskian
+````
+
+## 2. Restore the exact descriptive source title without its numbering.
+
+### Before
+
+````text
+> [!theorem|db15dfe7-346c-58c1-8951-18bd923b981e.local at=82d9c1c5-dacf-5fa9-9199-7e7854129d88] Existence of a Fundamental Set
+````
+### After
+
+````text
+> [!theorem|db15dfe7-346c-58c1-8951-18bd923b981e.local at=82d9c1c5-dacf-5fa9-9199-7e7854129d88] Existence of Fundamental Sets of Solutions
+````
