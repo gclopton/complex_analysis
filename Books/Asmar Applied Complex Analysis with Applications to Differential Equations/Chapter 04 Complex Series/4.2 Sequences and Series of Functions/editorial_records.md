@@ -437,3 +437,7 @@ This exact comparison preserves the full change evidence, including formatting, 
  
 
 `````
+
+## 2026-11-09 — Admission source-preservation recovery
+
+The whole-note comparison detected unexpected increments in 26 printed exercise-number lines after native admission. Restored their exact pre-admission lines from the immutable baseline, retaining all native callout identities and admitted markers. No exercise wording, formula or admitted primitive was changed. Exact preimage and line receipts are in `asmar-repair-20261108/admission/4.2-before-number-restoration.md` and `4.2-number-restoration.json`. Cause remains under investigation.

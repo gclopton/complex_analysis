@@ -1074,3 +1074,7 @@ This exact comparison preserves the full change evidence, including formatting, 
  > \qquad (a\le b\le c).
 
 `````
+
+## 2026-11-09 — Admission compatibility
+
+Removed only optional 4pt row padding from the two cases expressions in the equations for the complex exponential integral and the circle monomial integral. Mathematical symbols, cases, hypotheses and author wording are unchanged. The installed Index completeness guard misidentifies the row-spacing token as an unmatched display opener (Case 019). Rendered mathematical structure and glyph sequences match; exact preimages and checks are in `asmar-repair-20261108/admission/authorized-spacing-repairs.json` and `spacing-render-verification.json`.

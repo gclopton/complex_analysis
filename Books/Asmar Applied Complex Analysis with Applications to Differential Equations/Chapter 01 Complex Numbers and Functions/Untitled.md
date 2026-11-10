@@ -6,7 +6,7 @@
   
   
 
-> [!review] Review 1
+> [!review|26ef2147-a893-52e7-bad4-8d8a87310600.local at=4b349da7-9008-59ad-b70a-a859707cd203] Review 1
 
 > 1. Define complex-valued function $f$ of a complex variable $z$, domain of definition, value of $f$ at $z$.
 
@@ -40,7 +40,7 @@ Back in calculus, a real-valued function $y=g(x)$ of a real variable $x$ was rep
   
   
 
-> [!figure] Figure 1
+> [!figure|f5b939ea-0bfb-5422-bc09-50025afb5aa9.local at=9aec251b-4491-52dd-bba5-344567852ff7] Figure 1
 
 >
 
@@ -62,7 +62,7 @@ As usual, we will write $z=x+i y$, and also write $w=u+i v$. Thus as a conventio
   
   
 
-> [!exercise] Exercise 1: Translation
+> [!exercise|ec3aa46e-1278-5613-865b-a3deb77f6771.local at=d4ab3bcc-9ab6-5823-8f29-388ecdd25978] Exercise 1: Translation
 
 > Let $S$ denote the disk
 
@@ -94,7 +94,7 @@ For any $z$ in $S$, the number $f(z)$ is found by adding $z$ to $2+i$ as vectors
   
   
 
-> [!figure] Figure 2
+> [!figure|ff0982df-fe09-5759-a4a0-9336eff1eaf4.local at=dca2ec4f-7aa9-532d-8441-6f68c9d25fc7] Figure 2
 
 >
 
@@ -122,7 +122,7 @@ $$
   
   
 
-> [!review] Review 2
+> [!review|71f94a67-8d81-59be-80a7-7f442ad40f41.local at=f8d1154e-72ac-5c2f-8a03-5e5ac3a8e5fa] Review 2
 
 > Two transformations that occur during multiplication of complex numbers becomes apparent when we those numbers polar form? What transformations are they? Does it matter which order these transformations are applied? What happens when $r = 1$? What are mappings of the form $f(z)=r z$?
 
@@ -141,7 +141,7 @@ Our next example deals with functions of the form $f(z)=a z$, where ${ }^{a}$ is
   
   
 
-> [!exercise] Exercise 2: Dialations and Rotations
+> [!exercise|75b884e2-fd18-5c94-a110-c6bad6826396.local at=be410d73-ee55-592c-9ed7-05d279122c9d] Exercise 2: Dialations and Rotations
 
 > Let $S$ be the points lying inside and on the square of side length 2 centered at the point 2 on the real axis.
 
@@ -158,7 +158,7 @@ Our next example deals with functions of the form $f(z)=a z$, where ${ }^{a}$ is
   
   
 
-> [!figure] Figure 3
+> [!figure|a967c9fb-9772-5317-93c4-fd3922afbe30.local at=fe8cba91-94d9-5f3a-b762-892507e48c43] Figure 3
 
 >
 
@@ -198,7 +198,7 @@ Our next example deals with functions of the form $f(z)=a z$, where ${ }^{a}$ is
 
   
 
-> [!figure] Figure 4
+> [!figure|01b34328-0200-5ef9-8447-a0deed69064f.local at=0416dea7-e4d5-5b54-bf58-0094771739d0] Figure 4
 
 >
 
@@ -215,7 +215,7 @@ Our next example deals with functions of the form $f(z)=a z$, where ${ }^{a}$ is
   
   
 
-> [!review] Review 3
+> [!review|e124dd6e-beee-5ab1-9a23-542351da321c.local at=29823123-1fa2-5150-9a9d-e02ded5c0d8b] Review 3
 
 > 1. What are mappings of the type $f(z)=a z+b$ called, and why is it important that $a \neq 0$? What types of simpler transformations can linear transformations always be broken down into?
 
@@ -235,7 +235,7 @@ Examples 1 and 2 deal with mappings of the type $f(z)=a z+b$, where $a$ and $b$ 
   
   
 
-> [!exercise] Exercise 3: Inversion
+> [!exercise|0ca28d45-f3a5-52cb-b122-67c28d994584.local at=4d108454-8af3-5e9a-9291-b36a9bc3c88b] Exercise 3: Inversion
 
 > Find the image of the following sets under the mapping $f(z)=1 / z$.
 
@@ -277,7 +277,7 @@ $$
   
   
 
-> [!figure] Figure 5
+> [!figure|8aeae9b0-1202-5fe2-b733-5ae607cc86cb.local at=5eecf98c-5050-5440-be37-86a085d9885d] Figure 5
 
 >
 
@@ -318,7 +318,7 @@ $$
 
   
 
-> [!figure] Figure 6
+> [!figure|1b4acc52-85d9-51f6-a645-011e84aadf6a.local at=b2cae618-78f9-5e47-9e0c-2c3aa36f1d39] Figure 6
 
 > Figure 6 Under the inversion
 
@@ -341,7 +341,7 @@ $$
   
   
 
-> [!review] Review 4
+> [!review|cd411c0c-d5b5-538e-9f72-2d4a0d67b40d.local at=f659814a-3308-5487-99d0-22d1620bf250] Review 4
 
 > What is a linear fractional transformation? What are the restrictions on this form? What happens when $ad = bc$?
 
@@ -357,12 +357,9 @@ The function $f(z)=\frac{1}{z}$ in Example 3 is a special case of a general type
 
   
 
-> [!definition] Linear Fractional Transformation (Bilinear Transformation, Möbius Transformation)
-
+> [!definition|f3417732-59ab-54a9-a671-d1c4ec253e1a.library at=356ad81f-8d63-5cef-8af5-82da431682b2] Linear Fractional Transformation (Bilinear Transformation, Möbius Transformation)
 > $$
-
 > w=\frac{a z+b}{c z+d} \quad(a d \neq b c)
-
 > $$
 
   
@@ -375,7 +372,7 @@ known as a ==linear fractional transformation==, also known as a bilinear transf
 
   
 
-> [!review] Review 5
+> [!review|acde2013-9bd6-5c25-ad81-d347105e0c9e.local at=52ece961-22a0-5147-badd-a3de7b3366c5] Review 5
 
 > 1. Given a complex function $f(z)$, define $u$ and $v$ and explain what kind of objects they are. Write $f(z)$ in terms of $u$ and $v$. What notational convention is being used when we write $u(x+i y)=u(x, y)$, and why is it called an abuse of notation?
 
@@ -413,7 +410,7 @@ As we now illustrate, the functions $u(x, y)$ and $v(x, y)$ may be used to deter
   
   
 
-> [!exercise] Exercise 4: Squaring
+> [!exercise|fb5ff70a-33ba-5ec6-8a85-ad211df9adb4.local at=69d0c50c-94bf-5560-b618-3f092563deac] Exercise 4: Squaring
 
 > Let $S$ be the vertical strip
 
@@ -462,7 +459,7 @@ $$
   
   
 
-> [!figure] Figure 7
+> [!figure|cae847c2-7910-51c6-ba97-2b2dd89f6622.local at=f1b0d82f-dc44-5a17-b7d4-0d211b1c927a] Figure 7
 
 > ![](./images/13d4bcc6-f973-445e-ad7d-b22a7a43507d-42_502_1006_1082_789.jpg)
 
@@ -491,7 +488,7 @@ $$
   
   
 
-> [!review] Review 6
+> [!review|c595d81d-3344-5491-b51b-c369c60c27ea.local at=6244e1a7-ac1f-503a-adf4-ae7ae3bf002b] Review 6
 
 > 1. Some complex functions are more naturally expressed in polar coordinates. Write $f(z)$ in polar form, identifying its real and imaginary parts as functions of $r$ and $\theta$.
 
@@ -518,7 +515,7 @@ We may even write $w=f(z)$ in polar coordinates as $w=\rho(\cos \phi+i \sin \phi
   
   
 
-> [!exercise] Exercise 5: Mapping Sectors
+> [!exercise|fe7bc04f-f9bc-5a6b-87bd-a9811cf1fc19.local at=4e086ed7-1a56-53e5-8edf-cc41fad1ec74] Exercise 5: Mapping Sectors
 
 > Let $S$ be the sector
 
@@ -549,7 +546,7 @@ $$
 
   
 
-> [!figure] Figure 8
+> [!figure|11a3a1e2-b29f-5b9f-9a97-620c6f8193c7.local at=f9dd5b2e-205b-5707-b419-e6ab5322b410] Figure 8
 
 >
 
@@ -599,7 +596,7 @@ All the mappings considered in the examples have been one-to-one, in that distin
 
   
 
-> [!exercise] Exercise 6
+> [!exercise|daa709be-4966-5633-848b-7a784676c8c4.local at=4e28d509-9dde-5793-bc15-9b119bc01021] Exercise 6
 
 > In problems 1-6, evaluate $w=f(z)$ for the given value of $z$.
 
@@ -865,7 +862,7 @@ $$
   
   
 
-> [!exercise] Exercise 7
+> [!exercise|93ebee12-f616-54da-8c69-7bfaf38bc533.local at=9ec4c138-7258-56cf-898f-6b482367f7fc] Exercise 7
 
 > In problems 7-12, express $f(z)$ in the form $u(x, y)+i v(x, y)$ where $u$ and $v$ are the real and imaginary parts of $f$.
 
@@ -1148,7 +1145,7 @@ $$
   
   
 
-> [!exercise] Exercise 8
+> [!exercise|3bfb57f4-cc64-5b8d-994c-023194cf490d.local at=762b246c-14df-5217-9cfc-7621ff4c80d2] Exercise 8
 
 > In problems 13-18, find the largest subset of $\mathbb{C}$ on which the given formula makes sense and hence defines a function.
 
@@ -1627,7 +1624,7 @@ $$
   
   
 
-> [!exercise] Exercise 9
+> [!exercise|c8ef5d06-beee-58f9-9bd6-8cacd947b3f2.local at=429cf833-c5f5-5664-b880-03d784b039f9] Exercise 9
 
 > In problems 21-24, find the image $f[S]$ under the given linear transformation. Draw a picture of $S$ and $f[S]$, and depict arrows mapping select points.
 
@@ -2527,7 +2524,7 @@ plt.close(fig)
   
   
 
-> [!exercise] Exercise 10
+> [!exercise|3cd21899-34f8-5946-96b5-1c35a3b074d3.local at=99a45f5a-c32d-53cc-84de-9080462de22c] Exercise 10
 
 > 25. (a) Suppose that $f(z)=a z+b$ and $g(z)=c z+d$ are linear transformations. Show that $f(g(z))$ is also a linear transformation.
 
@@ -2946,7 +2943,7 @@ is the required linear transformation.
   
   
 
-> [!exercise] Exercise 11
+> [!exercise|e7ff8c21-04dc-5eed-96eb-8ee5a2d725ec.local at=a3dccc22-0595-54ad-85d5-5630ee36e5f2] Exercise 11
 
 > 29. Find the image of the set $S=\{z: z$ is real $\}$ under the mapping $f(z)=\operatorname{Arg} z$.
 
@@ -3118,7 +3115,7 @@ $$
   
   
 
-> [!exercise] Exercise 12
+> [!exercise|57ac65c0-dc4f-5b71-ad77-b8cb5e42cc26.local at=d744ab59-7a4e-586e-a91e-f51df7f55361] Exercise 12
 
 > problems 31-34, find the image $f[S]$ under the inversion $f(z)=\frac{1}{z}$. Draw a picture of $S$ and $f[S]$, and depict arrows mapping select points.
 
@@ -4054,7 +4051,7 @@ plt.close(fig)
   
   
 
-> [!exercise] Exercise 13
+> [!exercise|b54891df-0fad-5139-b452-829e1c4b1670.local at=9c60bc60-5637-577e-b452-f13f3f50007d] Exercise 13
 
 > 35. Let $f(z)=\frac{1}{z}$.
 
@@ -4250,7 +4247,7 @@ $$
   
   
 
-> [!exercise] Exercise 14
+> [!exercise|88053bfd-1dc5-598e-b8bd-8b7ee98f17d5.local at=b53b15e7-f3f7-5213-aa8c-2c53f1acd24b] Exercise 14
 
 > 36. Show that for $f(z)=1 / z, f(z)=g(h(z))=h(g(z))$, where $g(z)=\bar{z}$ and $h(z)=\frac{z}{|z|^{2}}$.
 
@@ -4389,7 +4386,7 @@ for all $z \neq 0$.
   
   
 
-> [!exercise] Exercise 15
+> [!exercise|4238bd65-702a-523b-802a-e01277c9d246.local at=3e0ceb5e-db04-545c-b402-d83d50d7cd74] Exercise 15
 
 > 37. (a) Show that $f(z)=\frac{1}{z}$ is never zero for any complex $z$.
 
@@ -4595,7 +4592,7 @@ $$
   
   
 
-> [!exercise] Exercise 16
+> [!exercise|fabd3c20-1f24-59bc-ab4b-8309739fdab2.local at=b55dbdc2-261e-5709-8ff4-5ce738665fb9] Exercise 16
 
 > 38. Find a linear fractional transformation $f(z)=\frac{a z+b}{c z+d}$ such that $f(0)=-5+i$, $f(2)=-\frac{8}{5}-i \frac{11}{5}, f(-2 i)=5-2 i$. **(Hint: In solving for $a, b, c, d$, keep in mind that these are not uniquely determined. Once you determine that a coefficient is not zero, say $a \neq 0$, you may set it equal to 1 .)**
 
@@ -5054,7 +5051,7 @@ $$
   
   
 
-> [!exercise] Exercise 17
+> [!exercise|26364109-90d5-539f-951b-62c2c202b31b.local at=918f64ce-7f4e-5246-814b-3c19ac319a3b] Exercise 17
 
 > 40. Find the function $f(z)=\frac{1}{c z+d}$ so that $f(1)=\frac{2-i}{5}$ and $f\left(-\frac{i}{2}\right)$ is not defined. A point $z_{0}$ is called a fixed point of a function $f(z)$ if $f\left(z_{0}\right)=z_{0}$. In Exercises 4144, determine the fixed points of the given function.
 
@@ -5463,7 +5460,7 @@ $$
   
   
 
-> [!exercise] Exercise 18
+> [!exercise|1265c649-e203-5aa2-8af9-e661b9073f29.local at=7968187f-5fb5-5137-b92f-d77876e7f190] Exercise 18
 
 > 45. Define the set of lattice points in the plane as
 

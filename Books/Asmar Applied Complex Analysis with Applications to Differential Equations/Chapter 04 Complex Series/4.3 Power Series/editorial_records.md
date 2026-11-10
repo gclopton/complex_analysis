@@ -433,3 +433,7 @@ $$
 
 $\square$
 ````
+
+## 2026-11-09 — Native opening number drift
+
+Restored one printed exercise-number line exactly from the pre-admission baseline after it changed on native opening, before any admission attempt. Preserved all component identities. Exact before/after receipt: `asmar-repair-20261108/admission/4.3-number-restoration.json`. No wording or mathematics changed. Tracked in Case 020.

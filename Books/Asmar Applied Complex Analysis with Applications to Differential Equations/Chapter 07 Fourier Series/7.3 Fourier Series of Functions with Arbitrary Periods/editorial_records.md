@@ -1129,3 +1129,7 @@ This exact comparison preserves the full change evidence, including formatting, 
 +
 
 `````
+
+## 2026-11-09 — Native identity initialization recovery
+
+Restored 3 printed exercise-number lines exactly from the pre-admission baseline after native initialization changed them. All native component identities were retained. No exercise wording, mathematics or admissible primitive was changed. Case 020; exact preimage and line receipt: `/Users/gradyclopton/Documents/ChatGPT/Mathematics/asmar-repair-20261108/admission/number-drift/7.3-f6ab6421063d.json`.

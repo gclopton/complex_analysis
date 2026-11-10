@@ -17,7 +17,7 @@ makes complex analysis a powerful tool for studying Fourier series, solving diff
 Dismissing mental tortures, and multiplying $5+\sqrt{-15}$ by $5-\sqrt{-15}$, we obtain $25-(-15)$. Therefore the product is $40 \ldots$ and thus far does arithmetical subtlety go, of which this, the extreme, is, as I have said, so subtle that it is useless.
 -Girolamo Cardan
 
-> [!NOTE]
+> [!note|dd5a4d8b-00d5-5b14-add7-31388c43cfcc.local at=872a014a-350d-545f-9630-d62edfb4c813]
 > First explicit use of complex numbers, which appeared around 1545 in Cardan's solution of the problem of finding two numbers whose sum is 10 and whose product is 40 .
 
 This chapter starts with the early discovery of complex numbers and their role in the solution of algebraic equations. From the expression $z=x+i y$, we will represent complex numbers as points or vectors ( $x, y$ ) in the plane and take advantage of our geometric intuition in working with complex numbers. We will see how complex numbers can be added and subtracted much like we add and subtract vectors in two dimensions. We also have a notion of distance between complex numbers that satisfies the familiar triangle inequality.
@@ -45,7 +45,7 @@ has no real roots, because there is no real number $x$ such that $x^{2}=-1$; or 
 
 Two centuries later, the Swiss mathematician Leonhard Euler (17071783) introduced the symbol $i$ by setting
 
-> [!definition] Imaginary Unit
+> [!definition|3a15428a-4071-56b5-98ae-5ee14bcd7faf.library at=108e0612-31a5-5050-9b08-0594e057bf85] Imaginary Unit
 > $$
 > i=\sqrt{-1}, \text { or equivalently, } i^{2}=-1
 > $$
