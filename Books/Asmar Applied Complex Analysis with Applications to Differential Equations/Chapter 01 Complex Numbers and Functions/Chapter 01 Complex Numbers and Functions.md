@@ -45,7 +45,7 @@ has no real roots, because there is no real number $x$ such that $x^{2}=-1$; or 
 
 Two centuries later, the Swiss mathematician Leonhard Euler (17071783) introduced the symbol $i$ by setting
 
-> [!definition]
+> [!definition] Imaginary Unit
 > $$
 > i=\sqrt{-1}, \text { or equivalently, } i^{2}=-1
 > $$

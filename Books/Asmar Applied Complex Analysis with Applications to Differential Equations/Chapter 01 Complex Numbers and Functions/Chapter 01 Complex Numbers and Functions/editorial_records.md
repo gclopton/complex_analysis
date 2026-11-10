@@ -38,3 +38,7 @@ $$
 
 $\square$
 ````
+
+## 2026-11-09 — Missing callout title
+
+Added the missing title `Imaginary Unit` to the definition beginning `i=\sqrt{-1}`. The header changed from `> [!definition]` to `> [!definition] Imaginary Unit`. The statement, callout type, and surrounding author text are unchanged.
